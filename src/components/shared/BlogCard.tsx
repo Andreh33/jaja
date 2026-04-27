@@ -21,19 +21,36 @@ export default function BlogCard({ post }: { post: Post }) {
       <TiltCard max={5} className="h-full">
         <article className="h-full overflow-hidden rounded-3xl glass transition-all duration-300 group-hover:-translate-y-1">
           <div className="relative aspect-[16/10] overflow-hidden">
-            <div
-              className="absolute inset-0 transition-transform duration-700 group-hover:scale-105"
-              style={{
-                background: `radial-gradient(circle at 30% 30%, ${color}40, transparent 60%), radial-gradient(circle at 70% 70%, var(--purple-glow), transparent 60%), var(--bg-elevated)`,
-              }}
-            />
-            <div className="absolute inset-0 flex items-center justify-center opacity-15">
-              <span className="font-display text-9xl text-white">{post.title.charAt(0)}</span>
-            </div>
+            {post.cover ? (
+              <>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={post.cover}
+                  alt={post.title}
+                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div
+                  className="pointer-events-none absolute inset-0 transition-opacity duration-300 group-hover:opacity-50"
+                  style={{ background: 'linear-gradient(180deg, transparent 50%, rgba(7,5,14,0.45))', opacity: 0.7 }}
+                />
+              </>
+            ) : (
+              <>
+                <div
+                  className="absolute inset-0 transition-transform duration-700 group-hover:scale-105"
+                  style={{
+                    background: `radial-gradient(circle at 30% 30%, ${color}40, transparent 60%), radial-gradient(circle at 70% 70%, var(--purple-glow), transparent 60%), var(--bg-elevated)`,
+                  }}
+                />
+                <div className="absolute inset-0 flex items-center justify-center opacity-15">
+                  <span className="font-display text-9xl text-white">{post.title.charAt(0)}</span>
+                </div>
+              </>
+            )}
             {post.category && (
               <span
-                className="absolute left-4 top-4 inline-flex items-center rounded-full px-3 py-1 text-[10px] font-semibold uppercase tracking-widest"
-                style={{ background: `${color}20`, color, border: `1px solid ${color}40`, backdropFilter: 'blur(10px)' }}
+                className="absolute left-4 top-4 z-10 inline-flex items-center rounded-full px-3 py-1 text-[10px] font-semibold uppercase tracking-widest"
+                style={{ background: `${color}25`, color, border: `1px solid ${color}50`, backdropFilter: 'blur(10px)' }}
               >
                 {post.category}
               </span>

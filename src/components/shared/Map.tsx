@@ -8,6 +8,12 @@ declare global {
   }
 }
 
+// Coordenadas Latech — Calle Puente 3, Puebla de la Calzada · Badajoz
+// Si quieres afinar la posición exacta, abre Google Maps, click derecho en la
+// puerta de tu oficina → "Copiar coordenadas" → pega los dos valores aquí.
+const LATECH_LAT = 38.88503;
+const LATECH_LNG = -6.62253;
+
 export default function Map() {
   const ref = useRef<HTMLDivElement>(null);
   const initialized = useRef(false);
@@ -25,8 +31,8 @@ export default function Map() {
       initialized.current = true;
 
       const map = L.map(ref.current, {
-        center: [38.886, -6.626],
-        zoom: 16,
+        center: [LATECH_LAT, LATECH_LNG],
+        zoom: 17,
         scrollWheelZoom: false,
         zoomControl: true,
       });
@@ -43,9 +49,10 @@ export default function Map() {
         iconSize: [34, 34],
         iconAnchor: [17, 17],
       });
-      L.marker([38.886, -6.626], { icon })
+      L.marker([LATECH_LAT, LATECH_LNG], { icon })
         .addTo(map)
-        .bindPopup('<b>Latech</b><br/>Calle Puente 3<br/>Puebla de la Calzada · Badajoz');
+        .bindPopup('<b>Latech</b><br/>Calle Puente 3<br/>Puebla de la Calzada · Badajoz')
+        .openPopup();
     })();
     return () => {
       cancelled = true;

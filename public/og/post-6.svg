@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="bg6" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0A0F26"/>
+      <stop offset="100%" stop-color="#07050E"/>
+    </linearGradient>
+    <radialGradient id="g6a" cx="0.5" cy="0.5" r="0.6">
+      <stop offset="0%" stop-color="#3B82F6" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#3B82F6" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="g6b" cx="0.85" cy="0.2" r="0.5">
+      <stop offset="0%" stop-color="#A578FF" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#A578FF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg6)"/>
+  <rect width="800" height="500" fill="url(#g6a)"/>
+  <rect width="800" height="500" fill="url(#g6b)"/>
+
+  <!-- Big checklist card -->
+  <g transform="translate(180,90)" opacity="0.95">
+    <rect x="0" y="0" width="440" height="320" rx="18" fill="rgba(7,5,14,0.85)" stroke="rgba(255,255,255,0.14)"/>
+    <text x="32" y="44" font-family="Inter,system-ui" font-size="13" font-weight="700" fill="rgba(255,255,255,0.55)" letter-spacing="3">CHECKLIST</text>
+    <text x="32" y="74" font-family="Inter,system-ui" font-size="22" font-weight="800" fill="#fff" letter-spacing="-1">¿Buena agencia?</text>
+
+    <!-- items -->
+    <g font-family="Inter,system-ui" font-size="13">
+      <g transform="translate(32,108)">
+        <circle cx="11" cy="11" r="11" fill="rgba(34,197,94,0.18)" stroke="rgba(34,197,94,0.7)" stroke-width="1.5"/>
+        <path d="M5 11 L9 15 L17 7" stroke="#22C55E" stroke-width="2" stroke-linecap="round" fill="none"/>
+        <text x="32" y="16" fill="rgba(255,255,255,0.85)">Stack moderno</text>
+      </g>
+      <g transform="translate(32,140)">
+        <circle cx="11" cy="11" r="11" fill="rgba(34,197,94,0.18)" stroke="rgba(34,197,94,0.7)" stroke-width="1.5"/>
+        <path d="M5 11 L9 15 L17 7" stroke="#22C55E" stroke-width="2" stroke-linecap="round" fill="none"/>
+        <text x="32" y="16" fill="rgba(255,255,255,0.85)">Sin permanencia</text>
+      </g>
+      <g transform="translate(32,172)">
+        <circle cx="11" cy="11" r="11" fill="rgba(34,197,94,0.18)" stroke="rgba(34,197,94,0.7)" stroke-width="1.5"/>
+        <path d="M5 11 L9 15 L17 7" stroke="#22C55E" stroke-width="2" stroke-linecap="round" fill="none"/>
+        <text x="32" y="16" fill="rgba(255,255,255,0.85)">Precios públicos y claros</text>
+      </g>
+      <g transform="translate(32,204)">
+        <circle cx="11" cy="11" r="11" fill="rgba(34,197,94,0.18)" stroke="rgba(34,197,94,0.7)" stroke-width="1.5"/>
+        <path d="M5 11 L9 15 L17 7" stroke="#22C55E" stroke-width="2" stroke-linecap="round" fill="none"/>
+        <text x="32" y="16" fill="rgba(255,255,255,0.85)">Código transferible</text>
+      </g>
+      <g transform="translate(32,236)">
+        <circle cx="11" cy="11" r="11" fill="rgba(239,68,68,0.18)" stroke="rgba(239,68,68,0.7)" stroke-width="1.5"/>
+        <line x1="6" y1="6" x2="16" y2="16" stroke="#EF4444" stroke-width="2" stroke-linecap="round"/>
+        <line x1="16" y1="6" x2="6" y2="16" stroke="#EF4444" stroke-width="2" stroke-linecap="round"/>
+        <text x="32" y="16" fill="rgba(255,255,255,0.55)" text-decoration="line-through">Permanencia 12 meses</text>
+      </g>
+      <g transform="translate(32,268)">
+        <circle cx="11" cy="11" r="11" fill="rgba(239,68,68,0.18)" stroke="rgba(239,68,68,0.7)" stroke-width="1.5"/>
+        <line x1="6" y1="6" x2="16" y2="16" stroke="#EF4444" stroke-width="2" stroke-linecap="round"/>
+        <line x1="16" y1="6" x2="6" y2="16" stroke="#EF4444" stroke-width="2" stroke-linecap="round"/>
+        <text x="32" y="16" fill="rgba(255,255,255,0.55)" text-decoration="line-through">Tarifas ocultas por hora</text>
+      </g>
+    </g>
+  </g>
+</svg>

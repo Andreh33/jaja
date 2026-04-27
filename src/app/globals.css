@@ -201,7 +201,13 @@ body {
   background: radial-gradient(800px circle at var(--mx) var(--my), rgba(139,92,246,0.25), transparent 45%);
 }
 
-/* Beam border animado */
+/* Beam border animado — el gradiente recorre el contorno, NO la card rota */
+@property --beam-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
 .beam-border {
   position: relative;
   isolation: isolate;
@@ -212,14 +218,22 @@ body {
   inset: 0;
   padding: 1.5px;
   border-radius: inherit;
-  background: conic-gradient(from 0deg, transparent 0%, var(--purple-400) 25%, var(--accent-shop) 50%, var(--accent-ia) 75%, transparent 100%);
+  background: conic-gradient(from var(--beam-angle), transparent 0%, var(--purple-400) 20%, var(--accent-shop) 40%, var(--warning) 55%, var(--accent-ia) 70%, transparent 92%);
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
-  animation: beam-spin 6s linear infinite;
+  animation: beam-spin 8s linear infinite;
   pointer-events: none;
   z-index: 0;
+}
+
+/* Fallback for browsers without @property support: graceful static gradient */
+@supports not (background: paint(something)) {
+  .beam-border::before {
+    background: conic-gradient(from 0deg, transparent 0%, var(--purple-400) 20%, var(--accent-shop) 40%, var(--warning) 55%, var(--accent-ia) 70%, transparent 92%);
+    animation: none;
+  }
 }
 
 /* Holographic surface */
@@ -268,7 +282,7 @@ body {
 }
 
 @keyframes beam-spin {
-  to { transform: rotate(1turn); }
+  to { --beam-angle: 360deg; }
 }
 
 @keyframes holo-shimmer {

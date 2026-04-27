@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Heart, Shield, Award, MapPin, Code2, Sparkles } from 'lucide-react';
+import { Heart, Shield, Award, MapPin, Code2, Sparkles, Briefcase, Clock, Star, Lock } from 'lucide-react';
 import AuroraBackground from '@/components/effects/AuroraBackground';
 import MouseGlow from '@/components/effects/MouseGlow';
 import { SignatureMarquee, Marquee } from '@/components/effects/Marquee';
@@ -53,33 +53,74 @@ export default function SobreNosotrosPage() {
           <div className="mx-auto max-w-7xl px-6">
             <div className="grid gap-12 md:grid-cols-12">
               <Reveal>
-                <div className="space-y-6 md:col-span-5 md:sticky md:top-32">
-                  <Holographic className="p-7" rounded="rounded-3xl">
-                    <div className="flex items-center gap-3">
-                      <MapPin size={18} style={{ color: 'var(--purple-300)' }} />
-                      <span className="text-sm font-semibold text-white">Puebla de la Calzada · Badajoz</span>
+                <div className="space-y-5 md:col-span-5 md:sticky md:top-32">
+                  <Holographic className="relative overflow-hidden p-8" rounded="rounded-3xl">
+                    <div
+                      className="pointer-events-none absolute -right-20 -top-20 h-48 w-48 rounded-full"
+                      style={{ background: 'radial-gradient(circle, rgba(139,92,246,0.35), transparent 70%)', filter: 'blur(20px)' }}
+                    />
+                    <div className="relative">
+                      <div className="inline-flex h-11 w-11 items-center justify-center rounded-xl" style={{ background: 'rgba(139,92,246,0.18)', color: 'var(--purple-300)', border: '1px solid rgba(139,92,246,0.35)' }}>
+                        <MapPin size={20} strokeWidth={1.6} />
+                      </div>
+                      <h3 className="mt-5 font-display text-xl text-white" style={{ letterSpacing: '-0.02em', fontWeight: 700 }}>
+                        Puebla de la Calzada<br />Badajoz · Extremadura
+                      </h3>
+                      <p className="mt-3 text-sm leading-relaxed text-white/70">
+                        Estamos en <span className="text-white">Calle Puente 3</span>, en plena Extremadura.
+                        Trabajamos con clientes de toda <span className="text-white">España y Portugal</span>.
+                      </p>
+                      <div className="mt-5 flex flex-wrap gap-2">
+                        <span className="rounded-full px-3 py-1 text-[10px] font-semibold uppercase tracking-widest" style={{ background: 'rgba(139,92,246,0.15)', color: 'var(--purple-300)', border: '1px solid rgba(139,92,246,0.3)' }}>
+                          Equipo local
+                        </span>
+                        <span className="rounded-full px-3 py-1 text-[10px] font-semibold uppercase tracking-widest" style={{ background: 'rgba(249,115,22,0.12)', color: 'var(--accent-shop)', border: '1px solid rgba(249,115,22,0.3)' }}>
+                          Reuniones online + presencial
+                        </span>
+                      </div>
                     </div>
-                    <p className="mt-4 text-sm leading-relaxed text-white/65">
-                      Estamos en Calle Puente 3, en plena Extremadura. Trabajamos con clientes de toda España y Portugal.
-                    </p>
                   </Holographic>
+
                   <div className="grid grid-cols-2 gap-4">
-                    <div className="rounded-2xl glass p-6">
-                      <div className="font-display text-3xl text-white">50+</div>
-                      <div className="mt-1 text-xs uppercase tracking-wider text-white/50">Proyectos entregados</div>
-                    </div>
-                    <div className="rounded-2xl glass p-6">
-                      <div className="font-display text-3xl text-white">24h</div>
-                      <div className="mt-1 text-xs uppercase tracking-wider text-white/50">Tiempo de respuesta</div>
-                    </div>
-                    <div className="rounded-2xl glass p-6">
-                      <div className="font-display text-3xl text-white">5★</div>
-                      <div className="mt-1 text-xs uppercase tracking-wider text-white/50">Valoración media</div>
-                    </div>
-                    <div className="rounded-2xl glass p-6">
-                      <div className="font-display text-3xl text-white">100%</div>
-                      <div className="mt-1 text-xs uppercase tracking-wider text-white/50">Sin permanencia</div>
-                    </div>
+                    {[
+                      { v: '50+', l: 'Proyectos entregados', icon: Briefcase, color: 'var(--purple-300)', bg: 'rgba(139,92,246,0.15)' },
+                      { v: '24h', l: 'Tiempo de respuesta', icon: Clock, color: 'var(--accent-shop)', bg: 'rgba(249,115,22,0.15)' },
+                      { v: '5★', l: 'Valoración media', icon: Star, color: 'var(--warning)', bg: 'rgba(251,191,36,0.15)' },
+                      { v: '100%', l: 'Sin permanencia', icon: Lock, color: 'var(--accent-ia)', bg: 'rgba(16,185,129,0.15)' },
+                    ].map((s) => {
+                      const Icon = s.icon;
+                      return (
+                        <div key={s.l} className="rounded-2xl glass p-5 transition-transform hover:-translate-y-0.5">
+                          <div className="mb-4 inline-flex h-9 w-9 items-center justify-center rounded-lg" style={{ background: s.bg, color: s.color, border: `1px solid ${s.color}40` }}>
+                            <Icon size={16} strokeWidth={1.6} />
+                          </div>
+                          <div className="font-display text-3xl text-white" style={{ letterSpacing: '-0.02em', fontWeight: 800 }}>{s.v}</div>
+                          <div className="mt-1.5 text-[10px] uppercase tracking-wider text-white/55">{s.l}</div>
+                        </div>
+                      );
+                    })}
+                  </div>
+
+                  <div className="rounded-2xl glass p-6">
+                    <h4 className="text-xs font-semibold uppercase tracking-widest text-white/50">Servicios principales</h4>
+                    <ul className="mt-4 space-y-2.5 text-sm">
+                      <li className="flex items-center gap-3 text-white/85">
+                        <span className="h-1.5 w-1.5 rounded-full" style={{ background: 'var(--accent-web)' }} />
+                        Diseño web profesional
+                      </li>
+                      <li className="flex items-center gap-3 text-white/85">
+                        <span className="h-1.5 w-1.5 rounded-full" style={{ background: 'var(--accent-shop)' }} />
+                        Tiendas online con Stripe
+                      </li>
+                      <li className="flex items-center gap-3 text-white/85">
+                        <span className="h-1.5 w-1.5 rounded-full" style={{ background: 'var(--accent-ia)' }} />
+                        Agentes IA con n8n
+                      </li>
+                      <li className="flex items-center gap-3 text-white/85">
+                        <span className="h-1.5 w-1.5 rounded-full" style={{ background: 'var(--purple-300)' }} />
+                        SEO local y nacional
+                      </li>
+                    </ul>
                   </div>
                 </div>
               </Reveal>

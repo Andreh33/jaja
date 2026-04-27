@@ -53,3 +53,5 @@ drizzle/migrations/
 # client uploads (per-user, large, regenerated)
 public/uploads/clientes/*
 !public/uploads/clientes/.gitkeep
+
+.vercel
