@@ -54,72 +54,64 @@ export default function SobreNosotrosPage() {
             <div className="grid gap-12 md:grid-cols-12">
               <Reveal>
                 <div className="space-y-5 md:col-span-5 md:sticky md:top-32">
-                  <Holographic className="relative overflow-hidden p-8" rounded="rounded-3xl">
+                  <Holographic className="relative overflow-hidden p-6 md:p-7" rounded="rounded-3xl">
                     <div
-                      className="pointer-events-none absolute -right-20 -top-20 h-48 w-48 rounded-full"
+                      className="pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full"
                       style={{ background: 'radial-gradient(circle, rgba(139,92,246,0.35), transparent 70%)', filter: 'blur(20px)' }}
                     />
-                    <div className="relative">
-                      <div className="inline-flex h-11 w-11 items-center justify-center rounded-xl" style={{ background: 'rgba(139,92,246,0.18)', color: 'var(--purple-300)', border: '1px solid rgba(139,92,246,0.35)' }}>
+                    <div className="relative flex items-start gap-4">
+                      <div
+                        className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl"
+                        style={{ background: 'rgba(139,92,246,0.18)', color: 'var(--purple-300)', border: '1px solid rgba(139,92,246,0.35)' }}
+                      >
                         <MapPin size={20} strokeWidth={1.6} />
                       </div>
-                      <h3 className="mt-5 font-display text-xl text-white" style={{ letterSpacing: '-0.02em', fontWeight: 700 }}>
-                        Puebla de la Calzada<br />Badajoz · Extremadura
-                      </h3>
-                      <p className="mt-3 text-sm leading-relaxed text-white/70">
-                        Estamos en <span className="text-white">Calle Puente 3</span>, en plena Extremadura.
-                        Trabajamos con clientes de toda <span className="text-white">España y Portugal</span>.
-                      </p>
-                      <div className="mt-5 flex flex-wrap gap-2">
-                        <span className="rounded-full px-3 py-1 text-[10px] font-semibold uppercase tracking-widest" style={{ background: 'rgba(139,92,246,0.15)', color: 'var(--purple-300)', border: '1px solid rgba(139,92,246,0.3)' }}>
-                          Equipo local
-                        </span>
-                        <span className="rounded-full px-3 py-1 text-[10px] font-semibold uppercase tracking-widest" style={{ background: 'rgba(249,115,22,0.12)', color: 'var(--accent-shop)', border: '1px solid rgba(249,115,22,0.3)' }}>
-                          Reuniones online + presencial
-                        </span>
+                      <div className="min-w-0 flex-1">
+                        <h3 className="font-display text-lg leading-tight text-white" style={{ letterSpacing: '-0.02em', fontWeight: 700 }}>
+                          Puebla de la Calzada
+                        </h3>
+                        <p className="mt-0.5 text-xs uppercase tracking-widest text-white/50">Badajoz · Extremadura</p>
+                        <p className="mt-3 text-sm leading-relaxed text-white/70">
+                          Estamos en <span className="text-white">Calle Puente 3</span>. Trabajamos con clientes de toda <span className="text-white">España y Portugal</span>.
+                        </p>
                       </div>
                     </div>
                   </Holographic>
 
-                  <div className="grid grid-cols-2 gap-4">
+                  <div className="grid gap-3 sm:grid-cols-2">
                     {[
-                      { v: '50+', l: 'Proyectos entregados', icon: Briefcase, color: 'var(--purple-300)', bg: 'rgba(139,92,246,0.15)' },
-                      { v: '24h', l: 'Tiempo de respuesta', icon: Clock, color: 'var(--accent-shop)', bg: 'rgba(249,115,22,0.15)' },
-                      { v: '5★', l: 'Valoración media', icon: Star, color: 'var(--warning)', bg: 'rgba(251,191,36,0.15)' },
+                      { v: '50+', l: 'Proyectos', icon: Briefcase, color: 'var(--purple-300)', bg: 'rgba(139,92,246,0.15)' },
+                      { v: '24h', l: 'Respuesta', icon: Clock, color: 'var(--accent-shop)', bg: 'rgba(249,115,22,0.15)' },
+                      { v: '5★', l: 'Valoración', icon: Star, color: 'var(--warning)', bg: 'rgba(251,191,36,0.15)' },
                       { v: '100%', l: 'Sin permanencia', icon: Lock, color: 'var(--accent-ia)', bg: 'rgba(16,185,129,0.15)' },
                     ].map((s) => {
                       const Icon = s.icon;
                       return (
-                        <div key={s.l} className="rounded-2xl glass p-5 transition-transform hover:-translate-y-0.5">
-                          <div className="mb-4 inline-flex h-9 w-9 items-center justify-center rounded-lg" style={{ background: s.bg, color: s.color, border: `1px solid ${s.color}40` }}>
-                            <Icon size={16} strokeWidth={1.6} />
+                        <div key={s.l} className="flex items-center gap-3 rounded-2xl glass px-4 py-4 transition-transform hover:-translate-y-0.5">
+                          <div
+                            className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-lg"
+                            style={{ background: s.bg, color: s.color, border: `1px solid ${s.color}40` }}
+                          >
+                            <Icon size={15} strokeWidth={1.7} />
                           </div>
-                          <div className="font-display text-3xl text-white" style={{ letterSpacing: '-0.02em', fontWeight: 800 }}>{s.v}</div>
-                          <div className="mt-1.5 text-[10px] uppercase tracking-wider text-white/55">{s.l}</div>
+                          <div className="min-w-0">
+                            <div className="font-display text-xl leading-none text-white" style={{ letterSpacing: '-0.02em', fontWeight: 800 }}>
+                              {s.v}
+                            </div>
+                            <div className="mt-1 truncate text-[10px] uppercase tracking-wider text-white/55">{s.l}</div>
+                          </div>
                         </div>
                       );
                     })}
                   </div>
 
                   <div className="rounded-2xl glass p-6">
-                    <h4 className="text-xs font-semibold uppercase tracking-widest text-white/50">Servicios principales</h4>
+                    <h4 className="text-[11px] font-semibold uppercase tracking-widest text-white/50">Servicios principales</h4>
                     <ul className="mt-4 space-y-2.5 text-sm">
-                      <li className="flex items-center gap-3 text-white/85">
-                        <span className="h-1.5 w-1.5 rounded-full" style={{ background: 'var(--accent-web)' }} />
-                        Diseño web profesional
-                      </li>
-                      <li className="flex items-center gap-3 text-white/85">
-                        <span className="h-1.5 w-1.5 rounded-full" style={{ background: 'var(--accent-shop)' }} />
-                        Tiendas online con Stripe
-                      </li>
-                      <li className="flex items-center gap-3 text-white/85">
-                        <span className="h-1.5 w-1.5 rounded-full" style={{ background: 'var(--accent-ia)' }} />
-                        Agentes IA con n8n
-                      </li>
-                      <li className="flex items-center gap-3 text-white/85">
-                        <span className="h-1.5 w-1.5 rounded-full" style={{ background: 'var(--purple-300)' }} />
-                        SEO local y nacional
-                      </li>
+                      <li className="flex items-center gap-3 text-white/85"><span className="h-1.5 w-1.5 shrink-0 rounded-full" style={{ background: 'var(--accent-web)' }} />Diseño web profesional</li>
+                      <li className="flex items-center gap-3 text-white/85"><span className="h-1.5 w-1.5 shrink-0 rounded-full" style={{ background: 'var(--accent-shop)' }} />Tiendas online con Stripe</li>
+                      <li className="flex items-center gap-3 text-white/85"><span className="h-1.5 w-1.5 shrink-0 rounded-full" style={{ background: 'var(--accent-ia)' }} />Agentes IA con n8n</li>
+                      <li className="flex items-center gap-3 text-white/85"><span className="h-1.5 w-1.5 shrink-0 rounded-full" style={{ background: 'var(--purple-300)' }} />SEO local y nacional</li>
                     </ul>
                   </div>
                 </div>
