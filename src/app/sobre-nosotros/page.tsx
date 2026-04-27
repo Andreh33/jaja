@@ -32,14 +32,14 @@ export default function SobreNosotrosPage() {
       <MouseGlow />
       <main className="relative z-10">
         <section className="pt-44 pb-20">
-          <div className="mx-auto max-w-6xl px-6">
+          <div className="mx-auto max-w-4xl px-6 text-center">
             <Reveal>
               <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-white/40">Quiénes somos</p>
               <h1 className="font-display text-balance text-5xl md:text-7xl" style={{ letterSpacing: '-0.04em', fontWeight: 800, lineHeight: 0.98 }}>
                 Tu socio tecnológico<br />
                 en <GradientText as="span">Badajoz</GradientText>.
               </h1>
-              <p className="mt-7 max-w-2xl text-base text-white/65">
+              <p className="mx-auto mt-7 max-w-2xl text-base text-white/65">
                 Diseño web, SEO, e-commerce y soluciones de IA para empresas que quieren crecer.
                 Cercanos, transparentes y obsesionados con que tu proyecto funcione de verdad.
               </p>
