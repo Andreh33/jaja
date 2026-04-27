@@ -78,28 +78,33 @@ export default function SobreNosotrosPage() {
                     </div>
                   </Holographic>
 
-                  <div className="grid gap-3 sm:grid-cols-2">
+                  <div className="overflow-hidden rounded-2xl glass">
                     {[
-                      { v: '50+', l: 'Proyectos', icon: Briefcase, color: 'var(--purple-300)', bg: 'rgba(139,92,246,0.15)' },
-                      { v: '24h', l: 'Respuesta', icon: Clock, color: 'var(--accent-shop)', bg: 'rgba(249,115,22,0.15)' },
-                      { v: '5★', l: 'Valoración', icon: Star, color: 'var(--warning)', bg: 'rgba(251,191,36,0.15)' },
+                      { v: '50+', l: 'Proyectos entregados', icon: Briefcase, color: 'var(--purple-300)', bg: 'rgba(139,92,246,0.15)' },
+                      { v: '24h', l: 'Tiempo de respuesta', icon: Clock, color: 'var(--accent-shop)', bg: 'rgba(249,115,22,0.15)' },
+                      { v: '5★', l: 'Valoración media', icon: Star, color: 'var(--warning)', bg: 'rgba(251,191,36,0.15)' },
                       { v: '100%', l: 'Sin permanencia', icon: Lock, color: 'var(--accent-ia)', bg: 'rgba(16,185,129,0.15)' },
-                    ].map((s) => {
+                    ].map((s, i) => {
                       const Icon = s.icon;
                       return (
-                        <div key={s.l} className="flex items-center gap-3 rounded-2xl glass px-4 py-4 transition-transform hover:-translate-y-0.5">
+                        <div
+                          key={s.l}
+                          className="flex items-center gap-4 px-5 py-4 transition-colors hover:bg-white/[0.03]"
+                          style={{ borderTop: i === 0 ? 'none' : '1px solid var(--border-subtle)' }}
+                        >
                           <div
-                            className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-lg"
+                            className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl"
                             style={{ background: s.bg, color: s.color, border: `1px solid ${s.color}40` }}
                           >
-                            <Icon size={15} strokeWidth={1.7} />
+                            <Icon size={16} strokeWidth={1.7} />
                           </div>
-                          <div className="min-w-0">
-                            <div className="font-display text-xl leading-none text-white" style={{ letterSpacing: '-0.02em', fontWeight: 800 }}>
-                              {s.v}
-                            </div>
-                            <div className="mt-1 truncate text-[10px] uppercase tracking-wider text-white/55">{s.l}</div>
-                          </div>
+                          <span
+                            className="font-display text-2xl tabular-nums text-white"
+                            style={{ letterSpacing: '-0.02em', fontWeight: 800, minWidth: '56px' }}
+                          >
+                            {s.v}
+                          </span>
+                          <span className="flex-1 text-sm text-white/65">{s.l}</span>
                         </div>
                       );
                     })}

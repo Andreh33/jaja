@@ -34,7 +34,17 @@ export function Marquee({
 }
 
 export function SignatureMarquee() {
-  const items = ['DISEÑO WEB', 'TIENDAS ONLINE', 'AGENTES DE IA', 'BADAJOZ', 'PRESUPUESTO 24H', 'SIN PERMANENCIA'];
+  const items = [
+    'DISEÑO WEB',
+    'TIENDAS ONLINE',
+    'AGENTES DE IA',
+    'POSICIONAMIENTO SEO',
+    'AUTOMATIZACIONES N8N',
+    'MANTENIMIENTO WEB',
+    'PASARELAS DE PAGO',
+    'SOPORTE 24H',
+    'SIN PERMANENCIA',
+  ];
   return (
     <div className="relative w-full overflow-hidden" style={{ background: 'var(--grad-signature)' }}>
       <Marquee speed={42}>
