@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Heart, Shield, Award, MapPin, Code2, Sparkles, Briefcase, Clock, Star, Lock } from 'lucide-react';
+import { Heart, Shield, Award, Code2, Sparkles } from 'lucide-react';
 import AuroraBackground from '@/components/effects/AuroraBackground';
 import MouseGlow from '@/components/effects/MouseGlow';
 import { SignatureMarquee, Marquee } from '@/components/effects/Marquee';
@@ -8,7 +8,6 @@ import Footer from '@/components/layout/Footer';
 import { Reveal, RevealGroup, RevealItem } from '@/components/effects/Reveal';
 import GradientText from '@/components/effects/GradientText';
 import MagneticButton from '@/components/effects/MagneticButton';
-import Holographic from '@/components/effects/Holographic';
 import { whatsappLink } from '@/lib/stripe-links';
 
 export const metadata: Metadata = {
@@ -50,176 +49,102 @@ export default function SobreNosotrosPage() {
 
         {/* Long content */}
         <section className="py-12">
-          <div className="mx-auto max-w-7xl px-6">
-            <div className="grid gap-12 md:grid-cols-12">
+          <div className="mx-auto max-w-4xl px-6">
+            <article className="prose-latech max-w-none">
               <Reveal>
-                <div className="space-y-5 md:col-span-5 md:sticky md:top-32">
-                  <Holographic className="relative overflow-hidden p-6 md:p-7" rounded="rounded-3xl">
-                    <div
-                      className="pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full"
-                      style={{ background: 'radial-gradient(circle, rgba(139,92,246,0.35), transparent 70%)', filter: 'blur(20px)' }}
-                    />
-                    <div className="relative flex items-start gap-4">
-                      <div
-                        className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl"
-                        style={{ background: 'rgba(139,92,246,0.18)', color: 'var(--purple-300)', border: '1px solid rgba(139,92,246,0.35)' }}
-                      >
-                        <MapPin size={20} strokeWidth={1.6} />
-                      </div>
-                      <div className="min-w-0 flex-1">
-                        <h3 className="font-display text-lg leading-tight text-white" style={{ letterSpacing: '-0.02em', fontWeight: 700 }}>
-                          Puebla de la Calzada
-                        </h3>
-                        <p className="mt-0.5 text-xs uppercase tracking-widest text-white/50">Badajoz · Extremadura</p>
-                        <p className="mt-3 text-sm leading-relaxed text-white/70">
-                          Estamos en <span className="text-white">Calle Puente 3</span>. Trabajamos con clientes de toda <span className="text-white">España y Portugal</span>.
-                        </p>
-                      </div>
-                    </div>
-                  </Holographic>
-
-                  <div className="overflow-hidden rounded-2xl glass">
-                    {[
-                      { v: '50+', l: 'Proyectos entregados', icon: Briefcase, color: 'var(--purple-300)', bg: 'rgba(139,92,246,0.15)' },
-                      { v: '24h', l: 'Tiempo de respuesta', icon: Clock, color: 'var(--accent-shop)', bg: 'rgba(249,115,22,0.15)' },
-                      { v: '5★', l: 'Valoración media', icon: Star, color: 'var(--warning)', bg: 'rgba(251,191,36,0.15)' },
-                      { v: '100%', l: 'Sin permanencia', icon: Lock, color: 'var(--accent-ia)', bg: 'rgba(16,185,129,0.15)' },
-                    ].map((s, i) => {
-                      const Icon = s.icon;
-                      return (
-                        <div
-                          key={s.l}
-                          className="flex items-center gap-4 px-5 py-4 transition-colors hover:bg-white/[0.03]"
-                          style={{ borderTop: i === 0 ? 'none' : '1px solid var(--border-subtle)' }}
-                        >
-                          <div
-                            className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl"
-                            style={{ background: s.bg, color: s.color, border: `1px solid ${s.color}40` }}
-                          >
-                            <Icon size={16} strokeWidth={1.7} />
-                          </div>
-                          <span
-                            className="font-display text-2xl tabular-nums text-white"
-                            style={{ letterSpacing: '-0.02em', fontWeight: 800, minWidth: '56px' }}
-                          >
-                            {s.v}
-                          </span>
-                          <span className="flex-1 text-sm text-white/65">{s.l}</span>
-                        </div>
-                      );
-                    })}
-                  </div>
-
-                  <div className="rounded-2xl glass p-6">
-                    <h4 className="text-[11px] font-semibold uppercase tracking-widest text-white/50">Servicios principales</h4>
-                    <ul className="mt-4 space-y-2.5 text-sm">
-                      <li className="flex items-center gap-3 text-white/85"><span className="h-1.5 w-1.5 shrink-0 rounded-full" style={{ background: 'var(--accent-web)' }} />Diseño web profesional</li>
-                      <li className="flex items-center gap-3 text-white/85"><span className="h-1.5 w-1.5 shrink-0 rounded-full" style={{ background: 'var(--accent-shop)' }} />Tiendas online con Stripe</li>
-                      <li className="flex items-center gap-3 text-white/85"><span className="h-1.5 w-1.5 shrink-0 rounded-full" style={{ background: 'var(--accent-ia)' }} />Agentes IA con n8n</li>
-                      <li className="flex items-center gap-3 text-white/85"><span className="h-1.5 w-1.5 shrink-0 rounded-full" style={{ background: 'var(--purple-300)' }} />SEO local y nacional</li>
-                    </ul>
-                  </div>
-                </div>
+                <h2>En Latech somos&hellip;</h2>
+                <p>
+                  ...un equipo técnico apasionado por construir productos digitales que funcionan de verdad.
+                  Trabajamos desde Badajoz para empresas y emprendedores que buscan algo más que una web bonita:
+                  buscan una herramienta que les genere clientes, ventas y diferenciación frente a la competencia.
+                </p>
+                <p>
+                  Nacimos de una idea simple: en una época donde cualquiera ofrece &ldquo;diseño web&rdquo;,
+                  la diferencia ya no es saber programar — es <strong>entender el negocio</strong> del cliente,
+                  aplicar las herramientas técnicas adecuadas y entregar rápido, bien y sin complicaciones.
+                </p>
               </Reveal>
 
-              <div className="md:col-span-7">
-                <article className="prose-latech max-w-none">
-                  <Reveal>
-                    <h2>En Latech somos&hellip;</h2>
-                    <p>
-                      ...un equipo técnico apasionado por construir productos digitales que funcionan de verdad.
-                      Trabajamos desde Badajoz para empresas y emprendedores que buscan algo más que una web bonita:
-                      buscan una herramienta que les genere clientes, ventas y diferenciación frente a la competencia.
-                    </p>
-                    <p>
-                      Nacimos de una idea simple: en una época donde cualquiera ofrece &ldquo;diseño web&rdquo;,
-                      la diferencia ya no es saber programar — es <strong>entender el negocio</strong> del cliente,
-                      aplicar las herramientas técnicas adecuadas y entregar rápido, bien y sin complicaciones.
-                    </p>
-                  </Reveal>
+              <Reveal>
+                <h2>Diseño web que genera resultados</h2>
+                <p>
+                  No hacemos webs genéricas. Cada proyecto empieza con una conversación de 15 minutos donde
+                  entendemos a qué se dedica el cliente, qué tipo de usuario le compra, qué objeciones encuentra
+                  y qué le diferencia de su competencia. Solo entonces diseñamos.
+                </p>
+                <p>
+                  Trabajamos con stack moderno (Next.js, React, Tailwind, Vercel) — la misma tecnología que utilizan
+                  empresas como OpenAI, Notion o Linear. Esto significa webs <strong>extremadamente rápidas</strong>,
+                  <strong> técnicamente impecables</strong> y preparadas para escalar contigo.
+                </p>
+                <p>
+                  Cada web sale con SEO técnico completo, mobile-first, schema markup, sitemap optimizado y análisis
+                  de la competencia local para identificar palabras clave reales que generen tráfico desde el primer mes.
+                </p>
+              </Reveal>
 
-                  <Reveal>
-                    <h2>Diseño web que genera resultados</h2>
-                    <p>
-                      No hacemos webs genéricas. Cada proyecto empieza con una conversación de 15 minutos donde
-                      entendemos a qué se dedica el cliente, qué tipo de usuario le compra, qué objeciones encuentra
-                      y qué le diferencia de su competencia. Solo entonces diseñamos.
-                    </p>
-                    <p>
-                      Trabajamos con stack moderno (Next.js, React, Tailwind, Vercel) — la misma tecnología que utilizan
-                      empresas como OpenAI, Notion o Linear. Esto significa webs <strong>extremadamente rápidas</strong>,
-                      <strong> técnicamente impecables</strong> y preparadas para escalar contigo.
-                    </p>
-                    <p>
-                      Cada web sale con SEO técnico completo, mobile-first, schema markup, sitemap optimizado y análisis
-                      de la competencia local para identificar palabras clave reales que generen tráfico desde el primer mes.
-                    </p>
-                  </Reveal>
+              <Reveal>
+                <h2>Mantenimiento y seguridad sin sustos</h2>
+                <p>
+                  Una web no se entrega y se olvida. Nuestros planes incluyen monitorización continua, certificado SSL,
+                  headers de seguridad correctamente configurados, protección DDoS y backups diarios. Todo desplegado
+                  sobre infraestructura Vercel, con CDN global y uptime garantizado del 99.9%.
+                </p>
+                <p>
+                  Y si algo se rompe — que pasará, porque el software es así — lo arreglamos rápido. Sin tickets,
+                  sin colas, sin sistemas opacos. Un mensaje por WhatsApp y nos ponemos manos a la obra.
+                </p>
+              </Reveal>
 
-                  <Reveal>
-                    <h2>Mantenimiento y seguridad sin sustos</h2>
-                    <p>
-                      Una web no se entrega y se olvida. Nuestros planes incluyen monitorización continua, certificado SSL,
-                      headers de seguridad correctamente configurados, protección DDoS y backups diarios. Todo desplegado
-                      sobre infraestructura Vercel, con CDN global y uptime garantizado del 99.9%.
-                    </p>
-                    <p>
-                      Y si algo se rompe — que pasará, porque el software es así — lo arreglamos rápido. Sin tickets,
-                      sin colas, sin sistemas opacos. Un mensaje por WhatsApp y nos ponemos manos a la obra.
-                    </p>
-                  </Reveal>
+              <Reveal>
+                <h2>Soporte técnico cercano</h2>
+                <p>
+                  Aquí no hay agentes externalizados. Cuando preguntas algo, te responde la persona que conoce tu proyecto.
+                  Cambios menores incluidos cada mes (textos, imágenes, ajustes puntuales), respuesta en menos de 24h
+                  y siempre por canales humanos: WhatsApp, email o llamada.
+                </p>
+                <p>
+                  Lo que prometemos lo cumplimos. Lo que no podemos cumplir, lo decimos antes de aceptar el proyecto.
+                  Suena básico, pero en este sector es revolucionario.
+                </p>
+              </Reveal>
 
-                  <Reveal>
-                    <h2>Soporte técnico cercano</h2>
-                    <p>
-                      Aquí no hay agentes externalizados. Cuando preguntas algo, te responde la persona que conoce tu proyecto.
-                      Cambios menores incluidos cada mes (textos, imágenes, ajustes puntuales), respuesta en menos de 24h
-                      y siempre por canales humanos: WhatsApp, email o llamada.
-                    </p>
-                    <p>
-                      Lo que prometemos lo cumplimos. Lo que no podemos cumplir, lo decimos antes de aceptar el proyecto.
-                      Suena básico, pero en este sector es revolucionario.
-                    </p>
-                  </Reveal>
+              <Reveal>
+                <h2>Nuestro enfoque</h2>
+                <p>
+                  Creemos que la tecnología debe ser una palanca para el negocio, no un obstáculo.
+                  Por eso simplificamos al máximo: <strong>precios públicos</strong>, <strong>sin permanencia</strong>,
+                  <strong> código transferible</strong> y entregas rápidas. Si quieres irte, te llevas todo.
+                  Si quieres quedarte, lo haces porque cumplimos.
+                </p>
+                <p>
+                  Y vamos un paso más allá: somos pioneros en España integrando agentes de IA con n8n
+                  para pequeñas y medianas empresas. Mientras la mayoría sigue hablando de IA en abstracto,
+                  nosotros llevamos meses construyendo asistentes que atienden llamadas reales,
+                  gestionan reservas y procesan pagos por voz.
+                </p>
+              </Reveal>
 
-                  <Reveal>
-                    <h2>Nuestro enfoque</h2>
-                    <p>
-                      Creemos que la tecnología debe ser una palanca para el negocio, no un obstáculo.
-                      Por eso simplificamos al máximo: <strong>precios públicos</strong>, <strong>sin permanencia</strong>,
-                      <strong> código transferible</strong> y entregas rápidas. Si quieres irte, te llevas todo.
-                      Si quieres quedarte, lo haces porque cumplimos.
-                    </p>
-                    <p>
-                      Y vamos un paso más allá: somos pioneros en España integrando agentes de IA con n8n
-                      para pequeñas y medianas empresas. Mientras la mayoría sigue hablando de IA en abstracto,
-                      nosotros llevamos meses construyendo asistentes que atienden llamadas reales,
-                      gestionan reservas y procesan pagos por voz.
-                    </p>
-                  </Reveal>
+              <Reveal>
+                <h2>Tu aliado tecnológico</h2>
+                <p>
+                  Si buscas una empresa que entregue rápido, hable claro y cumpla lo prometido,
+                  estamos disponibles. Y si solo quieres pedir consejo o resolver una duda técnica,
+                  escríbenos por WhatsApp y te respondemos en horas, no en días.
+                </p>
+              </Reveal>
+            </article>
 
-                  <Reveal>
-                    <h2>Tu aliado tecnológico</h2>
-                    <p>
-                      Si buscas una empresa que entregue rápido, hable claro y cumpla lo prometido,
-                      estamos disponibles. Y si solo quieres pedir consejo o resolver una duda técnica,
-                      escríbenos por WhatsApp y te respondemos en horas, no en días.
-                    </p>
-                  </Reveal>
-                </article>
-
-                <Reveal>
-                  <div className="mt-12 flex flex-wrap gap-4">
-                    <MagneticButton href={whatsappLink('Hola, quiero conocer más sobre Latech')} target="_blank" rel="noreferrer">
-                      <Sparkles size={16} /> Hablar con nosotros
-                    </MagneticButton>
-                    <MagneticButton href="/tienda" variant="secondary">
-                      Ver planes
-                    </MagneticButton>
-                  </div>
-                </Reveal>
+            <Reveal>
+              <div className="mt-12 flex flex-wrap gap-4">
+                <MagneticButton href={whatsappLink('Hola, quiero conocer más sobre Latech')} target="_blank" rel="noreferrer">
+                  <Sparkles size={16} /> Hablar con nosotros
+                </MagneticButton>
+                <MagneticButton href="/tienda" variant="secondary">
+                  Ver planes
+                </MagneticButton>
               </div>
-            </div>
+            </Reveal>
           </div>
         </section>
 
