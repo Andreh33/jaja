@@ -47,7 +47,7 @@ export default function Navbar() {
         className={cn(
           'mx-auto flex w-full max-w-7xl items-center justify-between px-6 transition-all duration-300',
           scrolled ? 'h-14' : 'h-20',
-          'glass border-b',
+          'glass border rounded-2xl',
         )}
         style={{
           backgroundColor: scrolled ? 'rgba(7,5,14,0.85)' : 'rgba(7,5,14,0.55)',
