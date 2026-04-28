@@ -30,14 +30,32 @@ export default function FileUploader() {
 
     try {
       const r = await fetch('/api/upload', { method: 'POST', body: fd });
-      if (!r.ok) throw new Error();
-      setUploads((u) => u.map((x) => (initial.find((i) => i.name === x.name) ? { ...x, progress: 100, done: true } : x)));
-      toast.success(`${accepted.length} archivo(s) subido(s)`);
+      const data = await r.json().catch(() => ({}));
+      if (!r.ok) {
+        const msg = data?.error || `Error ${r.status}`;
+        setUploads((u) => u.map((x) => (initial.find((i) => i.name === x.name) ? { ...x, progress: 100, done: true, error: true } : x)));
+        toast.error(msg);
+        if (Array.isArray(data?.skipped)) {
+          data.skipped.slice(0, 3).forEach((s: { name: string; reason: string }) => toast.error(`${s.name}: ${s.reason}`));
+        }
+        return;
+      }
+      const okCount = Array.isArray(data?.files) ? data.files.length : accepted.length;
+      const skipped: { name: string; reason: string }[] = Array.isArray(data?.skipped) ? data.skipped : [];
+      setUploads((u) => u.map((x) => {
+        const wasSkipped = skipped.some((s) => s.name === x.name);
+        if (initial.find((i) => i.name === x.name)) {
+          return { ...x, progress: 100, done: true, error: wasSkipped };
+        }
+        return x;
+      }));
+      if (okCount > 0) toast.success(`${okCount} archivo(s) subido(s)`);
+      skipped.slice(0, 3).forEach((s) => toast.error(`${s.name}: ${s.reason}`));
       router.refresh();
       setTimeout(() => setUploads([]), 1800);
-    } catch {
+    } catch (err) {
       setUploads((u) => u.map((x) => (initial.find((i) => i.name === x.name) ? { ...x, progress: 100, done: true, error: true } : x)));
-      toast.error('Error al subir');
+      toast.error(err instanceof Error ? err.message : 'Error al subir');
     }
   }, [category, router]);
 
@@ -48,6 +66,8 @@ export default function FileUploader() {
       'video/*': [],
       'application/pdf': [],
       'application/postscript': [],
+      'application/msword': [],
+      'application/vnd.openxmlformats-officedocument.wordprocessingml.document': [],
     },
     maxSize: 50 * 1024 * 1024,
   });
