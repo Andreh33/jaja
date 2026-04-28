@@ -5,6 +5,7 @@ import { useDropzone } from 'react-dropzone';
 import { Upload, FileImage, X } from 'lucide-react';
 import { toast } from 'sonner';
 import { useRouter } from 'next/navigation';
+import { upload } from '@vercel/blob/client';
 import { formatBytes } from '@/lib/utils';
 
 const CATEGORIES = [
@@ -15,48 +16,63 @@ const CATEGORIES = [
   { id: 'otro', label: 'Otros' },
 ];
 
+type UploadItem = { name: string; size: number; progress: number; done: boolean; error?: boolean };
+
 export default function FileUploader() {
   const router = useRouter();
   const [category, setCategory] = useState('foto');
-  const [uploads, setUploads] = useState<{ name: string; size: number; progress: number; done: boolean; error?: boolean }[]>([]);
+  const [uploads, setUploads] = useState<UploadItem[]>([]);
 
   const onDrop = useCallback(async (accepted: File[]) => {
-    const initial = accepted.map((f) => ({ name: f.name, size: f.size, progress: 5, done: false }));
+    const initial: UploadItem[] = accepted.map((f) => ({ name: f.name, size: f.size, progress: 5, done: false }));
     setUploads((u) => [...u, ...initial]);
 
-    const fd = new FormData();
-    accepted.forEach((f) => fd.append('file', f));
-    fd.append('category', category);
+    let successCount = 0;
+    for (const file of accepted) {
+      try {
+        const safe = file.name.replace(/[^a-zA-Z0-9._-]+/g, '-').slice(0, 80) || 'archivo';
+        const pathname = `clientes/${Date.now()}-${safe}`;
 
-    try {
-      const r = await fetch('/api/upload', { method: 'POST', body: fd });
-      const data = await r.json().catch(() => ({}));
-      if (!r.ok) {
-        const msg = data?.error || `Error ${r.status}`;
-        setUploads((u) => u.map((x) => (initial.find((i) => i.name === x.name) ? { ...x, progress: 100, done: true, error: true } : x)));
-        toast.error(msg);
-        if (Array.isArray(data?.skipped)) {
-          data.skipped.slice(0, 3).forEach((s: { name: string; reason: string }) => toast.error(`${s.name}: ${s.reason}`));
+        const blob = await upload(pathname, file, {
+          access: 'public',
+          handleUploadUrl: '/api/upload',
+          contentType: file.type || 'application/octet-stream',
+          onUploadProgress: (e) => {
+            setUploads((u) => u.map((x) => x.name === file.name && !x.done ? { ...x, progress: Math.max(5, Math.min(95, e.percentage)) } : x));
+          },
+        });
+
+        const r = await fetch('/api/upload/register', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            url: blob.url,
+            pathname: blob.pathname,
+            filename: file.name,
+            mimeType: file.type,
+            size: file.size,
+            category,
+          }),
+        });
+        if (!r.ok) {
+          const data = await r.json().catch(() => ({}));
+          throw new Error(data?.error || `Error ${r.status}`);
         }
-        return;
+
+        setUploads((u) => u.map((x) => x.name === file.name ? { ...x, progress: 100, done: true } : x));
+        successCount++;
+      } catch (err) {
+        const msg = err instanceof Error ? err.message : 'Error al subir';
+        setUploads((u) => u.map((x) => x.name === file.name ? { ...x, progress: 100, done: true, error: true } : x));
+        toast.error(`${file.name}: ${msg}`);
       }
-      const okCount = Array.isArray(data?.files) ? data.files.length : accepted.length;
-      const skipped: { name: string; reason: string }[] = Array.isArray(data?.skipped) ? data.skipped : [];
-      setUploads((u) => u.map((x) => {
-        const wasSkipped = skipped.some((s) => s.name === x.name);
-        if (initial.find((i) => i.name === x.name)) {
-          return { ...x, progress: 100, done: true, error: wasSkipped };
-        }
-        return x;
-      }));
-      if (okCount > 0) toast.success(`${okCount} archivo(s) subido(s)`);
-      skipped.slice(0, 3).forEach((s) => toast.error(`${s.name}: ${s.reason}`));
-      router.refresh();
-      setTimeout(() => setUploads([]), 1800);
-    } catch (err) {
-      setUploads((u) => u.map((x) => (initial.find((i) => i.name === x.name) ? { ...x, progress: 100, done: true, error: true } : x)));
-      toast.error(err instanceof Error ? err.message : 'Error al subir');
     }
+
+    if (successCount > 0) {
+      toast.success(`${successCount} archivo(s) subido(s)`);
+      router.refresh();
+    }
+    setTimeout(() => setUploads([]), 2200);
   }, [category, router]);
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({

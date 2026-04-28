@@ -4,7 +4,7 @@ import { auth } from '@/lib/auth';
 import { db } from '@/lib/db';
 import { archivos } from '../../../../../../../drizzle/schema';
 import { eq } from 'drizzle-orm';
-import path from 'path';
+import { Readable } from 'stream';
 
 export async function GET(_req: Request, ctx: { params: Promise<{ id: string }> }) {
   const session = await auth();
@@ -15,18 +15,27 @@ export async function GET(_req: Request, ctx: { params: Promise<{ id: string }> 
   const files = await db.select().from(archivos).where(eq(archivos.userId, id));
   if (files.length === 0) return NextResponse.json({ error: 'Sin archivos' }, { status: 404 });
 
+  const arch = archiver('zip', { zlib: { level: 9 } });
+
+  (async () => {
+    for (const f of files) {
+      try {
+        const res = await fetch(f.url);
+        if (!res.ok || !res.body) continue;
+        const nodeStream = Readable.fromWeb(res.body as unknown as import('stream/web').ReadableStream<Uint8Array>);
+        arch.append(nodeStream, { name: `${f.category}/${f.filename}` });
+      } catch (err) {
+        console.warn('[zip] fetch failed for', f.url, err);
+      }
+    }
+    arch.finalize();
+  })();
+
   const stream = new ReadableStream({
     start(controller) {
-      const arch = archiver('zip', { zlib: { level: 9 } });
       arch.on('data', (chunk) => controller.enqueue(chunk));
       arch.on('end', () => controller.close());
       arch.on('error', (err) => controller.error(err));
-
-      for (const f of files) {
-        const abs = path.join(process.cwd(), 'public', 'uploads', 'clientes', f.userId, f.storedAs);
-        arch.file(abs, { name: `${f.category}/${f.filename}` });
-      }
-      arch.finalize();
     },
   });
 

@@ -55,3 +55,4 @@ public/uploads/clientes/*
 !public/uploads/clientes/.gitkeep
 
 .vercel
+.env*.local
