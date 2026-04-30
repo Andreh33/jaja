@@ -81,14 +81,14 @@ export default function EquipoSection() {
             className="team-line mb-8 overflow-hidden rounded-3xl glass lg:grid lg:min-h-[560px] lg:grid-cols-12"
             style={{ ['--team-line-color' as string]: LINE_COLORS[fundadores.slug] }}
           >
-            <div className="relative aspect-[4/5] w-full overflow-hidden lg:col-span-5 lg:aspect-auto lg:h-full">
+            <div className="relative aspect-[688/982] w-full overflow-hidden lg:col-span-5 lg:aspect-auto lg:h-full lg:min-h-[560px]">
               <Image
                 src={fundadores.foto.src}
                 alt={fundadores.foto.alt}
                 fill
                 priority
                 sizes="(min-width: 1024px) 42vw, 100vw"
-                className="object-cover object-center"
+                className="object-contain object-center"
               />
             </div>
             <div className="flex flex-col justify-center p-8 md:p-12 lg:col-span-7">
