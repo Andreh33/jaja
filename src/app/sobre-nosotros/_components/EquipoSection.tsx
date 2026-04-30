@@ -39,15 +39,15 @@ function MiembroCard({ miembro }: { miembro: Miembro }) {
         />
       </div>
       <div className="flex flex-1 flex-col p-5 md:p-6">
-        <h3 className="font-display text-xl text-white" style={{ letterSpacing: '-0.02em' }}>
+        <h3 className="font-display text-[21px] text-white" style={{ letterSpacing: '-0.02em' }}>
           {miembro.nombre}
         </h3>
-        <p className="mt-1 text-xs font-medium" style={{ color: 'var(--purple-300)' }}>
+        <p className="mt-1 text-[13px] font-medium" style={{ color: 'var(--purple-300)' }}>
           {miembro.rol}
         </p>
         <Parrafos
           items={miembro.descripcion}
-          className="mt-4 space-y-3 border-t pt-4 text-[13px] text-white/65"
+          className="mt-4 space-y-3 border-t pt-4 text-[14px] text-white/65"
         />
       </div>
     </article>
@@ -93,20 +93,20 @@ export default function EquipoSection() {
             </div>
             <div className="flex flex-col justify-center p-6 md:p-8 lg:col-span-7 lg:p-10">
               <p
-                className="mb-3 text-[11px] font-semibold uppercase tracking-[0.2em]"
+                className="mb-3 text-[12px] font-semibold uppercase tracking-[0.2em]"
                 style={{ color: 'var(--purple-300)' }}
               >
                 {fundadores.rol}
               </p>
               <h3
-                className="font-display text-2xl md:text-3xl"
+                className="font-display text-[25px] md:text-[31px]"
                 style={{ letterSpacing: '-0.03em', fontWeight: 800 }}
               >
                 {fundadores.nombre}
               </h3>
               {fundadores.lema && (
                 <p
-                  className="mt-4 border-l-2 pl-3 font-display text-base italic md:text-lg"
+                  className="mt-4 border-l-2 pl-3 font-display text-[17px] italic md:text-[19px]"
                   style={{ borderColor: 'var(--purple-400)', color: 'var(--purple-100)' }}
                 >
                   «{fundadores.lema}»
@@ -114,7 +114,7 @@ export default function EquipoSection() {
               )}
               <Parrafos
                 items={fundadores.descripcion}
-                className="mt-5 space-y-3 text-[13px] text-white/70"
+                className="mt-5 space-y-3 text-[14px] text-white/70"
               />
             </div>
           </article>
