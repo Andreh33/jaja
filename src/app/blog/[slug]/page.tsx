@@ -25,14 +25,34 @@ const CATEGORY_COLORS: Record<string, string> = {
   'Tutoriales': 'var(--warning)',
 };
 
+const SITE_URL = 'https://serviciosonlineweb.com';
+
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const post = await getPostBySlug(slug);
   if (!post) return { title: 'Post no encontrado' };
+  const url = `${SITE_URL}/blog/${post.slug}`;
+  const image = post.cover ? `${SITE_URL}${post.cover}` : `${SITE_URL}/og/post-1.svg`;
   return {
-    title: post.title,
+    title: `${post.title} · Latech`,
     description: post.excerpt || undefined,
-    openGraph: { title: post.title, description: post.excerpt || undefined, type: 'article' },
+    alternates: { canonical: url },
+    openGraph: {
+      type: 'article',
+      url,
+      title: post.title,
+      description: post.excerpt || undefined,
+      siteName: 'Latech',
+      images: [{ url: image, width: 1200, height: 630, alt: post.title }],
+      publishedTime: post.publishedAt ? new Date(post.publishedAt).toISOString() : undefined,
+      authors: post.author ? [post.author] : undefined,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.excerpt || undefined,
+      images: [image],
+    },
   };
 }
 
@@ -46,8 +66,32 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   const html = renderMarkdown(post.content);
   const color = (post.category && CATEGORY_COLORS[post.category]) || 'var(--purple-300)';
 
+  const articleUrl = `${SITE_URL}/blog/${post.slug}`;
+  const articleImage = post.cover ? `${SITE_URL}${post.cover}` : `${SITE_URL}/og/post-1.svg`;
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: post.title,
+    description: post.excerpt || undefined,
+    image: [articleImage],
+    datePublished: post.publishedAt ? new Date(post.publishedAt).toISOString() : undefined,
+    dateModified: post.publishedAt ? new Date(post.publishedAt).toISOString() : undefined,
+    author: { '@type': 'Organization', name: post.author || 'Equipo Latech' },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Latech',
+      logo: { '@type': 'ImageObject', url: `${SITE_URL}/icon.svg` },
+    },
+    mainEntityOfPage: { '@type': 'WebPage', '@id': articleUrl },
+    articleSection: post.category || undefined,
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <SignatureMarquee />
       <Navbar />
       <AuroraBackground intensity="subtle" />

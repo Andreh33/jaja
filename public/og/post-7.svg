@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="bg7" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0A1A14"/>
+      <stop offset="100%" stop-color="#07050E"/>
+    </linearGradient>
+    <radialGradient id="g7a" cx="0.2" cy="0.25" r="0.6">
+      <stop offset="0%" stop-color="#10B981" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#10B981" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="g7b" cx="0.85" cy="0.8" r="0.55">
+      <stop offset="0%" stop-color="#A578FF" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#A578FF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg7)"/>
+  <rect width="800" height="500" fill="url(#g7a)"/>
+  <rect width="800" height="500" fill="url(#g7b)"/>
+
+  <!-- n8n nodes graph -->
+  <g opacity="0.92">
+    <!-- connections -->
+    <g stroke="rgba(16,185,129,0.45)" stroke-width="1.4" fill="none" stroke-dasharray="4 4">
+      <line x1="160" y1="120" x2="320" y2="180"/>
+      <line x1="160" y1="240" x2="320" y2="220"/>
+      <line x1="160" y1="360" x2="320" y2="280"/>
+      <line x1="380" y1="180" x2="540" y2="120"/>
+      <line x1="400" y1="230" x2="540" y2="240"/>
+      <line x1="380" y1="280" x2="540" y2="360"/>
+      <line x1="600" y1="120" x2="720" y2="200"/>
+      <line x1="600" y1="240" x2="720" y2="250"/>
+      <line x1="600" y1="360" x2="720" y2="300"/>
+    </g>
+
+    <!-- left column triggers -->
+    <g font-family="ui-monospace,monospace" font-size="11" fill="rgba(255,255,255,0.85)">
+      <g transform="translate(80,100)">
+        <rect width="160" height="40" rx="10" fill="rgba(7,5,14,0.88)" stroke="rgba(16,185,129,0.5)"/>
+        <text x="14" y="25">📥 Lead web</text>
+      </g>
+      <g transform="translate(80,220)">
+        <rect width="160" height="40" rx="10" fill="rgba(7,5,14,0.88)" stroke="rgba(16,185,129,0.5)"/>
+        <text x="14" y="25">📞 Llamada</text>
+      </g>
+      <g transform="translate(80,340)">
+        <rect width="160" height="40" rx="10" fill="rgba(7,5,14,0.88)" stroke="rgba(16,185,129,0.5)"/>
+        <text x="14" y="25">🧾 Factura</text>
+      </g>
+    </g>
+
+    <!-- center n8n hub -->
+    <g transform="translate(400,230)">
+      <circle r="64" fill="rgba(7,5,14,0.92)" stroke="rgba(16,185,129,0.85)" stroke-width="2"/>
+      <circle r="48" fill="none" stroke="rgba(16,185,129,0.35)"/>
+      <text y="-4" text-anchor="middle" font-family="Inter,system-ui" font-size="22" font-weight="800" fill="#10B981" letter-spacing="1">n8n</text>
+      <text y="20" text-anchor="middle" font-family="ui-monospace,monospace" font-size="10" fill="rgba(255,255,255,0.55)">12 flujos</text>
+    </g>
+
+    <!-- right column actions -->
+    <g font-family="ui-monospace,monospace" font-size="11" fill="rgba(255,255,255,0.85)">
+      <g transform="translate(560,100)">
+        <rect width="160" height="40" rx="10" fill="rgba(7,5,14,0.88)" stroke="rgba(165,120,255,0.55)"/>
+        <text x="14" y="25">💬 WhatsApp</text>
+      </g>
+      <g transform="translate(560,220)">
+        <rect width="160" height="40" rx="10" fill="rgba(7,5,14,0.88)" stroke="rgba(165,120,255,0.55)"/>
+        <text x="14" y="25">📊 CRM + Notion</text>
+      </g>
+      <g transform="translate(560,340)">
+        <rect width="160" height="40" rx="10" fill="rgba(7,5,14,0.88)" stroke="rgba(165,120,255,0.55)"/>
+        <text x="14" y="25">📅 Calendar</text>
+      </g>
+    </g>
+  </g>
+
+  <text x="400" y="460" text-anchor="middle" font-family="Inter,system-ui" font-size="11" font-weight="700" fill="rgba(255,255,255,0.45)" letter-spacing="4">AUTOMATIZACIÓN · n8n · LATECH</text>
+</svg>

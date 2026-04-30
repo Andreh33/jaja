@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="bg12" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#150B2A"/>
+      <stop offset="100%" stop-color="#07050E"/>
+    </linearGradient>
+    <radialGradient id="g12a" cx="0.2" cy="0.25" r="0.6">
+      <stop offset="0%" stop-color="#A578FF" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#A578FF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="g12b" cx="0.85" cy="0.75" r="0.5">
+      <stop offset="0%" stop-color="#F97316" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#F97316" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg12)"/>
+  <rect width="800" height="500" fill="url(#g12a)"/>
+  <rect width="800" height="500" fill="url(#g12b)"/>
+
+  <!-- Tree of categories → product -->
+  <g opacity="0.95">
+    <!-- root: Tienda -->
+    <g transform="translate(400,90)">
+      <rect x="-90" y="-22" width="180" height="44" rx="10" fill="rgba(7,5,14,0.92)" stroke="rgba(165,120,255,0.85)" stroke-width="2"/>
+      <text y="6" text-anchor="middle" font-family="Inter,system-ui" font-size="14" font-weight="800" fill="#fff">/ tienda</text>
+    </g>
+
+    <!-- lines to categories -->
+    <g stroke="rgba(165,120,255,0.5)" stroke-width="1.4" fill="none">
+      <path d="M 400 112 L 400 150 L 200 150 L 200 180"/>
+      <path d="M 400 112 L 400 180"/>
+      <path d="M 400 112 L 400 150 L 600 150 L 600 180"/>
+    </g>
+
+    <!-- category boxes -->
+    <g font-family="Inter,system-ui">
+      <g transform="translate(120,180)">
+        <rect width="160" height="48" rx="10" fill="rgba(7,5,14,0.85)" stroke="rgba(165,120,255,0.55)"/>
+        <text x="80" y="22" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">/categoria-a</text>
+        <text x="80" y="38" text-anchor="middle" font-family="ui-monospace,monospace" font-size="9" fill="rgba(255,255,255,0.55)">H1 + intro + faceted</text>
+      </g>
+      <g transform="translate(320,180)">
+        <rect width="160" height="48" rx="10" fill="rgba(7,5,14,0.85)" stroke="rgba(165,120,255,0.55)"/>
+        <text x="80" y="22" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">/categoria-b</text>
+        <text x="80" y="38" text-anchor="middle" font-family="ui-monospace,monospace" font-size="9" fill="rgba(255,255,255,0.55)">schema BreadcrumbList</text>
+      </g>
+      <g transform="translate(520,180)">
+        <rect width="160" height="48" rx="10" fill="rgba(7,5,14,0.85)" stroke="rgba(165,120,255,0.55)"/>
+        <text x="80" y="22" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">/categoria-c</text>
+        <text x="80" y="38" text-anchor="middle" font-family="ui-monospace,monospace" font-size="9" fill="rgba(255,255,255,0.55)">filtros indexables</text>
+      </g>
+    </g>
+
+    <!-- lines down to products -->
+    <g stroke="rgba(165,120,255,0.4)" stroke-width="1.2" fill="none" stroke-dasharray="3 4">
+      <path d="M 200 228 L 200 270"/>
+      <path d="M 400 228 L 400 270"/>
+      <path d="M 600 228 L 600 270"/>
+    </g>
+
+    <!-- product fichas -->
+    <g>
+      <g transform="translate(110,270)">
+        <rect width="180" height="120" rx="12" fill="rgba(7,5,14,0.92)" stroke="rgba(255,255,255,0.18)"/>
+        <rect x="14" y="14" width="60" height="60" rx="8" fill="rgba(165,120,255,0.18)"/>
+        <rect x="86" y="20" width="80" height="10" rx="3" fill="rgba(255,255,255,0.6)"/>
+        <rect x="86" y="38" width="60" height="6" rx="2" fill="rgba(255,255,255,0.3)"/>
+        <text x="86" y="68" font-family="Inter,system-ui" font-size="13" font-weight="800" fill="#A578FF">29€</text>
+        <text x="14" y="100" font-family="ui-monospace,monospace" font-size="9" fill="rgba(34,197,94,0.85)">★★★★★ 4.9</text>
+      </g>
+      <g transform="translate(310,270)">
+        <rect width="180" height="120" rx="12" fill="rgba(7,5,14,0.92)" stroke="rgba(165,120,255,0.45)"/>
+        <rect x="14" y="14" width="60" height="60" rx="8" fill="rgba(165,120,255,0.3)"/>
+        <rect x="86" y="20" width="80" height="10" rx="3" fill="rgba(255,255,255,0.85)"/>
+        <rect x="86" y="38" width="60" height="6" rx="2" fill="rgba(255,255,255,0.4)"/>
+        <text x="86" y="68" font-family="Inter,system-ui" font-size="13" font-weight="800" fill="#A578FF">49€</text>
+        <text x="14" y="100" font-family="ui-monospace,monospace" font-size="9" fill="rgba(34,197,94,0.85)">schema Product</text>
+      </g>
+      <g transform="translate(510,270)">
+        <rect width="180" height="120" rx="12" fill="rgba(7,5,14,0.92)" stroke="rgba(255,255,255,0.18)"/>
+        <rect x="14" y="14" width="60" height="60" rx="8" fill="rgba(165,120,255,0.18)"/>
+        <rect x="86" y="20" width="80" height="10" rx="3" fill="rgba(255,255,255,0.6)"/>
+        <rect x="86" y="38" width="60" height="6" rx="2" fill="rgba(255,255,255,0.3)"/>
+        <text x="86" y="68" font-family="Inter,system-ui" font-size="13" font-weight="800" fill="#A578FF">19€</text>
+        <text x="14" y="100" font-family="ui-monospace,monospace" font-size="9" fill="rgba(34,197,94,0.85)">★★★★☆ 4.6</text>
+      </g>
+    </g>
+  </g>
+
+  <text x="400" y="450" text-anchor="middle" font-family="Inter,system-ui" font-size="11" font-weight="700" fill="rgba(255,255,255,0.45)" letter-spacing="4">SEO E-COMMERCE · ARQUITECTURA 2026</text>
+</svg>
