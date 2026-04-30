@@ -34,20 +34,20 @@ function MiembroCard({ miembro }: { miembro: Miembro }) {
           src={miembro.foto.src}
           alt={miembro.foto.alt}
           fill
-          sizes="(min-width: 1024px) 40vw, (min-width: 640px) 50vw, 100vw"
+          sizes="(min-width: 1024px) 32vw, (min-width: 640px) 45vw, 90vw"
           className="object-cover"
         />
       </div>
-      <div className="flex flex-1 flex-col p-6 md:p-8">
-        <h3 className="font-display text-2xl text-white" style={{ letterSpacing: '-0.02em' }}>
+      <div className="flex flex-1 flex-col p-5 md:p-6">
+        <h3 className="font-display text-xl text-white" style={{ letterSpacing: '-0.02em' }}>
           {miembro.nombre}
         </h3>
-        <p className="mt-1 text-sm font-medium" style={{ color: 'var(--purple-300)' }}>
+        <p className="mt-1 text-xs font-medium" style={{ color: 'var(--purple-300)' }}>
           {miembro.rol}
         </p>
         <Parrafos
           items={miembro.descripcion}
-          className="mt-5 space-y-4 border-t pt-5 text-sm text-white/65"
+          className="mt-4 space-y-3 border-t pt-4 text-[13px] text-white/65"
         />
       </div>
     </article>
@@ -56,20 +56,20 @@ function MiembroCard({ miembro }: { miembro: Miembro }) {
 
 export default function EquipoSection() {
   return (
-    <section className="py-24">
-      <div className="mx-auto max-w-7xl px-6">
+    <section className="py-20">
+      <div className="mx-auto max-w-6xl px-6">
         <Reveal>
-          <div className="mb-14 text-center">
-            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-white/40">
+          <div className="mb-12 text-center">
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-white/40">
               Equipo
             </p>
             <h2
-              className="font-display text-4xl md:text-5xl"
+              className="font-display text-3xl md:text-4xl"
               style={{ letterSpacing: '-0.04em', fontWeight: 800 }}
             >
               Las personas detrás de Latech
             </h2>
-            <p className="mx-auto mt-6 max-w-2xl text-base text-white/60">
+            <p className="mx-auto mt-4 max-w-xl text-sm text-white/60">
               Un equipo pequeño, técnico y cercano. Cuando hablas con Latech, hablas con la persona que va a tocar el código de tu proyecto.
             </p>
           </div>
@@ -78,35 +78,35 @@ export default function EquipoSection() {
         {/* Tarjeta destacada de fundadores */}
         <Reveal>
           <article
-            className="team-line mb-8 overflow-hidden rounded-3xl glass lg:grid lg:min-h-[560px] lg:grid-cols-12"
+            className="team-line mb-6 overflow-hidden rounded-3xl glass lg:grid lg:min-h-[440px] lg:grid-cols-12"
             style={{ ['--team-line-color' as string]: LINE_COLORS[fundadores.slug] }}
           >
-            <div className="relative aspect-[688/982] w-full overflow-hidden lg:col-span-5 lg:aspect-auto lg:h-full lg:min-h-[560px]">
+            <div className="relative aspect-[688/982] w-full overflow-hidden lg:col-span-5 lg:aspect-auto lg:h-full lg:min-h-[440px]">
               <Image
                 src={fundadores.foto.src}
                 alt={fundadores.foto.alt}
                 fill
                 priority
-                sizes="(min-width: 1024px) 42vw, 100vw"
+                sizes="(min-width: 1024px) 36vw, 100vw"
                 className="object-contain object-center"
               />
             </div>
-            <div className="flex flex-col justify-center p-8 md:p-12 lg:col-span-7">
+            <div className="flex flex-col justify-center p-6 md:p-8 lg:col-span-7 lg:p-10">
               <p
-                className="mb-4 text-xs font-semibold uppercase tracking-[0.2em]"
+                className="mb-3 text-[11px] font-semibold uppercase tracking-[0.2em]"
                 style={{ color: 'var(--purple-300)' }}
               >
                 {fundadores.rol}
               </p>
               <h3
-                className="font-display text-3xl md:text-4xl"
+                className="font-display text-2xl md:text-3xl"
                 style={{ letterSpacing: '-0.03em', fontWeight: 800 }}
               >
                 {fundadores.nombre}
               </h3>
               {fundadores.lema && (
                 <p
-                  className="mt-5 border-l-2 pl-4 font-display text-lg italic md:text-xl"
+                  className="mt-4 border-l-2 pl-3 font-display text-base italic md:text-lg"
                   style={{ borderColor: 'var(--purple-400)', color: 'var(--purple-100)' }}
                 >
                   «{fundadores.lema}»
@@ -114,7 +114,7 @@ export default function EquipoSection() {
               )}
               <Parrafos
                 items={fundadores.descripcion}
-                className="mt-6 space-y-4 text-[15px] text-white/70"
+                className="mt-5 space-y-3 text-[13px] text-white/70"
               />
             </div>
           </article>
