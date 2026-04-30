@@ -236,6 +236,55 @@ body {
   }
 }
 
+/* Team card outer line — un solo color, lenta y sutil, recorre el borde de la tarjeta */
+@property --team-line-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.team-line {
+  position: relative;
+  isolation: isolate;
+}
+.team-line::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 1.5px;
+  border-radius: inherit;
+  background: conic-gradient(
+    from var(--team-line-angle),
+    transparent 0%,
+    var(--team-line-color, var(--purple-400)) 18%,
+    transparent 36%,
+    transparent 100%
+  );
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: team-line-spin 16s linear infinite;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.7;
+}
+@keyframes team-line-spin {
+  to { --team-line-angle: 360deg; }
+}
+@supports not (background: paint(something)) {
+  .team-line::before {
+    background: conic-gradient(
+      from 0deg,
+      transparent 0%,
+      var(--team-line-color, var(--purple-400)) 18%,
+      transparent 36%
+    );
+    animation: none;
+    opacity: 0.5;
+  }
+}
+
 /* Holographic surface */
 .holographic {
   position: relative;
