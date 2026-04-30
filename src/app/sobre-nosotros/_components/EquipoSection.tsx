@@ -5,6 +5,12 @@ import { equipo, type Miembro } from '../_data/equipo';
 const fundadores = equipo.find((m) => m.esFundador)!;
 const resto = equipo.filter((m) => !m.esFundador);
 
+const photoFrameStyle = {
+  borderColor: 'var(--border-subtle)',
+  background:
+    'radial-gradient(120% 80% at 50% 0%, rgba(139,92,246,0.10), transparent 60%), rgba(13,9,24,0.35)',
+};
+
 function Parrafos({ items, className }: { items: string[]; className?: string }) {
   return (
     <div className={className}>
@@ -20,16 +26,21 @@ function Parrafos({ items, className }: { items: string[]; className?: string })
 function MiembroCard({ miembro }: { miembro: Miembro }) {
   return (
     <article className="flex h-full flex-col overflow-hidden rounded-3xl glass">
-      <div className="relative aspect-[4/5] w-full overflow-hidden">
-        <Image
-          src={miembro.foto.src}
-          alt={miembro.foto.alt}
-          fill
-          sizes="(min-width: 1024px) 40vw, (min-width: 640px) 50vw, 100vw"
-          className="object-cover"
-        />
+      <div className="p-4 md:p-5">
+        <div
+          className="relative aspect-[3/4] w-full overflow-hidden rounded-2xl border"
+          style={photoFrameStyle}
+        >
+          <Image
+            src={miembro.foto.src}
+            alt={miembro.foto.alt}
+            fill
+            sizes="(min-width: 1024px) 40vw, (min-width: 640px) 50vw, 100vw"
+            className="object-contain"
+          />
+        </div>
       </div>
-      <div className="flex flex-1 flex-col p-6 md:p-8">
+      <div className="flex flex-1 flex-col px-6 pb-6 md:px-8 md:pb-8">
         <h3 className="font-display text-2xl text-white" style={{ letterSpacing: '-0.02em' }}>
           {miembro.nombre}
         </h3>
@@ -68,18 +79,23 @@ export default function EquipoSection() {
 
         {/* Tarjeta destacada de fundadores */}
         <Reveal>
-          <article className="mb-8 overflow-hidden rounded-3xl glass lg:grid lg:min-h-[560px] lg:grid-cols-12">
-            <div className="relative aspect-[4/5] w-full overflow-hidden lg:col-span-5 lg:aspect-auto lg:h-full">
-              <Image
-                src={fundadores.foto.src}
-                alt={fundadores.foto.alt}
-                fill
-                priority
-                sizes="(min-width: 1024px) 42vw, 100vw"
-                className="object-cover object-center"
-              />
+          <article className="mb-8 overflow-hidden rounded-3xl glass lg:grid lg:grid-cols-12">
+            <div className="p-5 md:p-6 lg:col-span-5 lg:flex lg:items-center lg:p-6">
+              <div
+                className="relative aspect-[688/1228] w-full overflow-hidden rounded-2xl border"
+                style={photoFrameStyle}
+              >
+                <Image
+                  src={fundadores.foto.src}
+                  alt={fundadores.foto.alt}
+                  fill
+                  priority
+                  sizes="(min-width: 1024px) 42vw, 100vw"
+                  className="object-contain"
+                />
+              </div>
             </div>
-            <div className="flex flex-col justify-center p-8 md:p-12 lg:col-span-7">
+            <div className="flex flex-col justify-center px-6 pb-8 md:px-10 md:pb-10 lg:col-span-7 lg:px-12 lg:py-12">
               <p
                 className="mb-4 text-xs font-semibold uppercase tracking-[0.2em]"
                 style={{ color: 'var(--purple-300)' }}

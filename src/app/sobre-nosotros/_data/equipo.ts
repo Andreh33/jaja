@@ -26,9 +26,9 @@ export const equipo: Miembro[] = [
       'Se trata de crecer juntos.',
     ],
     foto: {
-      src: '/equipo/fundadores/foto.jpeg',
+      src: '/equipo/fundadores/foto.png',
       width: 688,
-      height: 1529,
+      height: 1228,
       alt: 'Foto de Andrés Rubio y Luis Grondona, fundadores de Latech',
     },
     esFundador: true,
@@ -43,7 +43,7 @@ export const equipo: Miembro[] = [
       'Hoy forma parte de nuestro equipo, aportando su experiencia, asesorando y participando activamente en cada proyecto de nuestros clientes.',
     ],
     foto: {
-      src: '/equipo/jose-luis-grondona/foto.jpeg',
+      src: '/equipo/jose-luis-grondona/foto.png',
       width: 1254,
       height: 1254,
       alt: 'Foto de José Luis Grondona, jefe de equipo en visibilidad digital en Latech',
@@ -60,7 +60,7 @@ export const equipo: Miembro[] = [
       'Hoy forma parte de nuestro equipo, participando en cada proyecto que lo requiere y encargándose del diseño de los logotipos de nuestros clientes.',
     ],
     foto: {
-      src: '/equipo/ricardo-perez/foto.jpeg',
+      src: '/equipo/ricardo-perez/foto.png',
       width: 941,
       height: 1672,
       alt: 'Foto de Ricardo Pérez, community manager en Latech',
