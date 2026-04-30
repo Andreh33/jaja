@@ -8,6 +8,7 @@ import Footer from '@/components/layout/Footer';
 import { Reveal, RevealGroup, RevealItem } from '@/components/effects/Reveal';
 import GradientText from '@/components/effects/GradientText';
 import MagneticButton from '@/components/effects/MagneticButton';
+import EquipoSection from './_components/EquipoSection';
 import { whatsappLink } from '@/lib/stripe-links';
 
 export const metadata: Metadata = {
@@ -147,6 +148,9 @@ export default function SobreNosotrosPage() {
             </Reveal>
           </div>
         </section>
+
+        {/* Equipo */}
+        <EquipoSection />
 
         {/* Valores */}
         <section className="py-24">

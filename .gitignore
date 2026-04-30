@@ -54,5 +54,8 @@ drizzle/migrations/
 public/uploads/clientes/*
 !public/uploads/clientes/.gitkeep
 
+# fuente de datos del equipo (ya copiado a public/equipo/)
+personas/
+
 .vercel
 .env*.local
