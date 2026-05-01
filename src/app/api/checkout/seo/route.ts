@@ -3,21 +3,11 @@ import { z } from 'zod';
 import { auth } from '@/lib/auth';
 import { resolveOrCreateUser, getUserById } from '@/lib/user-auth';
 import { resolveOrCreateCustomer } from '@/lib/stripe-customer';
-import { buildCheckoutSessionParams } from '@/lib/checkout-builder';
 import { stripe } from '@/lib/stripe';
 import { getClientIp, rateLimit } from '@/lib/rate-limit';
+import { STRIPE_PRICES } from '@/config/stripe-prices';
 
 export const runtime = 'nodejs';
-
-const selectionSchema = z.object({
-  webPagesOver8: z.boolean(),
-  hostingCadence: z.enum(['monthly', 'yearly']),
-  tienda: z.boolean(),
-  social: z.boolean(),
-  aiAgent: z.enum(['none', 'web', 'phone']),
-  blogPosts: z.number().int().min(0).max(100),
-  logo: z.boolean(),
-});
 
 const contactSchema = z.object({
   name: z.string().min(2).max(100),
@@ -33,33 +23,30 @@ const contactSchema = z.object({
 });
 
 const bodySchema = z.object({
-  selection: selectionSchema,
+  hours: z.number().int().min(1).max(500),
   contact: contactSchema.optional(),
 });
 
 export async function POST(req: Request) {
-  // Rate limit por IP.
   const ip = getClientIp(req);
-  const rl = rateLimit(`checkout:${ip}`, { max: 20, windowMs: 60_000 });
+  const rl = rateLimit(`checkout-seo:${ip}`, { max: 20, windowMs: 60_000 });
   if (!rl.allowed) {
-    console.warn(`[rate-limit] checkout blocked ip=${ip} resetMs=${rl.resetMs}`);
+    console.warn(`[rate-limit] checkout-seo blocked ip=${ip} resetMs=${rl.resetMs}`);
     return NextResponse.json(
       { error: 'Demasiadas peticiones. Espera un momento.' },
       { status: 429 },
     );
   }
 
-  // Fail-loud si falta NEXT_PUBLIC_APP_URL.
   const appUrl = process.env.NEXT_PUBLIC_APP_URL;
   if (!appUrl) {
-    console.error('[checkout] NEXT_PUBLIC_APP_URL missing in env. Cannot build success/cancel URLs.');
+    console.error('[checkout-seo] NEXT_PUBLIC_APP_URL missing in env.');
     return NextResponse.json(
       { error: 'Configuración del servidor incompleta. Avisa al equipo.' },
       { status: 500 },
     );
   }
 
-  // Parse + validación.
   let parsed: z.infer<typeof bodySchema>;
   try {
     const body = await req.json();
@@ -72,7 +59,7 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: 'Body inválido' }, { status: 400 });
   }
 
-  // 1. Resolver user: prioridad a sesión activa.
+  // 1. Resolver user: prioridad a sesión.
   const session = await auth();
   let userId: string;
   let userEmail: string;
@@ -80,10 +67,9 @@ export async function POST(req: Request) {
   let userPhone: string | undefined;
 
   if (session?.user?.id) {
-    // Logueado: ignorar bloque contact si llegó.
     const u = await getUserById(session.user.id);
     if (!u) {
-      console.error('[checkout] session.user.id not found in db:', session.user.id);
+      console.error('[checkout-seo] session.user.id not found in db:', session.user.id);
       return NextResponse.json({ error: 'Sesión inválida.' }, { status: 401 });
     }
     userId = u.id;
@@ -91,7 +77,6 @@ export async function POST(req: Request) {
     userName = u.name ?? '';
     userPhone = u.phone ?? undefined;
   } else {
-    // Sin sesión: el bloque contact es obligatorio.
     if (!parsed.contact) {
       return NextResponse.json({ error: 'Datos de contacto requeridos.' }, { status: 400 });
     }
@@ -110,7 +95,7 @@ export async function POST(req: Request) {
     userPhone = result.phone;
   }
 
-  // 2. Resolver / crear Stripe Customer.
+  // 2. Stripe Customer.
   let customerId: string;
   try {
     customerId = await resolveOrCreateCustomer({
@@ -120,43 +105,49 @@ export async function POST(req: Request) {
       phone: userPhone,
     });
   } catch (err) {
-    console.error('[checkout] stripe customer resolve failed:', err);
+    console.error('[checkout-seo] stripe customer resolve failed:', err);
     return NextResponse.json(
       { error: 'No hemos podido conectar con la pasarela de pago.' },
       { status: 502 },
     );
   }
 
-  // 3. Build + create Checkout Session.
+  // 3. Sesión de pago: mode payment con seo_hour × N.
   const metadata: Record<string, string> = {
     user_id: userId,
     calculator_version: 'v1',
-    phone_agent: parsed.selection.aiAgent === 'phone' ? 'yes' : 'no',
-    flow: 'wizard',
+    flow: 'seo_hours',
+    seo_hours: String(parsed.hours),
   };
 
   const successUrl = `${appUrl}/dashboard/facturacion?status=success&session_id={CHECKOUT_SESSION_ID}`;
   const cancelUrl = `${appUrl}/tienda/calculadora?status=cancelled`;
 
   try {
-    const params = buildCheckoutSessionParams({
-      selection: parsed.selection,
-      stripeCustomerId: customerId,
-      successUrl,
-      cancelUrl,
+    const stripeSession = await stripe.checkout.sessions.create({
+      mode: 'payment',
+      customer: customerId,
+      line_items: [
+        {
+          price: STRIPE_PRICES.seoHour.priceId,
+          quantity: parsed.hours,
+        },
+      ],
+      payment_method_types: ['card'],
+      success_url: successUrl,
+      cancel_url: cancelUrl,
       metadata,
     });
-    const stripeSession = await stripe.checkout.sessions.create(params);
     if (!stripeSession.url) {
-      console.error('[checkout] session.url null; session=', stripeSession.id);
+      console.error('[checkout-seo] session.url null; session=', stripeSession.id);
       return NextResponse.json({ error: 'No hemos podido crear la sesión de pago.' }, { status: 502 });
     }
     console.log(
-      `[checkout] session created session=${stripeSession.id} customer=${customerId} user=${userId} mode=${stripeSession.mode} authedSession=${!!session?.user}`,
+      `[checkout-seo] session created session=${stripeSession.id} customer=${customerId} user=${userId} hours=${parsed.hours} authedSession=${!!session?.user}`,
     );
     return NextResponse.json({ url: stripeSession.url });
   } catch (err) {
-    console.error('[checkout] stripe session create failed:', err);
+    console.error('[checkout-seo] stripe session create failed:', err);
     return NextResponse.json(
       { error: 'No hemos podido crear la sesión de pago.' },
       { status: 502 },
