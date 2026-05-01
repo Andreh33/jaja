@@ -7,7 +7,6 @@ const resto = equipo.filter((m) => !m.esFundador);
 
 const LINE_COLORS: Record<string, string> = {
   fundadores: 'var(--accent-web)',          // azul
-  'jose-luis-grondona': 'var(--danger)',    // rojo
   'ricardo-perez': 'var(--accent-ia)',      // verde
 };
 
@@ -120,8 +119,15 @@ export default function EquipoSection() {
           </article>
         </Reveal>
 
-        {/* Resto del equipo */}
-        <RevealGroup className="grid gap-5 sm:grid-cols-2">
+        {/* Resto del equipo. Layout adapta según cuántos miembros haya
+            para evitar huecos visuales cuando el array cambia. */}
+        <RevealGroup
+          className={
+            resto.length === 1
+              ? 'mx-auto max-w-md'
+              : 'grid gap-5 sm:grid-cols-2'
+          }
+        >
           {resto.map((m) => (
             <RevealItem key={m.slug}>
               <MiembroCard miembro={m} />

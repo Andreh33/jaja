@@ -34,23 +34,6 @@ export const equipo: Miembro[] = [
     esFundador: true,
   },
   {
-    slug: 'jose-luis-grondona',
-    nombre: 'José Luis Grondona',
-    rol: 'Jefe de equipo en visibilidad digital',
-    descripcion: [
-      'José Luis Grondona cuenta con más de 30 años de experiencia en la creación y posicionamiento de páginas web, habiendo trabajado en distintos ámbitos de la digitalización.',
-      'Nacido en Madrid, ha desarrollado su trayectoria por toda España colaborando con empresas, gestionando webs corporativas, tiendas online y también impulsando sus propios negocios.',
-      'Hoy forma parte de nuestro equipo, aportando su experiencia, asesorando y participando activamente en cada proyecto de nuestros clientes.',
-    ],
-    foto: {
-      src: '/equipo/jose-luis-grondona/foto.jpeg',
-      width: 1254,
-      height: 1254,
-      alt: 'Foto de José Luis Grondona, jefe de equipo en visibilidad digital en Latech',
-    },
-    esFundador: false,
-  },
-  {
     slug: 'ricardo-perez',
     nombre: 'Ricardo Pérez',
     rol: 'Community Manager',
