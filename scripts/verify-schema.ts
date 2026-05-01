@@ -21,6 +21,7 @@ const KNOWN_TABLES = [
   'password_resets',
   'subscriptions',
   'orders',
+  'webhook_events',
 ] as const;
 
 async function main() {

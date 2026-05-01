@@ -5,7 +5,9 @@
 -- IMPORTANTE: ejecuta esto MANUALMENTE en Turso (turso db shell <db>) solo
 -- si has decidido revertir. Borra suscripciones y orders almacenados.
 
--- 1) Tablas nuevas (creadas por la migración)
+-- 1) Tablas nuevas (en orden inverso de creación por si en el futuro hay FKs).
+--    webhook_events fue añadida después de orders/subscriptions, así que va primero.
+DROP TABLE IF EXISTS webhook_events;
 DROP TABLE IF EXISTS orders;
 DROP TABLE IF EXISTS subscriptions;
 

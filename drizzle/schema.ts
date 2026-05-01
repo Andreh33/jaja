@@ -1,4 +1,4 @@
-import { sqliteTable, text, integer, uniqueIndex } from 'drizzle-orm/sqlite-core';
+import { sqliteTable, text, integer, index, uniqueIndex } from 'drizzle-orm/sqlite-core';
 import { sql } from 'drizzle-orm';
 
 /**
@@ -148,6 +148,24 @@ export const orders = sqliteTable('orders', {
   uniqueIndex('orders_stripe_session_id_unique').on(t.stripeSessionId),
 ]);
 
+/**
+ * Tabla de idempotencia para webhooks de Stripe.
+ * PK = event.id (estable y único en Stripe). Inserción al inicio del handler:
+ * si choca por PK → evento ya procesado → return 200 inmediato.
+ *
+ * Retención: la tabla crece indefinidamente. Para limpieza periódica:
+ *   DELETE FROM webhook_events WHERE received_at < (unixepoch() - 30*24*3600);
+ * (No automatizado; ejecutar manualmente o programar en otra fase.)
+ */
+export const webhookEvents = sqliteTable('webhook_events', {
+  // event.id de Stripe (ej. evt_1ABC...).
+  eventId: text('event_id').primaryKey(),
+  type: text('type').notNull(),
+  receivedAt: integer('received_at', { mode: 'timestamp' }).default(NOW),
+}, (t) => [
+  index('idx_webhook_events_received_at').on(t.receivedAt),
+]);
+
 export type User = typeof users.$inferSelect;
 export type Empresa = typeof empresas.$inferSelect;
 export type Archivo = typeof archivos.$inferSelect;
@@ -155,3 +173,4 @@ export type Post = typeof posts.$inferSelect;
 export type ContactMessage = typeof contactMessages.$inferSelect;
 export type Subscription = typeof subscriptions.$inferSelect;
 export type Order = typeof orders.$inferSelect;
+export type WebhookEvent = typeof webhookEvents.$inferSelect;
