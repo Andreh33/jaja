@@ -15,6 +15,23 @@ Luego sustituye el valor en `.env.local` y en las variables de entorno de Vercel
 
 ---
 
+## ⚠️ Migraciones de BBDD
+
+**SIEMPRE** ejecutar `npm run db:push`. **NUNCA** `npx drizzle-kit push` directo.
+
+`npm run db:push` dispara el hook `predb:push` que verifica que los UNIQUE
+indexes críticos están presentes en la BBDD antes de aplicar el push. Si
+algún índice ha desaparecido (bug conocido de drizzle-kit 0.31.x con Turso),
+aborta con error. `npx drizzle-kit push` directo se salta esta verificación
+y deja la BBDD expuesta.
+
+Lectura obligatoria antes de tocar `drizzle/schema.ts`:
+[`docs/MIGRATION_NOTES.md`](./docs/MIGRATION_NOTES.md). Resume convenciones
+no negociables (`uniqueIndex()` en callback de array, `sql\`(CURRENT_TIMESTAMP)\``
+con paréntesis) y los drifts ya documentados.
+
+---
+
 ## Stack
 
 - **Next.js 16** (App Router) + **React 19** + **TypeScript**

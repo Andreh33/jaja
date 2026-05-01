@@ -1,0 +1,150 @@
+# Migration notes (BBDD)
+
+Convenciones y peculiaridades del flujo de migración con `drizzle-kit` 0.31.x +
+`drizzle-orm` 0.45.x sobre Turso (libsql). Lectura obligatoria antes de tocar
+`drizzle/schema.ts` o ejecutar `db:push`.
+
+---
+
+## Cómo se hacen las migraciones aquí
+
+- Fuente única de verdad: `drizzle/schema.ts`.
+- Aplicación: `npm run db:push` (NO `npx drizzle-kit push` directo — ver más
+  abajo). El hook `predb:push` ejecuta `scripts/verify-uniques.ts` antes para
+  abortar si algún UNIQUE INDEX crítico ha desaparecido.
+- Inspección: `npx tsx scripts/verify-schema.ts` lista tablas, columnas,
+  índices y conteos.
+- Reparación de UNIQUE: `npx tsx scripts/fix-missing-indexes.ts` reaplica
+  los índices nombrados con `IF NOT EXISTS` (idempotente).
+
+---
+
+## ⚠️ Convenciones obligatorias en `drizzle/schema.ts`
+
+Estas convenciones existen para evitar drift cíclico que drizzle-kit 0.31.x
+genera en cada `db:push` cuando se declara de otra forma. Cambiarlas reabre
+los bugs.
+
+### 1. UNIQUE → siempre `uniqueIndex()` en callback de array
+
+**Sí**:
+```ts
+sqliteTable('users', {
+  email: text('email').notNull(),
+}, (t) => [
+  uniqueIndex('users_email_unique').on(t.email),
+]);
+```
+
+**NO** (reabre el drift):
+- `text('email').notNull().unique()` inline.
+- `(t) => ({ key: uniqueIndex(...) })` con callback de objeto.
+
+El nombre del índice debe ser `<table>_<column>_unique` para mantener
+consistencia con los índices ya existentes en BBDD.
+
+### 2. Defaults `CURRENT_TIMESTAMP` con paréntesis
+
+**Sí**:
+```ts
+const NOW = sql`(CURRENT_TIMESTAMP)`;
+createdAt: integer('created_at', { mode: 'timestamp' }).default(NOW),
+```
+
+**NO** (reabre drift de `ALTER COLUMN`):
+- `sql\`CURRENT_TIMESTAMP\`` sin paréntesis.
+
+Drizzle escribe los defaults a la BBDD ya envueltos en paréntesis; cuando
+introspecciona vuelve a leerlos con paréntesis. Si la declaración no matchea,
+genera un `ALTER COLUMN ... TO ... DEFAULT ...` redundante en cada push.
+
+---
+
+## SIEMPRE usar `npm run db:push` (NUNCA el binario directo)
+
+`npm run db:push` ejecuta el hook `predb:push` que lanza
+`scripts/verify-uniques.ts`. Este verifica que los 5 UNIQUE INDEX críticos
+están presentes ANTES del push y aborta con exit code 1 si falta alguno.
+
+Ejecutar `npx drizzle-kit push` directamente **salta el hook** y deja la BBDD
+expuesta a que un siguiente push corrupto pase desapercibido.
+
+UNIQUE indexes críticos vigilados:
+- `users_email_unique`
+- `posts_slug_unique`
+- `password_resets_token_unique`
+- `subscriptions_stripe_subscription_id_unique`
+- `orders_stripe_session_id_unique`
+
+---
+
+## Known schema drifts
+
+### ✅ RESUELTO — Drift de UNIQUE INDEX cíclico
+
+**Síntoma**: `db:push` planeaba `DROP INDEX` + `CREATE UNIQUE INDEX` para los
+5 índices únicos en cada ejecución, aunque la BBDD ya los tuviera correctos.
+
+**Root cause**: drizzle-kit 0.31.x con `dialect: 'turso'` no parseaba la
+sintaxis `(t) => ({ ... })` de callback de tabla con objeto. Tampoco
+reconciliaba los `.unique()` inline contra los UNIQUE INDEX nombrados que
+existen en BBDD.
+
+**Fix aplicado** (commit que introduce este documento): migrar las 5
+declaraciones a `uniqueIndex()` explícito en callback de **array**.
+
+**Verificación**: `echo n | npx drizzle-kit push --strict --verbose` devuelve
+`[i] No changes detected` cuando schema y BBDD coinciden.
+
+### ✅ RESUELTO — Drift de `ALTER COLUMN ... DEFAULT CURRENT_TIMESTAMP`
+
+**Síntoma**: cada `db:push` planeaba 7 sentencias `ALTER COLUMN` redundantes
+sobre todas las columnas timestamp con `DEFAULT CURRENT_TIMESTAMP`.
+
+**Root cause**: drizzle-kit normaliza el default a `(CURRENT_TIMESTAMP)` al
+escribirlo a la BBDD, pero comparaba contra `CURRENT_TIMESTAMP` (sin
+paréntesis) en el schema, marcando divergencia falsa.
+
+**Fix aplicado**: declarar el default con paréntesis,
+`sql\`(CURRENT_TIMESTAMP)\``.
+
+---
+
+## Bug histórico de drizzle-kit ya superado
+
+Durante la primera migración de Stripe, drizzle-kit emitió `CREATE UNIQUE
+INDEX` seguido de `DROP INDEX` para los **mismos** 2 índices nuevos
+(`subscriptions_stripe_subscription_id_unique`,
+`orders_stripe_session_id_unique`), dejando las tablas sin unicidad. Se
+recreó manualmente con `scripts/fix-missing-indexes.ts`. El fix de schema
+descrito arriba previene la recurrencia, pero el script queda como red de
+seguridad si reaparece.
+
+---
+
+## Cuándo considerar upgrade a drizzle-kit 1.0
+
+Hoy estamos en 0.31.10 (latest stable). Existe `drizzle-kit@1.0.0-rc.2`.
+El upgrade no es urgente porque los drifts críticos están resueltos por
+las convenciones documentadas arriba.
+
+Considerar upgrade si:
+- Alguna tabla supera ~10k filas y los `ALTER COLUMN` (cuando aparezcan)
+  empiezan a costar tiempo real.
+- Drizzle 1.0 alcanza estable y trae mejoras de introspección libsql.
+- Aparece un drift nuevo no resuelto por las convenciones de este doc.
+
+Antes de upgradear: hacer snapshot Turso, leer changelog completo, probar
+en rama y verificar que los 5 UNIQUE siguen presentes.
+
+---
+
+## Rollback
+
+Si una migración futura sale mal, hay dos vías:
+
+1. **Rollback granular del schema Stripe** — `scripts/rollback-stripe-schema.sql`
+   (drop de tablas y columnas añadidas en la fase Stripe).
+2. **Restore completo** — snapshot de Turso desde el dashboard.
+
+Documentar siempre cualquier nueva migración aquí antes de pushearla.
