@@ -32,6 +32,8 @@
   --accent-shop-glow: rgba(249,115,22,0.4);
   --accent-ia: #10B981;
   --accent-ia-glow: rgba(16,185,129,0.4);
+  --accent-calc: #FBBF24;
+  --accent-calc-glow: rgba(251,191,36,0.4);
 
   /* Texto */
   --text-primary: #F8F7FB;
@@ -77,6 +79,7 @@
   --color-accent-web: var(--accent-web);
   --color-accent-shop: var(--accent-shop);
   --color-accent-ia: var(--accent-ia);
+  --color-accent-calc: var(--accent-calc);
   --color-success: var(--success);
   --color-warning: var(--warning);
   --color-danger: var(--danger);
@@ -182,6 +185,10 @@ body {
 
 .glow-green {
   box-shadow: 0 0 60px rgba(16,185,129,0.4), 0 0 120px rgba(16,185,129,0.15);
+}
+
+.glow-yellow {
+  box-shadow: 0 0 60px rgba(251,191,36,0.4), 0 0 120px rgba(251,191,36,0.15);
 }
 
 .bg-grid {

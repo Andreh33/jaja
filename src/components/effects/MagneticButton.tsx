@@ -10,7 +10,7 @@ type Props = {
   onClick?: () => void;
   className?: string;
   variant?: 'primary' | 'secondary' | 'ghost';
-  accent?: 'purple' | 'blue' | 'orange' | 'green';
+  accent?: 'purple' | 'blue' | 'orange' | 'green' | 'yellow';
   target?: string;
   rel?: string;
   type?: 'button' | 'submit';
@@ -55,6 +55,7 @@ export default function MagneticButton({
     blue: 'glow-blue',
     orange: 'glow-orange',
     green: 'glow-green',
+    yellow: 'glow-yellow',
   }[accent];
 
   const base = 'group relative inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold tracking-wide transition-all duration-300 active:scale-[0.97]';

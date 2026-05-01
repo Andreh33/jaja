@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Globe, ShoppingBag, Bot, ArrowRight, MessageCircle } from 'lucide-react';
+import { Globe, ShoppingBag, Bot, Calculator, ArrowRight, MessageCircle } from 'lucide-react';
 import AuroraBackground from '@/components/effects/AuroraBackground';
 import MouseGlow from '@/components/effects/MouseGlow';
 import { SignatureMarquee } from '@/components/effects/Marquee';
@@ -53,6 +53,18 @@ const SHOPS = [
     accent: 'var(--accent-ia)',
     glow: 'var(--accent-ia-glow)',
     accentName: 'green' as const,
+  },
+  {
+    href: '/tienda/calculadora',
+    icon: Calculator,
+    title: 'CALCULADORA',
+    tagline: 'Configura tu plan a medida',
+    description: 'Elige solo los servicios que necesitas. Web, hosting, tienda, redes, agente IA, blog y logo en un único checkout.',
+    points: ['Precio actualizado en tiempo real', 'Mensual o anual con descuento', 'Un solo pago para todo'],
+    price: 'Desde 400€ + lo que elijas',
+    accent: 'var(--accent-calc)',
+    glow: 'var(--accent-calc-glow)',
+    accentName: 'yellow' as const,
   },
 ];
 

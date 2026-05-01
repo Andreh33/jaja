@@ -14,7 +14,7 @@ export type Plan = {
   features: string[];
   cta: { label: string; href: string; target?: string; rel?: string };
   microtext?: string;
-  accent?: 'purple' | 'blue' | 'orange' | 'green';
+  accent?: 'purple' | 'blue' | 'orange' | 'green' | 'yellow';
 };
 
 export default function PlanCard({ plan }: { plan: Plan }) {
@@ -23,6 +23,7 @@ export default function PlanCard({ plan }: { plan: Plan }) {
     blue: 'var(--accent-web)',
     orange: 'var(--accent-shop)',
     green: 'var(--accent-ia)',
+    yellow: 'var(--accent-calc)',
   };
   const accentColor = accentMap[plan.accent || 'purple'];
 
