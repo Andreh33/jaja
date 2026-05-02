@@ -241,10 +241,40 @@ La validación de los enums queda enforced en dos capas:
 ### Retention policy GDPR
 
 Candidaturas con `status != 'contratado'` se eliminan a los 30 días
-desde `created_at` por un cron job (ver commit `feat(jobs): GDPR
-cleanup cron for old applications and CVs`). El CV en Vercel Blob
-se borra simultáneamente. Las contratadas se conservan
-indefinidamente como parte de la relación laboral.
+desde `created_at` por un cron job. El CV en Vercel Blob se borra
+simultáneamente. Las contratadas se conservan indefinidamente como
+parte de la relación laboral.
+
+**Endpoint**: `GET /api/cron/cleanup-applications`
+
+- Auth: header `Authorization: Bearer ${CRON_SECRET}`. Sin secret
+  en env → 500 fail-loud. Bearer mismatch → 401.
+- Lógica en `src/lib/jobs-cleanup.ts` (función `runCleanup` con deps
+  inyectables para tests).
+- Por cada candidatura expirada: intenta borrar el blob, luego borra
+  la fila en BBDD. Si el blob falla, log + cuenta `failedCvDeletes`
+  pero la fila SE BORRA igual (preferimos no dejar filas huérfanas
+  referenciando blobs perdidos).
+- Devuelve JSON estructurado con `deletedApplications`,
+  `deletedCvs`, `failedCvDeletes`, `processedAt`.
+
+**Schedule** (`vercel.json`):
+
+```json
+"crons": [{ "path": "/api/cron/cleanup-applications", "schedule": "0 3 * * *" }]
+```
+
+`0 3 * * *` = 03:00 UTC diario ≈ 04:00-05:00 hora España (varía con DST).
+
+**Variable de entorno**: `CRON_SECRET` debe estar configurada en
+Vercel Production. Generar con:
+
+```bash
+node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
+```
+
+**Test manual local**: `node scripts/test-cleanup-cron.mjs` invoca
+el endpoint en `localhost:3000` con el bearer leído de `.env.local`.
 
 ### ⚠️ Drift falso de drizzle-kit (RESUELTO para job_* + escudo activo)
 
