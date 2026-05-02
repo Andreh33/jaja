@@ -30,7 +30,7 @@ export function StepHeader({
           </span>
         )}
       </div>
-      <h2 className="font-display text-3xl text-white md:text-4xl" style={{ letterSpacing: '-0.04em', fontWeight: 800 }}>
+      <h2 className="font-display text-2xl text-white md:text-3xl lg:text-4xl" style={{ letterSpacing: '-0.04em', fontWeight: 800 }}>
         {title}
       </h2>
       {subtitle && <p className="mt-3 max-w-xl text-sm leading-relaxed text-white/65">{subtitle}</p>}

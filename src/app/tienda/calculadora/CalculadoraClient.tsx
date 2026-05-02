@@ -14,6 +14,7 @@ import {
 } from './_lib/state';
 import ProgressBar from './_components/ProgressBar';
 import Summary from './_components/Summary';
+import MobileSummaryBar from './_components/MobileSummaryBar';
 import SeoHorasBlock from './_components/SeoHorasBlock';
 import {
   Step1Web,
@@ -144,7 +145,7 @@ export default function CalculadoraClient() {
                 type="button"
                 onClick={handlePrev}
                 disabled={state.step === 1}
-                className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm text-white/70 transition-colors hover:bg-white/5 hover:text-white disabled:cursor-not-allowed disabled:opacity-40 focus:outline-none focus-visible:ring-2"
+                className="inline-flex min-h-[44px] items-center gap-2 rounded-full px-5 py-3 text-sm text-white/70 transition-colors hover:bg-white/5 hover:text-white disabled:cursor-not-allowed disabled:opacity-40 focus:outline-none focus-visible:ring-2 md:py-2.5"
                 aria-label="Paso anterior"
               >
                 <ArrowLeft size={14} /> Anterior
@@ -153,7 +154,7 @@ export default function CalculadoraClient() {
                 type="button"
                 onClick={handleNext}
                 disabled={!stepValid}
-                className="inline-flex items-center gap-2 rounded-full px-7 py-3 text-sm font-semibold text-black transition-all hover:opacity-90 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-50 focus:outline-none focus-visible:ring-2"
+                className="inline-flex min-h-[44px] items-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold text-black transition-all hover:opacity-90 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-50 focus:outline-none focus-visible:ring-2 md:py-3"
                 style={{ background: ACCENT }}
                 aria-label="Paso siguiente"
               >
@@ -171,6 +172,9 @@ export default function CalculadoraClient() {
       <div className="mt-20">
         <SeoHorasBlock />
       </div>
+
+      {/* Sticky bottom bar solo en mobile */}
+      <MobileSummaryBar cart={cart} />
     </div>
   );
 }

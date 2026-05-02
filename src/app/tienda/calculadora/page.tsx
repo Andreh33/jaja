@@ -21,8 +21,8 @@ export default function CalculadoraPage() {
       <Navbar />
       <AuroraBackground />
       <MouseGlow />
-      <main className="relative z-10">
-        <section className="pt-44 pb-12">
+      <main className="relative z-10 pb-32 md:pb-0">
+        <section className="pt-28 pb-8 md:pt-44 md:pb-12">
           <div className="mx-auto max-w-7xl px-6 text-center">
             <Reveal>
               <span
@@ -36,7 +36,7 @@ export default function CalculadoraPage() {
                 ● CALCULADORA
               </span>
               <h1
-                className="mt-7 font-display text-balance text-5xl md:text-7xl"
+                className="mt-7 font-display text-balance text-3xl md:text-5xl lg:text-7xl"
                 style={{ letterSpacing: '-0.04em', fontWeight: 800, lineHeight: 1 }}
               >
                 Configura tu plan<br />

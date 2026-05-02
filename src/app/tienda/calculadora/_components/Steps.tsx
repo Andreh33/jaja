@@ -412,7 +412,7 @@ function Field({
         onChange={(e) => onChange(e.target.value)}
         onBlur={onBlur}
         autoComplete={autoComplete}
-        className="w-full rounded-xl border bg-transparent px-4 py-3 text-sm text-white placeholder-white/30 focus:outline-none focus-visible:ring-2"
+        className="w-full rounded-xl border bg-transparent px-4 py-3 text-base text-white placeholder-white/30 focus:outline-none focus-visible:ring-2 md:text-sm"
         style={{ borderColor: 'var(--border-subtle)' }}
       />
     </div>

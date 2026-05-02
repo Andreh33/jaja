@@ -105,7 +105,7 @@ export default function SeoHorasBlock() {
   };
 
   return (
-    <section className="rounded-3xl p-8 md:p-12" style={{ background: 'rgba(7,5,14,0.55)', border: `1px solid ${ACCENT}30` }}>
+    <section className="rounded-3xl p-6 md:p-12" style={{ background: 'rgba(7,5,14,0.55)', border: `1px solid ${ACCENT}30` }}>
       <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em]" style={{ color: ACCENT }}>SEO para web existente</p>
       <h2 className="font-display text-3xl text-white md:text-4xl" style={{ letterSpacing: '-0.04em', fontWeight: 800 }}>
         ¿Ya tienes web? Te mejoramos el SEO.
@@ -277,7 +277,7 @@ function Field({
         onChange={(e) => onChange(e.target.value)}
         onBlur={onBlur}
         autoComplete={autoComplete}
-        className="w-full rounded-xl border bg-transparent px-4 py-3 text-sm text-white placeholder-white/30 focus:outline-none focus-visible:ring-2"
+        className="w-full rounded-xl border bg-transparent px-4 py-3 text-base text-white placeholder-white/30 focus:outline-none focus-visible:ring-2 md:text-sm"
         style={{ borderColor: 'var(--border-subtle)' }}
       />
     </div>

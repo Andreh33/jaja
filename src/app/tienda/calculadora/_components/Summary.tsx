@@ -33,7 +33,7 @@ export default function Summary({ cart }: { cart: Cart }) {
                 <ul className="space-y-1.5">
                   {cart.oneTime.map((l) => (
                     <li key={l.catalogId} className="flex items-baseline justify-between gap-3 text-white/75">
-                      <span className="truncate">{l.item.name}</span>
+                      <span className="min-w-0 truncate">{l.item.name}</span>
                       <span className="shrink-0 font-mono text-white">{formatEUR(l.lineTotal)}</span>
                     </li>
                   ))}
@@ -47,7 +47,7 @@ export default function Summary({ cart }: { cart: Cart }) {
                 <ul className="space-y-1.5">
                   {cart.recurring.map((l) => (
                     <li key={l.catalogId} className="flex items-baseline justify-between gap-3 text-white/75">
-                      <span className="truncate">
+                      <span className="min-w-0 truncate">
                         {l.item.name}
                         {l.quantity > 1 && <span className="text-white/45"> ×{l.quantity}</span>}
                       </span>
