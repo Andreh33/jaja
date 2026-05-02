@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "eslint",
     "db:generate": "drizzle-kit generate",
-    "predb:push": "tsx scripts/verify-uniques.ts",
+    "predb:push": "tsx scripts/verify-uniques.ts && tsx scripts/check-no-data-loss.ts",
     "db:push": "drizzle-kit push",
     "db:studio": "drizzle-kit studio",
     "db:seed": "tsx scripts/seed.ts",

@@ -218,23 +218,25 @@ Tablas `job_offers` y `job_applications` añadidas en el commit
 ver la oferta original incluso si la oferta cambió o desapareció.
 Si la candidatura es espontánea (sin oferta), las 4 quedan NULL.
 
-### CHECK constraints (defensa en profundidad)
+### Validación de enums (sin CHECK constraints)
 
-Aunque la app valide los enums vía zod, la BBDD también lo hace
-con CHECK constraints sobre las columnas:
+Las tablas se crearon inicialmente con CHECK constraints como defensa
+en profundidad, pero drizzle-kit 0.31.x tiene un bug que dispara drift
+cíclico cuando hay CHECKs en BBDD — ver
+[issue #4574](https://github.com/drizzle-team/drizzle-orm/issues/4574)
+y la sección "Drift falso de drizzle-kit" más abajo. Por ese motivo
+se ejecutó una migración one-shot (DROP+CREATE atómico vía
+`db.batch`) que eliminó las 6 CHECK constraints en
+`fix(db): remove DB-level CHECK constraints from job tables`.
 
-- `job_offers_contract_type_check`: contract_type IN
-  ('indefinido','temporal','practicas','freelance') o NULL.
-- `job_offers_schedule_check`: schedule IN
-  ('completa','parcial','flexible') o NULL.
-- `job_offers_requires_computer_check`: requires_computer IN
-  ('si','no','depende').
-- `job_offers_status_check`: status IN
-  ('borrador','publicada','cerrada').
-- `job_applications_has_computer_check`: has_computer IN
-  ('si','no') o NULL.
-- `job_applications_status_check`: status IN
-  ('pendiente','contactado','descartado','contratado').
+La validación de los enums queda enforced en dos capas:
+
+- **Compile-time**: los `text({ enum: [...] })` de Drizzle generan
+  tipos TypeScript estrictos. El código que lea/escriba esas columnas
+  no compila si usa un valor fuera del enum.
+- **Runtime (entrada pública)**: `zod` schemas en los endpoints
+  `/api/empleo/*` y `/api/admin/job-*` validan body antes de tocar
+  BBDD. Cualquier valor de enum inválido devuelve 400.
 
 ### Retention policy GDPR
 
@@ -244,30 +246,35 @@ cleanup cron for old applications and CVs`). El CV en Vercel Blob
 se borra simultáneamente. Las contratadas se conservan
 indefinidamente como parte de la relación laboral.
 
-### ⚠️ Drift falso de drizzle-kit detectado en este commit
+### ⚠️ Drift falso de drizzle-kit (RESUELTO para job_* + escudo activo)
 
-Tras crear las dos tablas con `check()` constraints, ejecutar
-`drizzle-kit push --strict --verbose` por segunda vez muestra un
-plan que propone **recrear las 12 tablas existentes** con el
+Tras crear `job_offers` y `job_applications` con `check()` constraints,
+ejecutar `drizzle-kit push --strict --verbose` por segunda vez mostró
+un plan que proponía **recrear las 12 tablas existentes** con el
 patrón `CREATE TABLE __new_X` + `INSERT INTO __new_X SELECT ...`
-+ `DROP TABLE X` + `RENAME __new_X TO X`. Esto es un **drift
-falso del comparador** de drizzle-kit 0.31.x — los datos en BBDD
-están correctos, las definiciones de schema también, pero el
-parser introspecta diferente al añadir `check()`.
++ `DROP TABLE X` + `RENAME __new_X TO X`. Bug confirmado upstream:
+[drizzle-team/drizzle-orm#4574](https://github.com/drizzle-team/drizzle-orm/issues/4574)
+(open). Quitar `check()` solo del TS no resuelve — el comparador
+sigue viendo CHECK en BBDD y propone removerlas vía recreate cascada.
 
-**NO ejecutar `npm run db:push` aceptando el plan sin auditar
-qué statements aplicaría.** Si el plan incluye CREATE TABLE
-`__new_*` para tablas que ya existen, abortar con `n` y
-revisar manualmente.
+**Resolución para `job_offers` y `job_applications`** (commit
+`fix(db): remove DB-level CHECK constraints from job tables ...`):
+DROP+CREATE atómico de ambas tablas vacías sin CHECKs. Schema TS y
+BBDD alineados → `drizzle-kit push` reporta `[i] No changes detected`.
 
-Verificación tras el push aplicado: `verify-schema.ts` confirma
-que las 12 tablas tienen sus columnas, defaults y NOT NULLs
-intactos; los counts de filas se preservan (subscriptions=1,
-users=9, etc. tras el push).
+**Escudo activo**: `scripts/check-no-data-loss.ts`, encadenado en el
+hook `predb:push`, ejecuta un dry-run de `drizzle-kit push` y aborta
+con exit 1 si detecta `CREATE TABLE __new_*` o `DROP TABLE` en el
+plan. Cualquier futuro `npm run db:push` que dispare drift cíclico
+queda bloqueado antes de tocar la BBDD.
 
-Mitigación futura: considerar upgrade de drizzle-kit a una versión
-que no muestre este drift falso, o añadir un script `db:push:safe`
-que aborte automáticamente si detecta `__new_*` en el plan.
+**Si en el futuro** se añade una nueva tabla con CHECK constraints
+y reaparece el drift, opciones:
+1. Quitar el `check()` del TS y hacer DROP+CREATE manual sin CHECKs
+   (siguiendo el patrón de `migrate-drop-job-checks.mjs` que se usó
+   aquí — ver historial git para referencia).
+2. Cuando #4574 se cierre upstream, restaurar `check()` en TS y
+   añadir las CHECKs vía migración nueva.
 
 ---
 

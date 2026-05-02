@@ -1,4 +1,4 @@
-import { sqliteTable, text, integer, index, uniqueIndex, check } from 'drizzle-orm/sqlite-core';
+import { sqliteTable, text, integer, index, uniqueIndex } from 'drizzle-orm/sqlite-core';
 import { sql } from 'drizzle-orm';
 
 /**
@@ -193,7 +193,24 @@ export const adminClientData = sqliteTable('admin_client_data', {
 
 /* =========================================================================
  * Portal de empleo
- * ========================================================================= */
+ * =========================================================================
+ *
+ * NOTE: jobOffers and jobApplications were initially created with CHECK
+ * constraints for defense-in-depth, but drizzle-kit 0.31.x has a known
+ * bug (drizzle-team/drizzle-orm#4574) where any CHECK in TS — or any
+ * CHECK present in BBDD that the TS doesn't know about — triggers
+ * spurious table-recreation drift on every push.
+ *
+ * Workaround: CHECKs removed at DB level too via DROP+CREATE migration
+ * (the tables were empty), keeping schema and BBDD aligned. Enum
+ * validation is enforced via:
+ *   - TS enum types in column definitions (compile-time)
+ *   - zod schemas in /api/empleo/* and /api/admin/job-* endpoints
+ *     (runtime, public input)
+ *
+ * When #4574 is fixed upstream, restore check() declarations here AND
+ * re-add to BBDD via a fresh migration.
+ */
 
 /**
  * Ofertas de empleo publicadas por la empresa.
@@ -201,7 +218,6 @@ export const adminClientData = sqliteTable('admin_client_data', {
  * - `slug` UNIQUE — URL pública /empleo/[slug].
  * - `status` controla visibilidad pública: 'borrador' (oculto),
  *   'publicada' (formulario abierto), 'cerrada' (visible pero sin form).
- * - CHECK constraints en BBDD como red de seguridad por si la app valida mal.
  */
 export const jobOffers = sqliteTable('job_offers', {
   id: text('id').primaryKey().$defaultFn(() => crypto.randomUUID()),
@@ -225,22 +241,6 @@ export const jobOffers = sqliteTable('job_offers', {
   updatedAt: integer('updated_at', { mode: 'timestamp' }).default(NOW),
 }, (t) => [
   uniqueIndex('job_offers_slug_unique').on(t.slug),
-  check(
-    'job_offers_contract_type_check',
-    sql`${t.contractType} IS NULL OR ${t.contractType} IN ('indefinido','temporal','practicas','freelance')`,
-  ),
-  check(
-    'job_offers_schedule_check',
-    sql`${t.schedule} IS NULL OR ${t.schedule} IN ('completa','parcial','flexible')`,
-  ),
-  check(
-    'job_offers_requires_computer_check',
-    sql`${t.requiresComputer} IN ('si','no','depende')`,
-  ),
-  check(
-    'job_offers_status_check',
-    sql`${t.status} IN ('borrador','publicada','cerrada')`,
-  ),
 ]);
 
 /**
@@ -280,14 +280,6 @@ export const jobApplications = sqliteTable('job_applications', {
 }, (t) => [
   index('idx_job_applications_job_offer_id').on(t.jobOfferId),
   index('idx_job_applications_status').on(t.status),
-  check(
-    'job_applications_has_computer_check',
-    sql`${t.hasComputer} IS NULL OR ${t.hasComputer} IN ('si','no')`,
-  ),
-  check(
-    'job_applications_status_check',
-    sql`${t.status} IN ('pendiente','contactado','descartado','contratado')`,
-  ),
 ]);
 
 export type User = typeof users.$inferSelect;
