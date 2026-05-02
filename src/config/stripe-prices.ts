@@ -20,7 +20,7 @@ export type StripePriceMapping = {
 export type StripeMode = 'test' | 'live';
 
 /**
- * Última actualización TEST: 2026-05-01T21:33:32.848Z
+ * Última actualización LIVE: 2026-05-02T04:30:23.083Z
  * Source: metadata.source = 'calculator_v1'
  */
 const TEST_PRICES: Record<CatalogId, StripePriceMapping> = {
@@ -42,29 +42,23 @@ const TEST_PRICES: Record<CatalogId, StripePriceMapping> = {
   seoHour: { productId: 'prod_URHFF3qyV85kmh', priceId: 'price_1TSOgi2YFBctOmUDvUCER9t9' },
 };
 
-/**
- * LIVE: vacío hasta ejecutar `npm run stripe:seed` con sk_live_*.
- * Mientras esté vacío, getCurrentPrices() en modo 'live' devuelve
- * placeholders y el código que use priceId fallará explícitamente al
- * llamar a Stripe — comportamiento intencional para no facturar mal.
- */
 const LIVE_PRICES: Record<CatalogId, StripePriceMapping> = {
-  webCreationLe8: { productId: '', priceId: '' },
-  webCreationGt8: { productId: '', priceId: '' },
-  hostingMonthly: { productId: '', priceId: '' },
-  hostingYearly: { productId: '', priceId: '' },
-  tiendaMonthly: { productId: '', priceId: '' },
-  tiendaYearlyWithHosting: { productId: '', priceId: '' },
-  socialMedia: { productId: '', priceId: '' },
-  socialMediaYearly: { productId: '', priceId: '' },
-  aiWeb: { productId: '', priceId: '' },
-  aiWebYearly: { productId: '', priceId: '' },
-  aiPhone: { productId: '', priceId: '' },
-  aiPhoneYearly: { productId: '', priceId: '' },
-  blogPost: { productId: '', priceId: '' },
-  blogPostYearly: { productId: '', priceId: '' },
-  logo: { productId: '', priceId: '' },
-  seoHour: { productId: '', priceId: '' },
+  webCreationLe8: { productId: 'prod_URNxEF3flH2gEw', priceId: 'price_1TSVBs2YFBctOmUDcVjkwlRX' },
+  webCreationGt8: { productId: 'prod_URNx7gYNste3FI', priceId: 'price_1TSVBt2YFBctOmUDe3tqdK4Z' },
+  hostingMonthly: { productId: 'prod_URNxO7vK0feLLh', priceId: 'price_1TSVBu2YFBctOmUDRk7rF1ue' },
+  hostingYearly: { productId: 'prod_URNxHTJXrAqVNe', priceId: 'price_1TSVBv2YFBctOmUDbGZvas2x' },
+  tiendaMonthly: { productId: 'prod_URNxxWoiuuzumw', priceId: 'price_1TSVBw2YFBctOmUDcsP8d3O6' },
+  tiendaYearlyWithHosting: { productId: 'prod_URNxCT4LPpReQB', priceId: 'price_1TSVBx2YFBctOmUD1DYx3ApH' },
+  socialMedia: { productId: 'prod_URNxxIRxJm5hdb', priceId: 'price_1TSVBy2YFBctOmUDeBAbEyD6' },
+  socialMediaYearly: { productId: 'prod_URNxEQTD90GdEI', priceId: 'price_1TSVBz2YFBctOmUDm2QLJV3Q' },
+  aiWeb: { productId: 'prod_URNxr41HlfKSjh', priceId: 'price_1TSVC02YFBctOmUDy5enrvnu' },
+  aiWebYearly: { productId: 'prod_URNxNCdpDLlp8Z', priceId: 'price_1TSVC12YFBctOmUDmkvy44pF' },
+  aiPhone: { productId: 'prod_URNxaeNdHGAhzj', priceId: 'price_1TSVC22YFBctOmUDN1lyA1vv' },
+  aiPhoneYearly: { productId: 'prod_URNxuMS8zi5W2k', priceId: 'price_1TSVC32YFBctOmUDrrlmpeWf' },
+  blogPost: { productId: 'prod_URNx8kPOnnXfZm', priceId: 'price_1TSVC42YFBctOmUDbZHVRbTe' },
+  blogPostYearly: { productId: 'prod_URNyIRSzsvA43X', priceId: 'price_1TSVC52YFBctOmUDWAyD5Cbe' },
+  logo: { productId: 'prod_URNyB0GcCG6isj', priceId: 'price_1TSVC52YFBctOmUDvgcXhOW6' },
+  seoHour: { productId: 'prod_URNygHevyXgss8', priceId: 'price_1TSVC62YFBctOmUDwTlxzsV6' },
 };
 
 export const STRIPE_PRICES: Record<StripeMode, Record<CatalogId, StripePriceMapping>> = {
