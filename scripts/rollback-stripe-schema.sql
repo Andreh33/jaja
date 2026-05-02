@@ -17,3 +17,11 @@ ALTER TABLE users DROP COLUMN phone_agent_pending_provision;
 ALTER TABLE users DROP COLUMN stripe_customer_id;
 
 -- Si tu motor no soporta DROP COLUMN, usa el snapshot de Turso para restaurar.
+
+-- =====================================================================
+-- Admin schema additions (commit chore(db): add admin_client_data ...)
+-- Revertir solo estas adiciones sin tocar el bloque Stripe de arriba.
+-- =====================================================================
+DROP INDEX IF EXISTS admin_client_data_user_id_unique;
+DROP TABLE IF EXISTS admin_client_data;
+DROP INDEX IF EXISTS empresas_user_id_unique;

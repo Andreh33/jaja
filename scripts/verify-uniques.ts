@@ -20,6 +20,8 @@ const REQUIRED_UNIQUES: { table: string; index: string; column: string }[] = [
   { table: 'password_resets', index: 'password_resets_token_unique', column: 'token' },
   { table: 'subscriptions', index: 'subscriptions_stripe_subscription_id_unique', column: 'stripe_subscription_id' },
   { table: 'orders', index: 'orders_stripe_session_id_unique', column: 'stripe_session_id' },
+  { table: 'empresas', index: 'empresas_user_id_unique', column: 'user_id' },
+  { table: 'admin_client_data', index: 'admin_client_data_user_id_unique', column: 'user_id' },
 ];
 
 async function main() {

@@ -75,6 +75,8 @@ UNIQUE indexes críticos vigilados:
 - `password_resets_token_unique`
 - `subscriptions_stripe_subscription_id_unique`
 - `orders_stripe_session_id_unique`
+- `empresas_user_id_unique`
+- `admin_client_data_user_id_unique`
 
 ---
 
@@ -136,6 +138,57 @@ Considerar upgrade si:
 
 Antes de upgradear: hacer snapshot Turso, leer changelog completo, probar
 en rama y verificar que los 5 UNIQUE siguen presentes.
+
+---
+
+## Admin schema additions
+
+Tabla `admin_client_data` y UNIQUE en `empresas.user_id` añadidos en el
+commit `chore(db): add admin_client_data table + empresas user_id UNIQUE`.
+
+### Decisión: tabla nueva en lugar de extender `empresas`
+
+Los campos editables solo por admin (`comercial_que_vendio`,
+`dominio_elegido`, `tareas_pendientes`) viven en una tabla dedicada
+`admin_client_data` con `user_id UNIQUE` (FK `users` ON DELETE CASCADE).
+Razones:
+
+- **Separación semántica**: `empresas` es info que el cliente rellena en
+  su dashboard (`EmpresaForm.tsx`). `admin_client_data` es solo para
+  notas operativas internas.
+- **Cero riesgo a `empresas` existentes**: la tabla `empresas` no tenía
+  UNIQUE sobre `user_id` y se desconocía si existían duplicados. Antes
+  del push se ejecutó `SELECT user_id, COUNT(*) c FROM empresas GROUP
+  BY user_id HAVING c > 1` → 0 filas (5 filas totales, 5 distinct
+  user_ids), por lo que el UNIQUE se añadió de paso.
+- `notas_internas` **se queda en `empresas`** donde ya existía. No se
+  duplica.
+
+### Estructura
+
+```sql
+CREATE TABLE admin_client_data (
+  id text PRIMARY KEY NOT NULL,
+  user_id text NOT NULL,
+  comercial_que_vendio text,
+  dominio_elegido text,
+  tareas_pendientes text,             -- texto plano multi-línea
+  created_at integer DEFAULT (CURRENT_TIMESTAMP),
+  updated_at integer DEFAULT (CURRENT_TIMESTAMP),
+  FOREIGN KEY (user_id) REFERENCES users(id) ON UPDATE no action ON DELETE cascade
+);
+CREATE UNIQUE INDEX admin_client_data_user_id_unique ON admin_client_data (user_id);
+CREATE UNIQUE INDEX empresas_user_id_unique ON empresas (user_id);
+```
+
+`tareas_pendientes` se almacena como **texto plano** (saltos de línea
+para listar). Si en el futuro se quiere TODO estructurado, se migrará a
+`text(json)` aparte y se añadirá un editor de checklist.
+
+### Rollback
+
+Bloque añadido al final de `scripts/rollback-stripe-schema.sql` —
+revierte solo estas adiciones sin tocar las tablas Stripe.
 
 ---
 

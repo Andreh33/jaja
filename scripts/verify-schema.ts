@@ -22,6 +22,7 @@ const KNOWN_TABLES = [
   'subscriptions',
   'orders',
   'webhook_events',
+  'admin_client_data',
 ] as const;
 
 async function main() {

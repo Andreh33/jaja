@@ -54,7 +54,9 @@ export const empresas = sqliteTable('empresas', {
   notasInternas: text('notas_internas'),
   createdAt: integer('created_at', { mode: 'timestamp' }).default(NOW),
   updatedAt: integer('updated_at', { mode: 'timestamp' }).default(NOW),
-});
+}, (t) => [
+  uniqueIndex('empresas_user_id_unique').on(t.userId),
+]);
 
 export const archivos = sqliteTable('archivos', {
   id: text('id').primaryKey().$defaultFn(() => crypto.randomUUID()),
@@ -166,8 +168,32 @@ export const webhookEvents = sqliteTable('webhook_events', {
   index('idx_webhook_events_received_at').on(t.receivedAt),
 ]);
 
+/**
+ * Datos editables solo por admin (separados de `empresas` para no mezclar
+ * info que el cliente rellena con anotaciones internas del equipo).
+ *
+ * Notas:
+ *   - `notas_internas` NO vive aquí: ya existe en `empresas.notas_internas`
+ *     y la ficha admin lo edita en su sitio actual.
+ *   - `tareas_pendientes` es texto plano multi-línea (lista informal). Si
+ *     en el futuro se quiere TODO estructurado, migrar a JSON aparte.
+ *   - UNIQUE(user_id) para upserts limpios desde el endpoint admin.
+ */
+export const adminClientData = sqliteTable('admin_client_data', {
+  id: text('id').primaryKey().$defaultFn(() => crypto.randomUUID()),
+  userId: text('user_id').notNull().references(() => users.id, { onDelete: 'cascade' }),
+  comercialQueVendio: text('comercial_que_vendio'),
+  dominioElegido: text('dominio_elegido'),
+  tareasPendientes: text('tareas_pendientes'),
+  createdAt: integer('created_at', { mode: 'timestamp' }).default(NOW),
+  updatedAt: integer('updated_at', { mode: 'timestamp' }).default(NOW),
+}, (t) => [
+  uniqueIndex('admin_client_data_user_id_unique').on(t.userId),
+]);
+
 export type User = typeof users.$inferSelect;
 export type Empresa = typeof empresas.$inferSelect;
+export type AdminClientData = typeof adminClientData.$inferSelect;
 export type Archivo = typeof archivos.$inferSelect;
 export type Post = typeof posts.$inferSelect;
 export type ContactMessage = typeof contactMessages.$inferSelect;
