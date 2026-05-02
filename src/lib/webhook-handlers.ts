@@ -29,11 +29,16 @@ import { eq, sql } from 'drizzle-orm';
 import { db } from './db';
 import { orders, subscriptions, users } from '../../drizzle/schema';
 import { stripe } from './stripe';
-import { findCatalogItemByPriceId } from '@/config/stripe-price-helpers';
+import {
+  buildCartItem,
+  buildCartItemFromSubscriptionItem,
+  extractInvoiceSubscriptionId,
+  extractSubscriptionCadence,
+  extractSubscriptionPeriods,
+  type CartLine,
+} from './stripe-shape-helpers';
 
 type Tx = Parameters<Parameters<typeof db.transaction>[0]>[0];
-
-type CartLine = { catalog_id: string; quantity: number; amount_subtotal: number };
 
 /**
  * Reconstruye el carrito desde line_items de Stripe usando el mapping
@@ -49,16 +54,16 @@ async function listCartFromSession(sessionId: string): Promise<CartLine[]> {
       console.warn(`[stripe-webhook] result=warn reason=line_item_no_price session_id=${sessionId}`);
       continue;
     }
-    const catalogItem = findCatalogItemByPriceId(priceId);
-    if (!catalogItem) {
+    const cartItem = buildCartItem({
+      priceId,
+      quantity: item.quantity ?? 1,
+      amountSubtotal: item.amount_subtotal ?? 0,
+    });
+    if (!cartItem) {
       console.warn(`[stripe-webhook] result=warn reason=price_not_in_catalog price_id=${priceId} session_id=${sessionId}`);
       continue;
     }
-    lines.push({
-      catalog_id: catalogItem.id,
-      quantity: item.quantity ?? 1,
-      amount_subtotal: item.amount_subtotal ?? 0,
-    });
+    lines.push(cartItem);
   }
   return lines;
 }
@@ -110,7 +115,19 @@ export async function handleCheckoutSessionCompleted(
       );
       return;
     }
-    const cadence = session.metadata?.cadence === 'yearly' ? 'yearly' : 'monthly';
+    // Cadence: leer del Subscription real (recurring.interval del primer item).
+    // session.metadata no contiene cadence — /api/checkout no la pone.
+    const stripeSub = await stripe.subscriptions.retrieve(subId);
+    const detectedCadence = extractSubscriptionCadence(stripeSub);
+    let cadence: 'monthly' | 'yearly';
+    if (detectedCadence === 'unknown') {
+      console.warn(
+        `[stripe-webhook] event_id=${event.id} type=${event.type} result=warn reason=cadence_unknown subscription_id=${subId} — defaulting to monthly`,
+      );
+      cadence = 'monthly';
+    } else {
+      cadence = detectedCadence;
+    }
 
     // UPSERT subscription. Si no existe, crea con datos disponibles.
     await tx
@@ -127,6 +144,7 @@ export async function handleCheckoutSessionCompleted(
         target: subscriptions.stripeSubscriptionId,
         set: {
           items: cart,
+          cadence,
           stripeCustomerId: customerId ?? sql`stripe_customer_id`,
           updatedAt: sql`(unixepoch())`,
         },
@@ -169,9 +187,7 @@ export async function handleCheckoutSessionCompleted(
  */
 export async function handleInvoicePaid(tx: Tx, event: Stripe.Event): Promise<void> {
   const invoice = event.data.object as Stripe.Invoice;
-  // En la SDK 22.x, invoice.subscription puede no estar en el typing oficial pero sí en wire format.
-  const subId = (invoice as unknown as { subscription?: string | { id: string } | null }).subscription;
-  const subIdStr = typeof subId === 'string' ? subId : subId?.id ?? null;
+  const subIdStr = extractInvoiceSubscriptionId(invoice);
   if (!subIdStr) {
     console.log(
       `[stripe-webhook] event_id=${event.id} type=${event.type} result=skipped reason=no_subscription invoice_id=${invoice.id}`,
@@ -210,8 +226,7 @@ export async function handleInvoicePaid(tx: Tx, event: Stripe.Event): Promise<vo
  */
 export async function handleInvoicePaymentFailed(tx: Tx, event: Stripe.Event): Promise<void> {
   const invoice = event.data.object as Stripe.Invoice;
-  const subId = (invoice as unknown as { subscription?: string | { id: string } | null }).subscription;
-  const subIdStr = typeof subId === 'string' ? subId : subId?.id ?? null;
+  const subIdStr = extractInvoiceSubscriptionId(invoice);
   if (!subIdStr) {
     console.log(
       `[stripe-webhook] event_id=${event.id} type=${event.type} result=skipped reason=no_subscription invoice_id=${invoice.id}`,
@@ -242,28 +257,35 @@ export async function handleCustomerSubscriptionUpdated(tx: Tx, event: Stripe.Ev
   const sub = event.data.object as Stripe.Subscription;
   const customerId = typeof sub.customer === 'string' ? sub.customer : sub.customer?.id ?? '';
 
-  // Reconstruir items desde sub.items.data.
+  // Reconstruir items desde sub.items.data con el mismo shape que escribe
+  // handleCheckoutSessionCompleted: {catalog_id, quantity, amount_subtotal}.
   const items = sub.items.data
-    .map((item) => {
-      const priceId = item.price?.id;
-      const catalogItem = priceId ? findCatalogItemByPriceId(priceId) : null;
-      if (!catalogItem) return null;
-      return { catalog_id: catalogItem.id, quantity: item.quantity ?? 1 };
-    })
-    .filter((x): x is { catalog_id: string; quantity: number } => x !== null);
+    .map((item) => buildCartItemFromSubscriptionItem(item))
+    .filter((x): x is CartLine => x !== null);
 
+  const periods = extractSubscriptionPeriods(sub);
+  const detectedCadence = extractSubscriptionCadence(sub);
+  // Defensivo: si no podemos determinar cadence con confianza, NO degradamos
+  // el valor existente — omitimos el campo del UPDATE.
+  const setObj: Record<string, unknown> = {
+    status: sub.status,
+    stripeCustomerId: customerId,
+    items,
+    currentPeriodStart: periods.start,
+    currentPeriodEnd: periods.end,
+    cancelAtPeriodEnd: !!(sub as unknown as { cancel_at_period_end?: boolean }).cancel_at_period_end,
+    updatedAt: sql`(unixepoch())`,
+  };
+  if (detectedCadence !== 'unknown') {
+    setObj.cadence = detectedCadence;
+  } else {
+    console.warn(
+      `[stripe-webhook] event_id=${event.id} type=${event.type} result=warn reason=cadence_unknown subscription_id=${sub.id} — keeping existing local cadence`,
+    );
+  }
   const updated = await tx
     .update(subscriptions)
-    .set({
-      status: sub.status,
-      stripeCustomerId: customerId,
-      items,
-      // SDK varía el casing/nombre entre versiones; casting defensivo.
-      currentPeriodStart: (sub as unknown as { current_period_start?: number | null }).current_period_start ?? null,
-      currentPeriodEnd: (sub as unknown as { current_period_end?: number | null }).current_period_end ?? null,
-      cancelAtPeriodEnd: !!(sub as unknown as { cancel_at_period_end?: boolean }).cancel_at_period_end,
-      updatedAt: sql`(unixepoch())`,
-    })
+    .set(setObj)
     .where(eq(subscriptions.stripeSubscriptionId, sub.id))
     .returning({ id: subscriptions.id });
   if (updated.length === 0) {

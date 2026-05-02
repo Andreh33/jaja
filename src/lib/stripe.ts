@@ -15,6 +15,16 @@ if (!key) {
 
 export const stripe = new Stripe(key || 'sk_invalid_at_runtime', {
   // Pinned API version. Si Stripe cambia, lo bumpeamos manualmente.
+  //
+  // API 2026-04-22.dahlia movió campos clave fuera del root de varios objetos:
+  //   - invoice.subscription          → invoice.parent.subscription_details.subscription
+  //   - subscription.current_period_* → subscription.items.data[].current_period_*
+  //
+  // Nuestros webhook handlers (src/lib/webhook-handlers.ts) usan los helpers
+  // extractInvoiceSubscriptionId y extractSubscriptionPeriods con fallback al
+  // root para tolerar redeliveries de eventos viejos. Antes de cambiar este
+  // pin, REVISA esos helpers y los tests en tests/webhook-handlers.test.ts —
+  // y consulta docs/MIGRATION_NOTES.md para más contexto.
   apiVersion: '2026-04-22.dahlia',
   typescript: true,
   appInfo: {

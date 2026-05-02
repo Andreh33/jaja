@@ -139,6 +139,63 @@ en rama y verificar que los 5 UNIQUE siguen presentes.
 
 ---
 
+## Stripe API version pinning
+
+**Pin actual** (`src/lib/stripe.ts`): `2026-04-22.dahlia`.
+
+Stripe re-entrega webhooks usando la `apiVersion` del evento original, así
+que en producción pueden llegar tanto eventos de la versión pinned como
+re-entregas con shapes anteriores. Los handlers tienen que tolerar ambos.
+
+### Cambios de shape relevantes en 2026-04-22.dahlia
+
+| Antes (root) | Ahora |
+| --- | --- |
+| `invoice.subscription` | `invoice.parent.subscription_details.subscription` |
+| `subscription.current_period_start` | `subscription.items.data[].current_period_start` |
+| `subscription.current_period_end` | `subscription.items.data[].current_period_end` |
+
+### Cómo lo manejamos
+
+`src/lib/webhook-handlers.ts` exporta dos helpers que leen del path nuevo
+con fallback al root:
+
+- `extractInvoiceSubscriptionId(invoice)` — usado en `handleInvoicePaid` y
+  `handleInvoicePaymentFailed`.
+- `extractSubscriptionPeriods(sub)` — usado en
+  `handleCustomerSubscriptionUpdated` y en `scripts/reconcile-subscriptions.ts`.
+
+`tests/webhook-handlers.test.ts` cubre ambos shapes (modern + legacy) y
+verifica que los helpers eligen el path correcto cuando coexisten. Correr
+con `npm test`.
+
+### Antes de bumpear `apiVersion`
+
+1. Leer el changelog del release de Stripe entre el pin actual y el nuevo.
+2. Identificar qué campos cambian de path en `Invoice`, `Subscription`,
+   `Charge`, `PaymentIntent` y `Customer`.
+3. Para cada cambio, **añadir el path nuevo al helper correspondiente y
+   mantener el fallback al path anterior** (no eliminar el viejo — sigue
+   llegando vía redelivery).
+4. Añadir un test de regresión con el shape nuevo.
+5. Ejecutar `npx tsx scripts/reconcile-subscriptions.ts --all` después del
+   deploy para resincronizar cualquier dato escrito por handlers viejos
+   contra el shape nuevo.
+
+### Reconciliación
+
+`scripts/reconcile-subscriptions.ts` es la red de seguridad cuando un
+handler falla silenciosamente o un evento se pierde. Compara cada
+`subscriptions` row local contra `stripe.subscriptions.retrieve()` y
+actualiza si difieren. Idempotente: re-ejecutarlo es seguro.
+
+- Sin flags: solo filas con `status='incomplete'` o `current_period_end IS NULL`.
+- `--all`: barre toda la tabla.
+
+Pensado para reusarse en un job nightly futuro.
+
+---
+
 ## Rollback
 
 Si una migración futura sale mal, hay dos vías:
