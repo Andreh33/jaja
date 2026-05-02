@@ -11,7 +11,7 @@ import {
   pickTienda,
   pickWebCreation,
 } from '@/config/catalog';
-import { STRIPE_PRICES } from '@/config/stripe-prices';
+import { getCurrentPrices } from '@/lib/stripe';
 
 /**
  * Selección serializada del wizard (lo que llega al endpoint /api/checkout).
@@ -33,9 +33,10 @@ type ResolvedItem = {
 };
 
 function priceIdFor(item: CatalogItem): string {
+  const prices = getCurrentPrices();
   for (const key in CATALOG) {
     const k = key as keyof typeof CATALOG;
-    if (CATALOG[k].id === item.id) return STRIPE_PRICES[k as keyof typeof STRIPE_PRICES].priceId;
+    if (CATALOG[k].id === item.id) return prices[k as keyof typeof prices].priceId;
   }
   throw new Error(`No Stripe priceId mapped for catalog item ${item.id}`);
 }

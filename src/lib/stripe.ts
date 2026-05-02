@@ -1,4 +1,5 @@
 import Stripe from 'stripe';
+import { STRIPE_PRICES, type StripeMode } from '@/config/stripe-prices';
 
 /**
  * Cliente Stripe singleton (server-only).
@@ -6,6 +7,31 @@ import Stripe from 'stripe';
  */
 
 const key = process.env.STRIPE_SECRET_KEY;
+
+/**
+ * Detecta el modo Stripe por el prefijo de la secret key.
+ * Usado por getCurrentPrices() para elegir entre los IDs test y live.
+ *
+ * Lanza error si la clave falta o tiene un prefijo inesperado — fail-loud
+ * preferible a usar IDs erróneos silenciosamente.
+ */
+export function getStripeMode(secretKey?: string): StripeMode {
+  const k = secretKey ?? process.env.STRIPE_SECRET_KEY ?? '';
+  if (k.startsWith('sk_live_')) return 'live';
+  if (k.startsWith('sk_test_')) return 'test';
+  throw new Error(
+    `STRIPE_SECRET_KEY missing or invalid (must start with sk_test_ or sk_live_; got "${k.slice(0, 8)}...")`,
+  );
+}
+
+/**
+ * Devuelve el mapa de Products/Prices correspondiente al modo activo.
+ * En desarrollo local con sk_test_* → IDs de la cuenta TEST.
+ * En producción con sk_live_*       → IDs de la cuenta LIVE.
+ */
+export function getCurrentPrices() {
+  return STRIPE_PRICES[getStripeMode()];
+}
 
 if (!key) {
   // No lanzamos en import-time para no romper builds donde la var aún no está;

@@ -3,9 +3,8 @@ import { z } from 'zod';
 import { auth } from '@/lib/auth';
 import { resolveOrCreateUser, getUserById } from '@/lib/user-auth';
 import { resolveOrCreateCustomer } from '@/lib/stripe-customer';
-import { stripe } from '@/lib/stripe';
+import { stripe, getCurrentPrices } from '@/lib/stripe';
 import { getClientIp, rateLimit } from '@/lib/rate-limit';
-import { STRIPE_PRICES } from '@/config/stripe-prices';
 
 export const runtime = 'nodejs';
 
@@ -124,12 +123,13 @@ export async function POST(req: Request) {
   const cancelUrl = `${appUrl}/tienda/calculadora?status=cancelled`;
 
   try {
+    const prices = getCurrentPrices();
     const stripeSession = await stripe.checkout.sessions.create({
       mode: 'payment',
       customer: customerId,
       line_items: [
         {
-          price: STRIPE_PRICES.seoHour.priceId,
+          price: prices.seoHour.priceId,
           quantity: parsed.hours,
         },
       ],

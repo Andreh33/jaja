@@ -13,6 +13,12 @@
  * Run: npx tsx --test tests/webhook-handlers.test.ts
  */
 
+// El helper findCatalogItemByPriceId (usado vía buildCartItem*) llama a
+// getCurrentPrices() que requiere STRIPE_SECRET_KEY. En el runner de tests
+// no cargamos .env.local, así que aseguramos un dummy 'sk_test_*' antes
+// de cualquier import que dispare la cadena.
+process.env.STRIPE_SECRET_KEY ||= 'sk_test_dummy_for_tests';
+
 import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
 import {
@@ -26,7 +32,7 @@ import { STRIPE_PRICES } from '../src/config/stripe-prices';
 import { CATALOG } from '../src/config/catalog';
 import type Stripe from 'stripe';
 
-const HOSTING_MONTHLY_PRICE = STRIPE_PRICES.hostingMonthly.priceId;
+const HOSTING_MONTHLY_PRICE = STRIPE_PRICES.test.hostingMonthly.priceId;
 const HOSTING_MONTHLY_CATALOG = CATALOG.hostingMonthly.id;
 
 // ---------------------------------------------------------------------------
