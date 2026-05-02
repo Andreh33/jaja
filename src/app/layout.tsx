@@ -24,7 +24,7 @@ const syne = Syne({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://latech.es'),
+  metadataBase: new URL('https://serviciosonlineweb.com'),
   title: {
     default: 'Latech · Servicios Tecnológicos Premium en Badajoz',
     template: '%s · Latech',
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Latech · Servicios Tecnológicos Premium',
     description: 'Webs, tiendas online y agentes IA premium. Entrega 24-48h. Badajoz.',
-    url: 'https://latech.es',
+    url: 'https://serviciosonlineweb.com',
     siteName: 'Latech',
     locale: 'es_ES',
     type: 'website',
@@ -50,6 +50,9 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+  },
+  verification: {
+    google: 'WDbrVKr2CeTxz4pUSWpoNn604_T1z6nXKSJlcJkZtlc',
   },
 };
 

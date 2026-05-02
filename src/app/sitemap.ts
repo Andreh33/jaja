@@ -2,7 +2,7 @@ import type { MetadataRoute } from 'next';
 import { getAllPosts } from '@/lib/posts';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const base = 'https://latech.es';
+  const base = 'https://serviciosonlineweb.com';
   const fixed = [
     '', '/sobre-nosotros', '/blog', '/tienda', '/tienda/web', '/tienda/online', '/tienda/agente-ia', '/contacto', '/terminos', '/privacidad',
   ];

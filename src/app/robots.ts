@@ -5,6 +5,6 @@ export default function robots(): MetadataRoute.Robots {
     rules: [
       { userAgent: '*', allow: '/', disallow: ['/admin', '/dashboard', '/api'] },
     ],
-    sitemap: 'https://latech.es/sitemap.xml',
+    sitemap: 'https://serviciosonlineweb.com/sitemap.xml',
   };
 }
