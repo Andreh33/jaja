@@ -465,3 +465,55 @@ body {
 /* Hide scrollbar (utility) */
 .no-scrollbar::-webkit-scrollbar { display: none; }
 .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* ===========================================================
+   Calculator OptionCard — animated yellow border on selected
+   Technique: dual background-image with padding-box/border-box
+   clipping. Uses @property to animate the conic-gradient angle
+   smoothly (Chrome 85+, Firefox 128+, Safari 16.4+).
+   =========================================================== */
+@property --option-card-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.option-card[data-selected="true"] {
+  /* Borde 2px transparente: el espacio del borde lo pinta la última capa
+     (conic-gradient) recortada a border-box. Las capas superiores son
+     OPACAS y recortadas a padding-box para tapar el conic-gradient en
+     el área interior — sin esto, el conic se ve a través de toda la card. */
+  border: 2px solid transparent !important;
+  background-color: transparent !important;
+  background-image:
+    /* 1. Tinte amarillo sutil (visible solo en padding-box). */
+    linear-gradient(rgba(251, 191, 36, 0.06), rgba(251, 191, 36, 0.06)),
+    /* 2. Capa OPACA con el color base del fondo (padding-box) — bloquea el conic. */
+    linear-gradient(var(--bg-base), var(--bg-base)),
+    /* 3. Capa de borde: conic-gradient con segmento negro rotando (border-box). */
+    conic-gradient(
+      from var(--option-card-angle),
+      var(--accent-calc) 0deg,
+      var(--accent-calc) 280deg,
+      #000 320deg,
+      var(--accent-calc) 360deg
+    ) !important;
+  background-origin: padding-box, padding-box, border-box;
+  background-clip: padding-box, padding-box, border-box;
+  animation: option-card-rotate-border 6s linear infinite;
+  will-change: --option-card-angle;
+}
+
+@keyframes option-card-rotate-border {
+  to { --option-card-angle: 360deg; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .option-card[data-selected="true"] {
+    animation: none;
+    background-image:
+      linear-gradient(rgba(251, 191, 36, 0.06), rgba(251, 191, 36, 0.06)),
+      linear-gradient(var(--bg-base), var(--bg-base)),
+      linear-gradient(var(--accent-calc), var(--accent-calc)) !important;
+  }
+}

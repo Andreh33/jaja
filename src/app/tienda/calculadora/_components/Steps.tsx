@@ -243,21 +243,25 @@ export function Step6Blog({ state, dispatch }: { state: WizardState; dispatch: D
           style={{ borderColor: 'var(--border-subtle)' }}
           aria-describedby="blog-posts-hint"
         />
-        <p id="blog-posts-hint" className="text-sm text-white/55">
-          {state.blogPosts === 0 ? (
-            <>Blog incluido gratis, sin posts gestionados.</>
-          ) : (
-            <>
-              {state.blogPosts} × {formatEUR(item.amount)} ={' '}
-              <span className="font-mono" style={{ color: ACCENT }}>
-                {formatEUR(total)}
-                {yearly ? '/año' : '/mes'}
-              </span>
-            </>
-          )}
-        </p>
+        <div className="flex flex-col gap-1">
+          <p className="text-[11px]" style={{ color: ACCENT }}>
+            Recomendamos 12 posts/mes para mejor SEO
+          </p>
+          <p id="blog-posts-hint" className="text-sm text-white/55">
+            {state.blogPosts === 0 ? (
+              <>Blog incluido gratis, sin posts gestionados.</>
+            ) : (
+              <>
+                {state.blogPosts} × {formatEUR(item.amount)} ={' '}
+                <span className="font-mono" style={{ color: ACCENT }}>
+                  {formatEUR(total)}
+                  {yearly ? '/año' : '/mes'}
+                </span>
+              </>
+            )}
+          </p>
+        </div>
       </div>
-      <p className="mt-3 text-[11px] text-white/45">Recomendado: 12 posts/mes para empezar a posicionar.</p>
     </div>
   );
 }

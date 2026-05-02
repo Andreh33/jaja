@@ -59,12 +59,20 @@ export function OptionCard({
       aria-label={ariaLabel}
       onClick={onClick}
       disabled={disabled}
-      className="group w-full rounded-2xl p-5 text-left transition-all focus:outline-none focus-visible:ring-2 disabled:cursor-not-allowed disabled:opacity-50"
-      style={{
-        background: selected ? `${ACCENT}12` : 'rgba(255,255,255,0.02)',
-        border: `1px solid ${selected ? ACCENT + '60' : 'var(--border-subtle)'}`,
-        boxShadow: selected ? `0 0 0 1px ${ACCENT}40, 0 0 30px ${ACCENT}20` : 'none',
-      }}
+      data-selected={selected ? 'true' : 'false'}
+      className="option-card group w-full rounded-2xl p-5 text-left transition-all focus:outline-none focus-visible:ring-2 disabled:cursor-not-allowed disabled:opacity-50"
+      style={
+        selected
+          ? {
+              // Borde animado + tinte amarillo lo gestiona .option-card[data-selected="true"]
+              // en globals.css (con !important para anular el background base).
+              boxShadow: `0 0 30px ${ACCENT}25`,
+            }
+          : {
+              background: 'rgba(255,255,255,0.02)',
+              border: '1px solid var(--border-subtle)',
+            }
+      }
     >
       {children}
     </button>

@@ -46,7 +46,7 @@ export const INITIAL_STATE: WizardState = {
   tienda: false,
   social: false,
   aiAgent: 'none',
-  blogPosts: 12,
+  blogPosts: 0,
   logo: false,
   contact: {
     name: '',
