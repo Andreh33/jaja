@@ -220,6 +220,25 @@ export function categoryFromCatalogId(catalogId: string): ServiceCategory | null
 }
 
 /**
+ * ¿Es un item recurring (suscripción) o one-time (pago único)?
+ *
+ * Recurring (entran en MRR/ARR):
+ *   - hosting_*, tienda_*, social_*, ai_*, blog_post*
+ *
+ * One-time (NO entran en MRR; aparecen como línea en la primera invoice
+ * de la subscription pero no recurren):
+ *   - web_creation_*, logo, seo_hour
+ */
+export function isRecurringCatalogId(catalogId: string): boolean {
+  if (catalogId.startsWith('hosting_')) return true;
+  if (catalogId.startsWith('tienda_')) return true;
+  if (catalogId.startsWith('social_')) return true;
+  if (catalogId.startsWith('ai_')) return true;
+  if (catalogId.startsWith('blog_post')) return true;
+  return false;
+}
+
+/**
  * Nombre legible para mostrar en UI a partir de un catalog_id de los
  * `subscriptions.items` u `orders.line_items`. Si el id no se conoce,
  * devuelve el propio id (defensive: no rompemos UI por un item huérfano).

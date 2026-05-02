@@ -3,15 +3,26 @@ import { users, archivos, contactMessages } from '../../../../drizzle/schema';
 import { desc, eq, gte } from 'drizzle-orm';
 import Link from 'next/link';
 import Holographic from '@/components/effects/Holographic';
-import { Users, FolderOpen, Mail, Sparkles } from 'lucide-react';
+import { Users, FolderOpen, Mail, Sparkles, TrendingUp, Calendar, UserCheck } from 'lucide-react';
 import { formatDate } from '@/lib/utils';
+import { getBusinessMetrics } from '@/lib/admin-metrics';
 
 export const dynamic = 'force-dynamic';
+
+function eur(cents: number): string {
+  return new Intl.NumberFormat('es-ES', {
+    style: 'currency',
+    currency: 'EUR',
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 0,
+  }).format(cents / 100);
+}
 
 export default async function AdminHome() {
   const allClients = await db.select().from(users).where(eq(users.role, 'CLIENT'));
   const allFiles = await db.select().from(archivos).orderBy(desc(archivos.uploadedAt)).limit(10);
   const unreadMessages = await db.select().from(contactMessages).where(eq(contactMessages.read, false));
+  const metrics = await getBusinessMetrics();
   const monthAgo = new Date();
   monthAgo.setMonth(monthAgo.getMonth() - 1);
   const recentClients = allClients.filter((c) => c.createdAt && new Date(c.createdAt) >= monthAgo);
@@ -48,6 +59,49 @@ export default async function AdminHome() {
             </Holographic>
           );
         })}
+      </div>
+
+      {/* === Métricas de negocio === */}
+      <div className="mt-10">
+        <h2 className="font-display text-xl text-white" style={{ letterSpacing: '-0.02em', fontWeight: 700 }}>
+          Métricas de negocio
+        </h2>
+        <p className="mt-1 text-xs text-white/45">
+          Calculadas sobre suscripciones con status=active. Solo items recurring entran en el MRR
+          (web_creation, logo, seo_hour son one-time y no cuentan).
+        </p>
+        <div className="mt-4 grid gap-4 md:grid-cols-3">
+          <Holographic className="p-6" rounded="rounded-2xl">
+            <div
+              className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl"
+              style={{ background: 'rgba(34,197,94,0.10)', border: '1px solid rgba(34,197,94,0.30)', color: '#22c55e' }}
+            >
+              <UserCheck size={18} strokeWidth={1.6} />
+            </div>
+            <div className="font-display text-3xl text-white">{metrics.activeClients}</div>
+            <div className="mt-2 text-xs uppercase tracking-wider text-white/50">Clientes activos</div>
+          </Holographic>
+          <Holographic className="p-6" rounded="rounded-2xl">
+            <div
+              className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl"
+              style={{ background: 'rgba(251,191,36,0.10)', border: '1px solid rgba(251,191,36,0.30)', color: 'var(--accent-calc)' }}
+            >
+              <TrendingUp size={18} strokeWidth={1.6} />
+            </div>
+            <div className="font-display text-3xl text-white">{eur(metrics.mrrCents)}</div>
+            <div className="mt-2 text-xs uppercase tracking-wider text-white/50">MRR</div>
+          </Holographic>
+          <Holographic className="p-6" rounded="rounded-2xl">
+            <div
+              className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl"
+              style={{ background: 'rgba(139,92,246,0.10)', border: '1px solid rgba(139,92,246,0.30)', color: 'var(--purple-300)' }}
+            >
+              <Calendar size={18} strokeWidth={1.6} />
+            </div>
+            <div className="font-display text-3xl text-white">{eur(metrics.arrCents)}</div>
+            <div className="mt-2 text-xs uppercase tracking-wider text-white/50">ARR</div>
+          </Holographic>
+        </div>
       </div>
 
       <div className="mt-8 grid gap-6 lg:grid-cols-2">
