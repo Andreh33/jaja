@@ -16,6 +16,7 @@ const NAV = [
   { href: '/proyectos', label: 'Proyectos' },
   { href: '/blog', label: 'Blog' },
   { href: '/contacto', label: 'Contacto' },
+  { href: '/empleo', label: 'Ofertas de empleo' },
 ];
 
 export default function Navbar() {
