@@ -313,7 +313,13 @@ export default function ApplicationForm({ offer }: { offer?: OfferProps }) {
         />
         <span>
           Acepto la{' '}
-          <Link href="/privacidad" target="_blank" className="underline" style={{ color: ACCENT }}>
+          <Link
+            href="/privacidad#candidatos"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline"
+            style={{ color: ACCENT }}
+          >
             política de privacidad
           </Link>{' '}
           y el tratamiento de mis datos para procesos de selección. Mis datos serán eliminados a
