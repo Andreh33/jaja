@@ -467,6 +467,24 @@ body {
 .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
 /* ===========================================================
+   Admin (protected) — subtle dot-grid background pattern
+   Aplica solo dentro del layout (protected); /admin/login queda limpio.
+   =========================================================== */
+.admin-background {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background-color: var(--bg-base);
+  background-image: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.04) 1px,
+    transparent 1px
+  );
+  background-size: 24px 24px;
+  pointer-events: none;
+}
+
+/* ===========================================================
    Calculator OptionCard — animated yellow border on selected
    Technique: dual background-image with padding-box/border-box
    clipping. Uses @property to animate the conic-gradient angle

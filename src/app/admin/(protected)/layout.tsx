@@ -11,9 +11,11 @@ export default async function AdminProtectedLayout({ children }: { children: Rea
   if (session.user?.role !== 'ADMIN') redirect('/login');
 
   return (
-    <div className="flex min-h-screen" style={{ background: 'var(--bg-base)' }}>
+    <div className="relative flex min-h-screen" style={{ background: 'var(--bg-base)' }}>
+      {/* Patrón de puntos sutil de fondo. Solo en (protected), no en /admin/login. */}
+      <div className="admin-background" aria-hidden="true" />
       <Sidebar admin userName={session.user?.name || session.user?.email || ''} />
-      <main className="flex-1 overflow-x-hidden">{children}</main>
+      <main className="relative z-10 flex-1 overflow-x-hidden">{children}</main>
     </div>
   );
 }

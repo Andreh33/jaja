@@ -219,6 +219,18 @@ export function categoryFromCatalogId(catalogId: string): ServiceCategory | null
   return null;
 }
 
+/**
+ * Nombre legible para mostrar en UI a partir de un catalog_id de los
+ * `subscriptions.items` u `orders.line_items`. Si el id no se conoce,
+ * devuelve el propio id (defensive: no rompemos UI por un item huérfano).
+ */
+export function humanReadableCatalogName(catalogId: string): string {
+  for (const k of Object.keys(CATALOG) as Array<keyof typeof CATALOG>) {
+    if (CATALOG[k].id === catalogId) return CATALOG[k].name;
+  }
+  return catalogId;
+}
+
 /** Formatea céntimos como "1.234,56 €". */
 export function formatEUR(cents: number): string {
   return new Intl.NumberFormat('es-ES', {

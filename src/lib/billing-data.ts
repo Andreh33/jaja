@@ -17,10 +17,11 @@
 import type Stripe from 'stripe';
 import { eq, and, ne, desc } from 'drizzle-orm';
 import { db } from './db';
-import { subscriptions, users } from '../../drizzle/schema';
+import { orders, subscriptions, users } from '../../drizzle/schema';
 import { stripe } from './stripe';
 
 export type LocalSubscription = typeof subscriptions.$inferSelect;
+export type LocalOrder = typeof orders.$inferSelect;
 
 export type BillingData = {
   user: { id: string; email: string; stripeCustomerId: string | null };
@@ -44,6 +45,18 @@ export type BillingData = {
  * páginas que solo necesitan saber si hay plan activo (dashboard
  * principal, listado admin).
  */
+/**
+ * Lista de pagos one-time del usuario (tabla `orders`), más recientes
+ * primero. Read-only. Sin Stripe.
+ */
+export async function getOrdersForUser(userId: string): Promise<LocalOrder[]> {
+  return db
+    .select()
+    .from(orders)
+    .where(eq(orders.userId, userId))
+    .orderBy(desc(orders.createdAt));
+}
+
 export async function getActiveLocalSubscription(
   userId: string,
 ): Promise<LocalSubscription | null> {
