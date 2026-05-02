@@ -4,7 +4,7 @@ import { getAllPosts } from '@/lib/posts';
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const base = 'https://serviciosonlineweb.com';
   const fixed = [
-    '', '/sobre-nosotros', '/blog', '/tienda', '/tienda/web', '/tienda/online', '/tienda/agente-ia', '/contacto', '/terminos', '/privacidad',
+    '', '/sobre-nosotros', '/blog', '/tienda', '/tienda/web', '/tienda/online', '/tienda/agente-ia', '/proyectos', '/contacto', '/terminos', '/privacidad',
   ];
   const fixedEntries: MetadataRoute.Sitemap = fixed.map((p) => ({
     url: `${base}${p}`,
