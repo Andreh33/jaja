@@ -25,3 +25,13 @@ ALTER TABLE users DROP COLUMN stripe_customer_id;
 DROP INDEX IF EXISTS admin_client_data_user_id_unique;
 DROP TABLE IF EXISTS admin_client_data;
 DROP INDEX IF EXISTS empresas_user_id_unique;
+
+-- =====================================================================
+-- Job portal additions (commit chore(db): add job_offers and job_applications)
+-- Orden: PRIMERO job_applications porque tiene FK a job_offers.
+-- =====================================================================
+DROP INDEX IF EXISTS idx_job_applications_status;
+DROP INDEX IF EXISTS idx_job_applications_job_offer_id;
+DROP TABLE IF EXISTS job_applications;
+DROP INDEX IF EXISTS job_offers_slug_unique;
+DROP TABLE IF EXISTS job_offers;

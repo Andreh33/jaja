@@ -23,6 +23,8 @@ const KNOWN_TABLES = [
   'orders',
   'webhook_events',
   'admin_client_data',
+  'job_offers',
+  'job_applications',
 ] as const;
 
 async function main() {

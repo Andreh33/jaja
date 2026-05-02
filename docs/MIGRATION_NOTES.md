@@ -77,6 +77,7 @@ UNIQUE indexes críticos vigilados:
 - `orders_stripe_session_id_unique`
 - `empresas_user_id_unique`
 - `admin_client_data_user_id_unique`
+- `job_offers_slug_unique`
 
 ---
 
@@ -189,6 +190,84 @@ para listar). Si en el futuro se quiere TODO estructurado, se migrará a
 
 Bloque añadido al final de `scripts/rollback-stripe-schema.sql` —
 revierte solo estas adiciones sin tocar las tablas Stripe.
+
+---
+
+## Job portal schema
+
+Tablas `job_offers` y `job_applications` añadidas en el commit
+`chore(db): add job_offers and job_applications tables for job portal`.
+
+### Estructura
+
+- **`job_offers`**: ofertas de empleo publicadas. `slug` UNIQUE
+  (URL pública `/empleo/[slug]`), `status` controla visibilidad
+  (`borrador`/`publicada`/`cerrada`). `published_at` y `closed_at`
+  se rellenan al transicionar de estado. Campos opcionales para
+  contract_type, schedule, salary, languages, experience, extras.
+- **`job_applications`**: candidaturas recibidas vía portal público.
+  `job_offer_id` FK a `job_offers` con **ON DELETE SET NULL** —
+  si la oferta se borra, la candidatura sobrevive como espontánea.
+  CV almacenado en Vercel Blob; aquí se guarda URL + filename + tamaño.
+
+### Snapshots de la oferta en el momento de aplicar
+
+`job_applications` guarda 4 columnas snapshot (todas nullable):
+`offer_title_snapshot`, `offer_description_snapshot`,
+`offer_salary_snapshot`, `offer_slug_snapshot`. Permiten al admin
+ver la oferta original incluso si la oferta cambió o desapareció.
+Si la candidatura es espontánea (sin oferta), las 4 quedan NULL.
+
+### CHECK constraints (defensa en profundidad)
+
+Aunque la app valide los enums vía zod, la BBDD también lo hace
+con CHECK constraints sobre las columnas:
+
+- `job_offers_contract_type_check`: contract_type IN
+  ('indefinido','temporal','practicas','freelance') o NULL.
+- `job_offers_schedule_check`: schedule IN
+  ('completa','parcial','flexible') o NULL.
+- `job_offers_requires_computer_check`: requires_computer IN
+  ('si','no','depende').
+- `job_offers_status_check`: status IN
+  ('borrador','publicada','cerrada').
+- `job_applications_has_computer_check`: has_computer IN
+  ('si','no') o NULL.
+- `job_applications_status_check`: status IN
+  ('pendiente','contactado','descartado','contratado').
+
+### Retention policy GDPR
+
+Candidaturas con `status != 'contratado'` se eliminan a los 30 días
+desde `created_at` por un cron job (ver commit `feat(jobs): GDPR
+cleanup cron for old applications and CVs`). El CV en Vercel Blob
+se borra simultáneamente. Las contratadas se conservan
+indefinidamente como parte de la relación laboral.
+
+### ⚠️ Drift falso de drizzle-kit detectado en este commit
+
+Tras crear las dos tablas con `check()` constraints, ejecutar
+`drizzle-kit push --strict --verbose` por segunda vez muestra un
+plan que propone **recrear las 12 tablas existentes** con el
+patrón `CREATE TABLE __new_X` + `INSERT INTO __new_X SELECT ...`
++ `DROP TABLE X` + `RENAME __new_X TO X`. Esto es un **drift
+falso del comparador** de drizzle-kit 0.31.x — los datos en BBDD
+están correctos, las definiciones de schema también, pero el
+parser introspecta diferente al añadir `check()`.
+
+**NO ejecutar `npm run db:push` aceptando el plan sin auditar
+qué statements aplicaría.** Si el plan incluye CREATE TABLE
+`__new_*` para tablas que ya existen, abortar con `n` y
+revisar manualmente.
+
+Verificación tras el push aplicado: `verify-schema.ts` confirma
+que las 12 tablas tienen sus columnas, defaults y NOT NULLs
+intactos; los counts de filas se preservan (subscriptions=1,
+users=9, etc. tras el push).
+
+Mitigación futura: considerar upgrade de drizzle-kit a una versión
+que no muestre este drift falso, o añadir un script `db:push:safe`
+que aborte automáticamente si detecta `__new_*` en el plan.
 
 ---
 

@@ -1,4 +1,4 @@
-import { sqliteTable, text, integer, index, uniqueIndex } from 'drizzle-orm/sqlite-core';
+import { sqliteTable, text, integer, index, uniqueIndex, check } from 'drizzle-orm/sqlite-core';
 import { sql } from 'drizzle-orm';
 
 /**
@@ -191,6 +191,105 @@ export const adminClientData = sqliteTable('admin_client_data', {
   uniqueIndex('admin_client_data_user_id_unique').on(t.userId),
 ]);
 
+/* =========================================================================
+ * Portal de empleo
+ * ========================================================================= */
+
+/**
+ * Ofertas de empleo publicadas por la empresa.
+ *
+ * - `slug` UNIQUE — URL pública /empleo/[slug].
+ * - `status` controla visibilidad pública: 'borrador' (oculto),
+ *   'publicada' (formulario abierto), 'cerrada' (visible pero sin form).
+ * - CHECK constraints en BBDD como red de seguridad por si la app valida mal.
+ */
+export const jobOffers = sqliteTable('job_offers', {
+  id: text('id').primaryKey().$defaultFn(() => crypto.randomUUID()),
+  slug: text('slug').notNull(),
+  title: text('title').notNull(),
+  description: text('description').notNull(),
+  location: text('location').notNull(),
+  contractType: text('contract_type', { enum: ['indefinido', 'temporal', 'practicas', 'freelance'] }),
+  schedule: text('schedule', { enum: ['completa', 'parcial', 'flexible'] }),
+  salary: text('salary'),
+  experienceRequired: text('experience_required'),
+  languages: text('languages'),
+  extras: text('extras'),
+  requiresComputer: text('requires_computer', { enum: ['si', 'no', 'depende'] }).notNull(),
+  positionsCount: integer('positions_count').notNull().default(1),
+  status: text('status', { enum: ['borrador', 'publicada', 'cerrada'] }).notNull().default('borrador'),
+  // Unix seconds (nullable hasta que la oferta se publica/cierra).
+  publishedAt: integer('published_at'),
+  closedAt: integer('closed_at'),
+  createdAt: integer('created_at', { mode: 'timestamp' }).default(NOW),
+  updatedAt: integer('updated_at', { mode: 'timestamp' }).default(NOW),
+}, (t) => [
+  uniqueIndex('job_offers_slug_unique').on(t.slug),
+  check(
+    'job_offers_contract_type_check',
+    sql`${t.contractType} IS NULL OR ${t.contractType} IN ('indefinido','temporal','practicas','freelance')`,
+  ),
+  check(
+    'job_offers_schedule_check',
+    sql`${t.schedule} IS NULL OR ${t.schedule} IN ('completa','parcial','flexible')`,
+  ),
+  check(
+    'job_offers_requires_computer_check',
+    sql`${t.requiresComputer} IN ('si','no','depende')`,
+  ),
+  check(
+    'job_offers_status_check',
+    sql`${t.status} IN ('borrador','publicada','cerrada')`,
+  ),
+]);
+
+/**
+ * Candidaturas recibidas a través del portal público.
+ *
+ * - `jobOfferId` con ON DELETE SET NULL: si se borra la oferta, la
+ *   candidatura sobrevive como "espontánea". Los snapshots permiten al
+ *   admin ver a qué oferta original aplicó aunque la oferta haya cambiado
+ *   o desaparecido.
+ * - `gdprConsentAt` registra el momento del consentimiento — usado por el
+ *   cron de retención (30 días para no contratados).
+ * - CV almacenado en Vercel Blob; aquí guardamos URL + metadata.
+ */
+export const jobApplications = sqliteTable('job_applications', {
+  id: text('id').primaryKey().$defaultFn(() => crypto.randomUUID()),
+  jobOfferId: text('job_offer_id').references(() => jobOffers.id, { onDelete: 'set null' }),
+  // Snapshots del estado de la oferta en el momento de aplicar.
+  offerTitleSnapshot: text('offer_title_snapshot'),
+  offerDescriptionSnapshot: text('offer_description_snapshot'),
+  offerSalarySnapshot: text('offer_salary_snapshot'),
+  offerSlugSnapshot: text('offer_slug_snapshot'),
+  fullName: text('full_name').notNull(),
+  email: text('email').notNull(),
+  phone: text('phone').notNull(),
+  city: text('city').notNull(),
+  message: text('message'),
+  // null si la oferta no requiere ordenador (no se preguntó).
+  hasComputer: text('has_computer', { enum: ['si', 'no'] }),
+  cvBlobUrl: text('cv_blob_url').notNull(),
+  cvFilename: text('cv_filename').notNull(),
+  cvSizeBytes: integer('cv_size_bytes').notNull(),
+  status: text('status', { enum: ['pendiente', 'contactado', 'descartado', 'contratado'] }).notNull().default('pendiente'),
+  adminNotes: text('admin_notes'),
+  createdAt: integer('created_at', { mode: 'timestamp' }).default(NOW).notNull(),
+  // Unix seconds del consentimiento GDPR.
+  gdprConsentAt: integer('gdpr_consent_at').notNull(),
+}, (t) => [
+  index('idx_job_applications_job_offer_id').on(t.jobOfferId),
+  index('idx_job_applications_status').on(t.status),
+  check(
+    'job_applications_has_computer_check',
+    sql`${t.hasComputer} IS NULL OR ${t.hasComputer} IN ('si','no')`,
+  ),
+  check(
+    'job_applications_status_check',
+    sql`${t.status} IN ('pendiente','contactado','descartado','contratado')`,
+  ),
+]);
+
 export type User = typeof users.$inferSelect;
 export type Empresa = typeof empresas.$inferSelect;
 export type AdminClientData = typeof adminClientData.$inferSelect;
@@ -200,3 +299,5 @@ export type ContactMessage = typeof contactMessages.$inferSelect;
 export type Subscription = typeof subscriptions.$inferSelect;
 export type Order = typeof orders.$inferSelect;
 export type WebhookEvent = typeof webhookEvents.$inferSelect;
+export type JobOffer = typeof jobOffers.$inferSelect;
+export type JobApplication = typeof jobApplications.$inferSelect;

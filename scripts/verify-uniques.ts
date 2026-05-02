@@ -22,6 +22,7 @@ const REQUIRED_UNIQUES: { table: string; index: string; column: string }[] = [
   { table: 'orders', index: 'orders_stripe_session_id_unique', column: 'stripe_session_id' },
   { table: 'empresas', index: 'empresas_user_id_unique', column: 'user_id' },
   { table: 'admin_client_data', index: 'admin_client_data_user_id_unique', column: 'user_id' },
+  { table: 'job_offers', index: 'job_offers_slug_unique', column: 'slug' },
 ];
 
 async function main() {
