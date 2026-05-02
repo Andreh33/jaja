@@ -35,6 +35,33 @@ export type BillingData = {
   };
 };
 
+/**
+ * Subscription "actual" del usuario: la más reciente que no esté en
+ * estado terminal. Excluye 'canceled' e 'incomplete_expired' para no
+ * mostrar planes muertos.
+ *
+ * Read-only de BBDD local. NO llama a Stripe — apto para usar en
+ * páginas que solo necesitan saber si hay plan activo (dashboard
+ * principal, listado admin).
+ */
+export async function getActiveLocalSubscription(
+  userId: string,
+): Promise<LocalSubscription | null> {
+  const subs = await db
+    .select()
+    .from(subscriptions)
+    .where(
+      and(
+        eq(subscriptions.userId, userId),
+        ne(subscriptions.status, 'canceled'),
+        ne(subscriptions.status, 'incomplete_expired'),
+      ),
+    )
+    .orderBy(desc(subscriptions.createdAt))
+    .limit(1);
+  return subs[0] ?? null;
+}
+
 export async function getBillingData(userId: string): Promise<BillingData> {
   const userRow = (
     await db
@@ -50,28 +77,12 @@ export async function getBillingData(userId: string): Promise<BillingData> {
       email: userRow?.email ?? '',
       stripeCustomerId: userRow?.stripeCustomerId ?? null,
     },
-    subscription: null,
+    subscription: await getActiveLocalSubscription(userId),
     upcoming: null,
     invoices: [],
     customerDeleted: false,
     errors: {},
   };
-
-  // 1. Subscription "actual": la más reciente que no esté en estado terminal.
-  // Excluye 'canceled' e 'incomplete_expired' para evitar mostrar planes muertos.
-  const subs = await db
-    .select()
-    .from(subscriptions)
-    .where(
-      and(
-        eq(subscriptions.userId, userId),
-        ne(subscriptions.status, 'canceled'),
-        ne(subscriptions.status, 'incomplete_expired'),
-      ),
-    )
-    .orderBy(desc(subscriptions.createdAt))
-    .limit(1);
-  base.subscription = subs[0] ?? null;
 
   if (!base.user.stripeCustomerId) {
     return base;

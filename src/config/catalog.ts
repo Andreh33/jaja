@@ -204,6 +204,21 @@ export function pickWebCreation(over8: boolean): CatalogItem {
   return over8 ? CATALOG.webCreationGt8 : CATALOG.webCreationLe8;
 }
 
+/**
+ * Categorías de servicio principales mostradas en /dashboard y
+ * /admin/clientes. Solo 3 — extras puntuales (logo, seo_hour) y
+ * complementos (social_media*, blog_post*) NO cuentan como servicio
+ * principal y devuelven null.
+ */
+export type ServiceCategory = 'web' | 'tienda' | 'ia';
+
+export function categoryFromCatalogId(catalogId: string): ServiceCategory | null {
+  if (catalogId.startsWith('hosting_') || catalogId.startsWith('web_creation_')) return 'web';
+  if (catalogId.startsWith('tienda_')) return 'tienda';
+  if (catalogId.startsWith('ai_')) return 'ia';
+  return null;
+}
+
 /** Formatea céntimos como "1.234,56 €". */
 export function formatEUR(cents: number): string {
   return new Intl.NumberFormat('es-ES', {
