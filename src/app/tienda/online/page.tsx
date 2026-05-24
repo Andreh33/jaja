@@ -13,7 +13,7 @@ import { STRIPE_LINKS, whatsappLink } from '@/lib/stripe-links';
 
 export const metadata: Metadata = {
   title: 'Plan Tienda Online · E-commerce profesional en 48h',
-  description: 'Tienda online con Stripe, Bizum, transferencia, SEO de productos y analítica integrada. 80€/mes + 400€ creación.',
+  description: 'Tienda online con Stripe, Bizum, transferencia, SEO de productos y analítica integrada. 80€/mes + 600€ creación.',
 };
 
 const FEATURES = [
@@ -69,7 +69,7 @@ export default function OnlinePlanPage() {
                 plan={{
                   badge: 'Plan Tienda',
                   price: 80,
-                  oneTime: '+ 400€ pago único de creación',
+                  oneTime: '+ 600€ pago único de creación',
                   accent: 'orange',
                   features: [
                     'Desarrollo completo de la tienda online',

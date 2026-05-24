@@ -14,7 +14,7 @@ import NumberFlow from '@/components/effects/NumberFlow';
 
 export const metadata: Metadata = {
   title: 'Plan Web · Diseño web profesional en 48h',
-  description: 'Página web profesional con SEO técnico, optimización móvil y entrega en 24-48h. 60€/mes + 400€ creación. Sin permanencia.',
+  description: 'Página web profesional con SEO técnico, optimización móvil y entrega en 24-48h. 60€/mes + 600€ creación. Sin permanencia.',
 };
 
 const FEATURES = [
@@ -70,7 +70,7 @@ export default function WebPlanPage() {
                 plan={{
                   badge: 'Plan Web',
                   price: 60,
-                  oneTime: '+ 400€ pago único de creación',
+                  oneTime: '+ 600€ pago único de creación',
                   accent: 'blue',
                   features: [
                     'Desarrollo completo de la página web',
