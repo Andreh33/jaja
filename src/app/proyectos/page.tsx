@@ -10,7 +10,7 @@ import { Reveal, RevealGroup, RevealItem } from '@/components/effects/Reveal';
 export const metadata: Metadata = {
   title: 'Proyectos · Algunos de los negocios que confían en Latech',
   description:
-    'Cada proyecto que hacemos lo cuidamos como si fuera nuestro. Webs reales en producción para tienda, restauración, automoción, servicios y obra civil.',
+    'Cada proyecto que hacemos lo cuidamos como si fuera nuestro. Webs reales en producción para tienda, moda, restauración, automoción, deportes de combate, servicios y obra civil.',
   alternates: {
     canonical: '/proyectos',
   },
@@ -28,6 +28,17 @@ type Project = {
 };
 
 const PROJECTS: Project[] = [
+  {
+    id: 'the-boat-house',
+    name: 'The Boat House',
+    url: 'https://ibizarestaurante.vercel.app/es',
+    domain: 'ibizarestaurante.vercel.app',
+    sector: 'Restaurante de alta cocina mediterránea',
+    location: 'Cala San Vicente, Ibiza',
+    description:
+      'Alta cocina mediterránea en el norte de Ibiza con una web que es una experiencia inmersiva de scroll: arranca con 40 años de historia familiar y desciende «bajo la superficie» hasta el fondo del mar, donde reposan los platos y la carta —un guiño perfecto a su cocina hiperlocal de producto del día y km 0. Cocina moderna y orgánica (paella melosa, tomahawk gallego madurado, wagyu, curry de pescado), reservas online, catering para barcos y soporte en 6 idiomas. Para un público internacional y navegante que busca una experiencia gastronómica premium frente al mar.',
+    image: '/proyectos/the-boat-house.png',
+  },
   {
     id: 'monopatinmonkey',
     name: 'Monopatín Monkey',
@@ -83,6 +94,61 @@ const PROJECTS: Project[] = [
       'Web pensada para un mesón con tres generaciones detrás (1958) en pleno centro histórico de Trujillo. Carta digital con recetas clásicas (migas, cocido, ibéricos a la brasa de encina), historia familiar contada con calidez, galería del local y reservas en línea. El tono es cálido y nostálgico, alineado con el "lo de siempre, hecho como siempre" que esperan tanto turistas gastronómicos como clientela local fiel. Sirve para llenar mesa sin depender de plataformas terceras.',
     image: '/proyectos/meson-casa-andres.png',
   },
+  {
+    id: 'industrial-fighters',
+    name: 'Industrial Fighters',
+    url: 'https://industrial-fighters.vercel.app/',
+    domain: 'industrial-fighters.vercel.app',
+    sector: 'Equipamiento artesanal para deportes de combate',
+    location: 'España',
+    description:
+      'Marca española de equipamiento de combate fabricado a medida: shorts de Muay Thai, guantes de boxeo y MMA, camisetas técnicas y bucales personalizados con bordado de nombres, banderas y emblemas. La web está montada como un combate por «rounds», con estética oscura y directa, portfolio de trabajos reales y pedidos cerrados por WhatsApp sin formularios. Pensada para gimnasios, equipos y luchadores que buscan material artesanal, con garantía de costura y envío 24-48h a península.',
+    image: '/proyectos/industrial-fighters.png',
+  },
+  {
+    id: 'proyecto-1',
+    name: 'Proyecto 1',
+    url: 'https://ropasergi.vercel.app/',
+    domain: 'ropasergi.vercel.app',
+    sector: 'Boutique multimarca de moda de lujo',
+    location: 'Tarragona',
+    description:
+      'Boutique multimarca de lujo con chándales y prendas de Versace, Louis Vuitton, Gucci, Dior o Prada y relojería Rolex. Diseño minimalista y conceptual, con manifiesto de marca, números romanos y un tono provocador que rompe con el comercio convencional («0 rebajas falsas»). Incluye tienda online con catálogo filtrable, sistema de «drops» con acceso anticipado 24h y newsletter exclusiva. Dirigida a un público joven, sofisticado y de alto poder adquisitivo que valora la autenticidad y el producto seleccionado.',
+    image: '/proyectos/proyecto-1.png',
+  },
+  {
+    id: 'french-tacos',
+    name: 'CLM French Tacos',
+    url: 'https://frenchtacos.vercel.app/',
+    domain: 'frenchtacos.vercel.app',
+    sector: 'Comida rápida urbana — french tacos, burgers y bowls',
+    location: 'Ciudad Real',
+    description:
+      'Restaurante de comida rápida urbana especializado en «french tacos», con burgers, bowls, ensaladas y menús infantiles. Identidad joven y callejera —«nacido en Francia, criado en la calle»— con tipografía bold, fotografía de producto apetecible y carruseles por categorías. Carta digital con precios, horarios hasta medianoche, pedidos integrados con Glovo y enlaces directos a teléfono, Instagram y Google Maps. Pensada para un público joven y nocturno que busca comida rápida diferente y pedir desde el móvil.',
+    image: '/proyectos/french-tacos.png',
+  },
+  {
+    id: 'el-refugio-de-a-cabana',
+    name: 'El Refugio de A Cabana',
+    url: 'https://elrefugiodeacabana.vercel.app/',
+    domain: 'elrefugiodeacabana.vercel.app',
+    sector: 'Restaurante de cocina gallega tradicional',
+    location: 'A Cabana, Ferrol (Galicia)',
+    description:
+      'Cocina gallega tradicional con la filosofía del «lugar donde se está bien». Apuesta por la cocina lenta y el producto local comprado cada mañana: pulpo a la gallega, raxo al queso, zorza, tortilla y helados artesanos. Diseño cálido y minimalista con tonos tierra, buena fotografía gastronómica, historia del local, galería y testimonios. Incluye reservas online y CTAs claros para reservar o llamar. Pensada para vecinos, familias y visitantes que buscan gastronomía gallega auténtica sin artificios.',
+    image: '/proyectos/el-refugio-de-a-cabana.png',
+  },
+  {
+    id: 'maison-noir',
+    name: 'Maison Noir',
+    url: 'https://mixelin.vercel.app/',
+    domain: 'mixelin.vercel.app',
+    sector: 'Alta cocina francesa (fine dining)',
+    location: 'París (concepto)',
+    description:
+      'Concepto de restaurante de alta cocina francesa con tres estrellas Michelin ambientado en Saint-Germain (París). Diseño elegante y teatral: interfaz oscura, fotografía en blanco y negro, tipografía serif y una «Carte Vivante» interactiva para explorar los menús degustación. Reservas online con disponibilidad en tiempo real, calendario de 90 días, información «en vivo» del servicio y newsletter estacional. Una pieza de escaparate que demuestra hasta dónde puede llegar Latech en proyectos de lujo.',
+    image: '/proyectos/maison-mixelin.png',
+  },
 ];
 
 export default function ProyectosPage() {
@@ -107,8 +173,8 @@ export default function ProyectosPage() {
                 Algunos de los negocios que ya confían en nosotros
               </h1>
               <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/65 md:text-lg">
-                Cada proyecto que hacemos lo cuidamos como si fuera nuestro. Estos son cinco
-                negocios reales que ya tienen su web en producción con Latech. Pulsa cualquiera
+                Cada proyecto que hacemos lo cuidamos como si fuera nuestro. Estos son once
+                proyectos que ya tienen su web en producción con Latech. Pulsa cualquiera
                 para visitarla.
               </p>
             </Reveal>
