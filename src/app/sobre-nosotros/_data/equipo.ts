@@ -50,4 +50,20 @@ export const equipo: Miembro[] = [
     },
     esFundador: false,
   },
+  {
+    slug: 'ivan-sanchez',
+    nombre: 'Iván Sánchez',
+    rol: 'Jefe de equipo de promotores',
+    descripcion: [
+      'Desde joven, Iván siempre ha tenido facilidad para conectar con las personas, escuchar sus necesidades y buscar soluciones que aporten valor real a quienes le rodean. Esa capacidad humana y cercana es hoy una de sus mayores fortalezas dentro de la empresa.',
+      'Actualmente, se dedica a identificar negocios que necesitan mejorar su presencia y herramientas digitales, ayudándoles a descubrir soluciones prácticas a través de los servicios de LA Technology. Su trabajo consiste en asesorar, captar empresas y dar a conocer todo el potencial de la compañía, siempre con un trato cercano, transparente y orientado a ayudar a cada cliente a encontrar la mejor opción para su crecimiento.',
+    ],
+    foto: {
+      src: '/equipo/ivan-sanchez/foto.jpeg',
+      width: 941,
+      height: 1672,
+      alt: 'Foto de Iván Sánchez, jefe de equipo de promotores en Latech',
+    },
+    esFundador: false,
+  },
 ];

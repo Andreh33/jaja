@@ -8,6 +8,7 @@ const resto = equipo.filter((m) => !m.esFundador);
 const LINE_COLORS: Record<string, string> = {
   fundadores: 'var(--accent-web)',          // azul
   'ricardo-perez': 'var(--accent-ia)',      // verde
+  'ivan-sanchez': '#FF1A1A',                // rojo MUY fuerte
 };
 
 function Parrafos({ items, className }: { items: string[]; className?: string }) {
