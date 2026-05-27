@@ -8,6 +8,7 @@ import ScrollProgress from '@/components/effects/ScrollProgress';
 import WhatsAppFloat from '@/components/shared/WhatsAppFloat';
 import InstallPrompt from '@/components/pwa/InstallPrompt';
 import ServiceWorkerRegister from '@/components/pwa/ServiceWorkerRegister';
+import SmoothScroll from '@/components/providers/SmoothScroll';
 import SessionProvider from '@/components/providers/SessionProvider';
 
 const geist = Geist({
@@ -77,6 +78,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     >
       <body className="min-h-screen antialiased">
         <SessionProvider>
+          <SmoothScroll />
           <ScrollProgress />
           <CustomCursor />
           {children}

@@ -535,3 +535,25 @@ body {
       linear-gradient(var(--accent-calc), var(--accent-calc)) !important;
   }
 }
+
+/* ===========================================================
+   Lenis — scroll suave cinematográfico (Pasada 1)
+   Estilos base recomendados. data-lenis-prevent en contenedores
+   con scroll propio (p. ej. Radix ScrollArea) para no interferir.
+   =========================================================== */
+html.lenis,
+html.lenis:focus-within {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
