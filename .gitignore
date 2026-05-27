@@ -41,6 +41,9 @@ yarn-error.log*
 .env*.local
 .env.production
 
+# brainstorming companion artifacts
+.superpowers/
+
 # vercel
 .vercel
 
