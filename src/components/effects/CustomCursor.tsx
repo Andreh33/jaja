@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 export default function CustomCursor() {
   const dotRef = useRef<HTMLDivElement>(null);
@@ -9,10 +9,25 @@ export default function CustomCursor() {
   const targetY = useRef(0);
   const ringX = useRef(0);
   const ringY = useRef(0);
+  // Solo en dispositivos con puntero fino (ratón). En táctil no renderizamos
+  // nada — antes los <div> quedaban clavados en la esquina (cursor "fantasma").
+  const [enabled, setEnabled] = useState(false);
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
-    if (!matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+    const mq = window.matchMedia('(hover: hover) and (pointer: fine)');
+    const update = () => setEnabled(mq.matches);
+    // rAF: evita setState síncrono en el cuerpo del efecto y un parpadeo de hidratación.
+    const raf = requestAnimationFrame(update);
+    mq.addEventListener('change', update);
+    return () => {
+      cancelAnimationFrame(raf);
+      mq.removeEventListener('change', update);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!enabled) return;
     document.body.classList.add('has-custom-cursor');
 
     const onMove = (e: MouseEvent) => {
@@ -24,10 +39,6 @@ export default function CustomCursor() {
     };
 
     const hoverables = ['a', 'button', '[data-cursor="hover"]', '[role="button"]', 'input', 'textarea', 'select'];
-    const isHover = (el: Element | null): boolean => {
-      if (!el) return false;
-      return hoverables.some((sel) => (el as HTMLElement).matches?.(sel));
-    };
     const onOver = (e: MouseEvent) => {
       const t = e.target as Element;
       const target = t?.closest?.(hoverables.join(','));
@@ -69,7 +80,9 @@ export default function CustomCursor() {
       window.removeEventListener('mouseout', onOut);
       cancelAnimationFrame(raf);
     };
-  }, []);
+  }, [enabled]);
+
+  if (!enabled) return null;
 
   return (
     <>
