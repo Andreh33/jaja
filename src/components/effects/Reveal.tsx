@@ -2,10 +2,14 @@
 
 import { motion, type Variants } from 'framer-motion';
 import type { ReactNode } from 'react';
+import { EASE_OUT_EXPO, DUR } from '@/lib/motion';
 
-const fadeUp: Variants = {
-  hidden: { opacity: 0, y: 30 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } },
+// Reveal compartido (lo usan proyectos, tienda, blog, sobre-nosotros, contacto…).
+// Elevado al sistema de movimiento: entrada con desplazamiento + micro-escala,
+// curva y duración unificadas. Sin clip-path para no recortar sombras de cards.
+const item: Variants = {
+  hidden: { opacity: 0, y: 40, scale: 0.985 },
+  show: { opacity: 1, y: 0, scale: 1, transition: { duration: DUR.slow, ease: EASE_OUT_EXPO } },
 };
 
 export function Reveal({
@@ -28,8 +32,8 @@ export function Reveal({
       whileInView="show"
       viewport={{ once: true, margin: '-80px' }}
       variants={{
-        hidden: { opacity: 0, y: 30 },
-        show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1], delay } },
+        hidden: { opacity: 0, y: 40, scale: 0.985 },
+        show: { opacity: 1, y: 0, scale: 1, transition: { duration: DUR.slow, ease: EASE_OUT_EXPO, delay } },
       }}
     >
       {children}
@@ -39,7 +43,7 @@ export function Reveal({
 
 export function RevealGroup({
   children,
-  stagger = 0.08,
+  stagger = 0.09,
   className,
 }: {
   children: ReactNode;
@@ -60,7 +64,7 @@ export function RevealGroup({
 }
 
 export const RevealItem = ({ children, className }: { children: ReactNode; className?: string }) => (
-  <motion.div className={className} variants={fadeUp}>
+  <motion.div className={className} variants={item}>
     {children}
   </motion.div>
 );
