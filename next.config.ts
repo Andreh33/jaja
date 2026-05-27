@@ -10,6 +10,19 @@ const nextConfig: NextConfig = {
       { protocol: 'https', hostname: 'ui-avatars.com' },
     ],
   },
+  async headers() {
+    return [
+      {
+        // El service worker no debe cachearse: así el navegador siempre
+        // recibe la última versión y puede actualizarla.
+        source: '/sw.js',
+        headers: [
+          { key: 'Cache-Control', value: 'no-cache, no-store, must-revalidate' },
+          { key: 'Content-Type', value: 'application/javascript; charset=utf-8' },
+        ],
+      },
+    ];
+  },
 };
 
 export default nextConfig;

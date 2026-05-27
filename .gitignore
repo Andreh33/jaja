@@ -44,6 +44,10 @@ yarn-error.log*
 # brainstorming companion artifacts
 .superpowers/
 
+# playwright mcp artifacts
+.playwright-mcp/
+*-check.jpeg
+
 # vercel
 .vercel
 

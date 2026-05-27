@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Geist, Geist_Mono, Syne } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/next';
 import './globals.css';
@@ -6,6 +6,8 @@ import { Toaster } from 'sonner';
 import CustomCursor from '@/components/effects/CustomCursor';
 import ScrollProgress from '@/components/effects/ScrollProgress';
 import WhatsAppFloat from '@/components/shared/WhatsAppFloat';
+import InstallPrompt from '@/components/pwa/InstallPrompt';
+import ServiceWorkerRegister from '@/components/pwa/ServiceWorkerRegister';
 import SessionProvider from '@/components/providers/SessionProvider';
 
 const geist = Geist({
@@ -55,6 +57,15 @@ export const metadata: Metadata = {
   verification: {
     google: 'WDbrVKr2CeTxz4pUSWpoNn604_T1z6nXKSJlcJkZtlc',
   },
+  icons: {
+    icon: '/icon.svg',
+    apple: '/icons/apple-touch-icon.png',
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: '#07050E',
+  colorScheme: 'dark',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -70,6 +81,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <CustomCursor />
           {children}
           <WhatsAppFloat />
+          <InstallPrompt />
+          <ServiceWorkerRegister />
         </SessionProvider>
         <Toaster
           position="bottom-center"

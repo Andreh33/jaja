@@ -21,7 +21,7 @@ El listón es premium: nada a medias, móvil tan cuidado como desktop.
 1. **Fix del cursor en móvil** (defecto reportado).
 2. **Sistema de movimiento** (tokens compartidos) + `MotionConfig` global.
 3. **Scroll suave (Lenis)** — solo desktop, móvil nativo.
-4. **Degradación y accesibilidad** — `prefers-reduced-motion`, `save-data`, gating táctil.
+4. **Degradación** — `save-data`, gating táctil, gama baja.
 5. **PWA**: manifest + iconos + service worker mínimo + emergente de instalación (dirección B).
 6. **Open Graph**: OG por defecto (raíz) + OG dinámica por post de blog + OG de la página `/proyectos`.
 
@@ -37,7 +37,7 @@ El listón es premium: nada a medias, móvil tan cuidado como desktop.
 |---|---|---|
 | Scroll suave | **Lenis**, solo desktop | Ligero (~2kb), integra con GSAP/Framer. Móvil usa scroll nativo (mejor inercia, sin riesgo de tirones). Locomotive manipula el DOM y rompe sticky. |
 | Service worker | **`public/sw.js` propio y mínimo** | Turbopack-safe. Serwist necesita webpack. Solo instalabilidad + shell offline. |
-| Sistema de movimiento | **`lib/motion.ts` + `<MotionConfig reducedMotion="user">`** | Easing/duración coherentes en toda la web; Framer respeta reduced-motion automáticamente. |
+| Sistema de movimiento | **`lib/motion.ts` + `<MotionConfig>` global** | Easing/duración coherentes en toda la web (todo animado "de la misma mano"). |
 | OG images | **`opengraph-image.tsx` con `next/og`** | Imagen de marca al compartir. Hoy no existe ninguna. |
 | Prompt instalación | **`beforeinstallprompt` (Chromium) + instrucciones (iOS)** | Mejora progresiva con fallback; Next avisa de no depender solo del evento. |
 
@@ -50,10 +50,10 @@ Cada unidad tiene un propósito único y se puede entender/probar por separado.
 | Archivo | Propósito | Interfaz / depende de |
 |---|---|---|
 | `src/lib/motion.ts` | Tokens de animación: `EASE_OUT_EXPO = [0.16,1,0.3,1]`, duraciones, variantes Framer (`fadeUp`, `stagger`). | Módulo puro. Consumido por componentes Framer y defaults de GSAP. |
-| `src/lib/device.ts` | Funciones puras `prefersReducedMotion()`, `prefersReducedData()`, `isFinePointer()`, `isLowEndDevice()` + hook `useDeviceCapability()`. | `matchMedia`, `navigator`. Sin estado global. |
+| `src/lib/device.ts` | Funciones puras `prefersReducedData()`, `isFinePointer()`, `isLowEndDevice()` + hook `useDeviceCapability()`. | `matchMedia`, `navigator`. Sin estado global. |
 | `src/lib/install-prompt.ts` | Lógica **pura** `shouldShowPrompt(state)` + tipos. Aísla la regla de negocio del prompt para testearla. | Sin DOM. Ver firma abajo. |
-| `src/components/providers/MotionProvider.tsx` | `<MotionConfig reducedMotion="user">` global. | Framer Motion. Envuelve `children` en layout. |
-| `src/components/providers/SmoothScroll.tsx` | Inicializa Lenis en rutas públicas; desactivado en táctil y reduced-motion. | `lenis`, `usePathname`, `useDeviceCapability`. |
+| `src/components/providers/MotionProvider.tsx` | `<MotionConfig>` con transición por defecto (easing/duración de `lib/motion`). | Framer Motion. Envuelve `children` en layout. |
+| `src/components/providers/SmoothScroll.tsx` | Inicializa Lenis en rutas públicas; desactivado en táctil. | `lenis`, `usePathname`, `useDeviceCapability`. |
 | `src/components/pwa/ServiceWorkerRegister.tsx` | Registra `/sw.js` (`scope:'/'`, `updateViaCache:'none'`) con try/catch. | `navigator.serviceWorker`. Falla en silencio controlado (`console.warn`). |
 | `src/components/pwa/InstallPrompt.tsx` | Emergente dirección B. Desktop esquina / móvil bottom-sheet / iOS instrucciones. | `lib/install-prompt`, `lib/device`, `localStorage`, `@vercel/analytics`. |
 | `src/app/manifest.ts` | Web App Manifest (`MetadataRoute.Manifest`). | Next 16 nativo. |
@@ -71,7 +71,7 @@ Cada unidad tiene un propósito único y se puede entender/probar por separado.
 | `src/components/effects/CustomCursor.tsx` | **Devuelve `null`** si no es puntero fino (fix bug móvil). Estado tras montaje + re-evalúa con listener de `matchMedia`. No renderiza los `<div>` en táctil. |
 | `src/components/effects/MouseGlow.tsx` | No se monta en táctil ni con reduced-motion. |
 | `src/components/effects/AuroraBackground.tsx` | Respeta `reduced-motion`/`save-data`; baja intensidad y pausa animación en gama baja/móvil. |
-| `src/app/globals.css` | Bloque global `@media (prefers-reduced-motion: reduce)` (corta animaciones/transiciones) + utilidades `safe-area` (`env(safe-area-inset-*)`). |
+| `src/app/globals.css` | Utilidades `safe-area` (`env(safe-area-inset-*)`) para elementos fijos en móviles con notch. |
 | `src/app/layout.tsx` | Montar `MotionProvider`, `SmoothScroll`, `ServiceWorkerRegister`, `InstallPrompt`; `export const viewport` (themeColor `#0a0813`, `colorScheme:'dark'`); `metadata.openGraph.images`/`twitter` por defecto. |
 | `next.config` (o `vercel.ts`) | `Cache-Control: no-cache` para `/sw.js`. |
 
@@ -125,8 +125,7 @@ Sin `push` (fuera de alcance). Registro en cliente con manejo de error que no ro
 - `src/app/proyectos/opengraph-image.tsx`: OG de la sección proyectos.
 - `layout.tsx`: imagen OG/twitter por defecto para el resto de rutas.
 
-## Degradación y accesibilidad
-- `prefers-reduced-motion`: Framer (automático vía `MotionConfig`) + CSS global. Lenis desactivado.
+## Degradación
 - `save-data` / gama baja: fondos ligeros, Aurora atenuada.
 - Táctil: sin cursor personalizado ni mouse-glow; bottom-sheet en vez de esquina para el prompt.
 - `safe-area` para elementos fijos (Navbar, WhatsAppFloat, InstallPrompt, Toaster) en móviles con notch.
@@ -138,8 +137,8 @@ optimizados. No tocar el LCP del Hero (sin diferir su render).
 ## Testing
 - **Unit** (`tsx --test`): `shouldShowPrompt` (instalado, cooldown, plataformas, sin deferred) y
   detección de plataforma de `lib/device`/`install-prompt` (lógica pura).
-- **Visual / manual** (Playwright MCP): emergente en desktop/Android/iOS; cursor ausente en táctil;
-  reduced-motion corta animaciones. SW requiere HTTPS local: `next dev --experimental-https`.
+- **Visual / manual** (Playwright MCP): emergente en desktop/Android/iOS; cursor ausente en táctil.
+  SW requiere HTTPS local: `next dev --experimental-https`.
 
 ## Riesgos
 - Lenis vs `Radix ScrollArea` (dashboard/admin): mitigado restringiendo Lenis a rutas públicas y
