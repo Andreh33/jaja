@@ -192,6 +192,7 @@ export default function ProyectosPage() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={`Visitar ${p.domain} en una pestaña nueva`}
+                    data-cursor-label="Ver web"
                     className="group flex h-full flex-col overflow-hidden rounded-2xl glass transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
                     style={{ borderColor: 'var(--border-subtle)' }}
                   >

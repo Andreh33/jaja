@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from 'react';
 export default function CustomCursor() {
   const dotRef = useRef<HTMLDivElement>(null);
   const ringRef = useRef<HTMLDivElement>(null);
+  const labelRef = useRef<HTMLDivElement>(null);
   const targetX = useRef(0);
   const targetY = useRef(0);
   const ringX = useRef(0);
@@ -48,6 +49,13 @@ export default function CustomCursor() {
           ringRef.current.classList.add('is-text');
         }
       }
+      // Etiqueta contextual: cualquier elemento con data-cursor-label.
+      const labelTarget = t?.closest?.('[data-cursor-label]') as HTMLElement | null;
+      if (labelTarget && labelRef.current && ringRef.current) {
+        labelRef.current.textContent = labelTarget.dataset.cursorLabel || '';
+        labelRef.current.classList.add('is-visible');
+        ringRef.current.classList.add('is-label');
+      }
     };
     const onOut = (e: MouseEvent) => {
       const t = e.target as Element;
@@ -55,6 +63,11 @@ export default function CustomCursor() {
       if (target && ringRef.current) {
         ringRef.current.classList.remove('is-hover');
         ringRef.current.classList.remove('is-text');
+      }
+      const labelTarget = t?.closest?.('[data-cursor-label]');
+      if (labelTarget && labelRef.current && ringRef.current) {
+        labelRef.current.classList.remove('is-visible');
+        ringRef.current.classList.remove('is-label');
       }
     };
 
@@ -64,6 +77,9 @@ export default function CustomCursor() {
       ringY.current += (targetY.current - ringY.current) * 0.18;
       if (ringRef.current) {
         ringRef.current.style.transform = `translate3d(${ringX.current - 16}px, ${ringY.current - 16}px, 0)`;
+      }
+      if (labelRef.current) {
+        labelRef.current.style.transform = `translate3d(${ringX.current + 22}px, ${ringY.current - 8}px, 0)`;
       }
       raf = requestAnimationFrame(loop);
     };
@@ -94,8 +110,13 @@ export default function CustomCursor() {
       />
       <div
         ref={ringRef}
-        className="cursor-ring pointer-events-none fixed left-0 top-0 z-[9998] h-8 w-8 rounded-full border transition-[width,height,background] duration-200 ease-out"
+        className="cursor-ring pointer-events-none fixed left-0 top-0 z-[9998] h-8 w-8 rounded-full border transition-[width,height,background,opacity] duration-200 ease-out"
         style={{ borderColor: 'rgba(139,92,246,0.5)' }}
+        aria-hidden
+      />
+      <div
+        ref={labelRef}
+        className="cursor-label pointer-events-none fixed left-0 top-0 z-[9999]"
         aria-hidden
       />
       <style jsx global>{`
@@ -111,6 +132,30 @@ export default function CustomCursor() {
           border-radius: 2px;
           background: rgba(139, 92, 246, 0.7);
           border-color: transparent;
+        }
+        /* Cuando hay etiqueta, el anillo se desvanece (deja protagonismo al label). */
+        .cursor-ring.is-label {
+          opacity: 0;
+        }
+        .cursor-label {
+          font-family: var(--font-syne), system-ui, sans-serif;
+          font-size: 12px;
+          font-weight: 700;
+          letter-spacing: -0.01em;
+          color: #fff;
+          padding: 7px 14px;
+          border-radius: 999px;
+          background: var(--grad-signature);
+          white-space: nowrap;
+          opacity: 0;
+          transform-origin: left center;
+          scale: 0.7;
+          transition: opacity 0.22s ease, scale 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+          box-shadow: 0 8px 24px rgba(124, 58, 237, 0.4);
+        }
+        .cursor-label.is-visible {
+          opacity: 1;
+          scale: 1;
         }
       `}</style>
     </>
