@@ -6,6 +6,7 @@ import MouseGlow from '@/components/effects/MouseGlow';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import { Reveal, RevealGroup, RevealItem } from '@/components/effects/Reveal';
+import TiltCard from '@/components/effects/TiltCard';
 
 export const metadata: Metadata = {
   title: 'Proyectos · Algunos de los negocios que confían en Latech',
@@ -187,6 +188,7 @@ export default function ProyectosPage() {
             <RevealGroup className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {PROJECTS.map((p) => (
                 <RevealItem key={p.id}>
+                  <TiltCard className="h-full" max={6}>
                   <a
                     href={p.url}
                     target="_blank"
@@ -251,6 +253,7 @@ export default function ProyectosPage() {
                       </span>
                     </div>
                   </a>
+                  </TiltCard>
                 </RevealItem>
               ))}
             </RevealGroup>
