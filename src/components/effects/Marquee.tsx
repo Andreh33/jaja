@@ -2,6 +2,7 @@
 
 import { cn } from '@/lib/utils';
 import type { ReactNode } from 'react';
+import { motion, useScroll, useVelocity, useTransform, useSpring } from 'framer-motion';
 
 export function Marquee({
   children,
@@ -16,19 +17,29 @@ export function Marquee({
   className?: string;
   pauseOnHover?: boolean;
 }) {
+  // Reacción a la velocidad de scroll: la fila se inclina ligeramente al
+  // scrollear rápido (detalle de agencia premium). El skew va en un wrapper
+  // aparte para no pisar el translateX de la animación CSS del marquee.
+  const { scrollY } = useScroll();
+  const scrollVelocity = useVelocity(scrollY);
+  const smoothVelocity = useSpring(scrollVelocity, { damping: 50, stiffness: 300 });
+  const skew = useTransform(smoothVelocity, [-2500, 0, 2500], [-3.5, 0, 3.5], { clamp: true });
+
   return (
     <div className={cn('group relative flex w-full overflow-hidden', className)}>
-      <div
-        className={cn(
-          'flex shrink-0 items-center gap-8 pr-8',
-          reverse ? 'animate-marquee-reverse' : 'animate-marquee',
-          pauseOnHover && 'group-hover:[animation-play-state:paused]',
-        )}
-        style={{ animationDuration: `${speed}s` }}
-      >
-        {children}
-        {children}
-      </div>
+      <motion.div style={{ skewX: skew }} className="flex w-full">
+        <div
+          className={cn(
+            'flex shrink-0 items-center gap-8 pr-8',
+            reverse ? 'animate-marquee-reverse' : 'animate-marquee',
+            pauseOnHover && 'group-hover:[animation-play-state:paused]',
+          )}
+          style={{ animationDuration: `${speed}s` }}
+        >
+          {children}
+          {children}
+        </div>
+      </motion.div>
     </div>
   );
 }
