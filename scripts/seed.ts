@@ -1893,6 +1893,96 @@ Una web para clínica, despacho o consulta no es un ejercicio de creatividad. Es
 
 Si quieres que montemos la tuya, [hablamos por WhatsApp](https://wa.me/34684739091).`,
     },
+    {
+      slug: 'verifactu-obligatorio-2027-guia',
+      title: 'Verifactu: qué es, cuándo es obligatorio y cómo lo dejamos resuelto en tu negocio',
+      category: 'Tiendas Online',
+      excerpt: 'Verifactu cambia cómo factura toda España: registros inalterables, QR obligatorio y plazos que llegan en 2027. Te explicamos qué es, a quién obliga, qué multas hay y cómo lo gestionamos por ti para que no tengas que preocuparte.',
+      cover: '/og/post-16.svg',
+      readingMinutes: 9,
+      publishedAt: new Date('2026-05-28T10:00:00Z'),
+      content: `## Qué es Verifactu (y por qué te afecta aunque no lo hayas pedido)
+
+Verifactu es el nuevo sistema con el que Hacienda quiere acabar con el fraude en la facturación. La idea es simple: que ninguna factura se pueda borrar ni manipular después de emitirse. Cada factura que generes con un programa informático tiene que quedar registrada de forma íntegra, trazable e inalterable, encadenada con la anterior mediante una huella digital.
+
+No es una recomendación ni una moda. Es un reglamento (el **Real Decreto 1007/2023**, modificado por el RD 254/2025) que desarrolla la Ley Antifraude de 2021. Y afecta a prácticamente cualquier empresario o autónomo que emita facturas con un software, no con un talonario de papel.
+
+Lo importante: **no tienes que entender la letra pequeña, pero sí asegurarte de que tu software cumple**. Si emites facturas desde tu tienda online, tu TPV, tu programa de gestión o una hoja de cálculo, esto te toca de lleno.
+
+## A quién obliga exactamente (autónomos, sociedades y quién queda fuera)
+
+La norma alcanza a todos los empresarios y profesionales que usen un programa o sistema informático para facturar:
+
+- **Autónomos** en estimación directa que emitan facturas con cualquier software.
+- **Sociedades** y demás personas jurídicas sujetas al Impuesto sobre Sociedades.
+- **Entidades en atribución de rentas** y no residentes con establecimiento permanente en España.
+
+¿Y quién queda fuera? Principalmente, **quien ya está en el SII** (el Suministro Inmediato de Información del IVA, obligatorio para grandes empresas y grupos de IVA), que tiene su propio sistema y queda exento del reglamento Verifactu. También quedan al margen quienes facturan exclusivamente en papel, aunque a estas alturas son una rareza.
+
+Si tienes una tienda online, una pyme o eres autónomo y facturas con software, la respuesta corta es: **sí, te obliga**.
+
+## Las fechas que de verdad importan: los plazos hasta 2027
+
+Aquí ha habido movimiento, así que olvida lo que leíste hace un año. Tras la última prórroga, el calendario vigente es este:
+
+- **29 de julio de 2025** — Los fabricantes y desarrolladores de software de facturación solo pueden vender o licenciar programas ya adaptados a Verifactu. Es decir, el software nuevo del mercado ya debería cumplir.
+- **1 de enero de 2027** — Fecha límite para que las **sociedades** (contribuyentes del Impuesto sobre Sociedades) tengan sus sistemas adaptados.
+- **1 de julio de 2027** — Fecha límite para el **resto de obligados**: autónomos en IRPF, entidades en atribución de rentas y no residentes con establecimiento permanente.
+
+> La entrada en vigor para empresas y autónomos se retrasó a 2027 para permitir una implantación ordenada. Pero el software ya tiene que cumplir desde julio de 2025: el plazo extra es para ti, no para que sigas usando un programa obsoleto.
+
+Traducción práctica: tienes margen, pero el reloj corre. Y cuanto antes lo dejes resuelto, menos prisas y menos riesgo de elegir mal con la fecha encima.
+
+## Qué tiene que cumplir tu facturación para ser Verifactu
+
+Estos son los requisitos técnicos que tu sistema de facturación debe garantizar. No hace falta que los implementes tú, pero conviene que sepas qué estás exigiendo:
+
+- **Integridad e inalterabilidad.** Una vez emitida, la factura no se puede modificar ni borrar sin dejar rastro.
+- **Huella o hash encadenado.** Cada registro lleva una huella digital que lo enlaza con el anterior, formando una cadena que delata cualquier manipulación.
+- **Trazabilidad y registro de eventos.** El sistema guarda un historial de todo lo que pasa: emisión, anulación, rectificación.
+- **Código QR obligatorio** en cada factura, para que cliente y Hacienda puedan verificarla.
+- **Leyenda legal** en la factura: la mención "Factura verificable en la Sede electrónica de la AEAT" o "VERI*FACTU" según la modalidad.
+- **Firma electrónica** de los registros cuando proceda.
+- **Declaración responsable** del fabricante que certifica que el software cumple el reglamento.
+
+Si tu programa actual no hace todo esto, no es Verifactu, por mucho que el comercial te diga lo contrario.
+
+## Las dos formas de cumplir: con envío o sin envío a Hacienda
+
+El reglamento permite dos modalidades, y conviene entender la diferencia:
+
+- **Con remisión automática (la que da nombre al sistema, VERI*FACTU).** El software envía cada registro de facturación a la AEAT en el momento de emitir. A cambio de ese envío, tus obligaciones de conservación se simplifican: Hacienda ya tiene la copia.
+- **Sin remisión (no verificable).** El sistema no envía nada en tiempo real, pero debe cumplir requisitos más estrictos de conservación, firma e inalterabilidad, y estar siempre disponible para una inspección.
+
+Para la mayoría de pymes y tiendas online, la modalidad con envío suele ser la más cómoda: menos cosas que custodiar y la tranquilidad de que el registro ya está en Hacienda. Pero la decisión depende de tu caso, y es justo lo que ayudamos a definir.
+
+## Qué pasa si no cumples: las sanciones
+
+Esto no es papel mojado. La Ley Antifraude introdujo un régimen sancionador específico (artículo 201 bis de la Ley General Tributaria):
+
+- **Hasta 50.000 € por ejercicio** para quien use o tenga un sistema de facturación que no cumpla el reglamento. Y es por cada año: dos ejercicios incumpliendo pueden ser 100.000 €.
+- **Hasta 150.000 € por ejercicio y tipo de software** para fabricantes y comercializadores que vendan programas no conformes.
+
+La multa al usuario es fija y no depende de que hayas defraudado: basta con usar software inadecuado. Por eso lo barato sale caro si el programa no está homologado.
+
+## Cómo lo gestionamos nosotros (para que tú no tengas que pensar en ello)
+
+Aquí está la parte buena: **Verifactu es un problema técnico, y lo técnico es lo nuestro**. Si trabajas con Latech, no tienes que convertirte en experto en facturación electrónica. Te lo dejamos resuelto de principio a fin:
+
+- **Tu tienda online o tu web nacen Verifactu-ready.** Cuando construimos un e-commerce o un sistema a medida, la facturación se integra ya conforme al reglamento: registros inalterables, huella encadenada, QR y leyenda legal incluidos.
+- **Si ya tienes negocio, lo conectamos con software de facturación homologado.** Integramos tu operativa con soluciones certificadas que sí cumplen, sin que tengas que cambiar tu forma de trabajar.
+- **Elegimos por ti la modalidad correcta** (con o sin remisión a la AEAT) según tu volumen, tu sector y tus necesidades de conservación.
+- **Dejamos todo verificado y documentado:** facturas con QR válido, declaración de conformidad en regla y nada que temer en una inspección.
+- **Sin permanencia y con acompañamiento.** Si la norma cambia otra vez —y en esto ha cambiado ya varias veces—, nos encargamos de mantener tu sistema al día.
+
+En resumen: tú facturas con normalidad y nosotros nos aseguramos de que cada factura cumpla la ley. Cero quebraderos de cabeza, cero riesgo de sanción por software inadecuado.
+
+## Conclusión
+
+Verifactu no es el fin del mundo, pero sí es de obligado cumplimiento, con multas serias y plazos que llegan en 2027. La diferencia entre vivirlo como una pesadilla burocrática o como un trámite invisible está en una sola decisión: **con quién montas tu facturación**.
+
+Si quieres que tu tienda online o tu sistema de facturación cumplan Verifactu sin que tengas que entender una sola línea del reglamento, [hablamos por WhatsApp](https://wa.me/34684739091) y lo dejamos resuelto.`,
+    },
   ];
 
   const allPosts: Array<typeof seededPosts[number] & { publishedAt?: Date }> = [
