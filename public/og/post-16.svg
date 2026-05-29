@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="bg16" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0A1410"/>
+      <stop offset="100%" stop-color="#07050E"/>
+    </linearGradient>
+    <radialGradient id="g16a" cx="0.28" cy="0.3" r="0.55">
+      <stop offset="0%" stop-color="#22C55E" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#22C55E" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="g16b" cx="0.82" cy="0.72" r="0.55">
+      <stop offset="0%" stop-color="#8B5CF6" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#8B5CF6" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="docGrad16" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#10261C"/>
+      <stop offset="100%" stop-color="#0A0A16"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg16)"/>
+  <rect width="800" height="500" fill="url(#g16a)"/>
+  <rect width="800" height="500" fill="url(#g16b)"/>
+
+  <!-- Invoice document -->
+  <g transform="translate(130,100)">
+    <rect x="0" y="0" width="300" height="300" rx="18" fill="url(#docGrad16)" stroke="rgba(255,255,255,0.12)"/>
+
+    <!-- header -->
+    <text x="28" y="48" font-family="Inter,system-ui" font-size="15" font-weight="800" fill="rgba(255,255,255,0.92)" letter-spacing="0.5">FACTURA</text>
+    <text x="28" y="68" font-family="ui-monospace,monospace" font-size="11" fill="rgba(255,255,255,0.45)">Nº 2026/0428</text>
+
+    <!-- VERI*FACTU badge -->
+    <g transform="translate(190,30)">
+      <rect x="0" y="0" width="82" height="26" rx="13" fill="rgba(34,197,94,0.16)" stroke="rgba(34,197,94,0.5)"/>
+      <text x="41" y="17" text-anchor="middle" font-family="Inter,system-ui" font-size="10" font-weight="800" fill="#34D399" letter-spacing="1">VERI*FACTU</text>
+    </g>
+
+    <!-- line items -->
+    <g font-family="ui-monospace,monospace" font-size="11">
+      <rect x="28" y="96" width="180" height="9" rx="4.5" fill="rgba(255,255,255,0.14)"/>
+      <text x="252" y="105" text-anchor="end" fill="rgba(255,255,255,0.7)">120,00 €</text>
+      <rect x="28" y="124" width="150" height="9" rx="4.5" fill="rgba(255,255,255,0.12)"/>
+      <text x="252" y="133" text-anchor="end" fill="rgba(255,255,255,0.7)">45,00 €</text>
+      <rect x="28" y="152" width="168" height="9" rx="4.5" fill="rgba(255,255,255,0.1)"/>
+      <text x="252" y="161" text-anchor="end" fill="rgba(255,255,255,0.7)">80,00 €</text>
+    </g>
+
+    <line x1="28" y1="184" x2="272" y2="184" stroke="rgba(255,255,255,0.1)"/>
+    <text x="28" y="208" font-family="Inter,system-ui" font-size="12" font-weight="700" fill="rgba(255,255,255,0.85)">TOTAL</text>
+    <text x="272" y="208" text-anchor="end" font-family="ui-monospace,monospace" font-size="13" font-weight="700" fill="#34D399">245,00 €</text>
+
+    <!-- hash chain -->
+    <text x="28" y="240" font-family="ui-monospace,monospace" font-size="8.5" fill="rgba(255,255,255,0.35)">Huella: 9f2a·c70d·b41e·8a55</text>
+
+    <!-- QR code -->
+    <g transform="translate(28,256)">
+      <rect x="0" y="0" width="34" height="34" rx="4" fill="rgba(255,255,255,0.9)"/>
+      <g fill="#0A0A16">
+        <rect x="4" y="4" width="9" height="9"/><rect x="21" y="4" width="9" height="9"/>
+        <rect x="4" y="21" width="9" height="9"/>
+        <rect x="16" y="4" width="3" height="3"/><rect x="16" y="16" width="3" height="3"/>
+        <rect x="21" y="16" width="3" height="3"/><rect x="27" y="21" width="3" height="3"/>
+        <rect x="21" y="27" width="3" height="3"/><rect x="16" y="24" width="3" height="3"/>
+      </g>
+    </g>
+    <text x="72" y="270" font-family="Inter,system-ui" font-size="9" fill="rgba(255,255,255,0.5)">Factura verificable</text>
+    <text x="72" y="283" font-family="Inter,system-ui" font-size="9" fill="rgba(255,255,255,0.5)">en la Sede de la AEAT</text>
+  </g>
+
+  <!-- Verified shield -->
+  <g transform="translate(515,150)">
+    <rect x="0" y="0" width="170" height="200" rx="16" fill="rgba(7,5,14,0.85)" stroke="rgba(34,197,94,0.35)"/>
+    <g transform="translate(85,72)">
+      <path d="M0 -40 L34 -26 V6 C34 30 18 46 0 56 C-18 46 -34 30 -34 6 V-26 Z"
+            fill="rgba(34,197,94,0.14)" stroke="rgba(34,197,94,0.6)" stroke-width="2"/>
+      <path d="M-15 4 L-4 15 L17 -10" stroke="#22C55E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    </g>
+    <text x="85" y="158" text-anchor="middle" font-family="Inter,system-ui" font-size="13" font-weight="800" fill="#fff">Conforme</text>
+    <text x="85" y="178" text-anchor="middle" font-family="ui-monospace,monospace" font-size="9" fill="rgba(255,255,255,0.5)">RD 1007/2023</text>
+  </g>
+</svg>
