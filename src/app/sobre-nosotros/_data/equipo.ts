@@ -66,4 +66,22 @@ export const equipo: Miembro[] = [
     },
     esFundador: false,
   },
+  {
+    slug: 'noelia-valle',
+    nombre: 'Noelia Valle',
+    rol: 'Branding & Social Media Partner',
+    descripcion: [
+      'Soy Noelia Valle, Branding & Social Media Partner. Llevo más de 15 años vinculada al mundo de las ventas, el marketing y el desarrollo de negocio. En los últimos años centro mi actividad en el entorno digital, ayudando a empresas y profesionales a construir marcas con identidad, propósito y una estrategia alineada con sus objetivos.',
+      'Mi trabajo consiste en encontrar el equilibrio entre lo que una marca es, lo que quiere llegar a ser y la percepción que genera en sus clientes. Porque cuando identidad, comunicación y estrategia avanzan en la misma dirección, las marcas conectan mejor, generan confianza y consiguen crecer de forma sólida y sostenible.',
+      'Formar parte de La Tech supone para mí una gran oportunidad para seguir impulsando empresas y negocios junto a un equipo comprometido con el crecimiento de sus clientes. Comparto una visión basada en la cercanía, la implicación y el trabajo estratégico, acompañando cada proyecto para que consiga destacar, diferenciarse y alcanzar su máximo potencial.',
+      'Porque detrás de cada negocio hay una historia, y mi misión es ayudar a que esa historia se convierta en una marca memorable.',
+    ],
+    foto: {
+      src: '/equipo/noelia-valle/foto.jpeg',
+      width: 900,
+      height: 1600,
+      alt: 'Foto de Noelia Valle, branding & social media partner en Latech',
+    },
+    esFundador: false,
+  },
 ];

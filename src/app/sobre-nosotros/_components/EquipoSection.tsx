@@ -9,6 +9,7 @@ const LINE_COLORS: Record<string, string> = {
   fundadores: 'var(--accent-web)',          // azul
   'ricardo-perez': 'var(--accent-ia)',      // verde
   'ivan-sanchez': '#FF1A1A',                // rojo MUY fuerte
+  'noelia-valle': '#FF6A00',                // naranja chillón
 };
 
 function Parrafos({ items, className }: { items: string[]; className?: string }) {
