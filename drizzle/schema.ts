@@ -282,6 +282,92 @@ export const jobApplications = sqliteTable('job_applications', {
   index('idx_job_applications_status').on(t.status),
 ]);
 
+/* =========================================================================
+ * Plataforma de formación para comerciales (curso grabado)
+ * =========================================================================
+ *
+ * TODO ADITIVO. No toca ninguna tabla existente. El examen NO usa NextAuth:
+ * el comercial se identifica con un login propio (nombre + teléfono) y se
+ * persiste en `commercials`. Convenciones idénticas al resto del archivo:
+ * uniqueIndex en callback de array, defaults timestamp `(CURRENT_TIMESTAMP)`,
+ * cero `check()` (bug drizzle-kit #4574). La columna de orden se llama
+ * `sort_order` en BBDD para no chocar con la palabra reservada ORDER.
+ */
+
+/** Comercial identificado por teléfono (login propio del curso, sin NextAuth). */
+export const commercials = sqliteTable('commercials', {
+  id: text('id').primaryKey().$defaultFn(() => crypto.randomUUID()),
+  name: text('name').notNull(),
+  // Teléfono normalizado (solo dígitos) — clave estable para encontrar/crear.
+  phone: text('phone').notNull(),
+  firstSeenAt: integer('first_seen_at', { mode: 'timestamp' }).default(NOW),
+}, (t) => [
+  uniqueIndex('commercials_phone_unique').on(t.phone),
+]);
+
+/** Un módulo por vídeo (modulo-0 … modulo-5). id estable, sembrado idempotente. */
+export const courseModules = sqliteTable('course_modules', {
+  id: text('id').primaryKey(),            // "modulo-0" … "modulo-5"
+  order: integer('sort_order').notNull(), // 0..5
+  title: text('title').notNull(),
+  description: text('description'),
+  videoUrl: text('video_url'),            // URL de Vercel Blob (MP4 transcodificado)
+  pdfUrl: text('pdf_url'),                // URL de Vercel Blob
+  durationSeconds: integer('duration_seconds'),
+});
+
+/** Preguntas tipo test por módulo. id estable (modulo-N-qM). */
+export const courseQuestions = sqliteTable('course_questions', {
+  id: text('id').primaryKey(),            // "modulo-0-q1"
+  moduleId: text('module_id').notNull().references(() => courseModules.id, { onDelete: 'cascade' }),
+  order: integer('sort_order').notNull(),
+  prompt: text('prompt').notNull(),
+  options: text('options', { mode: 'json' }).notNull(), // string[4]
+  correctIndex: integer('correct_index').notNull(),     // 0..3
+  explanation: text('explanation'),
+}, (t) => [
+  index('idx_course_questions_module_id').on(t.moduleId),
+]);
+
+/** Progreso por (comercial, módulo). Bloqueo secuencial + seek bloqueado. */
+export const courseProgress = sqliteTable('course_progress', {
+  id: text('id').primaryKey().$defaultFn(() => crypto.randomUUID()),
+  commercialId: text('commercial_id').notNull().references(() => commercials.id, { onDelete: 'cascade' }),
+  moduleId: text('module_id').notNull().references(() => courseModules.id, { onDelete: 'cascade' }),
+  watchedSeconds: integer('watched_seconds').default(0).notNull(),
+  completed: integer('completed', { mode: 'boolean' }).default(false).notNull(),
+  updatedAt: integer('updated_at', { mode: 'timestamp' }).default(NOW),
+}, (t) => [
+  uniqueIndex('course_progress_commercial_module_unique').on(t.commercialId, t.moduleId),
+]);
+
+/** Intento de examen. Snapshots de nombre/teléfono para el panel de admin. */
+export const examAttempts = sqliteTable('exam_attempts', {
+  id: text('id').primaryKey().$defaultFn(() => crypto.randomUUID()),
+  commercialId: text('commercial_id').notNull().references(() => commercials.id, { onDelete: 'cascade' }),
+  commercialName: text('commercial_name'),
+  commercialPhone: text('commercial_phone'),
+  startedAt: integer('started_at', { mode: 'timestamp' }).default(NOW),
+  finishedAt: integer('finished_at', { mode: 'timestamp' }),
+  score: integer('score'),  // aciertos
+  total: integer('total'),
+  passed: integer('passed', { mode: 'boolean' }).default(false).notNull(),
+}, (t) => [
+  index('idx_exam_attempts_commercial_id').on(t.commercialId),
+]);
+
+/** Respuesta individual del intento — alimenta el análisis por pregunta de /admin. */
+export const examAnswers = sqliteTable('exam_answers', {
+  id: text('id').primaryKey().$defaultFn(() => crypto.randomUUID()),
+  attemptId: text('attempt_id').notNull().references(() => examAttempts.id, { onDelete: 'cascade' }),
+  questionId: text('question_id').notNull().references(() => courseQuestions.id, { onDelete: 'cascade' }),
+  chosenIndex: integer('chosen_index').notNull(),
+  isCorrect: integer('is_correct', { mode: 'boolean' }).notNull(),
+}, (t) => [
+  index('idx_exam_answers_attempt_id').on(t.attemptId),
+  index('idx_exam_answers_question_id').on(t.questionId),
+]);
+
 export type User = typeof users.$inferSelect;
 export type Empresa = typeof empresas.$inferSelect;
 export type AdminClientData = typeof adminClientData.$inferSelect;
@@ -293,3 +379,9 @@ export type Order = typeof orders.$inferSelect;
 export type WebhookEvent = typeof webhookEvents.$inferSelect;
 export type JobOffer = typeof jobOffers.$inferSelect;
 export type JobApplication = typeof jobApplications.$inferSelect;
+export type Commercial = typeof commercials.$inferSelect;
+export type CourseModule = typeof courseModules.$inferSelect;
+export type CourseQuestion = typeof courseQuestions.$inferSelect;
+export type CourseProgress = typeof courseProgress.$inferSelect;
+export type ExamAttempt = typeof examAttempts.$inferSelect;
+export type ExamAnswer = typeof examAnswers.$inferSelect;

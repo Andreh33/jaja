@@ -1,0 +1,26 @@
+{
+  "modulo-0": {
+    "videoUrl": "https://qpxsajs2eka5dx9b.public.blob.vercel-storage.com/curso/modulo-0/video.mp4",
+    "pdfUrl": "https://qpxsajs2eka5dx9b.public.blob.vercel-storage.com/curso/modulo-0/resumen.pdf"
+  },
+  "modulo-1": {
+    "videoUrl": "https://qpxsajs2eka5dx9b.public.blob.vercel-storage.com/curso/modulo-1/video.mp4",
+    "pdfUrl": "https://qpxsajs2eka5dx9b.public.blob.vercel-storage.com/curso/modulo-1/resumen.pdf"
+  },
+  "modulo-2": {
+    "videoUrl": "https://qpxsajs2eka5dx9b.public.blob.vercel-storage.com/curso/modulo-2/video.mp4",
+    "pdfUrl": "https://qpxsajs2eka5dx9b.public.blob.vercel-storage.com/curso/modulo-2/resumen.pdf"
+  },
+  "modulo-3": {
+    "videoUrl": "https://qpxsajs2eka5dx9b.public.blob.vercel-storage.com/curso/modulo-3/video.mp4",
+    "pdfUrl": "https://qpxsajs2eka5dx9b.public.blob.vercel-storage.com/curso/modulo-3/resumen.pdf"
+  },
+  "modulo-4": {
+    "videoUrl": "https://qpxsajs2eka5dx9b.public.blob.vercel-storage.com/curso/modulo-4/video.mp4",
+    "pdfUrl": "https://qpxsajs2eka5dx9b.public.blob.vercel-storage.com/curso/modulo-4/resumen.pdf"
+  },
+  "modulo-5": {
+    "videoUrl": "https://qpxsajs2eka5dx9b.public.blob.vercel-storage.com/curso/modulo-5/video.mp4",
+    "pdfUrl": "https://qpxsajs2eka5dx9b.public.blob.vercel-storage.com/curso/modulo-5/resumen.pdf"
+  }
+}
