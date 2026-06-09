@@ -73,7 +73,7 @@ export default function LoginClient() {
               Elige tu portal para acceder.
             </motion.p>
 
-            <div className="flex flex-col items-center gap-12 md:flex-row md:gap-20">
+            <div className="flex flex-col items-center gap-12 md:flex-row md:items-start md:justify-center md:gap-10 lg:gap-14">
               <PortalCircle
                 onClick={() => setStage('login')}
                 title="Negocios"
@@ -89,8 +89,6 @@ export default function LoginClient() {
                 )}
               />
 
-              <div aria-hidden className="hidden text-xs uppercase tracking-[0.3em] text-white/30 md:block">vs</div>
-
               <PortalCircle
                 onClick={() => {
                   window.location.href = 'https://hh-gamma.vercel.app/dashboard';
@@ -104,6 +102,25 @@ export default function LoginClient() {
                     <motion.circle cx="70" cy="55" r="20" pathLength="1" initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 1.2, delay: 0.5 }} />
                     <motion.path d="M40 110 Q40 80 70 80 Q100 80 100 110" pathLength="1" initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 1.2, delay: 1.2 }} />
                     <motion.path d="M70 35 L70 25 M55 40 L48 32 M85 40 L92 32" pathLength="1" initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.8, delay: 1.8 }} />
+                  </g>
+                )}
+              />
+
+              <PortalCircle
+                onClick={() => router.push('/cursos')}
+                title="Cursos"
+                subtitle="Formación del equipo comercial: accede al curso por módulos y al examen final."
+                gradient="linear-gradient(135deg, #8B5CF6 0%, #10B981 100%)"
+                delay={0.45}
+                shape={(
+                  <g stroke="#fff" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                    {/* birrete (mortarboard) */}
+                    <motion.path d="M70 42 L104 58 L70 74 L36 58 Z" pathLength="1" initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 1.2, delay: 0.5 }} />
+                    {/* base / cabeza */}
+                    <motion.path d="M52 64 L52 82 Q70 94 88 82 L88 64" pathLength="1" initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 1, delay: 1.2 }} />
+                    {/* borla */}
+                    <motion.path d="M104 58 L104 86" pathLength="1" initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6, delay: 1.8 }} />
+                    <motion.circle cx="104" cy="88" r="3" fill="#fff" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 2.2 }} />
                   </g>
                 )}
               />
