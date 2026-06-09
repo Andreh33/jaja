@@ -67,6 +67,9 @@ personas/
 # local screenshot checks
 *-check.jpeg
 
+# playwright mcp artifacts
+.playwright-mcp/
+
 # === Plataforma de formación (curso comerciales) ===
 # Vídeos fuente y transcodificados: NUNCA a git (pesados, van a Blob)
 contenido-curso/*.wmv
