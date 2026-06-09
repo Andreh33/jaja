@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { signOut } from 'next-auth/react';
-import { Home, Building2, FolderOpen, User, Lock, CreditCard, LogOut, ArrowLeft, Shield, Users, FileText, Inbox, Briefcase } from 'lucide-react';
+import { Home, Building2, FolderOpen, User, Lock, CreditCard, LogOut, ArrowLeft, Shield, Users, FileText, Inbox, Briefcase, GraduationCap } from 'lucide-react';
 import Logo from '../layout/Logo';
 import { cn } from '@/lib/utils';
 
@@ -22,6 +22,7 @@ const ADMIN_ITEMS = [
   { href: '/admin/posts', label: 'Posts', icon: FileText },
   { href: '/admin/mensajes', label: 'Mensajes', icon: Inbox },
   { href: '/admin/trabajo', label: 'Trabajo', icon: Briefcase },
+  { href: '/admin/notas', label: 'Notas exámenes', icon: GraduationCap },
 ];
 
 export default function Sidebar({ admin = false, userName = '' }: { admin?: boolean; userName?: string }) {
