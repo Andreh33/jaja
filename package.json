@@ -15,6 +15,7 @@
     "curso:backup": "tsx scripts/backup-turso.ts",
     "curso:upload": "tsx scripts/upload-curso.ts",
     "curso:seed": "tsx scripts/seed-curso.ts",
+    "curso:reset": "tsx scripts/curso-reset.ts",
     "stripe:seed": "tsx scripts/seed-stripe.ts",
     "test": "tsx --test tests/**/*.test.ts"
   },
