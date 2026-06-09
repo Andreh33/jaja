@@ -1,0 +1,87 @@
+{
+  "moduleId": "modulo-5",
+  "order": 5,
+  "videoFile": "5.wmv",
+  "title": "Consejos de venta y cierre",
+  "source": "contenido-curso/transcripciones/video-5.txt",
+  "questions": [
+    {
+      "id": "modulo-5-q1",
+      "order": 1,
+      "prompt": "Según el módulo, ¿en qué consiste vender?",
+      "options": [
+        "En convencer a todo el mundo de que compre",
+        "En encontrar a las personas adecuadas, entender sus necesidades y acompañarlas hasta una decisión",
+        "En ofrecer siempre el precio más bajo",
+        "En insistir hasta que el cliente acepte"
+      ],
+      "correctIndex": 1,
+      "explanation": "Vender no consiste en convencer a todo el mundo, sino en encontrar a las personas adecuadas, entender sus necesidades y acompañarlas hasta una decisión."
+    },
+    {
+      "id": "modulo-5-q2",
+      "order": 2,
+      "prompt": "El principio de «la constancia y los números» dice que la venta es ante todo...",
+      "options": [
+        "Un juego de volumen y estadísticas",
+        "Cuestión de suerte",
+        "Cuestión de tener el mejor producto",
+        "Algo que depende solo del precio"
+      ],
+      "correctIndex": 0,
+      "explanation": "La venta es un juego de volumen: funciona por estadísticas. Cuantas más personas contactes, más oportunidades generarás; lo importante es mantener una actividad constante y medir resultados."
+    },
+    {
+      "id": "modulo-5-q3",
+      "order": 3,
+      "prompt": "¿En qué momento se produce la mayoría de las ventas, según el módulo del seguimiento?",
+      "options": [
+        "En el primer contacto",
+        "Entre el segundo y el cuarto seguimiento",
+        "Solo cuando el cliente llama de vuelta",
+        "Después del décimo contacto"
+      ],
+      "correctIndex": 1,
+      "explanation": "Muchos vendedores abandonan tras el primer contacto, pero la mayoría de las ventas se producen entre el segundo y el cuarto seguimiento. Si un cliente no compra hoy, no significa que no esté interesado."
+    },
+    {
+      "id": "modulo-5-q4",
+      "order": 4,
+      "prompt": "¿Qué afirma el módulo sobre la persistencia y el talento?",
+      "options": [
+        "El talento siempre supera a la persistencia",
+        "La persistencia suele superar al talento cuando se aplica de forma consistente",
+        "Ninguno de los dos influye en las ventas",
+        "El talento solo importa con clientes grandes"
+      ],
+      "correctIndex": 1,
+      "explanation": "«La persistencia suele superar al talento cuando se aplica de forma consistente». No hay que desanimarse si algunos prospectos dicen que no."
+    },
+    {
+      "id": "modulo-5-q5",
+      "order": 5,
+      "prompt": "¿Cuál es la mentalidad correcta ante un «no» del cliente?",
+      "options": [
+        "Tomarlo como algo personal",
+        "Abandonar a ese cliente para siempre",
+        "Entender que el rechazo es temporal y que cada «no» acerca a un futuro «sí»",
+        "Bajar el precio inmediatamente"
+      ],
+      "correctIndex": 2,
+      "explanation": "Escuchar un «no» forma parte del trabajo; no hay que tomarlo como algo personal. Cada negativa ayuda a aprender y a mejorar, y los vendedores exitosos entienden que el rechazo es temporal: cada «no» los acerca a un futuro «sí»."
+    },
+    {
+      "id": "modulo-5-q6",
+      "order": 6,
+      "prompt": "¿Cuál de estos es uno de los cinco hábitos para vender más que propone el cierre del módulo?",
+      "options": [
+        "Generar urgencia de forma honesta",
+        "Exagerar el stock disponible para presionar",
+        "Ofrecer siempre el precio más bajo",
+        "Llamar al cliente todos los días sin parar"
+      ],
+      "correctIndex": 0,
+      "explanation": "Los cinco hábitos para vender más son: mantener la constancia, escuchar activamente, generar urgencia de forma honesta, realizar seguimiento y desarrollar una mentalidad resiliente."
+    }
+  ]
+}

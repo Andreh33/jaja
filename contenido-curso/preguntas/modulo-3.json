@@ -1,0 +1,87 @@
+{
+  "moduleId": "modulo-3",
+  "order": 3,
+  "videoFile": "3.wmv",
+  "title": "Cómo entrarle al cliente en persona",
+  "source": "contenido-curso/transcripciones/video-3.txt",
+  "questions": [
+    {
+      "id": "modulo-3-q1",
+      "order": 1,
+      "prompt": "Cuando entras en un negocio a hacer una visita comercial, ¿con qué objetivo debes entrar?",
+      "options": [
+        "Para vender una página web cuanto antes",
+        "Para iniciar una conversación",
+        "Para hablar directamente con el dueño y cerrar el trato",
+        "Para dejar un folleto y marcharte"
+      ],
+      "correctIndex": 1,
+      "explanation": "No entras para vender, sino para iniciar una conversación. Entrar diciendo «vengo a venderle una página web» provoca rechazo inmediato."
+    },
+    {
+      "id": "modulo-3-q2",
+      "order": 2,
+      "prompt": "¿Cuál de estas conductas debe EVITAR el comercial durante una visita en persona?",
+      "options": [
+        "Mantener contacto visual",
+        "Sonreír de forma natural",
+        "Mirar constantemente el móvil",
+        "Hablar con claridad"
+      ],
+      "correctIndex": 2,
+      "explanation": "Hay que mantener contacto visual, sonreír de forma natural y hablar con claridad; y evitar cruzar los brazos, mirar constantemente el móvil o invadir el espacio personal."
+    },
+    {
+      "id": "modulo-3-q3",
+      "order": 3,
+      "prompt": "Si quien te recibe no es quien decide, ¿cómo conviene preguntar por el responsable?",
+      "options": [
+        "«Quiero hablar con el jefe»",
+        "«¿Está el dueño? Es importante»",
+        "«¿Podría indicarme quién suele encargarse de la parte comercial o digital de la empresa?»",
+        "«Necesito hablar con alguien que tome decisiones»"
+      ],
+      "correctIndex": 2,
+      "explanation": "Decir «quiero hablar con el jefe» suena brusco. Mejor: «¿Podría indicarme quién suele encargarse de la parte comercial o digital de la empresa?». Transmite profesionalidad y facilita que te deriven a la persona adecuada."
+    },
+    {
+      "id": "modulo-3-q4",
+      "order": 4,
+      "prompt": "Según el módulo, ¿qué caracteriza a los mejores comerciales en una visita?",
+      "options": [
+        "Hablan mucho para explicar todos los servicios",
+        "Escuchan más de lo que hablan",
+        "Cierran la venta en los primeros cinco minutos",
+        "Evitan hacer preguntas para no incomodar"
+      ],
+      "correctIndex": 1,
+      "explanation": "Hay que hacer preguntas para que el cliente participe y descubrir necesidades reales, y escuchar más de lo que se habla: los mejores comerciales son grandes escuchadores."
+    },
+    {
+      "id": "modulo-3-q5",
+      "order": 5,
+      "prompt": "¿Cuál es el objetivo principal de una primera visita?",
+      "options": [
+        "Cerrar la venta en cinco minutos",
+        "Conseguir el email del responsable",
+        "Avanzar al siguiente paso, como una reunión de 15 minutos",
+        "Dejar un presupuesto por escrito"
+      ],
+      "correctIndex": 2,
+      "explanation": "El objetivo no es cerrar una venta en cinco minutos, sino avanzar al siguiente paso: «¿Qué os parece si organizamos una reunión de 15 minutos para enseñaros algunas propuestas?»."
+    },
+    {
+      "id": "modulo-3-q6",
+      "order": 6,
+      "prompt": "¿Qué idea resume la actitud correcta en la primera visita?",
+      "options": [
+        "Las personas compran a quien les ofrece el precio más bajo",
+        "Las personas compran a quienes les inspiran confianza",
+        "Las personas compran a quien insiste más",
+        "Las personas compran a quien habla más rápido"
+      ],
+      "correctIndex": 1,
+      "explanation": "Las personas compran a quienes les inspiran confianza. Por eso la primera visita no debe buscar una venta, sino generar confianza y abrir la puerta a una oportunidad."
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "moduleId": "modulo-4",
+  "order": 4,
+  "videoFile": "4.wmv",
+  "title": "Acceso y uso del CRM",
+  "source": "contenido-curso/transcripciones/video-4.txt",
+  "questions": [
+    {
+      "id": "modulo-4-q1",
+      "order": 1,
+      "prompt": "¿Cómo se accede al CRM?",
+      "options": [
+        "Descargando una aplicación de móvil",
+        "Entrando en ServiciosOnlineWeb.com y pulsando «Iniciar sesión» (apartado de trabajadores)",
+        "Pidiendo acceso por email a la dirección",
+        "A través de las redes sociales de la empresa"
+      ],
+      "correctIndex": 1,
+      "explanation": "Para acceder al CRM se entra en ServiciosOnlineWeb.com y, arriba a la derecha, en el botón «Iniciar sesión» (apartado de trabajadores), con el usuario y la contraseña de acceso."
+    },
+    {
+      "id": "modulo-4-q2",
+      "order": 2,
+      "prompt": "¿Para qué sirve el apartado CRM dentro de la plataforma?",
+      "options": [
+        "Para consultar las nóminas del personal",
+        "Para gestionar contactos, leads, llamadas, seguimientos y oportunidades comerciales",
+        "Para diseñar páginas web",
+        "Para enviar facturas a los clientes"
+      ],
+      "correctIndex": 1,
+      "explanation": "El CRM es el apartado principal donde se gestionan todos los contactos, leads, llamadas, seguimientos y oportunidades comerciales."
+    },
+    {
+      "id": "modulo-4-q3",
+      "order": 3,
+      "prompt": "¿Para qué sirve el apartado Calendario?",
+      "options": [
+        "Para ver los días festivos del año",
+        "Para registrar las vacaciones del equipo",
+        "Para los avisos, tareas y recordatorios que programamos y no olvidar llamadas o reuniones",
+        "Para publicar contenido en redes sociales"
+      ],
+      "correctIndex": 2,
+      "explanation": "En el Calendario aparecen los avisos, tareas y recordatorios que el comercial programa durante el seguimiento. Es fundamental para no olvidar llamadas, reuniones o acciones pendientes."
+    },
+    {
+      "id": "modulo-4-q4",
+      "order": 4,
+      "prompt": "¿Qué es el apartado Avisos?",
+      "options": [
+        "El canal oficial donde la dirección comunica información importante a todo el equipo comercial",
+        "Un buzón de quejas de los clientes",
+        "El historial de llamadas perdidas",
+        "Una agenda de contactos personales"
+      ],
+      "correctIndex": 0,
+      "explanation": "En Avisos está la información importante de la empresa, las comunicaciones internas y los mensajes de la dirección a todo el equipo. Es recomendable revisarlo diariamente."
+    },
+    {
+      "id": "modulo-4-q5",
+      "order": 5,
+      "prompt": "Después de cada llamada, ¿qué pasos hay que registrar en la ficha del lead?",
+      "options": [
+        "Solo el nombre del cliente",
+        "Únicamente si la venta se cerró o no",
+        "La fecha de la llamada, el resultado, la información relevante y la siguiente acción de seguimiento",
+        "El precio final acordado"
+      ],
+      "correctIndex": 2,
+      "explanation": "Tras cada llamada hay que abrir la ficha del lead, añadir una nota y registrar la fecha, el resultado, la información relevante y programar la siguiente acción de seguimiento (con un aviso en el Calendario)."
+    },
+    {
+      "id": "modulo-4-q6",
+      "order": 6,
+      "prompt": "¿Cuál es la regla de oro al terminar una llamada?",
+      "options": [
+        "Colgar rápidamente para llamar al siguiente",
+        "Nunca terminar sin dejar registrada la información y la próxima acción programada",
+        "Esperar al final del día para registrar todas juntas",
+        "Registrar solo las llamadas que terminan en venta"
+      ],
+      "correctIndex": 1,
+      "explanation": "Nunca debemos terminar una llamada sin dejar registrada la información y la próxima acción programada."
+    }
+  ]
+}

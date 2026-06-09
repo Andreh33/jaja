@@ -1,0 +1,113 @@
+{
+  "moduleId": "modulo-1",
+  "order": 1,
+  "videoFile": "1.wmv",
+  "title": "Los servicios que vendemos: web, tienda online y asistente IA",
+  "source": "contenido-curso/transcripciones/video-1.txt",
+  "questions": [
+    {
+      "id": "modulo-1-q1",
+      "order": 1,
+      "prompt": "Según el módulo, ¿qué vende realmente un comercial de Latech?",
+      "options": [
+        "Páginas web y software",
+        "Soluciones para que las empresas consigan más clientes, ventas e imagen profesional",
+        "Ordenadores y equipos informáticos",
+        "Espacios publicitarios en televisión"
+      ],
+      "correctIndex": 1,
+      "explanation": "«No vendemos páginas web. Vendemos soluciones para que las empresas consigan más clientes, generen más ventas y transmitan una imagen profesional». Hay que hablar de beneficios, no de características técnicas."
+    },
+    {
+      "id": "modulo-1-q2",
+      "order": 2,
+      "prompt": "¿Cuál es uno de los errores más comunes de un comercial según este módulo?",
+      "options": [
+        "Pensar que vende una página web en lugar de una solución",
+        "Investigar demasiado al cliente antes de llamar",
+        "Hablar siempre de los beneficios para el cliente",
+        "Hacer demasiadas preguntas al cliente"
+      ],
+      "correctIndex": 0,
+      "explanation": "Uno de los errores más comunes es pensar que se vende una página web. Lo importante no son las características técnicas, sino el beneficio que obtiene el cliente."
+    },
+    {
+      "id": "modulo-1-q3",
+      "order": 3,
+      "prompt": "¿Con qué se compara una página web en el módulo?",
+      "options": [
+        "Con un folleto de papel que se reparte por la calle",
+        "Con una llamada telefónica al cliente",
+        "Con el escaparate digital de la empresa, abierto las 24 horas",
+        "Con un anuncio de radio"
+      ],
+      "correctIndex": 2,
+      "explanation": "Una página web es el escaparate digital de una empresa: como un local abierto en Internet las 24 horas del día, los 365 días del año."
+    },
+    {
+      "id": "modulo-1-q4",
+      "order": 4,
+      "prompt": "¿Cuál de estos es un beneficio de tener una página web mencionado en el módulo?",
+      "options": [
+        "Elimina los impuestos del negocio",
+        "Genera confianza y profesionalidad",
+        "Sustituye por completo al personal de la empresa",
+        "Garantiza ventas todos los días"
+      ],
+      "correctIndex": 1,
+      "explanation": "Entre los beneficios de una web están: genera confianza y profesionalidad, consigue más clientes potenciales, está disponible 24 horas, muestra productos y servicios, ayuda a diferenciarse de la competencia y facilita el contacto."
+    },
+    {
+      "id": "modulo-1-q5",
+      "order": 5,
+      "prompt": "¿Qué permite una tienda online que NO permite una página web puramente informativa?",
+      "options": [
+        "Mostrar el teléfono de contacto",
+        "Tener un logotipo",
+        "Aparecer en los buscadores",
+        "Realizar compras directamente: carrito, pagos y gestión de pedidos"
+      ],
+      "correctIndex": 3,
+      "explanation": "A diferencia de una web informativa, una tienda online permite realizar compras directamente: añadir productos a un carrito, efectuar pagos y gestionar pedidos de forma automática."
+    },
+    {
+      "id": "modulo-1-q6",
+      "order": 6,
+      "prompt": "Según el módulo, ¿qué alcance de clientes permite una tienda online?",
+      "options": [
+        "Solo clientes que viven cerca del negocio",
+        "Clientes de toda España e incluso a nivel internacional",
+        "Solo clientes en horario comercial",
+        "Solo clientes que ya conocen la empresa"
+      ],
+      "correctIndex": 1,
+      "explanation": "Con una tienda online ya no se depende únicamente de quienes viven cerca: se puede vender en toda España e incluso a nivel internacional, además de vender las 24 horas."
+    },
+    {
+      "id": "modulo-1-q7",
+      "order": 7,
+      "prompt": "¿Cómo se define un asistente IA para empresas?",
+      "options": [
+        "Un programa que solo envía correos automáticos",
+        "Una página web con un chat de preguntas frecuentes",
+        "Un empleado digital que atiende llamadas y consultas y recoge información las 24 horas",
+        "Un robot físico que trabaja en el local"
+      ],
+      "correctIndex": 2,
+      "explanation": "Un asistente IA es un «empleado digital» que atiende llamadas, responde consultas, recoge información y ayuda a gestionar reservas o solicitudes las 24 horas. No se cansa y puede atender a varios clientes a la vez."
+    },
+    {
+      "id": "modulo-1-q8",
+      "order": 8,
+      "prompt": "¿Qué problema resuelve principalmente el asistente IA?",
+      "options": [
+        "Evitar que la empresa pierda oportunidades por no atender llamadas o consultas a tiempo",
+        "Reducir los impuestos de la empresa",
+        "Diseñar el logotipo de la empresa",
+        "Gestionar las nóminas del personal"
+      ],
+      "correctIndex": 0,
+      "explanation": "Muchos negocios pierden clientes por no poder atender el teléfono o responder a tiempo, y cuando un cliente no recibe respuesta suele llamar a la competencia. El asistente IA evita que ningún cliente se quede sin respuesta."
+    }
+  ]
+}

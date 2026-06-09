@@ -1,0 +1,87 @@
+{
+  "moduleId": "modulo-0",
+  "order": 0,
+  "videoFile": "0.wmv",
+  "title": "Bienvenida y quiénes somos",
+  "source": "contenido-curso/transcripciones/video-0.txt",
+  "questions": [
+    {
+      "id": "modulo-0-q1",
+      "order": 1,
+      "prompt": "¿En qué está especializada la empresa Servicios Online Web (Latech)?",
+      "options": [
+        "En la venta de ordenadores y hardware informático",
+        "En soluciones digitales para empresas y profesionales",
+        "En formación de idiomas para empresas",
+        "En asesoría fiscal y contable"
+      ],
+      "correctIndex": 1,
+      "explanation": "Es una empresa especializada en soluciones digitales para empresas y profesionales, que les ayuda a mejorar su presencia online, captar nuevos clientes y aumentar sus ventas."
+    },
+    {
+      "id": "modulo-0-q2",
+      "order": 2,
+      "prompt": "¿Cuál es el objetivo de la empresa respecto a sus clientes?",
+      "options": [
+        "Venderles el mayor número posible de productos",
+        "Ofrecer siempre el precio más bajo del mercado",
+        "Convertirse en un socio estratégico que aporte soluciones con resultados medibles",
+        "Sustituir a los empleados del cliente por tecnología"
+      ],
+      "correctIndex": 2,
+      "explanation": "El objetivo es convertirse en un socio estratégico para los clientes, aportando soluciones reales que generen resultados medibles."
+    },
+    {
+      "id": "modulo-0-q3",
+      "order": 3,
+      "prompt": "¿Cuál de los siguientes es uno de los valores de la empresa?",
+      "options": [
+        "Honestidad y transparencia",
+        "Máximo beneficio a corto plazo",
+        "Evitar el contacto directo con el cliente",
+        "Trabajar solo con grandes empresas"
+      ],
+      "correctIndex": 0,
+      "explanation": "Entre los valores de la empresa están la excelencia en el servicio, la profesionalidad, la honestidad y transparencia, la innovación constante y la orientación a resultados."
+    },
+    {
+      "id": "modulo-0-q4",
+      "order": 4,
+      "prompt": "Más allá de la experiencia previa, ¿qué valora especialmente la empresa en un comercial?",
+      "options": [
+        "El título universitario",
+        "La actitud",
+        "El número de idiomas que habla",
+        "Los años de antigüedad en el sector"
+      ],
+      "correctIndex": 1,
+      "explanation": "El módulo lo dice expresamente: «Más allá de la experiencia previa, valoramos especialmente la actitud». Se buscan personas proactivas, responsables, organizadas, persistentes y orientadas a objetivos."
+    },
+    {
+      "id": "modulo-0-q5",
+      "order": 5,
+      "prompt": "Según la mentalidad de crecimiento que se espera del comercial, ¿cómo debe gestionarse el rechazo?",
+      "options": [
+        "Evitando a los clientes que puedan decir que no",
+        "Insistiendo hasta cerrar la venta en la misma conversación",
+        "De forma constructiva, manteniendo la motivación a largo plazo",
+        "Cambiando de sector cuando se acumulan negativas"
+      ],
+      "correctIndex": 2,
+      "explanation": "No todas las conversaciones terminan en una venta inmediata; se valora aprender de cada experiencia, gestionar el rechazo de forma constructiva y mantener la motivación a largo plazo."
+    },
+    {
+      "id": "modulo-0-q6",
+      "order": 6,
+      "prompt": "¿Cómo se describe el papel del comercial dentro de la empresa?",
+      "options": [
+        "Un tramitador de pedidos sin contacto con el cliente",
+        "El responsable de la contabilidad de la empresa",
+        "El soporte técnico de las páginas web",
+        "La primera imagen de la empresa ante los clientes"
+      ],
+      "correctIndex": 3,
+      "explanation": "Como comercial eres la primera imagen de la empresa ante los clientes: detectas oportunidades, entiendes necesidades, presentas soluciones, generas confianza y fidelizas."
+    }
+  ]
+}

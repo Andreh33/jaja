@@ -1,0 +1,100 @@
+{
+  "moduleId": "modulo-2",
+  "order": 2,
+  "videoFile": "2.wmv",
+  "title": "Cómo entrarle al cliente por teléfono",
+  "source": "contenido-curso/transcripciones/video-2.txt",
+  "questions": [
+    {
+      "id": "modulo-2-q1",
+      "order": 1,
+      "prompt": "Cuando llamamos a una empresa por primera vez, ¿cuál es el verdadero objetivo de la llamada?",
+      "options": [
+        "Cerrar la venta de una página web en esa misma llamada",
+        "Conseguir una reunión, una demostración o una segunda conversación",
+        "Conseguir el email del cliente para enviarle publicidad",
+        "Explicar todos los servicios de la empresa"
+      ],
+      "correctIndex": 1,
+      "explanation": "El objetivo de la primera llamada no es vender, sino conseguir una reunión, una demostración o una segunda conversación. Si intentas vender en la primera llamada, el cliente se pone a la defensiva."
+    },
+    {
+      "id": "modulo-2-q2",
+      "order": 2,
+      "prompt": "¿Qué se recomienda hacer antes de marcar el número del cliente?",
+      "options": [
+        "Estudiar la empresa durante media hora",
+        "Memorizar un guion genérico de venta",
+        "Dedicar unos 5 segundos a investigar el negocio (web, redes, qué se puede mejorar)",
+        "Preparar directamente el precio del servicio"
+      ],
+      "correctIndex": 2,
+      "explanation": "Basta dedicar unos 5 segundos a observar: si tiene web, si parece antigua, si tiene tienda online o redes activas, si hay algo mejorable. El cliente nota cuando llamas con un guion genérico y cuando te has interesado por su negocio."
+    },
+    {
+      "id": "modulo-2-q3",
+      "order": 3,
+      "prompt": "¿Cuál es la estructura de cuatro pasos que debe seguir la llamada?",
+      "options": [
+        "Precio, descuento, oferta y cierre",
+        "Saludo, catálogo, contrato y despedida",
+        "Presentación, gancho, pregunta y cita",
+        "Investigación, propuesta, negociación y firma"
+      ],
+      "correctIndex": 2,
+      "explanation": "La llamada sigue cuatro pasos: presentación (sencilla), gancho (despertar interés), pregunta (que el cliente participe) y cita (conseguir la reunión)."
+    },
+    {
+      "id": "modulo-2-q4",
+      "order": 4,
+      "prompt": "Al usar el gancho para despertar interés, ¿de qué se debe hablar?",
+      "options": [
+        "De oportunidades de mejora, nunca de problemas",
+        "De los problemas y errores de la web del cliente",
+        "Del precio de los servicios cuanto antes",
+        "De la competencia del cliente"
+      ],
+      "correctIndex": 0,
+      "explanation": "La clave es hablar de oportunidades, nunca de problemas. Por ejemplo: «He visto vuestra web y creo que hay algunas oportunidades interesantes de mejora»."
+    },
+    {
+      "id": "modulo-2-q5",
+      "order": 5,
+      "prompt": "Según el módulo, ¿qué significan realmente las objeciones del cliente?",
+      "options": [
+        "Que el cliente no quiere comprar bajo ningún concepto",
+        "Que el comercial debe colgar la llamada",
+        "Que el cliente necesita más información",
+        "Que hay que bajar el precio inmediatamente"
+      ],
+      "correctIndex": 2,
+      "explanation": "Las objeciones son normales y no significan que el cliente no quiera comprar: significan que necesita más información. No hay que discutirlas, sino resolverlas."
+    },
+    {
+      "id": "modulo-2-q6",
+      "order": 6,
+      "prompt": "Ante la objeción «No tengo tiempo», ¿cuál es la respuesta recomendada?",
+      "options": [
+        "Insistir en que el servicio es muy importante",
+        "Proponer una reunión de apenas 15 minutos, sin compromiso si no aporta nada",
+        "Pedirle que llame él cuando tenga tiempo",
+        "Enviarle toda la información por email"
+      ],
+      "correctIndex": 1,
+      "explanation": "Respuesta: «Precisamente por eso te propongo una reunión de apenas 15 minutos. Si vemos que no te aporta nada, lo dejamos ahí sin ningún compromiso»."
+    },
+    {
+      "id": "modulo-2-q7",
+      "order": 7,
+      "prompt": "¿Cuál es una de las lecciones más importantes del curso sobre el proceso de venta?",
+      "options": [
+        "La llamada sirve para cerrar la venta en 30 segundos",
+        "La llamada sirve para conseguir una reunión; la venta llega como consecuencia del proceso",
+        "El precio es lo primero que hay que comunicar",
+        "Cuantos más servicios expliques, mejor"
+      ],
+      "correctIndex": 1,
+      "explanation": "La llamada sirve para conseguir una reunión; la reunión, para detectar necesidades; la propuesta, para presentar la solución; y la venta llega como consecuencia de todo el proceso."
+    }
+  ]
+}
