@@ -30,5 +30,20 @@ async function main() {
   const s = sample.rows[0];
   const opts = JSON.parse(String(s.options));
   console.log(`\nMuestra ${s.id}: ${opts.length} opciones, correcta=[${s.correct_index}] "${opts[Number(s.correct_index)]}"`);
+
+  // Estado de exámenes (datos de comerciales)
+  const att = await db.execute('SELECT count(*) c FROM exam_attempts');
+  const ans = await db.execute('SELECT count(*) c FROM exam_answers');
+  console.log(`\nexam_attempts: ${att.rows[0].c} | exam_answers: ${ans.rows[0].c}`);
+  const last = await db.execute(
+    "SELECT id, commercial_name, commercial_phone, score, total, passed FROM exam_attempts ORDER BY finished_at DESC LIMIT 1",
+  );
+  if (last.rows.length) {
+    const a = last.rows[0];
+    const correct = await db.execute(`SELECT count(*) c FROM exam_answers WHERE attempt_id='${a.id}' AND is_correct=1`);
+    const rows = await db.execute(`SELECT count(*) c FROM exam_answers WHERE attempt_id='${a.id}'`);
+    console.log(`Último intento: ${a.commercial_name} (${a.commercial_phone}) -> ${a.score}/${a.total} passed=${a.passed}`);
+    console.log(`  exam_answers de ese intento: ${rows.rows[0].c} filas, ${correct.rows[0].c} correctas (debe casar con score)`);
+  }
 }
 main().catch((e) => { console.error('ERR', e); process.exit(1); });
