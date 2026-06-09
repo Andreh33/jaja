@@ -1,0 +1,477 @@
+{
+  "model": "large-v3",
+  "language": "es",
+  "language_probability": 1,
+  "duration": 307.88,
+  "transcribe_seconds": 644.7,
+  "segments": [
+    {
+      "id": 0,
+      "start": 6.13,
+      "end": 9.45,
+      "text": "Hola, soy Sonia, tu profesora de este módulo."
+    },
+    {
+      "id": 1,
+      "start": 9.87,
+      "end": 12.33,
+      "text": "Prepara papel y boli para empezar la clase."
+    },
+    {
+      "id": 2,
+      "start": 14.59,
+      "end": 18.23,
+      "text": "Módulo 4. ¿Cómo entrarle al cliente en persona?"
+    },
+    {
+      "id": 3,
+      "start": 19.59,
+      "end": 22.93,
+      "text": "Muchos comerciales tienen miedo a visitar negocios en persona."
+    },
+    {
+      "id": 4,
+      "start": 23.39,
+      "end": 28.53,
+      "text": "Piensan que les van a decir que no, que les van a echar o que van a parecer molestos."
+    },
+    {
+      "id": 5,
+      "start": 28.83,
+      "end": 34.79,
+      "text": "La realidad es que la mayoría de los propietarios están acostumbrados a recibir visitas comerciales."
+    },
+    {
+      "id": 6,
+      "start": 34.79,
+      "end": 41.57,
+      "text": "La diferencia entre un comercial que consigue reuniones y uno que es rechazado está en cómo entra,"
+    },
+    {
+      "id": 7,
+      "start": 41.65,
+      "end": 44.83,
+      "text": "cómo se presenta y cómo inicia la conversación."
+    },
+    {
+      "id": 8,
+      "start": 45.01,
+      "end": 51.41,
+      "text": "En este módulo aprenderás a generar una buena primera impresión y a abrir puertas de forma profesional."
+    },
+    {
+      "id": 9,
+      "start": 52.3,
+      "end": 56.09,
+      "text": "Lo primero que debes entender es que no estás entrando para vender."
+    },
+    {
+      "id": 10,
+      "start": 56.35,
+      "end": 59.23,
+      "text": "Estás entrando para iniciar una conversación."
+    },
+    {
+      "id": 11,
+      "start": 59.45,
+      "end": 64.37,
+      "text": "Cuando entres en un negocio, sonríe, mantén una postura relajada."
+    },
+    {
+      "id": 12,
+      "start": 64.79,
+      "end": 66.35,
+      "text": "No entres demasiado rápido."
+    },
+    {
+      "id": 13,
+      "start": 66.53,
+      "end": 68.61,
+      "text": "No invadas el espacio personal."
+    },
+    {
+      "id": 14,
+      "start": 69.21,
+      "end": 71.61,
+      "text": "Espera a que la persona pueda prestarte atención."
+    },
+    {
+      "id": 15,
+      "start": 72.83,
+      "end": 75.57,
+      "text": "Un error muy común es entrar diciendo,"
+    },
+    {
+      "id": 16,
+      "start": 75.89,
+      "end": 78.73,
+      "text": "«Hola, vengo a venderle una página web»."
+    },
+    {
+      "id": 17,
+      "start": 78.73,
+      "end": 80.81,
+      "text": "Eso provoca rechazo inmediato."
+    },
+    {
+      "id": 18,
+      "start": 81.01,
+      "end": 84.09,
+      "text": "En lugar de eso, utiliza una entrada sencilla."
+    },
+    {
+      "id": 19,
+      "start": 84.23,
+      "end": 88.29,
+      "text": "Por ejemplo, «Buenos días, soy Sonia de LaTechnology."
+    },
+    {
+      "id": 20,
+      "start": 88.51,
+      "end": 93.67,
+      "text": "He estado viendo vuestro negocio y quería comentaros una idea que creo que os puede interesar»."
+    },
+    {
+      "id": 21,
+      "start": 93.67,
+      "end": 94.77,
+      "text": "Es una frase simple."
+    },
+    {
+      "id": 22,
+      "start": 94.79,
+      "end": 97.19,
+      "text": "Es una frase mucho más natural y genera curiosidad."
+    },
+    {
+      "id": 23,
+      "start": 97.37,
+      "end": 102.67,
+      "text": "El cliente no solo escucha tus palabras, también interpreta tu lenguaje corporal."
+    },
+    {
+      "id": 24,
+      "start": 102.79,
+      "end": 106.13,
+      "text": "Debes transmitir confianza sin parecer agresivo."
+    },
+    {
+      "id": 25,
+      "start": 106.55,
+      "end": 109.11,
+      "text": "Recuerda, mantén contacto visual."
+    },
+    {
+      "id": 26,
+      "start": 109.49,
+      "end": 110.95,
+      "text": "Sonríe de forma natural."
+    },
+    {
+      "id": 27,
+      "start": 111.25,
+      "end": 112.53,
+      "text": "Habla con claridad."
+    },
+    {
+      "id": 28,
+      "start": 112.69,
+      "end": 114.37,
+      "text": "No cruces los brazos."
+    },
+    {
+      "id": 29,
+      "start": 114.55,
+      "end": 116.59,
+      "text": "No mires constantemente el móvil."
+    },
+    {
+      "id": 30,
+      "start": 116.81,
+      "end": 118.77,
+      "text": "Mantén una distancia adecuada."
+    },
+    {
+      "id": 31,
+      "start": 118.97,
+      "end": 124.01,
+      "text": "Tu tono debe ser cercano, profesional, tranquilo."
+    },
+    {
+      "id": 32,
+      "start": 124.01,
+      "end": 127.31,
+      "text": "No hables demasiado rápido."
+    },
+    {
+      "id": 33,
+      "start": 127.57,
+      "end": 130.57,
+      "text": "No parezcas desesperado por vender."
+    },
+    {
+      "id": 34,
+      "start": 130.89,
+      "end": 136.27,
+      "text": "Las personas compran más fácilmente a quien les transmite seguridad."
+    },
+    {
+      "id": 35,
+      "start": 136.95,
+      "end": 139.59,
+      "text": "Las primeras frases son muy importantes."
+    },
+    {
+      "id": 36,
+      "start": 140.21,
+      "end": 146.33,
+      "text": "Evita, «¿Tiene un momento? ¿Puedo venderle algo? ¿Le interesa una web?»."
+    },
+    {
+      "id": 37,
+      "start": 146.33,
+      "end": 151.09,
+      "text": "Prueba con frases como, «Buenos días, soy Sonia de LaTechnology."
+    },
+    {
+      "id": 38,
+      "start": 151.09,
+      "end": 159.07,
+      "text": "He estado revisando vuestra presencia digital y me ha llamado la atención una oportunidad que creo que podría ayudaros»."
+    },
+    {
+      "id": 39,
+      "start": 159.07,
+      "end": 166.29,
+      "text": "O bien, «Solo quería haceros una consulta rápida sobre cómo gestionáis actualmente vuestra presencia en Internet»."
+    },
+    {
+      "id": 40,
+      "start": 166.29,
+      "end": 170.45,
+      "text": "Estas frases generan conversación, en lugar de rechazo."
+    },
+    {
+      "id": 41,
+      "start": 170.81,
+      "end": 176.37,
+      "text": "Muchas veces, la primera persona que te recibe no es quien toma las decisiones."
+    },
+    {
+      "id": 42,
+      "start": 176.43,
+      "end": 178.65,
+      "text": "Por eso debes ser respetuoso."
+    },
+    {
+      "id": 43,
+      "start": 178.81,
+      "end": 179.97,
+      "text": "No digas,"
+    },
+    {
+      "id": 44,
+      "start": 179.97,
+      "end": 181.97,
+      "text": "«Quiero hablar con el jefe»."
+    },
+    {
+      "id": 45,
+      "start": 181.97,
+      "end": 183.19,
+      "text": "Suena brusco."
+    },
+    {
+      "id": 46,
+      "start": 183.75,
+      "end": 184.97,
+      "text": "Mejor utiliza,"
+    },
+    {
+      "id": 47,
+      "start": 185.87,
+      "end": 191.25,
+      "text": "«¿Podría indicarme quién suele encargarse de la parte comercial o digital de la empresa?»."
+    },
+    {
+      "id": 48,
+      "start": 191.81,
+      "end": 198.19,
+      "text": "O, «¿Con quién podría comentar una posible mejora relacionada con la captación de clientes online?»."
+    },
+    {
+      "id": 49,
+      "start": 198.19,
+      "end": 202.61,
+      "text": "Esto transmite profesionalidad y facilita que te deriven a la persona adecuada."
+    },
+    {
+      "id": 50,
+      "start": 202.91,
+      "end": 208.13,
+      "text": "Cuando tengas delante al responsable, no empieces a explicar todos los servicios."
+    },
+    {
+      "id": 51,
+      "start": 208.49,
+      "end": 209.37,
+      "text": "Haz preguntas."
+    },
+    {
+      "id": 52,
+      "start": 209.37,
+      "end": 210.57,
+      "text": "Por ejemplo,"
+    },
+    {
+      "id": 53,
+      "start": 210.71,
+      "end": 214.55,
+      "text": "«¿Actualmente os llegan clientes a través de Internet?»."
+    },
+    {
+      "id": 54,
+      "start": 214.55,
+      "end": 216.71,
+      "text": "«¿Quién gestiona vuestra página web?»."
+    },
+    {
+      "id": 55,
+      "start": 216.71,
+      "end": 219.69,
+      "text": "«¿Estáis satisfechos con vuestra presencia digital?»."
+    },
+    {
+      "id": 56,
+      "start": 220.19,
+      "end": 225.61,
+      "text": "Las preguntas hacen que el cliente participe y te ayudan a descubrir necesidades reales."
+    },
+    {
+      "id": 57,
+      "start": 226.39,
+      "end": 228.35,
+      "text": "Escucha más de lo que hablas."
+    },
+    {
+      "id": 58,
+      "start": 228.51,
+      "end": 231.97,
+      "text": "Los mejores comerciales son grandes escuchadores."
+    },
+    {
+      "id": 59,
+      "start": 232.69,
+      "end": 237.01,
+      "text": "Recuerda que el objetivo principal no es cerrar una venta en cinco minutos."
+    },
+    {
+      "id": 60,
+      "start": 237.01,
+      "end": 240.19,
+      "text": "El objetivo es avanzar al siguiente paso."
+    },
+    {
+      "id": 61,
+      "start": 240.59,
+      "end": 244.73,
+      "text": "Puedes decir, «Creo que hay varias ideas que podrían ayudaros."
+    },
+    {
+      "id": 62,
+      "start": 244.83,
+      "end": 250.77,
+      "text": "¿Qué os parece si organizamos una reunión de 15 minutos para enseñaros algunas propuestas?»."
+    },
+    {
+      "id": 63,
+      "start": 250.77,
+      "end": 256.57,
+      "text": "O, «Si te parece, puedo preparar un análisis rápido y volvemos a reunirnos esta semana."
+    },
+    {
+      "id": 64,
+      "start": 256.81,
+      "end": 262.79,
+      "text": "Es mucho más fácil conseguir una segunda reunión que cerrar una venta compleja en una primera visita»."
+    },
+    {
+      "id": 65,
+      "start": 262.79,
+      "end": 263.93,
+      "text": "Recuerda."
+    },
+    {
+      "id": 66,
+      "start": 263.95,
+      "end": 266.99,
+      "text": "La mayoría de las ventas no se cierran en cinco minutos."
+    },
+    {
+      "id": 67,
+      "start": 266.99,
+      "end": 267.89,
+      "text": "Se cierran en la primera visita."
+    },
+    {
+      "id": 68,
+      "start": 267.91,
+      "end": 273.25,
+      "text": "Se cierran porque el comercial consigue generar confianza desde el primer encuentro."
+    },
+    {
+      "id": 69,
+      "start": 273.61,
+      "end": 276.53,
+      "text": "Cuando visites un negocio, no pienses en vender."
+    },
+    {
+      "id": 70,
+      "start": 276.71,
+      "end": 281.63,
+      "text": "Piensa en ayudar, escuchar y abrir la puerta a una futura oportunidad."
+    },
+    {
+      "id": 71,
+      "start": 282.21,
+      "end": 285.67,
+      "text": "Ahí es donde comienzan las relaciones comerciales duraderas."
+    },
+    {
+      "id": 72,
+      "start": 286.01,
+      "end": 289.43,
+      "text": "Las personas compran a quienes les inspiran confianza."
+    },
+    {
+      "id": 73,
+      "start": 289.59,
+      "end": 292.43,
+      "text": "Tu primera visita no debe buscar una venta."
+    },
+    {
+      "id": 74,
+      "start": 292.75,
+      "end": 294.43,
+      "text": "Debe conseguir una oportunidad."
+    },
+    {
+      "id": 75,
+      "start": 294.43,
+      "end": 298.15,
+      "text": "Este módulo te servirá para avanzar en tu trabajo comercial."
+    },
+    {
+      "id": 76,
+      "start": 298.45,
+      "end": 300.53,
+      "text": "Nos vemos en el próximo módulo."
+    },
+    {
+      "id": 77,
+      "start": 300.61,
+      "end": 301.73,
+      "text": "El cierre."
+    }
+  ]
+}

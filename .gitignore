@@ -60,3 +60,22 @@ personas/
 
 .vercel
 .env*.local
+
+# brainstorming companion artifacts
+.superpowers/
+
+# local screenshot checks
+*-check.jpeg
+
+# === Plataforma de formación (curso comerciales) ===
+# Vídeos fuente y transcodificados: NUNCA a git (pesados, van a Blob)
+contenido-curso/*.wmv
+contenido-curso/*.mp4
+# Intermedios pesados regenerables
+contenido-curso/audio/
+contenido-curso/frames/
+# PDFs: se regeneran y acaban en Blob
+contenido-curso/pdfs/
+# Backups de Turso (dump local antes de db:push)
+backups/
+# SÍ se versionan: contenido-curso/transcripciones/ y contenido-curso/preguntas/

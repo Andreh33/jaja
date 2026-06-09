@@ -1,0 +1,717 @@
+{
+  "model": "large-v3",
+  "language": "es",
+  "language_probability": 1,
+  "duration": 398.38,
+  "transcribe_seconds": 685.1,
+  "segments": [
+    {
+      "id": 0,
+      "start": 5.65,
+      "end": 11.01,
+      "text": "Hola, soy Iván, jefe de los comerciales de la tecnología y soy el responsable de esta parte del curso."
+    },
+    {
+      "id": 1,
+      "start": 11.19,
+      "end": 15.47,
+      "text": "Hola, soy Antonio y soy el responsable de este módulo 3. Vamos a empezar."
+    },
+    {
+      "id": 2,
+      "start": 15.49,
+      "end": 17.57,
+      "text": "¿Cómo entrarle al cliente por teléfono?"
+    },
+    {
+      "id": 3,
+      "start": 18.11,
+      "end": 23.13,
+      "text": "Muchos comerciales creen que el objetivo de una llamada es vender. Error."
+    },
+    {
+      "id": 4,
+      "start": 23.67,
+      "end": 31.41,
+      "text": "Cuando llamamos a una empresa por primera vez, el objetivo no es vender una página web, una tienda online o un asistente IA."
+    },
+    {
+      "id": 5,
+      "start": 31.83,
+      "end": 34.63,
+      "text": "El objetivo es mucho más sencillo."
+    },
+    {
+      "id": 6,
+      "start": 35.32,
+      "end": 39.63,
+      "text": "Conseguir una reunión, una demostración o una segunda conversación."
+    },
+    {
+      "id": 7,
+      "start": 39.99,
+      "end": 44.95,
+      "text": "Si intentas vender en la primera llamada, el cliente se pondrá a la defensiva."
+    },
+    {
+      "id": 8,
+      "start": 45.58,
+      "end": 51.27,
+      "text": "Si intentas ayudarle y despertar su interés, tendrás muchas más posibilidades de avanzar."
+    },
+    {
+      "id": 9,
+      "start": 52.76,
+      "end": 57.32,
+      "text": "Antes de marcar el número, dedica 5 segundos a investigar."
+    },
+    {
+      "id": 10,
+      "start": 57.93,
+      "end": 61.04,
+      "text": "No necesitas estudiar la empresa durante media hora."
+    },
+    {
+      "id": 11,
+      "start": 61.64,
+      "end": 63.22,
+      "text": "Simplemente observa."
+    },
+    {
+      "id": 12,
+      "start": 64.03,
+      "end": 65.14,
+      "text": "¿Tiene página web?"
+    },
+    {
+      "id": 13,
+      "start": 65.14,
+      "end": 67.18,
+      "text": "¿La web parece antigua?"
+    },
+    {
+      "id": 14,
+      "start": 67.38,
+      "end": 68.72,
+      "text": "¿Tiene tienda online?"
+    },
+    {
+      "id": 15,
+      "start": 69.02,
+      "end": 71.26,
+      "text": "¿Tiene redes sociales activas?"
+    },
+    {
+      "id": 16,
+      "start": 71.42,
+      "end": 73.52,
+      "text": "¿Hay algo que se pueda mejorar?"
+    },
+    {
+      "id": 17,
+      "start": 73.9,
+      "end": 78.24,
+      "text": "Con sólo unos segundos, podrás personalizar la conversación."
+    },
+    {
+      "id": 18,
+      "start": 78.52,
+      "end": 83.14,
+      "text": "Un cliente nota inmediatamente cuando llamas leyendo un guión genérico."
+    },
+    {
+      "id": 19,
+      "start": 83.32,
+      "end": 87.8,
+      "text": "También nota cuando te has interesado mínimamente por su negocio."
+    },
+    {
+      "id": 20,
+      "start": 88.1,
+      "end": 94.36,
+      "text": "Durante los primeros segundos, el cliente decide si sigue escuchándote o quiere terminar la llamada."
+    },
+    {
+      "id": 21,
+      "start": 94.48,
+      "end": 95.12,
+      "text": "¿Por qué?"
+    },
+    {
+      "id": 22,
+      "start": 95.12,
+      "end": 96.98,
+      "text": "Por eso, debemos evitar frases como"
+    },
+    {
+      "id": 23,
+      "start": 96.98,
+      "end": 99.28,
+      "text": "Hola, le llamo para venderle."
+    },
+    {
+      "id": 24,
+      "start": 99.32,
+      "end": 101.18,
+      "text": "Hola, quería informarle."
+    },
+    {
+      "id": 25,
+      "start": 101.28,
+      "end": 102.92,
+      "text": "Hola, le ofrezco."
+    },
+    {
+      "id": 26,
+      "start": 103.16,
+      "end": 105.98,
+      "text": "La apertura debe sonar natural."
+    },
+    {
+      "id": 27,
+      "start": 106.4,
+      "end": 107.16,
+      "text": "Ejemplo"
+    },
+    {
+      "id": 28,
+      "start": 107.16,
+      "end": 111.72,
+      "text": "Hola Juan, soy Antonio de la Technology. Una pregunta rápida."
+    },
+    {
+      "id": 29,
+      "start": 112.26,
+      "end": 116.68,
+      "text": "Esta frase genera curiosidad y reduce la sensación de venta."
+    },
+    {
+      "id": 30,
+      "start": 116.82,
+      "end": 118.34,
+      "text": "El cliente suele responder"
+    },
+    {
+      "id": 31,
+      "start": 119.02,
+      "end": 119.68,
+      "text": "Sí, dime."
+    },
+    {
+      "id": 32,
+      "start": 119.82,
+      "end": 121.62,
+      "text": "y ya tiene su atención."
+    },
+    {
+      "id": 33,
+      "start": 122.04,
+      "end": 124.28,
+      "text": "La llamada siempre seguirá."
+    },
+    {
+      "id": 34,
+      "start": 124.28,
+      "end": 125.78,
+      "text": "El cliente seguirá cuatro pasos."
+    },
+    {
+      "id": 35,
+      "start": 126.38,
+      "end": 127.18,
+      "text": "Presentación"
+    },
+    {
+      "id": 36,
+      "start": 128.16,
+      "end": 128.56,
+      "text": "Gancho"
+    },
+    {
+      "id": 37,
+      "start": 129.28,
+      "end": 129.78,
+      "text": "Pregunta"
+    },
+    {
+      "id": 38,
+      "start": 130.28,
+      "end": 130.86,
+      "text": "Cita"
+    },
+    {
+      "id": 39,
+      "start": 131.98,
+      "end": 133.46,
+      "text": "Preséntate de forma sencilla."
+    },
+    {
+      "id": 40,
+      "start": 133.98,
+      "end": 134.38,
+      "text": "Ejemplo"
+    },
+    {
+      "id": 41,
+      "start": 134.38,
+      "end": 136.94,
+      "text": "Hola Juan, soy Luis de la Technology."
+    },
+    {
+      "id": 42,
+      "start": 137.92,
+      "end": 140.64,
+      "text": "Nada más. No cuentes toda la empresa."
+    },
+    {
+      "id": 43,
+      "start": 140.9,
+      "end": 142.62,
+      "text": "No expliques todos los servicios."
+    },
+    {
+      "id": 44,
+      "start": 143.06,
+      "end": 144.58,
+      "text": "Sólo preséntate."
+    },
+    {
+      "id": 45,
+      "start": 144.82,
+      "end": 147.46,
+      "text": "Ahora debes despertar interés."
+    },
+    {
+      "id": 46,
+      "start": 147.9,
+      "end": 148.7,
+      "text": "Ejemplos"
+    },
+    {
+      "id": 47,
+      "start": 149.18,
+      "end": 151.54,
+      "text": "He estado viendo vuestra presencia digital."
+    },
+    {
+      "id": 48,
+      "start": 151.54,
+      "end": 157.42,
+      "text": "He visto vuestra página web y creo que hay algunas oportunidades interesantes de mejora."
+    },
+    {
+      "id": 49,
+      "start": 157.6,
+      "end": 160.86,
+      "text": "He visto que podríais captar más clientes online."
+    },
+    {
+      "id": 50,
+      "start": 161.42,
+      "end": 165.7,
+      "text": "La clave es hablar de oportunidades, nunca de problemas."
+    },
+    {
+      "id": 51,
+      "start": 166.06,
+      "end": 168.06,
+      "text": "Ahora haces una pregunta."
+    },
+    {
+      "id": 52,
+      "start": 168.8,
+      "end": 169.52,
+      "text": "Ejemplos"
+    },
+    {
+      "id": 53,
+      "start": 170.32,
+      "end": 172.78,
+      "text": "¿Actualmente os está generando clientes la web?"
+    },
+    {
+      "id": 54,
+      "start": 173.26,
+      "end": 175.28,
+      "text": "¿Quién lleva vuestra presencia digital?"
+    },
+    {
+      "id": 55,
+      "start": 175.96,
+      "end": 179.16,
+      "text": "¿Estáis satisfechos con los resultados que os está dando Internet?"
+    },
+    {
+      "id": 56,
+      "start": 180.8,
+      "end": 181.52,
+      "text": "Ejemplo"
+    },
+    {
+      "id": 57,
+      "start": 181.52,
+      "end": 182.76,
+      "text": "¿Cómo pueden que el cliente participe?"
+    },
+    {
+      "id": 58,
+      "start": 183.32,
+      "end": 185.56,
+      "text": "Cuando habla, te da información valiosa."
+    },
+    {
+      "id": 59,
+      "start": 187.59,
+      "end": 189.47,
+      "text": "Aquí está el objetivo real."
+    },
+    {
+      "id": 60,
+      "start": 189.73,
+      "end": 193.19,
+      "text": "No vender. Conseguir una reunión."
+    },
+    {
+      "id": 61,
+      "start": 193.71,
+      "end": 194.91,
+      "text": "Pongo un ejemplo."
+    },
+    {
+      "id": 62,
+      "start": 195.59,
+      "end": 199.37,
+      "text": "Creo que podría enseñarte algunas ideas que pueden ayudaros."
+    },
+    {
+      "id": 63,
+      "start": 199.53,
+      "end": 203.35,
+      "text": "¿Te parece si hacemos una videollamada de 15 minutos esta semana?"
+    },
+    {
+      "id": 64,
+      "start": 203.99,
+      "end": 208.69,
+      "text": "Es mucho más fácil conseguir una reunión que cerrar una venta por teléfono."
+    },
+    {
+      "id": 65,
+      "start": 208.97,
+      "end": 211.87,
+      "text": "Las cinco objeciones más típicas."
+    },
+    {
+      "id": 66,
+      "start": 212.77,
+      "end": 214.95,
+      "text": "Las objeciones son normales."
+    },
+    {
+      "id": 67,
+      "start": 214.95,
+      "end": 217.81,
+      "text": "No significan que el cliente no quiera comprar."
+    },
+    {
+      "id": 68,
+      "start": 218.45,
+      "end": 220.77,
+      "text": "Significan que necesita más información."
+    },
+    {
+      "id": 69,
+      "start": 221.51,
+      "end": 224.15,
+      "text": "Objeción 1. Ya tengo web."
+    },
+    {
+      "id": 70,
+      "start": 224.89,
+      "end": 225.57,
+      "text": "Respuesta"
+    },
+    {
+      "id": 71,
+      "start": 226.35,
+      "end": 231.15,
+      "text": "Perfecto. La mayoría de nuestros clientes también tenían web antes de trabajar con nosotros."
+    },
+    {
+      "id": 72,
+      "start": 231.75,
+      "end": 237.81,
+      "text": "Lo importante es saber si esa web les está ayudando realmente a conseguir clientes y ventas."
+    },
+    {
+      "id": 73,
+      "start": 238.25,
+      "end": 241.77,
+      "text": "Objeción 2. No me interesa."
+    },
+    {
+      "id": 74,
+      "start": 242.67,
+      "end": 245.75,
+      "text": "Respuesta. Lo entiendo perfectamente."
+    },
+    {
+      "id": 75,
+      "start": 246.03,
+      "end": 252.55,
+      "text": "Por curiosidad, ¿qué es lo que menos te interesa actualmente de la parte digital de tu negocio?"
+    },
+    {
+      "id": 76,
+      "start": 253.57,
+      "end": 257.29,
+      "text": "Muchas veces la conversación empieza precisamente aquí."
+    },
+    {
+      "id": 77,
+      "start": 257.83,
+      "end": 260.81,
+      "text": "Objeción 3. Mándame un email."
+    },
+    {
+      "id": 78,
+      "start": 261.71,
+      "end": 263.81,
+      "text": "Respuesta. Por supuesto."
+    },
+    {
+      "id": 79,
+      "start": 264.45,
+      "end": 268.51,
+      "text": "Antes de enviártelo, para enviarte algo que realmente te aporte valor,"
+    },
+    {
+      "id": 80,
+      "start": 268.71,
+      "end": 271.95,
+      "text": "¿qué es lo que más te gustaría mejorar actualmente?"
+    },
+    {
+      "id": 81,
+      "start": 271.95,
+      "end": 274.63,
+      "text": "Así evitamos enviar información genérica."
+    },
+    {
+      "id": 82,
+      "start": 275.39,
+      "end": 278.33,
+      "text": "Objeción 4. No tengo tiempo."
+    },
+    {
+      "id": 83,
+      "start": 279.17,
+      "end": 281.27,
+      "text": "Respuesta. Lo entiendo."
+    },
+    {
+      "id": 84,
+      "start": 281.93,
+      "end": 285.99,
+      "text": "Precisamente por eso te propongo una reunión de apenas 15 minutos."
+    },
+    {
+      "id": 85,
+      "start": 286.33,
+      "end": 290.59,
+      "text": "Si vemos que no te aporta nada, lo dejamos ahí sin ningún compromiso."
+    },
+    {
+      "id": 86,
+      "start": 291.35,
+      "end": 294.87,
+      "text": "Objeción 5. ¿Pero cuál es el precio?"
+    },
+    {
+      "id": 87,
+      "start": 295.73,
+      "end": 299.07,
+      "text": "Respuesta. Comprendo que quieras saber el precio."
+    },
+    {
+      "id": 88,
+      "start": 299.43,
+      "end": 301.19,
+      "text": "Antes de llegar a ese punto,"
+    },
+    {
+      "id": 89,
+      "start": 301.19,
+      "end": 304.41,
+      "text": "primero veamos si realmente podemos ayudaros"
+    },
+    {
+      "id": 90,
+      "start": 304.41,
+      "end": 308.33,
+      "text": "y después valoramos qué solución encaja mejor para vuestro negocio."
+    },
+    {
+      "id": 91,
+      "start": 309.8,
+      "end": 312.6,
+      "text": "El verdadero objetivo de la llamada."
+    },
+    {
+      "id": 92,
+      "start": 313.12,
+      "end": 318.04,
+      "text": "Recuerda esto porque es una de las lecciones más importantes de todo el curso."
+    },
+    {
+      "id": 93,
+      "start": 318.56,
+      "end": 321.88,
+      "text": "La llamada no sirve para vender."
+    },
+    {
+      "id": 94,
+      "start": 322.1,
+      "end": 325.56,
+      "text": "La llamada sirve para conseguir una reunión."
+    },
+    {
+      "id": 95,
+      "start": 325.74,
+      "end": 329.12,
+      "text": "La reunión sirve para detectar necesidades."
+    },
+    {
+      "id": 96,
+      "start": 329.12,
+      "end": 333.04,
+      "text": "La propuesta sirve para presentar la solución."
+    },
+    {
+      "id": 97,
+      "start": 333.1,
+      "end": 337.16,
+      "text": "Y la venta llega como consecuencia de todo el proceso."
+    },
+    {
+      "id": 98,
+      "start": 337.96,
+      "end": 342.06,
+      "text": "Los mejores comerciales no intentan cerrar en 30 segundos,"
+    },
+    {
+      "id": 99,
+      "start": 342.3,
+      "end": 345.3,
+      "text": "sino abrir oportunidades de conversación."
+    },
+    {
+      "id": 100,
+      "start": 346.44,
+      "end": 349.2,
+      "text": "Antes de cada llamada, recuerda."
+    },
+    {
+      "id": 101,
+      "start": 349.7,
+      "end": 352.3,
+      "text": "Investiga el negocio durante 5 segundos."
+    },
+    {
+      "id": 102,
+      "start": 352.72,
+      "end": 355.06,
+      "text": "Capta la atención en los primeros segundos."
+    },
+    {
+      "id": 103,
+      "start": 355.48,
+      "end": 356.96,
+      "text": "Sigue la estructura."
+    },
+    {
+      "id": 104,
+      "start": 357.4,
+      "end": 358.2,
+      "text": "Presentación."
+    },
+    {
+      "id": 105,
+      "start": 358.2,
+      "end": 359.3,
+      "text": "Gancho."
+    },
+    {
+      "id": 106,
+      "start": 359.58,
+      "end": 361.08,
+      "text": "Pregunta y cita."
+    },
+    {
+      "id": 107,
+      "start": 361.46,
+      "end": 363.48,
+      "text": "No discutas las objeciones."
+    },
+    {
+      "id": 108,
+      "start": 364.08,
+      "end": 364.76,
+      "text": "Resuélvelas."
+    },
+    {
+      "id": 109,
+      "start": 365.0,
+      "end": 366.84,
+      "text": "El objetivo no es vender."
+    },
+    {
+      "id": 110,
+      "start": 367.0,
+      "end": 369.46,
+      "text": "El objetivo es conseguir la reunión."
+    },
+    {
+      "id": 111,
+      "start": 370.06,
+      "end": 373.0,
+      "text": "Domina este proceso y tendrás una base sólida"
+    },
+    {
+      "id": 112,
+      "start": 373.0,
+      "end": 376.7,
+      "text": "para convertirte en un comercial profesional dentro de LITE Technology."
+    },
+    {
+      "id": 113,
+      "start": 377.14,
+      "end": 380.14,
+      "text": "No intentes vender en la primera llamada."
+    },
+    {
+      "id": 114,
+      "start": 380.54,
+      "end": 383.72,
+      "text": "Intenta conseguir la oportunidad de demostrar valor."
+    },
+    {
+      "id": 115,
+      "start": 384.02,
+      "end": 386.94,
+      "text": "Ahí es donde empiezan las ventas de verdad."
+    },
+    {
+      "id": 116,
+      "start": 386.94,
+      "end": 390.16,
+      "text": "Gracias por estar en este tercer módulo."
+    },
+    {
+      "id": 117,
+      "start": 390.22,
+      "end": 392.22,
+      "text": "Nos vemos en la próxima clase."
+    }
+  ]
+}

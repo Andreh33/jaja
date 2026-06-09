@@ -1,0 +1,147 @@
+{
+  "model": "large-v3",
+  "language": "es",
+  "language_probability": 1,
+  "duration": 155.39,
+  "transcribe_seconds": 322.8,
+  "segments": [
+    {
+      "id": 0,
+      "start": 5.71,
+      "end": 13.75,
+      "text": "Acceso al CRM. Para acceder al CRM debemos entrar en ServiciosOnlineWeb.com."
+    },
+    {
+      "id": 1,
+      "start": 14.49,
+      "end": 26.01,
+      "text": "Arriba a la derecha hay un botón que dice Iniciar sesión. En nuestro apartado sería para trabajadores. Una vez dentro, encontraremos nuestro usuario y contraseña de acceso."
+    },
+    {
+      "id": 2,
+      "start": 27.03,
+      "end": 31.65,
+      "text": "Al iniciar sesión, veremos en el menú lateral izquierdo los principales apartados."
+    },
+    {
+      "id": 3,
+      "start": 32.89,
+      "end": 42.75,
+      "text": "CRM. Es el apartado principal donde gestionaremos todos los contactos, leads, llamadas, seguimientos y oportunidades comerciales."
+    },
+    {
+      "id": 4,
+      "start": 43.27,
+      "end": 53.67,
+      "text": "Informativo. Calendario. Aquí aparecerán los avisos, tareas y recordatorios que nosotros mismos vayamos programando durante el seguimiento de los clientes."
+    },
+    {
+      "id": 5,
+      "start": 53.77,
+      "end": 59.59,
+      "text": "Es una herramienta fundamental para no olvidar llamadas, reuniones o acciones pendientes."
+    },
+    {
+      "id": 6,
+      "start": 61.11,
+      "end": 73.19,
+      "text": "Informativo. Avisos. En este apartado encontraremos toda la información importante de la empresa, comunicaciones internas y mensajes públicos enviados por la dirección a todo el equipo comercial."
+    },
+    {
+      "id": 7,
+      "start": 73.85,
+      "end": 79.73,
+      "text": "Es recomendable revisarlo diariamente para estar al día de novedades, cambios o instrucciones importantes."
+    },
+    {
+      "id": 8,
+      "start": 81.01,
+      "end": 86.57,
+      "text": "Registro de llamadas y seguimientos. Después de cada llamada debemos registrar la actividad."
+    },
+    {
+      "id": 9,
+      "start": 86.97,
+      "end": 89.41,
+      "text": "Pasos. Abrir la ficha del lead."
+    },
+    {
+      "id": 10,
+      "start": 90.13,
+      "end": 91.89,
+      "text": "Añadir una nota o comentario."
+    },
+    {
+      "id": 11,
+      "start": 92.45,
+      "end": 93.13,
+      "text": "Registrar."
+    },
+    {
+      "id": 12,
+      "start": 93.67,
+      "end": 94.93,
+      "text": "Fecha de la llamada."
+    },
+    {
+      "id": 13,
+      "start": 95.47,
+      "end": 96.67,
+      "text": "Resultado obtenido."
+    },
+    {
+      "id": 14,
+      "start": 97.25,
+      "end": 99.91,
+      "text": "Información relevante comentada por el cliente."
+    },
+    {
+      "id": 15,
+      "start": 100.45,
+      "end": 102.65,
+      "text": "Programar la siguiente acción de seguimiento."
+    },
+    {
+      "id": 16,
+      "start": 103.97,
+      "end": 111.81,
+      "text": "Informativo. Crear un aviso o recordatorio que quedará reflejado en el apartado Calendario para no olvidar la próxima gestión."
+    },
+    {
+      "id": 17,
+      "start": 112.35,
+      "end": 118.13,
+      "text": "Nunca debemos terminar una llamada sin dejar registrada la información y la próxima acción programada."
+    },
+    {
+      "id": 18,
+      "start": 118.33,
+      "end": 119.01,
+      "text": "Además,"
+    },
+    {
+      "id": 19,
+      "start": 119.59,
+      "end": 134.53,
+      "text": "durante la explicación oral, el CRM es donde trabajamos con los clientes, el Calendario es donde organizamos nuestras próximas acciones y Avisos es el canal oficial donde la dirección comunica información importante a todo el equipo comercial."
+    },
+    {
+      "id": 20,
+      "start": 135.11,
+      "end": 144.59,
+      "text": "De todos modos, cualquier duda sobre el manejo o el control del back office, puedes contactar con el personal mismo de la Technology, ya sea a Luis o Andrés."
+    },
+    {
+      "id": 21,
+      "start": 144.79,
+      "end": 149.29,
+      "text": "Nos vemos en el siguiente módulo y último del bloque antes del examen teórico."
+    },
+    {
+      "id": 22,
+      "start": 149.59,
+      "end": 149.81,
+      "text": "¡Gracias!"
+    }
+  ]
+}

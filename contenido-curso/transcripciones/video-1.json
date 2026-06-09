@@ -1,0 +1,1119 @@
+{
+  "model": "large-v3",
+  "language": "es",
+  "language_probability": 1,
+  "duration": 703.57,
+  "transcribe_seconds": 1387.2,
+  "segments": [
+    {
+      "id": 0,
+      "start": 6.1,
+      "end": 7.82,
+      "text": "Hola, soy Andrés Queo de la Tecnology,"
+    },
+    {
+      "id": 1,
+      "start": 8.36,
+      "end": 10.04,
+      "text": "responsable de las herramientas y servicios"
+    },
+    {
+      "id": 2,
+      "start": 10.04,
+      "end": 11.94,
+      "text": "que encontrarás a lo largo de esta clase."
+    },
+    {
+      "id": 3,
+      "start": 12.24,
+      "end": 14.1,
+      "text": "A continuación, te dejo el módulo 2."
+    },
+    {
+      "id": 4,
+      "start": 16.91,
+      "end": 18.91,
+      "text": "Buenas, compañero o compañera, soy María,"
+    },
+    {
+      "id": 5,
+      "start": 19.17,
+      "end": 22.09,
+      "text": "tu profesora virtual, y estoy aquí para enseñarte"
+    },
+    {
+      "id": 6,
+      "start": 22.09,
+      "end": 24.59,
+      "text": "el primer módulo de aprendizaje de la Tecnology."
+    },
+    {
+      "id": 7,
+      "start": 25.03,
+      "end": 26.25,
+      "text": "Vamos a comenzar."
+    },
+    {
+      "id": 8,
+      "start": 26.89,
+      "end": 29.53,
+      "text": "Uno de los errores más comunes de un comercial"
+    },
+    {
+      "id": 9,
+      "start": 29.53,
+      "end": 31.89,
+      "text": "es pensar que vende una página web."
+    },
+    {
+      "id": 10,
+      "start": 32.23,
+      "end": 35.07,
+      "text": "En la Tecnology no vendemos páginas web."
+    },
+    {
+      "id": 11,
+      "start": 35.69,
+      "end": 37.83,
+      "text": "Vendemos soluciones para que las empresas"
+    },
+    {
+      "id": 12,
+      "start": 37.83,
+      "end": 40.93,
+      "text": "consigan más clientes, generen más ventas"
+    },
+    {
+      "id": 13,
+      "start": 40.93,
+      "end": 42.95,
+      "text": "y transmitan una imagen profesional."
+    },
+    {
+      "id": 14,
+      "start": 43.87,
+      "end": 45.89,
+      "text": "Cuando hables con un cliente,"
+    },
+    {
+      "id": 15,
+      "start": 46.12,
+      "end": 49.23,
+      "text": "nunca te centres únicamente en las características técnicas."
+    },
+    {
+      "id": 16,
+      "start": 49.64,
+      "end": 52.11,
+      "text": "Lo importante es el beneficio que obtiene."
+    },
+    {
+      "id": 17,
+      "start": 53.04,
+      "end": 55.97,
+      "text": "En la Tecnology ayudamos a empresas y autónomos"
+    },
+    {
+      "id": 18,
+      "start": 55.97,
+      "end": 58.53,
+      "text": "a mejorar su presencia digital mediante"
+    },
+    {
+      "id": 19,
+      "start": 58.53,
+      "end": 61.55,
+      "text": "diseño de páginas web profesionales,"
+    },
+    {
+      "id": 20,
+      "start": 62.24,
+      "end": 64.53,
+      "text": "tiendas online para vender productos por Internet,"
+    },
+    {
+      "id": 21,
+      "start": 65.51,
+      "end": 67.47,
+      "text": "posicionamiento y visibilidad digital."
+    },
+    {
+      "id": 22,
+      "start": 67.83,
+      "end": 69.67,
+      "text": "¿Qué es una página web?"
+    },
+    {
+      "id": 23,
+      "start": 70.15,
+      "end": 73.11,
+      "text": "Una página web es el escaparate digital"
+    },
+    {
+      "id": 24,
+      "start": 73.11,
+      "end": 74.49,
+      "text": "de una empresa en Internet."
+    },
+    {
+      "id": 25,
+      "start": 75.11,
+      "end": 77.43,
+      "text": "Es el lugar donde los clientes pueden encontrar"
+    },
+    {
+      "id": 26,
+      "start": 77.43,
+      "end": 80.17,
+      "text": "información sobre el negocio, sus productos,"
+    },
+    {
+      "id": 27,
+      "start": 80.75,
+      "end": 84.61,
+      "text": "sus servicios, sus horarios, formas de contacto"
+    },
+    {
+      "id": 28,
+      "start": 84.61,
+      "end": 86.75,
+      "text": "y todo aquello que necesiten saber"
+    },
+    {
+      "id": 29,
+      "start": 86.75,
+      "end": 88.75,
+      "text": "antes de tomar una decisión de compra."
+    },
+    {
+      "id": 30,
+      "start": 89.51,
+      "end": 92.53,
+      "text": "Si una tienda física tiene un local abierto al público,"
+    },
+    {
+      "id": 31,
+      "start": 92.99,
+      "end": 96.49,
+      "text": "una página web es ese mismo local abierto en Internet"
+    },
+    {
+      "id": 32,
+      "start": 96.49,
+      "end": 97.81,
+      "text": "las 24 horas de la noche."
+    },
+    {
+      "id": 33,
+      "start": 97.83,
+      "end": 101.07,
+      "text": "Las 24 horas del día, los 365 días del año."
+    },
+    {
+      "id": 34,
+      "start": 102.39,
+      "end": 104.75,
+      "text": "Beneficios de una página web para una empresa."
+    },
+    {
+      "id": 35,
+      "start": 105.87,
+      "end": 108.99,
+      "text": "1. Genera confianza y profesionalidad."
+    },
+    {
+      "id": 36,
+      "start": 109.86,
+      "end": 112.15,
+      "text": "Hoy en día, la mayoría de los clientes"
+    },
+    {
+      "id": 37,
+      "start": 112.15,
+      "end": 114.39,
+      "text": "buscan información en Internet antes de comprar."
+    },
+    {
+      "id": 38,
+      "start": 115.1,
+      "end": 116.87,
+      "text": "Una empresa con una web profesional"
+    },
+    {
+      "id": 39,
+      "start": 116.87,
+      "end": 120.33,
+      "text": "transmite seriedad, confianza y credibilidad."
+    },
+    {
+      "id": 40,
+      "start": 121.41,
+      "end": 124.77,
+      "text": "2. Consigue más clientes potenciales."
+    },
+    {
+      "id": 41,
+      "start": 125.34,
+      "end": 127.27,
+      "text": "Las personas pueden encontrar la empresa"
+    },
+    {
+      "id": 42,
+      "start": 127.27,
+      "end": 127.81,
+      "text": "a través de su página web."
+    },
+    {
+      "id": 43,
+      "start": 127.81,
+      "end": 139.47,
+      "text": "3. Está disponible las 24 horas."
+    },
+    {
+      "id": 44,
+      "start": 139.85,
+      "end": 141.85,
+      "text": "Mientras el negocio está cerrado,"
+    },
+    {
+      "id": 45,
+      "start": 141.97,
+      "end": 143.71,
+      "text": "la web sigue mostrando información,"
+    },
+    {
+      "id": 46,
+      "start": 144.59,
+      "end": 147.97,
+      "text": "captando contactos y generando oportunidades comerciales."
+    },
+    {
+      "id": 47,
+      "start": 148.47,
+      "end": 152.35,
+      "text": "4. Muestra productos y servicios de forma clara."
+    },
+    {
+      "id": 48,
+      "start": 153.19,
+      "end": 156.11,
+      "text": "Permite explicar detalladamente qué hace la empresa,"
+    },
+    {
+      "id": 49,
+      "start": 156.39,
+      "end": 157.79,
+      "text": "mostrar fotografías, mostrar datos,"
+    },
+    {
+      "id": 50,
+      "start": 157.81,
+      "end": 160.45,
+      "text": "precios, trabajos realizados"
+    },
+    {
+      "id": 51,
+      "start": 160.45,
+      "end": 163.05,
+      "text": "y resolver dudas frecuentes de los clientes."
+    },
+    {
+      "id": 52,
+      "start": 163.65,
+      "end": 167.19,
+      "text": "5. Ayuda a diferenciarse de la competencia."
+    },
+    {
+      "id": 53,
+      "start": 167.75,
+      "end": 171.19,
+      "text": "Muchas empresas todavía tienen una presencia digital limitada."
+    },
+    {
+      "id": 54,
+      "start": 171.47,
+      "end": 173.37,
+      "text": "Una web moderna y profesional"
+    },
+    {
+      "id": 55,
+      "start": 173.37,
+      "end": 176.45,
+      "text": "permite destacar frente a otros negocios del sector."
+    },
+    {
+      "id": 56,
+      "start": 177.39,
+      "end": 179.71,
+      "text": "6. Facilita el contacto."
+    },
+    {
+      "id": 57,
+      "start": 180.01,
+      "end": 183.29,
+      "text": "Los clientes pueden llamar, enviar formularios,"
+    },
+    {
+      "id": 58,
+      "start": 183.41,
+      "end": 184.79,
+      "text": "solicitar presupuestos"
+    },
+    {
+      "id": 59,
+      "start": 184.79,
+      "end": 186.97,
+      "text": "o localizar fácilmente la empresa"
+    },
+    {
+      "id": 60,
+      "start": 186.97,
+      "end": 189.15,
+      "text": "mediante mapas y datos de contacto."
+    },
+    {
+      "id": 61,
+      "start": 189.19,
+      "end": 193.17,
+      "text": "Un cliente no compra una web porque le guste tener una web."
+    },
+    {
+      "id": 62,
+      "start": 193.74,
+      "end": 196.85,
+      "text": "Compra porque necesita resolver alguno de estos problemas."
+    },
+    {
+      "id": 63,
+      "start": 197.72,
+      "end": 199.87,
+      "text": "No recibe suficientes clientes."
+    },
+    {
+      "id": 64,
+      "start": 200.2,
+      "end": 202.25,
+      "text": "Su negocio no aparece en Internet."
+    },
+    {
+      "id": 65,
+      "start": 203.1,
+      "end": 205.13,
+      "text": "Da una imagen poco profesional."
+    },
+    {
+      "id": 66,
+      "start": 206.1,
+      "end": 208.39,
+      "text": "Pierde oportunidades frente a su competencia."
+    },
+    {
+      "id": 67,
+      "start": 208.98,
+      "end": 210.35,
+      "text": "No puede vender online."
+    },
+    {
+      "id": 68,
+      "start": 211.26,
+      "end": 214.89,
+      "text": "Dedica demasiado tiempo a tareas que podrían automatizarse."
+    },
+    {
+      "id": 69,
+      "start": 215.13,
+      "end": 215.91,
+      "text": "7. No puede vender online."
+    },
+    {
+      "id": 70,
+      "start": 215.91,
+      "end": 216.95,
+      "text": "Por eso debemos hablar con los clientes."
+    },
+    {
+      "id": 71,
+      "start": 216.95,
+      "end": 219.27,
+      "text": "El cliente debe hablar siempre de resultados y beneficios."
+    },
+    {
+      "id": 72,
+      "start": 220.07,
+      "end": 221.25,
+      "text": "Ejemplo incorrecto."
+    },
+    {
+      "id": 73,
+      "start": 221.59,
+      "end": 223.99,
+      "text": "Le ofrecemos una página web moderna."
+    },
+    {
+      "id": 74,
+      "start": 224.75,
+      "end": 225.77,
+      "text": "Ejemplo correcto."
+    },
+    {
+      "id": 75,
+      "start": 226.05,
+      "end": 230.15,
+      "text": "Le ayudamos a que sus futuros clientes le encuentren fácilmente"
+    },
+    {
+      "id": 76,
+      "start": 230.15,
+      "end": 233.61,
+      "text": "y tengan confianza en su empresa desde el primer momento."
+    },
+    {
+      "id": 77,
+      "start": 234.89,
+      "end": 236.53,
+      "text": "¿Qué es una tienda online?"
+    },
+    {
+      "id": 78,
+      "start": 237.31,
+      "end": 238.67,
+      "text": "Definición sencilla."
+    },
+    {
+      "id": 79,
+      "start": 239.29,
+      "end": 242.61,
+      "text": "Una tienda online es un negocio abierto en Internet"
+    },
+    {
+      "id": 80,
+      "start": 242.61,
+      "end": 246.49,
+      "text": "que permite a los clientes comprar productos o servicios"
+    },
+    {
+      "id": 81,
+      "start": 246.49,
+      "end": 246.93,
+      "text": "y que les permitan comprar productos o servicios"
+    },
+    {
+      "id": 82,
+      "start": 246.93,
+      "end": 249.65,
+      "text": "desde cualquier lugar y en cualquier momento,"
+    },
+    {
+      "id": 83,
+      "start": 249.85,
+      "end": 254.01,
+      "text": "utilizando un ordenador, una tablet o un teléfono móvil."
+    },
+    {
+      "id": 84,
+      "start": 254.45,
+      "end": 257.37,
+      "text": "A diferencia de una página web informativa,"
+    },
+    {
+      "id": 85,
+      "start": 257.63,
+      "end": 260.91,
+      "text": "una tienda online permite realizar compras directamente,"
+    },
+    {
+      "id": 86,
+      "start": 261.49,
+      "end": 264.93,
+      "text": "añadir productos a un carrito, efectuar pagos"
+    },
+    {
+      "id": 87,
+      "start": 264.93,
+      "end": 267.51,
+      "text": "y gestionar pedidos de forma automática."
+    },
+    {
+      "id": 88,
+      "start": 267.95,
+      "end": 270.03,
+      "text": "¿Qué beneficios tiene para una empresa?"
+    },
+    {
+      "id": 89,
+      "start": 270.81,
+      "end": 274.21,
+      "text": "1. Vender las 24 horas del día."
+    },
+    {
+      "id": 90,
+      "start": 274.43,
+      "end": 276.91,
+      "text": "La tienda online sigue funcionando."
+    },
+    {
+      "id": 91,
+      "start": 276.91,
+      "end": 279.41,
+      "text": "Incluso cuando el negocio físico está cerrado."
+    },
+    {
+      "id": 92,
+      "start": 279.83,
+      "end": 283.31,
+      "text": "Los clientes pueden comprar cualquier día y a cualquier hora."
+    },
+    {
+      "id": 93,
+      "start": 284.35,
+      "end": 286.83,
+      "text": "2. Llegar a más clientes."
+    },
+    {
+      "id": 94,
+      "start": 287.51,
+      "end": 291.37,
+      "text": "Ya no se depende únicamente de las personas que viven cerca del negocio."
+    },
+    {
+      "id": 95,
+      "start": 291.45,
+      "end": 295.31,
+      "text": "Se puede vender en toda España e incluso a nivel internacional."
+    },
+    {
+      "id": 96,
+      "start": 296.93,
+      "end": 298.89,
+      "text": "3. Reducir costes."
+    },
+    {
+      "id": 97,
+      "start": 299.47,
+      "end": 303.67,
+      "text": "Una tienda online suele tener menos gastos que abrir nuevos locales físicos"
+    },
+    {
+      "id": 98,
+      "start": 303.67,
+      "end": 306.73,
+      "text": "y permite ampliar el negocio con una inversión menor."
+    },
+    {
+      "id": 99,
+      "start": 307.59,
+      "end": 310.17,
+      "text": "4. Automatizar ventas."
+    },
+    {
+      "id": 100,
+      "start": 310.66,
+      "end": 315.53,
+      "text": "Los pedidos, pagos y parte de la gestión se realizan de forma automática,"
+    },
+    {
+      "id": 101,
+      "start": 315.65,
+      "end": 317.51,
+      "text": "ahorrando tiempo y recursos."
+    },
+    {
+      "id": 102,
+      "start": 318.83,
+      "end": 321.27,
+      "text": "5. Mostrar todo el catálogo."
+    },
+    {
+      "id": 103,
+      "start": 321.96,
+      "end": 327.17,
+      "text": "Los clientes pueden ver todos los productos, fotografías, características y precios"
+    },
+    {
+      "id": 104,
+      "start": 327.17,
+      "end": 328.91,
+      "text": "sin necesidad de desplazarse."
+    },
+    {
+      "id": 105,
+      "start": 330.07,
+      "end": 332.35,
+      "text": "6. Aumentar la facturación."
+    },
+    {
+      "id": 106,
+      "start": 332.59,
+      "end": 336.27,
+      "text": "Al estar disponible permanentemente y llegar a más personas,"
+    },
+    {
+      "id": 107,
+      "start": 336.27,
+      "end": 338.73,
+      "text": "se generan más oportunidades de venta."
+    },
+    {
+      "id": 108,
+      "start": 339.01,
+      "end": 341.89,
+      "text": "Ejemplo sencillo para explicar a un cliente."
+    },
+    {
+      "id": 109,
+      "start": 342.73,
+      "end": 346.15,
+      "text": "Si una página web es como el escaparate de una tienda,"
+    },
+    {
+      "id": 110,
+      "start": 346.27,
+      "end": 351.07,
+      "text": "una tienda online es el establecimiento completo funcionando dentro de Internet,"
+    },
+    {
+      "id": 111,
+      "start": 351.65,
+      "end": 358.33,
+      "text": "donde los clientes pueden entrar, elegir productos, pagar y comprar sin necesidad de desplazarse."
+    },
+    {
+      "id": 112,
+      "start": 359.33,
+      "end": 361.13,
+      "text": "Mensaje clave para el comercial."
+    },
+    {
+      "id": 113,
+      "start": 362.19,
+      "end": 363.15,
+      "text": "No digas,"
+    },
+    {
+      "id": 114,
+      "start": 363.63,
+      "end": 365.17,
+      "text": "le vendo una tienda online."
+    },
+    {
+      "id": 115,
+      "start": 366.27,
+      "end": 366.53,
+      "text": "Dí."
+    },
+    {
+      "id": 116,
+      "start": 367.15,
+      "end": 371.21,
+      "text": "Le ayudo a vender sus productos por Internet las 24 horas del día,"
+    },
+    {
+      "id": 117,
+      "start": 371.35,
+      "end": 375.21,
+      "text": "ampliando su mercado y generando nuevas oportunidades de negocio."
+    },
+    {
+      "id": 118,
+      "start": 376.35,
+      "end": 381.27,
+      "text": "Los pedidos, pagos y parte de la gestión se realizan de forma automática,"
+    },
+    {
+      "id": 119,
+      "start": 381.37,
+      "end": 383.03,
+      "text": "ahorrando tiempo y recursos."
+    },
+    {
+      "id": 120,
+      "start": 383.55,
+      "end": 392.47,
+      "text": "¿Qué es un asistente IA para empresas?"
+    },
+    {
+      "id": 121,
+      "start": 393.57,
+      "end": 394.77,
+      "text": "Definición sencilla."
+    },
+    {
+      "id": 122,
+      "start": 395.51,
+      "end": 401.37,
+      "text": "Un asistente IA es un empleado digital que atiende llamadas, responde consultas,"
+    },
+    {
+      "id": 123,
+      "start": 401.51,
+      "end": 402.47,
+      "text": "recoge información,"
+    },
+    {
+      "id": 124,
+      "start": 402.67,
+      "end": 408.15,
+      "text": "y ayuda a gestionar reservas o solicitudes las 24 horas del día."
+    },
+    {
+      "id": 125,
+      "start": 408.95,
+      "end": 415.77,
+      "text": "No se cansa, no descansa, no tiene horarios y puede atender a varios clientes al mismo tiempo."
+    },
+    {
+      "id": 126,
+      "start": 416.41,
+      "end": 421.35,
+      "text": "Su objetivo principal es evitar que una empresa pierda oportunidades de venta"
+    },
+    {
+      "id": 127,
+      "start": 421.35,
+      "end": 424.99,
+      "text": "por no poder atender una llamada o responder una consulta a tiempo."
+    },
+    {
+      "id": 128,
+      "start": 425.23,
+      "end": 426.83,
+      "text": "¿Qué problema resuelve?"
+    },
+    {
+      "id": 129,
+      "start": 427.35,
+      "end": 431.79,
+      "text": "Muchos negocios pierden clientes cada día por motivos muy simples."
+    },
+    {
+      "id": 130,
+      "start": 432.67,
+      "end": 436.29,
+      "text": "Están atendiendo a otro cliente, no pueden coger el teléfono,"
+    },
+    {
+      "id": 131,
+      "start": 436.65,
+      "end": 440.57,
+      "text": "están fuera del horario comercial, tienen demasiado trabajo,"
+    },
+    {
+      "id": 132,
+      "start": 440.89,
+      "end": 446.11,
+      "text": "se olvidan de devolver llamadas, no anotan correctamente los datos de contacto."
+    },
+    {
+      "id": 133,
+      "start": 446.79,
+      "end": 451.37,
+      "text": "Cuando un cliente no recibe respuesta, normalmente llama a la competencia."
+    },
+    {
+      "id": 134,
+      "start": 452.05,
+      "end": 456.05,
+      "text": "Cada llamada perdida puede significar una venta perdida."
+    },
+    {
+      "id": 135,
+      "start": 456.23,
+      "end": 457.21,
+      "text": "¿Cómo funciona?"
+    },
+    {
+      "id": 136,
+      "start": 457.85,
+      "end": 461.97,
+      "text": "El asistente IA responde con una conversación natural."
+    },
+    {
+      "id": 137,
+      "start": 462.67,
+      "end": 464.67,
+      "text": "Como si fuera una persona del negocio."
+    },
+    {
+      "id": 138,
+      "start": 465.33,
+      "end": 475.27,
+      "text": "Puede atender llamadas entrantes, responder preguntas frecuentes, recoger nombre, teléfono y datos del cliente,"
+    },
+    {
+      "id": 139,
+      "start": 476.13,
+      "end": 483.65,
+      "text": "gestionar reservas, concertar citas, solicitar presupuestos, registrar incidencias,"
+    },
+    {
+      "id": 140,
+      "start": 484.59,
+      "end": 490.81,
+      "text": "derivar llamadas importantes al personal adecuado, enviar la información recopilada al negocio."
+    },
+    {
+      "id": 141,
+      "start": 491.71,
+      "end": 492.17,
+      "text": "Además,"
+    },
+    {
+      "id": 142,
+      "start": 492.67,
+      "end": 497.29,
+      "text": "recuerda la conversación y sigue una lógica adaptada a cada empresa."
+    },
+    {
+      "id": 143,
+      "start": 498.04,
+      "end": 499.97,
+      "text": "No responde de forma robótica."
+    },
+    {
+      "id": 144,
+      "start": 500.54,
+      "end": 506.61,
+      "text": "Mantiene conversaciones fluidas y profesionales siguiendo las instrucciones que la empresa haya definido."
+    },
+    {
+      "id": 145,
+      "start": 507.17,
+      "end": 508.59,
+      "text": "Beneficios para la empresa."
+    },
+    {
+      "id": 146,
+      "start": 509.48,
+      "end": 511.91,
+      "text": "1. No perder clientes."
+    },
+    {
+      "id": 147,
+      "start": 512.58,
+      "end": 516.91,
+      "text": "Todas las llamadas reciben atención, incluso fuera del horario laboral."
+    },
+    {
+      "id": 148,
+      "start": 517.6,
+      "end": 520.17,
+      "text": "2. Más reservas y citas."
+    },
+    {
+      "id": 149,
+      "start": 520.25,
+      "end": 522.65,
+      "text": "Los clientes pueden reservar en cuartos."
+    },
+    {
+      "id": 150,
+      "start": 522.67,
+      "end": 525.59,
+      "text": "Cualquier momento, sin esperar a que alguien esté disponible."
+    },
+    {
+      "id": 151,
+      "start": 526.39,
+      "end": 529.09,
+      "text": "3. Más oportunidades de venta."
+    },
+    {
+      "id": 152,
+      "start": 529.67,
+      "end": 534.09,
+      "text": "Cada consulta queda registrada y puede convertirse en una futura venta."
+    },
+    {
+      "id": 153,
+      "start": 534.93,
+      "end": 537.63,
+      "text": "4. Mejor atención al cliente."
+    },
+    {
+      "id": 154,
+      "start": 538.33,
+      "end": 541.87,
+      "text": "Los clientes reciben respuestas rápidas y profesionales."
+    },
+    {
+      "id": 155,
+      "start": 542.73,
+      "end": 544.73,
+      "text": "5. Ahorro de tiempo."
+    },
+    {
+      "id": 156,
+      "start": 545.19,
+      "end": 551.09,
+      "text": "El personal puede centrarse en tareas importantes mientras el asistente atiende consultas repetitivas."
+    },
+    {
+      "id": 157,
+      "start": 552.05,
+      "end": 555.35,
+      "text": "6. Disponible 24 horas al día."
+    },
+    {
+      "id": 158,
+      "start": 556.36,
+      "end": 560.21,
+      "text": "Trabaja los 365 días del año sin interrupciones."
+    },
+    {
+      "id": 159,
+      "start": 561.38,
+      "end": 563.97,
+      "text": "Derivar llamadas importantes al personal adecuado."
+    },
+    {
+      "id": 160,
+      "start": 564.92,
+      "end": 567.21,
+      "text": "Enviar la información recopilada al negocio."
+    },
+    {
+      "id": 161,
+      "start": 568.1,
+      "end": 572.55,
+      "text": "Además, recuerda la conversación y sigue una lógica adaptada a cada empresa."
+    },
+    {
+      "id": 162,
+      "start": 573.15,
+      "end": 575.13,
+      "text": "Mensaje clave para el comercial."
+    },
+    {
+      "id": 163,
+      "start": 576.3,
+      "end": 579.35,
+      "text": "Nunca digas, le vendo una inteligencia artificial."
+    },
+    {
+      "id": 164,
+      "start": 579.89,
+      "end": 580.71,
+      "text": "Di."
+    },
+    {
+      "id": 165,
+      "start": 581.09,
+      "end": 584.35,
+      "text": "Le ayudo a que ningún cliente se quede sin respuesta."
+    },
+    {
+      "id": 166,
+      "start": 584.53,
+      "end": 588.71,
+      "text": "Y a que cada llamada tenga la oportunidad de convertirse en una venta."
+    },
+    {
+      "id": 167,
+      "start": 590.33,
+      "end": 592.25,
+      "text": "Enhorabuena por haber llegado hasta aquí."
+    },
+    {
+      "id": 168,
+      "start": 592.75,
+      "end": 597.93,
+      "text": "A lo largo de este módulo, has aprendido los fundamentos de los servicios que ofrecemos en la tecnología."
+    },
+    {
+      "id": 169,
+      "start": 598.29,
+      "end": 603.75,
+      "text": "Y, lo más importante, has comprendido que nuestro trabajo no consiste en vender tecnología,"
+    },
+    {
+      "id": 170,
+      "start": 604.17,
+      "end": 610.73,
+      "text": "sino en ayudar a las empresas a crecer, mejorar su imagen y generar más oportunidades de negocio."
+    },
+    {
+      "id": 171,
+      "start": 611.45,
+      "end": 615.13,
+      "text": "Recuerda que un buen comercial no es la persona que más habla,"
+    },
+    {
+      "id": 172,
+      "start": 615.25,
+      "end": 621.41,
+      "text": "sino la que mejor entiende las necesidades de sus clientes y sabe explicar cómo puede ayudarles."
+    },
+    {
+      "id": 173,
+      "start": 622.43,
+      "end": 627.17,
+      "text": "Ahora es el momento de repasar todo el contenido antes de realizar el examen."
+    },
+    {
+      "id": 174,
+      "start": 627.55,
+      "end": 634.65,
+      "text": "Dedica unos minutos a releer los conceptos principales, las frases clave y los argumentos de venta que hemos trabajado."
+    },
+    {
+      "id": 175,
+      "start": 634.97,
+      "end": 640.71,
+      "text": "Cuanto mejor conozcas nuestros servicios, más confianza transmitirás cuando hables con un cliente."
+    },
+    {
+      "id": 176,
+      "start": 641.97,
+      "end": 646.55,
+      "text": "Te recomiendo que tengas siempre un cuaderno exclusivo para tu formación comercial."
+    },
+    {
+      "id": 177,
+      "start": 647.15,
+      "end": 655.65,
+      "text": "Anota los conceptos importantes, las dudas que te surjan, las frases de venta que más te gusten y cualquier aprendizaje que consideres útil."
+    },
+    {
+      "id": 178,
+      "start": 656.35,
+      "end": 663.89,
+      "text": "Los mejores comerciales suelen tener una libreta llena de apuntes, experiencias y conocimientos adquiridos con el tiempo."
+    },
+    {
+      "id": 179,
+      "start": 665.35,
+      "end": 667.49,
+      "text": "La formación no termina aquí."
+    },
+    {
+      "id": 180,
+      "start": 667.65,
+      "end": 671.07,
+      "text": "En el siguiente módulo, comenzaremos a profundizar en la tecnología."
+    },
+    {
+      "id": 181,
+      "start": 671.07,
+      "end": 678.29,
+      "text": "En el siguiente módulo, comenzaremos a profundizar en las técnicas comerciales, la detección de necesidades del cliente y la forma correcta de conducir una conversación de ventas profesional."
+    },
+    {
+      "id": 182,
+      "start": 679.27,
+      "end": 683.71,
+      "text": "Prepárate, toma apuntes y mantén una actitud de aprendizaje constante."
+    },
+    {
+      "id": 183,
+      "start": 684.53,
+      "end": 692.83,
+      "text": "Cada módulo te acercará un paso más a convertirte en un profesional capaz de representar a la tecnología con confianza, credibilidad y resultados."
+    },
+    {
+      "id": 184,
+      "start": 693.79,
+      "end": 697.19,
+      "text": "Mucho ánimo con el examen y nos vemos en el siguiente módulo."
+    }
+  ]
+}

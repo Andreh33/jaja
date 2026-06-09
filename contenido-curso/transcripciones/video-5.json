@@ -1,0 +1,231 @@
+{
+  "model": "large-v3",
+  "language": "es",
+  "language_probability": 1,
+  "duration": 182.83,
+  "transcribe_seconds": 235.6,
+  "segments": [
+    {
+      "id": 0,
+      "start": 8.5,
+      "end": 12.42,
+      "text": "Bienvenido o bienvenida al último módulo de la Tecnology."
+    },
+    {
+      "id": 1,
+      "start": 12.68,
+      "end": 19.88,
+      "text": "Te voy a explicar en este último módulo los consejos de venta más importantes y el cierre de la venta."
+    },
+    {
+      "id": 2,
+      "start": 20.92,
+      "end": 24.5,
+      "text": "Vender no consiste en convencer a todo el mundo."
+    },
+    {
+      "id": 3,
+      "start": 25.1,
+      "end": 32.72,
+      "text": "Consiste en encontrar a las personas adecuadas, entender sus necesidades y acompañarlas hasta una decisión."
+    },
+    {
+      "id": 4,
+      "start": 32.72,
+      "end": 39.76,
+      "text": "En este módulo veremos cinco principios clave que utilizan los vendedores más efectivos."
+    },
+    {
+      "id": 5,
+      "start": 40.28,
+      "end": 42.52,
+      "text": "La constancia y los números."
+    },
+    {
+      "id": 6,
+      "start": 42.74,
+      "end": 45.26,
+      "text": "La venta es un juego de volumen."
+    },
+    {
+      "id": 7,
+      "start": 46.22,
+      "end": 51.9,
+      "text": "Uno de los errores más comunes es pensar que cada conversación debe terminar en una venta."
+    },
+    {
+      "id": 8,
+      "start": 52.48,
+      "end": 56.06,
+      "text": "La realidad es que las ventas funcionan por estadísticas."
+    },
+    {
+      "id": 9,
+      "start": 56.62,
+      "end": 60.44,
+      "text": "Cuantas más personas contactes, más oportunidades generarás."
+    },
+    {
+      "id": 10,
+      "start": 60.82,
+      "end": 62.26,
+      "text": "No te desanimes."
+    },
+    {
+      "id": 11,
+      "start": 62.26,
+      "end": 65.2,
+      "text": "No te desanimes si algunos prospectos no responden o dicen que no."
+    },
+    {
+      "id": 12,
+      "start": 65.46,
+      "end": 70.56,
+      "text": "Lo importante es mantener una actividad constante y medir tus resultados."
+    },
+    {
+      "id": 13,
+      "start": 71.52,
+      "end": 77.78,
+      "text": "Recuerda, la persistencia suele superar al talento cuando se aplica de forma consistente."
+    },
+    {
+      "id": 14,
+      "start": 78.29,
+      "end": 82.24,
+      "text": "El seguimiento, donde se cierran la mayoría de las ventas."
+    },
+    {
+      "id": 15,
+      "start": 82.98,
+      "end": 86.38,
+      "text": "Muchos vendedores abandonan después del primer contacto,"
+    },
+    {
+      "id": 16,
+      "start": 86.42,
+      "end": 91.18,
+      "text": "pero la mayoría de las ventas se producen entre el segundo y el cuarto seguimiento."
+    },
+    {
+      "id": 17,
+      "start": 92.26,
+      "end": 96.24,
+      "text": "Si un cliente no compra hoy, no significa que no esté interesado."
+    },
+    {
+      "id": 18,
+      "start": 96.64,
+      "end": 102.08,
+      "text": "Quizás necesites más información, tiempo o simplemente recordar tu propuesta."
+    },
+    {
+      "id": 19,
+      "start": 103.08,
+      "end": 110.82,
+      "text": "Haz seguimiento de forma profesional, aportando valor en cada contacto y manteniéndote presente sin resultar insistente."
+    },
+    {
+      "id": 20,
+      "start": 111.3,
+      "end": 113.22,
+      "text": "La mentalidad ante el no."
+    },
+    {
+      "id": 21,
+      "start": 114.0,
+      "end": 116.78,
+      "text": "Escuchar un no forma parte del trabajo."
+    },
+    {
+      "id": 22,
+      "start": 117.18,
+      "end": 119.28,
+      "text": "No lo tomes como algo personal."
+    },
+    {
+      "id": 23,
+      "start": 120.14,
+      "end": 122.24,
+      "text": "Cada negativa puede ayudarte a..."
+    },
+    {
+      "id": 24,
+      "start": 122.26,
+      "end": 126.98,
+      "text": "Aprender, mejorar tu discurso y acercarte a la siguiente oportunidad."
+    },
+    {
+      "id": 25,
+      "start": 127.8,
+      "end": 136.16,
+      "text": "Los vendedores exitosos entienden que el rechazo es temporal y que cada no los acerca a un futuro sí."
+    },
+    {
+      "id": 26,
+      "start": 136.64,
+      "end": 137.52,
+      "text": "Cierre."
+    },
+    {
+      "id": 27,
+      "start": 138.02,
+      "end": 141.34,
+      "text": "Para vender más, enfócate en cinco hábitos."
+    },
+    {
+      "id": 28,
+      "start": 142.0,
+      "end": 143.22,
+      "text": "Mantener la constancia."
+    },
+    {
+      "id": 29,
+      "start": 143.8,
+      "end": 144.96,
+      "text": "Escuchar activamente."
+    },
+    {
+      "id": 30,
+      "start": 145.72,
+      "end": 147.84,
+      "text": "Generar urgencia de forma honesta."
+    },
+    {
+      "id": 31,
+      "start": 148.66,
+      "end": 152.24,
+      "text": "Realizar seguimiento y desarrollar una mentalidad resiliente."
+    },
+    {
+      "id": 32,
+      "start": 154.04,
+      "end": 160.82,
+      "text": "Aplicando estos principios de manera consistente, aumentarás significativamente tus resultados comerciales."
+    },
+    {
+      "id": 33,
+      "start": 161.24,
+      "end": 163.5,
+      "text": "Ahora te toca el examen."
+    },
+    {
+      "id": 34,
+      "start": 163.52,
+      "end": 166.08,
+      "text": "Y si lo apruebas, ¡bienvenido!"
+    },
+    {
+      "id": 35,
+      "start": 166.14,
+      "end": 172.58,
+      "text": "Ya eres parte del equipo comercial y puedes empezar a vender de forma efectiva en cualquier ámbito."
+    },
+    {
+      "id": 36,
+      "start": 173.1,
+      "end": 175.08,
+      "text": "Mucha suerte, compañero de equipo."
+    }
+  ]
+}
