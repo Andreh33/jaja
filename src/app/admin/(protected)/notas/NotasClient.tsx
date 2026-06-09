@@ -190,7 +190,7 @@ function Analisis({ analysis }: { analysis: ModuleAnalysis[] }) {
         });
         return (
           <div key={m.moduleId}>
-            <h3 className="text-sm font-bold uppercase tracking-wider text-white/45">
+            <h3 className="text-sm font-bold uppercase tracking-wider text-white/60">
               Módulo {m.order} · {m.title}
             </h3>
             <div className="mt-3 space-y-2">
@@ -206,7 +206,7 @@ function Analisis({ analysis }: { analysis: ModuleAnalysis[] }) {
                     <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-white/10">
                       <div className="h-full rounded-full transition-all" style={{ width: `${q.correctRate ?? 0}%`, background: rateColor(q.correctRate) }} />
                     </div>
-                    <span className="shrink-0 text-[11px] text-white/45">
+                    <span className="shrink-0 text-[11px] text-white/60">
                       {q.answered === 0 ? 'Sin datos' : `${q.correct}/${q.answered} aciertos`}
                     </span>
                   </div>
@@ -222,7 +222,7 @@ function Analisis({ analysis }: { analysis: ModuleAnalysis[] }) {
 
 function Empty({ children }: { children: React.ReactNode }) {
   return (
-    <div className="rounded-2xl border border-dashed border-white/15 bg-white/[0.02] px-6 py-16 text-center text-sm text-white/45">
+    <div className="rounded-2xl border border-dashed border-white/15 bg-white/[0.02] px-6 py-16 text-center text-sm text-white/60">
       {children}
     </div>
   );

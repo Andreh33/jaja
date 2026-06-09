@@ -20,7 +20,7 @@ type ReviewItem = {
 };
 type Result = { score: number; total: number; passed: boolean; passMark: number; review: ReviewItem[] };
 
-export default function Exam({ questions, passMark }: { questions: ExamQuestion[]; passMark: number }) {
+export default function Exam({ questions }: { questions: ExamQuestion[] }) {
   const router = useRouter();
   const [i, setI] = useState(0);
   const [answers, setAnswers] = useState<Record<string, number>>({});

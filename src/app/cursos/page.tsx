@@ -35,8 +35,8 @@ export default async function CursosPage() {
           </h1>
         </div>
         <div className="mt-1 text-right">
-          <div className="text-2xl font-bold text-white">{completedCount}<span className="text-white/40">/{modules.length}</span></div>
-          <div className="text-[11px] uppercase tracking-wider text-white/40">completados</div>
+          <div className="text-2xl font-bold text-white">{completedCount}<span className="text-white/55">/{modules.length}</span></div>
+          <div className="text-[11px] uppercase tracking-wider text-white/55">completados</div>
           <div className="mt-1"><LogoutButton /></div>
         </div>
       </div>
@@ -82,12 +82,12 @@ function ModuleCard({ m }: { m: ModuleWithState }) {
               : 'rgba(255,255,255,0.06)',
         }}
       >
-        {m.completed ? <CheckCircle2 size={20} /> : m.unlocked ? <PlayCircle size={20} /> : <Lock size={18} className="text-white/40" />}
+        {m.completed ? <CheckCircle2 size={20} /> : m.unlocked ? <PlayCircle size={20} /> : <Lock size={18} className="text-white/55" />}
       </div>
 
       <div className="min-w-0 flex-1">
         <div className="flex items-center gap-2">
-          <span className="text-[11px] font-bold uppercase tracking-wider text-white/40">Módulo {m.order}</span>
+          <span className="text-[11px] font-bold uppercase tracking-wider text-white/55">Módulo {m.order}</span>
           {m.completed && <span className="text-[11px] font-semibold text-emerald-400">Completado</span>}
           {inProgress && <span className="text-[11px] font-semibold text-purple-300">En curso · {pct}%</span>}
         </div>
@@ -101,14 +101,18 @@ function ModuleCard({ m }: { m: ModuleWithState }) {
       </div>
 
       <div className="shrink-0 text-right">
-        <div className="text-xs text-white/40">{fmt(m.durationSeconds)}</div>
-        {!m.unlocked && <div className="mt-1 text-[10px] uppercase tracking-wider text-white/30">Bloqueado</div>}
+        <div className="text-xs text-white/55">{fmt(m.durationSeconds)}</div>
+        {!m.unlocked && <div className="mt-1 text-[10px] uppercase tracking-wider text-white/50">Bloqueado</div>}
       </div>
     </div>
   );
 
   if (!m.unlocked) {
-    return <li aria-disabled className="cursor-not-allowed">{inner}</li>;
+    return (
+      <li className="cursor-not-allowed" title="Completa el módulo anterior para desbloquearlo">
+        <div aria-disabled="true">{inner}</div>
+      </li>
+    );
   }
   return (
     <li>
@@ -129,12 +133,12 @@ function ExamCard({ unlocked, total, completed }: { unlocked: boolean; total: nu
         className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl text-white"
         style={{ background: unlocked ? 'linear-gradient(135deg, #10B981 0%, #059669 100%)' : 'rgba(255,255,255,0.06)' }}
       >
-        {unlocked ? <ClipboardCheck size={22} /> : <Lock size={18} className="text-white/40" />}
+        {unlocked ? <ClipboardCheck size={22} /> : <Lock size={18} className="text-white/55" />}
       </div>
       <div className="flex-1">
         <div className="flex items-center gap-2">
           <GraduationCap size={14} className="text-white/50" />
-          <span className="text-[11px] font-bold uppercase tracking-wider text-white/40">Examen final</span>
+          <span className="text-[11px] font-bold uppercase tracking-wider text-white/55">Examen final</span>
         </div>
         <h3 className="text-sm font-semibold text-white md:text-base">Examen teórico del curso</h3>
         <p className="mt-0.5 text-xs text-white/45">
