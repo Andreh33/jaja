@@ -13,6 +13,7 @@ import TestimonialsCarousel from '@/components/home/TestimonialsCarousel';
 import FAQSection from '@/components/home/FAQSection';
 import CTABanner from '@/components/home/CTABanner';
 import WordPressCompareSection from '@/components/home/WordPressCompareSection';
+import PlaygroundSection from '@/components/home/playground/PlaygroundSection';
 import JsonLd from '@/components/seo/JsonLd';
 import { FAQS } from '@/components/home/faq-data';
 import { faqJsonLd } from '@/lib/seo';
@@ -38,6 +39,7 @@ export default function Home() {
         <WordPressCompareSection />
         <ServicesGrid />
         <ProcessSection />
+        <PlaygroundSection />
         <StatsSection />
         <TestimonialsCarousel />
         <FAQSection />
