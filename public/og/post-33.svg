@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="bg33" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1A0F2E"/>
+      <stop offset="100%" stop-color="#07050E"/>
+    </linearGradient>
+    <radialGradient id="g33a" cx="0.22" cy="0.25" r="0.6">
+      <stop offset="0%" stop-color="#F97316" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#F97316" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="g33b" cx="0.82" cy="0.75" r="0.55">
+      <stop offset="0%" stop-color="#8B5CF6" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#8B5CF6" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg33)"/>
+  <rect width="800" height="500" fill="url(#g33a)"/>
+  <rect width="800" height="500" fill="url(#g33b)"/>
+
+  <!-- Ringing phone with IA waves -->
+  <g transform="translate(200,210)">
+    <circle r="100" fill="none" stroke="rgba(249,115,22,0.18)" stroke-width="1"/>
+    <circle r="72" fill="none" stroke="rgba(249,115,22,0.32)" stroke-width="1.2"/>
+    <circle r="46" fill="rgba(7,5,14,0.92)" stroke="rgba(249,115,22,0.85)" stroke-width="2"/>
+    <text y="7" text-anchor="middle" font-family="Inter,system-ui" font-size="22">📞</text>
+    <!-- waveform bars -->
+    <g stroke="#F97316" stroke-width="3" stroke-linecap="round" opacity="0.9">
+      <line x1="-14" y1="58" x2="-14" y2="74"/>
+      <line x1="0" y1="52" x2="0" y2="80"/>
+      <line x1="14" y1="58" x2="14" y2="74"/>
+    </g>
+    <text y="108" text-anchor="middle" font-family="ui-monospace,monospace" font-size="11" fill="rgba(255,255,255,0.6)">agente IA · 24/7</text>
+  </g>
+
+  <!-- connection -->
+  <line x1="300" y1="210" x2="430" y2="180" stroke="rgba(249,115,22,0.45)" stroke-width="1.4" stroke-dasharray="4 4"/>
+  <line x1="300" y1="240" x2="430" y2="300" stroke="rgba(139,92,246,0.45)" stroke-width="1.4" stroke-dasharray="4 4"/>
+
+  <!-- Reservation card -->
+  <g transform="translate(430,110)" font-family="ui-monospace,monospace">
+    <rect width="270" height="140" rx="14" fill="rgba(7,5,14,0.88)" stroke="rgba(249,115,22,0.5)" stroke-width="1.5"/>
+    <text x="20" y="32" font-size="12" fill="rgba(255,255,255,0.55)">RESERVA · SÁB 22:00</text>
+    <text x="20" y="62" font-size="15" fill="rgba(255,255,255,0.92)">🍽 Mesa para 4</text>
+    <text x="20" y="90" font-size="12" fill="rgba(255,255,255,0.7)">María · 600 123 456</text>
+    <g transform="translate(20,108)">
+      <rect width="118" height="22" rx="11" fill="rgba(34,197,94,0.15)" stroke="rgba(34,197,94,0.5)"/>
+      <text x="59" y="15" text-anchor="middle" font-size="10" fill="#22C55E">CONFIRMADA ✓</text>
+    </g>
+  </g>
+
+  <!-- WhatsApp confirm card -->
+  <g transform="translate(430,290)" font-family="ui-monospace,monospace">
+    <rect width="270" height="78" rx="14" fill="rgba(7,5,14,0.88)" stroke="rgba(139,92,246,0.55)" stroke-width="1.5"/>
+    <text x="20" y="30" font-size="12" fill="rgba(255,255,255,0.85)">💬 WhatsApp enviado</text>
+    <text x="20" y="56" font-size="11" fill="rgba(255,255,255,0.55)">recordatorio 24h antes ⏰</text>
+  </g>
+
+  <!-- missed calls counter zeroed -->
+  <g transform="translate(110,400)" font-family="ui-monospace,monospace">
+    <rect width="200" height="40" rx="10" fill="rgba(7,5,14,0.85)" stroke="rgba(255,255,255,0.18)"/>
+    <text x="14" y="25" font-size="11" fill="rgba(255,255,255,0.8)">llamadas perdidas: 0</text>
+  </g>
+
+  <text x="400" y="470" text-anchor="middle" font-family="Inter,system-ui" font-size="11" font-weight="700" fill="rgba(255,255,255,0.45)" letter-spacing="4">AGENTE IA · RESTAURANTES · LATECH</text>
+</svg>

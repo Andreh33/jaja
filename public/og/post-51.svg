@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="bg51" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1A0F2E"/>
+      <stop offset="100%" stop-color="#07050E"/>
+    </linearGradient>
+    <radialGradient id="g51a" cx="0.3" cy="0.25" r="0.55">
+      <stop offset="0%" stop-color="#8B5CF6" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#8B5CF6" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="g51b" cx="0.8" cy="0.75" r="0.55">
+      <stop offset="0%" stop-color="#3B82F6" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#3B82F6" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg51)"/>
+  <rect width="800" height="500" fill="url(#g51a)"/>
+  <rect width="800" height="500" fill="url(#g51b)"/>
+
+  <!-- Clipboard checklist -->
+  <g transform="translate(130,70)">
+    <rect width="340" height="360" rx="18" fill="rgba(7,5,14,0.88)" stroke="rgba(255,255,255,0.16)"/>
+    <rect x="120" y="-14" width="100" height="30" rx="10" fill="rgba(139,92,246,0.4)" stroke="rgba(139,92,246,0.7)"/>
+    <text x="170" y="40" text-anchor="middle" font-family="ui-monospace,monospace" font-size="11" fill="rgba(255,255,255,0.55)" letter-spacing="3">ANTES DE ENCARGAR</text>
+
+    <g font-family="Inter,system-ui" font-size="13">
+      <g transform="translate(30,66)">
+        <rect width="22" height="22" rx="6" fill="rgba(34,197,94,0.2)" stroke="rgba(34,197,94,0.7)"/>
+        <path d="M5 11 L10 16 L17 6" stroke="#22C55E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <text x="36" y="16" fill="rgba(255,255,255,0.85)">Textos de cada sección</text>
+      </g>
+      <g transform="translate(30,112)">
+        <rect width="22" height="22" rx="6" fill="rgba(34,197,94,0.2)" stroke="rgba(34,197,94,0.7)"/>
+        <path d="M5 11 L10 16 L17 6" stroke="#22C55E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <text x="36" y="16" fill="rgba(255,255,255,0.85)">Fotos reales (10-20)</text>
+      </g>
+      <g transform="translate(30,158)">
+        <rect width="22" height="22" rx="6" fill="rgba(34,197,94,0.2)" stroke="rgba(34,197,94,0.7)"/>
+        <path d="M5 11 L10 16 L17 6" stroke="#22C55E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <text x="36" y="16" fill="rgba(255,255,255,0.85)">Logo en buena calidad</text>
+      </g>
+      <g transform="translate(30,204)">
+        <rect width="22" height="22" rx="6" fill="rgba(34,197,94,0.2)" stroke="rgba(34,197,94,0.7)"/>
+        <path d="M5 11 L10 16 L17 6" stroke="#22C55E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <text x="36" y="16" fill="rgba(255,255,255,0.85)">Dominio a tu nombre</text>
+      </g>
+      <g transform="translate(30,250)">
+        <rect width="22" height="22" rx="6" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.3)"/>
+        <text x="36" y="16" fill="rgba(255,255,255,0.6)">Accesos localizados</text>
+      </g>
+      <g transform="translate(30,296)">
+        <rect width="22" height="22" rx="6" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.3)"/>
+        <text x="36" y="16" fill="rgba(255,255,255,0.6)">Objetivo nº1 decidido</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Right: delivery badge -->
+  <g transform="translate(520,160)">
+    <rect width="200" height="180" rx="16" fill="rgba(59,130,246,0.12)" stroke="rgba(59,130,246,0.5)"/>
+    <text x="100" y="44" text-anchor="middle" font-family="ui-monospace,monospace" font-size="10" fill="rgba(255,255,255,0.55)" letter-spacing="2">CON TODO LISTO</text>
+    <text x="100" y="96" text-anchor="middle" font-family="Inter,system-ui" font-size="34" font-weight="800" fill="#fff" letter-spacing="-1">24-48h</text>
+    <text x="100" y="124" text-anchor="middle" font-family="ui-monospace,monospace" font-size="11" fill="rgba(139,92,246,0.95)">entrega de tu web</text>
+    <text x="100" y="156" text-anchor="middle" font-family="ui-monospace,monospace" font-size="9" fill="rgba(255,255,255,0.5)">en toda España</text>
+  </g>
+</svg>

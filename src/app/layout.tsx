@@ -7,6 +7,8 @@ import CustomCursor from '@/components/effects/CustomCursor';
 import ScrollProgress from '@/components/effects/ScrollProgress';
 import WhatsAppFloat from '@/components/shared/WhatsAppFloat';
 import SessionProvider from '@/components/providers/SessionProvider';
+import JsonLd from '@/components/seo/JsonLd';
+import { ORGANIZATION_JSONLD } from '@/lib/seo';
 
 const geist = Geist({
   variable: '--font-geist',
@@ -27,17 +29,29 @@ const syne = Syne({
 export const metadata: Metadata = {
   metadataBase: new URL('https://serviciosonlineweb.com'),
   title: {
-    default: 'Latech · Servicios Tecnológicos Premium en Badajoz',
+    default: 'Latech · Diseño web, tiendas online y agentes IA para toda España',
     template: '%s · Latech',
   },
   description:
-    'Diseño web, tiendas online y agentes de IA con n8n. Entregamos en 24-48h. Sin permanencia. Badajoz.',
-  keywords: ['diseño web Badajoz', 'tienda online', 'agente IA', 'n8n', 'desarrollo web Badajoz', 'Latech'],
+    'Diseño web profesional, tiendas online y agentes de IA con n8n para empresas de toda España. Entrega en 24-48h, reuniones por videollamada, sin permanencia.',
+  keywords: [
+    'diseño web',
+    'diseño web profesional',
+    'tienda online',
+    'tienda online profesional',
+    'agencia desarrollo web',
+    'agente IA',
+    'recepcionista virtual',
+    'automatización n8n',
+    'e-commerce España',
+    'Latech',
+  ],
   authors: [{ name: 'Latech' }],
   creator: 'Latech',
   openGraph: {
-    title: 'Latech · Servicios Tecnológicos Premium',
-    description: 'Webs, tiendas online y agentes IA premium. Entrega 24-48h. Badajoz.',
+    title: 'Latech · Diseño web, tiendas online y agentes IA',
+    description:
+      'Webs, tiendas online y agentes de IA para empresas de toda España. Entrega 24-48h. Sin permanencia.',
     url: 'https://serviciosonlineweb.com',
     siteName: 'Latech',
     locale: 'es_ES',
@@ -45,8 +59,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Latech · Servicios Tecnológicos Premium',
-    description: 'Webs, tiendas online y agentes IA premium en 24-48h.',
+    title: 'Latech · Diseño web, tiendas online y agentes IA',
+    description: 'Webs, tiendas online y agentes de IA para toda España en 24-48h.',
   },
   robots: {
     index: true,
@@ -65,6 +79,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       suppressHydrationWarning
     >
       <body className="min-h-screen antialiased">
+        <JsonLd data={ORGANIZATION_JSONLD} />
         <SessionProvider>
           <ScrollProgress />
           <CustomCursor />

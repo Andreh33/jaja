@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="bg44" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1A0F2E"/>
+      <stop offset="100%" stop-color="#07050E"/>
+    </linearGradient>
+    <radialGradient id="g44a" cx="0.7" cy="0.2" r="0.55">
+      <stop offset="0%" stop-color="#8B5CF6" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#8B5CF6" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="g44b" cx="0.2" cy="0.8" r="0.55">
+      <stop offset="0%" stop-color="#F97316" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#F97316" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg44)"/>
+  <rect width="800" height="500" fill="url(#g44a)"/>
+  <rect width="800" height="500" fill="url(#g44b)"/>
+
+  <!-- Audit card -->
+  <g transform="translate(160,80)" opacity="0.95">
+    <rect x="0" y="0" width="480" height="340" rx="18" fill="rgba(7,5,14,0.85)" stroke="rgba(255,255,255,0.14)"/>
+    <text x="32" y="42" font-family="ui-monospace,monospace" font-size="11" fill="rgba(255,255,255,0.5)" letter-spacing="3">AUDITORIA SEO · PYME</text>
+    <text x="32" y="74" font-family="Inter,system-ui" font-size="22" font-weight="800" fill="#fff" letter-spacing="-1">12 errores detectados</text>
+
+    <!-- error items column 1 -->
+    <g font-family="Inter,system-ui" font-size="12">
+      <g transform="translate(32,100)">
+        <circle cx="10" cy="10" r="10" fill="rgba(239,68,68,0.18)" stroke="rgba(239,68,68,0.7)" stroke-width="1.5"/>
+        <line x1="5.5" y1="5.5" x2="14.5" y2="14.5" stroke="#EF4444" stroke-width="2" stroke-linecap="round"/>
+        <line x1="14.5" y1="5.5" x2="5.5" y2="14.5" stroke="#EF4444" stroke-width="2" stroke-linecap="round"/>
+        <text x="30" y="14" fill="rgba(255,255,255,0.85)">Carga lenta: 8,2 s</text>
+      </g>
+      <g transform="translate(32,134)">
+        <circle cx="10" cy="10" r="10" fill="rgba(239,68,68,0.18)" stroke="rgba(239,68,68,0.7)" stroke-width="1.5"/>
+        <line x1="5.5" y1="5.5" x2="14.5" y2="14.5" stroke="#EF4444" stroke-width="2" stroke-linecap="round"/>
+        <line x1="14.5" y1="5.5" x2="5.5" y2="14.5" stroke="#EF4444" stroke-width="2" stroke-linecap="round"/>
+        <text x="30" y="14" fill="rgba(255,255,255,0.85)">Sin SSL (http)</text>
+      </g>
+      <g transform="translate(32,168)">
+        <circle cx="10" cy="10" r="10" fill="rgba(239,68,68,0.18)" stroke="rgba(239,68,68,0.7)" stroke-width="1.5"/>
+        <line x1="5.5" y1="5.5" x2="14.5" y2="14.5" stroke="#EF4444" stroke-width="2" stroke-linecap="round"/>
+        <line x1="14.5" y1="5.5" x2="5.5" y2="14.5" stroke="#EF4444" stroke-width="2" stroke-linecap="round"/>
+        <text x="30" y="14" fill="rgba(255,255,255,0.85)">Titulos duplicados</text>
+      </g>
+      <g transform="translate(32,202)">
+        <circle cx="10" cy="10" r="10" fill="rgba(239,68,68,0.18)" stroke="rgba(239,68,68,0.7)" stroke-width="1.5"/>
+        <line x1="5.5" y1="5.5" x2="14.5" y2="14.5" stroke="#EF4444" stroke-width="2" stroke-linecap="round"/>
+        <line x1="14.5" y1="5.5" x2="5.5" y2="14.5" stroke="#EF4444" stroke-width="2" stroke-linecap="round"/>
+        <text x="30" y="14" fill="rgba(255,255,255,0.85)">Imagenes de 4 MB</text>
+      </g>
+      <!-- column 2: fixes -->
+      <g transform="translate(262,100)">
+        <circle cx="10" cy="10" r="10" fill="rgba(34,197,94,0.18)" stroke="rgba(34,197,94,0.7)" stroke-width="1.5"/>
+        <path d="M5 10 L8.5 13.5 L15 6.5" stroke="#22C55E" stroke-width="2" stroke-linecap="round" fill="none"/>
+        <text x="30" y="14" fill="rgba(255,255,255,0.85)">Optimizada: 1,4 s</text>
+      </g>
+      <g transform="translate(262,134)">
+        <circle cx="10" cy="10" r="10" fill="rgba(34,197,94,0.18)" stroke="rgba(34,197,94,0.7)" stroke-width="1.5"/>
+        <path d="M5 10 L8.5 13.5 L15 6.5" stroke="#22C55E" stroke-width="2" stroke-linecap="round" fill="none"/>
+        <text x="30" y="14" fill="rgba(255,255,255,0.85)">https + candado</text>
+      </g>
+      <g transform="translate(262,168)">
+        <circle cx="10" cy="10" r="10" fill="rgba(34,197,94,0.18)" stroke="rgba(34,197,94,0.7)" stroke-width="1.5"/>
+        <path d="M5 10 L8.5 13.5 L15 6.5" stroke="#22C55E" stroke-width="2" stroke-linecap="round" fill="none"/>
+        <text x="30" y="14" fill="rgba(255,255,255,0.85)">Titulo unico por pagina</text>
+      </g>
+      <g transform="translate(262,202)">
+        <circle cx="10" cy="10" r="10" fill="rgba(34,197,94,0.18)" stroke="rgba(34,197,94,0.7)" stroke-width="1.5"/>
+        <path d="M5 10 L8.5 13.5 L15 6.5" stroke="#22C55E" stroke-width="2" stroke-linecap="round" fill="none"/>
+        <text x="30" y="14" fill="rgba(255,255,255,0.85)">WebP comprimido</text>
+      </g>
+    </g>
+
+    <!-- arrow between columns -->
+    <g transform="translate(230,150)" opacity="0.8">
+      <line x1="0" y1="10" x2="18" y2="10" stroke="#FBBF24" stroke-width="2" stroke-linecap="round"/>
+      <path d="M14 4 L22 10 L14 16" fill="none" stroke="#FBBF24" stroke-width="2" stroke-linecap="round"/>
+    </g>
+
+    <!-- score bar -->
+    <text x="32" y="262" font-family="ui-monospace,monospace" font-size="10" fill="rgba(255,255,255,0.5)">PUNTUACION SEO</text>
+    <rect x="32" y="274" width="416" height="14" rx="7" fill="rgba(255,255,255,0.07)"/>
+    <rect x="32" y="274" width="120" height="14" rx="7" fill="rgba(239,68,68,0.7)"/>
+    <rect x="32" y="298" width="416" height="14" rx="7" fill="rgba(255,255,255,0.07)"/>
+    <rect x="32" y="298" width="382" height="14" rx="7" fill="rgba(34,197,94,0.7)"/>
+    <text x="394" y="285" font-family="ui-monospace,monospace" font-size="9" fill="rgba(255,255,255,0.55)">antes 29</text>
+    <text x="386" y="309" font-family="ui-monospace,monospace" font-size="9" fill="#07050E" font-weight="700">despues 92</text>
+  </g>
+
+  <text x="400" y="458" text-anchor="middle" font-family="ui-monospace,monospace" font-size="12" fill="rgba(255,255,255,0.55)" letter-spacing="3">ERRORES SEO · COMO ARREGLARLOS</text>
+</svg>

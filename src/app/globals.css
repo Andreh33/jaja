@@ -525,13 +525,3 @@ body {
 @keyframes option-card-rotate-border {
   to { --option-card-angle: 360deg; }
 }
-
-@media (prefers-reduced-motion: reduce) {
-  .option-card[data-selected="true"] {
-    animation: none;
-    background-image:
-      linear-gradient(rgba(251, 191, 36, 0.06), rgba(251, 191, 36, 0.06)),
-      linear-gradient(var(--bg-base), var(--bg-base)),
-      linear-gradient(var(--accent-calc), var(--accent-calc)) !important;
-  }
-}

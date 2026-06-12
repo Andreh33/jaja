@@ -14,6 +14,8 @@ import { getAllPosts, getPostBySlug } from '@/lib/posts';
 import { renderMarkdown } from '@/lib/markdown';
 import { formatDate } from '@/lib/utils';
 import { whatsappLink } from '@/lib/stripe-links';
+import JsonLd from '@/components/seo/JsonLd';
+import { breadcrumbJsonLd } from '@/lib/seo';
 
 export const dynamic = 'force-dynamic';
 
@@ -91,6 +93,13 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: 'Inicio', path: '/' },
+          { name: 'Blog', path: '/blog' },
+          { name: post.title, path: `/blog/${post.slug}` },
+        ])}
       />
       <SignatureMarquee />
       <Navbar />

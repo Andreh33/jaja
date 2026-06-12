@@ -7,6 +7,7 @@ import Logo from '@/components/layout/Logo';
 export const metadata: Metadata = {
   title: 'Formación comercial',
   description: 'Curso de formación para el equipo comercial de Latech.',
+  robots: { index: false, follow: false },
 };
 
 export const dynamic = 'force-dynamic';

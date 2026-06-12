@@ -20,6 +20,15 @@ import Footer from '@/components/layout/Footer';
 import { db } from '@/lib/db';
 import { jobOffers } from '../../../../drizzle/schema';
 import ApplicationForm from '../_components/ApplicationForm';
+import JsonLd from '@/components/seo/JsonLd';
+import { SITE_URL, breadcrumbJsonLd } from '@/lib/seo';
+
+const EMPLOYMENT_TYPES: Record<string, string> = {
+  indefinido: 'FULL_TIME',
+  temporal: 'TEMPORARY',
+  practicas: 'INTERN',
+  freelance: 'CONTRACTOR',
+};
 
 export const dynamic = 'force-dynamic';
 
@@ -64,8 +73,51 @@ export default async function EmpleoDetailPage({
   const isClosed = offer.status === 'cerrada';
   const isOpen = offer.status === 'publicada';
 
+  const jobPostingJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'JobPosting',
+    title: offer.title,
+    description: offer.description,
+    datePosted: offer.publishedAt ? new Date(offer.publishedAt * 1000).toISOString() : undefined,
+    validThrough: offer.closedAt ? new Date(offer.closedAt * 1000).toISOString() : undefined,
+    employmentType: offer.contractType ? EMPLOYMENT_TYPES[offer.contractType] : undefined,
+    hiringOrganization: {
+      '@type': 'Organization',
+      name: 'Latech',
+      sameAs: SITE_URL,
+      logo: `${SITE_URL}/icon.svg`,
+    },
+    jobLocation: {
+      '@type': 'Place',
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: offer.location,
+        addressCountry: 'ES',
+      },
+    },
+    ...(offer.salary
+      ? {
+          baseSalary: {
+            '@type': 'MonetaryAmount',
+            currency: 'EUR',
+            value: { '@type': 'QuantitativeValue', value: offer.salary },
+          },
+        }
+      : {}),
+    totalJobOpenings: offer.positionsCount,
+    url: `${SITE_URL}/empleo/${offer.slug}`,
+  };
+
   return (
     <>
+      {isOpen && <JsonLd data={jobPostingJsonLd} />}
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: 'Inicio', path: '/' },
+          { name: 'Empleo', path: '/empleo' },
+          { name: offer.title, path: `/empleo/${offer.slug}` },
+        ])}
+      />
       <Navbar />
       <main className="relative min-h-screen overflow-x-hidden" style={{ background: 'var(--bg-base)' }}>
         <AuroraBackground />

@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="bg48" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1A0F2E"/>
+      <stop offset="100%" stop-color="#07050E"/>
+    </linearGradient>
+    <radialGradient id="g48a" cx="0.3" cy="0.25" r="0.55">
+      <stop offset="0%" stop-color="#8B5CF6" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#8B5CF6" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="g48b" cx="0.8" cy="0.75" r="0.55">
+      <stop offset="0%" stop-color="#22C55E" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#22C55E" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg48)"/>
+  <rect width="800" height="500" fill="url(#g48a)"/>
+  <rect width="800" height="500" fill="url(#g48b)"/>
+
+  <!-- Speed gauge card -->
+  <g transform="translate(120,95)" opacity="0.95">
+    <rect x="0" y="0" width="300" height="310" rx="16" fill="rgba(7,5,14,0.85)" stroke="rgba(255,255,255,0.14)"/>
+    <text x="24" y="38" font-family="ui-monospace,monospace" font-size="10" fill="rgba(255,255,255,0.5)" letter-spacing="2">PAGESPEED · MOVIL</text>
+
+    <!-- gauge -->
+    <g transform="translate(150,180)">
+      <path d="M -100 0 A 100 100 0 0 1 100 0" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="18" stroke-linecap="round"/>
+      <path d="M -100 0 A 100 100 0 0 1 -34 -94" fill="none" stroke="#EF4444" stroke-width="18" stroke-linecap="round" opacity="0.6"/>
+      <path d="M -22 -97 A 100 100 0 0 1 38 -92" fill="none" stroke="#FBBF24" stroke-width="18" stroke-linecap="round" opacity="0.7"/>
+      <path d="M 50 -86 A 100 100 0 0 1 100 0" fill="none" stroke="#22C55E" stroke-width="18" stroke-linecap="round"/>
+      <!-- needle pointing to green -->
+      <line x1="0" y1="0" x2="62" y2="-58" stroke="#fff" stroke-width="3.5" stroke-linecap="round"/>
+      <circle cx="0" cy="0" r="9" fill="#22C55E"/>
+      <circle cx="0" cy="0" r="4" fill="#07050E"/>
+      <text x="0" y="46" text-anchor="middle" font-family="Inter,system-ui" font-size="34" font-weight="800" fill="#22C55E">96</text>
+      <text x="0" y="68" text-anchor="middle" font-family="ui-monospace,monospace" font-size="10" fill="rgba(255,255,255,0.5)">carga: 1,4 s</text>
+    </g>
+  </g>
+
+  <!-- Metrics panel -->
+  <g transform="translate(460,95)" opacity="0.95">
+    <rect x="0" y="0" width="220" height="310" rx="16" fill="rgba(7,5,14,0.85)" stroke="rgba(34,197,94,0.35)"/>
+    <text x="22" y="36" font-family="ui-monospace,monospace" font-size="10" fill="rgba(255,255,255,0.5)" letter-spacing="2">CORE WEB VITALS</text>
+
+    <!-- LCP -->
+    <g transform="translate(22,56)">
+      <text x="0" y="14" font-family="Inter,system-ui" font-size="13" font-weight="700" fill="#fff">LCP</text>
+      <text x="46" y="14" font-family="ui-monospace,monospace" font-size="9" fill="rgba(255,255,255,0.45)">abre rapido</text>
+      <rect x="0" y="24" width="176" height="10" rx="5" fill="rgba(255,255,255,0.07)"/>
+      <rect x="0" y="24" width="150" height="10" rx="5" fill="#22C55E"/>
+      <text x="0" y="52" font-family="ui-monospace,monospace" font-size="10" fill="#22C55E">1,8 s · objetivo &lt; 2,5 s</text>
+    </g>
+    <!-- CLS -->
+    <g transform="translate(22,128)">
+      <text x="0" y="14" font-family="Inter,system-ui" font-size="13" font-weight="700" fill="#fff">CLS</text>
+      <text x="46" y="14" font-family="ui-monospace,monospace" font-size="9" fill="rgba(255,255,255,0.45)">no salta</text>
+      <rect x="0" y="24" width="176" height="10" rx="5" fill="rgba(255,255,255,0.07)"/>
+      <rect x="0" y="24" width="160" height="10" rx="5" fill="#22C55E"/>
+      <text x="0" y="52" font-family="ui-monospace,monospace" font-size="10" fill="#22C55E">0,04 · objetivo &lt; 0,1</text>
+    </g>
+    <!-- INP -->
+    <g transform="translate(22,200)">
+      <text x="0" y="14" font-family="Inter,system-ui" font-size="13" font-weight="700" fill="#fff">INP</text>
+      <text x="46" y="14" font-family="ui-monospace,monospace" font-size="9" fill="rgba(255,255,255,0.45)">responde ya</text>
+      <rect x="0" y="24" width="176" height="10" rx="5" fill="rgba(255,255,255,0.07)"/>
+      <rect x="0" y="24" width="142" height="10" rx="5" fill="#22C55E"/>
+      <text x="0" y="52" font-family="ui-monospace,monospace" font-size="10" fill="#22C55E">120 ms · objetivo &lt; 200 ms</text>
+    </g>
+
+    <g transform="translate(22,268)">
+      <text x="0" y="12" font-family="ui-monospace,monospace" font-size="9" fill="rgba(251,191,36,0.85)">+1 s de carga = -7% ventas</text>
+    </g>
+  </g>
+
+  <text x="400" y="458" text-anchor="middle" font-family="ui-monospace,monospace" font-size="12" fill="rgba(255,255,255,0.55)" letter-spacing="3">VELOCIDAD = VENTAS</text>
+</svg>

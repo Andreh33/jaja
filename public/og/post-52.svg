@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="bg52" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1A0F2E"/>
+      <stop offset="100%" stop-color="#07050E"/>
+    </linearGradient>
+    <radialGradient id="g52a" cx="0.25" cy="0.7" r="0.55">
+      <stop offset="0%" stop-color="#F97316" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#F97316" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="g52b" cx="0.75" cy="0.3" r="0.55">
+      <stop offset="0%" stop-color="#8B5CF6" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#8B5CF6" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg52)"/>
+  <rect width="800" height="500" fill="url(#g52a)"/>
+  <rect width="800" height="500" fill="url(#g52b)"/>
+
+  <text x="400" y="76" text-anchor="middle" font-family="ui-monospace,monospace" font-size="11" fill="rgba(255,255,255,0.55)" letter-spacing="4">¿QUIÉN HACE TU WEB?</text>
+
+  <!-- Card 1: DIY -->
+  <g transform="translate(70,110)">
+    <rect width="200" height="290" rx="16" fill="rgba(7,5,14,0.85)" stroke="rgba(251,191,36,0.45)"/>
+    <circle cx="100" cy="58" r="26" fill="rgba(251,191,36,0.18)" stroke="rgba(251,191,36,0.6)"/>
+    <text x="100" y="66" text-anchor="middle" font-family="Inter,system-ui" font-size="20" fill="#FBBF24">🛠</text>
+    <text x="100" y="116" text-anchor="middle" font-family="Inter,system-ui" font-size="16" font-weight="800" fill="#fff">Tú mismo</text>
+    <g font-family="ui-monospace,monospace" font-size="10" fill="rgba(255,255,255,0.65)">
+      <text x="100" y="150" text-anchor="middle">0-300€/año</text>
+      <text x="100" y="178" text-anchor="middle">+ 40h de tu tiempo</text>
+      <text x="100" y="206" text-anchor="middle">sin soporte</text>
+    </g>
+    <rect x="40" y="236" width="120" height="26" rx="13" fill="rgba(251,191,36,0.15)" stroke="rgba(251,191,36,0.4)"/>
+    <text x="100" y="253" text-anchor="middle" font-family="ui-monospace,monospace" font-size="9" fill="#FBBF24">para validar ideas</text>
+  </g>
+
+  <!-- Card 2: Freelancer -->
+  <g transform="translate(300,110)">
+    <rect width="200" height="290" rx="16" fill="rgba(7,5,14,0.85)" stroke="rgba(249,115,22,0.45)"/>
+    <circle cx="100" cy="58" r="26" fill="rgba(249,115,22,0.18)" stroke="rgba(249,115,22,0.6)"/>
+    <text x="100" y="66" text-anchor="middle" font-family="Inter,system-ui" font-size="20" fill="#F97316">👤</text>
+    <text x="100" y="116" text-anchor="middle" font-family="Inter,system-ui" font-size="16" font-weight="800" fill="#fff">Freelancer</text>
+    <g font-family="ui-monospace,monospace" font-size="10" fill="rgba(255,255,255,0.65)">
+      <text x="100" y="150" text-anchor="middle">300-1.500€</text>
+      <text x="100" y="178" text-anchor="middle">depende de 1 persona</text>
+      <text x="100" y="206" text-anchor="middle">soporte variable</text>
+    </g>
+    <rect x="40" y="236" width="120" height="26" rx="13" fill="rgba(249,115,22,0.15)" stroke="rgba(249,115,22,0.4)"/>
+    <text x="100" y="253" text-anchor="middle" font-family="ui-monospace,monospace" font-size="9" fill="#F97316">si está probado</text>
+  </g>
+
+  <!-- Card 3: Agencia -->
+  <g transform="translate(530,110)">
+    <rect width="200" height="290" rx="16" fill="rgba(139,92,246,0.12)" stroke="rgba(139,92,246,0.6)" stroke-width="1.5"/>
+    <circle cx="100" cy="58" r="26" fill="rgba(139,92,246,0.22)" stroke="rgba(139,92,246,0.7)"/>
+    <text x="100" y="66" text-anchor="middle" font-family="Inter,system-ui" font-size="20" fill="#8B5CF6">👥</text>
+    <text x="100" y="116" text-anchor="middle" font-family="Inter,system-ui" font-size="16" font-weight="800" fill="#fff">Agencia</text>
+    <g font-family="ui-monospace,monospace" font-size="10" fill="rgba(255,255,255,0.65)">
+      <text x="100" y="150" text-anchor="middle">desde 60€/mes</text>
+      <text x="100" y="178" text-anchor="middle">proceso + equipo</text>
+      <text x="100" y="206" text-anchor="middle">soporte incluido</text>
+    </g>
+    <rect x="40" y="236" width="120" height="26" rx="13" fill="rgba(34,197,94,0.15)" stroke="rgba(34,197,94,0.5)"/>
+    <text x="100" y="253" text-anchor="middle" font-family="ui-monospace,monospace" font-size="9" fill="#22C55E">si la web vende</text>
+  </g>
+</svg>

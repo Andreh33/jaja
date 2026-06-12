@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="bg37" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1A0F2E"/>
+      <stop offset="100%" stop-color="#07050E"/>
+    </linearGradient>
+    <radialGradient id="g37a" cx="0.2" cy="0.4" r="0.55">
+      <stop offset="0%" stop-color="#3B82F6" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#3B82F6" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="g37b" cx="0.8" cy="0.5" r="0.55">
+      <stop offset="0%" stop-color="#8B5CF6" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#8B5CF6" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg37)"/>
+  <rect width="800" height="500" fill="url(#g37a)"/>
+  <rect width="800" height="500" fill="url(#g37b)"/>
+
+  <!-- divider VS -->
+  <line x1="400" y1="80" x2="400" y2="390" stroke="rgba(255,255,255,0.15)" stroke-width="1.5" stroke-dasharray="6 6"/>
+  <g transform="translate(400,235)">
+    <circle r="32" fill="rgba(7,5,14,0.95)" stroke="rgba(251,191,36,0.7)" stroke-width="2"/>
+    <text y="6" text-anchor="middle" font-family="Inter,system-ui" font-size="15" font-weight="800" fill="#FBBF24">VS</text>
+  </g>
+
+  <!-- LEFT: chatbot bubbles -->
+  <g font-family="ui-monospace,monospace">
+    <text x="200" y="110" text-anchor="middle" font-size="13" fill="#3B82F6" font-weight="bold">💬 CHATBOT · texto</text>
+    <g transform="translate(80,140)">
+      <rect width="200" height="44" rx="14" fill="rgba(59,130,246,0.16)" stroke="rgba(59,130,246,0.5)"/>
+      <text x="16" y="27" font-size="11" fill="rgba(255,255,255,0.85)">¿Hacéis envíos? 🕚</text>
+    </g>
+    <g transform="translate(130,200)">
+      <rect width="200" height="44" rx="14" fill="rgba(7,5,14,0.88)" stroke="rgba(59,130,246,0.5)"/>
+      <text x="16" y="27" font-size="11" fill="rgba(255,255,255,0.85)">Sí, 24-48h ✓ + enlace</text>
+    </g>
+    <g transform="translate(80,260)">
+      <rect width="200" height="44" rx="14" fill="rgba(59,130,246,0.16)" stroke="rgba(59,130,246,0.5)"/>
+      <text x="16" y="27" font-size="11" fill="rgba(255,255,255,0.85)">📷 foto del producto</text>
+    </g>
+    <text x="200" y="350" text-anchor="middle" font-size="10" fill="rgba(255,255,255,0.5)">web · WhatsApp · IG</text>
+  </g>
+
+  <!-- RIGHT: voice agent waveform -->
+  <g font-family="ui-monospace,monospace">
+    <text x="600" y="110" text-anchor="middle" font-size="13" fill="#A78BFA" font-weight="bold">📞 AGENTE DE VOZ</text>
+    <g transform="translate(600,225)">
+      <circle r="80" fill="none" stroke="rgba(139,92,246,0.25)" stroke-width="1.2"/>
+      <circle r="44" fill="rgba(7,5,14,0.92)" stroke="rgba(139,92,246,0.85)" stroke-width="2"/>
+      <text y="6" text-anchor="middle" font-family="Inter,system-ui" font-size="15" font-weight="800" fill="#A78BFA" letter-spacing="2">IA</text>
+      <!-- waveform -->
+      <g stroke="#8B5CF6" stroke-width="3" stroke-linecap="round">
+        <line x1="-110" y1="-8" x2="-110" y2="8"/>
+        <line x1="-96" y1="-16" x2="-96" y2="16"/>
+        <line x1="-82" y1="-6" x2="-82" y2="6"/>
+        <line x1="82" y1="-6" x2="82" y2="6"/>
+        <line x1="96" y1="-16" x2="96" y2="16"/>
+        <line x1="110" y1="-8" x2="110" y2="8"/>
+      </g>
+    </g>
+    <text x="600" y="350" text-anchor="middle" font-size="10" fill="rgba(255,255,255,0.5)">llamadas · reservas · 24/7</text>
+  </g>
+
+  <!-- combine chip -->
+  <g transform="translate(290,395)" font-family="ui-monospace,monospace">
+    <rect width="220" height="36" rx="18" fill="rgba(7,5,14,0.9)" stroke="rgba(251,191,36,0.5)"/>
+    <text x="110" y="23" text-anchor="middle" font-size="11" fill="#FBBF24">mejor: los dos juntos ⚡</text>
+  </g>
+
+  <text x="400" y="470" text-anchor="middle" font-family="Inter,system-ui" font-size="11" font-weight="700" fill="rgba(255,255,255,0.45)" letter-spacing="4">CHATBOT VS VOZ · LATECH</text>
+</svg>

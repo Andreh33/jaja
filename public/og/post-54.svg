@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="bg54" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1A0F2E"/>
+      <stop offset="100%" stop-color="#07050E"/>
+    </linearGradient>
+    <radialGradient id="g54a" cx="0.3" cy="0.25" r="0.55">
+      <stop offset="0%" stop-color="#FBBF24" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#FBBF24" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="g54b" cx="0.75" cy="0.75" r="0.55">
+      <stop offset="0%" stop-color="#3B82F6" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#3B82F6" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg54)"/>
+  <rect width="800" height="500" fill="url(#g54a)"/>
+  <rect width="800" height="500" fill="url(#g54b)"/>
+
+  <!-- Browser address bar (dominio) -->
+  <g transform="translate(100,90)">
+    <rect width="600" height="64" rx="16" fill="rgba(7,5,14,0.9)" stroke="rgba(255,255,255,0.16)"/>
+    <circle cx="30" cy="32" r="6" fill="rgba(239,68,68,0.7)"/>
+    <circle cx="52" cy="32" r="6" fill="rgba(251,191,36,0.7)"/>
+    <circle cx="74" cy="32" r="6" fill="rgba(34,197,94,0.7)"/>
+    <rect x="100" y="14" width="476" height="36" rx="18" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.12)"/>
+    <path d="M122 32 a6 6 0 0 1 12 0 v2 h-12 z M120 34 h16 v10 h-16 z" fill="#22C55E"/>
+    <text x="148" y="38" font-family="ui-monospace,monospace" font-size="14" fill="rgba(255,255,255,0.9)">https://tunegocio.es</text>
+    <text x="440" y="38" font-family="ui-monospace,monospace" font-size="10" fill="rgba(251,191,36,0.9)">A TU NOMBRE ✓</text>
+  </g>
+
+  <!-- Label dominio -->
+  <text x="100" y="186" font-family="ui-monospace,monospace" font-size="11" fill="rgba(251,191,36,0.9)" letter-spacing="3">DOMINIO = TU DIRECCIÓN · 10-20€/AÑO</text>
+
+  <!-- Server rack (hosting) -->
+  <g transform="translate(100,220)">
+    <rect width="380" height="190" rx="16" fill="rgba(7,5,14,0.88)" stroke="rgba(59,130,246,0.5)"/>
+    <g font-family="ui-monospace,monospace" font-size="10">
+      <g transform="translate(24,24)">
+        <rect width="332" height="40" rx="8" fill="rgba(59,130,246,0.12)" stroke="rgba(59,130,246,0.45)"/>
+        <circle cx="22" cy="20" r="5" fill="#22C55E"/>
+        <text x="40" y="25" fill="rgba(255,255,255,0.8)">servidor-01 · online</text>
+        <rect x="240" y="14" width="70" height="12" rx="6" fill="rgba(255,255,255,0.08)"/>
+      </g>
+      <g transform="translate(24,74)">
+        <rect width="332" height="40" rx="8" fill="rgba(59,130,246,0.12)" stroke="rgba(59,130,246,0.45)"/>
+        <circle cx="22" cy="20" r="5" fill="#22C55E"/>
+        <text x="40" y="25" fill="rgba(255,255,255,0.8)">servidor-02 · online</text>
+        <rect x="240" y="14" width="70" height="12" rx="6" fill="rgba(255,255,255,0.08)"/>
+      </g>
+      <g transform="translate(24,124)">
+        <rect width="332" height="40" rx="8" fill="rgba(59,130,246,0.12)" stroke="rgba(59,130,246,0.45)"/>
+        <circle cx="22" cy="20" r="5" fill="#22C55E"/>
+        <text x="40" y="25" fill="rgba(255,255,255,0.8)">cdn-edge · 24/7</text>
+        <rect x="240" y="14" width="70" height="12" rx="6" fill="rgba(255,255,255,0.08)"/>
+      </g>
+    </g>
+  </g>
+  <text x="100" y="442" font-family="ui-monospace,monospace" font-size="11" fill="rgba(59,130,246,0.95)" letter-spacing="3">HOSTING = EL LOCAL DONDE VIVE TU WEB</text>
+
+  <!-- Connection line -->
+  <g transform="translate(520,220)">
+    <rect width="180" height="190" rx="16" fill="rgba(139,92,246,0.1)" stroke="rgba(139,92,246,0.5)"/>
+    <text x="90" y="42" text-anchor="middle" font-family="ui-monospace,monospace" font-size="10" fill="rgba(255,255,255,0.55)" letter-spacing="2">DNS</text>
+    <path d="M90 60 L90 110" stroke="rgba(139,92,246,0.7)" stroke-width="2" stroke-dasharray="5 5"/>
+    <circle cx="90" cy="60" r="6" fill="#FBBF24"/>
+    <circle cx="90" cy="110" r="6" fill="#3B82F6"/>
+    <text x="90" y="146" text-anchor="middle" font-family="ui-monospace,monospace" font-size="9" fill="rgba(255,255,255,0.6)">conecta dominio</text>
+    <text x="90" y="164" text-anchor="middle" font-family="ui-monospace,monospace" font-size="9" fill="rgba(255,255,255,0.6)">con hosting</text>
+  </g>
+</svg>

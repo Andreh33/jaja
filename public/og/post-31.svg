@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="bg31" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1A0F2E"/>
+      <stop offset="100%" stop-color="#07050E"/>
+    </linearGradient>
+    <radialGradient id="g31a" cx="0.25" cy="0.35" r="0.6">
+      <stop offset="0%" stop-color="#FBBF24" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#FBBF24" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="g31b" cx="0.8" cy="0.7" r="0.55">
+      <stop offset="0%" stop-color="#F97316" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#F97316" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg31)"/>
+  <rect width="800" height="500" fill="url(#g31a)"/>
+  <rect width="800" height="500" fill="url(#g31b)"/>
+
+  <!-- Left: gourmet product card (oil bottle + jar) -->
+  <g transform="translate(90,90)">
+    <text x="0" y="0" font-family="Inter,system-ui" font-size="13" font-weight="700" fill="rgba(255,255,255,0.5)" letter-spacing="3">GOURMET ONLINE</text>
+    <rect x="0" y="20" width="250" height="300" rx="14" fill="rgba(7,5,14,0.8)" stroke="rgba(251,191,36,0.4)"/>
+    <!-- bottle -->
+    <g transform="translate(70,60)">
+      <rect x="14" y="0" width="16" height="26" rx="4" fill="rgba(251,191,36,0.6)"/>
+      <path d="M10 26 L34 26 L40 50 L40 140 Q40 150 30 150 L14 150 Q4 150 4 140 L4 50 Z" fill="rgba(251,191,36,0.35)" stroke="rgba(251,191,36,0.7)" stroke-width="1.5"/>
+      <rect x="10" y="70" width="24" height="44" rx="4" fill="rgba(255,255,255,0.8)"/>
+      <text x="22" y="89" text-anchor="middle" font-family="ui-monospace,monospace" font-size="8" fill="#1A0F2E">AOVE</text>
+      <text x="22" y="102" text-anchor="middle" font-family="ui-monospace,monospace" font-size="7" fill="#1A0F2E">500ml</text>
+    </g>
+    <!-- jar -->
+    <g transform="translate(140,130)">
+      <rect x="0" y="0" width="56" height="14" rx="5" fill="rgba(249,115,22,0.7)"/>
+      <rect x="2" y="14" width="52" height="66" rx="10" fill="rgba(249,115,22,0.3)" stroke="rgba(249,115,22,0.6)" stroke-width="1.5"/>
+      <rect x="10" y="32" width="36" height="30" rx="4" fill="rgba(255,255,255,0.75)"/>
+    </g>
+    <!-- D.O. badge -->
+    <g transform="translate(22,250)">
+      <circle cx="20" cy="20" r="20" fill="rgba(251,191,36,0.18)" stroke="rgba(251,191,36,0.7)" stroke-width="1.5"/>
+      <text x="20" y="25" text-anchor="middle" font-family="Inter,system-ui" font-size="11" font-weight="800" fill="#FBBF24">D.O.</text>
+      <text x="54" y="18" font-family="Inter,system-ui" font-size="12" font-weight="700" fill="#fff">Denominación</text>
+      <text x="54" y="34" font-family="ui-monospace,monospace" font-size="10" fill="rgba(255,255,255,0.55)">de origen · trazabilidad</text>
+    </g>
+  </g>
+
+  <!-- Right: shipping panel -->
+  <g transform="translate(430,120)">
+    <rect x="0" y="0" width="290" height="90" rx="14" fill="rgba(7,5,14,0.8)" stroke="rgba(255,255,255,0.12)"/>
+    <!-- truck icon -->
+    <g transform="translate(20,26)">
+      <rect x="0" y="6" width="34" height="22" rx="4" fill="rgba(59,130,246,0.5)"/>
+      <path d="M34 12 L48 12 L54 20 L54 28 L34 28 Z" fill="rgba(59,130,246,0.35)" stroke="rgba(59,130,246,0.7)"/>
+      <circle cx="10" cy="30" r="5" fill="rgba(255,255,255,0.7)"/>
+      <circle cx="44" cy="30" r="5" fill="rgba(255,255,255,0.7)"/>
+    </g>
+    <text x="90" y="38" font-family="Inter,system-ui" font-size="13" font-weight="700" fill="#fff">Envío en frío 24-48h</text>
+    <text x="90" y="58" font-family="ui-monospace,monospace" font-size="10" fill="rgba(255,255,255,0.55)">a toda España · caja isotérmica</text>
+
+    <rect x="0" y="106" width="290" height="90" rx="14" fill="rgba(7,5,14,0.8)" stroke="rgba(255,255,255,0.12)"/>
+    <!-- repeat icon -->
+    <g transform="translate(28,134)">
+      <path d="M0 14 A 16 16 0 1 1 6 26" stroke="rgba(139,92,246,0.8)" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <path d="M0 6 L0 15 L9 15" stroke="rgba(139,92,246,0.8)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <text x="90" y="144" font-family="Inter,system-ui" font-size="13" font-weight="700" fill="#fff">Suscripción mensual</text>
+    <text x="90" y="164" font-family="ui-monospace,monospace" font-size="10" fill="rgba(255,255,255,0.55)">caja gourmet · club de vino</text>
+
+    <g transform="translate(0,216)">
+      <rect x="0" y="0" width="220" height="28" rx="14" fill="rgba(34,197,94,0.18)" stroke="rgba(34,197,94,0.5)"/>
+      <text x="110" y="18" text-anchor="middle" font-family="Inter,system-ui" font-size="11" font-weight="700" fill="#22C55E">vende fuera de tu provincia</text>
+    </g>
+  </g>
+</svg>

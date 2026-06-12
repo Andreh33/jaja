@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="bg19" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1A0F2E"/>
+      <stop offset="100%" stop-color="#07050E"/>
+    </linearGradient>
+    <radialGradient id="g19a" cx="0.7" cy="0.25" r="0.6">
+      <stop offset="0%" stop-color="#8B5CF6" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#8B5CF6" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="g19b" cx="0.2" cy="0.75" r="0.55">
+      <stop offset="0%" stop-color="#F97316" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#F97316" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg19)"/>
+  <rect width="800" height="500" fill="url(#g19a)"/>
+  <rect width="800" height="500" fill="url(#g19b)"/>
+
+  <!-- Booking agenda mockup -->
+  <g transform="translate(120,80)" opacity="0.9">
+    <rect x="0" y="0" width="300" height="330" rx="14" fill="rgba(7,5,14,0.88)" stroke="rgba(255,255,255,0.16)" stroke-width="1.5"/>
+    <rect x="0" y="0" width="300" height="44" rx="14" fill="rgba(139,92,246,0.15)"/>
+    <text x="20" y="28" font-family="ui-monospace,monospace" font-size="12" fill="#8B5CF6" font-weight="bold">AGENDA · HOY</text>
+    <!-- time slots filled -->
+    <g>
+      <rect x="20" y="62" width="260" height="34" rx="8" fill="rgba(139,92,246,0.5)"/>
+      <text x="34" y="84" font-family="ui-monospace,monospace" font-size="12" fill="#FFFFFF">09:00 · color + corte</text>
+      <rect x="20" y="104" width="260" height="34" rx="8" fill="rgba(139,92,246,0.4)"/>
+      <text x="34" y="126" font-family="ui-monospace,monospace" font-size="12" fill="#FFFFFF">11:00 · manicura</text>
+      <rect x="20" y="146" width="260" height="34" rx="8" fill="rgba(139,92,246,0.45)"/>
+      <text x="34" y="168" font-family="ui-monospace,monospace" font-size="12" fill="#FFFFFF">12:30 · balayage</text>
+      <rect x="20" y="188" width="260" height="34" rx="8" fill="rgba(249,115,22,0.55)"/>
+      <text x="34" y="210" font-family="ui-monospace,monospace" font-size="12" fill="#FFFFFF">16:00 · tratamiento</text>
+      <rect x="20" y="230" width="260" height="34" rx="8" fill="rgba(139,92,246,0.35)"/>
+      <text x="34" y="252" font-family="ui-monospace,monospace" font-size="12" fill="#FFFFFF">18:00 · corte</text>
+    </g>
+    <text x="20" y="300" font-family="ui-monospace,monospace" font-size="11" fill="rgba(34,197,94,0.85)">agenda completa ✓ reservas 24/7</text>
+  </g>
+
+  <!-- Scissors flat icon -->
+  <g transform="translate(560,180)" opacity="0.9">
+    <circle cx="-26" cy="34" r="14" fill="none" stroke="#F97316" stroke-width="4"/>
+    <circle cx="26" cy="34" r="14" fill="none" stroke="#F97316" stroke-width="4"/>
+    <line x1="-18" y1="22" x2="30" y2="-44" stroke="#F97316" stroke-width="4" stroke-linecap="round"/>
+    <line x1="18" y1="22" x2="-30" y2="-44" stroke="#F97316" stroke-width="4" stroke-linecap="round"/>
+  </g>
+
+  <!-- Instagram -> web flow -->
+  <g transform="translate(490,300)" opacity="0.88">
+    <rect x="0" y="0" width="64" height="64" rx="16" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="2.5"/>
+    <circle cx="32" cy="32" r="14" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="2.5"/>
+    <circle cx="50" cy="14" r="4" fill="rgba(255,255,255,0.4)"/>
+    <path d="M76 32 H128" stroke="#8B5CF6" stroke-width="2" stroke-dasharray="5 5"/>
+    <path d="M122 26 l8 6 l-8 6" fill="none" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round"/>
+    <rect x="140" y="8" width="80" height="48" rx="10" fill="rgba(7,5,14,0.85)" stroke="rgba(139,92,246,0.7)" stroke-width="1.5"/>
+    <text x="180" y="37" text-anchor="middle" font-family="ui-monospace,monospace" font-size="11" fill="#8B5CF6">tu web</text>
+    <text x="110" y="92" text-anchor="middle" font-family="ui-monospace,monospace" font-size="11" fill="rgba(255,255,255,0.55)">seguidores → citas</text>
+  </g>
+
+  <circle cx="680" cy="80" r="60" fill="#8B5CF6" opacity="0.2"/>
+</svg>

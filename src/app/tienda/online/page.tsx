@@ -10,11 +10,21 @@ import PlanCard from '@/components/shop/PlanCard';
 import GradientText from '@/components/effects/GradientText';
 import MagneticButton from '@/components/effects/MagneticButton';
 import { STRIPE_LINKS, whatsappLink } from '@/lib/stripe-links';
+import Link from 'next/link';
+import JsonLd from '@/components/seo/JsonLd';
+import { serviceJsonLd, faqJsonLd, breadcrumbJsonLd } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: 'Plan Tienda Online · E-commerce profesional en 48h',
-  description: 'Tienda online con Stripe, Bizum, transferencia, SEO de productos y analítica integrada. 80€/mes + 600€ creación.',
+  description: 'Tienda online con Stripe, Bizum, transferencia, SEO de productos y analítica integrada. 80€/mes + 600€ creación. Para toda España.',
+  alternates: { canonical: '/tienda/online' },
 };
+
+const GUIDES = [
+  { href: '/blog/tienda-online-vs-marketplace', label: 'Tienda online propia vs marketplace: qué te conviene' },
+  { href: '/blog/stripe-empresas-guia-pagos-online', label: 'Stripe para empresas: guía completa de pagos online' },
+  { href: '/blog/web-actual-perdiendo-clientes', label: 'Por qué tu web actual está perdiendo clientes' },
+];
 
 const FEATURES = [
   { icon: CreditCard, title: 'Stripe + Bizum + transfer', desc: 'Pasarelas seguras integradas. Tus clientes pagan como prefieran, en segundos.' },
@@ -35,6 +45,23 @@ const FAQS = [
 export default function OnlinePlanPage() {
   return (
     <>
+      <JsonLd
+        data={serviceJsonLd({
+          name: 'Tienda online profesional',
+          description:
+            'Tienda online a medida con Stripe, Bizum y transferencia, SEO de productos y analítica integrada. Para empresas de toda España.',
+          path: '/tienda/online',
+          price: '600',
+        })}
+      />
+      <JsonLd data={faqJsonLd(FAQS)} />
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: 'Inicio', path: '/' },
+          { name: 'Tienda', path: '/tienda' },
+          { name: 'Plan Tienda Online', path: '/tienda/online' },
+        ])}
+      />
       <SignatureMarquee />
       <Navbar />
       <AuroraBackground />
@@ -167,6 +194,29 @@ export default function OnlinePlanPage() {
                     <p className="mt-4 text-sm leading-relaxed text-white/65">{f.a}</p>
                   </details>
                 ))}
+              </div>
+            </Reveal>
+          </div>
+        </section>
+
+        <section className="py-16">
+          <div className="mx-auto max-w-3xl px-6">
+            <Reveal>
+              <div className="rounded-3xl glass p-7 md:p-10">
+                <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-white/40">Guías relacionadas</p>
+                <h3 className="font-display text-2xl text-white">Aprende antes de decidir</h3>
+                <ul className="mt-5 space-y-3">
+                  {GUIDES.map((g) => (
+                    <li key={g.href}>
+                      <Link
+                        href={g.href}
+                        className="inline-flex items-center gap-2 text-sm text-white/70 transition-colors hover:text-white"
+                      >
+                        <ArrowRight size={13} style={{ color: 'var(--accent-shop)' }} /> {g.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </Reveal>
           </div>

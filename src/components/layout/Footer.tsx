@@ -25,6 +25,7 @@ const cols = [
       { href: '/tienda/web', label: 'Página web' },
       { href: '/tienda/online', label: 'Tienda online' },
       { href: '/tienda/agente-ia', label: 'Agente de IA' },
+      { href: '/tienda/calculadora', label: 'Calculadora de presupuesto' },
     ],
   },
   {
@@ -52,7 +53,7 @@ export default function Footer() {
           <div className="md:col-span-4">
             <Logo size="lg" />
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/60">
-              Servicios tecnológicos premium en Badajoz. Diseño web, tiendas online y agentes de IA con n8n.
+              Diseño web, tiendas online y agentes de IA con n8n para empresas de toda España.
               Entregamos en 24-48h. Sin permanencia.
             </p>
             <div className="mt-6 flex items-start gap-3 text-sm text-white/60">

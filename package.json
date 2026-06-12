@@ -12,6 +12,7 @@
     "db:push": "drizzle-kit push",
     "db:studio": "drizzle-kit studio",
     "db:seed": "tsx scripts/seed.ts",
+    "db:seed-posts-seo": "tsx scripts/seed-posts-seo.ts",
     "curso:backup": "tsx scripts/backup-turso.ts",
     "curso:upload": "tsx scripts/upload-curso.ts",
     "curso:seed": "tsx scripts/seed-curso.ts",

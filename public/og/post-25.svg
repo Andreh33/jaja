@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="bg25" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1A0F2E"/>
+      <stop offset="100%" stop-color="#07050E"/>
+    </linearGradient>
+    <radialGradient id="g25a" cx="0.25" cy="0.3" r="0.6">
+      <stop offset="0%" stop-color="#8B5CF6" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#8B5CF6" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="g25b" cx="0.85" cy="0.75" r="0.55">
+      <stop offset="0%" stop-color="#FBBF24" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#FBBF24" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg25)"/>
+  <rect width="800" height="500" fill="url(#g25a)"/>
+  <rect width="800" height="500" fill="url(#g25b)"/>
+
+  <!-- Left: cost breakdown panel -->
+  <g transform="translate(80,90)">
+    <text x="0" y="0" font-family="Inter,system-ui" font-size="13" font-weight="700" fill="rgba(255,255,255,0.5)" letter-spacing="3">CUÁNTO CUESTA UNA TIENDA ONLINE</text>
+    <rect x="0" y="20" width="340" height="290" rx="14" fill="rgba(7,5,14,0.75)" stroke="rgba(255,255,255,0.12)"/>
+
+    <!-- breakdown bars -->
+    <g transform="translate(24,56)">
+      <text x="0" y="0" font-family="ui-monospace,monospace" font-size="11" fill="rgba(255,255,255,0.65)">PLATAFORMA</text>
+      <rect x="0" y="8" width="180" height="14" rx="7" fill="rgba(139,92,246,0.55)"/>
+
+      <text x="0" y="52" font-family="ui-monospace,monospace" font-size="11" fill="rgba(255,255,255,0.65)">DISEÑO + DESARROLLO</text>
+      <rect x="0" y="60" width="260" height="14" rx="7" fill="rgba(59,130,246,0.55)"/>
+
+      <text x="0" y="104" font-family="ui-monospace,monospace" font-size="11" fill="rgba(255,255,255,0.65)">PASARELA DE PAGO</text>
+      <rect x="0" y="112" width="110" height="14" rx="7" fill="rgba(251,191,36,0.55)"/>
+
+      <text x="0" y="156" font-family="ui-monospace,monospace" font-size="11" fill="rgba(255,255,255,0.65)">HOSTING + DOMINIO</text>
+      <rect x="0" y="164" width="80" height="14" rx="7" fill="rgba(249,115,22,0.55)"/>
+
+      <text x="0" y="208" font-family="ui-monospace,monospace" font-size="11" fill="rgba(255,255,255,0.65)">MANTENIMIENTO</text>
+      <rect x="0" y="216" width="150" height="14" rx="7" fill="rgba(34,197,94,0.55)"/>
+    </g>
+  </g>
+
+  <!-- Right: price tag card -->
+  <g transform="translate(480,140)">
+    <rect x="0" y="0" width="240" height="200" rx="16" fill="rgba(7,5,14,0.85)" stroke="rgba(139,92,246,0.5)"/>
+    <text x="120" y="46" text-anchor="middle" font-family="ui-monospace,monospace" font-size="11" fill="rgba(255,255,255,0.5)" letter-spacing="2">PRECIO REAL 2026</text>
+    <text x="120" y="96" text-anchor="middle" font-family="Inter,system-ui" font-size="34" font-weight="800" fill="#fff">600€</text>
+    <text x="120" y="124" text-anchor="middle" font-family="Inter,system-ui" font-size="16" font-weight="700" fill="rgba(255,255,255,0.7)">+ 80€/mes</text>
+    <g transform="translate(45,150)">
+      <rect x="0" y="0" width="150" height="24" rx="12" fill="rgba(34,197,94,0.18)" stroke="rgba(34,197,94,0.5)"/>
+      <text x="75" y="16" text-anchor="middle" font-family="Inter,system-ui" font-size="10" font-weight="700" fill="#22C55E">todo incluido</text>
+    </g>
+    <text x="120" y="225" text-anchor="middle" font-family="ui-monospace,monospace" font-size="10" fill="rgba(255,255,255,0.45)">sin permanencia · 24-48h</text>
+  </g>
+</svg>

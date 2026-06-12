@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="bg23" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1A0F2E"/>
+      <stop offset="100%" stop-color="#07050E"/>
+    </linearGradient>
+    <radialGradient id="g23a" cx="0.3" cy="0.65" r="0.6">
+      <stop offset="0%" stop-color="#3B82F6" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#3B82F6" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="g23b" cx="0.8" cy="0.25" r="0.55">
+      <stop offset="0%" stop-color="#F97316" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#F97316" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg23)"/>
+  <rect width="800" height="500" fill="url(#g23a)"/>
+  <rect width="800" height="500" fill="url(#g23b)"/>
+
+  <!-- Flat car -->
+  <g transform="translate(250,310)" opacity="0.92">
+    <path d="M-130 0 L-110 -2 L-86 -38 C-82 -44 -76 -48 -68 -48 L40 -48 C50 -48 58 -44 64 -36 L88 -6 L118 0 C126 2 130 8 130 16 L130 28 L-130 28 Z" fill="rgba(59,130,246,0.3)" stroke="#3B82F6" stroke-width="2.5"/>
+    <rect x="-72" y="-40" width="50" height="32" rx="5" fill="rgba(7,5,14,0.7)" stroke="rgba(59,130,246,0.6)" stroke-width="1.5"/>
+    <rect x="-10" y="-40" width="56" height="32" rx="5" fill="rgba(7,5,14,0.7)" stroke="rgba(59,130,246,0.6)" stroke-width="1.5"/>
+    <circle cx="-72" cy="30" r="22" fill="#07050E" stroke="#3B82F6" stroke-width="3"/>
+    <circle cx="-72" cy="30" r="9" fill="rgba(59,130,246,0.5)"/>
+    <circle cx="74" cy="30" r="22" fill="#07050E" stroke="#3B82F6" stroke-width="3"/>
+    <circle cx="74" cy="30" r="9" fill="rgba(59,130,246,0.5)"/>
+  </g>
+
+  <!-- Wrench flat icon -->
+  <g transform="translate(190,130)" opacity="0.9" transform-origin="0 0">
+    <path d="M-14 -44 A 30 30 0 1 0 18 -10 L58 30 A 10 10 0 0 1 44 44 L4 4 A 30 30 0 0 1 -28 -30 L-8 -10 L6 -24 Z" fill="rgba(249,115,22,0.3)" stroke="#F97316" stroke-width="2.5" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Appointment card -->
+  <g transform="translate(440,90)" opacity="0.9">
+    <rect x="0" y="0" width="240" height="160" rx="14" fill="rgba(7,5,14,0.88)" stroke="rgba(255,255,255,0.16)" stroke-width="1.5"/>
+    <text x="18" y="30" font-family="ui-monospace,monospace" font-size="12" fill="#F97316" font-weight="bold">CITA PREVIA</text>
+    <rect x="18" y="44" width="204" height="18" rx="6" fill="rgba(255,255,255,0.08)"/>
+    <text x="26" y="57" font-family="ui-monospace,monospace" font-size="10" fill="rgba(255,255,255,0.5)">matrícula · 1234 ABC</text>
+    <rect x="18" y="68" width="204" height="18" rx="6" fill="rgba(255,255,255,0.08)"/>
+    <text x="26" y="81" font-family="ui-monospace,monospace" font-size="10" fill="rgba(255,255,255,0.5)">servicio · frenos</text>
+    <rect x="18" y="96" width="130" height="28" rx="8" fill="rgba(249,115,22,0.9)"/>
+    <text x="83" y="114" text-anchor="middle" font-family="Inter,system-ui" font-size="12" font-weight="700" fill="#07050E">Pedir cita</text>
+    <text x="18" y="146" font-family="ui-monospace,monospace" font-size="10" fill="rgba(34,197,94,0.85)">presupuesto en &lt; 24h ✓</text>
+  </g>
+
+  <!-- Reviews + maps -->
+  <g transform="translate(440,290)" opacity="0.9">
+    <rect x="0" y="0" width="240" height="110" rx="14" fill="rgba(7,5,14,0.85)" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/>
+    <text x="18" y="34" font-family="Inter,system-ui" font-size="16" fill="#FBBF24">★★★★★</text>
+    <text x="18" y="58" font-family="ui-monospace,monospace" font-size="11" fill="rgba(255,255,255,0.55)">4.7 · 128 reseñas</text>
+    <text x="18" y="86" font-family="ui-monospace,monospace" font-size="11" fill="#3B82F6">top 3 · mapa de Google</text>
+  </g>
+
+  <circle cx="680" cy="440" r="55" fill="#3B82F6" opacity="0.16"/>
+</svg>

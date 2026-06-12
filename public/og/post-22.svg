@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="bg22" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1A0F2E"/>
+      <stop offset="100%" stop-color="#07050E"/>
+    </linearGradient>
+    <radialGradient id="g22a" cx="0.25" cy="0.3" r="0.6">
+      <stop offset="0%" stop-color="#8B5CF6" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#8B5CF6" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="g22b" cx="0.8" cy="0.7" r="0.55">
+      <stop offset="0%" stop-color="#FBBF24" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#FBBF24" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg22)"/>
+  <rect width="800" height="500" fill="url(#g22a)"/>
+  <rect width="800" height="500" fill="url(#g22b)"/>
+
+  <!-- Property listing card -->
+  <g transform="translate(130,90)" opacity="0.9">
+    <rect x="0" y="0" width="280" height="310" rx="14" fill="rgba(7,5,14,0.88)" stroke="rgba(255,255,255,0.16)" stroke-width="1.5"/>
+    <!-- photo area with flat house -->
+    <rect x="16" y="16" width="248" height="140" rx="10" fill="rgba(139,92,246,0.12)"/>
+    <g transform="translate(140,86)">
+      <path d="M-60 10 L0 -40 L60 10" fill="none" stroke="#8B5CF6" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="-44" y="10" width="88" height="46" rx="4" fill="rgba(139,92,246,0.35)" stroke="#8B5CF6" stroke-width="2.5"/>
+      <rect x="-10" y="26" width="20" height="30" rx="2" fill="#8B5CF6"/>
+    </g>
+    <rect x="16" y="170" width="170" height="12" rx="4" fill="rgba(255,255,255,0.2)"/>
+    <text x="16" y="206" font-family="ui-monospace,monospace" font-size="13" fill="#FBBF24" font-weight="bold">249.000 €</text>
+    <text x="16" y="228" font-family="ui-monospace,monospace" font-size="11" fill="rgba(255,255,255,0.55)">3 hab · 2 baños · 98 m²</text>
+    <rect x="16" y="248" width="140" height="30" rx="8" fill="rgba(139,92,246,0.85)"/>
+    <text x="86" y="268" text-anchor="middle" font-family="Inter,system-ui" font-size="12" font-weight="700" fill="#07050E">Pedir visita</text>
+    <text x="170" y="268" font-family="ui-monospace,monospace" font-size="10" fill="rgba(34,197,94,0.85)">tour 360º</text>
+  </g>
+
+  <!-- Search filters panel -->
+  <g transform="translate(470,100)" opacity="0.9">
+    <rect x="0" y="0" width="220" height="150" rx="12" fill="rgba(7,5,14,0.85)" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/>
+    <text x="16" y="26" font-family="ui-monospace,monospace" font-size="11" fill="#8B5CF6" font-weight="bold">FILTROS</text>
+    <rect x="16" y="38" width="90" height="20" rx="6" fill="rgba(255,255,255,0.1)"/>
+    <rect x="114" y="38" width="90" height="20" rx="6" fill="rgba(139,92,246,0.5)"/>
+    <rect x="16" y="66" width="90" height="20" rx="6" fill="rgba(255,255,255,0.1)"/>
+    <rect x="114" y="66" width="90" height="20" rx="6" fill="rgba(255,255,255,0.1)"/>
+    <!-- price slider -->
+    <rect x="16" y="104" width="188" height="6" rx="3" fill="rgba(255,255,255,0.1)"/>
+    <rect x="40" y="104" width="100" height="6" rx="3" fill="#FBBF24"/>
+    <circle cx="40" cy="107" r="7" fill="#FBBF24"/>
+    <circle cx="140" cy="107" r="7" fill="#FBBF24"/>
+    <text x="16" y="136" font-family="ui-monospace,monospace" font-size="10" fill="rgba(255,255,255,0.5)">precio · zona · habitaciones</text>
+  </g>
+
+  <!-- Map pin cluster -->
+  <g transform="translate(580,330)" opacity="0.9">
+    <path d="M0 -28 C-15 -28 -27 -16 -27 -1 C-27 17 0 42 0 42 C0 42 27 17 27 -1 C27 -16 15 -28 0 -28 Z" fill="rgba(251,191,36,0.25)" stroke="#FBBF24" stroke-width="2"/>
+    <circle cx="0" cy="-2" r="9" fill="#FBBF24"/>
+    <circle cx="-60" cy="20" r="6" fill="rgba(139,92,246,0.8)"/>
+    <circle cx="58" cy="-6" r="6" fill="rgba(139,92,246,0.8)"/>
+    <circle cx="44" cy="44" r="6" fill="rgba(139,92,246,0.8)"/>
+    <text x="0" y="78" text-anchor="middle" font-family="ui-monospace,monospace" font-size="11" fill="rgba(255,255,255,0.55)">tu marca, tu zona</text>
+  </g>
+
+  <circle cx="110" cy="440" r="55" fill="#8B5CF6" opacity="0.18"/>
+</svg>

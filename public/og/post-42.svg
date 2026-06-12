@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="bg42" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1A0F2E"/>
+      <stop offset="100%" stop-color="#07050E"/>
+    </linearGradient>
+    <radialGradient id="g42a" cx="0.3" cy="0.3" r="0.6">
+      <stop offset="0%" stop-color="#8B5CF6" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#8B5CF6" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="g42b" cx="0.8" cy="0.75" r="0.55">
+      <stop offset="0%" stop-color="#F97316" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#F97316" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg42)"/>
+  <rect width="800" height="500" fill="url(#g42a)"/>
+  <rect width="800" height="500" fill="url(#g42b)"/>
+
+  <!-- Map card with city pins -->
+  <g transform="translate(110,95)" opacity="0.95">
+    <rect x="0" y="0" width="350" height="310" rx="16" fill="rgba(7,5,14,0.8)" stroke="rgba(255,255,255,0.13)"/>
+    <!-- street grid -->
+    <g opacity="0.4" stroke="rgba(139,92,246,0.35)" stroke-width="1" fill="none">
+      <line x1="0" y1="70" x2="350" y2="70"/>
+      <line x1="0" y1="140" x2="350" y2="140"/>
+      <line x1="0" y1="210" x2="350" y2="210"/>
+      <line x1="0" y1="270" x2="350" y2="270"/>
+      <line x1="70" y1="0" x2="70" y2="310"/>
+      <line x1="155" y1="0" x2="155" y2="310"/>
+      <line x1="250" y1="0" x2="250" y2="310"/>
+    </g>
+
+    <!-- pins on several cities -->
+    <g transform="translate(110,75)">
+      <circle cx="0" cy="0" r="14" fill="rgba(139,92,246,0.3)"/>
+      <circle cx="0" cy="0" r="6" fill="#8B5CF6"/>
+      <text x="0" y="28" text-anchor="middle" font-family="ui-monospace,monospace" font-size="9" fill="rgba(255,255,255,0.6)">MADRID</text>
+    </g>
+    <g transform="translate(265,130)">
+      <circle cx="0" cy="0" r="14" fill="rgba(59,130,246,0.3)"/>
+      <circle cx="0" cy="0" r="6" fill="#3B82F6"/>
+      <text x="0" y="28" text-anchor="middle" font-family="ui-monospace,monospace" font-size="9" fill="rgba(255,255,255,0.6)">VALENCIA</text>
+    </g>
+    <g transform="translate(70,220)">
+      <circle cx="0" cy="0" r="14" fill="rgba(249,115,22,0.3)"/>
+      <circle cx="0" cy="0" r="6" fill="#F97316"/>
+      <text x="0" y="28" text-anchor="middle" font-family="ui-monospace,monospace" font-size="9" fill="rgba(255,255,255,0.6)">SEVILLA</text>
+    </g>
+    <g transform="translate(190,40)">
+      <circle cx="0" cy="0" r="14" fill="rgba(251,191,36,0.3)"/>
+      <circle cx="0" cy="0" r="6" fill="#FBBF24"/>
+      <text x="0" y="28" text-anchor="middle" font-family="ui-monospace,monospace" font-size="9" fill="rgba(255,255,255,0.6)">BILBAO</text>
+    </g>
+    <g transform="translate(215,235)">
+      <circle cx="0" cy="0" r="22" fill="rgba(139,92,246,0.18)"/>
+      <circle cx="0" cy="0" r="14" fill="rgba(139,92,246,0.35)"/>
+      <circle cx="0" cy="0" r="6" fill="#8B5CF6"/>
+      <circle cx="0" cy="0" r="2.5" fill="#fff"/>
+      <text x="0" y="40" text-anchor="middle" font-family="Inter,system-ui" font-size="10" font-weight="700" fill="rgba(255,255,255,0.85)">TU CIUDAD</text>
+    </g>
+  </g>
+
+  <!-- Local pack widget -->
+  <g transform="translate(500,115)" opacity="0.95">
+    <rect x="0" y="0" width="200" height="270" rx="14" fill="rgba(7,5,14,0.85)" stroke="rgba(139,92,246,0.4)"/>
+    <rect x="18" y="18" width="164" height="30" rx="15" fill="rgba(255,255,255,0.06)"/>
+    <circle cx="33" cy="33" r="5.5" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"/>
+    <line x1="38" y1="38" x2="44" y2="44" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"/>
+    <text x="50" y="37" font-family="ui-monospace,monospace" font-size="9" fill="rgba(255,255,255,0.5)">cerca de mi</text>
+
+    <text x="18" y="72" font-family="ui-monospace,monospace" font-size="9" fill="rgba(255,255,255,0.45)" letter-spacing="2">PACK LOCAL · TOP 3</text>
+
+    <g transform="translate(18,84)">
+      <rect x="0" y="0" width="164" height="44" rx="8" fill="rgba(139,92,246,0.18)" stroke="rgba(139,92,246,0.5)"/>
+      <text x="10" y="18" font-family="Inter,system-ui" font-size="10" font-weight="700" fill="#fff">Tu negocio</text>
+      <text x="10" y="33" font-family="ui-monospace,monospace" font-size="9" fill="#FBBF24">★★★★★ 4.9 (120)</text>
+    </g>
+    <g transform="translate(18,136)">
+      <rect x="0" y="0" width="164" height="40" rx="8" fill="rgba(255,255,255,0.04)"/>
+      <text x="10" y="17" font-family="Inter,system-ui" font-size="10" fill="rgba(255,255,255,0.6)">Competidor A</text>
+      <text x="10" y="31" font-family="ui-monospace,monospace" font-size="9" fill="rgba(255,255,255,0.4)">★ 4.2 (38)</text>
+    </g>
+    <g transform="translate(18,184)">
+      <rect x="0" y="0" width="164" height="40" rx="8" fill="rgba(255,255,255,0.04)"/>
+      <text x="10" y="17" font-family="Inter,system-ui" font-size="10" fill="rgba(255,255,255,0.6)">Competidor B</text>
+      <text x="10" y="31" font-family="ui-monospace,monospace" font-size="9" fill="rgba(255,255,255,0.4)">★ 4.0 (21)</text>
+    </g>
+    <text x="18" y="250" font-family="ui-monospace,monospace" font-size="9" fill="rgba(255,255,255,0.4)">76% visita en 24h</text>
+  </g>
+
+  <text x="400" y="448" text-anchor="middle" font-family="ui-monospace,monospace" font-size="12" fill="rgba(255,255,255,0.55)" letter-spacing="3">SEO LOCAL · ESPAÑA</text>
+</svg>

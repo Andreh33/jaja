@@ -15,11 +15,21 @@ import Holographic from '@/components/effects/Holographic';
 import BeamBorder from '@/components/effects/BeamBorder';
 import AudioPlayer from '@/components/shared/AudioPlayer';
 import { whatsappLink, STRIPE_LINKS } from '@/lib/stripe-links';
+import Link from 'next/link';
+import JsonLd from '@/components/seo/JsonLd';
+import { serviceJsonLd, breadcrumbJsonLd } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: 'Agente IA · Tu recepcionista 24/7 con n8n',
-  description: 'Agente de IA que atiende llamadas 24/7, gestiona reservas, cobra con Stripe y recuerda a cada cliente. Desde 150€/mes.',
+  description: 'Agente de IA que atiende llamadas 24/7, gestiona reservas, cobra con Stripe y recuerda a cada cliente. Desde 150€/mes. Para toda España.',
+  alternates: { canonical: '/tienda/agente-ia' },
 };
+
+const GUIDES = [
+  { href: '/blog/agentes-ia-n8n-pymes', label: 'Agentes de IA con n8n para pymes: caso real' },
+  { href: '/blog/automatizaciones-n8n-pymes-12-procesos', label: '12 procesos que puedes automatizar con n8n' },
+  { href: '/blog/whatsapp-business-api-automatizacion', label: 'WhatsApp Business API: guía de automatización' },
+];
 
 const FEATURES = [
   { icon: PhoneCall, title: 'Llamadas entrantes', desc: 'Atiende al instante cada llamada sin esperas. Hasta 20 simultáneas, sin perder ninguna.', badge: 'Hasta 20 simultáneas' },
@@ -64,6 +74,22 @@ export default function AgenteIaPage() {
   const ctaWa = whatsappLink('Hola, me interesa el agente IA de Latech, me gustaría saber más');
   return (
     <>
+      <JsonLd
+        data={serviceJsonLd({
+          name: 'Agente de IA para empresas',
+          description:
+            'Agente de inteligencia artificial que atiende llamadas 24/7, gestiona reservas, cobra con Stripe y recuerda a cada cliente. Para empresas de toda España.',
+          path: '/tienda/agente-ia',
+          price: '150',
+        })}
+      />
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: 'Inicio', path: '/' },
+          { name: 'Tienda', path: '/tienda' },
+          { name: 'Agente IA', path: '/tienda/agente-ia' },
+        ])}
+      />
       <SignatureMarquee />
       <Navbar />
       <AuroraBackground intensity="strong" />
@@ -440,6 +466,29 @@ export default function AgenteIaPage() {
                   </p>
                 </Holographic>
               </BeamBorder>
+            </Reveal>
+          </div>
+        </section>
+
+        <section className="py-16">
+          <div className="mx-auto max-w-3xl px-6">
+            <Reveal>
+              <div className="rounded-3xl glass p-7 md:p-10">
+                <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-white/40">Guías relacionadas</p>
+                <h3 className="font-display text-2xl text-white">Aprende antes de decidir</h3>
+                <ul className="mt-5 space-y-3">
+                  {GUIDES.map((g) => (
+                    <li key={g.href}>
+                      <Link
+                        href={g.href}
+                        className="inline-flex items-center gap-2 text-sm text-white/70 transition-colors hover:text-white"
+                      >
+                        <ArrowRight size={13} style={{ color: 'var(--accent-ia)' }} /> {g.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </Reveal>
           </div>
         </section>

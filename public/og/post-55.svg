@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="bg55" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1A0F2E"/>
+      <stop offset="100%" stop-color="#07050E"/>
+    </linearGradient>
+    <radialGradient id="g55a" cx="0.2" cy="0.4" r="0.55">
+      <stop offset="0%" stop-color="#F97316" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#F97316" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="g55b" cx="0.8" cy="0.55" r="0.55">
+      <stop offset="0%" stop-color="#8B5CF6" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#8B5CF6" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg55)"/>
+  <rect width="800" height="500" fill="url(#g55a)"/>
+  <rect width="800" height="500" fill="url(#g55b)"/>
+
+  <!-- Old web (left, degraded) -->
+  <g transform="translate(70,120)" opacity="0.95">
+    <rect width="280" height="230" rx="12" fill="rgba(7,5,14,0.85)" stroke="rgba(239,68,68,0.5)"/>
+    <rect x="0" y="0" width="280" height="32" rx="12" fill="rgba(255,255,255,0.05)"/>
+    <circle cx="18" cy="16" r="4" fill="rgba(255,255,255,0.25)"/>
+    <circle cx="34" cy="16" r="4" fill="rgba(255,255,255,0.25)"/>
+    <text x="56" y="21" font-family="ui-monospace,monospace" font-size="9" fill="rgba(239,68,68,0.9)">⚠ No seguro</text>
+
+    <!-- crooked old layout -->
+    <rect x="22" y="52" width="160" height="14" rx="3" fill="rgba(255,255,255,0.18)"/>
+    <rect x="22" y="78" width="236" height="8" rx="3" fill="rgba(255,255,255,0.1)"/>
+    <rect x="22" y="94" width="200" height="8" rx="3" fill="rgba(255,255,255,0.1)"/>
+    <rect x="22" y="118" width="110" height="60" rx="4" fill="rgba(249,115,22,0.18)" stroke="rgba(249,115,22,0.4)"/>
+    <text x="77" y="153" text-anchor="middle" font-family="ui-monospace,monospace" font-size="8" fill="rgba(255,255,255,0.4)">img sin optimizar</text>
+    <rect x="148" y="118" width="110" height="60" rx="4" fill="rgba(255,255,255,0.05)"/>
+    <text x="203" y="153" text-anchor="middle" font-family="ui-monospace,monospace" font-size="8" fill="rgba(255,255,255,0.35)">404</text>
+
+    <rect x="22" y="196" width="120" height="18" rx="9" fill="rgba(239,68,68,0.15)" stroke="rgba(239,68,68,0.5)"/>
+    <text x="82" y="209" text-anchor="middle" font-family="ui-monospace,monospace" font-size="9" fill="#EF4444">PageSpeed 38</text>
+    <text x="140" y="262" text-anchor="middle" font-family="ui-monospace,monospace" font-size="10" fill="rgba(255,255,255,0.5)" letter-spacing="2">TU WEB · 2015</text>
+  </g>
+
+  <!-- Arrow -->
+  <g transform="translate(400,235)">
+    <path d="M-28 0 L20 0 M8 -12 L22 0 L8 12" stroke="#FBBF24" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </g>
+
+  <!-- New web (right, clean) -->
+  <g transform="translate(450,120)">
+    <rect width="280" height="230" rx="12" fill="rgba(7,5,14,0.9)" stroke="rgba(139,92,246,0.6)" stroke-width="1.5"/>
+    <rect x="0" y="0" width="280" height="32" rx="12" fill="rgba(139,92,246,0.12)"/>
+    <circle cx="18" cy="16" r="4" fill="rgba(255,255,255,0.3)"/>
+    <circle cx="34" cy="16" r="4" fill="rgba(255,255,255,0.3)"/>
+    <text x="56" y="21" font-family="ui-monospace,monospace" font-size="9" fill="#22C55E">🔒 https</text>
+
+    <rect x="22" y="56" width="180" height="18" rx="4" fill="rgba(255,255,255,0.85)"/>
+    <rect x="22" y="86" width="236" height="8" rx="3" fill="rgba(255,255,255,0.25)"/>
+    <rect x="22" y="102" width="190" height="8" rx="3" fill="rgba(255,255,255,0.25)"/>
+    <rect x="22" y="126" width="100" height="30" rx="15" fill="rgba(139,92,246,0.8)"/>
+    <text x="72" y="145" text-anchor="middle" font-family="Inter,system-ui" font-size="10" font-weight="700" fill="#fff">Contactar</text>
+    <rect x="134" y="126" width="124" height="30" rx="6" fill="rgba(59,130,246,0.15)" stroke="rgba(59,130,246,0.4)"/>
+
+    <rect x="22" y="196" width="124" height="18" rx="9" fill="rgba(34,197,94,0.15)" stroke="rgba(34,197,94,0.5)"/>
+    <text x="84" y="209" text-anchor="middle" font-family="ui-monospace,monospace" font-size="9" fill="#22C55E">PageSpeed 97</text>
+    <text x="140" y="262" text-anchor="middle" font-family="ui-monospace,monospace" font-size="10" fill="rgba(255,255,255,0.5)" letter-spacing="2">RENOVADA · 24-48H</text>
+  </g>
+
+  <text x="400" y="80" text-anchor="middle" font-family="ui-monospace,monospace" font-size="11" fill="rgba(255,255,255,0.55)" letter-spacing="4">8 SEÑALES PARA RENOVAR</text>
+</svg>

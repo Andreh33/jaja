@@ -11,11 +11,21 @@ import GradientText from '@/components/effects/GradientText';
 import MagneticButton from '@/components/effects/MagneticButton';
 import { STRIPE_LINKS, whatsappLink } from '@/lib/stripe-links';
 import NumberFlow from '@/components/effects/NumberFlow';
+import Link from 'next/link';
+import JsonLd from '@/components/seo/JsonLd';
+import { serviceJsonLd, faqJsonLd, breadcrumbJsonLd } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: 'Plan Web · Diseño web profesional en 48h',
-  description: 'Página web profesional con SEO técnico, optimización móvil y entrega en 24-48h. 60€/mes + 600€ creación. Sin permanencia.',
+  description: 'Página web profesional con SEO técnico, optimización móvil y entrega en 24-48h. 60€/mes + 600€ creación. Sin permanencia. Para toda España.',
+  alternates: { canonical: '/tienda/web' },
 };
+
+const GUIDES = [
+  { href: '/blog/web-actual-perdiendo-clientes', label: 'Por qué tu web actual está perdiendo clientes' },
+  { href: '/blog/elegir-empresa-diseno-web', label: 'Cómo elegir empresa de diseño web (sin equivocarte)' },
+  { href: '/blog/seo-local-badajoz', label: 'SEO local: cómo aparecer cuando te buscan en tu zona' },
+];
 
 const FEATURES = [
   { icon: Code2, title: 'Stack moderno', desc: 'Next.js, React, Tailwind, Vercel. La misma tecnología que usan OpenAI y Notion.' },
@@ -36,6 +46,23 @@ const FAQS = [
 export default function WebPlanPage() {
   return (
     <>
+      <JsonLd
+        data={serviceJsonLd({
+          name: 'Diseño web profesional',
+          description:
+            'Página web profesional a medida con SEO técnico, optimización móvil y entrega en 24-48h. Para empresas de toda España.',
+          path: '/tienda/web',
+          price: '600',
+        })}
+      />
+      <JsonLd data={faqJsonLd(FAQS)} />
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: 'Inicio', path: '/' },
+          { name: 'Tienda', path: '/tienda' },
+          { name: 'Plan Web', path: '/tienda/web' },
+        ])}
+      />
       <SignatureMarquee />
       <Navbar />
       <AuroraBackground />
@@ -177,6 +204,29 @@ export default function WebPlanPage() {
                     <p className="mt-4 text-sm leading-relaxed text-white/65">{f.a}</p>
                   </details>
                 ))}
+              </div>
+            </Reveal>
+          </div>
+        </section>
+
+        <section className="py-16">
+          <div className="mx-auto max-w-3xl px-6">
+            <Reveal>
+              <div className="rounded-3xl glass p-7 md:p-10">
+                <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-white/40">Guías relacionadas</p>
+                <h3 className="font-display text-2xl text-white">Aprende antes de decidir</h3>
+                <ul className="mt-5 space-y-3">
+                  {GUIDES.map((g) => (
+                    <li key={g.href}>
+                      <Link
+                        href={g.href}
+                        className="inline-flex items-center gap-2 text-sm text-white/70 transition-colors hover:text-white"
+                      >
+                        <ArrowRight size={13} style={{ color: 'var(--accent-web)' }} /> {g.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </Reveal>
           </div>

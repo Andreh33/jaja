@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="bg40" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1A0F2E"/>
+      <stop offset="100%" stop-color="#07050E"/>
+    </linearGradient>
+    <radialGradient id="g40a" cx="0.25" cy="0.4" r="0.55">
+      <stop offset="0%" stop-color="#8B5CF6" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#8B5CF6" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="g40b" cx="0.78" cy="0.45" r="0.55">
+      <stop offset="0%" stop-color="#FBBF24" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#FBBF24" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg40)"/>
+  <rect width="800" height="500" fill="url(#g40a)"/>
+  <rect width="800" height="500" fill="url(#g40b)"/>
+
+  <!-- IA node -->
+  <g transform="translate(220,220)">
+    <circle r="85" fill="none" stroke="rgba(139,92,246,0.22)" stroke-width="1.2"/>
+    <circle r="48" fill="rgba(7,5,14,0.92)" stroke="rgba(139,92,246,0.85)" stroke-width="2"/>
+    <text y="6" text-anchor="middle" font-family="Inter,system-ui" font-size="16" font-weight="800" fill="#A78BFA" letter-spacing="2">IA</text>
+    <text y="112" text-anchor="middle" font-family="ui-monospace,monospace" font-size="11" fill="rgba(255,255,255,0.6)">lo repetitivo</text>
+  </g>
+
+  <!-- Human node -->
+  <g transform="translate(580,220)">
+    <circle r="85" fill="none" stroke="rgba(251,191,36,0.22)" stroke-width="1.2"/>
+    <circle r="48" fill="rgba(7,5,14,0.92)" stroke="rgba(251,191,36,0.8)" stroke-width="2"/>
+    <text y="9" text-anchor="middle" font-family="Inter,system-ui" font-size="24">🧑</text>
+    <text y="112" text-anchor="middle" font-family="ui-monospace,monospace" font-size="11" fill="rgba(255,255,255,0.6)">lo que importa</text>
+  </g>
+
+  <!-- escalation arrow -->
+  <g>
+    <line x1="280" y1="220" x2="512" y2="220" stroke="rgba(255,255,255,0.4)" stroke-width="2" stroke-dasharray="6 5"/>
+    <path d="M 512 220 l -14 -8 l 0 16 z" fill="rgba(255,255,255,0.55)"/>
+    <g transform="translate(340,168)" font-family="ui-monospace,monospace">
+      <rect width="120" height="32" rx="16" fill="rgba(7,5,14,0.9)" stroke="rgba(255,255,255,0.25)"/>
+      <text x="60" y="21" text-anchor="middle" font-size="10" fill="rgba(255,255,255,0.8)">escalado ⤴</text>
+    </g>
+  </g>
+
+  <!-- task chips: automated -->
+  <g font-family="ui-monospace,monospace" font-size="10">
+    <g transform="translate(90,355)">
+      <rect width="120" height="30" rx="15" fill="rgba(139,92,246,0.15)" stroke="rgba(139,92,246,0.5)"/>
+      <text x="60" y="19" text-anchor="middle" fill="rgba(255,255,255,0.8)">📅 citas 24/7</text>
+    </g>
+    <g transform="translate(222,355)">
+      <rect width="130" height="30" rx="15" fill="rgba(139,92,246,0.15)" stroke="rgba(139,92,246,0.5)"/>
+      <text x="65" y="19" text-anchor="middle" fill="rgba(255,255,255,0.8)">⏰ recordatorios</text>
+    </g>
+    <!-- human chips -->
+    <g transform="translate(450,355)">
+      <rect width="120" height="30" rx="15" fill="rgba(251,191,36,0.12)" stroke="rgba(251,191,36,0.5)"/>
+      <text x="60" y="19" text-anchor="middle" fill="rgba(255,255,255,0.8)">❤ quejas</text>
+    </g>
+    <g transform="translate(582,355)">
+      <rect width="130" height="30" rx="15" fill="rgba(251,191,36,0.12)" stroke="rgba(251,191,36,0.5)"/>
+      <text x="65" y="19" text-anchor="middle" fill="rgba(255,255,255,0.8)">🤝 ventas clave</text>
+    </g>
+  </g>
+
+  <!-- tone chip top -->
+  <g transform="translate(290,55)" font-family="ui-monospace,monospace">
+    <rect width="220" height="36" rx="18" fill="rgba(7,5,14,0.9)" stroke="rgba(139,92,246,0.5)"/>
+    <text x="110" y="23" text-anchor="middle" font-size="11" fill="rgba(255,255,255,0.8)">tu tono · tu marca 🗣</text>
+  </g>
+
+  <text x="400" y="470" text-anchor="middle" font-family="Inter,system-ui" font-size="11" font-weight="700" fill="rgba(255,255,255,0.45)" letter-spacing="4">AUTOMATIZAR CON TRATO HUMANO · LATECH</text>
+</svg>

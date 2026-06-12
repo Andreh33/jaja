@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="bg39" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1A0F2E"/>
+      <stop offset="100%" stop-color="#07050E"/>
+    </linearGradient>
+    <radialGradient id="g39a" cx="0.5" cy="0.75" r="0.6">
+      <stop offset="0%" stop-color="#8B5CF6" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#8B5CF6" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="g39b" cx="0.2" cy="0.15" r="0.5">
+      <stop offset="0%" stop-color="#3B82F6" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#3B82F6" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg39)"/>
+  <rect width="800" height="500" fill="url(#g39a)"/>
+  <rect width="800" height="500" fill="url(#g39b)"/>
+
+  <!-- Three contender cards -->
+  <g font-family="ui-monospace,monospace">
+    <!-- Zapier -->
+    <g transform="translate(85,110)">
+      <rect width="180" height="150" rx="14" fill="rgba(7,5,14,0.88)" stroke="rgba(249,115,22,0.5)" stroke-width="1.5"/>
+      <text x="90" y="38" text-anchor="middle" font-size="15" fill="#F97316" font-weight="bold">Zapier</text>
+      <text x="20" y="70" font-size="10" fill="rgba(255,255,255,0.7)">+6.000 apps</text>
+      <text x="20" y="94" font-size="10" fill="rgba(255,255,255,0.7)">paga por tarea</text>
+      <text x="20" y="118" font-size="10" fill="rgba(239,68,68,0.85)">caro al escalar ↑</text>
+    </g>
+
+    <!-- Make -->
+    <g transform="translate(310,110)">
+      <rect width="180" height="150" rx="14" fill="rgba(7,5,14,0.88)" stroke="rgba(59,130,246,0.5)" stroke-width="1.5"/>
+      <text x="90" y="38" text-anchor="middle" font-size="15" fill="#3B82F6" font-weight="bold">Make</text>
+      <text x="20" y="70" font-size="10" fill="rgba(255,255,255,0.7)">visual potente</text>
+      <text x="20" y="94" font-size="10" fill="rgba(255,255,255,0.7)">paga por operación</text>
+      <text x="20" y="118" font-size="10" fill="rgba(251,191,36,0.85)">término medio ~</text>
+    </g>
+
+    <!-- n8n (winner) -->
+    <g transform="translate(535,95)">
+      <rect width="180" height="180" rx="14" fill="rgba(139,92,246,0.12)" stroke="rgba(139,92,246,0.85)" stroke-width="2"/>
+      <text x="90" y="40" text-anchor="middle" font-size="17" fill="#A78BFA" font-weight="bold">n8n ★</text>
+      <text x="20" y="74" font-size="10" fill="rgba(255,255,255,0.8)">open source</text>
+      <text x="20" y="98" font-size="10" fill="rgba(255,255,255,0.8)">self-hosted · UE 🔒</text>
+      <text x="20" y="122" font-size="10" fill="rgba(255,255,255,0.8)">ejecuciones ∞</text>
+      <text x="20" y="146" font-size="10" fill="#22C55E">coste plano ✓</text>
+    </g>
+  </g>
+
+  <!-- connections down to hub -->
+  <g stroke="rgba(139,92,246,0.45)" stroke-width="1.4" fill="none" stroke-dasharray="4 4">
+    <line x1="175" y1="262" x2="360" y2="360"/>
+    <line x1="400" y1="262" x2="400" y2="330"/>
+    <line x1="625" y1="277" x2="445" y2="360"/>
+  </g>
+
+  <!-- hub: la elección de Latech -->
+  <g transform="translate(400,375)">
+    <circle r="46" fill="rgba(7,5,14,0.92)" stroke="rgba(139,92,246,0.85)" stroke-width="2"/>
+    <circle r="34" fill="none" stroke="rgba(139,92,246,0.3)"/>
+    <text y="-2" text-anchor="middle" font-family="Inter,system-ui" font-size="16" font-weight="800" fill="#A78BFA">n8n</text>
+    <text y="16" text-anchor="middle" font-family="ui-monospace,monospace" font-size="9" fill="rgba(255,255,255,0.55)">nuestra base</text>
+  </g>
+
+  <text x="400" y="470" text-anchor="middle" font-family="Inter,system-ui" font-size="11" font-weight="700" fill="rgba(255,255,255,0.45)" letter-spacing="4">n8n VS ZAPIER VS MAKE · LATECH</text>
+</svg>

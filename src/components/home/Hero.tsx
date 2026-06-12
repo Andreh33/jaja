@@ -48,7 +48,7 @@ export default function Hero() {
             transition={{ duration: 0.9, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
             className="mx-auto mt-7 max-w-2xl text-pretty text-base leading-relaxed text-white/65 md:text-lg"
           >
-            Diseño web, tiendas online y agentes de IA con n8n para empresas que quieren crecer.
+            Diseño web, tiendas online y agentes de IA con n8n para empresas de toda España.
             Desarrollo en 24-48 horas. Sin permanencia.
           </motion.p>
 
