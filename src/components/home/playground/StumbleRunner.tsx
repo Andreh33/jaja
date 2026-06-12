@@ -25,6 +25,8 @@ export default function StumbleRunner() {
 
   const stateRef = useRef(state);
   stateRef.current = state;
+  const bestRef = useRef(best);
+  bestRef.current = best;
 
   const game = useRef({
     y: 0,
@@ -144,53 +146,266 @@ export default function StumbleRunner() {
       g.nextSpawn += gap;
     };
 
+    // Textura de ruido pre-renderizada una sola vez (grano sutil del "traje").
+    const noiseCanvas = document.createElement('canvas');
+    noiseCanvas.width = 64;
+    noiseCanvas.height = 64;
+    {
+      const nctx = noiseCanvas.getContext('2d')!;
+      for (let i = 0; i < 500; i++) {
+        nctx.globalAlpha = Math.random() * 0.6;
+        nctx.fillStyle = Math.random() > 0.5 ? '#FFFFFF' : '#000000';
+        nctx.fillRect(Math.random() * 64, Math.random() * 64, 1.2, 1.2);
+      }
+    }
+    const noisePattern = ctx.createPattern(noiseCanvas, 'repeat')!;
+
     const drawBean = (x: number, y: number, rot: number, squash: number) => {
+      const st = stateRef.current;
       const bw = 34;
-      const bh = 44;
+      const bh = 46;
+      const playing = st === 'playing';
+      const dead = st === 'over';
+      const airborne = playing && !g.onGround;
+      const crowned = playing && bestRef.current > 0 && g.dist / 10 > bestRef.current;
+
+      // sombra proyectada (se abre y aclara con la altura del salto)
+      if (!dead) {
+        const hgt = Math.max(0, groundY() - y);
+        ctx.globalAlpha = Math.max(0.12, 0.4 - hgt / 420);
+        ctx.fillStyle = '#000000';
+        ctx.beginPath();
+        ctx.ellipse(x, groundY() + 8, 20 + hgt * 0.07, 5, 0, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.globalAlpha = 1;
+      }
+
+      // estela fantasma a alta velocidad
+      if (playing && g.speed > 340) {
+        const a = Math.min(0.2, (g.speed - 340) / 1000);
+        for (let i = 1; i <= 3; i++) {
+          ctx.globalAlpha = a / i;
+          ctx.fillStyle = '#8B5CF6';
+          ctx.beginPath();
+          ctx.roundRect(x - i * 14 - bw / 2, y - bh, bw, bh - 2, 18);
+          ctx.fill();
+        }
+        ctx.globalAlpha = 1;
+      }
+
       ctx.save();
       ctx.translate(x, y);
       ctx.rotate(rot);
-      ctx.scale(1 + (1 - squash) * 0.5, squash);
-      // sombra
-      if (stateRef.current === 'playing') {
-        ctx.save();
-        ctx.resetTransform();
-        const dpr = Math.min(window.devicePixelRatio || 1, 2);
-        ctx.scale(dpr, dpr);
-        ctx.fillStyle = 'rgba(0,0,0,0.35)';
-        ctx.beginPath();
-        ctx.ellipse(x, groundY() + 8, 20 * squash + 6, 5, 0, 0, Math.PI * 2);
-        ctx.fill();
-        ctx.restore();
-      }
-      // cuerpo bean
-      const grad = ctx.createLinearGradient(-bw / 2, -bh, bw / 2, 0);
-      grad.addColorStop(0, '#A578FF');
-      grad.addColorStop(1, '#7C3AED');
-      ctx.fillStyle = grad;
+      ctx.scale(1 + (1 - squash) * 0.55, squash);
+
+      // ---- capa ondeando con el degradado de marca ----
+      const flap = Math.sin(g.t * 9) * 5 + Math.sin(g.t * 23) * 2;
+      const lift = airborne ? -16 : dead ? 8 : -4 - g.speed / 90;
+      const capeGrad = ctx.createLinearGradient(-bw / 2, -bh + 10, -bw - 30, -bh + 34);
+      capeGrad.addColorStop(0, '#8B5CF6');
+      capeGrad.addColorStop(0.55, '#F97316');
+      capeGrad.addColorStop(1, '#FBBF24');
+      ctx.fillStyle = capeGrad;
       ctx.beginPath();
-      ctx.roundRect(-bw / 2, -bh, bw, bh, 17);
+      ctx.moveTo(-bw / 2 + 7, -bh + 11);
+      ctx.quadraticCurveTo(-bw - 8, -bh + 14 + flap * 0.4, -bw - 22, -bh + 26 + lift + flap);
+      ctx.quadraticCurveTo(-bw - 4, -bh + 35 + flap * 0.6, -bw / 2 + 5, -bh + 31);
+      ctx.closePath();
       ctx.fill();
-      ctx.strokeStyle = 'rgba(255,255,255,0.25)';
+      ctx.strokeStyle = 'rgba(20,8,40,0.5)';
       ctx.lineWidth = 1.5;
       ctx.stroke();
-      // barriga
-      ctx.fillStyle = 'rgba(255,255,255,0.18)';
-      ctx.beginPath();
-      ctx.roundRect(-bw / 2 + 7, -bh + 16, bw - 14, bh - 22, 10);
-      ctx.fill();
-      // ojos
-      const blink = Math.sin(g.t * 1.7) > 0.985 ? 0.15 : 1;
-      for (const ex of [-7, 7]) {
-        ctx.fillStyle = '#FFFFFF';
+
+      // ---- pies con ciclo de carrera ----
+      ctx.fillStyle = '#4C1D95';
+      for (const s of [-1, 1] as const) {
+        const ph = g.runPhase + (s > 0 ? Math.PI : 0);
+        const footLift = airborne ? -5 : dead ? 0 : Math.max(0, Math.sin(ph)) * -6;
+        const footX = s * 8 + (airborne ? s * -2 : dead ? 0 : Math.cos(ph) * 4);
         ctx.beginPath();
-        ctx.ellipse(ex, -bh + 14, 4.5, 4.5 * blink, 0, 0, Math.PI * 2);
-        ctx.fill();
-        ctx.fillStyle = '#07050E';
-        ctx.beginPath();
-        ctx.ellipse(ex + 1.5, -bh + 14, 2, 2 * blink, 0, 0, Math.PI * 2);
+        ctx.ellipse(footX, -2 + footLift, 6.5, 4.5, 0, 0, Math.PI * 2);
         ctx.fill();
       }
+
+      // ---- cuerpo: luz radial + textura + oclusión + especular + rim ----
+      const bodyGrad = ctx.createRadialGradient(-bw * 0.25, -bh * 0.78, 3, 0, -bh / 2, bh * 0.95);
+      bodyGrad.addColorStop(0, '#C9A6FF');
+      bodyGrad.addColorStop(0.45, '#8B5CF6');
+      bodyGrad.addColorStop(1, '#5B21B6');
+      const bodyPath = new Path2D();
+      bodyPath.roundRect(-bw / 2, -bh, bw, bh - 3, 17);
+      ctx.fillStyle = bodyGrad;
+      ctx.fill(bodyPath);
+
+      ctx.save();
+      ctx.clip(bodyPath);
+      // grano del traje
+      ctx.globalAlpha = 0.08;
+      ctx.fillStyle = noisePattern;
+      ctx.fillRect(-bw, -bh - 4, bw * 2, bh + 10);
+      // oclusión inferior (asienta el volumen)
+      ctx.globalAlpha = 1;
+      const ao = ctx.createLinearGradient(0, -16, 0, -2);
+      ao.addColorStop(0, 'rgba(0,0,0,0)');
+      ao.addColorStop(1, 'rgba(15,5,35,0.5)');
+      ctx.fillStyle = ao;
+      ctx.fillRect(-bw / 2, -18, bw, 18);
+      // barriga
+      const belly = ctx.createLinearGradient(0, -bh + 17, 0, -8);
+      belly.addColorStop(0, 'rgba(255,255,255,0.32)');
+      belly.addColorStop(1, 'rgba(255,255,255,0.06)');
+      ctx.fillStyle = belly;
+      ctx.beginPath();
+      ctx.roundRect(-bw / 2 + 7, -bh + 19, bw - 14, bh - 28, 11);
+      ctx.fill();
+      // brillo especular
+      ctx.globalAlpha = 0.55;
+      ctx.fillStyle = '#FFFFFF';
+      ctx.beginPath();
+      ctx.ellipse(-bw * 0.2, -bh * 0.82, 6.5, 9.5, -0.55, 0, Math.PI * 2);
+      ctx.fill();
+      // rim light cálida en el borde derecho (la luz del "atardecer" del fondo)
+      ctx.globalAlpha = 0.7;
+      const rim = ctx.createLinearGradient(bw / 2 - 8, 0, bw / 2, 0);
+      rim.addColorStop(0, 'rgba(255,200,120,0)');
+      rim.addColorStop(1, 'rgba(255,200,120,0.85)');
+      ctx.fillStyle = rim;
+      ctx.fillRect(bw / 2 - 8, -bh + 5, 8, bh - 14);
+      ctx.restore();
+
+      // contorno cartoon
+      ctx.strokeStyle = 'rgba(20,8,40,0.9)';
+      ctx.lineWidth = 2;
+      ctx.stroke(bodyPath);
+
+      // ---- brazos ----
+      for (const s of [-1, 1] as const) {
+        const swing = airborne ? -1.9 : dead ? 0.6 : Math.sin(g.runPhase + (s > 0 ? Math.PI : 0)) * 0.7;
+        ctx.save();
+        ctx.translate(s * (bw / 2 - 1), -bh + 23);
+        ctx.rotate(s * 0.35 + swing * s);
+        ctx.fillStyle = s < 0 ? '#6D28D9' : '#7C3AED';
+        ctx.beginPath();
+        ctx.roundRect(-3, -1, 6, 13, 3);
+        ctx.fill();
+        ctx.strokeStyle = 'rgba(20,8,40,0.8)';
+        ctx.lineWidth = 1.5;
+        ctx.stroke();
+        ctx.restore();
+      }
+
+      // ---- cara ----
+      const faceY = -bh + 15;
+      const lookX = dead ? 0 : 1.6;
+      const lookY = dead ? 0 : airborne ? (g.vy < 0 ? -1.8 : 1.6) : 0.4;
+      const blink = !dead && Math.sin(g.t * 1.9 + 1) > 0.984;
+      for (const s of [-1, 1] as const) {
+        const ex = s * 7.5;
+        if (dead) {
+          // ojos en X
+          ctx.strokeStyle = '#1B1033';
+          ctx.lineWidth = 2.2;
+          for (const d of [-1, 1] as const) {
+            ctx.beginPath();
+            ctx.moveTo(ex - 3, faceY - 3 * d);
+            ctx.lineTo(ex + 3, faceY + 3 * d);
+            ctx.stroke();
+          }
+        } else {
+          const eyeG = ctx.createRadialGradient(ex - 1, faceY - 1.5, 0.5, ex, faceY, 5.5);
+          eyeG.addColorStop(0, '#FFFFFF');
+          eyeG.addColorStop(1, '#D9D2EE');
+          ctx.fillStyle = eyeG;
+          ctx.beginPath();
+          ctx.ellipse(ex, faceY, 5, blink ? 0.8 : 5.4, 0, 0, Math.PI * 2);
+          ctx.fill();
+          if (!blink) {
+            ctx.fillStyle = '#1B1033';
+            ctx.beginPath();
+            ctx.arc(ex + lookX, faceY + lookY, 2.6, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.fillStyle = 'rgba(255,255,255,0.95)';
+            ctx.beginPath();
+            ctx.arc(ex + lookX - 1, faceY + lookY - 1, 0.9, 0, Math.PI * 2);
+            ctx.fill();
+          }
+        }
+      }
+      // cejas (suben cuando salta)
+      if (!dead) {
+        ctx.strokeStyle = 'rgba(20,8,40,0.85)';
+        ctx.lineWidth = 1.8;
+        ctx.lineCap = 'round';
+        for (const s of [-1, 1] as const) {
+          const browLift = airborne ? -2.5 : 0;
+          ctx.beginPath();
+          ctx.moveTo(s * 4.4, faceY - 8 + browLift);
+          ctx.lineTo(s * 10.2, faceY - 7 + browLift + (airborne ? -2 : 0.6));
+          ctx.stroke();
+        }
+      }
+      // mofletes
+      ctx.fillStyle = 'rgba(255,77,157,0.35)';
+      for (const s of [-1, 1] as const) {
+        ctx.beginPath();
+        ctx.ellipse(s * 11, faceY + 6.5, 3.4, 2.1, 0, 0, Math.PI * 2);
+        ctx.fill();
+      }
+      // boca: sonrisa corriendo, "¡oh!" en el aire, lengua fuera eliminado
+      ctx.strokeStyle = '#1B1033';
+      ctx.lineWidth = 2;
+      ctx.lineCap = 'round';
+      if (dead) {
+        ctx.beginPath();
+        ctx.moveTo(-5, faceY + 11);
+        ctx.quadraticCurveTo(0, faceY + 8.5, 5, faceY + 11);
+        ctx.stroke();
+        ctx.fillStyle = '#FF4D9D';
+        ctx.beginPath();
+        ctx.ellipse(3, faceY + 12.5, 2.6, 3.4, 0.3, 0, Math.PI * 2);
+        ctx.fill();
+      } else if (airborne) {
+        ctx.fillStyle = '#2A123F';
+        ctx.beginPath();
+        ctx.ellipse(0, faceY + 11, 3.6, 4.6, 0, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.fillStyle = '#FF4D9D';
+        ctx.beginPath();
+        ctx.ellipse(0, faceY + 13, 2.2, 1.8, 0, 0, Math.PI * 2);
+        ctx.fill();
+      } else {
+        ctx.beginPath();
+        ctx.arc(0, faceY + 7, 5.5, 0.22 * Math.PI, 0.78 * Math.PI);
+        ctx.stroke();
+      }
+
+      // ---- corona cuando vas batiendo tu récord ----
+      if (crowned) {
+        const cg = ctx.createLinearGradient(-9, -bh - 11, 9, -bh);
+        cg.addColorStop(0, '#FBBF24');
+        cg.addColorStop(1, '#F97316');
+        ctx.fillStyle = cg;
+        ctx.beginPath();
+        ctx.moveTo(-9, -bh - 1);
+        ctx.lineTo(-9, -bh - 9);
+        ctx.lineTo(-4.5, -bh - 4);
+        ctx.lineTo(0, -bh - 11);
+        ctx.lineTo(4.5, -bh - 4);
+        ctx.lineTo(9, -bh - 9);
+        ctx.lineTo(9, -bh - 1);
+        ctx.closePath();
+        ctx.fill();
+        ctx.strokeStyle = 'rgba(20,8,40,0.8)';
+        ctx.lineWidth = 1.5;
+        ctx.stroke();
+        ctx.fillStyle = '#FFF7E0';
+        for (const gx of [-4.5, 0, 4.5] as const) {
+          ctx.beginPath();
+          ctx.arc(gx, -bh - (gx === 0 ? 10 : 8), 1.2, 0, Math.PI * 2);
+          ctx.fill();
+        }
+      }
+
       ctx.restore();
     };
 
@@ -429,6 +644,8 @@ export default function StumbleRunner() {
   }, []);
 
   const start = () => {
+    // Suelta el foco del botón: si no, la tecla espacio lo "pulsaría" de nuevo.
+    (document.activeElement as HTMLElement | null)?.blur?.();
     (game.current as typeof game.current & { reset?: () => void }).reset?.();
     setScore(0);
     setIsRecord(false);
