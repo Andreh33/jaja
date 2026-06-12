@@ -51,6 +51,24 @@ export const equipo: Miembro[] = [
     esFundador: false,
   },
   {
+    slug: 'noelia-valle',
+    nombre: 'Noelia Valle',
+    rol: 'Branding & Social Media Partner',
+    descripcion: [
+      'Noelia lleva más de 15 años vinculada al mundo de las ventas, el marketing y el desarrollo de negocio. En los últimos años centra su actividad en el entorno digital, ayudando a empresas y profesionales a construir marcas con identidad, propósito y una estrategia alineada con sus objetivos.',
+      'Su trabajo consiste en encontrar el equilibrio entre lo que una marca es, lo que quiere llegar a ser y la percepción que genera en sus clientes. Porque cuando identidad, comunicación y estrategia avanzan en la misma dirección, las marcas conectan mejor, generan confianza y consiguen crecer de forma sólida y sostenible.',
+      'Formar parte de Latech supone para ella una gran oportunidad para seguir impulsando empresas y negocios junto a un equipo comprometido con el crecimiento de sus clientes. Comparte una visión basada en la cercanía, la implicación y el trabajo estratégico, acompañando cada proyecto para que consiga destacar, diferenciarse y alcanzar su máximo potencial.',
+      'Porque detrás de cada negocio hay una historia, y su misión es ayudar a que esa historia se convierta en una marca memorable.',
+    ],
+    foto: {
+      src: '/equipo/noelia-valle/foto.webp',
+      width: 900,
+      height: 1600,
+      alt: 'Foto de Noelia Valle, Branding & Social Media Partner en Latech',
+    },
+    esFundador: false,
+  },
+  {
     slug: 'ivan-sanchez',
     nombre: 'Iván Sánchez',
     rol: 'Jefe de equipo de promotores',
