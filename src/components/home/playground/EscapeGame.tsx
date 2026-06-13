@@ -152,6 +152,7 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
     const sRevive = () => { tone(200, 520, 0.28, 'sawtooth', 0.3); tone(520, 800, 0.2, 'sine', 0.2, 0.12); };
     const sMilestone = () => { [0, 0.09, 0.18].forEach((d, i) => tone(520 + i * 180, null, 0.14, 'triangle', 0.18, d)); };
     const sDash = () => { tone(180, 900, 0.18, 'sawtooth', 0.3); noise(0.12, 0.2, 'highpass', 1800); };
+    const sFlip = () => { tone(600, 120, 0.3, 'sine', 0.3); tone(120, 600, 0.3, 'sine', 0.22, 0.12); };
 
     // ---------- origen: la tarjeta REAL del juego (acotado al viewport) ----------
     const vw0 = window.innerWidth, vh0 = window.innerHeight;
@@ -239,6 +240,7 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
       boss: null as Boss | null, bossAt: BOSS_SCORE, bossNum: 0, proj: [] as Proj[],
       lives: 0, shield: false, pickups: [] as Pickup[], pickupT: 6,
       dashT: 0, dashCd: 0, glitch: 0,
+      invertView: false, flipTimer: 22, flipTele: 0, flipDur: 0,
     };
     const syncHud = () => hudRef.current({ lives: g.lives, shield: g.shield });
     const applyDiff = () => { const c = DIFF[modeRef.current]; g.speed = c.startSpeed; g.bossAt = c.bossAt; g.lives = c.startLives; g.shield = c.startShield; g.wTimer = c.wTimer; syncHud(); };
@@ -298,6 +300,7 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
     const endGame = (killedBy: string) => {
       if (g.phase === 'over') return;
       g.phase = 'over'; g.shake = 0.6; g.hitFlash = 0.7;
+      g.invertView = false; layer.style.transform = 'none';
       burst(g.beanX, g.y - 22, 30, ['#F97316', '#FB7185', '#FBBF24', '#fff']);
       sOver();
       const best0 = Number(localStorage.getItem(BEST_KEY) || 0);
@@ -356,6 +359,7 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
       g.boss = null; g.wEnemy = null; g.pickupT = 6; g.bossNum = 0;
       g.phase = 'playing'; g.punched = true; g.beanX = RUN_X; g.y = groundY(); g.prevY = groundY(); g.vy = 0; g.onGround = true; g.jumpsLeft = 2;
       g.score = 0; g.dist = 0; g.invuln = 0.9; g.pressAt = -1;
+      g.invertView = false; g.flipTimer = 22; g.flipTele = 0; g.flipDur = 0; layer.style.transform = 'none';
       applyDiff(); setOver(false);
     };
     resetRef.current = resetGame;
@@ -489,13 +493,17 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
         const cfg = DIFF[modeRef.current];
         g.speed = Math.min(g.speed + cfg.accel * dt, cfg.maxSpeed); g.dist += g.speed * dt;
         if (g.onGround) { g.dustT -= dt; if (g.dustT <= 0) { g.dustT = 0.1; particles.push({ x: g.beanX - 14, y: gy, vx: -50 - Math.random() * 50, vy: -20 - Math.random() * 30, life: 0.4, max: 0.4, color: 'rgba(201,166,255,0.5)', r: 2 + Math.random() * 2 }); } }
-        // jefe
-        if (!g.boss && g.score >= g.bossAt) spawnBoss();
+        // jefe (no aparece durante la gravedad invertida)
+        if (!g.boss && !g.invertView && g.score >= g.bossAt) spawnBoss();
         if (!g.boss) {
           const lastO = obstacles[obstacles.length - 1]; const gap = cfg.gapBase + g.speed * 0.5 + Math.random() * 240;
           if (!lastO || lastO.x < W - lastO.w - gap) spawn();
           g.wTimer -= dt; if (g.wTimer <= 0 && !g.wEnemy) { g.wEnemy = { x: W + 60, dead: 0, passed: false }; g.wTimer = 7 + Math.random() * 5; }
           g.pickupT -= dt; if (g.pickupT <= 0) { const kind: 'shield' | 'heart' = Math.random() < 0.68 ? 'shield' : 'heart'; g.pickups.push({ x: W + 40, y: groundY() - 100 - Math.random() * 80, kind, ph: Math.random() * 6.28 }); g.pickupT = 8 + Math.random() * 6; }
+          // GRAVEDAD INVERTIDA por tramos (volteo de vista; física intacta)
+          if (g.invertView) { g.flipDur -= dt; if (g.flipDur <= 0) { g.invertView = false; g.whiteFlash = 0.55; g.shake = 0.45; g.glitch = 0.7; sFlip(); g.flipTimer = 20 + Math.random() * 12; } }
+          else if (g.flipTele > 0) { g.flipTele -= dt; if (g.flipTele <= 0) { g.invertView = true; g.flipDur = 7; g.whiteFlash = 0.55; g.shake = 0.45; g.glitch = 0.7; sFlip(); } }
+          else { g.flipTimer -= dt; if (g.flipTimer <= 0 && g.score > 6) { g.flipTele = 1.3; float(g.beanX, g.y - 72, '¡GRAVEDAD INVERTIDA!', '#FBBF24', 22); } }
         }
         // hito cada 10 esquivados: sonido + glitch + texto
         if (Math.floor(g.score / 10) > Math.floor(lastScore / 10)) { sMilestone(); g.whiteFlash = Math.max(g.whiteFlash, 0.3); g.glitch = Math.max(g.glitch, 0.6); g.crackT = Math.min(g.crackT, 0.9); float(g.beanX, g.y - 64, `¡${g.score}!`, '#C9A6FF', 20); }
@@ -610,9 +618,14 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
       if (scoreRef.current) scoreRef.current.textContent = String(g.score);
 
       // ---------- render ----------
+      // capa DOM de obstáculos volteada cuando la gravedad está invertida
+      layer.style.transformOrigin = 'center center';
+      layer.style.transform = g.invertView ? 'scaleY(-1)' : 'none';
+
       ctx.clearRect(0, 0, W, H);
       ctx.save();
       if (g.shake > 0) ctx.translate((Math.random() - 0.5) * g.shake * 34, (Math.random() - 0.5) * g.shake * 34);
+      if (g.invertView) { ctx.translate(0, H); ctx.scale(1, -1); } // volteo vertical: gravedad invertida
 
       // fondo parallax: textos reales + siluetas de cards
       for (const it of bg) {
