@@ -9,7 +9,7 @@ type Obstacle = { node: HTMLElement; x: number; w: number; h: number; s: number;
 type Particle = { x: number; y: number; vx: number; vy: number; life: number; max: number; color: string; r: number; sq?: boolean };
 type Float = { x: number; y: number; vy: number; life: number; text: string; color: string; size: number };
 type WEnemy = { x: number; dead: number; passed: boolean };
-type Crack = { x1: number; y1: number; x2: number; y2: number; bx: number; by: number; bx2: number; by2: number };
+type Crack = { x1: number; y1: number; x2: number; y2: number; bx: number; by: number; bx2: number; by2: number; rx: number; ry: number };
 type Proj = { x: number; y: number; rot: number };
 type Pickup = { x: number; y: number; kind: 'shield' | 'heart'; ph: number };
 type Boss = { state: 'enter' | 'idle' | 'telegraph' | 'dash' | 'low' | 'return' | 'dying'; x: number; y: number; baseX: number; baseY: number; hp: number; t: number; shootT: number; swoopT: number; phase: number; hitFlash: number; deadT: number };
@@ -28,6 +28,13 @@ const RUNS_KEY = 'latech-escape-runs';
 const DODGED_KEY = 'latech-escape-dodged';
 const SKIN_KEY = 'latech-escape-skin';
 const BOSSKILLS_KEY = 'latech-escape-bosskills';
+const MODE_KEY = 'latech-escape-mode';
+
+type Diff = { startSpeed: number; maxSpeed: number; accel: number; gapBase: number; bossAt: number; startLives: number; startShield: boolean; projSpeed: number; wTimer: number };
+const DIFF: Record<'facil' | 'normal', Diff> = {
+  facil: { startSpeed: 250, maxSpeed: 520, accel: 6.5, gapBase: 480, bossAt: 28, startLives: 1, startShield: true, projSpeed: 0.85, wTimer: 6.5 },
+  normal: { startSpeed: 320, maxSpeed: 660, accel: 10, gapBase: 380, bossAt: 18, startLives: 0, startShield: false, projSpeed: 1.05, wTimer: 4.5 },
+};
 
 type Skin = { id: string; name: string; c0: string; c1: string; c2: string; aura: string };
 const SKINS: Skin[] = [
@@ -60,6 +67,12 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
   useEffect(() => { mutedRef.current = muted; }, [muted]);
   const resetRef = useRef<() => void>(() => {});
   const dashRef = useRef<() => void>(() => {});
+
+  const [mode, setMode] = useState<'facil' | 'normal'>('facil');
+  const modeRef = useRef<'facil' | 'normal'>('facil');
+  useEffect(() => { modeRef.current = mode; }, [mode]);
+  useEffect(() => { if (open) { const m = (localStorage.getItem(MODE_KEY) as 'facil' | 'normal') || 'facil'; queueMicrotask(() => setMode(m === 'normal' ? 'normal' : 'facil')); } }, [open]);
+  const chooseMode = (m: 'facil' | 'normal') => { setMode(m); modeRef.current = m; localStorage.setItem(MODE_KEY, m); };
 
   const [skin, setSkin] = useState('default');
   const [unlocked, setUnlocked] = useState<string[]>(['default']);
@@ -223,11 +236,12 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
       shake: 0, hitFlash: 0, whiteFlash: 0, invuln: 0, runPhase: 0, dustT: 0, slow: 0,
       wTimer: 4.5, wEnemy: null as WEnemy | null,
       cracks: [] as Crack[], crackT: 0, damage: 0,
-      boss: null as Boss | null, bossAt: BOSS_SCORE, proj: [] as Proj[],
+      boss: null as Boss | null, bossAt: BOSS_SCORE, bossNum: 0, proj: [] as Proj[],
       lives: 0, shield: false, pickups: [] as Pickup[], pickupT: 6,
       dashT: 0, dashCd: 0, glitch: 0,
     };
     const syncHud = () => hudRef.current({ lives: g.lives, shield: g.shield });
+    const applyDiff = () => { const c = DIFF[modeRef.current]; g.speed = c.startSpeed; g.bossAt = c.bossAt; g.lives = c.startLives; g.shield = c.startShield; g.wTimer = c.wTimer; syncHud(); };
 
     const obstacles: Obstacle[] = [];
     const particles: Particle[] = [];
@@ -310,33 +324,39 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
       g.punched = true; g.shake = 0.6; g.hitFlash = 0.4; g.whiteFlash = 0.9; g.slow = 0.32; g.phase = 'launch'; g.vy = -1700; g.onGround = false;
       ensureAudio(); sPunch(); sGlass();
       burst(origin.x + 24, origin.y, 54, ['#8B5CF6', '#C084FC', '#F97316', '#FBBF24', '#ffffff'], 1.7, true);
-      const cracks: Crack[] = []; const n = 12, len = Math.hypot(W, H);
+      const cracks: Crack[] = []; const n = 13, len = Math.hypot(W, H);
       for (let i = 0; i < n; i++) {
-        const a = (i / n) * Math.PI * 2 + Math.random() * 0.45;
+        const a = (i / n) * Math.PI * 2 + Math.random() * 0.5;
         const x2 = origin.x + Math.cos(a) * len, y2 = origin.y + Math.sin(a) * len;
         const bt = 0.3 + Math.random() * 0.4; const bx = origin.x + Math.cos(a) * len * bt, by = origin.y + Math.sin(a) * len * bt;
         const ba = a + (Math.random() - 0.5) * 0.9, bl = len * 0.3;
-        cracks.push({ x1: origin.x, y1: origin.y, x2, y2, bx, by, bx2: bx + Math.cos(ba) * bl, by2: by + Math.sin(ba) * bl });
+        const rr = 0.32 + Math.random() * 0.22; const rx = origin.x + Math.cos(a) * len * rr, ry = origin.y + Math.sin(a) * len * rr;
+        cracks.push({ x1: origin.x, y1: origin.y, x2, y2, bx, by, bx2: bx + Math.cos(ba) * bl, by2: by + Math.sin(ba) * bl, rx, ry });
       }
       g.cracks = cracks; g.crackT = 0;
+      // esquirlas de cristal cayendo
+      burst(origin.x, origin.y, 30, ['rgba(255,255,255,0.85)', 'rgba(201,166,255,0.7)', 'rgba(56,189,248,0.6)'], 1.5, true);
     };
 
     const spawnBoss = () => {
       const gy = groundY();
-      g.boss = { state: 'enter', x: W + 140, y: gy - 130, baseX: W * 0.72, baseY: gy - 130, hp: 3, t: 0, shootT: 1.2, swoopT: 3.2, phase: 0, hitFlash: 0, deadT: 0 };
+      const hp = 3 + Math.min(3, g.bossNum); // cada jefe sucesivo aguanta más
+      g.boss = { state: 'enter', x: W + 140, y: gy - 130, baseX: W * 0.72, baseY: gy - 130, hp, t: 0, shootT: 1.4, swoopT: 3.4, phase: 0, hitFlash: 0, deadT: 0 };
       // limpia tarjetas y W normal para el duelo
-      for (const o of obstacles) o.node.remove(); obstacles.length = 0; g.wEnemy = null;
-      float(W * 0.6, gy - 220, '¡JEFE WORDPRESS!', '#ef4444', 22);
+      for (const o of obstacles) o.node.remove(); obstacles.length = 0; g.wEnemy = null; g.proj.length = 0;
+      // cinemática de entrada
+      g.slow = 0.5; g.shake = 0.5; g.whiteFlash = 0.4;
+      float(W * 0.55, gy - 230, g.bossNum === 0 ? '¡JEFE: WORDPRESS!' : `¡WORDPRESS ${6 + g.bossNum}.0!`, '#ef4444', 24);
       ensureAudio(); sBossIn();
     };
     const shootPlugin = () => { const b = g.boss!; const gy = groundY(); g.proj.push({ x: b.x - 30, y: gy - 26, rot: 0 }); sShoot(); };
 
     const resetGame = () => {
       for (const o of obstacles) o.node.remove(); obstacles.length = 0; particles.length = 0; floats.length = 0; g.proj.length = 0; g.pickups.length = 0;
-      g.boss = null; g.wEnemy = null; g.wTimer = 4.5; g.bossAt = BOSS_SCORE; g.pickupT = 6;
+      g.boss = null; g.wEnemy = null; g.pickupT = 6; g.bossNum = 0;
       g.phase = 'playing'; g.punched = true; g.beanX = RUN_X; g.y = groundY(); g.prevY = groundY(); g.vy = 0; g.onGround = true; g.jumpsLeft = 2;
-      g.score = 0; g.speed = 360; g.dist = 0; g.invuln = 0.8; g.pressAt = -1; g.lives = 0; g.shield = false;
-      syncHud(); setOver(false);
+      g.score = 0; g.dist = 0; g.invuln = 0.9; g.pressAt = -1;
+      applyDiff(); setOver(false);
     };
     resetRef.current = resetGame;
     dashRef.current = requestDash;
@@ -405,16 +425,19 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
       ctx.restore();
     };
 
+    // insignia circular estilo logo de WordPress (azul WP + W blanca) con ojos de enemigo
     const drawWTile = (cx: number, cy: number, size: number, dead: number, eyes: boolean) => {
       ctx.save(); ctx.translate(cx, cy);
       if (dead > 0) ctx.scale(1 + dead * 0.4, Math.max(0.05, 1 - dead * 0.95));
-      ctx.shadowColor = 'rgba(239,68,68,0.85)'; ctx.shadowBlur = size * 0.35;
-      const tg = ctx.createLinearGradient(0, -size / 2, 0, size / 2); tg.addColorStop(0, '#2b3a5e'); tg.addColorStop(1, '#16203a');
-      ctx.fillStyle = tg; ctx.beginPath(); ctx.roundRect(-size / 2, -size / 2, size, size, size * 0.22); ctx.fill(); ctx.shadowBlur = 0;
-      ctx.strokeStyle = 'rgba(239,68,68,0.6)'; ctx.lineWidth = 2; ctx.beginPath(); ctx.roundRect(-size / 2, -size / 2, size, size, size * 0.22); ctx.stroke();
-      const u = size * 0.3; ctx.strokeStyle = '#dbe2ef'; ctx.lineWidth = size * 0.12; ctx.lineJoin = 'round'; ctx.lineCap = 'round';
-      ctx.beginPath(); ctx.moveTo(-u * 1.4, -u); ctx.lineTo(-u * 0.7, u); ctx.lineTo(0, -u * 0.3); ctx.lineTo(u * 0.7, u); ctx.lineTo(u * 1.4, -u); ctx.stroke();
-      if (eyes && dead === 0) { ctx.fillStyle = '#ef4444'; for (const s of [-1, 1] as const) { ctx.beginPath(); ctx.arc(s * u * 0.7, -u * 1.25, size * 0.05, 0, Math.PI * 2); ctx.fill(); } }
+      const r = size / 2;
+      ctx.shadowColor = 'rgba(33,117,155,0.9)'; ctx.shadowBlur = size * 0.32;
+      const tg = ctx.createRadialGradient(-r * 0.3, -r * 0.35, 2, 0, 0, r); tg.addColorStop(0, '#2a90bd'); tg.addColorStop(1, '#143f57');
+      ctx.fillStyle = tg; ctx.beginPath(); ctx.arc(0, 0, r, 0, Math.PI * 2); ctx.fill(); ctx.shadowBlur = 0;
+      ctx.strokeStyle = 'rgba(255,255,255,0.45)'; ctx.lineWidth = size * 0.045; ctx.beginPath(); ctx.arc(0, 0, r * 0.9, 0, Math.PI * 2); ctx.stroke();
+      // W de WordPress
+      const u = size * 0.26; ctx.strokeStyle = '#fff'; ctx.lineWidth = size * 0.1; ctx.lineJoin = 'round'; ctx.lineCap = 'round';
+      ctx.beginPath(); ctx.moveTo(-u * 1.35, -u * 0.82); ctx.lineTo(-u * 0.62, u); ctx.lineTo(0, -u * 0.18); ctx.lineTo(u * 0.62, u); ctx.lineTo(u * 1.35, -u * 0.82); ctx.stroke();
+      if (eyes && dead === 0) { ctx.fillStyle = '#ef4444'; for (const s of [-1, 1] as const) { ctx.beginPath(); ctx.arc(s * u * 0.55, -u * 1.2, size * 0.05, 0, Math.PI * 2); ctx.fill(); } }
       ctx.restore();
     };
 
@@ -456,19 +479,20 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
           g.vy += GRAVITY * dt; g.y += g.vy * dt;
           if (g.phase === 'launch') {
             g.beanX += (RUN_X - g.beanX) * Math.min(1, dt * 2.2);
-            if (g.y >= gy && g.vy >= 0) { g.y = gy; g.vy = 0; g.onGround = true; g.jumpsLeft = 2; g.lastGround = g.t; g.phase = 'playing'; g.beanX = RUN_X; burst(RUN_X, gy + 2, 16, ['#C9A6FF', '#fff']); sLand(); }
+            if (g.y >= gy && g.vy >= 0) { g.y = gy; g.vy = 0; g.onGround = true; g.jumpsLeft = 2; g.lastGround = g.t; g.phase = 'playing'; g.beanX = RUN_X; applyDiff(); burst(RUN_X, gy + 2, 16, ['#C9A6FF', '#fff']); sLand(); }
           }
           // en 'playing' el aterrizaje se resuelve tras calcular las plataformas (más abajo)
         }
       }
 
       if (g.phase === 'playing') {
-        g.speed = Math.min(g.speed + 12 * dt, 720); g.dist += g.speed * dt;
+        const cfg = DIFF[modeRef.current];
+        g.speed = Math.min(g.speed + cfg.accel * dt, cfg.maxSpeed); g.dist += g.speed * dt;
         if (g.onGround) { g.dustT -= dt; if (g.dustT <= 0) { g.dustT = 0.1; particles.push({ x: g.beanX - 14, y: gy, vx: -50 - Math.random() * 50, vy: -20 - Math.random() * 30, life: 0.4, max: 0.4, color: 'rgba(201,166,255,0.5)', r: 2 + Math.random() * 2 }); } }
         // jefe
         if (!g.boss && g.score >= g.bossAt) spawnBoss();
         if (!g.boss) {
-          const lastO = obstacles[obstacles.length - 1]; const gap = 360 + g.speed * 0.5 + Math.random() * 240;
+          const lastO = obstacles[obstacles.length - 1]; const gap = cfg.gapBase + g.speed * 0.5 + Math.random() * 240;
           if (!lastO || lastO.x < W - lastO.w - gap) spawn();
           g.wTimer -= dt; if (g.wTimer <= 0 && !g.wEnemy) { g.wEnemy = { x: W + 60, dead: 0, passed: false }; g.wTimer = 7 + Math.random() * 5; }
           g.pickupT -= dt; if (g.pickupT <= 0) { const kind: 'shield' | 'heart' = Math.random() < 0.68 ? 'shield' : 'heart'; g.pickups.push({ x: W + 40, y: groundY() - 100 - Math.random() * 80, kind, ph: Math.random() * 6.28 }); g.pickupT = 8 + Math.random() * 6; }
@@ -536,20 +560,21 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
         else {
           if (b.state === 'enter') { b.x += (b.baseX - b.x) * Math.min(1, dt * 2.4); b.y = b.baseY + Math.sin(b.t * 2) * 8; if (Math.abs(b.x - b.baseX) < 8) { b.x = b.baseX; b.state = 'idle'; } }
           else if (b.state === 'idle') {
+            const enraged = b.hp <= 1; const rage = enraged ? 0.6 : 1; // fase furia: más rápido
             b.x += (b.baseX - b.x) * Math.min(1, dt * 4); b.y = b.baseY + Math.sin(b.t * 2) * 12;
-            b.shootT -= dt; if (b.shootT <= 0) { shootPlugin(); b.shootT = 1.4 + Math.random() * 0.8; }
+            b.shootT -= dt; if (b.shootT <= 0) { shootPlugin(); if (b.hp <= 2 && Math.random() < 0.5) g.proj.push({ x: b.x - 95, y: groundY() - 26, rot: 0 }); b.shootT = (1.4 + Math.random() * 0.8) * rage; }
             b.swoopT -= dt; if (b.swoopT <= 0) { b.state = 'telegraph'; b.phase = 0; }
           }
           else if (b.state === 'telegraph') { b.phase += dt; if (b.phase >= 0.45) { b.state = 'dash'; b.phase = 0; } }
           else if (b.state === 'dash') { b.phase = Math.min(1, b.phase + dt / 0.4); const tx = RUN_X + 60, ty = gy - 48; b.x = b.baseX + (tx - b.baseX) * b.phase; b.y = b.baseY + (ty - b.baseY) * b.phase; if (b.phase >= 1) { b.state = 'low'; b.phase = 0; } }
           else if (b.state === 'low') { b.phase += dt; b.y = gy - 48 + Math.sin(b.t * 8) * 3; if (b.phase >= 0.28) { b.state = 'return'; b.phase = 0; } }
-          else if (b.state === 'return') { b.phase = Math.min(1, b.phase + dt / 0.55); b.x += (b.baseX - b.x) * 0.12; b.y += (b.baseY - b.y) * 0.12; if (b.phase >= 1) { b.state = 'idle'; b.swoopT = 3 + Math.random() * 1.5; b.shootT = Math.max(b.shootT, 0.8); } }
+          else if (b.state === 'return') { b.phase = Math.min(1, b.phase + dt / 0.55); b.x += (b.baseX - b.x) * 0.12; b.y += (b.baseY - b.y) * 0.12; if (b.phase >= 1) { b.state = 'idle'; b.swoopT = (3 + Math.random() * 1.5) * (b.hp <= 1 ? 0.6 : 1); b.shootT = Math.max(b.shootT, 0.7); } }
 
           // colisión jefe
           const bs = 116 * (1), ebx0 = b.x - bs * 0.4, ebx1 = b.x + bs * 0.4, eby0 = b.y - bs * 0.4, eby1 = b.y + bs * 0.4;
           if (bx1 > ebx0 && bx0 < ebx1 && by1 > eby0 && by0 < eby1) {
             const stomp = g.dashT > 0 || (g.vy > 0 && by1 < eby0 + 40);
-            if (stomp) { b.hp -= 1; b.hitFlash = 1; g.vy = -700; g.shake = 0.35; burst(b.x, eby0 + 10, 24, ['#ef4444', '#fff', '#dbe2ef']); float(b.x, eby0, b.hp > 0 ? '¡toma!' : '¡404!', '#FBBF24', 18); sBossHit(); if (b.hp <= 0) { b.state = 'dying'; b.deadT = 0.01; g.score += 15; g.whiteFlash = 0.7; g.glitch = 1; localStorage.setItem(BOSSKILLS_KEY, String(+(localStorage.getItem(BOSSKILLS_KEY) || 0) + 1)); burst(b.x, b.y, 60, ['#ef4444', '#fff', '#dbe2ef', '#FBBF24'], 1.6, true); float(b.x, b.y - 40, '+15 · ¡WordPress eliminado!', '#FBBF24', 20); sBossDead(); } }
+            if (stomp) { b.hp -= 1; b.hitFlash = 1; g.vy = -700; g.shake = 0.35; burst(b.x, eby0 + 10, 24, ['#ef4444', '#fff', '#dbe2ef']); float(b.x, eby0, b.hp > 0 ? '¡toma!' : '¡404!', '#FBBF24', 18); sBossHit(); if (b.hp <= 0) { b.state = 'dying'; b.deadT = 0.01; g.score += 15; g.bossNum += 1; g.whiteFlash = 0.7; g.glitch = 1; g.slow = 0.4; localStorage.setItem(BOSSKILLS_KEY, String(+(localStorage.getItem(BOSSKILLS_KEY) || 0) + 1)); burst(b.x, b.y, 60, ['#ef4444', '#fff', '#dbe2ef', '#FBBF24'], 1.6, true); float(b.x, b.y - 40, '+15 · ¡WordPress eliminado!', '#FBBF24', 20); sBossDead(); } }
             else takeHit('el jefe WordPress');
           }
         }
@@ -557,7 +582,7 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
 
       // proyectiles "plugin"
       if (active) for (let i = g.proj.length - 1; i >= 0; i--) {
-        const p = g.proj[i]; p.x -= (g.speed * 1.05 + 120) * dt; p.rot += dt * 6;
+        const p = g.proj[i]; p.x -= (g.speed * 1.05 + 120) * DIFF[modeRef.current].projSpeed * dt; p.rot += dt * 6;
         const ph = 30, px0 = p.x - ph / 2, px1 = p.x + ph / 2, py0 = p.y - ph / 2, py1 = p.y + ph / 2;
         if (g.phase === 'playing' && g.invuln <= 0 && bx1 > px0 && bx0 < px1 && by1 > py0 && by0 < py1) takeHit('un plugin');
         if (p.x < -40) g.proj.splice(i, 1);
@@ -594,7 +619,13 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
         let bx = it.x - g.dist * it.par; bx = ((bx % (W * 2)) + W * 2) % (W * 2) - 380;
         ctx.globalAlpha = it.alpha;
         if (it.kind === 'text' && it.text) { ctx.fillStyle = `rgb(${it.color})`; ctx.font = `800 ${Math.round(26 + it.par * 46)}px ui-sans-serif, system-ui, sans-serif`; ctx.fillText(it.text, bx, it.y); }
-        else { ctx.strokeStyle = `rgb(${it.color})`; ctx.lineWidth = 2; ctx.strokeRect(bx, it.y, it.w, it.h); }
+        else {
+          // mini-card de fondo: contorno + cabecera + líneas (claramente decorativo)
+          ctx.strokeStyle = `rgb(${it.color})`; ctx.lineWidth = 2; ctx.beginPath(); ctx.roundRect(bx, it.y, it.w, it.h, 9); ctx.stroke();
+          ctx.fillStyle = `rgb(${it.color})`;
+          ctx.beginPath(); ctx.roundRect(bx + 9, it.y + 9, it.w * 0.45, 6, 3); ctx.fill();
+          for (let li = 0; li < 2 && it.y + 26 + li * 9 < it.y + it.h - 6; li++) { ctx.beginPath(); ctx.roundRect(bx + 9, it.y + 26 + li * 9, it.w - 18, 3, 2); ctx.fill(); }
+        }
       }
       ctx.globalAlpha = 1;
 
@@ -658,13 +689,23 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
 
       // grietas: vivas al romper + residuales permanentes
       if (g.cracks.length) {
-        const resid = Math.min(0.16, g.damage * 0.16);
-        const liveAlpha = g.crackT < 1 ? 0.9 : resid;
+        const resid = Math.min(0.18, g.damage * 0.18);
+        const liveAlpha = g.crackT < 1 ? 0.92 : resid;
         if (liveAlpha > 0.01) {
-          ctx.globalAlpha = liveAlpha; ctx.strokeStyle = '#ffffff'; ctx.lineCap = 'round'; ctx.shadowColor = 'rgba(201,166,255,0.7)'; ctx.shadowBlur = 5;
-          for (const c of g.cracks) {
+          const cs = g.cracks; ctx.lineCap = 'round';
+          // refracción: traza cian ligeramente desplazada
+          ctx.globalAlpha = liveAlpha * 0.5; ctx.strokeStyle = '#7df9ff'; ctx.lineWidth = 2.2;
+          for (const c of cs) { ctx.beginPath(); ctx.moveTo(c.x1 + 1.6, c.y1); ctx.lineTo(c.x1 + 1.6 + (c.x2 - c.x1) * g.crackT, c.y1 + (c.y2 - c.y1) * g.crackT); ctx.stroke(); }
+          // núcleo blanco + brillo
+          ctx.globalAlpha = liveAlpha; ctx.strokeStyle = '#ffffff'; ctx.shadowColor = 'rgba(201,166,255,0.7)'; ctx.shadowBlur = 5;
+          for (const c of cs) {
             ctx.lineWidth = 2.4; ctx.beginPath(); ctx.moveTo(c.x1, c.y1); ctx.lineTo(c.x1 + (c.x2 - c.x1) * g.crackT, c.y1 + (c.y2 - c.y1) * g.crackT); ctx.stroke();
-            ctx.lineWidth = 1.4; ctx.beginPath(); ctx.moveTo(c.bx, c.by); ctx.lineTo(c.bx + (c.bx2 - c.bx) * g.crackT, c.by + (c.by2 - c.by) * g.crackT); ctx.stroke();
+            ctx.lineWidth = 1.3; ctx.beginPath(); ctx.moveTo(c.bx, c.by); ctx.lineTo(c.bx + (c.bx2 - c.bx) * g.crackT, c.by + (c.by2 - c.by) * g.crackT); ctx.stroke();
+          }
+          // telaraña de cristal: une puntos-anillo de grietas vecinas (polígonos)
+          if (g.crackT > 0.5) {
+            ctx.globalAlpha = liveAlpha * 0.7; ctx.lineWidth = 1.4; const k = Math.min(1, (g.crackT - 0.5) / 0.4);
+            for (let i = 0; i < cs.length; i++) { const a = cs[i], b = cs[(i + 1) % cs.length]; ctx.beginPath(); ctx.moveTo(a.rx, a.ry); ctx.lineTo(a.rx + (b.rx - a.rx) * k, a.ry + (b.ry - a.ry) * k); ctx.stroke(); }
           }
           ctx.shadowBlur = 0; ctx.globalAlpha = 1;
         }
@@ -742,16 +783,24 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
             }} />
           </motion.div>
 
-          <div className="pointer-events-none absolute left-1/2 top-6 -translate-x-1/2 text-center">
-            <p className="font-mono text-sm text-white/80">esquivados · <span ref={scoreRef} style={{ color: '#FBBF24' }}>0</span></p>
+          <div className="pointer-events-none absolute left-1/2 top-5 -translate-x-1/2 flex flex-col items-center gap-2">
             {(hud.lives > 0 || hud.shield) && (
-              <div className="mt-1.5 flex items-center justify-center gap-2">
-                {Array.from({ length: hud.lives }).map((_, i) => <Heart key={i} size={15} className="fill-current text-rose-400" />)}
-                {hud.shield && <Shield size={15} className="fill-current text-sky-400" />}
+              <div className="flex items-center gap-2.5 rounded-full px-4 py-2"
+                style={{ background: 'var(--bg-glass-strong)', border: '1px solid var(--border-subtle)', backdropFilter: 'blur(10px)' }}>
+                {Array.from({ length: hud.lives }).map((_, i) => <Heart key={i} size={24} className="text-rose-400" fill="currentColor" />)}
+                {hud.shield && <Shield size={24} className="text-sky-400" fill="currentColor" />}
               </div>
             )}
-            <p className="mt-1 text-xs text-white/45">ESPACIO salta (mantén = más alto) · MAYÚS/D dash · pisa la W · ESC salir</p>
+            <p className="font-mono text-sm text-white/85">esquivados · <span ref={scoreRef} style={{ color: '#FBBF24' }}>0</span></p>
+            <p className="text-xs text-white/45">ESPACIO salta (mantén = más alto) · MAYÚS/D dash · pisa la W · ESC salir</p>
           </div>
+
+          {/* selector de dificultad */}
+          <button onClick={() => chooseMode(mode === 'facil' ? 'normal' : 'facil')}
+            className="absolute left-6 top-[72px] z-[210] rounded-full px-3.5 py-1.5 text-xs font-semibold text-white/85 transition-transform hover:scale-105"
+            style={{ background: 'var(--bg-glass-strong)', border: '1px solid var(--border-subtle)', backdropFilter: 'blur(8px)' }} aria-label="Cambiar dificultad">
+            {mode === 'facil' ? '🌱 Fácil' : '🔥 Normal'}
+          </button>
 
           {/* botón de dash (táctil) */}
           <button onClick={() => dashRef.current()} aria-label="Dash"
@@ -786,7 +835,16 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
                       : <span className="inline-flex items-center gap-1 text-white/50"> · <Trophy size={12} /> {result.best}</span>}
                   </p>
                   <p className="text-xs text-white/40">partida #{result.runs} · {result.dodged} esquivados en total</p>
-                  <div className="mt-2 flex items-center gap-2">
+                  <div className="mt-1 flex items-center gap-2">
+                    <span className="text-[11px] uppercase tracking-widest text-white/35">modo</span>
+                    {(['facil', 'normal'] as const).map((m) => (
+                      <button key={m} onClick={() => chooseMode(m)} className="rounded-full px-3 py-1 text-xs font-semibold transition-colors"
+                        style={mode === m ? { background: 'linear-gradient(180deg, var(--purple-400), var(--purple-600))', color: '#fff' } : { color: 'rgba(255,255,255,0.55)', border: '1px solid var(--border-subtle)' }}>
+                        {m === 'facil' ? '🌱 Fácil' : '🔥 Normal'}
+                      </button>
+                    ))}
+                  </div>
+                  <div className="mt-1 flex items-center gap-2">
                     <span className="text-[11px] uppercase tracking-widest text-white/35">skin</span>
                     {SKINS.map((s) => {
                       const isUnlocked = unlocked.includes(s.id);
