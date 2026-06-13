@@ -110,6 +110,8 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
       const o = readOwned(); setOwned(o); setCoins(readCoins()); setLb(readLB());
       const saved = localStorage.getItem(SKIN_KEY) || 'default';
       setSkin(o.includes(saved) ? saved : 'default');
+      // ranking GLOBAL (Turso); si falla, se queda el local
+      fetch('/api/escape-leaderboard').then((r) => (r.ok ? r.json() : null)).then((d) => { if (d && Array.isArray(d.top) && d.top.length) setLb(d.top); }).catch(() => {});
     });
   }, [open]);
   const equipSkin = (id: string) => { if (!readOwned().includes(id)) return; setSkin(id); skinRef.current = id; localStorage.setItem(SKIN_KEY, id); };
@@ -339,6 +341,8 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
       const coinsTotal = readCoins() + g.coinsRun; localStorage.setItem(COINS_KEY, String(coinsTotal)); setCoins(coinsTotal);
       const nm = localStorage.getItem(NAME_KEY) || 'Tú';
       const newLb = [...readLB(), { name: nm, score: g.score }].sort((a, b) => b.score - a.score).slice(0, 10); localStorage.setItem(LB_KEY, JSON.stringify(newLb)); setLb(newLb);
+      const finalScore = g.score;
+      fetch('/api/escape-leaderboard', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ name: nm, score: finalScore }) }).then((r) => (r.ok ? r.json() : null)).then((d) => { if (d && Array.isArray(d.top)) setLb(d.top); }).catch(() => {});
       setOver(true);
     };
 
@@ -356,6 +360,8 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
       const coinsTotal = readCoins() + g.coinsRun; localStorage.setItem(COINS_KEY, String(coinsTotal)); setCoins(coinsTotal);
       const nm = localStorage.getItem(NAME_KEY) || 'Tú';
       const newLb = [...readLB(), { name: nm, score: g.score }].sort((a, b) => b.score - a.score).slice(0, 10); localStorage.setItem(LB_KEY, JSON.stringify(newLb)); setLb(newLb);
+      const finalScore = g.score;
+      fetch('/api/escape-leaderboard', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ name: nm, score: finalScore }) }).then((r) => (r.ok ? r.json() : null)).then((d) => { if (d && Array.isArray(d.top)) setLb(d.top); }).catch(() => {});
       setOver(true);
     };
 
