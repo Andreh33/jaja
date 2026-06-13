@@ -31,7 +31,15 @@ export default function HoodReveal({ open, onClose }: { open: boolean; onClose: 
     const onKey = (e: KeyboardEvent) => { if (e.code === 'Escape') onClose(); };
     window.addEventListener('keydown', onKey);
     const prev = document.body.style.overflow; document.body.style.overflow = 'hidden';
-    return () => { window.removeEventListener('keydown', onKey); document.body.style.overflow = prev; };
+    // el sitio oculta el cursor nativo (cursor personalizado que queda detrás del overlay);
+    // mientras está abierto el capó, restauramos el cursor nativo para que se vea.
+    const hadCustomCursor = document.body.classList.contains('has-custom-cursor');
+    if (hadCustomCursor) document.body.classList.remove('has-custom-cursor');
+    return () => {
+      window.removeEventListener('keydown', onKey);
+      document.body.style.overflow = prev;
+      if (hadCustomCursor) document.body.classList.add('has-custom-cursor');
+    };
   }, [open, onClose]);
 
   if (typeof document === 'undefined') return null;
