@@ -10,8 +10,8 @@ type Particle = { x: number; y: number; vx: number; vy: number; life: number; ma
 type Float = { x: number; y: number; vy: number; life: number; text: string; color: string; size: number };
 type WEnemy = { x: number; dead: number; passed: boolean };
 type Crack = { x1: number; y1: number; x2: number; y2: number; bx: number; by: number; bx2: number; by2: number; rx: number; ry: number };
-type Proj = { x: number; y: number; rot: number };
-type Pickup = { x: number; y: number; kind: 'shield' | 'heart'; ph: number };
+type Proj = { x: number; y: number; rot: number; kind: string };
+type Pickup = { x: number; y: number; kind: 'shield' | 'heart' | 'coin'; ph: number };
 type Boss = { state: 'enter' | 'idle' | 'telegraph' | 'dash' | 'low' | 'return' | 'dying'; x: number; y: number; baseX: number; baseY: number; hp: number; t: number; shootT: number; swoopT: number; phase: number; hitFlash: number; deadT: number; type: string };
 
 const GROUND_RATIO = 0.56; // horizonte hacia el centro (antes pegado abajo)
@@ -29,6 +29,14 @@ const DODGED_KEY = 'latech-escape-dodged';
 const SKIN_KEY = 'latech-escape-skin';
 const BOSSKILLS_KEY = 'latech-escape-bosskills';
 const MODE_KEY = 'latech-escape-mode';
+const COINS_KEY = 'latech-escape-coins';
+const OWNED_KEY = 'latech-escape-owned';
+const GAMEMODE_KEY = 'latech-escape-gamemode';
+const LB_KEY = 'latech-escape-lb';
+const NAME_KEY = 'latech-escape-name';
+const readCoins = () => Number(localStorage.getItem(COINS_KEY) || 0);
+const readOwned = (): string[] => { try { const o = JSON.parse(localStorage.getItem(OWNED_KEY) || '["default"]'); return Array.isArray(o) ? o : ['default']; } catch { return ['default']; } };
+const readLB = (): { name: string; score: number }[] => { try { const l = JSON.parse(localStorage.getItem(LB_KEY) || '[]'); return Array.isArray(l) ? l : []; } catch { return []; } };
 
 type Diff = { startSpeed: number; maxSpeed: number; accel: number; gapBase: number; bossAt: number; startLives: number; startShield: boolean; projSpeed: number; wTimer: number };
 const DIFF: Record<'facil' | 'normal', Diff> = {
@@ -36,17 +44,19 @@ const DIFF: Record<'facil' | 'normal', Diff> = {
   normal: { startSpeed: 320, maxSpeed: 660, accel: 10, gapBase: 380, bossAt: 18, startLives: 0, startShield: false, projSpeed: 1.05, wTimer: 4.5 },
 };
 
-type Skin = { id: string; name: string; c0: string; c1: string; c2: string; aura: string };
+type Skin = { id: string; name: string; c0: string; c1: string; c2: string; aura: string; price: number };
 const SKINS: Skin[] = [
-  { id: 'default', name: 'Clásica', c0: '#C9A6FF', c1: '#8B5CF6', c2: '#5B21B6', aura: '139,92,246' },
-  { id: 'dorada', name: 'Dorada', c0: '#FFE9A8', c1: '#FBBF24', c2: '#B45309', aura: '251,191,36' },
-  { id: 'neon', name: 'Neón', c0: '#7DF9FF', c1: '#22D3EE', c2: '#9333EA', aura: '34,211,238' },
-  { id: 'esmeralda', name: 'Esmeralda', c0: '#A7F3D0', c1: '#10B981', c2: '#065F46', aura: '16,185,129' },
+  { id: 'default', name: 'Clásica', c0: '#C9A6FF', c1: '#8B5CF6', c2: '#5B21B6', aura: '139,92,246', price: 0 },
+  { id: 'dorada', name: 'Dorada', c0: '#FFE9A8', c1: '#FBBF24', c2: '#B45309', aura: '251,191,36', price: 20 },
+  { id: 'neon', name: 'Neón', c0: '#7DF9FF', c1: '#22D3EE', c2: '#9333EA', aura: '34,211,238', price: 30 },
+  { id: 'esmeralda', name: 'Esmeralda', c0: '#A7F3D0', c1: '#10B981', c2: '#065F46', aura: '16,185,129', price: 40 },
+  { id: 'fuego', name: 'Fuego', c0: '#FED7AA', c1: '#F97316', c2: '#B91C1C', aura: '249,115,22', price: 55 },
+  { id: 'hielo', name: 'Hielo', c0: '#E0F2FE', c1: '#60A5FA', c2: '#1E40AF', aura: '96,165,250', price: 70 },
+  { id: 'rosa', name: 'Chicle', c0: '#FBCFE8', c1: '#EC4899', c2: '#9D174D', aura: '236,72,153', price: 90 },
+  { id: 'matrix', name: 'Matrix', c0: '#86EFAC', c1: '#22C55E', c2: '#14532D', aura: '34,197,94', price: 120 },
+  { id: 'galaxia', name: 'Galaxia', c0: '#C4B5FD', c1: '#7C3AED', c2: '#1E1B4B', aura: '124,58,237', price: 160 },
+  { id: 'oro', name: 'Oro puro', c0: '#FEF3C7', c1: '#F59E0B', c2: '#78350F', aura: '245,158,11', price: 220 },
 ];
-type SkinStats = { best: number; runs: number; bossKills: number };
-const skinUnlocked = (id: string, s: SkinStats) =>
-  id === 'default' || (id === 'dorada' && s.best >= 15) || (id === 'neon' && s.runs >= 5) || (id === 'esmeralda' && s.bossKills >= 1);
-const skinHint = (id: string) => id === 'dorada' ? 'récord ≥ 15' : id === 'neon' ? '5 partidas' : id === 'esmeralda' ? 'mata 1 jefe' : '';
 
 const SELECTORS = ['.glass', '[class*="rounded-3xl"]', '[class*="rounded-2xl"]', '[class*="rounded-xl"]', 'article', '[class*="card"]', 'li[class*="rounded"]'];
 
@@ -68,7 +78,7 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
 
   const [over, setOver] = useState(false);
   const [result, setResult] = useState({ score: 0, best: 0, record: false, killedBy: '' as string, runs: 0, dodged: 0, won: false });
-  const [hud, setHud] = useState({ lives: 0, shield: false });
+  const [hud, setHud] = useState({ lives: 0, shield: false, coins: 0 });
   const hudRef = useRef(setHud);
   const [muted, setMuted] = useState(false);
   const mutedRef = useRef(false);
@@ -82,22 +92,29 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
   useEffect(() => { if (open) { const m = (localStorage.getItem(MODE_KEY) as 'facil' | 'normal') || 'facil'; queueMicrotask(() => setMode(m === 'normal' ? 'normal' : 'facil')); } }, [open]);
   const chooseMode = (m: 'facil' | 'normal') => { setMode(m); modeRef.current = m; localStorage.setItem(MODE_KEY, m); };
 
+  const [gameMode, setGameMode] = useState<'campana' | 'infinito'>('infinito');
+  const gameModeRef = useRef<'campana' | 'infinito'>('infinito');
+  useEffect(() => { gameModeRef.current = gameMode; }, [gameMode]);
+  useEffect(() => { if (open) { const gm = (localStorage.getItem(GAMEMODE_KEY) as 'campana' | 'infinito') || 'infinito'; queueMicrotask(() => setGameMode(gm === 'campana' ? 'campana' : 'infinito')); } }, [open]);
+  const chooseGameMode = (gm: 'campana' | 'infinito') => { setGameMode(gm); gameModeRef.current = gm; localStorage.setItem(GAMEMODE_KEY, gm); };
+
   const [skin, setSkin] = useState('default');
-  const [unlocked, setUnlocked] = useState<string[]>(['default']);
+  const [owned, setOwned] = useState<string[]>(['default']);
+  const [coins, setCoins] = useState(0);
+  const [lb, setLb] = useState<{ name: string; score: number }[]>([]);
   const skinRef = useRef('default');
   useEffect(() => { skinRef.current = skin; }, [skin]);
-  // recalcula skins desbloqueadas al abrir (refleja progreso)
   useEffect(() => {
     if (!open) return;
     queueMicrotask(() => {
-      const stats = { best: +(localStorage.getItem(BEST_KEY) || 0), runs: +(localStorage.getItem(RUNS_KEY) || 0), bossKills: +(localStorage.getItem(BOSSKILLS_KEY) || 0) };
-      const un = SKINS.filter((s) => skinUnlocked(s.id, stats)).map((s) => s.id);
-      setUnlocked(un);
+      const o = readOwned(); setOwned(o); setCoins(readCoins()); setLb(readLB());
       const saved = localStorage.getItem(SKIN_KEY) || 'default';
-      setSkin(un.includes(saved) ? saved : 'default');
+      setSkin(o.includes(saved) ? saved : 'default');
     });
   }, [open]);
-  const chooseSkin = (id: string) => { setSkin(id); skinRef.current = id; localStorage.setItem(SKIN_KEY, id); };
+  const equipSkin = (id: string) => { if (!readOwned().includes(id)) return; setSkin(id); skinRef.current = id; localStorage.setItem(SKIN_KEY, id); };
+  const buySkin = (s: Skin) => { const c = readCoins(), o = readOwned(); if (o.includes(s.id) || c < s.price) return; const nc = c - s.price, no = [...o, s.id]; localStorage.setItem(COINS_KEY, String(nc)); localStorage.setItem(OWNED_KEY, JSON.stringify(no)); setCoins(nc); setOwned(no); setSkin(s.id); skinRef.current = s.id; localStorage.setItem(SKIN_KEY, s.id); };
+  const renameLatest = (v: string) => { const nm = (v || 'Tú').slice(0, 14) || 'Tú'; localStorage.setItem(NAME_KEY, nm); const idx = lb.findIndex((e) => e.score === result.score); if (idx >= 0) { const nl = lb.map((e, i) => (i === idx ? { ...e, name: nm } : e)); localStorage.setItem(LB_KEY, JSON.stringify(nl)); setLb(nl); } };
 
   useEffect(() => {
     if (!open) return;
@@ -182,6 +199,8 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
       for (const sel of SELECTORS) {
         document.querySelectorAll<HTMLElement>(sel).forEach((el) => {
           if (seen.has(el) || el.closest('.escape-overlay')) return;
+          // descarta tarjetas con contadores animados (NumberFlow/tabular-nums): clonadas saldrían en "0"
+          if (el.querySelector('number-flow-react, [class*="tabular-nums"]') || /(^|\s)0\s*[%+★]/.test(el.textContent || '')) return;
           const r = el.getBoundingClientRect();
           const st = getComputedStyle(el);
           const visible = st.visibility !== 'hidden' && st.display !== 'none' && parseFloat(st.opacity || '1') > 0.5;
@@ -246,11 +265,11 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
       wTimer: 4.5, wEnemy: null as WEnemy | null,
       cracks: [] as Crack[], crackT: 0, damage: 0,
       boss: null as Boss | null, bossAt: BOSS_SCORE, bossNum: 0, proj: [] as Proj[],
-      lives: 0, shield: false, pickups: [] as Pickup[], pickupT: 6,
+      lives: 0, shield: false, pickups: [] as Pickup[], pickupT: 6, coinsRun: 0,
       dashT: 0, dashCd: 0, glitch: 0,
       invertView: false, flipTimer: 22, flipTele: 0, flipDur: 0,
     };
-    const syncHud = () => hudRef.current({ lives: g.lives, shield: g.shield });
+    const syncHud = () => hudRef.current({ lives: g.lives, shield: g.shield, coins: g.coinsRun });
     const applyDiff = () => { const c = DIFF[modeRef.current]; g.speed = c.startSpeed; g.bossAt = c.bossAt; g.lives = c.startLives; g.shield = c.startShield; g.wTimer = c.wTimer; syncHud(); };
 
     const obstacles: Obstacle[] = [];
@@ -317,8 +336,9 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
       const runs = Number(localStorage.getItem(RUNS_KEY) || 0) + 1; localStorage.setItem(RUNS_KEY, String(runs));
       const dodged = Number(localStorage.getItem(DODGED_KEY) || 0) + g.score; localStorage.setItem(DODGED_KEY, String(dodged));
       setResult({ score: g.score, best: Math.max(best0, g.score), record, killedBy, runs, dodged, won: false });
-      const stats = { best: Math.max(best0, g.score), runs, bossKills: +(localStorage.getItem(BOSSKILLS_KEY) || 0) };
-      setUnlocked(SKINS.filter((s) => skinUnlocked(s.id, stats)).map((s) => s.id));
+      const coinsTotal = readCoins() + g.coinsRun; localStorage.setItem(COINS_KEY, String(coinsTotal)); setCoins(coinsTotal);
+      const nm = localStorage.getItem(NAME_KEY) || 'Tú';
+      const newLb = [...readLB(), { name: nm, score: g.score }].sort((a, b) => b.score - a.score).slice(0, 10); localStorage.setItem(LB_KEY, JSON.stringify(newLb)); setLb(newLb);
       setOver(true);
     };
 
@@ -333,8 +353,9 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
       const runs = Number(localStorage.getItem(RUNS_KEY) || 0) + 1; localStorage.setItem(RUNS_KEY, String(runs));
       const dodged = Number(localStorage.getItem(DODGED_KEY) || 0) + g.score; localStorage.setItem(DODGED_KEY, String(dodged));
       setResult({ score: g.score, best: Math.max(best0, g.score), record, killedBy: '', runs, dodged, won: true });
-      const stats = { best: Math.max(best0, g.score), runs, bossKills: +(localStorage.getItem(BOSSKILLS_KEY) || 0) };
-      setUnlocked(SKINS.filter((s) => skinUnlocked(s.id, stats)).map((s) => s.id));
+      const coinsTotal = readCoins() + g.coinsRun; localStorage.setItem(COINS_KEY, String(coinsTotal)); setCoins(coinsTotal);
+      const nm = localStorage.getItem(NAME_KEY) || 'Tú';
+      const newLb = [...readLB(), { name: nm, score: g.score }].sort((a, b) => b.score - a.score).slice(0, 10); localStorage.setItem(LB_KEY, JSON.stringify(newLb)); setLb(newLb);
       setOver(true);
     };
 
@@ -367,7 +388,7 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
 
     const spawnBoss = () => {
       const gy = groundY();
-      const t = BOSS_TYPES[Math.min(g.bossNum, BOSS_TYPES.length - 1)];
+      const t = BOSS_TYPES[gameModeRef.current === 'infinito' ? g.bossNum % BOSS_TYPES.length : Math.min(g.bossNum, BOSS_TYPES.length - 1)];
       const hp = 3 + Math.min(2, g.bossNum); // sube por acto
       g.boss = { state: 'enter', x: W + 140, y: gy - 130, baseX: W * 0.72, baseY: gy - 130, hp, t: 0, shootT: 1.4, swoopT: 3.4, phase: 0, hitFlash: 0, deadT: 0, type: t.id };
       for (const o of obstacles) o.node.remove(); obstacles.length = 0; g.wEnemy = null; g.proj.length = 0;
@@ -377,13 +398,22 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
       float(W * 0.55, gy - 230, `ACTO ${g.bossNum + 1}/4 · ¡${t.name}!`, '#ef4444', 24);
       ensureAudio(); sBossIn();
     };
-    const shootPlugin = () => { const b = g.boss!; const gy = groundY(); g.proj.push({ x: b.x - 30, y: gy - 26, rot: 0 }); sShoot(); };
+    // cada jefe ataca distinto
+    const bossAttack = (b: Boss) => {
+      const gy = groundY();
+      if (b.type === 'plantilla') { for (let k = 0; k < 3; k++) g.proj.push({ x: b.x - 16 - k * 60, y: gy - 26, rot: 0, kind: 'plantilla' }); } // muro de bloques
+      else if (b.type === 'plugin') { g.proj.push({ x: b.x - 16, y: gy - 26, rot: 0, kind: 'plugin' }); g.proj.push({ x: b.x - 130, y: gy - 26, rot: 0, kind: 'plugin' }); } // doble rápido
+      else if (b.type === 'lenta') { g.slow = Math.max(g.slow, 0.5); g.proj.push({ x: b.x - 16, y: gy - 30, rot: 0, kind: 'lenta' }); } // te ralentiza + bola lenta
+      else { g.proj.push({ x: b.x - 16, y: gy - 26, rot: 0, kind: 'wp' }); if (b.hp <= 2 && Math.random() < 0.5) g.proj.push({ x: b.x - 95, y: gy - 26, rot: 0, kind: 'wp' }); }
+      sShoot();
+    };
+    const bossShootInterval = (b: Boss) => (b.type === 'plantilla' ? 1.9 : b.type === 'plugin' ? 1.0 : b.type === 'lenta' ? 2.2 : 1.4);
 
     const resetGame = () => {
       for (const o of obstacles) o.node.remove(); obstacles.length = 0; particles.length = 0; floats.length = 0; g.proj.length = 0; g.pickups.length = 0;
       g.boss = null; g.wEnemy = null; g.pickupT = 6; g.bossNum = 0;
       g.phase = 'playing'; g.punched = true; g.beanX = RUN_X; g.y = groundY(); g.prevY = groundY(); g.vy = 0; g.onGround = true; g.jumpsLeft = 2;
-      g.score = 0; g.dist = 0; g.invuln = 0.9; g.pressAt = -1;
+      g.score = 0; g.dist = 0; g.invuln = 0.9; g.pressAt = -1; g.coinsRun = 0;
       g.invertView = false; g.flipTimer = 22; g.flipTele = 0; g.flipDur = 0; layer.style.transform = 'none';
       applyDiff(); setOver(false);
     };
@@ -544,11 +574,11 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
           const lastO = obstacles[obstacles.length - 1]; const gap = cfg.gapBase + g.speed * 0.5 + Math.random() * 240;
           if (!lastO || lastO.x < W - lastO.w - gap) spawn();
           g.wTimer -= dt; if (g.wTimer <= 0 && !g.wEnemy) { g.wEnemy = { x: W + 60, dead: 0, passed: false }; g.wTimer = 7 + Math.random() * 5; }
-          g.pickupT -= dt; if (g.pickupT <= 0) { const kind: 'shield' | 'heart' = Math.random() < 0.68 ? 'shield' : 'heart'; g.pickups.push({ x: W + 40, y: groundY() - 100 - Math.random() * 80, kind, ph: Math.random() * 6.28 }); g.pickupT = 8 + Math.random() * 6; }
+          g.pickupT -= dt; if (g.pickupT <= 0) { const rr2 = Math.random(); const kind: 'shield' | 'heart' | 'coin' = rr2 < 0.62 ? 'coin' : rr2 < 0.88 ? 'shield' : 'heart'; g.pickups.push({ x: W + 40, y: groundY() - 56 - Math.random() * 130, kind, ph: Math.random() * 6.28 }); g.pickupT = kind === 'coin' ? 2.6 + Math.random() * 2.4 : 7 + Math.random() * 5; }
           // GRAVEDAD INVERTIDA por tramos (volteo de vista; física intacta)
-          if (g.invertView) { g.flipDur -= dt; if (g.flipDur <= 0) { g.invertView = false; g.whiteFlash = 0.55; g.shake = 0.45; g.glitch = 0.7; sFlip(); g.flipTimer = 20 + Math.random() * 12; } }
-          else if (g.flipTele > 0) { g.flipTele -= dt; if (g.flipTele <= 0) { g.invertView = true; g.flipDur = 7; g.whiteFlash = 0.55; g.shake = 0.45; g.glitch = 0.7; sFlip(); } }
-          else { g.flipTimer -= dt; if (g.flipTimer <= 0 && g.score > 6) { g.flipTele = 1.3; float(g.beanX, g.y - 72, '¡GRAVEDAD INVERTIDA!', '#FBBF24', 22); } }
+          if (g.invertView) { g.flipDur -= dt; if (g.flipDur <= 0) { g.invertView = false; g.whiteFlash = 0.6; g.shake = 0.45; g.glitch = 0.8; sFlip(); burst(g.beanX, g.y - 30, 32, ['#22d3ee', '#d946ef', '#fff'], 1.7); g.flipTimer = 20 + Math.random() * 12; } }
+          else if (g.flipTele > 0) { g.flipTele -= dt; if (g.flipTele <= 0) { g.invertView = true; g.flipDur = 7; g.whiteFlash = 0.6; g.shake = 0.45; g.glitch = 0.8; sFlip(); burst(g.beanX, g.y - 30, 32, ['#22d3ee', '#d946ef', '#fff'], 1.7); } }
+          else { g.flipTimer -= dt; if (g.flipTimer <= 0 && g.score > 6) { g.flipTele = 1.3; float(g.beanX, g.y - 72, '▲ MODO INVERSO ▲', '#22d3ee', 22); } }
         }
         // hito cada 10 esquivados: sonido + glitch + texto
         if (Math.floor(g.score / 10) > Math.floor(lastScore / 10)) { sMilestone(); g.whiteFlash = Math.max(g.whiteFlash, 0.3); g.glitch = Math.max(g.glitch, 0.6); g.crackT = Math.min(g.crackT, 0.9); float(g.beanX, g.y - 64, `¡${g.score}!`, '#C9A6FF', 20); }
@@ -609,13 +639,13 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
       // ---- JEFE ----
       if (g.boss && active) {
         const b = g.boss; b.t += dt; b.hitFlash = Math.max(0, b.hitFlash - dt * 3);
-        if (b.state === 'dying') { b.deadT += dt * 1.4; if (b.deadT >= 1) { const wasWP = b.type === 'wordpress'; g.boss = null; g.invuln = 0.5; if (wasWP) winGame(); else g.bossAt = g.score + 30; } }
+        if (b.state === 'dying') { b.deadT += dt * 1.4; if (b.deadT >= 1) { const finalWin = b.type === 'wordpress' && gameModeRef.current === 'campana'; g.boss = null; g.invuln = 0.5; if (finalWin) winGame(); else g.bossAt = g.score + 30; } }
         else {
           if (b.state === 'enter') { b.x += (b.baseX - b.x) * Math.min(1, dt * 2.4); b.y = b.baseY + Math.sin(b.t * 2) * 8; if (Math.abs(b.x - b.baseX) < 8) { b.x = b.baseX; b.state = 'idle'; } }
           else if (b.state === 'idle') {
             const enraged = b.hp <= 1; const rage = enraged ? 0.6 : 1; // fase furia: más rápido
             b.x += (b.baseX - b.x) * Math.min(1, dt * 4); b.y = b.baseY + Math.sin(b.t * 2) * 12;
-            b.shootT -= dt; if (b.shootT <= 0) { shootPlugin(); if (b.hp <= 2 && Math.random() < 0.5) g.proj.push({ x: b.x - 95, y: groundY() - 26, rot: 0 }); b.shootT = (1.4 + Math.random() * 0.8) * rage; }
+            b.shootT -= dt; if (b.shootT <= 0) { bossAttack(b); b.shootT = (bossShootInterval(b) + Math.random() * 0.7) * rage; }
             b.swoopT -= dt; if (b.swoopT <= 0) { b.state = 'telegraph'; b.phase = 0; }
           }
           else if (b.state === 'telegraph') { b.phase += dt; if (b.phase >= 0.45) { b.state = 'dash'; b.phase = 0; } }
@@ -635,7 +665,7 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
 
       // proyectiles "plugin"
       if (active) for (let i = g.proj.length - 1; i >= 0; i--) {
-        const p = g.proj[i]; p.x -= (g.speed * 1.05 + 120) * DIFF[modeRef.current].projSpeed * dt; p.rot += dt * 6;
+        const p = g.proj[i]; const km = p.kind === 'plugin' ? 1.45 : p.kind === 'lenta' ? 0.6 : 1; p.x -= (g.speed * 1.05 + 120) * DIFF[modeRef.current].projSpeed * km * dt; p.rot += dt * (p.kind === 'lenta' ? 2 : 6);
         const ph = 30, px0 = p.x - ph / 2, px1 = p.x + ph / 2, py0 = p.y - ph / 2, py1 = p.y + ph / 2;
         if (g.phase === 'playing' && g.invuln <= 0 && bx1 > px0 && bx0 < px1 && by1 > py0 && by0 < py1) takeHit('un plugin');
         if (p.x < -40) g.proj.splice(i, 1);
@@ -646,7 +676,9 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
         const p = g.pickups[i]; if (g.phase === 'playing') p.x -= g.speed * dt; p.ph += dt * 3;
         const dx = p.x - g.beanX, dy = (p.y + Math.sin(p.ph) * 5) - (g.y - 28);
         if (g.phase === 'playing' && dx * dx + dy * dy < 34 * 34) {
-          if (p.kind === 'shield') { g.shield = true; float(p.x, p.y, '+ escudo', '#38BDF8'); } else { g.lives += 1; float(p.x, p.y, '+ vida', '#FB7185'); }
+          if (p.kind === 'coin') { g.coinsRun += 1; burst(p.x, p.y, 6, ['#FBBF24', '#FFE9A8']); float(p.x, p.y, '+1', '#FBBF24', 13); }
+          else if (p.kind === 'shield') { g.shield = true; float(p.x, p.y, '+ escudo', '#38BDF8'); }
+          else { g.lives += 1; float(p.x, p.y, '+ vida', '#FB7185'); }
           sPickup(); syncHud(); g.pickups.splice(i, 1); continue;
         }
         if (p.x < -50) g.pickups.splice(i, 1);
@@ -696,11 +728,18 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
       if (g.wEnemy) drawWTile(g.wEnemy.x, gy - 30, 52, g.wEnemy.dead, true);
       if (g.boss) drawBoss(g.boss);
 
-      // proyectiles
+      // proyectiles (icono por tipo de jefe)
       for (const p of g.proj) {
-        ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.rot); ctx.shadowColor = 'rgba(239,68,68,0.7)'; ctx.shadowBlur = 10;
-        ctx.fillStyle = '#1f2a44'; ctx.beginPath(); ctx.roundRect(-15, -15, 30, 30, 7); ctx.fill(); ctx.shadowBlur = 0;
-        ctx.fillStyle = '#9fb3d6'; ctx.font = '700 11px ui-sans-serif'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText('wp', 0, 1); ctx.textAlign = 'start'; ctx.textBaseline = 'alphabetic';
+        const pk = p.kind || 'wp';
+        const bg = pk === 'plugin' ? '#7a5a12' : pk === 'plantilla' ? '#3a4150' : pk === 'lenta' ? '#334155' : '#1f2a44';
+        ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(pk === 'lenta' ? p.rot : p.rot); ctx.shadowColor = 'rgba(239,68,68,0.7)'; ctx.shadowBlur = 10;
+        ctx.fillStyle = bg; ctx.beginPath(); ctx.roundRect(-15, -15, 30, 30, 7); ctx.fill(); ctx.shadowBlur = 0;
+        ctx.fillStyle = '#cdd7ea'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+        if (pk === 'plugin') { ctx.fillStyle = '#fcd34d'; ctx.font = '900 16px ui-sans-serif'; ctx.fillText('$', 0, 1); }
+        else if (pk === 'plantilla') { ctx.fillStyle = '#aab4c4'; for (const sx of [-1, 1] as const) for (const sy of [-1, 1] as const) ctx.fillRect(sx > 0 ? 1 : -7, sy > 0 ? 1 : -7, 6, 6); }
+        else if (pk === 'lenta') { ctx.strokeStyle = '#9fb3d6'; ctx.lineWidth = 2.5; ctx.lineCap = 'round'; ctx.beginPath(); ctx.arc(0, 0, 8, 0, Math.PI * 1.4); ctx.stroke(); }
+        else { ctx.font = '700 11px ui-sans-serif'; ctx.fillText('wp', 0, 1); }
+        ctx.textAlign = 'start'; ctx.textBaseline = 'alphabetic';
         ctx.restore();
       }
 
@@ -708,7 +747,13 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
       for (const p of g.pickups) {
         const oy = p.y + Math.sin(p.ph) * 5;
         ctx.save(); ctx.translate(p.x, oy);
-        if (p.kind === 'shield') {
+        if (p.kind === 'coin') {
+          const rw = 2 + Math.abs(Math.cos(p.ph * 1.5)) * 9; // gira
+          ctx.shadowColor = 'rgba(251,191,36,0.9)'; ctx.shadowBlur = 14;
+          const cg = ctx.createLinearGradient(0, -10, 0, 10); cg.addColorStop(0, '#FFE9A8'); cg.addColorStop(0.5, '#FBBF24'); cg.addColorStop(1, '#F59E0B');
+          ctx.fillStyle = cg; ctx.beginPath(); ctx.ellipse(0, 0, rw, 10, 0, 0, Math.PI * 2); ctx.fill(); ctx.shadowBlur = 0;
+          if (rw > 5) { ctx.strokeStyle = 'rgba(120,60,0,0.45)'; ctx.lineWidth = 1; ctx.beginPath(); ctx.ellipse(0, 0, rw * 0.5, 5, 0, 0, Math.PI * 2); ctx.stroke(); }
+        } else if (p.kind === 'shield') {
           ctx.shadowColor = 'rgba(56,189,248,0.9)'; ctx.shadowBlur = 16; ctx.fillStyle = '#38BDF8';
           ctx.beginPath(); ctx.moveTo(0, -13); ctx.lineTo(12, -7); ctx.lineTo(12, 3); ctx.quadraticCurveTo(12, 13, 0, 17); ctx.quadraticCurveTo(-12, 13, -12, 3); ctx.lineTo(-12, -7); ctx.closePath(); ctx.fill();
           ctx.shadowBlur = 0; ctx.fillStyle = '#06283a'; ctx.font = '700 13px ui-sans-serif'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText('✓', 0, 1); ctx.textAlign = 'start'; ctx.textBaseline = 'alphabetic';
@@ -791,6 +836,13 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
           ctx.globalCompositeOperation = 'source-over'; ctx.globalAlpha = 1;
         }
       }
+
+      // modo inverso estilo Geometry Dash: tinte neón cian/magenta
+      if (g.invertView) {
+        const ng = ctx.createLinearGradient(0, 0, W, H); ng.addColorStop(0, '#22d3ee'); ng.addColorStop(1, '#d946ef');
+        ctx.globalCompositeOperation = 'overlay'; ctx.globalAlpha = 0.12 + 0.05 * Math.sin(g.t * 4); ctx.fillStyle = ng; ctx.fillRect(0, 0, W, H);
+        ctx.globalCompositeOperation = 'source-over'; ctx.globalAlpha = 1;
+      }
     };
     raf = requestAnimationFrame((t) => { last = t; loop(t); });
 
@@ -842,22 +894,27 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
           </motion.div>
 
           <div className="pointer-events-none absolute left-1/2 top-5 -translate-x-1/2 flex flex-col items-center gap-2">
-            {(hud.lives > 0 || hud.shield) && (
-              <div className="flex items-center gap-2.5 rounded-full px-4 py-2"
-                style={{ background: 'var(--bg-glass-strong)', border: '1px solid var(--border-subtle)', backdropFilter: 'blur(10px)' }}>
-                {Array.from({ length: hud.lives }).map((_, i) => <Heart key={i} size={24} className="text-rose-400" fill="currentColor" />)}
-                {hud.shield && <Shield size={24} className="text-sky-400" fill="currentColor" />}
-              </div>
-            )}
+            <div className="flex items-center gap-2.5 rounded-full px-4 py-2"
+              style={{ background: 'var(--bg-glass-strong)', border: '1px solid var(--border-subtle)', backdropFilter: 'blur(10px)' }}>
+              <span className="font-mono text-sm font-bold" style={{ color: '#FBBF24' }}>🪙 {hud.coins}</span>
+              {(hud.lives > 0 || hud.shield) && <span className="mx-0.5 h-5 w-px bg-white/15" />}
+              {Array.from({ length: hud.lives }).map((_, i) => <Heart key={i} size={22} className="text-rose-400" fill="currentColor" />)}
+              {hud.shield && <Shield size={22} className="text-sky-400" fill="currentColor" />}
+            </div>
             <p className="font-mono text-sm text-white/85">esquivados · <span ref={scoreRef} style={{ color: '#FBBF24' }}>0</span></p>
             <p className="text-xs text-white/45">ESPACIO salta (mantén = más alto) · MAYÚS/D dash · pisa la W · ESC salir</p>
           </div>
 
-          {/* selector de dificultad */}
+          {/* selectores de dificultad y modo */}
           <button onClick={() => chooseMode(mode === 'facil' ? 'normal' : 'facil')}
             className="absolute left-6 top-[72px] z-[210] rounded-full px-3.5 py-1.5 text-xs font-semibold text-white/85 transition-transform hover:scale-105"
             style={{ background: 'var(--bg-glass-strong)', border: '1px solid var(--border-subtle)', backdropFilter: 'blur(8px)' }} aria-label="Cambiar dificultad">
             {mode === 'facil' ? '🌱 Fácil' : '🔥 Normal'}
+          </button>
+          <button onClick={() => chooseGameMode(gameMode === 'infinito' ? 'campana' : 'infinito')}
+            className="absolute left-6 top-[112px] z-[210] rounded-full px-3.5 py-1.5 text-xs font-semibold text-white/85 transition-transform hover:scale-105"
+            style={{ background: 'var(--bg-glass-strong)', border: '1px solid var(--border-subtle)', backdropFilter: 'blur(8px)' }} aria-label="Cambiar modo">
+            {gameMode === 'infinito' ? '∞ Infinito' : '🏆 Campaña'}
           </button>
 
           {/* botón de dash (táctil) */}
@@ -881,7 +938,7 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
           <AnimatePresence>
             {over && (
               <motion.div className="absolute inset-0 flex items-center justify-center" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-                <motion.div className="flex flex-col items-center gap-3 rounded-3xl px-10 py-9 text-center"
+                <motion.div className="flex max-h-[92vh] flex-col items-center gap-2.5 overflow-y-auto rounded-3xl px-8 py-7 text-center"
                   initial={{ scale: 0.8, y: 20 }} animate={{ scale: 1, y: 0 }} transition={{ type: 'spring', stiffness: 200, damping: 18 }}
                   style={{ background: 'var(--bg-glass-strong)', border: '1px solid var(--border-subtle)', backdropFilter: 'blur(16px)', boxShadow: '0 30px 80px -20px rgba(0,0,0,0.7)' }}>
                   {result.won ? <Sparkles size={36} className="text-amber-300" /> : <Skull size={34} className="text-white/80" />}
@@ -894,27 +951,62 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
                       : <span className="inline-flex items-center gap-1 text-white/50"> · <Trophy size={12} /> {result.best}</span>}
                   </p>
                   <p className="text-xs text-white/40">partida #{result.runs} · {result.dodged} esquivados en total</p>
-                  <div className="mt-1 flex items-center gap-2">
-                    <span className="text-[11px] uppercase tracking-widest text-white/35">modo</span>
-                    {(['facil', 'normal'] as const).map((m) => (
-                      <button key={m} onClick={() => chooseMode(m)} className="rounded-full px-3 py-1 text-xs font-semibold transition-colors"
-                        style={mode === m ? { background: 'linear-gradient(180deg, var(--purple-400), var(--purple-600))', color: '#fff' } : { color: 'rgba(255,255,255,0.55)', border: '1px solid var(--border-subtle)' }}>
-                        {m === 'facil' ? '🌱 Fácil' : '🔥 Normal'}
-                      </button>
-                    ))}
-                  </div>
-                  <div className="mt-1 flex items-center gap-2">
-                    <span className="text-[11px] uppercase tracking-widest text-white/35">skin</span>
-                    {SKINS.map((s) => {
-                      const isUnlocked = unlocked.includes(s.id);
-                      return (
-                        <button key={s.id} onClick={() => isUnlocked && chooseSkin(s.id)} disabled={!isUnlocked} title={isUnlocked ? s.name : `Bloqueada · ${skinHint(s.id)}`}
-                          className="h-8 w-8 rounded-full transition-transform hover:scale-110 disabled:cursor-not-allowed"
-                          style={{ background: `linear-gradient(135deg, ${s.c0}, ${s.c2})`, opacity: isUnlocked ? 1 : 0.25, border: skin === s.id ? '2px solid #fff' : '2px solid transparent' }}>
-                          {!isUnlocked && <span className="text-[11px]">🔒</span>}
+
+                  {/* selectores: modo y dificultad */}
+                  <div className="mt-1 flex flex-wrap items-center justify-center gap-x-3 gap-y-1">
+                    <div className="flex items-center gap-1.5">
+                      <span className="text-[10px] uppercase tracking-widest text-white/35">modo</span>
+                      {(['infinito', 'campana'] as const).map((gm) => (
+                        <button key={gm} onClick={() => chooseGameMode(gm)} className="rounded-full px-2.5 py-1 text-xs font-semibold transition-colors"
+                          style={gameMode === gm ? { background: 'linear-gradient(180deg, var(--purple-400), var(--purple-600))', color: '#fff' } : { color: 'rgba(255,255,255,0.55)', border: '1px solid var(--border-subtle)' }}>
+                          {gm === 'infinito' ? '∞ Infinito' : '🏆 Campaña'}
                         </button>
-                      );
-                    })}
+                      ))}
+                    </div>
+                    <div className="flex items-center gap-1.5">
+                      <span className="text-[10px] uppercase tracking-widest text-white/35">dif.</span>
+                      {(['facil', 'normal'] as const).map((m) => (
+                        <button key={m} onClick={() => chooseMode(m)} className="rounded-full px-2.5 py-1 text-xs font-semibold transition-colors"
+                          style={mode === m ? { background: 'linear-gradient(180deg, var(--purple-400), var(--purple-600))', color: '#fff' } : { color: 'rgba(255,255,255,0.55)', border: '1px solid var(--border-subtle)' }}>
+                          {m === 'facil' ? '🌱' : '🔥'}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* ranking (local) */}
+                  {lb.length > 0 && (
+                    <div className="mt-1 w-60 text-left">
+                      <div className="mb-1 flex items-center justify-between">
+                        <span className="text-[10px] uppercase tracking-widest text-white/35">Ranking</span>
+                        <input defaultValue={(typeof window !== 'undefined' && localStorage.getItem(NAME_KEY)) || 'Tú'} onChange={(e) => renameLatest(e.target.value)} maxLength={14} placeholder="tu nombre"
+                          className="w-24 rounded-md bg-white/5 px-2 py-0.5 text-right text-[11px] text-white outline-none" style={{ border: '1px solid var(--border-subtle)' }} />
+                      </div>
+                      <ol className="space-y-0.5">
+                        {lb.slice(0, 5).map((e, i) => {
+                          const mine = e.score === result.score && i === lb.findIndex((x) => x.score === result.score);
+                          return <li key={i} className="flex justify-between font-mono text-xs" style={{ color: mine ? '#FBBF24' : 'rgba(255,255,255,0.55)' }}><span className="truncate">{i + 1}. {e.name}</span><span>{e.score}</span></li>;
+                        })}
+                      </ol>
+                    </div>
+                  )}
+
+                  {/* tienda de skins (canjea monedas) */}
+                  <div className="mt-1 w-72">
+                    <p className="mb-1.5 text-[10px] uppercase tracking-widest text-white/35">Tienda · <span style={{ color: '#FBBF24' }}>🪙 {coins}</span></p>
+                    <div className="flex flex-wrap justify-center gap-2">
+                      {SKINS.map((s) => {
+                        const own = owned.includes(s.id); const canBuy = coins >= s.price;
+                        return (
+                          <button key={s.id} onClick={() => (own ? equipSkin(s.id) : canBuy && buySkin(s))} disabled={!own && !canBuy}
+                            title={own ? s.name : `${s.name} · 🪙 ${s.price}`}
+                            className="relative inline-flex h-9 w-9 items-center justify-center rounded-full text-[10px] font-bold text-white transition-transform hover:scale-110 disabled:cursor-not-allowed"
+                            style={{ background: `linear-gradient(135deg, ${s.c0}, ${s.c2})`, opacity: own || canBuy ? 1 : 0.32, border: skin === s.id ? '2px solid #fff' : '2px solid transparent', textShadow: '0 1px 2px rgba(0,0,0,0.6)' }}>
+                            {!own && (s.price)}
+                          </button>
+                        );
+                      })}
+                    </div>
                   </div>
                   <div className="mt-2 flex gap-3">
                     <button onClick={() => resetRef.current()} className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-white transition-transform hover:scale-105"
