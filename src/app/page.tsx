@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import AuroraBackground from '@/components/effects/AuroraBackground';
 import MouseGlow from '@/components/effects/MouseGlow';
+import Breathe from '@/components/effects/Breathe';
+import IntroCinematic from '@/components/effects/IntroCinematic';
 import { SignatureMarquee } from '@/components/effects/Marquee';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
@@ -29,6 +31,7 @@ export default function Home() {
   return (
     <>
       <JsonLd data={faqJsonLd(FAQS)} />
+      <IntroCinematic />
       <SignatureMarquee />
       <Navbar />
       <AuroraBackground intensity="strong" />
@@ -36,14 +39,14 @@ export default function Home() {
       <main className="relative">
         <Hero />
         <TechMarquee />
-        <WordPressCompareSection />
-        <ServicesGrid />
-        <ProcessSection />
+        <Breathe><WordPressCompareSection /></Breathe>
+        <Breathe><ServicesGrid /></Breathe>
+        <Breathe><ProcessSection /></Breathe>
         <PlaygroundSection />
-        <StatsSection />
-        <TestimonialsCarousel />
-        <FAQSection />
-        <CTABanner />
+        <Breathe><StatsSection /></Breathe>
+        <Breathe><TestimonialsCarousel /></Breathe>
+        <Breathe><FAQSection /></Breathe>
+        <Breathe><CTABanner /></Breathe>
       </main>
       <Footer />
     </>

@@ -12,7 +12,10 @@ type WEnemy = { x: number; dead: number; passed: boolean };
 type Crack = { x1: number; y1: number; x2: number; y2: number; bx: number; by: number; bx2: number; by2: number; rx: number; ry: number };
 type Proj = { x: number; y: number; rot: number; kind: string };
 type Pickup = { x: number; y: number; kind: 'shield' | 'heart' | 'coin'; ph: number };
-type Boss = { state: 'enter' | 'idle' | 'telegraph' | 'dash' | 'low' | 'return' | 'dying'; x: number; y: number; baseX: number; baseY: number; hp: number; t: number; shootT: number; swoopT: number; phase: number; hitFlash: number; deadT: number; type: string };
+type Boss = { state: 'enter' | 'idle' | 'telegraph' | 'dash' | 'low' | 'return' | 'dying'; x: number; y: number; baseX: number; baseY: number; hp: number; t: number; shootT: number; swoopT: number; phase: number; hitFlash: number; deadT: number; type: string; mega: boolean };
+type WeatherKind = 'clear' | 'rain' | 'storm' | 'fog';
+type WeatherFx = { x: number; y: number; vx: number; vy: number; r: number; rot: number; a: number; kind: WeatherKind };
+type Hole = { x: number; w: number };
 
 const GROUND_RATIO = 0.56; // horizonte hacia el centro (antes pegado abajo)
 const RUN_X = 160;
@@ -180,6 +183,9 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
     const sMilestone = () => { [0, 0.09, 0.18].forEach((d, i) => tone(520 + i * 180, null, 0.14, 'triangle', 0.18, d)); };
     const sDash = () => { tone(180, 900, 0.18, 'sawtooth', 0.3); noise(0.12, 0.2, 'highpass', 1800); };
     const sFlip = () => { tone(600, 120, 0.3, 'sine', 0.3); tone(120, 600, 0.3, 'sine', 0.22, 0.12); };
+    const sThunder = () => { noise(0.55, 0.42, 'lowpass', 420); tone(64, 30, 0.6, 'sawtooth', 0.32); };
+    const sWeather = () => { tone(520, 760, 0.16, 'sine', 0.12); tone(760, 520, 0.14, 'sine', 0.08, 0.08); };
+    const sFall = () => { tone(420, 70, 0.5, 'sawtooth', 0.34); noise(0.2, 0.2, 'lowpass', 700, 0.05); };
 
     // ---------- origen: la tarjeta REAL del juego (acotado al viewport) ----------
     const vw0 = window.innerWidth, vh0 = window.innerHeight;
@@ -270,6 +276,10 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
       lives: 0, shield: false, pickups: [] as Pickup[], pickupT: 6, coinsRun: 0,
       dashT: 0, dashCd: 0, glitch: 0,
       invertView: false, flipTimer: 22, flipTele: 0, flipDur: 0,
+      // #5 clima dinámico (decorativo, sin colisión)
+      weather: 'clear' as WeatherKind, weatherT: 13, weatherFx: [] as WeatherFx[], lightning: 0,
+      // #9 zona 404: el suelo desaparece a trozos
+      holes: [] as Hole[], zone404: false, zoneTimer: 26, zoneTele: 0, zoneLeft: 0, holeGap: 0,
     };
     const syncHud = () => hudRef.current({ lives: g.lives, shield: g.shield, coins: g.coinsRun });
     const applyDiff = () => { const c = DIFF[modeRef.current]; g.speed = c.startSpeed; g.bossAt = c.bossAt; g.lives = c.startLives; g.shield = c.startShield; g.wTimer = c.wTimer; syncHud(); };
@@ -395,14 +405,19 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
     const spawnBoss = () => {
       const gy = groundY();
       const t = BOSS_TYPES[gameModeRef.current === 'infinito' ? g.bossNum % BOSS_TYPES.length : Math.min(g.bossNum, BOSS_TYPES.length - 1)];
-      const hp = 3 + Math.min(2, g.bossNum); // sube por acto
-      g.boss = { state: 'enter', x: W + 140, y: gy - 130, baseX: W * 0.72, baseY: gy - 130, hp, t: 0, shootT: 1.4, swoopT: 3.4, phase: 0, hitFlash: 0, deadT: 0, type: t.id };
+      // #1 el jefe WordPress es GIGANTE (mega): el verdadero jefe final
+      const mega = t.id === 'wordpress';
+      const hp = 3 + Math.min(2, g.bossNum) + (mega ? 3 : 0);
+      const by = mega ? gy - 165 : gy - 130;
+      g.boss = { state: 'enter', x: W + 180, y: by, baseX: W * 0.72, baseY: by, hp, t: 0, shootT: 1.4, swoopT: 3.4, phase: 0, hitFlash: 0, deadT: 0, type: t.id, mega };
       for (const o of obstacles) o.node.remove(); obstacles.length = 0; g.wEnemy = null; g.proj.length = 0;
+      g.holes.length = 0; g.zone404 = false; g.zoneTele = 0;
       g.invertView = false; layer.style.transform = 'none';
       // cinemática de entrada
-      g.slow = 0.5; g.shake = 0.5; g.whiteFlash = 0.4;
-      float(W * 0.55, gy - 230, `ACTO ${g.bossNum + 1}/4 · ¡${t.name}!`, '#ef4444', 24);
-      ensureAudio(); sBossIn();
+      g.slow = mega ? 0.8 : 0.5; g.shake = mega ? 0.8 : 0.5; g.whiteFlash = mega ? 0.6 : 0.4;
+      if (mega) float(W * 0.5, gy - 250, '⚠ SUPER WORDPRESS ⚠', '#ef4444', 30);
+      else float(W * 0.55, gy - 230, `ACTO ${g.bossNum + 1}/4 · ¡${t.name}!`, '#ef4444', 24);
+      ensureAudio(); sBossIn(); if (mega) sThunder();
     };
     // cada jefe ataca distinto
     const bossAttack = (b: Boss) => {
@@ -421,6 +436,8 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
       g.phase = 'playing'; g.punched = true; g.beanX = RUN_X; g.y = groundY(); g.prevY = groundY(); g.vy = 0; g.onGround = true; g.jumpsLeft = 2;
       g.score = 0; g.dist = 0; g.invuln = 0.9; g.pressAt = -1; g.coinsRun = 0;
       g.invertView = false; g.flipTimer = 22; g.flipTele = 0; g.flipDur = 0; layer.style.transform = 'none';
+      g.weather = 'clear'; g.weatherT = 13; g.weatherFx.length = 0; g.lightning = 0;
+      g.holes.length = 0; g.zone404 = false; g.zoneTimer = 26; g.zoneTele = 0; g.zoneLeft = 0; g.holeGap = 0;
       applyDiff(); setOver(false);
     };
     resetRef.current = resetGame;
@@ -526,21 +543,22 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
     };
 
     const drawBoss = (b: Boss) => {
+      const size = b.mega ? 190 : 116;
       const flash = b.hitFlash > 0;
       ctx.save();
       if (flash) { ctx.globalCompositeOperation = 'lighter'; ctx.globalAlpha = b.hitFlash; }
-      drawBossBadge(b.x, b.y, 116, b.deadT, b.type, b.t);
+      drawBossBadge(b.x, b.y, size, b.deadT, b.type, b.t);
       ctx.restore();
       if (b.state === 'telegraph') {
         ctx.globalAlpha = 0.4 + 0.4 * Math.sin(b.t * 30); ctx.strokeStyle = '#ef4444'; ctx.lineWidth = 3;
-        ctx.beginPath(); ctx.arc(b.x, b.y, 78, 0, Math.PI * 2); ctx.stroke(); ctx.globalAlpha = 1;
+        ctx.beginPath(); ctx.arc(b.x, b.y, size * 0.67, 0, Math.PI * 2); ctx.stroke(); ctx.globalAlpha = 1;
       }
       // corazones de vida del jefe
       if (b.deadT === 0) {
-        const n = Math.min(b.hp, 6);
+        const n = Math.min(b.hp, 8);
         for (let i = 0; i < n; i++) {
           ctx.fillStyle = '#ef4444';
-          const hx = b.x - (n - 1) * 11 + i * 22, hy = b.y - 82;
+          const hx = b.x - (n - 1) * 11 + i * 22, hy = b.y - size * 0.71;
           ctx.beginPath(); ctx.moveTo(hx, hy + 4); ctx.bezierCurveTo(hx, hy, hx - 8, hy, hx - 8, hy + 5); ctx.bezierCurveTo(hx - 8, hy + 10, hx, hy + 13, hx, hy + 16); ctx.bezierCurveTo(hx, hy + 13, hx + 8, hy + 10, hx + 8, hy + 5); ctx.bezierCurveTo(hx + 8, hy, hx, hy, hx, hy + 4); ctx.fill();
         }
       }
@@ -578,30 +596,61 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
         if (!g.boss && !g.invertView && g.score >= g.bossAt) spawnBoss();
         if (!g.boss) {
           const lastO = obstacles[obstacles.length - 1]; const gap = cfg.gapBase + g.speed * 0.5 + Math.random() * 240;
-          if (!lastO || lastO.x < W - lastO.w - gap) spawn();
-          g.wTimer -= dt; if (g.wTimer <= 0 && !g.wEnemy) { g.wEnemy = { x: W + 60, dead: 0, passed: false }; g.wTimer = 7 + Math.random() * 5; }
+          if ((!lastO || lastO.x < W - lastO.w - gap) && !g.zone404 && g.zoneTele <= 0) spawn();
+          g.wTimer -= dt; if (g.wTimer <= 0 && !g.wEnemy && !g.zone404) { g.wEnemy = { x: W + 60, dead: 0, passed: false }; g.wTimer = 7 + Math.random() * 5; }
           g.pickupT -= dt; if (g.pickupT <= 0) { const rr2 = Math.random(); const kind: 'shield' | 'heart' | 'coin' = rr2 < 0.62 ? 'coin' : rr2 < 0.88 ? 'shield' : 'heart'; g.pickups.push({ x: W + 40, y: groundY() - 56 - Math.random() * 130, kind, ph: Math.random() * 6.28 }); g.pickupT = kind === 'coin' ? 2.6 + Math.random() * 2.4 : 7 + Math.random() * 5; }
           // GRAVEDAD INVERTIDA por tramos (volteo de vista; física intacta)
           if (g.invertView) { g.flipDur -= dt; if (g.flipDur <= 0) { g.invertView = false; g.whiteFlash = 0.6; g.shake = 0.45; g.glitch = 0.8; sFlip(); burst(g.beanX, g.y - 30, 32, ['#22d3ee', '#d946ef', '#fff'], 1.7); g.flipTimer = 20 + Math.random() * 12; } }
           else if (g.flipTele > 0) { g.flipTele -= dt; if (g.flipTele <= 0) { g.invertView = true; g.flipDur = 7; g.whiteFlash = 0.6; g.shake = 0.45; g.glitch = 0.8; sFlip(); burst(g.beanX, g.y - 30, 32, ['#22d3ee', '#d946ef', '#fff'], 1.7); } }
-          else { g.flipTimer -= dt; if (g.flipTimer <= 0 && g.score > 6) { g.flipTele = 1.3; float(g.beanX, g.y - 72, '▲ MODO INVERSO ▲', '#22d3ee', 22); } }
+          else { g.flipTimer -= dt; if (g.flipTimer <= 0 && g.score > 6 && !g.zone404 && g.zoneTele <= 0) { g.flipTele = 1.3; float(g.beanX, g.y - 72, '▲ MODO INVERSO ▲', '#22d3ee', 22); } }
         }
         // hito cada 10 esquivados: sonido + glitch + texto
         if (Math.floor(g.score / 10) > Math.floor(lastScore / 10)) { sMilestone(); g.whiteFlash = Math.max(g.whiteFlash, 0.3); g.glitch = Math.max(g.glitch, 0.6); g.crackT = Math.min(g.crackT, 0.9); float(g.beanX, g.y - 64, `¡${g.score}!`, '#C9A6FF', 20); }
         lastScore = g.score;
+
+        // #5 clima dinámico (decorativo, no afecta a la jugabilidad)
+        g.weatherT -= dt;
+        if (g.weatherT <= 0) {
+          const ord: WeatherKind[] = ['clear', 'rain', 'storm', 'fog'];
+          g.weather = ord[(ord.indexOf(g.weather) + 1) % ord.length]; g.weatherT = 12 + Math.random() * 7;
+          float(g.beanX, g.y - 86, g.weather === 'rain' ? '☔ lluvia de <div>' : g.weather === 'storm' ? '⚡ tormenta de plugins' : g.weather === 'fog' ? '🍪 niebla de cookies' : '☀ despejado', '#9fb3d6', 16); sWeather();
+        }
+        if (g.weatherFx.length < 80) {
+          if (g.weather === 'rain') for (let i = 0; i < 2; i++) g.weatherFx.push({ x: Math.random() * W, y: -20, vx: -70, vy: 520 + Math.random() * 180, r: 0, rot: 0, a: 0.1 + Math.random() * 0.1, kind: 'rain' });
+          else if (g.weather === 'storm') { for (let i = 0; i < 2; i++) g.weatherFx.push({ x: Math.random() * W, y: -20, vx: -130, vy: 640 + Math.random() * 220, r: 0, rot: 0, a: 0.16 + Math.random() * 0.12, kind: 'storm' }); if (Math.random() < dt * 0.45) { g.lightning = 0.5; g.whiteFlash = Math.max(g.whiteFlash, 0.22); sThunder(); } }
+          else if (g.weather === 'fog' && g.weatherFx.length < 24 && Math.random() < dt * 9) g.weatherFx.push({ x: W + 40, y: 60 + Math.random() * (gy - 130), vx: -(18 + Math.random() * 26), vy: 0, r: 28 + Math.random() * 42, rot: 0, a: 0.05 + Math.random() * 0.05, kind: 'fog' });
+        }
+
+        // #9 ZONA 404: el suelo se rompe a trozos (telegrafiado y justo; no durante jefe ni modo inverso)
+        if (!g.boss && !g.invertView && g.flipTele <= 0) {
+          if (g.zone404) {
+            g.holeGap -= g.speed * dt;
+            if (g.zoneLeft > 0 && g.holeGap <= 0) { const w = 120 + Math.random() * 120; g.holes.push({ x: W + 40, w }); g.zoneLeft--; g.holeGap = w + 230 + Math.random() * 190; }
+            if (g.zoneLeft <= 0 && (!g.holes.length || g.holes[g.holes.length - 1].x + g.holes[g.holes.length - 1].w < g.beanX - 40)) { g.zone404 = false; g.zoneTimer = 24 + Math.random() * 12; }
+          } else if (g.zoneTele > 0) { g.zoneTele -= dt; if (g.zoneTele <= 0) { g.zone404 = true; g.zoneLeft = 2 + Math.floor(Math.random() * 2); g.holeGap = 90; } }
+          else { g.zoneTimer -= dt; if (g.zoneTimer <= 0 && g.score > 8) { g.zoneTele = 1.4; float(g.beanX, g.y - 100, '▼ ZONA 404 ▼', '#FB7185', 22); } }
+        }
       }
 
       g.invuln = Math.max(0, g.invuln - dt); g.shake = Math.max(0, g.shake - dt);
       g.hitFlash = Math.max(0, g.hitFlash - dt * 1.8); g.whiteFlash = Math.max(0, g.whiteFlash - dt * 2.4);
-      g.dashCd = Math.max(0, g.dashCd - dt); g.glitch = Math.max(0, g.glitch - dt * 2.5);
+      g.dashCd = Math.max(0, g.dashCd - dt); g.glitch = Math.max(0, g.glitch - dt * 2.5); g.lightning = Math.max(0, g.lightning - dt * 2);
       if (g.dashT > 0) { g.dashT = Math.max(0, g.dashT - dt); g.invuln = Math.max(g.invuln, 0.05); }
       if (g.crackT < 1) g.crackT = Math.min(1, g.crackT + dt * 5);
       if (g.punched) g.damage = Math.min(1, g.damage + dt * 1.5); // pantalla queda dañada
 
+      // #9 huecos del suelo: avanzan y desaparecen; si la judía está sobre uno, el suelo NO sostiene
+      let overHole = false;
+      if (active) for (let i = g.holes.length - 1; i >= 0; i--) {
+        const h = g.holes[i]; if (g.phase === 'playing') h.x -= g.speed * dt;
+        if (g.beanX > h.x + 8 && g.beanX < h.x + h.w - 8) overHole = true;
+        if (h.x + h.w < -60) g.holes.splice(i, 1);
+      }
+
       const prevFeet = g.prevY;
       const bx0 = g.beanX - BEAN_HW, bx1 = g.beanX + BEAN_HW;
       let by0 = g.y - BEAN_H, by1 = g.y;
-      let support = gy;
+      let support = overHole ? Number.POSITIVE_INFINITY : gy;
 
       if (active) for (let i = obstacles.length - 1; i >= 0; i--) {
         const o = obstacles[i]; if (g.phase === 'playing') o.x -= g.speed * dt;
@@ -628,6 +677,8 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
       if (g.phase === 'playing') {
         if (g.y >= support) { const wasAir = !g.onGround; if (wasAir) { burst(g.beanX, support + 2, 6, ['rgba(255,255,255,0.5)']); sLand(); } g.y = support; g.vy = 0; g.onGround = true; g.jumpsLeft = 2; g.lastGround = g.t; if (wasAir && g.pressAt >= 0 && g.t - g.pressAt < BUFFER) groundJump(); }
         else g.onGround = false;
+        // caída al vacío del 404: golpe; si sobrevives (vida/escudo), rebote de rescate sobre el suelo
+        if (g.y > gy + 130 && g.invuln <= 0) { const before = g.lives + (g.shield ? 1 : 0); sFall(); takeHit('el vacío 404'); if (g.phase === 'playing' && before > 0) { g.y = gy - 110; g.vy = JUMP_V * 0.7; g.onGround = false; g.jumpsLeft = 1; g.invuln = Math.max(g.invuln, 1.1); } }
         by1 = g.y; by0 = g.y - BEAN_H; // recomputa caja tras aterrizar (para enemigos)
       }
 
@@ -660,11 +711,13 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
           else if (b.state === 'return') { b.phase = Math.min(1, b.phase + dt / 0.55); b.x += (b.baseX - b.x) * 0.12; b.y += (b.baseY - b.y) * 0.12; if (b.phase >= 1) { b.state = 'idle'; b.swoopT = (3 + Math.random() * 1.5) * (b.hp <= 1 ? 0.6 : 1); b.shootT = Math.max(b.shootT, 0.7); } }
 
           // colisión jefe
-          const bs = 116 * (1), ebx0 = b.x - bs * 0.4, ebx1 = b.x + bs * 0.4, eby0 = b.y - bs * 0.4, eby1 = b.y + bs * 0.4;
+          const bs = b.mega ? 190 : 116; const ebx0 = b.x - bs * 0.4, ebx1 = b.x + bs * 0.4, eby0 = b.y - bs * 0.4, eby1 = b.y + bs * 0.4;
           if (bx1 > ebx0 && bx0 < ebx1 && by1 > eby0 && by0 < eby1) {
             const stomp = g.dashT > 0 || (g.vy > 0 && by1 < eby0 + 40);
-            if (stomp) { b.hp -= 1; b.hitFlash = 1; g.vy = -700; g.shake = 0.35; burst(b.x, eby0 + 10, 24, ['#ef4444', '#fff', '#dbe2ef']); float(b.x, eby0, b.hp > 0 ? '¡toma!' : '¡404!', '#FBBF24', 18); sBossHit(); if (b.hp <= 0) { const bt = BOSS_TYPES.find((x) => x.id === b.type) || BOSS_TYPES[3]; b.state = 'dying'; b.deadT = 0.01; g.score += 15; g.bossNum += 1; g.whiteFlash = 0.7; g.glitch = 1; g.slow = 0.4; localStorage.setItem(BOSSKILLS_KEY, String(+(localStorage.getItem(BOSSKILLS_KEY) || 0) + 1)); burst(b.x, b.y, 60, ['#ef4444', '#fff', '#dbe2ef', '#FBBF24'], 1.6, true); float(b.x, b.y - 40, `+15 · ¡${bt.defeat}!`, '#FBBF24', 20); sBossDead(); } }
-            else takeHit('el jefe WordPress');
+            if (stomp) { b.hp -= 1; b.hitFlash = 1; g.vy = -700; g.shake = 0.35; burst(b.x, eby0 + 10, 24, ['#ef4444', '#fff', '#dbe2ef']); float(b.x, eby0, b.hp > 0 ? '¡toma!' : '¡404!', '#FBBF24', 18); sBossHit(); if (b.hp <= 0) { const bt = BOSS_TYPES.find((x) => x.id === b.type) || BOSS_TYPES[3]; b.state = 'dying'; b.deadT = 0.01; g.score += 15; g.bossNum += 1; g.whiteFlash = 0.7; g.glitch = 1; g.slow = 0.4; localStorage.setItem(BOSSKILLS_KEY, String(+(localStorage.getItem(BOSSKILLS_KEY) || 0) + 1)); burst(b.x, b.y, 60, ['#ef4444', '#fff', '#dbe2ef', '#FBBF24'], 1.6, true); float(b.x, b.y - 40, `+15 · ¡${bt.defeat}!`, '#FBBF24', 20); sBossDead();
+              // #1 mega WordPress: se rompe en MIL plugins ($)
+              if (b.mega) { g.score += 15; g.slow = 0.9; g.shake = 0.9; g.whiteFlash = 0.9; sThunder(); for (let k = 0; k < 48; k++) floats.push({ x: Math.random() * W, y: 50 + Math.random() * (gy - 130), vy: 60 + Math.random() * 150, life: 1.3 + Math.random(), text: '$', color: k % 3 ? '#FBBF24' : '#fcd34d', size: 13 + Math.random() * 18 }); for (let k = 0; k < 3; k++) burst(W * (0.25 + 0.25 * k), gy - 150, 32, ['#FBBF24', '#fcd34d', '#fff', '#F59E0B'], 1.9, true); float(W * 0.5, gy - 220, '¡roto en mil plugins!', '#FBBF24', 24); } } }
+            else takeHit(b.mega ? 'el SUPER WordPress' : 'el jefe WordPress');
           }
         }
       }
@@ -695,6 +748,8 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
         for (let i = particles.length - 1; i >= 0; i--) if (particles[i].life <= 0) particles.splice(i, 1);
         for (const f of floats) { f.y += f.vy * dt; f.life -= dt; }
         for (let i = floats.length - 1; i >= 0; i--) if (floats[i].life <= 0) floats.splice(i, 1);
+        // clima: avanza y recicla
+        for (let i = g.weatherFx.length - 1; i >= 0; i--) { const f = g.weatherFx[i]; f.x += f.vx * dt; f.y += f.vy * dt; if (f.y > H + 50 || f.x < -100) g.weatherFx.splice(i, 1); }
       }
 
       if (active) g.prevY = g.y;
@@ -725,10 +780,38 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
       }
       ctx.globalAlpha = 1;
 
+      // #5 clima dinámico (detrás del juego, decorativo)
+      if (g.weather === 'fog') { const fgr = ctx.createLinearGradient(0, gy - 170, 0, gy + 30); fgr.addColorStop(0, 'rgba(186,196,212,0)'); fgr.addColorStop(1, 'rgba(186,196,212,0.16)'); ctx.fillStyle = fgr; ctx.fillRect(0, gy - 170, W, 200); }
+      if (g.weatherFx.length) {
+        for (const f of g.weatherFx) {
+          ctx.globalAlpha = f.a;
+          if (f.kind === 'rain') { ctx.strokeStyle = '#9fc0ee'; ctx.lineWidth = 2; ctx.beginPath(); ctx.moveTo(f.x, f.y); ctx.lineTo(f.x + f.vx * 0.03, f.y + f.vy * 0.03); ctx.stroke(); }
+          else if (f.kind === 'storm') { ctx.fillStyle = '#fcd34d'; ctx.font = '900 14px ui-sans-serif'; ctx.fillText('$', f.x, f.y); }
+          else { ctx.fillStyle = '#c9a36b'; ctx.beginPath(); ctx.arc(f.x, f.y, f.r, 0, Math.PI * 2); ctx.fill(); ctx.fillStyle = 'rgba(80,50,20,0.45)'; for (let d = 0; d < 3; d++) { ctx.beginPath(); ctx.arc(f.x + Math.cos(d * 2.1) * f.r * 0.45, f.y + Math.sin(d * 2.1) * f.r * 0.45, f.r * 0.13, 0, Math.PI * 2); ctx.fill(); } }
+        }
+        ctx.globalAlpha = 1;
+      }
+
+      // suelo (con huecos del modo 404)
       const grad = ctx.createLinearGradient(0, 0, W, 0); grad.addColorStop(0, '#8B5CF6'); grad.addColorStop(0.6, '#F97316'); grad.addColorStop(1, '#FBBF24');
-      ctx.strokeStyle = grad; ctx.lineWidth = 3; ctx.shadowColor = 'rgba(139,92,246,0.7)'; ctx.shadowBlur = 16; ctx.beginPath(); ctx.moveTo(0, gy + 1); ctx.lineTo(W, gy + 1); ctx.stroke(); ctx.shadowBlur = 0;
+      ctx.strokeStyle = grad; ctx.lineWidth = 3; ctx.shadowColor = 'rgba(139,92,246,0.7)'; ctx.shadowBlur = 16;
+      if (!g.holes.length) { ctx.beginPath(); ctx.moveTo(0, gy + 1); ctx.lineTo(W, gy + 1); ctx.stroke(); }
+      else {
+        // dibuja el suelo en tramos, saltándose los huecos
+        const sorted = [...g.holes].sort((a, b) => a.x - b.x); let cursor = 0;
+        for (const h of sorted) { const hx0 = Math.max(0, h.x), hx1 = Math.min(W, h.x + h.w); if (hx1 <= 0 || hx0 >= W) continue; if (hx0 > cursor) { ctx.beginPath(); ctx.moveTo(cursor, gy + 1); ctx.lineTo(hx0, gy + 1); ctx.stroke(); } cursor = Math.max(cursor, hx1); }
+        if (cursor < W) { ctx.beginPath(); ctx.moveTo(cursor, gy + 1); ctx.lineTo(W, gy + 1); ctx.stroke(); }
+        ctx.shadowBlur = 0;
+        // bordes del precipicio + "404" en el vacío
+        for (const h of sorted) {
+          const hx0 = h.x, hx1 = h.x + h.w; if (hx1 < -20 || hx0 > W + 20) continue;
+          ctx.strokeStyle = '#FB7185'; ctx.lineWidth = 3; ctx.beginPath(); ctx.moveTo(hx0, gy + 1); ctx.lineTo(hx0, gy + 30); ctx.moveTo(hx1, gy + 1); ctx.lineTo(hx1, gy + 30); ctx.stroke();
+          ctx.fillStyle = 'rgba(251,113,133,0.5)'; ctx.font = '800 22px ui-monospace, monospace'; ctx.textAlign = 'center'; ctx.fillText('404', (hx0 + hx1) / 2, gy + 50); ctx.textAlign = 'start';
+        }
+      }
+      ctx.shadowBlur = 0;
       ctx.strokeStyle = 'rgba(255,255,255,0.06)'; ctx.lineWidth = 1;
-      for (let i = 0; i < 16; i++) { const lx = ((i * 160 - g.dist * 1.2) % (W + 80) + W + 80) % (W + 80) - 40; ctx.beginPath(); ctx.moveTo(lx, gy + 16); ctx.lineTo(lx + 34, gy + 16); ctx.stroke(); }
+      for (let i = 0; i < 16; i++) { const lx = ((i * 160 - g.dist * 1.2) % (W + 80) + W + 80) % (W + 80) - 40; const inHole = g.holes.some((h) => lx > h.x - 4 && lx < h.x + h.w + 4); if (inHole) continue; ctx.beginPath(); ctx.moveTo(lx, gy + 16); ctx.lineTo(lx + 34, gy + 16); ctx.stroke(); }
 
       if ((g.phase === 'wind' || g.phase === 'launch') && !g.punched) drawBox();
       if (g.wEnemy) drawWTile(g.wEnemy.x, gy - 30, 52, g.wEnemy.dead, true);
