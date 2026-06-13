@@ -11,7 +11,7 @@ export default function AuroraBackground({ intensity = 'normal' }: { intensity?:
           background: '#8B5CF6',
           opacity: blobOpacity,
           filter: 'blur(140px)',
-          animation: 'blob-1 22s ease-in-out infinite',
+          animation: 'blob-1 16s ease-in-out infinite',
         }}
       />
       <div
@@ -20,7 +20,7 @@ export default function AuroraBackground({ intensity = 'normal' }: { intensity?:
           background: '#F97316',
           opacity: blobOpacity * 0.85,
           filter: 'blur(160px)',
-          animation: 'blob-2 28s ease-in-out infinite',
+          animation: 'blob-2 20s ease-in-out infinite',
         }}
       />
       <div
@@ -29,7 +29,7 @@ export default function AuroraBackground({ intensity = 'normal' }: { intensity?:
           background: '#FBBF24',
           opacity: blobOpacity * 0.5,
           filter: 'blur(140px)',
-          animation: 'blob-3 30s ease-in-out infinite',
+          animation: 'blob-3 22s ease-in-out infinite',
         }}
       />
     </div>

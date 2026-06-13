@@ -1,13 +1,16 @@
 'use client';
 
 import dynamic from 'next/dynamic';
+import { useState } from 'react';
 import { Reveal } from '../../effects/Reveal';
 
 // Canvas y juego solo cargan cuando la sección se acerca al viewport.
 const DrawingBoard = dynamic(() => import('./DrawingBoard'), { ssr: false });
 const StumbleRunner = dynamic(() => import('./StumbleRunner'), { ssr: false });
+const EscapeGame = dynamic(() => import('./EscapeGame'), { ssr: false });
 
 export default function PlaygroundSection() {
+  const [escape, setEscape] = useState(false);
   return (
     <section className="relative z-10 py-32">
       <div className="mx-auto max-w-7xl px-6">
@@ -42,7 +45,7 @@ export default function PlaygroundSection() {
             </div>
           </Reveal>
           <Reveal>
-            <div className="flex h-[480px] flex-col rounded-3xl glass p-5 md:p-6">
+            <div data-escape-origin className="flex h-[480px] flex-col rounded-3xl glass p-5 md:p-6">
               <div className="mb-4 flex items-baseline justify-between">
                 <h3 className="font-display text-xl text-white">El juego 🏃</h3>
                 <span className="text-[11px] uppercase tracking-widest text-white/35">demo en vivo</span>
@@ -53,12 +56,29 @@ export default function PlaygroundSection() {
         </div>
 
         <Reveal>
+          <div className="mt-8 text-center">
+            <button
+              onClick={() => setEscape(true)}
+              className="group inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm text-white/70 transition-all hover:scale-105 hover:text-white"
+              style={{ background: 'var(--bg-glass-strong)', border: '1px solid var(--border-subtle)', backdropFilter: 'blur(8px)' }}
+            >
+              ¿Te sigue pareciendo poco?{' '}
+              <span className="font-semibold text-gradient">Pulsa aquí</span>
+              <span className="transition-transform group-hover:translate-x-1">→</span>
+            </button>
+            <p className="mt-3 text-xs text-white/35">el juego se escapa a toda la pantalla y esquivas tus propios componentes</p>
+          </div>
+        </Reveal>
+
+        <Reveal>
           <p className="mt-12 text-center text-sm text-white/50">
             Esto es lo que pasa cuando tu web no es una plantilla.{' '}
             <span className="text-white/80">Imagina lo que podemos hacer con tu negocio.</span>
           </p>
         </Reveal>
       </div>
+
+      <EscapeGame open={escape} onClose={() => setEscape(false)} />
     </section>
   );
 }
