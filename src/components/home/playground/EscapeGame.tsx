@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, RotateCcw, Trophy, Volume2, VolumeX, Skull, Heart, Shield } from 'lucide-react';
+import { X, RotateCcw, Trophy, Volume2, VolumeX, Skull, Heart, Shield, Sparkles } from 'lucide-react';
 
 type Obstacle = { node: HTMLElement; x: number; w: number; h: number; s: number; passed: boolean };
 type Particle = { x: number; y: number; vx: number; vy: number; life: number; max: number; color: string; r: number; sq?: boolean };
@@ -12,7 +12,7 @@ type WEnemy = { x: number; dead: number; passed: boolean };
 type Crack = { x1: number; y1: number; x2: number; y2: number; bx: number; by: number; bx2: number; by2: number; rx: number; ry: number };
 type Proj = { x: number; y: number; rot: number };
 type Pickup = { x: number; y: number; kind: 'shield' | 'heart'; ph: number };
-type Boss = { state: 'enter' | 'idle' | 'telegraph' | 'dash' | 'low' | 'return' | 'dying'; x: number; y: number; baseX: number; baseY: number; hp: number; t: number; shootT: number; swoopT: number; phase: number; hitFlash: number; deadT: number };
+type Boss = { state: 'enter' | 'idle' | 'telegraph' | 'dash' | 'low' | 'return' | 'dying'; x: number; y: number; baseX: number; baseY: number; hp: number; t: number; shootT: number; swoopT: number; phase: number; hitFlash: number; deadT: number; type: string };
 
 const GROUND_RATIO = 0.56; // horizonte hacia el centro (antes pegado abajo)
 const RUN_X = 160;
@@ -50,6 +50,14 @@ const skinHint = (id: string) => id === 'dorada' ? 'récord ≥ 15' : id === 'ne
 
 const SELECTORS = ['.glass', '[class*="rounded-3xl"]', '[class*="rounded-2xl"]', '[class*="rounded-xl"]', 'article', '[class*="card"]', 'li[class*="rounded"]'];
 
+// Campaña: jefes temáticos en secuencia (acto 1 → final)
+const BOSS_TYPES = [
+  { id: 'plantilla', name: 'PLANTILLA', defeat: 'plantilla destruida', c0: '#9aa3b2', c1: '#3a4150' },
+  { id: 'plugin', name: 'PLUGIN DE PAGO', defeat: 'plugin cancelado', c0: '#fcd34d', c1: '#b45309' },
+  { id: 'lenta', name: 'WEB LENTA', defeat: 'web acelerada', c0: '#aab6c9', c1: '#475569' },
+  { id: 'wordpress', name: 'WORDPRESS', defeat: 'WordPress eliminado', c0: '#2a90bd', c1: '#143f57' },
+];
+
 export default function EscapeGame({ open, onClose }: { open: boolean; onClose: () => void }) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const layerRef = useRef<HTMLDivElement>(null);
@@ -59,7 +67,7 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
   useEffect(() => { onCloseRef.current = onClose; }, [onClose]);
 
   const [over, setOver] = useState(false);
-  const [result, setResult] = useState({ score: 0, best: 0, record: false, killedBy: '' as string, runs: 0, dodged: 0 });
+  const [result, setResult] = useState({ score: 0, best: 0, record: false, killedBy: '' as string, runs: 0, dodged: 0, won: false });
   const [hud, setHud] = useState({ lives: 0, shield: false });
   const hudRef = useRef(setHud);
   const [muted, setMuted] = useState(false);
@@ -308,7 +316,23 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
       if (record) localStorage.setItem(BEST_KEY, String(g.score));
       const runs = Number(localStorage.getItem(RUNS_KEY) || 0) + 1; localStorage.setItem(RUNS_KEY, String(runs));
       const dodged = Number(localStorage.getItem(DODGED_KEY) || 0) + g.score; localStorage.setItem(DODGED_KEY, String(dodged));
-      setResult({ score: g.score, best: Math.max(best0, g.score), record, killedBy, runs, dodged });
+      setResult({ score: g.score, best: Math.max(best0, g.score), record, killedBy, runs, dodged, won: false });
+      const stats = { best: Math.max(best0, g.score), runs, bossKills: +(localStorage.getItem(BOSSKILLS_KEY) || 0) };
+      setUnlocked(SKINS.filter((s) => skinUnlocked(s.id, stats)).map((s) => s.id));
+      setOver(true);
+    };
+
+    // victoria: derrotado el jefe final (WordPress) → web reconstruida
+    const winGame = () => {
+      if (g.phase === 'over') return;
+      g.phase = 'over'; g.invertView = false; layer.style.transform = 'none'; g.whiteFlash = 0.9; g.shake = 0.4;
+      for (let k = 0; k < 3; k++) burst(W * (0.3 + 0.2 * k), groundY() - 120, 26, ['#8B5CF6', '#FBBF24', '#F97316', '#10B981', '#fff'], 1.6, true);
+      sBossDead();
+      const best0 = Number(localStorage.getItem(BEST_KEY) || 0);
+      const record = g.score > best0; if (record) localStorage.setItem(BEST_KEY, String(g.score));
+      const runs = Number(localStorage.getItem(RUNS_KEY) || 0) + 1; localStorage.setItem(RUNS_KEY, String(runs));
+      const dodged = Number(localStorage.getItem(DODGED_KEY) || 0) + g.score; localStorage.setItem(DODGED_KEY, String(dodged));
+      setResult({ score: g.score, best: Math.max(best0, g.score), record, killedBy: '', runs, dodged, won: true });
       const stats = { best: Math.max(best0, g.score), runs, bossKills: +(localStorage.getItem(BOSSKILLS_KEY) || 0) };
       setUnlocked(SKINS.filter((s) => skinUnlocked(s.id, stats)).map((s) => s.id));
       setOver(true);
@@ -343,13 +367,14 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
 
     const spawnBoss = () => {
       const gy = groundY();
-      const hp = 3 + Math.min(3, g.bossNum); // cada jefe sucesivo aguanta más
-      g.boss = { state: 'enter', x: W + 140, y: gy - 130, baseX: W * 0.72, baseY: gy - 130, hp, t: 0, shootT: 1.4, swoopT: 3.4, phase: 0, hitFlash: 0, deadT: 0 };
-      // limpia tarjetas y W normal para el duelo
+      const t = BOSS_TYPES[Math.min(g.bossNum, BOSS_TYPES.length - 1)];
+      const hp = 3 + Math.min(2, g.bossNum); // sube por acto
+      g.boss = { state: 'enter', x: W + 140, y: gy - 130, baseX: W * 0.72, baseY: gy - 130, hp, t: 0, shootT: 1.4, swoopT: 3.4, phase: 0, hitFlash: 0, deadT: 0, type: t.id };
       for (const o of obstacles) o.node.remove(); obstacles.length = 0; g.wEnemy = null; g.proj.length = 0;
+      g.invertView = false; layer.style.transform = 'none';
       // cinemática de entrada
       g.slow = 0.5; g.shake = 0.5; g.whiteFlash = 0.4;
-      float(W * 0.55, gy - 230, g.bossNum === 0 ? '¡JEFE: WORDPRESS!' : `¡WORDPRESS ${6 + g.bossNum}.0!`, '#ef4444', 24);
+      float(W * 0.55, gy - 230, `ACTO ${g.bossNum + 1}/4 · ¡${t.name}!`, '#ef4444', 24);
       ensureAudio(); sBossIn();
     };
     const shootPlugin = () => { const b = g.boss!; const gy = groundY(); g.proj.push({ x: b.x - 30, y: gy - 26, rot: 0 }); sShoot(); };
@@ -445,21 +470,41 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
       ctx.restore();
     };
 
+    // insignia del jefe según el acto (Plantilla / Plugin / Web lenta / WordPress)
+    const drawBossBadge = (cx: number, cy: number, size: number, dead: number, type: string, tt: number) => {
+      const bt = BOSS_TYPES.find((x) => x.id === type) || BOSS_TYPES[3];
+      ctx.save(); ctx.translate(cx, cy);
+      if (dead > 0) ctx.scale(1 + dead * 0.4, Math.max(0.05, 1 - dead * 0.95));
+      const r = size / 2;
+      ctx.shadowColor = 'rgba(239,68,68,0.85)'; ctx.shadowBlur = size * 0.3;
+      const tg = ctx.createRadialGradient(-r * 0.3, -r * 0.35, 2, 0, 0, r); tg.addColorStop(0, bt.c0); tg.addColorStop(1, bt.c1);
+      ctx.fillStyle = tg; ctx.beginPath(); ctx.arc(0, 0, r, 0, Math.PI * 2); ctx.fill(); ctx.shadowBlur = 0;
+      ctx.strokeStyle = 'rgba(255,255,255,0.4)'; ctx.lineWidth = size * 0.04; ctx.beginPath(); ctx.arc(0, 0, r * 0.9, 0, Math.PI * 2); ctx.stroke();
+      const u = size * 0.26; ctx.fillStyle = '#fff'; ctx.strokeStyle = '#fff'; ctx.lineWidth = size * 0.1; ctx.lineJoin = 'round'; ctx.lineCap = 'round';
+      if (type === 'wordpress') { ctx.beginPath(); ctx.moveTo(-u * 1.35, -u * 0.82); ctx.lineTo(-u * 0.62, u); ctx.lineTo(0, -u * 0.18); ctx.lineTo(u * 0.62, u); ctx.lineTo(u * 1.35, -u * 0.82); ctx.stroke(); }
+      else if (type === 'plantilla') { const q = u * 0.72, g0 = u * 0.12; for (const sx of [-1, 1] as const) for (const sy of [-1, 1] as const) { ctx.beginPath(); ctx.roundRect(sx > 0 ? g0 : -q - g0, sy > 0 ? g0 : -q - g0, q, q, 3); ctx.fill(); } }
+      else if (type === 'plugin') { ctx.font = `900 ${Math.round(size * 0.52)}px ui-sans-serif`; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText('$', 0, size * 0.02); ctx.textAlign = 'start'; ctx.textBaseline = 'alphabetic'; }
+      else if (type === 'lenta') { ctx.beginPath(); ctx.arc(0, 0, u * 1.05, tt * 4, tt * 4 + Math.PI * 1.5); ctx.stroke(); }
+      if (dead === 0) { ctx.fillStyle = '#ef4444'; for (const s of [-1, 1] as const) { ctx.beginPath(); ctx.arc(s * u * 0.55, -u * 1.35, size * 0.05, 0, Math.PI * 2); ctx.fill(); } }
+      ctx.restore();
+    };
+
     const drawBoss = (b: Boss) => {
       const flash = b.hitFlash > 0;
       ctx.save();
       if (flash) { ctx.globalCompositeOperation = 'lighter'; ctx.globalAlpha = b.hitFlash; }
-      drawWTile(b.x, b.y, 116, b.deadT, true);
+      drawBossBadge(b.x, b.y, 116, b.deadT, b.type, b.t);
       ctx.restore();
-      if (b.state === 'telegraph') { // aura de aviso antes de embestir
+      if (b.state === 'telegraph') {
         ctx.globalAlpha = 0.4 + 0.4 * Math.sin(b.t * 30); ctx.strokeStyle = '#ef4444'; ctx.lineWidth = 3;
         ctx.beginPath(); ctx.arc(b.x, b.y, 78, 0, Math.PI * 2); ctx.stroke(); ctx.globalAlpha = 1;
       }
-      // corazones de vida
+      // corazones de vida del jefe
       if (b.deadT === 0) {
-        for (let i = 0; i < 3; i++) {
-          ctx.fillStyle = i < b.hp ? '#ef4444' : 'rgba(255,255,255,0.18)';
-          const hx = b.x - 22 + i * 22, hy = b.y - 80;
+        const n = Math.min(b.hp, 6);
+        for (let i = 0; i < n; i++) {
+          ctx.fillStyle = '#ef4444';
+          const hx = b.x - (n - 1) * 11 + i * 22, hy = b.y - 82;
           ctx.beginPath(); ctx.moveTo(hx, hy + 4); ctx.bezierCurveTo(hx, hy, hx - 8, hy, hx - 8, hy + 5); ctx.bezierCurveTo(hx - 8, hy + 10, hx, hy + 13, hx, hy + 16); ctx.bezierCurveTo(hx, hy + 13, hx + 8, hy + 10, hx + 8, hy + 5); ctx.bezierCurveTo(hx + 8, hy, hx, hy, hx, hy + 4); ctx.fill();
         }
       }
@@ -564,7 +609,7 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
       // ---- JEFE ----
       if (g.boss && active) {
         const b = g.boss; b.t += dt; b.hitFlash = Math.max(0, b.hitFlash - dt * 3);
-        if (b.state === 'dying') { b.deadT += dt * 1.4; if (b.deadT >= 1) { g.boss = null; g.bossAt = g.score + 30; g.invuln = 0.5; } }
+        if (b.state === 'dying') { b.deadT += dt * 1.4; if (b.deadT >= 1) { const wasWP = b.type === 'wordpress'; g.boss = null; g.invuln = 0.5; if (wasWP) winGame(); else g.bossAt = g.score + 30; } }
         else {
           if (b.state === 'enter') { b.x += (b.baseX - b.x) * Math.min(1, dt * 2.4); b.y = b.baseY + Math.sin(b.t * 2) * 8; if (Math.abs(b.x - b.baseX) < 8) { b.x = b.baseX; b.state = 'idle'; } }
           else if (b.state === 'idle') {
@@ -582,7 +627,7 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
           const bs = 116 * (1), ebx0 = b.x - bs * 0.4, ebx1 = b.x + bs * 0.4, eby0 = b.y - bs * 0.4, eby1 = b.y + bs * 0.4;
           if (bx1 > ebx0 && bx0 < ebx1 && by1 > eby0 && by0 < eby1) {
             const stomp = g.dashT > 0 || (g.vy > 0 && by1 < eby0 + 40);
-            if (stomp) { b.hp -= 1; b.hitFlash = 1; g.vy = -700; g.shake = 0.35; burst(b.x, eby0 + 10, 24, ['#ef4444', '#fff', '#dbe2ef']); float(b.x, eby0, b.hp > 0 ? '¡toma!' : '¡404!', '#FBBF24', 18); sBossHit(); if (b.hp <= 0) { b.state = 'dying'; b.deadT = 0.01; g.score += 15; g.bossNum += 1; g.whiteFlash = 0.7; g.glitch = 1; g.slow = 0.4; localStorage.setItem(BOSSKILLS_KEY, String(+(localStorage.getItem(BOSSKILLS_KEY) || 0) + 1)); burst(b.x, b.y, 60, ['#ef4444', '#fff', '#dbe2ef', '#FBBF24'], 1.6, true); float(b.x, b.y - 40, '+15 · ¡WordPress eliminado!', '#FBBF24', 20); sBossDead(); } }
+            if (stomp) { b.hp -= 1; b.hitFlash = 1; g.vy = -700; g.shake = 0.35; burst(b.x, eby0 + 10, 24, ['#ef4444', '#fff', '#dbe2ef']); float(b.x, eby0, b.hp > 0 ? '¡toma!' : '¡404!', '#FBBF24', 18); sBossHit(); if (b.hp <= 0) { const bt = BOSS_TYPES.find((x) => x.id === b.type) || BOSS_TYPES[3]; b.state = 'dying'; b.deadT = 0.01; g.score += 15; g.bossNum += 1; g.whiteFlash = 0.7; g.glitch = 1; g.slow = 0.4; localStorage.setItem(BOSSKILLS_KEY, String(+(localStorage.getItem(BOSSKILLS_KEY) || 0) + 1)); burst(b.x, b.y, 60, ['#ef4444', '#fff', '#dbe2ef', '#FBBF24'], 1.6, true); float(b.x, b.y - 40, `+15 · ¡${bt.defeat}!`, '#FBBF24', 20); sBossDead(); } }
             else takeHit('el jefe WordPress');
           }
         }
@@ -839,8 +884,9 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
                 <motion.div className="flex flex-col items-center gap-3 rounded-3xl px-10 py-9 text-center"
                   initial={{ scale: 0.8, y: 20 }} animate={{ scale: 1, y: 0 }} transition={{ type: 'spring', stiffness: 200, damping: 18 }}
                   style={{ background: 'var(--bg-glass-strong)', border: '1px solid var(--border-subtle)', backdropFilter: 'blur(16px)', boxShadow: '0 30px 80px -20px rgba(0,0,0,0.7)' }}>
-                  <Skull size={34} className="text-white/80" />
-                  <p className="font-display text-3xl font-bold text-white">¡Te pilló {result.killedBy}!</p>
+                  {result.won ? <Sparkles size={36} className="text-amber-300" /> : <Skull size={34} className="text-white/80" />}
+                  <p className="font-display text-3xl font-bold text-white">{result.won ? '🎉 ¡Reconstruiste la web!' : `¡Te pilló ${result.killedBy}!`}</p>
+                  {result.won && <p className="-mt-1 max-w-xs text-xs text-white/55">Venciste a la plantilla, los plugins de pago, la web lenta y a WordPress. Esto es lo que hacemos en Latech.</p>}
                   <p className="font-mono text-sm text-white/70">
                     {result.score} esquivados
                     {result.record
