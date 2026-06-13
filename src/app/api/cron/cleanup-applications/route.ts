@@ -12,6 +12,7 @@
  */
 
 import { NextResponse } from 'next/server';
+import { timingSafeEqual } from 'crypto';
 import { eq, and, lt, ne } from 'drizzle-orm';
 import { del as blobDel } from '@vercel/blob';
 import { db } from '@/lib/db';
@@ -30,7 +31,9 @@ export async function GET(req: Request) {
     return NextResponse.json({ error: 'Server misconfigured' }, { status: 500 });
   }
   const authHeader = req.headers.get('authorization') ?? '';
-  const ok = authHeader === `Bearer ${expected}`;
+  const presented = Buffer.from(authHeader);
+  const valid = Buffer.from(`Bearer ${expected}`);
+  const ok = presented.length === valid.length && timingSafeEqual(presented, valid);
   if (!ok) {
     return NextResponse.json({ error: 'unauthorized' }, { status: 401 });
   }

@@ -678,7 +678,7 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
         if (g.y >= support) { const wasAir = !g.onGround; if (wasAir) { burst(g.beanX, support + 2, 6, ['rgba(255,255,255,0.5)']); sLand(); } g.y = support; g.vy = 0; g.onGround = true; g.jumpsLeft = 2; g.lastGround = g.t; if (wasAir && g.pressAt >= 0 && g.t - g.pressAt < BUFFER) groundJump(); }
         else g.onGround = false;
         // caída al vacío del 404: golpe; si sobrevives (vida/escudo), rebote de rescate sobre el suelo
-        if (g.y > gy + 130 && g.invuln <= 0) { const before = g.lives + (g.shield ? 1 : 0); sFall(); takeHit('el vacío 404'); if (g.phase === 'playing' && before > 0) { g.y = gy - 110; g.vy = JUMP_V * 0.7; g.onGround = false; g.jumpsLeft = 1; g.invuln = Math.max(g.invuln, 1.1); } }
+        if (g.y > gy + 130 && g.invuln <= 0) { const before = g.lives + (g.shield ? 1 : 0); sFall(); takeHit('el vacío 404'); if (g.phase === 'playing' && before > 0) { g.y = gy - 110; g.vy = JUMP_V * 0.7; g.onGround = false; g.jumpsLeft = 1; g.invuln = Math.max(g.invuln, 1.1); g.holes = g.holes.filter((h) => !(g.beanX > h.x - 24 && g.beanX < h.x + h.w + 24)); } }
         by1 = g.y; by0 = g.y - BEAN_H; // recomputa caja tras aterrizar (para enemigos)
       }
 

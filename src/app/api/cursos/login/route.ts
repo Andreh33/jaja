@@ -8,6 +8,9 @@ import {
   signCommercialToken,
   cursoCookieOptions,
 } from '@/lib/curso-auth';
+import { rateLimit, getClientIp } from '@/lib/rate-limit';
+
+export const runtime = 'nodejs';
 
 const bodySchema = z.object({
   name: z.string().trim().min(2, 'Nombre demasiado corto').max(80),
@@ -16,6 +19,8 @@ const bodySchema = z.object({
 
 export async function POST(req: Request) {
   try {
+    const rl = rateLimit(`cursos-login:${getClientIp(req)}`, { max: 10, windowMs: 60_000 });
+    if (!rl.allowed) return NextResponse.json({ error: 'Demasiados intentos, espera un momento' }, { status: 429 });
     const parsed = bodySchema.safeParse(await req.json());
     if (!parsed.success) {
       return NextResponse.json({ error: 'Introduce tu nombre y teléfono.' }, { status: 400 });

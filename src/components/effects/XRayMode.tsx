@@ -78,7 +78,8 @@ export default function XRayMode({ open, onClose }: { open: boolean; onClose: ()
     window.addEventListener('pointermove', move);
     window.addEventListener('pointerup', up);
     return () => { cancelAnimationFrame(raf); window.removeEventListener('pointerdown', down); window.removeEventListener('pointermove', move); window.removeEventListener('pointerup', up); };
-  }, [open, layers]);
+    // no depende de `layers` (solo usa stageRef); evita reiniciar la rotación al poblarse
+  }, [open]);
 
   if (typeof document === 'undefined') return null;
   const n = layers.length;

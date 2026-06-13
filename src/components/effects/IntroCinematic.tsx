@@ -26,7 +26,8 @@ export default function IntroCinematic() {
     document.body.style.overflow = 'hidden';
     queueMicrotask(() => setShow(true));
     const t = setTimeout(() => dismiss(), 3400);
-    return () => clearTimeout(t);
+    // si se desmonta con la intro abierta (navegación, Strict Mode), restaura el scroll
+    return () => { clearTimeout(t); document.body.style.overflow = ''; };
   }, [reduce, dismiss]);
 
   if (typeof document === 'undefined') return null;

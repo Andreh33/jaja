@@ -45,7 +45,7 @@ export default async function CursosPage() {
       <div className="mt-5 h-2 w-full overflow-hidden rounded-full bg-white/10">
         <div
           className="h-full rounded-full transition-all"
-          style={{ width: `${(completedCount / modules.length) * 100}%`, background: 'var(--grad-signature)' }}
+          style={{ width: `${modules.length ? (completedCount / modules.length) * 100 : 0}%`, background: 'var(--grad-signature)' }}
         />
       </div>
 

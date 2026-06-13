@@ -31,7 +31,8 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  useEffect(() => setOpen(false), [pathname]);
+  // cierra el menú móvil al navegar (sin setState síncrono en el efecto)
+  useEffect(() => { queueMicrotask(() => setOpen(false)); }, [pathname]);
 
   const isActive = (href: string) => {
     if (href === '/') return pathname === '/';
@@ -40,10 +41,7 @@ export default function Navbar() {
 
   return (
     <header
-      className={cn(
-        'fixed left-0 right-0 top-0 z-50 transition-all duration-300',
-        scrolled ? 'top-7' : 'top-7',
-      )}
+      className="fixed left-0 right-0 top-7 z-50 transition-all duration-300"
     >
       <nav
         className={cn(

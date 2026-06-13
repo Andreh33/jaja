@@ -49,26 +49,33 @@ export async function POST(req: Request) {
 
     return NextResponse.json(json);
   } catch (err) {
+    // no filtrar el mensaje interno al cliente; queda solo en el log del servidor
     console.error('[upload] error', err);
-    const message = err instanceof Error ? err.message : 'Error desconocido';
-    return NextResponse.json({ error: `Error en el servidor: ${message}` }, { status: 500 });
+    return NextResponse.json({ error: 'Error en el servidor' }, { status: 500 });
   }
 }
 
 export async function DELETE(req: Request) {
   const session = await auth();
   if (!session) return NextResponse.json({ error: 'No autorizado' }, { status: 401 });
-  const { id } = await req.json();
-  const found = await db.select().from(archivos).where(eq(archivos.id, id)).limit(1);
-  if (found.length === 0 || found[0].userId !== session.user.id) {
-    return NextResponse.json({ error: 'No encontrado' }, { status: 404 });
-  }
-  const f = found[0];
   try {
-    await del(f.url);
+    const body = await req.json().catch(() => null);
+    const id = body && typeof body.id === 'string' ? body.id : null;
+    if (!id) return NextResponse.json({ error: 'Falta el id' }, { status: 400 });
+    const found = await db.select().from(archivos).where(eq(archivos.id, id)).limit(1);
+    if (found.length === 0 || found[0].userId !== session.user.id) {
+      return NextResponse.json({ error: 'No encontrado' }, { status: 404 });
+    }
+    const f = found[0];
+    try {
+      await del(f.url);
+    } catch (err) {
+      console.warn('[upload] blob del failed', err);
+    }
+    await db.delete(archivos).where(eq(archivos.id, id));
+    return NextResponse.json({ ok: true });
   } catch (err) {
-    console.warn('[upload] blob del failed', err);
+    console.error('[upload] delete error', err);
+    return NextResponse.json({ error: 'Error en el servidor' }, { status: 500 });
   }
-  await db.delete(archivos).where(eq(archivos.id, id));
-  return NextResponse.json({ ok: true });
 }

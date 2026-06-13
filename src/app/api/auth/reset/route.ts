@@ -4,11 +4,16 @@ import bcrypt from 'bcryptjs';
 import { db } from '@/lib/db';
 import { users, passwordResets } from '../../../../../drizzle/schema';
 import { eq } from 'drizzle-orm';
+import { rateLimit, getClientIp } from '@/lib/rate-limit';
 
-const schema = z.object({ token: z.string(), password: z.string().min(6) });
+export const runtime = 'nodejs';
+
+const schema = z.object({ token: z.string().min(10).max(128), password: z.string().min(6).max(200) });
 
 export async function POST(req: Request) {
   try {
+    const rl = rateLimit(`reset:${getClientIp(req)}`, { max: 10, windowMs: 60_000 });
+    if (!rl.allowed) return NextResponse.json({ error: 'Demasiados intentos, espera un momento' }, { status: 429 });
     const parsed = schema.safeParse(await req.json());
     if (!parsed.success) return NextResponse.json({ error: 'Datos inválidos' }, { status: 400 });
     const { token, password } = parsed.data;

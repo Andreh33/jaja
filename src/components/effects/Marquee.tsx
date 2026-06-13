@@ -27,7 +27,8 @@ export function Marquee({
         style={{ animationDuration: `${speed}s` }}
       >
         {children}
-        {children}
+        {/* copia visual para el bucle continuo; oculta a lectores de pantalla */}
+        <span aria-hidden="true" style={{ display: 'contents' }}>{children}</span>
       </div>
     </div>
   );

@@ -22,6 +22,9 @@ function Item({ q, a, i }: { q: string; a: string; i: number }) {
     >
       <button
         onClick={() => setOpen((s) => !s)}
+        aria-expanded={open}
+        aria-controls={`faq-panel-${i}`}
+        id={`faq-trigger-${i}`}
         className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left transition-colors"
       >
         <span className="text-sm font-medium text-white md:text-base">{q}</span>
@@ -37,6 +40,9 @@ function Item({ q, a, i }: { q: string; a: string; i: number }) {
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
             className="overflow-hidden"
+            id={`faq-panel-${i}`}
+            role="region"
+            aria-labelledby={`faq-trigger-${i}`}
           >
             <div className="px-6 pb-5 pr-12 text-sm leading-relaxed text-white/65">
               {a}

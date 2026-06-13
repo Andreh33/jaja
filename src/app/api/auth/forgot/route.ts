@@ -3,11 +3,16 @@ import { z } from 'zod';
 import { db } from '@/lib/db';
 import { users, passwordResets } from '../../../../../drizzle/schema';
 import { eq } from 'drizzle-orm';
+import { rateLimit, getClientIp } from '@/lib/rate-limit';
+
+export const runtime = 'nodejs';
 
 const schema = z.object({ email: z.string().email() });
 
 export async function POST(req: Request) {
   try {
+    const rl = rateLimit(`forgot:${getClientIp(req)}`, { max: 6, windowMs: 60_000 });
+    if (!rl.allowed) return NextResponse.json({ error: 'Demasiados intentos, espera un momento' }, { status: 429 });
     const body = await req.json();
     const parsed = schema.safeParse(body);
     if (!parsed.success) return NextResponse.json({ error: 'Email inválido' }, { status: 400 });

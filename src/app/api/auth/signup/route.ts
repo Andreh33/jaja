@@ -4,6 +4,9 @@ import { z } from 'zod';
 import { db } from '@/lib/db';
 import { users } from '../../../../../drizzle/schema';
 import { eq } from 'drizzle-orm';
+import { rateLimit, getClientIp } from '@/lib/rate-limit';
+
+export const runtime = 'nodejs';
 
 const signupSchema = z.object({
   name: z.string().min(2),
@@ -14,6 +17,8 @@ const signupSchema = z.object({
 
 export async function POST(req: Request) {
   try {
+    const rl = rateLimit(`signup:${getClientIp(req)}`, { max: 8, windowMs: 60_000 });
+    if (!rl.allowed) return NextResponse.json({ error: 'Demasiados intentos, espera un momento' }, { status: 429 });
     const body = await req.json();
     const parsed = signupSchema.safeParse(body);
     if (!parsed.success) {
