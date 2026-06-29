@@ -386,6 +386,27 @@ export default function AgenteIaPage() {
           </div>
         </section>
 
+        {/* ¿Dónde trabajamos? */}
+        <section className="py-12">
+          <div className="mx-auto max-w-3xl px-6">
+            <Reveal>
+              <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-white/40">¿Dónde trabajamos?</p>
+              <h2 className="font-display text-2xl text-white">Agentes de IA en toda España</h2>
+              <p className="mt-3 text-sm text-white/60">Configuramos tu agente en remoto para negocios de toda España. Algunas zonas:</p>
+              <div className="mt-5 flex flex-wrap gap-2">
+                {['madrid', 'barcelona', 'valencia', 'sevilla', 'malaga', 'alicante', 'granada', 'badajoz'].map((c) => (
+                  <Link key={c} href={`/agente-ia/${c}`} className="rounded-full glass px-4 py-2 text-xs text-white/70 transition-colors hover:text-white">
+                    {c.charAt(0).toUpperCase() + c.slice(1)}
+                  </Link>
+                ))}
+                <Link href="/cobertura" className="rounded-full px-4 py-2 text-xs text-white/80 underline transition-colors hover:text-white">
+                  Ver todas
+                </Link>
+              </div>
+            </Reveal>
+          </div>
+        </section>
+
         {/* En menos de 72h */}
         <section className="py-24">
           <div className="mx-auto max-w-7xl px-6">

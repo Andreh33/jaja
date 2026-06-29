@@ -232,6 +232,26 @@ export default function WebPlanPage() {
           </div>
         </section>
 
+        <section className="py-12">
+          <div className="mx-auto max-w-3xl px-6">
+            <Reveal>
+              <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-white/40">¿Dónde trabajamos?</p>
+              <h3 className="font-display text-2xl text-white">Diseño web en toda España</h3>
+              <p className="mt-3 text-sm text-white/60">Trabajamos en remoto para empresas de toda España. Algunas zonas:</p>
+              <div className="mt-5 flex flex-wrap gap-2">
+                {['madrid', 'barcelona', 'valencia', 'sevilla', 'malaga', 'bilbao', 'zaragoza', 'badajoz'].map((c) => (
+                  <Link key={c} href={`/diseno-web/${c}`} className="rounded-full glass px-4 py-2 text-xs text-white/70 transition-colors hover:text-white">
+                    {c === 'a-coruna' ? 'A Coruña' : c.charAt(0).toUpperCase() + c.slice(1)}
+                  </Link>
+                ))}
+                <Link href="/cobertura" className="rounded-full px-4 py-2 text-xs text-white/80 underline transition-colors hover:text-white">
+                  Ver todas
+                </Link>
+              </div>
+            </Reveal>
+          </div>
+        </section>
+
         <section className="relative py-32">
           <div
             aria-hidden
