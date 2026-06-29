@@ -29,6 +29,39 @@ type Project = {
 
 const PROJECTS: Project[] = [
   {
+    id: 'zonasport',
+    name: 'Zona Sport',
+    url: 'https://zonasport.vercel.app/',
+    domain: 'zonasport.vercel.app',
+    sector: 'Tienda de deportes multimarca online',
+    location: 'Puebla de la Calzada (Badajoz)',
+    description:
+      'Tienda de deportes multimarca con solera —desde 1998— en Puebla de la Calzada. Web con catálogo online amplio por categorías (mujer, hombre, niño, niña, bebé, complementos y outlet), marcas como Babolat, Joluvi, Ditchil o Jhayber, blog de consejos y un panel de gestión interno que unifica el inventario. Atención y pedidos por WhatsApp con recogida en tienda, pensada para que el cliente local compre cómodo online sin perder el trato de siempre. Pádel, running, montaña y fitness, todo en una sola tienda.',
+    image: '/proyectos/zonasport.jpg',
+  },
+  {
+    id: 'sear',
+    name: 'SEAR',
+    url: 'https://hamburguesa.vercel.app/',
+    domain: 'hamburguesa.vercel.app',
+    sector: 'Hamburguesería premium (smash burgers)',
+    location: 'España',
+    description:
+      'Hamburguesería premium de smash burgers con una web tan apetecible como su producto. Fotografía de alta calidad, carta digital con alérgenos, horarios, reservas y carrito de pedido, sobre un diseño oscuro y cuidado con un montaje visual de la hamburguesa por capas que enamora antes de morder. Pensada para convertir el antojo en pedido o reserva en pocos clics, con una identidad de marca fuerte que destaca en un sector saturado.',
+    image: '/proyectos/sear.jpg',
+  },
+  {
+    id: 'panelex',
+    name: 'Panelex',
+    url: 'https://panelexpanelsandwich.com/',
+    domain: 'panelexpanelsandwich.com',
+    sector: 'Fábrica de panel sándwich (construcción)',
+    location: 'Extremadura (Badajoz)',
+    description:
+      'Fábrica de panel sándwich en Extremadura con una web B2B potente y muy trabajada en SEO. Catálogo técnico de productos (cubierta, fachada, frigorífico) con fichas y datos estructurados que Google muestra como fragmentos de producto, decenas de guías técnicas, calculadora y landings por provincia para captar en toda España. Diseño industrial y sobrio orientado a constructoras, naves agrícolas e instaladores que necesitan medir, comparar y pedir presupuesto. Una máquina de captación de leads para venta de material de construcción.',
+    image: '/proyectos/panelex.webp',
+  },
+  {
     id: 'the-boat-house',
     name: 'The Boat House',
     url: 'https://ibizarestaurante.vercel.app/es',
@@ -53,8 +86,8 @@ const PROJECTS: Project[] = [
   {
     id: 'toldos-noa',
     name: 'Toldos Noa',
-    url: 'https://toldos-noa.vercel.app/',
-    domain: 'toldos-noa.vercel.app',
+    url: 'https://toldosnoa.com/',
+    domain: 'toldosnoa.com',
     sector: 'Toldos a medida e instalación',
     location: 'Madrid y Tarragona',
     description:
@@ -173,7 +206,7 @@ export default function ProyectosPage() {
                 Algunos de los negocios que ya confían en nosotros
               </h1>
               <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/65 md:text-lg">
-                Cada proyecto que hacemos lo cuidamos como si fuera nuestro. Estos son once
+                Cada proyecto que hacemos lo cuidamos como si fuera nuestro. Estos son catorce
                 proyectos que ya tienen su web en producción con Latech. Pulsa cualquiera
                 para visitarla.
               </p>
