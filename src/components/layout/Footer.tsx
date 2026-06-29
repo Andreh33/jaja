@@ -33,6 +33,7 @@ const cols = [
     links: [
       { href: '/sobre-nosotros', label: 'Sobre nosotros' },
       { href: '/blog', label: 'Blog' },
+      { href: '/cobertura', label: 'Cobertura nacional' },
       { href: '/contacto', label: 'Contacto' },
     ],
   },
