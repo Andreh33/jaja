@@ -91,7 +91,7 @@ export default function Navbar() {
           <Link href="/login" className="link-underline text-sm font-medium text-white/70 transition-colors hover:text-white">
             Iniciar sesión
           </Link>
-          <MagneticButton href="/tienda" className="!py-2 !px-5 !text-xs">
+          <MagneticButton href="/tienda" aria-label="Empezar tu proyecto web" className="!py-2 !px-5 !text-xs">
             Empezar
           </MagneticButton>
         </div>
@@ -141,6 +141,7 @@ export default function Navbar() {
                 </Link>
                 <Link
                   href="/tienda"
+                  aria-label="Empezar tu proyecto web"
                   className="rounded-full px-4 py-3 text-center text-base font-semibold text-white"
                   style={{ background: 'var(--grad-signature)' }}
                 >
