@@ -3,17 +3,25 @@ import { inArray } from 'drizzle-orm';
 import { getAllPosts } from '@/lib/posts';
 import { db } from '@/lib/db';
 import { jobOffers } from '../../drizzle/schema';
+import { allLandings } from '@/content/local';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const base = 'https://serviciosonlineweb.com';
   const fixed = [
-    '', '/sobre-nosotros', '/blog', '/tienda', '/tienda/web', '/tienda/online', '/tienda/agente-ia', '/tienda/calculadora', '/proyectos', '/empleo', '/contacto', '/terminos', '/privacidad',
+    '', '/sobre-nosotros', '/blog', '/tienda', '/tienda/web', '/tienda/online', '/tienda/agente-ia', '/tienda/calculadora', '/proyectos', '/empleo', '/contacto', '/cobertura', '/terminos', '/privacidad',
   ];
   const fixedEntries: MetadataRoute.Sitemap = fixed.map((p) => ({
     url: `${base}${p}`,
     lastModified: new Date(),
     changeFrequency: 'weekly' as const,
     priority: p === '' ? 1.0 : 0.7,
+  }));
+
+  const landingEntries: MetadataRoute.Sitemap = allLandings().map((l) => ({
+    url: `${base}/${l.service}/${l.citySlug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
   }));
 
   let postEntries: MetadataRoute.Sitemap = [];
@@ -45,5 +53,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // job_offers query failed — continue with the rest
   }
 
-  return [...fixedEntries, ...postEntries, ...offerEntries];
+  return [...fixedEntries, ...landingEntries, ...postEntries, ...offerEntries];
 }
