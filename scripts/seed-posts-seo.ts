@@ -10,6 +10,10 @@ import { posts as batch2 } from './posts-data/seo-batch-2';
 import { posts as batch3 } from './posts-data/seo-batch-3';
 import { posts as batch4 } from './posts-data/seo-batch-4';
 import { posts as batch5 } from './posts-data/seo-batch-5';
+import { posts as batch6 } from './posts-data/seo-batch-6';
+import { posts as batch7 } from './posts-data/seo-batch-7';
+import { posts as batch8 } from './posts-data/seo-batch-8';
+import { posts as batch9 } from './posts-data/seo-batch-9';
 
 const client = createClient({
   url: process.env.TURSO_DATABASE_URL!,
@@ -17,7 +21,7 @@ const client = createClient({
 });
 const db = drizzle(client);
 
-const ALL = [...batch1, ...batch2, ...batch3, ...batch4, ...batch5];
+const ALL = [...batch1, ...batch2, ...batch3, ...batch4, ...batch5, ...batch6, ...batch7, ...batch8, ...batch9];
 
 async function main() {
   console.log(`🌱 Sembrando ${ALL.length} posts SEO...`);

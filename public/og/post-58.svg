@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="bg58" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0A1F1A"/>
+      <stop offset="100%" stop-color="#05090E"/>
+    </linearGradient>
+    <radialGradient id="g58a" cx="0.2" cy="0.35" r="0.55">
+      <stop offset="0%" stop-color="#22C55E" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#22C55E" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="g58b" cx="0.8" cy="0.65" r="0.55">
+      <stop offset="0%" stop-color="#3B82F6" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#3B82F6" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg58)"/>
+  <rect width="800" height="500" fill="url(#g58a)"/>
+  <rect width="800" height="500" fill="url(#g58b)"/>
+
+  <!-- VS divider -->
+  <g transform="translate(400,250)">
+    <circle r="34" fill="rgba(5,9,14,0.95)" stroke="rgba(34,197,94,0.6)" stroke-width="2"/>
+    <text x="0" y="7" text-anchor="middle" font-family="Inter,system-ui" font-size="20" font-weight="800" fill="#fff">VS</text>
+  </g>
+
+  <!-- Left: No accesible panel -->
+  <g transform="translate(80,110)">
+    <rect width="270" height="280" rx="16" fill="rgba(5,9,14,0.85)" stroke="rgba(239,68,68,0.45)"/>
+    <text x="24" y="42" font-family="Inter,system-ui" font-size="18" font-weight="800" fill="#fff">No accesible</text>
+    <text x="24" y="64" font-family="ui-monospace,monospace" font-size="10" fill="rgba(255,255,255,0.5)" letter-spacing="2">FUERA DE NORMA</text>
+
+    <g font-family="ui-monospace,monospace" font-size="11">
+      <text x="24" y="104" fill="rgba(255,255,255,0.75)">Cumplimiento WCAG</text>
+      <rect x="24" y="114" width="222" height="10" rx="5" fill="rgba(255,255,255,0.08)"/>
+      <rect x="24" y="114" width="80" height="10" rx="5" fill="rgba(239,68,68,0.8)"/>
+      <text x="24" y="148" fill="rgba(255,255,255,0.55)">incumple</text>
+
+      <text x="24" y="190" fill="rgba(255,255,255,0.7)">⚠ Sin alt ni contraste</text>
+      <text x="24" y="216" fill="rgba(255,255,255,0.7)">⚠ Riesgo de sanción</text>
+      <text x="24" y="242" fill="rgba(255,255,255,0.7)">⚠ Pierde usuarios</text>
+    </g>
+  </g>
+
+  <!-- Right: Accesible panel -->
+  <g transform="translate(450,110)">
+    <rect width="270" height="280" rx="16" fill="rgba(5,9,14,0.85)" stroke="rgba(59,130,246,0.55)"/>
+    <text x="24" y="42" font-family="Inter,system-ui" font-size="18" font-weight="800" fill="#fff">WCAG 2.1 AA</text>
+    <text x="24" y="64" font-family="ui-monospace,monospace" font-size="10" fill="rgba(255,255,255,0.5)" letter-spacing="2">EAA 2025 · EN 301 549</text>
+
+    <g font-family="ui-monospace,monospace" font-size="11">
+      <text x="24" y="104" fill="rgba(255,255,255,0.75)">Cumplimiento WCAG</text>
+      <rect x="24" y="114" width="222" height="10" rx="5" fill="rgba(255,255,255,0.08)"/>
+      <rect x="24" y="114" width="213" height="10" rx="5" fill="rgba(34,197,94,0.85)"/>
+      <text x="24" y="148" fill="rgba(255,255,255,0.55)">conforme</text>
+
+      <text x="24" y="190" fill="rgba(255,255,255,0.7)">✓ Alt y contraste</text>
+      <text x="24" y="216" fill="rgba(255,255,255,0.7)">✓ Navegable por teclado</text>
+      <text x="24" y="242" fill="rgba(255,255,255,0.7)">✓ Llega a todos</text>
+    </g>
+  </g>
+
+  <text x="400" y="78" text-anchor="middle" font-family="ui-monospace,monospace" font-size="11" fill="rgba(255,255,255,0.55)" letter-spacing="4">ACCESIBILIDAD WEB · EAA</text>
+</svg>

@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="bg66" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0F2E26"/>
+      <stop offset="100%" stop-color="#07050E"/>
+    </linearGradient>
+    <radialGradient id="g66a" cx="0.2" cy="0.35" r="0.6">
+      <stop offset="0%" stop-color="#14B8A6" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#14B8A6" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="g66b" cx="0.85" cy="0.7" r="0.55">
+      <stop offset="0%" stop-color="#3B82F6" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#3B82F6" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg66)"/>
+  <rect width="800" height="500" fill="url(#g66a)"/>
+  <rect width="800" height="500" fill="url(#g66b)"/>
+
+  <text x="64" y="118" font-family="ui-monospace,monospace" font-size="13" letter-spacing="4" fill="rgba(20,184,166,0.95)">CROSS-BORDER · UE</text>
+  <text x="64" y="184" font-family="Inter,system-ui" font-size="44" font-weight="800" fill="#fff">Vender en el</text>
+  <text x="64" y="238" font-family="Inter,system-ui" font-size="44" font-weight="800" fill="#fff">extranjero</text>
+
+  <g transform="translate(610,250)" opacity="0.9">
+    <circle r="120" fill="none" stroke="rgba(20,184,166,0.25)" stroke-width="2"/>
+    <circle r="120" fill="rgba(7,5,14,0.5)"/>
+    <ellipse rx="120" ry="44" fill="none" stroke="rgba(255,255,255,0.18)" stroke-width="1.5"/>
+    <ellipse rx="120" ry="80" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1.5"/>
+    <line x1="-120" y1="0" x2="120" y2="0" stroke="rgba(255,255,255,0.18)" stroke-width="1.5"/>
+    <line x1="0" y1="-120" x2="0" y2="120" stroke="rgba(255,255,255,0.12)" stroke-width="1.5"/>
+    <circle cx="-40" cy="-30" r="6" fill="#14B8A6"/>
+    <circle cx="35" cy="20" r="6" fill="#3B82F6"/>
+    <circle cx="10" cy="-60" r="6" fill="#F97316"/>
+    <circle cx="-55" cy="45" r="6" fill="#EC4899"/>
+  </g>
+
+  <g transform="translate(64,300)" font-family="ui-monospace,monospace" font-size="13" fill="rgba(255,255,255,0.8)">
+    <rect width="190" height="50" rx="10" fill="rgba(7,5,14,0.85)" stroke="rgba(20,184,166,0.45)"/>
+    <text x="20" y="31" fill="#14B8A6" font-weight="700">IVA · OSS · aduanas</text>
+  </g>
+</svg>

@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="bg72" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0F1E2E"/>
+      <stop offset="100%" stop-color="#05070E"/>
+    </linearGradient>
+    <radialGradient id="g72a" cx="0.2" cy="0.3" r="0.6">
+      <stop offset="0%" stop-color="#22C55E" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#22C55E" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="g72b" cx="0.85" cy="0.7" r="0.55">
+      <stop offset="0%" stop-color="#3B82F6" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#3B82F6" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg72)"/>
+  <rect width="800" height="500" fill="url(#g72a)"/>
+  <rect width="800" height="500" fill="url(#g72b)"/>
+
+  <text x="64" y="120" font-family="ui-monospace,monospace" font-size="13" fill="rgba(255,255,255,0.5)" letter-spacing="3">SEO PARA PYMES</text>
+  <text x="64" y="190" font-family="Inter,system-ui" font-size="44" font-weight="800" fill="#fff">SEO para autónomos</text>
+  <text x="64" y="244" font-family="Inter,system-ui" font-size="44" font-weight="800" fill="#22C55E">y pymes</text>
+
+  <g transform="translate(64,310)" font-family="ui-monospace,monospace" font-size="13" fill="rgba(255,255,255,0.78)">
+    <text x="0" y="0">✓ Palabras clave de tu zona</text>
+    <text x="0" y="34">✓ Ficha de Google optimizada</text>
+    <text x="0" y="68">✓ Contenido que responde dudas</text>
+  </g>
+
+  <g transform="translate(560,250)">
+    <circle r="110" fill="none" stroke="rgba(34,197,94,0.25)" stroke-width="2"/>
+    <circle r="78" fill="none" stroke="rgba(34,197,94,0.4)" stroke-width="2"/>
+    <circle r="46" fill="rgba(5,7,14,0.9)" stroke="rgba(34,197,94,0.7)" stroke-width="2"/>
+    <text x="0" y="8" text-anchor="middle" font-family="Inter,system-ui" font-size="26" font-weight="800" fill="#fff">#1</text>
+  </g>
+</svg>

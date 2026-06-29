@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="bg62" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1A0F2E"/>
+      <stop offset="100%" stop-color="#07050E"/>
+    </linearGradient>
+    <radialGradient id="g62a" cx="0.2" cy="0.35" r="0.55">
+      <stop offset="0%" stop-color="#22C55E" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#22C55E" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="g62b" cx="0.8" cy="0.65" r="0.55">
+      <stop offset="0%" stop-color="#F97316" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#F97316" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg62)"/>
+  <rect width="800" height="500" fill="url(#g62a)"/>
+  <rect width="800" height="500" fill="url(#g62b)"/>
+
+  <g transform="translate(400,250)">
+    <circle r="34" fill="rgba(7,5,14,0.95)" stroke="rgba(139,92,246,0.6)" stroke-width="2"/>
+    <text x="0" y="7" text-anchor="middle" font-family="Inter,system-ui" font-size="20" font-weight="800" fill="#fff">VS</text>
+  </g>
+
+  <g transform="translate(80,110)">
+    <rect width="270" height="280" rx="16" fill="rgba(7,5,14,0.85)" stroke="rgba(34,197,94,0.45)"/>
+    <text x="24" y="42" font-family="Inter,system-ui" font-size="18" font-weight="800" fill="#fff">Dropshipping</text>
+    <text x="24" y="64" font-family="ui-monospace,monospace" font-size="10" fill="rgba(255,255,255,0.5)" letter-spacing="2">SIN STOCK</text>
+    <g font-family="ui-monospace,monospace" font-size="11">
+      <text x="24" y="108" fill="rgba(255,255,255,0.7)">✓ Inversion minima</text>
+      <text x="24" y="142" fill="rgba(255,255,255,0.7)">✓ Catalogo amplio</text>
+      <text x="24" y="184" fill="rgba(255,255,255,0.7)">⚠ Margen bajo</text>
+      <text x="24" y="218" fill="rgba(255,255,255,0.7)">⚠ Sin control de envio</text>
+      <text x="24" y="252" fill="rgba(255,255,255,0.7)">⚠ Postventa dificil</text>
+    </g>
+  </g>
+
+  <g transform="translate(450,110)">
+    <rect width="270" height="280" rx="16" fill="rgba(7,5,14,0.85)" stroke="rgba(249,115,22,0.55)"/>
+    <text x="24" y="42" font-family="Inter,system-ui" font-size="18" font-weight="800" fill="#fff">Stock propio</text>
+    <text x="24" y="64" font-family="ui-monospace,monospace" font-size="10" fill="rgba(255,255,255,0.5)" letter-spacing="2">ALMACEN</text>
+    <g font-family="ui-monospace,monospace" font-size="11">
+      <text x="24" y="108" fill="rgba(255,255,255,0.7)">✓ Margen mayor</text>
+      <text x="24" y="142" fill="rgba(255,255,255,0.7)">✓ Control total</text>
+      <text x="24" y="184" fill="rgba(255,255,255,0.7)">✓ Envio rapido</text>
+      <text x="24" y="218" fill="rgba(255,255,255,0.7)">⚠ Inversion inicial</text>
+      <text x="24" y="252" fill="rgba(255,255,255,0.7)">⚠ Gestion de stock</text>
+    </g>
+  </g>
+</svg>

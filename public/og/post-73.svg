@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="bg73" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2E230F"/>
+      <stop offset="100%" stop-color="#0E0905"/>
+    </linearGradient>
+    <radialGradient id="g73a" cx="0.25" cy="0.35" r="0.6">
+      <stop offset="0%" stop-color="#FBBF24" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#FBBF24" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="g73b" cx="0.85" cy="0.7" r="0.55">
+      <stop offset="0%" stop-color="#F97316" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#F97316" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg73)"/>
+  <rect width="800" height="500" fill="url(#g73a)"/>
+  <rect width="800" height="500" fill="url(#g73b)"/>
+
+  <text x="64" y="120" font-family="ui-monospace,monospace" font-size="13" fill="rgba(255,255,255,0.5)" letter-spacing="3">REPUTACIÓN LOCAL</text>
+  <text x="64" y="190" font-family="Inter,system-ui" font-size="44" font-weight="800" fill="#fff">Reseñas en Google</text>
+  <text x="64" y="244" font-family="Inter,system-ui" font-size="44" font-weight="800" fill="#FBBF24">que posicionan</text>
+
+  <g transform="translate(64,320)" font-family="Inter,system-ui" font-size="40" fill="#FBBF24">
+    <text x="0" y="0">★ ★ ★ ★ ★</text>
+  </g>
+  <text x="64" y="372" font-family="ui-monospace,monospace" font-size="13" fill="rgba(255,255,255,0.7)">4,9 · 137 reseñas</text>
+
+  <g transform="translate(600,250)" font-family="ui-monospace,monospace" font-size="12" fill="rgba(255,255,255,0.8)">
+    <rect x="-40" y="-90" width="180" height="180" rx="16" fill="rgba(14,9,5,0.85)" stroke="rgba(251,191,36,0.5)"/>
+    <text x="-16" y="-48" font-family="Inter,system-ui" font-size="15" font-weight="700" fill="#fff">Pack local</text>
+    <text x="-16" y="-12">★ Tu negocio</text>
+    <text x="-16" y="16" fill="rgba(255,255,255,0.45)">· competidor</text>
+    <text x="-16" y="44" fill="rgba(255,255,255,0.45)">· competidor</text>
+  </g>
+</svg>

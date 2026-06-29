@@ -4,8 +4,13 @@ import { posts as b2 } from './posts-data/seo-batch-2';
 import { posts as b3 } from './posts-data/seo-batch-3';
 import { posts as b4 } from './posts-data/seo-batch-4';
 import { posts as b5 } from './posts-data/seo-batch-5';
+import { posts as b6 } from './posts-data/seo-batch-6';
+import { posts as b7 } from './posts-data/seo-batch-7';
+import { posts as b8 } from './posts-data/seo-batch-8';
+import { posts as b9 } from './posts-data/seo-batch-9';
 
-const all = [...b1, ...b2, ...b3, ...b4, ...b5];
+// Todos los batches juntos: así el check de duplicados detecta colisiones nuevo-vs-existente.
+const all = [...b1, ...b2, ...b3, ...b4, ...b5, ...b6, ...b7, ...b8, ...b9];
 const slugs = new Set<string>();
 const errors: string[] = [];
 const existing = [

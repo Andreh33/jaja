@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="bg70" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1A1233"/>
+      <stop offset="100%" stop-color="#06050E"/>
+    </linearGradient>
+    <radialGradient id="g70a" cx="0.24" cy="0.3" r="0.6">
+      <stop offset="0%" stop-color="#8B5CF6" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#8B5CF6" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="g70b" cx="0.82" cy="0.72" r="0.6">
+      <stop offset="0%" stop-color="#06B6D4" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#06B6D4" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg70)"/>
+  <rect width="800" height="500" fill="url(#g70a)"/>
+  <rect width="800" height="500" fill="url(#g70b)"/>
+
+  <g transform="translate(64,150)">
+    <rect width="58" height="58" rx="14" fill="rgba(139,92,246,0.16)" stroke="rgba(139,92,246,0.5)"/>
+    <text x="29" y="40" text-anchor="middle" font-family="Inter,system-ui" font-size="30">🔗</text>
+  </g>
+
+  <text x="64" y="280" font-family="Inter,system-ui" font-size="46" font-weight="800" fill="#fff">Integra tu agente de</text>
+  <text x="64" y="332" font-family="Inter,system-ui" font-size="46" font-weight="800" fill="#8B5CF6">IA con el CRM</text>
+  <text x="64" y="384" font-family="ui-monospace,monospace" font-size="15" fill="rgba(255,255,255,0.6)" letter-spacing="2">DATOS EN ORDEN · CERO COPIAR Y PEGAR</text>
+
+  <text x="736" y="452" text-anchor="end" font-family="Inter,system-ui" font-size="15" font-weight="700" fill="rgba(255,255,255,0.5)">Latech</text>
+</svg>
