@@ -94,6 +94,28 @@ export function serviceJsonLd(opts: {
   };
 }
 
+export function localServiceJsonLd(opts: {
+  serviceName: string;
+  description: string;
+  path: string;
+  city: string;
+  region: string;
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: opts.serviceName,
+    description: opts.description,
+    url: `${SITE_URL}${opts.path}`,
+    provider: { '@id': `${SITE_URL}/#organization` },
+    areaServed: {
+      '@type': 'City',
+      name: opts.city,
+      containedInPlace: { '@type': 'AdministrativeArea', name: opts.region },
+    },
+  };
+}
+
 export function faqJsonLd(faqs: { q: string; a: string }[]) {
   return {
     '@context': 'https://schema.org',
