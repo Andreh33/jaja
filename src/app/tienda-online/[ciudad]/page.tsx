@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: { params: Promise<{ ciudad: s
   if (!l) return { title: 'No encontrado' };
   const url = `${SITE_URL}/${SERVICE}/${ciudad}`;
   return {
-    title: l.title,
+    title: { absolute: l.title },
     description: l.description,
     alternates: { canonical: url },
     openGraph: { title: l.title, description: l.description, url, siteName: 'Latech', locale: 'es_ES', type: 'website' },
