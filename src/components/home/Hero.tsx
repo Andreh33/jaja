@@ -37,8 +37,8 @@ export default function Hero() {
               fontWeight: 800,
             }}
           >
-            <span className="block">Webs que</span>
-            <GradientText as="span" className="block">convierten visitas</GradientText>
+            <span className="block">Webs que{' '}</span>
+            <GradientText as="span" className="block">convierten visitas{' '}</GradientText>
             <span className="block">en clientes.</span>
           </motion.h1>
 
