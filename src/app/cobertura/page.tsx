@@ -7,21 +7,51 @@ import { SignatureMarquee } from '@/components/effects/Marquee';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import { Reveal } from '@/components/effects/Reveal';
+import JsonLd from '@/components/seo/JsonLd';
+import Breadcrumbs from '@/components/seo/Breadcrumbs';
 import { landingsFor, getCity, SERVICE_LABEL, type Service } from '@/content/local';
-import { SITE_URL } from '@/lib/seo';
+import { SITE_URL, breadcrumbJsonLd } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Diseño web, tiendas online y agentes IA en toda España',
+  // Distinto del title del home para no competir por la misma búsqueda.
+  title: 'Cobertura: diseño web y tiendas online por ciudades',
   description:
-    'Agencia digital de Extremadura que trabaja para empresas de toda España en remoto: diseño web, tiendas online y agentes de IA con entrega en 24-48h y sin permanencia.',
+    'Elige tu ciudad y tu servicio: diseño web, tienda online o agente de IA en Madrid, Barcelona, Valencia, Sevilla y toda España. En remoto, en 24-48h.',
   alternates: { canonical: `${SITE_URL}/cobertura` },
 };
 
 const SERVICES: Service[] = ['diseno-web', 'tienda-online', 'agente-ia'];
 
 export default function CoberturaPage() {
+  const allItems = SERVICES.flatMap((service) =>
+    landingsFor(service).map((l) => ({
+      service,
+      citySlug: l.citySlug,
+      name: `${SERVICE_LABEL[service]} en ${getCity(l.citySlug)?.name ?? l.citySlug}`,
+    })),
+  );
   return (
     <>
+      <JsonLd
+        data={{
+          '@context': 'https://schema.org',
+          '@type': 'ItemList',
+          name: 'Servicios de Latech por ciudad',
+          numberOfItems: allItems.length,
+          itemListElement: allItems.map((item, i) => ({
+            '@type': 'ListItem',
+            position: i + 1,
+            name: item.name,
+            url: `${SITE_URL}/${item.service}/${item.citySlug}`,
+          })),
+        }}
+      />
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: 'Inicio', path: '/' },
+          { name: 'Cobertura', path: '/cobertura' },
+        ])}
+      />
       <SignatureMarquee />
       <Navbar />
       <AuroraBackground intensity="subtle" />
@@ -29,6 +59,12 @@ export default function CoberturaPage() {
       <main className="relative z-10">
         <section className="pt-44 pb-12">
           <div className="mx-auto max-w-5xl px-6">
+            <Breadcrumbs
+              items={[
+                { name: 'Inicio', path: '/' },
+                { name: 'Cobertura', path: '/cobertura' },
+              ]}
+            />
             <Reveal>
               <span className="inline-flex items-center gap-2 text-xs text-white/55">
                 <MapPin size={12} /> Cobertura nacional

@@ -17,12 +17,21 @@ import AudioPlayer from '@/components/shared/AudioPlayer';
 import { whatsappLink, STRIPE_LINKS } from '@/lib/stripe-links';
 import Link from 'next/link';
 import JsonLd from '@/components/seo/JsonLd';
+import Breadcrumbs from '@/components/seo/Breadcrumbs';
 import { serviceJsonLd, breadcrumbJsonLd } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Agente IA · Tu recepcionista 24/7 con n8n',
+  title: 'Agente de IA · recepcionista virtual 24/7 con n8n',
   description: 'Agente de IA que atiende llamadas 24/7, gestiona reservas, cobra con Stripe y recuerda a cada cliente. Desde 150€/mes. Para toda España.',
   alternates: { canonical: '/tienda/agente-ia' },
+  openGraph: {
+    title: 'Agente de IA · recepcionista virtual 24/7 · Latech',
+    description: 'Atiende llamadas 24/7, gestiona reservas y cobra por voz con Stripe. Desde 150€/mes.',
+    url: '/tienda/agente-ia',
+    siteName: 'Latech',
+    locale: 'es_ES',
+    type: 'website',
+  },
 };
 
 const GUIDES = [
@@ -97,6 +106,13 @@ export default function AgenteIaPage() {
       <main className="relative z-10">
         <section className="pt-44 pb-20">
           <div className="mx-auto max-w-7xl px-6">
+            <Breadcrumbs
+              items={[
+                { name: 'Inicio', path: '/' },
+                { name: 'Tienda', path: '/tienda' },
+                { name: 'Agente IA', path: '/tienda/agente-ia' },
+              ]}
+            />
             <div className="grid items-center gap-14 md:grid-cols-2">
               <div>
                 <Reveal>

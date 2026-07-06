@@ -12,12 +12,21 @@ import MagneticButton from '@/components/effects/MagneticButton';
 import { STRIPE_LINKS, whatsappLink } from '@/lib/stripe-links';
 import Link from 'next/link';
 import JsonLd from '@/components/seo/JsonLd';
+import Breadcrumbs from '@/components/seo/Breadcrumbs';
 import { serviceJsonLd, faqJsonLd, breadcrumbJsonLd } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Plan Tienda Online · E-commerce profesional en 48h',
+  title: 'Crear tienda online profesional · lista en 48h',
   description: 'Tienda online con Stripe, Bizum, transferencia, SEO de productos y analítica integrada. 80€/mes + 600€ creación. Para toda España.',
   alternates: { canonical: '/tienda/online' },
+  openGraph: {
+    title: 'Crear tienda online profesional · lista en 48h · Latech',
+    description: 'E-commerce con Stripe y Bizum, SEO de productos y analítica. 600€ + 80€/mes. Sin permanencia.',
+    url: '/tienda/online',
+    siteName: 'Latech',
+    locale: 'es_ES',
+    type: 'website',
+  },
 };
 
 const GUIDES = [
@@ -69,6 +78,15 @@ export default function OnlinePlanPage() {
       <main className="relative z-10">
         <section className="pt-44 pb-20">
           <div className="mx-auto max-w-7xl px-6 text-center">
+            <div className="text-left">
+              <Breadcrumbs
+                items={[
+                  { name: 'Inicio', path: '/' },
+                  { name: 'Tienda', path: '/tienda' },
+                  { name: 'Plan Tienda Online', path: '/tienda/online' },
+                ]}
+              />
+            </div>
             <Reveal>
               <span
                 className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-semibold uppercase tracking-widest"

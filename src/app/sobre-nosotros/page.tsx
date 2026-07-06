@@ -10,10 +10,14 @@ import GradientText from '@/components/effects/GradientText';
 import MagneticButton from '@/components/effects/MagneticButton';
 import EquipoSection from './_components/EquipoSection';
 import { whatsappLink } from '@/lib/stripe-links';
+import JsonLd from '@/components/seo/JsonLd';
+import { breadcrumbJsonLd, SITE_URL } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Sobre nosotros · Tu socio tecnológico en Badajoz',
-  description: 'Latech: equipo técnico en Badajoz especializado en diseño web, e-commerce, SEO y agentes de IA con n8n para empresas que quieren crecer.',
+  title: 'Quiénes somos · Agencia de diseño web en Badajoz',
+  description:
+    'Conoce al equipo de Latech: Andrés Rubio y Luis Grondona, fundadores, y el equipo técnico que diseña webs, tiendas online y agentes de IA para toda España.',
+  alternates: { canonical: '/sobre-nosotros' },
 };
 
 const VALORES = [
@@ -27,6 +31,21 @@ const TECHS = ['Next.js', 'React', 'TypeScript', 'n8n', 'OpenAI', 'Stripe', 'Ver
 export default function SobreNosotrosPage() {
   return (
     <>
+      <JsonLd
+        data={{
+          '@context': 'https://schema.org',
+          '@type': 'AboutPage',
+          name: 'Quiénes somos · Latech',
+          url: `${SITE_URL}/sobre-nosotros`,
+          mainEntity: { '@id': `${SITE_URL}/#organization` },
+        }}
+      />
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: 'Inicio', path: '/' },
+          { name: 'Sobre nosotros', path: '/sobre-nosotros' },
+        ])}
+      />
       <SignatureMarquee />
       <Navbar />
       <AuroraBackground />

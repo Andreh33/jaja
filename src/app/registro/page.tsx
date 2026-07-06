@@ -8,6 +8,7 @@ import RegistroClient from './RegistroClient';
 export const metadata: Metadata = {
   title: 'Crear cuenta',
   description: 'Crea tu cuenta de cliente en Latech.',
+  robots: { index: false, follow: false },
 };
 
 export default function RegistroPage() {

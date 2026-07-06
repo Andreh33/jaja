@@ -9,6 +9,7 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'Acceso',
   description: 'Acceso a tu panel de Latech.',
+  robots: { index: false, follow: false },
 };
 
 export const dynamic = 'force-dynamic';

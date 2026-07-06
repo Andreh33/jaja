@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { Clock, ArrowRight } from 'lucide-react';
 import TiltCard from '../effects/TiltCard';
-import type { Post } from '../../../drizzle/schema';
+import type { PostSummary } from '@/lib/posts';
 import { formatDate } from '@/lib/utils';
 
 const CATEGORY_COLORS: Record<string, string> = {
@@ -14,7 +14,7 @@ const CATEGORY_COLORS: Record<string, string> = {
   'Tutoriales': 'var(--warning)',
 };
 
-export default function BlogCard({ post }: { post: Post }) {
+export default function BlogCard({ post }: { post: PostSummary }) {
   const color = (post.category && CATEGORY_COLORS[post.category]) || 'var(--purple-300)';
   return (
     <Link href={`/blog/${post.slug}`} className="group block h-full">

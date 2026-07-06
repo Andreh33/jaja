@@ -1,22 +1,20 @@
 import Link from 'next/link';
 import Logo from './Logo';
 import { Mail, Phone, MapPin, MessageCircle } from 'lucide-react';
-
-const InstagramIcon = (p: { size?: number }) => (
-  <svg viewBox="0 0 24 24" width={p.size || 14} height={p.size || 14} fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-    <rect x="3" y="3" width="18" height="18" rx="5" />
-    <circle cx="12" cy="12" r="4" />
-    <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none" />
-  </svg>
-);
-const LinkedinIcon = (p: { size?: number }) => (
-  <svg viewBox="0 0 24 24" width={p.size || 14} height={p.size || 14} fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M16 8a6 6 0 016 6v6h-4v-6a2 2 0 00-4 0v6h-4v-10h4v1.5A6 6 0 0116 8z" />
-    <rect x="2" y="9" width="4" height="11" />
-    <circle cx="4" cy="4" r="2" />
-  </svg>
-);
 import { whatsappLink } from '@/lib/stripe-links';
+
+/** Ciudades destacadas: refuerzan el descubrimiento de las landing locales
+ *  desde todas las páginas (Google apenas las encuentra desde el hub solo). */
+const CIUDADES = [
+  { slug: 'madrid', name: 'Madrid' },
+  { slug: 'barcelona', name: 'Barcelona' },
+  { slug: 'valencia', name: 'Valencia' },
+  { slug: 'sevilla', name: 'Sevilla' },
+  { slug: 'bilbao', name: 'Bilbao' },
+  { slug: 'zaragoza', name: 'Zaragoza' },
+  { slug: 'malaga', name: 'Málaga' },
+  { slug: 'badajoz', name: 'Badajoz' },
+];
 
 const cols = [
   {
@@ -32,6 +30,7 @@ const cols = [
     title: 'Empresa',
     links: [
       { href: '/sobre-nosotros', label: 'Sobre nosotros' },
+      { href: '/proyectos', label: 'Proyectos reales' },
       { href: '/blog', label: 'Blog' },
       { href: '/cobertura', label: 'Cobertura nacional' },
       { href: '/contacto', label: 'Contacto' },
@@ -96,19 +95,34 @@ export default function Footer() {
                   <Mail size={14} style={{ color: 'var(--purple-300)' }} /> info@latech.es
                 </a>
               </li>
-              <li className="flex items-center gap-3 pt-2">
-                <a aria-label="Instagram" href="#" className="inline-flex h-9 w-9 items-center justify-center rounded-full glass">
-                  <InstagramIcon size={14} />
-                </a>
-                <a aria-label="LinkedIn" href="#" className="inline-flex h-9 w-9 items-center justify-center rounded-full glass">
-                  <LinkedinIcon size={14} />
-                </a>
-              </li>
+              {/* Redes sociales: restaurar los iconos cuando existan los
+                  perfiles reales (y añadirlos como sameAs en lib/seo.ts).
+                  Un href="#" es un enlace muerto para usuarios y crawlers. */}
             </ul>
           </div>
         </div>
 
-        <div className="mt-14 flex flex-col items-start justify-between gap-3 border-t pt-6 text-xs text-white/40 md:flex-row md:items-center" style={{ borderColor: 'var(--border-subtle)' }}>
+        <div className="mt-12 border-t pt-6" style={{ borderColor: 'var(--border-subtle)' }}>
+          <p className="text-xs font-semibold uppercase tracking-widest text-white/40">
+            Diseño web en tu ciudad
+          </p>
+          <p className="mt-3 text-xs leading-relaxed text-white/45">
+            {CIUDADES.map((c, i) => (
+              <span key={c.slug}>
+                {i > 0 && ' · '}
+                <Link href={`/diseno-web/${c.slug}`} className="transition-colors hover:text-white">
+                  Diseño web en {c.name}
+                </Link>
+              </span>
+            ))}
+            {' · '}
+            <Link href="/cobertura" className="underline transition-colors hover:text-white">
+              ver las 45 zonas
+            </Link>
+          </p>
+        </div>
+
+        <div className="mt-8 flex flex-col items-start justify-between gap-3 border-t pt-6 text-xs text-white/40 md:flex-row md:items-center" style={{ borderColor: 'var(--border-subtle)' }}>
           <p>© {new Date().getFullYear()} Latech · Hecho en Badajoz con cariño.</p>
           <p className="font-mono">v1.0 · Next.js · Vercel · Turso</p>
         </div>

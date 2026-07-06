@@ -6,11 +6,14 @@ import MouseGlow from '@/components/effects/MouseGlow';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import { Reveal, RevealGroup, RevealItem } from '@/components/effects/Reveal';
+import JsonLd from '@/components/seo/JsonLd';
+import Breadcrumbs from '@/components/seo/Breadcrumbs';
+import { breadcrumbJsonLd } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Proyectos · Algunos de los negocios que confían en Latech',
+  title: 'Proyectos: webs reales hechas para empresas',
   description:
-    'Cada proyecto que hacemos lo cuidamos como si fuera nuestro. Webs reales en producción para tienda, moda, restauración, automoción, deportes de combate, servicios y obra civil.',
+    '14 webs en producción hechas por Latech: Zona Sport, Panelex, Toldos Noa y más. Tiendas online, restauración, industria y servicios de toda España.',
   alternates: {
     canonical: '/proyectos',
   },
@@ -187,6 +190,26 @@ const PROJECTS: Project[] = [
 export default function ProyectosPage() {
   return (
     <>
+      <JsonLd
+        data={{
+          '@context': 'https://schema.org',
+          '@type': 'ItemList',
+          name: 'Proyectos de Latech en producción',
+          numberOfItems: PROJECTS.length,
+          itemListElement: PROJECTS.map((p, i) => ({
+            '@type': 'ListItem',
+            position: i + 1,
+            name: p.name,
+            url: p.url,
+          })),
+        }}
+      />
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: 'Inicio', path: '/' },
+          { name: 'Proyectos', path: '/proyectos' },
+        ])}
+      />
       <Navbar />
       <main className="relative min-h-screen overflow-x-hidden" style={{ background: 'var(--bg-base)' }}>
         <AuroraBackground />
@@ -195,6 +218,12 @@ export default function ProyectosPage() {
         {/* === Header === */}
         <section className="relative px-6 pt-36 pb-12 md:px-10 md:pt-44 md:pb-16">
           <div className="mx-auto max-w-5xl">
+            <Breadcrumbs
+              items={[
+                { name: 'Inicio', path: '/' },
+                { name: 'Proyectos', path: '/proyectos' },
+              ]}
+            />
             <Reveal>
               <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-white/45">
                 Cómo trabajamos

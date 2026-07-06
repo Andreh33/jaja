@@ -45,12 +45,13 @@ export default function IntroCinematic() {
           <div aria-hidden className="absolute inset-0 bg-grid" style={{ opacity: 0.25 }} />
 
           <div className="relative flex flex-col items-center text-center">
-            <motion.h1 className="font-display text-6xl font-extrabold tracking-tight text-gradient md:text-8xl"
+            {/* <p> a propósito: el único H1 del home debe ser el del Hero. */}
+            <motion.p className="font-display text-6xl font-extrabold tracking-tight text-gradient md:text-8xl"
               initial={{ opacity: 0, y: 24, filter: 'blur(14px)', letterSpacing: '0.3em' }}
               animate={{ opacity: 1, y: 0, filter: 'blur(0px)', letterSpacing: '-0.04em' }}
               transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}>
               Latech
-            </motion.h1>
+            </motion.p>
             <motion.p className="mt-4 text-lg text-white/80 md:text-2xl"
               initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.9, duration: 0.8 }}>
               Tu imaginación, <span className="text-white">nuestro límite.</span>

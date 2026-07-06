@@ -513,3 +513,37 @@ body {
 @keyframes option-card-rotate-border {
   to { --option-card-angle: 360deg; }
 }
+
+/* === Entrada del hero sin JS (fix LCP) ==========================
+   El H1 es el elemento LCP: si llega con opacity:0 hasta que hidrata
+   framer-motion, el render delay se come ~2s en móvil. Estas
+   animaciones CSS pintan desde el primer frame del navegador. */
+@keyframes hero-rise {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes hero-settle {
+  from { transform: translateY(26px); }
+  to { transform: translateY(0); }
+}
+.hero-enter {
+  animation: hero-rise 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+/* El LCP nunca debe pasar por opacity:0 — solo desliza. */
+.hero-enter-lcp {
+  animation: hero-settle 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.hero-delay-1 { animation-delay: 0.12s; }
+.hero-delay-2 { animation-delay: 0.26s; }
+.hero-delay-3 { animation-delay: 0.4s; }
+@keyframes hero-beam {
+  0%, 100% { transform: scaleY(0.4); opacity: 0.3; }
+  50% { transform: scaleY(1); opacity: 1; }
+}
+.hero-beam {
+  animation: hero-beam 2s ease-in-out infinite;
+  transform-origin: top;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-enter, .hero-enter-lcp, .hero-beam { animation: none; opacity: 1; transform: none; }
+}

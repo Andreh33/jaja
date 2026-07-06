@@ -13,8 +13,10 @@ import MagneticButton from '@/components/effects/MagneticButton';
 import { whatsappLink } from '@/lib/stripe-links';
 
 export const metadata: Metadata = {
-  title: 'Tienda · Servicios',
-  description: 'Tres soluciones técnicas: página web, tienda online y agente de IA. Sin permanencia. Entrega en 24-48h.',
+  title: 'Precios de diseño web, tienda online y agente IA',
+  description:
+    'Precios públicos y cerrados: página web 600€ + 60€/mes, tienda online 600€ + 80€/mes y agente de IA desde 150€/mes. Sin permanencia, entrega en 24-48h.',
+  alternates: { canonical: '/tienda' },
 };
 
 const SHOPS = [

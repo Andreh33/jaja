@@ -8,6 +8,7 @@ import RecuperarClient from './RecuperarClient';
 export const metadata: Metadata = {
   title: 'Recuperar contraseña',
   description: 'Recupera el acceso a tu cuenta de Latech.',
+  robots: { index: false, follow: false },
 };
 
 export default function RecuperarPage() {

@@ -9,9 +9,10 @@ import GradientText from '@/components/effects/GradientText';
 import CalculadoraClient from './CalculadoraClient';
 
 export const metadata: Metadata = {
-  title: 'Calculadora · Configura tu plan a medida',
+  title: 'Calculadora de presupuesto web online',
   description:
-    'Configura tu plan a medida: web, hosting, tienda, redes, agente IA, blog y logo. Paga solo por lo que necesitas.',
+    'Calcula el precio de tu proyecto en 2 minutos: web, hosting, tienda online, redes, agente IA, blog y logo. Presupuesto al instante, sin dejar tu email.',
+  alternates: { canonical: '/tienda/calculadora' },
 };
 
 export default function CalculadoraPage() {

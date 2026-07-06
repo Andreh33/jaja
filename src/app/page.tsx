@@ -21,7 +21,7 @@ import { FAQS } from '@/components/home/faq-data';
 import { faqJsonLd } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Latech · Diseño web, tiendas online y agentes IA para toda España',
+  title: { absolute: 'Latech · Diseño web, tiendas online y agentes IA en España' },
   description:
     'Diseño web profesional, tiendas online y agentes de IA con n8n para empresas de toda España. Entrega en 24-48h, reuniones por videollamada, sin permanencia.',
   alternates: { canonical: '/' },

@@ -13,12 +13,21 @@ import { STRIPE_LINKS, whatsappLink } from '@/lib/stripe-links';
 import NumberFlow from '@/components/effects/NumberFlow';
 import Link from 'next/link';
 import JsonLd from '@/components/seo/JsonLd';
+import Breadcrumbs from '@/components/seo/Breadcrumbs';
 import { serviceJsonLd, faqJsonLd, breadcrumbJsonLd } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Plan Web · Diseño web profesional en 48h',
+  title: 'Diseño web profesional para empresas en 48h',
   description: 'Página web profesional con SEO técnico, optimización móvil y entrega en 24-48h. 60€/mes + 600€ creación. Sin permanencia. Para toda España.',
   alternates: { canonical: '/tienda/web' },
+  openGraph: {
+    title: 'Diseño web profesional para empresas en 48h · Latech',
+    description: 'Web profesional con SEO técnico y entrega en 24-48h. 60€/mes + 600€ creación. Sin permanencia.',
+    url: '/tienda/web',
+    siteName: 'Latech',
+    locale: 'es_ES',
+    type: 'website',
+  },
 };
 
 const GUIDES = [
@@ -70,6 +79,15 @@ export default function WebPlanPage() {
       <main className="relative z-10">
         <section className="pt-44 pb-20">
           <div className="mx-auto max-w-7xl px-6 text-center">
+            <div className="text-left">
+              <Breadcrumbs
+                items={[
+                  { name: 'Inicio', path: '/' },
+                  { name: 'Tienda', path: '/tienda' },
+                  { name: 'Plan Web', path: '/tienda/web' },
+                ]}
+              />
+            </div>
             <Reveal>
               <span
                 className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-semibold uppercase tracking-widest"

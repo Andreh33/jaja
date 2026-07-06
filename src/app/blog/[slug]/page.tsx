@@ -10,14 +10,16 @@ import Footer from '@/components/layout/Footer';
 import MagneticButton from '@/components/effects/MagneticButton';
 import BlogCard from '@/components/shared/BlogCard';
 import { Reveal } from '@/components/effects/Reveal';
-import { getAllPosts, getPostBySlug } from '@/lib/posts';
+import { getPostSummaries, getPostBySlug } from '@/lib/posts';
 import { renderMarkdown } from '@/lib/markdown';
 import { formatDate } from '@/lib/utils';
 import { whatsappLink } from '@/lib/stripe-links';
 import JsonLd from '@/components/seo/JsonLd';
-import { breadcrumbJsonLd } from '@/lib/seo';
+import Breadcrumbs from '@/components/seo/Breadcrumbs';
+import { breadcrumbJsonLd, truncateDescription, LOGO_URL } from '@/lib/seo';
 
-export const dynamic = 'force-dynamic';
+// ISR: el contenido editorial cambia poco; evita golpear la DB en cada visita.
+export const revalidate = 900;
 
 const CATEGORY_COLORS: Record<string, string> = {
   'Diseño Web': 'var(--accent-web)',
@@ -34,26 +36,28 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const post = await getPostBySlug(slug);
   if (!post) return { title: 'Post no encontrado' };
   const url = `${SITE_URL}/blog/${post.slug}`;
-  const image = post.cover ? `${SITE_URL}${post.cover}` : `${SITE_URL}/og/post-1.svg`;
+  const description = post.excerpt ? truncateDescription(post.excerpt) : undefined;
+  // La imagen OG (PNG 1200x630) la genera ./opengraph-image.tsx: los ficheros
+  // de metadata tienen prioridad sobre `openGraph.images`, y los SVG de /og
+  // no los aceptan los crawlers sociales.
   return {
-    title: `${post.title} · Latech`,
-    description: post.excerpt || undefined,
+    // Sin "· Latech" manual: lo añade el template del layout raíz.
+    title: post.title,
+    description,
     alternates: { canonical: url },
     openGraph: {
       type: 'article',
       url,
       title: post.title,
-      description: post.excerpt || undefined,
+      description,
       siteName: 'Latech',
-      images: [{ url: image, width: 1200, height: 630, alt: post.title }],
       publishedTime: post.publishedAt ? new Date(post.publishedAt).toISOString() : undefined,
       authors: post.author ? [post.author] : undefined,
     },
     twitter: {
       card: 'summary_large_image',
       title: post.title,
-      description: post.excerpt || undefined,
-      images: [image],
+      description,
     },
   };
 }
@@ -63,13 +67,15 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   const post = await getPostBySlug(slug);
   if (!post) notFound();
 
-  const all = await getAllPosts();
+  const all = await getPostSummaries();
   const related = all.filter((p) => p.id !== post.id).slice(0, 3);
   const html = renderMarkdown(post.content);
   const color = (post.category && CATEGORY_COLORS[post.category]) || 'var(--purple-300)';
 
   const articleUrl = `${SITE_URL}/blog/${post.slug}`;
-  const articleImage = post.cover ? `${SITE_URL}${post.cover}` : `${SITE_URL}/og/post-1.svg`;
+  // PNG dinámico (1200x630) generado por ./opengraph-image.tsx
+  const articleImage = `${articleUrl}/opengraph-image`;
+  const isTeamAuthor = !post.author || /equipo/i.test(post.author);
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Article',
@@ -78,11 +84,13 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     image: [articleImage],
     datePublished: post.publishedAt ? new Date(post.publishedAt).toISOString() : undefined,
     dateModified: post.publishedAt ? new Date(post.publishedAt).toISOString() : undefined,
-    author: { '@type': 'Organization', name: post.author || 'Equipo Latech' },
+    author: isTeamAuthor
+      ? { '@type': 'Organization', name: 'Latech', url: `${SITE_URL}/sobre-nosotros` }
+      : { '@type': 'Person', name: post.author, url: `${SITE_URL}/sobre-nosotros` },
     publisher: {
       '@type': 'Organization',
       name: 'Latech',
-      logo: { '@type': 'ImageObject', url: `${SITE_URL}/icon.svg` },
+      logo: { '@type': 'ImageObject', url: LOGO_URL },
     },
     mainEntityOfPage: { '@type': 'WebPage', '@id': articleUrl },
     articleSection: post.category || undefined,
@@ -108,6 +116,13 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       <main className="relative z-10">
         <article className="pt-44 pb-16">
           <div className="mx-auto max-w-3xl px-6">
+            <Breadcrumbs
+              items={[
+                { name: 'Inicio', path: '/' },
+                { name: 'Blog', path: '/blog' },
+                { name: post.title, path: `/blog/${post.slug}` },
+              ]}
+            />
             <Reveal>
               <Link href="/blog" className="inline-flex items-center gap-2 text-xs text-white/55 transition-colors hover:text-white">
                 <ArrowLeft size={12} /> Todos los artículos
@@ -140,6 +155,28 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         <section className="pb-16">
           <div className="mx-auto max-w-3xl px-6">
             <div className="prose-latech" dangerouslySetInnerHTML={{ __html: html }} />
+          </div>
+        </section>
+
+        <section className="pb-4">
+          <div className="mx-auto max-w-3xl px-6">
+            <aside className="rounded-2xl glass p-6 md:p-7">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/40">Sobre el autor</p>
+              <p className="mt-3 text-sm leading-relaxed text-white/70">
+                <strong className="text-white">{isTeamAuthor ? 'Equipo Latech' : post.author}</strong> — equipo de
+                diseño y desarrollo web de Latech, fundado por Andrés Rubio y Luis Grondona en Puebla de la
+                Calzada (Badajoz). Construimos webs, tiendas online y agentes de IA para empresas de toda España,
+                con proyectos en producción como Zona Sport, Panelex o Toldos Noa.
+              </p>
+              <div className="mt-4 flex flex-wrap gap-4 text-xs">
+                <Link href="/sobre-nosotros" className="text-white/70 underline transition-colors hover:text-white">
+                  Conoce al equipo
+                </Link>
+                <Link href="/proyectos" className="text-white/70 underline transition-colors hover:text-white">
+                  Ver proyectos reales
+                </Link>
+              </div>
+            </aside>
           </div>
         </section>
 

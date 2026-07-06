@@ -29,7 +29,8 @@ const syne = Syne({
 export const metadata: Metadata = {
   metadataBase: new URL('https://serviciosonlineweb.com'),
   title: {
-    default: 'Latech · Diseño web, tiendas online y agentes IA para toda España',
+    // ≤60 caracteres para que no se corte en la SERP.
+    default: 'Latech · Diseño web, tiendas online y agentes IA en España',
     template: '%s · Latech',
   },
   description:

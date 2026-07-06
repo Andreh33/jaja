@@ -4,11 +4,11 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
 import BlogCard from './BlogCard';
-import type { Post } from '../../../drizzle/schema';
+import type { PostSummary } from '@/lib/posts';
 
 const ALL = 'Todos';
 
-export default function BlogFilter({ posts, categories }: { posts: Post[]; categories: string[] }) {
+export default function BlogFilter({ posts, categories }: { posts: PostSummary[]; categories: string[] }) {
   const cats = [ALL, ...categories];
   const [active, setActive] = useState(ALL);
   const filtered = active === ALL ? posts : posts.filter((p) => p.category === active);

@@ -7,17 +7,20 @@ import Footer from '@/components/layout/Footer';
 import { Reveal } from '@/components/effects/Reveal';
 import GradientText from '@/components/effects/GradientText';
 import BlogFilter from '@/components/shared/BlogFilter';
-import { getAllPosts } from '@/lib/posts';
+import { getPostSummaries } from '@/lib/posts';
 
 export const metadata: Metadata = {
-  title: 'Blog · Ideas y guías',
-  description: 'Ideas, guías y novedades sobre diseño web, tiendas online, agentes de IA y SEO local.',
+  title: 'Blog de diseño web, tiendas online y agentes de IA',
+  description:
+    'Guías prácticas sobre diseño web, e-commerce, SEO local y agentes de IA para pymes: qué contratar, cuánto cuesta y cómo sacarle rendimiento a tu web.',
+  alternates: { canonical: '/blog' },
 };
 
-export const dynamic = 'force-dynamic';
+// ISR: el listado cambia solo cuando se publica un post.
+export const revalidate = 900;
 
 export default async function BlogPage() {
-  const posts = await getAllPosts();
+  const posts = await getPostSummaries();
   const categories = Array.from(new Set(posts.map((p) => p.category).filter(Boolean) as string[]));
 
   return (
