@@ -831,4 +831,61 @@ No necesitamos una oficina cara para estar cerca de ti: **somos de Extremadura**
 
 Si quieres vender tu ibérico, tu queso o tu aceite directamente, podemos sumar una [tienda online](/tienda/online), o automatizar pedidos y consultas con un [agente de IA](/tienda/agente-ia).`,
   },
+  {
+    service: 'diseno-web',
+    citySlug: 'merida',
+    title: 'Diseño web en Mérida · 24-48h | Latech',
+    description:
+      'Diseño y desarrollo web para empresas de Mérida: servicios y administración, turismo y patrimonio, hostelería y agroalimentario. Webs y apps rápidas, sin permanencia.',
+    h1: 'Diseño y desarrollo web en Mérida',
+    intro:
+      'Mérida es la capital de Extremadura y la tenemos al lado: nuestro equipo trabaja a quince minutos, en Puebla de la Calzada. Conocemos su tejido: la administración y los servicios que giran alrededor de la Junta, el turismo y la hostelería que viven del mayor conjunto romano de España, el comercio del centro y el agroalimentario de la Vega del Guadiana. Diseñamos y desarrollamos webs y aplicaciones a medida que convierten ese movimiento en clientes, con entrega en 24-48h y sin permanencia.',
+    sectores: [
+      { nombre: 'Servicios, gestorías y consultoría', gancho: 'Despachos, asesorías y empresas de servicios que orbitan la capital autonómica y captan clientes por Google.' },
+      { nombre: 'Turismo, cultura y patrimonio', gancho: 'Alojamientos, visitas guiadas, restauración y comercio que viven del Teatro Romano y el Festival de Mérida.' },
+      { nombre: 'Hostelería y comercio del centro', gancho: 'Bares, restaurantes y tiendas que necesitan reservas, carta digital y visibilidad local en la ciudad.' },
+      { nombre: 'Agroalimentario de la Vega', gancho: 'Productores y cooperativas de la Vega del Guadiana que quieren vender origen y calidad dentro y fuera.' },
+      { nombre: 'Administración y empresas tecnológicas', gancho: 'Proyectos que necesitan desarrollo web a medida, apps y automatización con IA conectada a sus sistemas.' },
+    ],
+    faq: [
+      { q: '¿Estáis cerca de Mérida?', a: 'Muchísimo. Somos un equipo de Extremadura, en Puebla de la Calzada, a unos quince minutos de Mérida. Trabajamos por videollamada con la cercanía de quien es de aquí, con entrega en 24-48h.' },
+      { q: '¿Hacéis solo diseño web o también desarrollo a medida y apps?', a: 'Las dos cosas. Además de diseño web, programamos aplicaciones y desarrollo a medida desde cero, y agentes de IA conectados a tus sistemas. No usamos plantillas.' },
+      { q: '¿Sirve para un negocio de turismo o restauración de Mérida?', a: 'Sí. Diseñamos webs con reservas, carta digital y SEO local para que te encuentren los visitantes del Teatro Romano y del Festival de Mérida, y los vecinos de la ciudad.' },
+      { q: '¿Podéis integrar reservas, pagos o citas online?', a: 'Sí. Integramos reservas, pagos con Stripe o Bizum, citas y formularios avanzados según lo que necesite tu negocio.' },
+      { q: '¿Cuánto tardáis?', a: 'La mayoría de webs en 24-48h una vez tenemos tus contenidos. Para tienda online o desarrollo a medida fijamos calendario.' },
+      { q: '¿Hay permanencia?', a: 'No. La web es tuya, sin permanencia. Mantenimiento opcional.' },
+    ],
+    bodyMarkdown: `## Mérida: la capital de Extremadura, a quince minutos de nosotros
+
+Mérida no nos queda lejos: **la tenemos al lado**. Nuestro equipo trabaja desde Puebla de la Calzada, a un cuarto de hora. Conocemos su ritmo sin que nadie nos lo explique: la **administración y los servicios** que giran en torno a la Junta de Extremadura, el **turismo y la hostelería** que viven del mayor conjunto arqueológico romano de España, el comercio del centro y el **agroalimentario de la Vega del Guadiana**.
+
+Es una ciudad con mucho movimiento que, demasiadas veces, no lo aprovecha bien en internet. Ahí es donde entramos: diseñamos y **desarrollamos webs y aplicaciones a medida** que convierten ese movimiento en clientes.
+
+## Sectores que movemos en Mérida
+
+### Servicios, gestorías y consultoría
+Al ser capital autonómica, Mérida concentra despachos, asesorías y empresas de servicios. Para ellos, una web seria, rápida y bien posicionada en Google es la mejor tarjeta de presentación y una fuente constante de contactos.
+
+### Turismo, cultura y hostelería
+El Teatro Romano y el Festival de Mérida traen visitantes todo el año. Diseñamos webs con **reservas, carta digital y SEO local** para que alojamientos, restaurantes, guías y comercios capten a ese turista y también al vecino de la ciudad.
+
+### Desarrollo a medida y apps
+Cuando un proyecto necesita más que una web, lo programamos: **desarrollo web a medida**, aplicaciones y **agentes de IA** conectados a tus sistemas. Sin plantillas, sin atajos.
+
+## Qué incluimos
+
+- Diseño y desarrollo a medida, sin plantillas.
+- Velocidad y Core Web Vitals optimizados.
+- SEO técnico y local para aparecer en las búsquedas de Mérida y Extremadura.
+- Reservas, pagos (Stripe, Bizum), citas o catálogo según tu negocio.
+- Adaptada al móvil.
+
+Consulta planes y precios en [diseño web](/tienda/web) o cuéntanos tu proyecto sin compromiso.
+
+## La ventaja de tenernos al lado y trabajar en remoto
+
+No hace falta una oficina cara para estar cerca de ti: **estamos a quince minutos de Mérida**. Trabajamos por videollamada con la cercanía de quien conoce la ciudad y la región, con entrega en 24-48h y sin permanencia. Para una empresa de Mérida, eso es tener a mano a un equipo que entiende su mercado.
+
+Si además quieres vender online, podemos sumar una [tienda online](/tienda/online), o automatizar reservas, citas y consultas con un [agente de IA](/tienda/agente-ia).`,
+  },
 ];

@@ -14,6 +14,7 @@ const CIUDADES = [
   { slug: 'zaragoza', name: 'Zaragoza' },
   { slug: 'malaga', name: 'Málaga' },
   { slug: 'badajoz', name: 'Badajoz' },
+  { slug: 'merida', name: 'Mérida' },
 ];
 
 const cols = [

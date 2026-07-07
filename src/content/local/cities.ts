@@ -15,5 +15,6 @@ export const CITIES: City[] = [
   { slug: 'vigo', name: 'Vigo', provincia: 'Pontevedra', region: 'Galicia', nearby: ['a-coruna'] },
   { slug: 'granada', name: 'Granada', provincia: 'Granada', region: 'Andalucía', nearby: ['malaga', 'cordoba'] },
   { slug: 'a-coruna', name: 'A Coruña', provincia: 'A Coruña', region: 'Galicia', nearby: ['vigo'] },
-  { slug: 'badajoz', name: 'Badajoz', provincia: 'Badajoz', region: 'Extremadura', nearby: ['sevilla', 'cordoba'] },
+  { slug: 'badajoz', name: 'Badajoz', provincia: 'Badajoz', region: 'Extremadura', nearby: ['merida', 'sevilla', 'cordoba'] },
+  { slug: 'merida', name: 'Mérida', provincia: 'Badajoz', region: 'Extremadura', nearby: ['badajoz', 'sevilla'] },
 ];
