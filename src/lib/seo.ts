@@ -37,8 +37,11 @@ export function truncateDescription(text: string, max = 155): string {
 
 /** Fundadores como entidades Person verificables (E-E-A-T + atribución en IA).
  *  Viven en el @graph global para que cualquier página pueda referenciarlos
- *  por @id sin duplicar datos. */
-const FOUNDERS_JSONLD = [
+ *  por @id sin duplicar datos; /sobre-nosotros es su entity home (los reemite
+ *  como ProfilePage). Añadir `sameAs` (LinkedIn real) cuando el equipo lo dé. */
+const FOUNDER_KNOWS = ['Diseño web', 'Tiendas online', 'SEO local', 'Agentes de IA', 'Automatización con n8n'];
+
+export const FOUNDER_PERSONS = [
   {
     '@type': 'Person',
     '@id': FOUNDER_ANDRES_ID,
@@ -46,7 +49,7 @@ const FOUNDERS_JSONLD = [
     jobTitle: 'Cofundador de Latech',
     url: `${SITE_URL}/sobre-nosotros`,
     worksFor: { '@id': ORG_ID },
-    knowsAbout: ['Diseño web', 'Tiendas online', 'SEO local', 'Agentes de IA', 'Automatización con n8n'],
+    knowsAbout: FOUNDER_KNOWS,
   },
   {
     '@type': 'Person',
@@ -55,7 +58,7 @@ const FOUNDERS_JSONLD = [
     jobTitle: 'Cofundador de Latech',
     url: `${SITE_URL}/sobre-nosotros`,
     worksFor: { '@id': ORG_ID },
-    knowsAbout: ['Diseño web', 'Tiendas online', 'SEO local', 'Agentes de IA', 'Automatización con n8n'],
+    knowsAbout: FOUNDER_KNOWS,
   },
 ];
 
@@ -174,7 +177,25 @@ const WEBSITE_NODE = {
  *  resolver la entidad de la marca sin contradicciones. */
 export const SITE_GRAPH_JSONLD = {
   '@context': 'https://schema.org',
-  '@graph': [ORGANIZATION_NODE, WEBSITE_NODE, ...FOUNDERS_JSONLD],
+  '@graph': [ORGANIZATION_NODE, WEBSITE_NODE, ...FOUNDER_PERSONS],
+};
+
+/** ProfilePage de /sobre-nosotros: convierte la página en el "entity home" de
+ *  los fundadores (Person con @id enlazado al @graph global). Es la señal de
+ *  autor real que da EEAT y atribución en las respuestas de IA. */
+export const FOUNDERS_PROFILE_JSONLD = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'ProfilePage',
+      '@id': `${SITE_URL}/sobre-nosotros#profilepage`,
+      url: `${SITE_URL}/sobre-nosotros`,
+      name: 'Quiénes somos · Latech',
+      about: [{ '@id': FOUNDER_ANDRES_ID }, { '@id': FOUNDER_LUIS_ID }],
+      mainEntity: { '@id': ORG_ID },
+    },
+    ...FOUNDER_PERSONS,
+  ],
 };
 
 export function serviceJsonLd(opts: {

@@ -10,6 +10,8 @@ import { Reveal } from '@/components/effects/Reveal';
 import TiltCard from '@/components/effects/TiltCard';
 import Holographic from '@/components/effects/Holographic';
 import MagneticButton from '@/components/effects/MagneticButton';
+import AnswerBox from '@/components/seo/AnswerBox';
+import ComparisonTable from '@/components/seo/ComparisonTable';
 import { whatsappLink } from '@/lib/stripe-links';
 
 export const metadata: Metadata = {
@@ -89,6 +91,36 @@ export default function TiendaPage() {
               <p className="mx-auto mt-6 max-w-2xl text-base text-white/60">
                 Sin permanencia. Entrega en 24-48h. Cambios menores incluidos cada mes.
               </p>
+            </Reveal>
+          </div>
+        </section>
+
+        {/* Answer-first + tabla citable: gana el snippet de "cuánto cuesta una
+            web" y da a la IA una respuesta con cifras (hueco que el sector
+            esconde tras formulario). */}
+        <section className="pb-16">
+          <div className="mx-auto max-w-3xl px-6">
+            <Reveal>
+              <h2 className="mb-5 font-display text-2xl md:text-3xl" style={{ letterSpacing: '-0.03em', fontWeight: 800 }}>
+                ¿Cuánto cuesta una web profesional en España?
+              </h2>
+              <AnswerBox question="Respuesta rápida">
+                Una página web profesional con Latech cuesta <strong className="text-white">600 € de creación
+                (pago único) más 60 €/mes</strong> de mantenimiento y hosting. Una tienda online son 600 € más
+                80 €/mes, y un agente de IA desde 150 €/mes. Precios públicos y cerrados, sin permanencia y con
+                entrega en 24-48 horas.
+              </AnswerBox>
+              <div className="mt-6">
+                <ComparisonTable
+                  headers={['Servicio', 'Creación (pago único)', 'Cuota mensual']}
+                  rows={[
+                    ['Página web', '600 €', '60 €/mes'],
+                    ['Tienda online', '600 €', '80 €/mes'],
+                    ['Agente de IA', 'Sin coste de alta', 'Desde 150 €/mes'],
+                  ]}
+                  caption="Precios Latech · IVA no incluido"
+                />
+              </div>
             </Reveal>
           </div>
         </section>

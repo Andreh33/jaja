@@ -798,7 +798,17 @@ Si quieres vender online o automatizar la atención al cliente, podemos sumar un
       { q: '¿Cuánto tardáis?', a: 'La mayoría de webs en 24-48h una vez tenemos tus contenidos. Para tienda online fijamos calendario.' },
       { q: '¿Hay permanencia?', a: 'No. La web es tuya, sin permanencia. Mantenimiento opcional.' },
     ],
-    bodyMarkdown: `## Badajoz: nuestra tierra, nuestro producto
+    bodyMarkdown: `## ¿Cuánto cuesta una página web en Badajoz?
+
+Una web profesional para una empresa de Badajoz cuesta **600 € de creación más 60 €/mes** con Latech: hosting, SEO técnico y mantenimiento incluidos, sin permanencia y con entrega en 24-48 h. Somos un equipo extremeño, así que trabajas cerca, sin desplazamientos ni intermediarios.
+
+| Servicio | Precio | Entrega |
+| --- | --- | --- |
+| Página web | 600 € + 60 €/mes | 24-48 h |
+| Tienda online | 600 € + 80 €/mes | 48-72 h |
+| Agente de IA | Desde 150 €/mes | 3-5 días |
+
+## Badajoz: nuestra tierra, nuestro producto
 
 Badajoz no es una ciudad más en este listado: **es nuestra tierra**. Conocemos su economía sin necesidad de que nadie nos la explique. El **agroalimentario y el ibérico de la dehesa**, los quesos y el aceite, la **ganadería**, la **logística** que aprovecha la frontera con Portugal y el espectacular auge de la **energía solar** en la provincia.
 
@@ -855,7 +865,17 @@ Si quieres vender tu ibérico, tu queso o tu aceite directamente, podemos sumar 
       { q: '¿Cuánto tardáis?', a: 'La mayoría de webs en 24-48h una vez tenemos tus contenidos. Para tienda online o desarrollo a medida fijamos calendario.' },
       { q: '¿Hay permanencia?', a: 'No. La web es tuya, sin permanencia. Mantenimiento opcional.' },
     ],
-    bodyMarkdown: `## Mérida: la capital de Extremadura, a quince minutos de nosotros
+    bodyMarkdown: `## ¿Cuánto cuesta una página web en Mérida?
+
+Una web profesional para una empresa de Mérida cuesta **600 € de creación más 60 €/mes** con Latech, con hosting, SEO técnico y mantenimiento incluidos, sin permanencia y entregada en 24-48 h. Estamos a quince minutos, en Puebla de la Calzada, así que trabajas con un equipo cercano y sin intermediarios.
+
+| Servicio | Precio | Entrega |
+| --- | --- | --- |
+| Página web | 600 € + 60 €/mes | 24-48 h |
+| Tienda online | 600 € + 80 €/mes | 48-72 h |
+| Agente de IA | Desde 150 €/mes | 3-5 días |
+
+## Mérida: la capital de Extremadura, a quince minutos de nosotros
 
 Mérida no nos queda lejos: **la tenemos al lado**. Nuestro equipo trabaja desde Puebla de la Calzada, a un cuarto de hora. Conocemos su ritmo sin que nadie nos lo explique: la **administración y los servicios** que giran en torno a la Junta de Extremadura, el **turismo y la hostelería** que viven del mayor conjunto arqueológico romano de España, el comercio del centro y el **agroalimentario de la Vega del Guadiana**.
 

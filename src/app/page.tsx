@@ -9,6 +9,7 @@ import Footer from '@/components/layout/Footer';
 import Hero from '@/components/home/Hero';
 import TechMarquee from '@/components/home/TechMarquee';
 import ServicesGrid from '@/components/home/ServicesGrid';
+import PricingBand from '@/components/home/PricingBand';
 import ProcessSection from '@/components/home/ProcessSection';
 import StatsSection from '@/components/home/StatsSection';
 import TestimonialsCarousel from '@/components/home/TestimonialsCarousel';
@@ -41,6 +42,7 @@ export default function Home() {
         <TechMarquee />
         <Breathe><WordPressCompareSection /></Breathe>
         <Breathe><ServicesGrid /></Breathe>
+        <Breathe><PricingBand /></Breathe>
         <Breathe><ProcessSection /></Breathe>
         <PlaygroundSection />
         <Breathe><StatsSection /></Breathe>

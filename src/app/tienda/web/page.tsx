@@ -14,6 +14,8 @@ import NumberFlow from '@/components/effects/NumberFlow';
 import Link from 'next/link';
 import JsonLd from '@/components/seo/JsonLd';
 import Breadcrumbs from '@/components/seo/Breadcrumbs';
+import AnswerBox from '@/components/seo/AnswerBox';
+import ComparisonTable from '@/components/seo/ComparisonTable';
 import { serviceJsonLd, faqJsonLd, breadcrumbJsonLd } from '@/lib/seo';
 
 export const metadata: Metadata = {
@@ -104,6 +106,37 @@ export default function WebPlanPage() {
                 Diseño adaptado a tu marca, SEO técnico, mobile-first y todas las medidas de seguridad activadas
                 desde el día uno.
               </p>
+            </Reveal>
+          </div>
+        </section>
+
+        {/* Answer-first + comparativa citable: responde "cuánto cuesta una
+            página web profesional" con cifras y contexto que la IA puede citar. */}
+        <section className="pb-16">
+          <div className="mx-auto max-w-3xl px-6 text-left">
+            <Reveal>
+              <h2 className="mb-5 font-display text-2xl md:text-3xl" style={{ letterSpacing: '-0.03em', fontWeight: 800 }}>
+                ¿Cuánto cuesta una página web profesional?
+              </h2>
+              <AnswerBox question="Respuesta rápida">
+                Una página web profesional a medida con Latech cuesta <strong className="text-white">600 € de
+                creación más 60 €/mes</strong>, con hosting en Vercel, SSL, SEO técnico, mantenimiento y cambios
+                menores incluidos. Sin permanencia y entregada en 24-48 horas. El código y el dominio son tuyos
+                si algún día decides marcharte.
+              </AnswerBox>
+              <div className="mt-6">
+                <ComparisonTable
+                  headers={['Aspecto', 'Latech', 'Agencia tradicional']}
+                  rows={[
+                    ['Creación', '600 € (pago único)', '1.500 – 4.000 €'],
+                    ['Cuota mensual', '60 €/mes todo incluido', 'Variable / por horas'],
+                    ['Entrega', '24-48 horas', '4 – 12 semanas'],
+                    ['Permanencia', 'Ninguna', '12 meses habitual'],
+                    ['Código y dominio', 'Tuyos, transferibles', 'A menudo bloqueados'],
+                  ]}
+                  caption="Comparativa orientativa · rangos típicos del sector"
+                />
+              </div>
             </Reveal>
           </div>
         </section>

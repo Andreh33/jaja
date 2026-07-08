@@ -11,7 +11,7 @@ import MagneticButton from '@/components/effects/MagneticButton';
 import EquipoSection from './_components/EquipoSection';
 import { whatsappLink } from '@/lib/stripe-links';
 import JsonLd from '@/components/seo/JsonLd';
-import { breadcrumbJsonLd, SITE_URL } from '@/lib/seo';
+import { breadcrumbJsonLd, FOUNDERS_PROFILE_JSONLD } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: 'Quiénes somos · Agencia de diseño web en Badajoz',
@@ -31,15 +31,9 @@ const TECHS = ['Next.js', 'React', 'TypeScript', 'n8n', 'OpenAI', 'Stripe', 'Ver
 export default function SobreNosotrosPage() {
   return (
     <>
-      <JsonLd
-        data={{
-          '@context': 'https://schema.org',
-          '@type': 'AboutPage',
-          name: 'Quiénes somos · Latech',
-          url: `${SITE_URL}/sobre-nosotros`,
-          mainEntity: { '@id': `${SITE_URL}/#organization` },
-        }}
-      />
+      {/* ProfilePage + Person de los fundadores (entity home): EEAT y atribución
+          de autor en IA. Los @id enlazan con el @graph global del layout. */}
+      <JsonLd data={FOUNDERS_PROFILE_JSONLD} />
       <JsonLd
         data={breadcrumbJsonLd([
           { name: 'Inicio', path: '/' },
