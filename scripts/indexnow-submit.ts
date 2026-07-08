@@ -15,8 +15,14 @@ const base = `https://${HOST}`;
 
 const newPosts = [...b6, ...b7, ...b8, ...b9];
 
+// Hubs de categoría del blog (rutas rastreables reales /blog/categoria/*).
+// Slugs derivados de las categorías reales de los posts en Turso.
+const CATEGORY_HUBS = ['diseno-web', 'tiendas-online', 'ia', 'seo', 'tutoriales'];
+
 const urlList = [
   `${base}/cobertura`,
+  `${base}/blog`,
+  ...CATEGORY_HUBS.map((c) => `${base}/blog/categoria/${c}`),
   ...allLandings().map((l) => `${base}/${l.service}/${l.citySlug}`),
   ...newPosts.map((p) => `${base}/blog/${p.slug}`),
 ];
