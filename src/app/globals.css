@@ -449,6 +449,38 @@ body {
   font-size: 0.9em;
   color: var(--purple-200);
 }
+/* Tablas citables (featured snippet + extracción por IA). El wrapper permite
+   scroll horizontal en móvil sin romper el layout de la página. */
+.prose-latech .table-wrap {
+  margin: 1.75rem 0;
+  overflow-x: auto;
+  border: 1px solid var(--border-subtle);
+  border-radius: 0.9rem;
+  -webkit-overflow-scrolling: touch;
+}
+.prose-latech table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  min-width: 32rem;
+}
+.prose-latech thead th {
+  text-align: left;
+  font-family: var(--font-syne), var(--font-sans);
+  font-weight: 700;
+  color: var(--text-primary);
+  background: var(--bg-elevated);
+  padding: 0.85rem 1rem;
+  white-space: nowrap;
+}
+.prose-latech tbody td {
+  padding: 0.8rem 1rem;
+  border-top: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  vertical-align: top;
+}
+.prose-latech tbody tr:first-child td { border-top: none; }
+.prose-latech tbody td:first-child { color: var(--text-primary); font-weight: 600; }
 
 /* Hide scrollbar (utility) */
 .no-scrollbar::-webkit-scrollbar { display: none; }

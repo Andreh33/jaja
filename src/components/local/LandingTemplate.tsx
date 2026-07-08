@@ -12,7 +12,7 @@ import Breadcrumbs from '@/components/seo/Breadcrumbs';
 import { renderMarkdown } from '@/lib/markdown';
 import { whatsappLink } from '@/lib/stripe-links';
 import { localServiceJsonLd, faqJsonLd, breadcrumbJsonLd } from '@/lib/seo';
-import { getCity, SERVICE_LABEL, type LocalLanding } from '@/content/local';
+import { getCity, getLanding, SERVICE_LABEL, type LocalLanding } from '@/content/local';
 
 const SERVICE_CTA: Record<string, string> = {
   'diseno-web': '/tienda/web',
@@ -48,6 +48,10 @@ export default function LandingTemplate({ landing }: { landing: LocalLanding }) 
   const path = `/${landing.service}/${landing.citySlug}`;
   const html = renderMarkdown(landing.bodyMarkdown);
   const label = SERVICE_LABEL[landing.service];
+  // Solo enlazamos ciudades cercanas que TIENEN landing en este servicio: con
+  // dynamicParams=false, enlazar a una que no existe (p. ej. Mérida en tienda
+  // online) daría un 404 rastreable. Evita enlaces rotos y crawl waste.
+  const nearbyWithLanding = city.nearby.filter((n) => getLanding(landing.service, n));
 
   return (
     <>
@@ -187,7 +191,7 @@ export default function LandingTemplate({ landing }: { landing: LocalLanding }) 
         <section className="pb-20">
           <div className="mx-auto max-w-3xl px-6 text-sm text-white/55">
             <span>También hacemos {label.toLowerCase()} en: </span>
-            {city.nearby.map((n, i) => (
+            {nearbyWithLanding.map((n, i) => (
               <span key={n}>
                 {i > 0 && ' · '}
                 <Link href={`/${landing.service}/${n}`} className="text-white/70 underline hover:text-white">
@@ -195,7 +199,7 @@ export default function LandingTemplate({ landing }: { landing: LocalLanding }) 
                 </Link>
               </span>
             ))}
-            {' · '}
+            {nearbyWithLanding.length > 0 && ' · '}
             <Link href="/cobertura" className="text-white/70 underline hover:text-white">
               toda España
             </Link>

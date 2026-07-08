@@ -47,6 +47,25 @@ export function renderMarkdown(md: string): string {
       out.push(`<blockquote>${inline(escape(buf.join(' ')))}</blockquote>`);
       continue;
     }
+    // Tablas estilo GitHub: fila de cabecera + fila separadora (| --- | --- |)
+    // + filas de datos. Ganan featured snippet y cita de IA (dato extraíble).
+    if (/^\|(.+)\|\s*$/.test(line) && i + 1 < lines.length && /^\|[\s:|-]+\|\s*$/.test(lines[i + 1])) {
+      const splitRow = (row: string) =>
+        row.replace(/^\||\|\s*$/g, '').split('|').map((c) => c.trim());
+      const headers = splitRow(line);
+      i += 2; // salta cabecera + separador
+      const bodyRows: string[][] = [];
+      while (i < lines.length && /^\|(.+)\|\s*$/.test(lines[i])) {
+        bodyRows.push(splitRow(lines[i]));
+        i++;
+      }
+      const thead = `<thead><tr>${headers.map((h) => `<th>${inline(escape(h))}</th>`).join('')}</tr></thead>`;
+      const tbody = `<tbody>${bodyRows
+        .map((r) => `<tr>${r.map((c) => `<td>${inline(escape(c))}</td>`).join('')}</tr>`)
+        .join('')}</tbody>`;
+      out.push(`<div class="table-wrap"><table>${thead}${tbody}</table></div>`);
+      continue;
+    }
     if (/^[-*] /.test(line)) {
       const buf: string[] = [];
       while (i < lines.length && /^[-*] /.test(lines[i])) {
