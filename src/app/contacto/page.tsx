@@ -12,7 +12,7 @@ import ContactForm from './ContactForm';
 import MapWrapper from '@/components/shared/MapWrapper';
 import { whatsappLink } from '@/lib/stripe-links';
 import JsonLd from '@/components/seo/JsonLd';
-import { LOCAL_BUSINESS_JSONLD, breadcrumbJsonLd } from '@/lib/seo';
+import { breadcrumbJsonLd } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: 'Contacto · Hablemos',
@@ -23,7 +23,8 @@ export const metadata: Metadata = {
 export default function ContactoPage() {
   return (
     <>
-      <JsonLd data={LOCAL_BUSINESS_JSONLD} />
+      {/* El schema del negocio (Organization+ProfessionalService) se emite
+          sitewide en el layout como @graph; aquí solo el breadcrumb. */}
       <JsonLd
         data={breadcrumbJsonLd([
           { name: 'Inicio', path: '/' },

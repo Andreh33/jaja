@@ -3,6 +3,30 @@ export const SITE_URL = 'https://serviciosonlineweb.com';
 /** Logo en PNG (Google no acepta bien SVG como logo de Organization). */
 export const LOGO_URL = `${SITE_URL}/apple-icon.png`;
 
+/** @id estables del grafo de entidad. Todo nodo JSON-LD del sitio debe
+ *  referenciar estos ids en lugar de duplicar la entidad. */
+export const ORG_ID = `${SITE_URL}/#organization`;
+export const WEBSITE_ID = `${SITE_URL}/#website`;
+export const FOUNDER_ANDRES_ID = `${SITE_URL}/sobre-nosotros#andres-rubio`;
+export const FOUNDER_LUIS_ID = `${SITE_URL}/sobre-nosotros#luis-grondona`;
+
+/** Perfiles sociales REALES y verificados de la marca (sameAs).
+ *  Añadir aquí las URLs exactas (Instagram, LinkedIn, etc.) cuando el equipo
+ *  las confirme: consolidan la entidad en Google/Bing y en las citas de IA.
+ *  NO inventar URLs: un sameAs que no resuelve daña la entidad. */
+export const SOCIAL_PROFILES: string[] = [];
+
+/** Referencia mínima a la Organization para author/publisher de Articles:
+ *  mismo @id que el nodo completo del @graph del layout, así los parsers
+ *  consolidan en una única entidad. */
+export const ORG_REF = {
+  '@type': 'Organization',
+  '@id': ORG_ID,
+  name: 'Latech',
+  url: SITE_URL,
+  logo: { '@type': 'ImageObject', url: LOGO_URL },
+};
+
 /** Recorta una descripción a un máximo de caracteres sin partir palabras. */
 export function truncateDescription(text: string, max = 155): string {
   const clean = text.replace(/\s+/g, ' ').trim();
@@ -11,11 +35,39 @@ export function truncateDescription(text: string, max = 155): string {
   return `${cut.slice(0, cut.lastIndexOf(' '))}…`;
 }
 
-export const ORGANIZATION_JSONLD = {
-  '@context': 'https://schema.org',
-  '@type': 'Organization',
-  '@id': `${SITE_URL}/#organization`,
+/** Fundadores como entidades Person verificables (E-E-A-T + atribución en IA).
+ *  Viven en el @graph global para que cualquier página pueda referenciarlos
+ *  por @id sin duplicar datos. */
+const FOUNDERS_JSONLD = [
+  {
+    '@type': 'Person',
+    '@id': FOUNDER_ANDRES_ID,
+    name: 'Andrés Rubio',
+    jobTitle: 'Cofundador de Latech',
+    url: `${SITE_URL}/sobre-nosotros`,
+    worksFor: { '@id': ORG_ID },
+    knowsAbout: ['Diseño web', 'Tiendas online', 'SEO local', 'Agentes de IA', 'Automatización con n8n'],
+  },
+  {
+    '@type': 'Person',
+    '@id': FOUNDER_LUIS_ID,
+    name: 'Luis Grondona',
+    jobTitle: 'Cofundador de Latech',
+    url: `${SITE_URL}/sobre-nosotros`,
+    worksFor: { '@id': ORG_ID },
+    knowsAbout: ['Diseño web', 'Tiendas online', 'SEO local', 'Agentes de IA', 'Automatización con n8n'],
+  },
+];
+
+/** Nodo único de negocio: Organization + ProfessionalService en una sola
+ *  entidad (multi-type válido en JSON-LD). Antes había dos nodos separados
+ *  (#organization en el layout y #localbusiness solo en /contacto) que Google
+ *  y los LLMs podían leer como dos entidades distintas. */
+const ORGANIZATION_NODE = {
+  '@type': ['Organization', 'ProfessionalService'],
+  '@id': ORG_ID,
   name: 'Latech',
+  alternateName: 'LA Technology',
   url: SITE_URL,
   logo: { '@type': 'ImageObject', url: LOGO_URL },
   image: LOGO_URL,
@@ -23,10 +75,8 @@ export const ORGANIZATION_JSONLD = {
     'Diseño web, tiendas online y agentes de IA con n8n para empresas de toda España. Entrega en 24-48h, sin permanencia.',
   email: 'info@latech.es',
   telephone: '+34684739091',
-  founder: [
-    { '@type': 'Person', name: 'Andrés Rubio', jobTitle: 'Fundador', url: `${SITE_URL}/sobre-nosotros` },
-    { '@type': 'Person', name: 'Luis Grondona', jobTitle: 'Fundador', url: `${SITE_URL}/sobre-nosotros` },
-  ],
+  priceRange: '€€',
+  founder: [{ '@id': FOUNDER_ANDRES_ID }, { '@id': FOUNDER_LUIS_ID }],
   address: {
     '@type': 'PostalAddress',
     streetAddress: 'Calle Puente 3',
@@ -35,6 +85,7 @@ export const ORGANIZATION_JSONLD = {
     postalCode: '06490',
     addressCountry: 'ES',
   },
+  geo: { '@type': 'GeoCoordinates', latitude: 38.8932, longitude: -6.6262 },
   areaServed: { '@type': 'Country', name: 'España' },
   contactPoint: {
     '@type': 'ContactPoint',
@@ -44,19 +95,6 @@ export const ORGANIZATION_JSONLD = {
     areaServed: 'ES',
     availableLanguage: 'Spanish',
   },
-};
-
-export const LOCAL_BUSINESS_JSONLD = {
-  '@context': 'https://schema.org',
-  '@type': 'ProfessionalService',
-  '@id': `${SITE_URL}/#localbusiness`,
-  name: 'Latech',
-  image: LOGO_URL,
-  logo: { '@type': 'ImageObject', url: LOGO_URL },
-  url: SITE_URL,
-  telephone: '+34684739091',
-  email: 'info@latech.es',
-  priceRange: '€€',
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
     name: 'Servicios de Latech',
@@ -96,16 +134,6 @@ export const LOCAL_BUSINESS_JSONLD = {
       },
     ],
   },
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: 'Calle Puente 3',
-    addressLocality: 'Puebla de la Calzada',
-    addressRegion: 'Badajoz',
-    postalCode: '06490',
-    addressCountry: 'ES',
-  },
-  geo: { '@type': 'GeoCoordinates', latitude: 38.8932, longitude: -6.6262 },
-  areaServed: { '@type': 'Country', name: 'España' },
   openingHoursSpecification: [
     {
       '@type': 'OpeningHoursSpecification',
@@ -126,6 +154,27 @@ export const LOCAL_BUSINESS_JSONLD = {
       closes: '14:00',
     },
   ],
+  ...(SOCIAL_PROFILES.length > 0 ? { sameAs: SOCIAL_PROFILES } : {}),
+};
+
+const WEBSITE_NODE = {
+  '@type': 'WebSite',
+  '@id': WEBSITE_ID,
+  url: SITE_URL,
+  name: 'Latech',
+  description:
+    'Diseño web, tiendas online y agentes de IA para empresas de toda España.',
+  publisher: { '@id': ORG_ID },
+  inLanguage: 'es-ES',
+};
+
+/** Grafo de entidad único del sitio (se emite en el layout raíz):
+ *  Organization/ProfessionalService <-> WebSite <-> Person (fundadores),
+ *  todos enlazados por @id. Es lo que Google/Bing y los LLMs usan para
+ *  resolver la entidad de la marca sin contradicciones. */
+export const SITE_GRAPH_JSONLD = {
+  '@context': 'https://schema.org',
+  '@graph': [ORGANIZATION_NODE, WEBSITE_NODE, ...FOUNDERS_JSONLD],
 };
 
 export function serviceJsonLd(opts: {

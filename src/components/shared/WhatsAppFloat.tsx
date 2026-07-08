@@ -28,7 +28,8 @@ export default function WhatsAppFloat() {
           target="_blank"
           rel="noreferrer"
           aria-label="Contacto por WhatsApp"
-          className="group fixed bottom-6 right-6 z-40 inline-flex h-14 w-14 items-center justify-center rounded-full text-white shadow-lg"
+          // hidden en móvil: ahí el contacto lo cubre MobileCtaBar (barra fija inferior).
+          className="group fixed bottom-6 right-6 z-40 hidden h-14 w-14 items-center justify-center rounded-full text-white shadow-lg md:inline-flex"
           style={{ background: '#25D366', boxShadow: '0 0 0 4px rgba(37,211,102,0.18), 0 10px 40px rgba(37,211,102,0.35)' }}
         >
           <span className="absolute inset-0 rounded-full" style={{ background: '#25D366', opacity: 0.5, animation: 'pulse-dot 2s ease-in-out infinite' }} />

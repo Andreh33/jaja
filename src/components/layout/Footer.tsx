@@ -128,6 +128,8 @@ export default function Footer() {
           <p className="font-mono">v1.0 · Next.js · Vercel · Turso</p>
         </div>
       </div>
+      {/* Hueco para que la MobileCtaBar fija no tape el final del footer en móvil. */}
+      <div aria-hidden className="h-16 md:hidden" />
     </footer>
   );
 }

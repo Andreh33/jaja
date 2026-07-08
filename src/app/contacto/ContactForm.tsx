@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { toast } from 'sonner';
+import { track } from '@vercel/analytics';
 
 export default function ContactForm() {
   const [loading, setLoading] = useState(false);
@@ -18,6 +19,7 @@ export default function ContactForm() {
         body: JSON.stringify(form),
       });
       if (!r.ok) throw new Error();
+      track('contact_form_submit', { service: form.service });
       toast.success('Mensaje enviado · Te respondemos en menos de 24h');
       setForm({ name: '', email: '', phone: '', service: 'web', message: '' });
     } catch {

@@ -6,8 +6,10 @@ import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import { Reveal } from '@/components/effects/Reveal';
 import GradientText from '@/components/effects/GradientText';
-import BlogFilter from '@/components/shared/BlogFilter';
+import BlogCard from '@/components/shared/BlogCard';
+import BlogCategoryPills from '@/components/shared/BlogCategoryPills';
 import { getPostSummaries } from '@/lib/posts';
+import { uniqueCategories } from '@/lib/blog-categories';
 
 export const metadata: Metadata = {
   title: 'Blog de diseño web, tiendas online y agentes de IA',
@@ -21,7 +23,7 @@ export const revalidate = 900;
 
 export default async function BlogPage() {
   const posts = await getPostSummaries();
-  const categories = Array.from(new Set(posts.map((p) => p.category).filter(Boolean) as string[]));
+  const categories = uniqueCategories(posts);
 
   return (
     <>
@@ -61,9 +63,18 @@ export default async function BlogPage() {
           </div>
         </section>
 
+        {/* Listado server-rendered con enlaces reales: las píldoras de
+            categoría son <a> a los hubs /blog/categoria/* y las tarjetas
+            llegan visibles en el HTML inicial (antes: filtro client-side
+            con framer-motion que servía el grid con opacity 0). */}
         <section className="py-16">
           <div className="mx-auto max-w-7xl px-6">
-            <BlogFilter posts={posts} categories={categories} />
+            <BlogCategoryPills categories={categories} />
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {posts.map((p) => (
+                <BlogCard key={p.id} post={p} />
+              ))}
+            </div>
           </div>
         </section>
       </main>

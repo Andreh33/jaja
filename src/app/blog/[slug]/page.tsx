@@ -16,10 +16,23 @@ import { formatDate } from '@/lib/utils';
 import { whatsappLink } from '@/lib/stripe-links';
 import JsonLd from '@/components/seo/JsonLd';
 import Breadcrumbs from '@/components/seo/Breadcrumbs';
-import { breadcrumbJsonLd, truncateDescription, LOGO_URL } from '@/lib/seo';
+import { breadcrumbJsonLd, truncateDescription, ORG_REF } from '@/lib/seo';
+import { categorySlug } from '@/lib/blog-categories';
 
 // ISR: el contenido editorial cambia poco; evita golpear la DB en cada visita.
 export const revalidate = 900;
+
+// SSG de los posts en build: TTFB de edge para Googlebot en vez de cold-start
+// serverless en el primer rastreo. Los posts nuevos (no listados aquí) siguen
+// funcionando vía ISR (dynamicParams por defecto).
+export async function generateStaticParams() {
+  try {
+    const posts = await getPostSummaries();
+    return posts.map((p) => ({ slug: p.slug }));
+  } catch {
+    return [];
+  }
+}
 
 const CATEGORY_COLORS: Record<string, string> = {
   'Diseño Web': 'var(--accent-web)',
@@ -68,7 +81,11 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   if (!post) notFound();
 
   const all = await getPostSummaries();
-  const related = all.filter((p) => p.id !== post.id).slice(0, 3);
+  // Relacionados: prioriza la misma categoría (interlink del clúster temático).
+  const related = all
+    .filter((p) => p.id !== post.id)
+    .sort((a, b) => Number(b.category === post.category) - Number(a.category === post.category))
+    .slice(0, 3);
   const html = renderMarkdown(post.content);
   const color = (post.category && CATEGORY_COLORS[post.category]) || 'var(--purple-300)';
 
@@ -84,14 +101,11 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     image: [articleImage],
     datePublished: post.publishedAt ? new Date(post.publishedAt).toISOString() : undefined,
     dateModified: post.publishedAt ? new Date(post.publishedAt).toISOString() : undefined,
-    author: isTeamAuthor
-      ? { '@type': 'Organization', name: 'Latech', url: `${SITE_URL}/sobre-nosotros` }
-      : { '@type': 'Person', name: post.author, url: `${SITE_URL}/sobre-nosotros` },
-    publisher: {
-      '@type': 'Organization',
-      name: 'Latech',
-      logo: { '@type': 'ImageObject', url: LOGO_URL },
-    },
+    // author/publisher referencian por @id el nodo Organization del @graph
+    // del layout (con fundadores Person enlazados): una sola entidad para
+    // Google/Bing/LLMs en vez de organizaciones sueltas por página.
+    author: isTeamAuthor ? ORG_REF : { '@type': 'Person', name: post.author, url: `${SITE_URL}/sobre-nosotros` },
+    publisher: ORG_REF,
     mainEntityOfPage: { '@type': 'WebPage', '@id': articleUrl },
     articleSection: post.category || undefined,
   };
@@ -128,12 +142,13 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                 <ArrowLeft size={12} /> Todos los artículos
               </Link>
               {post.category && (
-                <span
-                  className="ml-3 inline-flex items-center rounded-full px-3 py-1 text-[10px] font-semibold uppercase tracking-widest"
+                <Link
+                  href={`/blog/categoria/${categorySlug(post.category)}`}
+                  className="ml-3 inline-flex items-center rounded-full px-3 py-1 text-[10px] font-semibold uppercase tracking-widest transition-opacity hover:opacity-80"
                   style={{ background: `${color}20`, color, border: `1px solid ${color}40` }}
                 >
                   {post.category}
-                </span>
+                </Link>
               )}
               <h1 className="mt-7 font-display text-balance text-4xl md:text-6xl" style={{ letterSpacing: '-0.04em', fontWeight: 800, lineHeight: 1.05 }}>
                 {post.title}

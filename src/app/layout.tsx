@@ -6,9 +6,11 @@ import { Toaster } from 'sonner';
 import CustomCursor from '@/components/effects/CustomCursor';
 import ScrollProgress from '@/components/effects/ScrollProgress';
 import WhatsAppFloat from '@/components/shared/WhatsAppFloat';
+import MobileCtaBar from '@/components/shared/MobileCtaBar';
+import ContactClickTracker from '@/components/shared/ContactClickTracker';
 import SessionProvider from '@/components/providers/SessionProvider';
 import JsonLd from '@/components/seo/JsonLd';
-import { ORGANIZATION_JSONLD } from '@/lib/seo';
+import { SITE_GRAPH_JSONLD } from '@/lib/seo';
 
 const geist = Geist({
   variable: '--font-geist',
@@ -80,12 +82,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       suppressHydrationWarning
     >
       <body className="min-h-screen antialiased">
-        <JsonLd data={ORGANIZATION_JSONLD} />
+        <JsonLd data={SITE_GRAPH_JSONLD} />
         <SessionProvider>
           <ScrollProgress />
           <CustomCursor />
           {children}
           <WhatsAppFloat />
+          <MobileCtaBar />
+          <ContactClickTracker />
         </SessionProvider>
         <Toaster
           position="bottom-center"
