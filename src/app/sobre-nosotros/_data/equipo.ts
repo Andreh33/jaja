@@ -34,23 +34,6 @@ export const equipo: Miembro[] = [
     esFundador: true,
   },
   {
-    slug: 'ricardo-perez',
-    nombre: 'Ricardo Pérez',
-    rol: 'Community Manager',
-    descripcion: [
-      'Ricardo Pérez es diseñador gráfico especializado en identidad visual. Estudió el Grado en Diseño Gráfico, una disciplina enfocada en la comunicación visual, creación de logotipos y desarrollo de marca.',
-      'Impulsado por la búsqueda de nuevas oportunidades fuera de su país natal, Venezuela, llegó a España donde comenzó a trabajar de forma independiente en su profesión.',
-      'Hoy forma parte de nuestro equipo, participando en cada proyecto que lo requiere y encargándose del diseño de los logotipos de nuestros clientes.',
-    ],
-    foto: {
-      src: '/equipo/ricardo-perez/foto.jpeg',
-      width: 941,
-      height: 1672,
-      alt: 'Foto de Ricardo Pérez, community manager en Latech',
-    },
-    esFundador: false,
-  },
-  {
     slug: 'ivan-sanchez',
     nombre: 'Iván Sánchez',
     rol: 'Jefe de equipo de promotores',
