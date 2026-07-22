@@ -38,7 +38,7 @@ Exigir:
 
 - [ ] **Step 2: Verificar RED**
 
-Run: `npm test -- tests/local-seo.test.ts`  
+Run: `npm test -- tests/local-seo.test.ts`
 Expected: FAIL por fragmentos, fecha y canonicals ausentes.
 
 - [ ] **Step 3: Commit**
@@ -65,7 +65,7 @@ Configurar title exacto, description con precio, entrega y trabajo remoto, `upda
 
 - [ ] **Step 4: Verificar datos**
 
-Run: `npx tsx scripts/check-landing-uniqueness.ts`  
+Run: `npx tsx scripts/check-landing-uniqueness.ts`
 Expected: exit 0, sin intro duplicada ni placeholder.
 
 ### Task 3: Lastmod selectivo y canonicals
@@ -85,7 +85,7 @@ Tipar metadata con `Metadata` y añadir `alternates: { canonical: "/terminos" }`
 
 - [ ] **Step 3: Verificar GREEN**
 
-Run: `npm test`  
+Run: `npm test`
 Expected: 58 pruebas o más, 0 fallos.
 
 - [ ] **Step 4: Commit**

@@ -1,7 +1,7 @@
 # Recuperación SEO local basada en Search Console — diseño
 
-**Fecha:** 2026-07-22  
-**Sitio:** https://serviciosonlineweb.com  
+**Fecha:** 2026-07-22
+**Sitio:** https://serviciosonlineweb.com
 **Rama:** `codex/seo-2026-07-22-latech`
 
 ## Situación observada
