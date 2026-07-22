@@ -26,7 +26,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const landingEntries: MetadataRoute.Sitemap = allLandings().map((l) => ({
     url: `${base}/${l.service}/${l.citySlug}`,
-    lastModified: SITE_LAST_UPDATE,
+    lastModified: new Date(l.updatedAt ?? SITE_LAST_UPDATE),
     changeFrequency: 'monthly' as const,
     priority: 0.7,
   }));

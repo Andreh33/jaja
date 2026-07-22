@@ -20,6 +20,7 @@ export interface LocalLanding {
   title: string; // <title> (<=60 chars ideal)
   description: string; // meta description (<=155 chars)
   h1: string;
+  updatedAt?: string; // ISO YYYY-MM-DD; lastmod real de esta landing
   intro: string; // párrafo único ligado al tejido económico local
   sectores: { nombre: string; gancho: string }[]; // 3-5
   faq: { q: string; a: string }[]; // 4-6

@@ -8,6 +8,7 @@ import { SignatureMarquee } from '@/components/effects/Marquee';
 export const metadata: Metadata = {
   title: 'Términos y condiciones',
   description: 'Términos y condiciones del servicio de Latech.',
+  alternates: { canonical: '/terminos' },
 };
 
 export default function TerminosPage() {

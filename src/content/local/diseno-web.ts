@@ -385,10 +385,11 @@ Si quieres vender directamente o automatizar el contacto con compradores en vari
   {
     service: 'diseno-web',
     citySlug: 'bilbao',
-    title: 'Diseño web en Bilbao · 24-48h | Latech',
+    title: 'Diseño web en Bilbao desde 600 € | Latech',
     description:
-      'Diseño web profesional para empresas de Bilbao: industria, ingeniería, máquina herramienta y servicios B2B. Webs rápidas, solventes y sin permanencia.',
+      'Diseño web en Bilbao desde 600 €, entrega en 24-48 h y sin permanencia. Trabajamos en remoto para industria, pymes y profesionales.',
     h1: 'Diseño web profesional en Bilbao',
+    updatedAt: '2026-07-22',
     intro:
       'Bilbao y su entorno son el corazón industrial del País Vasco: ingeniería, máquina herramienta, siderurgia, energía y un sector de servicios avanzados B2B con vocación internacional. Es una economía de alto valor donde el cliente exige rigor y solvencia. Diseñamos webs que transmiten capacidad técnica y profesionalidad, en remoto, con entrega en 24-48h y sin permanencia.',
     sectores: [
@@ -405,7 +406,11 @@ Si quieres vender directamente o automatizar el contacto con compradores en vari
       { q: '¿Cuánto tardáis?', a: 'La mayoría de webs en 24-48h una vez tenemos tus contenidos. Para proyectos técnicos amplios fijamos calendario.' },
       { q: '¿Hay permanencia?', a: 'No. La web es tuya, sin permanencia. Mantenimiento opcional.' },
     ],
-    bodyMarkdown: `## Bilbao: web para una economía industrial y técnica
+    bodyMarkdown: `## ¿Cuánto cuesta una página web en Bilbao?
+
+Una web profesional para una empresa de Bilbao cuesta **600 € de creación más 60 €/mes** con Latech: hosting, SEO técnico y mantenimiento incluidos, entrega en 24-48 h y sin permanencia. Trabajamos en remoto por videollamada y atendemos proyectos de toda Bizkaia.
+
+## Bilbao: web para una economía industrial y técnica
 
 Bilbao es uno de los grandes polos industriales de España. Alrededor de la ría se concentra **ingeniería, máquina herramienta, siderurgia, energía y servicios avanzados**, con un fuerte componente exportador y B2B. Es una economía de **alto valor añadido**, donde el cliente que te contrata es exigente y técnico: compara proveedores, mira certificaciones y juzga tu seriedad antes de la primera reunión.
 
@@ -777,10 +782,11 @@ Si quieres vender online o automatizar la atención al cliente, podemos sumar un
   {
     service: 'diseno-web',
     citySlug: 'badajoz',
-    title: 'Diseño web en Badajoz · 24-48h | Latech',
+    title: 'Diseño web en Badajoz desde 600 € | Latech',
     description:
-      'Diseño web profesional para empresas de Badajoz: agroalimentario, ibérico, logística con Portugal y energía solar. Webs rápidas y sin permanencia.',
+      'Diseño web en Badajoz desde 600 €, entrega en 24-48 h y sin permanencia. Equipo extremeño para empresas, comercios y profesionales.',
     h1: 'Diseño web profesional en Badajoz',
+    updatedAt: '2026-07-22',
     intro:
       'Badajoz es nuestra tierra. Conocemos de primera mano su economía: el agroalimentario y el ibérico de la dehesa, la ganadería, la logística que aprovecha la frontera con Portugal y el auge de la energía solar. Es una provincia con producto excelente que muchas veces no se vende bien por internet. Diseñamos webs que ponen en valor lo que hacéis, en remoto, con entrega en 24-48h y sin permanencia.',
     sectores: [

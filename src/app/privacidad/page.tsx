@@ -10,6 +10,7 @@ import { SignatureMarquee } from '@/components/effects/Marquee';
 export const metadata: Metadata = {
   title: 'Política de privacidad',
   description: 'Política de privacidad y tratamiento de datos en Latech.',
+  alternates: { canonical: '/privacidad' },
 };
 
 export default function PrivacidadPage() {
