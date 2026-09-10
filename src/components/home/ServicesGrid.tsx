@@ -48,7 +48,7 @@ export default function ServicesGrid() {
       <div className="mx-auto max-w-7xl px-6">
         <Reveal>
           <div className="mx-auto mb-16 max-w-3xl text-center">
-            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-white/40">Servicios</p>
+            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-white/60">Servicios</p>
             <h2 className="font-display text-balance text-4xl md:text-6xl" style={{ letterSpacing: '-0.04em', fontWeight: 800 }}>
               Tres servicios.<br />
               <span style={{ color: 'var(--text-secondary)' }}>Cero compromisos.</span>

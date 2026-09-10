@@ -31,8 +31,10 @@ const cols = [
     title: 'Empresa',
     links: [
       { href: '/sobre-nosotros', label: 'Sobre nosotros' },
-      { href: '/proyectos', label: 'Proyectos reales' },
+      { href: '/proyectos', label: 'Proyectos' },
       { href: '/blog', label: 'Blog' },
+      { href: '/lab', label: 'Laboratorio' },
+      { href: '/briefing', label: 'Prepara tu proyecto' },
       { href: '/cobertura', label: 'Cobertura nacional' },
       { href: '/contacto', label: 'Contacto' },
     ],
@@ -65,7 +67,7 @@ export default function Footer() {
 
           {cols.map((c) => (
             <div key={c.title} className="md:col-span-2">
-              <h4 className="mb-4 text-xs font-semibold uppercase tracking-widest text-white/50">{c.title}</h4>
+              <h2 className="mb-4 text-xs font-semibold uppercase tracking-widest text-white/50">{c.title}</h2>
               <ul className="space-y-3">
                 {c.links.map((l) => (
                   <li key={l.href}>
@@ -79,7 +81,7 @@ export default function Footer() {
           ))}
 
           <div className="md:col-span-2">
-            <h4 className="mb-4 text-xs font-semibold uppercase tracking-widest text-white/50">Contacto</h4>
+            <h2 className="mb-4 text-xs font-semibold uppercase tracking-widest text-white/50">Contacto</h2>
             <ul className="space-y-3 text-sm text-white/70">
               <li>
                 <a className="inline-flex items-center gap-2 hover:text-white" href={whatsappLink('Hola, quiero saber más sobre Latech')} target="_blank" rel="noreferrer">
@@ -104,10 +106,10 @@ export default function Footer() {
         </div>
 
         <div className="mt-12 border-t pt-6" style={{ borderColor: 'var(--border-subtle)' }}>
-          <p className="text-xs font-semibold uppercase tracking-widest text-white/40">
+          <p className="text-xs font-semibold uppercase tracking-widest text-white/60">
             Diseño web en tu ciudad
           </p>
-          <p className="mt-3 text-xs leading-relaxed text-white/45">
+          <p className="mt-3 text-xs leading-relaxed text-white/60">
             {CIUDADES.map((c, i) => (
               <span key={c.slug}>
                 {i > 0 && ' · '}
@@ -123,7 +125,7 @@ export default function Footer() {
           </p>
         </div>
 
-        <div className="mt-8 flex flex-col items-start justify-between gap-3 border-t pt-6 text-xs text-white/40 md:flex-row md:items-center" style={{ borderColor: 'var(--border-subtle)' }}>
+        <div className="mt-8 flex flex-col items-start justify-between gap-3 border-t pt-6 text-xs text-white/60 md:flex-row md:items-center" style={{ borderColor: 'var(--border-subtle)' }}>
           <p>© {new Date().getFullYear()} Latech · Hecho en Badajoz con cariño.</p>
           <p className="font-mono">v1.0 · Next.js · Vercel · Turso</p>
         </div>

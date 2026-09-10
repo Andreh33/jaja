@@ -7,7 +7,6 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { signIn } from 'next-auth/react';
 import { toast } from 'sonner';
-import MagneticButton from '@/components/effects/MagneticButton';
 
 type Stage = 'select' | 'login';
 

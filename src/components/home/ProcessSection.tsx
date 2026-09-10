@@ -1,6 +1,6 @@
 'use client';
 
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll, useTransform, useReducedMotion } from 'framer-motion';
 import { useRef } from 'react';
 import { Reveal } from '../effects/Reveal';
 
@@ -15,13 +15,14 @@ export default function ProcessSection() {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start 70%', 'end 30%'] });
   const pathLength = useTransform(scrollYProgress, [0, 1], [0, 1]);
+  const reduced = useReducedMotion();
 
   return (
     <section ref={ref} className="relative z-10 py-32">
       <div className="mx-auto max-w-7xl px-6">
         <Reveal>
           <div className="mb-20 max-w-3xl">
-            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-white/40">Proceso</p>
+            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-white/60">Proceso</p>
             <h2 className="font-display text-balance text-4xl md:text-6xl" style={{ letterSpacing: '-0.04em', fontWeight: 800 }}>
               Cómo trabajamos
             </h2>
@@ -46,7 +47,7 @@ export default function ProcessSection() {
               y2="0.5"
               stroke="url(#processGrad)"
               strokeWidth="2"
-              style={{ pathLength }}
+              style={{ pathLength: reduced ? 1 : pathLength }}
             />
             <defs>
               <linearGradient id="processGrad" x1="0%" x2="100%">
@@ -59,12 +60,9 @@ export default function ProcessSection() {
 
           <div className="grid gap-10 md:grid-cols-4">
             {STEPS.map((s, i) => (
-              <motion.div
+              <Reveal
                 key={s.n}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-50px' }}
-                transition={{ duration: 0.7, delay: i * 0.12, ease: [0.16, 1, 0.3, 1] }}
+                delay={i * .08}
                 className="relative"
               >
                 <div className="mb-6 flex items-center gap-4">
@@ -77,7 +75,7 @@ export default function ProcessSection() {
                 </div>
                 <h3 className="font-display text-2xl font-bold text-white">{s.title}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-white/60">{s.desc}</p>
-              </motion.div>
+              </Reveal>
             ))}
           </div>
         </div>

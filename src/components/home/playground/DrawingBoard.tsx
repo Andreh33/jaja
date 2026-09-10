@@ -1,203 +1,318 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { Download, Eraser } from 'lucide-react';
+import { Download, Eraser, Pencil, Redo2, Trash2, Undo2 } from 'lucide-react';
+import { gameStorage } from './game-storage';
+import { suspendGames } from './game-session';
+import styles from './games.module.css';
 
-const COLORS = ['#8B5CF6', '#C084FC', '#F97316', '#FBBF24', '#3B82F6', '#10B981', '#FF4D9D', '#FFFFFF'];
+const COLORS = [
+  { value: '#8B5CF6', name: 'Violeta' }, { value: '#C084FC', name: 'Lavanda' },
+  { value: '#F97316', name: 'Naranja' }, { value: '#FBBF24', name: 'Amarillo' },
+  { value: '#3B82F6', name: 'Azul' }, { value: '#10B981', name: 'Verde' },
+  { value: '#FF4D9D', name: 'Rosa' }, { value: '#FFFFFF', name: 'Blanco' },
+];
 const SIZES = [3, 6, 12];
+const WIDTH = 1600;
+const HEIGHT = 1000;
+const STORAGE_KEY = 'latech-drawing-v1';
+const MAX_OPERATIONS = 240;
+const MAX_POINTS = 2048;
+type Point = { x: number; y: number };
+type Stroke = { kind: 'stroke'; color: string; size: number; erase: boolean; points: Point[] };
+type Operation = Stroke | { kind: 'clear' };
 
-// Cursor de lápiz: SVG inline con el hotspot en la punta.
-const PENCIL_CURSOR = `url("data:image/svg+xml,${encodeURIComponent(
-  `<svg xmlns='http://www.w3.org/2000/svg' width='26' height='26' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z' fill='%23FBBF24' stroke='%2307050E'/></svg>`
-)}") 2 24, crosshair`;
+function readDrawing(): Operation[] {
+  try {
+    const raw = gameStorage.getItem(STORAGE_KEY);
+    if (!raw || raw.length > 2_000_000) return [];
+    const value: unknown = JSON.parse(raw);
+    if (!value || typeof value !== 'object' || !('version' in value) || value.version !== 1
+      || !('operations' in value) || !Array.isArray(value.operations) || value.operations.length > MAX_OPERATIONS) return [];
+    const valid = value.operations.every((op: unknown) => {
+      if (!op || typeof op !== 'object' || !('kind' in op)) return false;
+      if (op.kind === 'clear') return true;
+      if (op.kind !== 'stroke' || !('color' in op) || !COLORS.some((c) => c.value === op.color)
+        || !('size' in op) || typeof op.size !== 'number' || op.size <= 0 || op.size > 200
+        || !('erase' in op) || typeof op.erase !== 'boolean'
+        || !('points' in op) || !Array.isArray(op.points) || !op.points.length || op.points.length > MAX_POINTS) return false;
+      return op.points.every((p: unknown) => p && typeof p === 'object' && 'x' in p && 'y' in p
+        && typeof p.x === 'number' && Number.isFinite(p.x) && p.x >= 0 && p.x <= WIDTH
+        && typeof p.y === 'number' && Number.isFinite(p.y) && p.y >= 0 && p.y <= HEIGHT);
+    });
+    return valid ? value.operations as Operation[] : [];
+  } catch { return []; }
+}
+
+function paintStroke(ctx: CanvasRenderingContext2D, stroke: Stroke) {
+  ctx.save();
+  ctx.globalCompositeOperation = stroke.erase ? 'destination-out' : 'source-over';
+  ctx.strokeStyle = stroke.color;
+  ctx.fillStyle = stroke.color;
+  ctx.lineWidth = stroke.size;
+  ctx.lineCap = 'round';
+  ctx.lineJoin = 'round';
+  const first = stroke.points[0];
+  ctx.beginPath();
+  ctx.arc(first.x, first.y, stroke.size / 2, 0, Math.PI * 2);
+  ctx.fill();
+  if (stroke.points.length > 1) {
+    ctx.beginPath();
+    ctx.moveTo(first.x, first.y);
+    for (const p of stroke.points.slice(1)) ctx.lineTo(p.x, p.y);
+    ctx.stroke();
+  }
+  ctx.restore();
+}
 
 export default function DrawingBoard() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  // El dibujo vive en un canvas offscreen a resolución fija: sobrevive a
-  // resizes y al DPR sin emborronarse al reescalar.
   const boardRef = useRef<HTMLCanvasElement | null>(null);
-  const drawing = useRef(false);
-  const last = useRef<{ x: number; y: number } | null>(null);
-  const [color, setColor] = useState(COLORS[0]);
-  const [size, setSize] = useState(SIZES[1]);
-  const [hasInk, setHasInk] = useState(false);
-
-  const colorRef = useRef(color);
-  const sizeRef = useRef(size);
-  colorRef.current = color;
-  sizeRef.current = size;
+  const operations = useRef<Operation[]>([]);
+  const redo = useRef<Operation[]>([]);
+  const [color, setColor] = useState(COLORS[0].value);
+  const [size, setSize] = useState(6);
+  const [erase, setErase] = useState(false);
+  const options = useRef({ color, size, erase });
+  useEffect(() => { options.current = { color, size, erase }; }, [color, size, erase]);
+  const [history, setHistory] = useState({ undo: 0, redo: 0 });
+  const [status, setStatus] = useState('El dibujo se guarda solo en este dispositivo.');
+  const commands = useRef({ undo: () => {}, redo: () => {}, clear: () => {} });
 
   useEffect(() => {
     const canvas = canvasRef.current!;
     const board = document.createElement('canvas');
-    board.width = 1600;
-    board.height = 1000;
+    board.width = WIDTH;
+    board.height = HEIGHT;
     boardRef.current = board;
+    const ctx = board.getContext('2d')!;
+    let current: Stroke | null = null;
+    let pointer: number | null = null;
+    let saveTimer: ReturnType<typeof setTimeout> | undefined;
+    let displayScale = 1;
+    let offsetX = 0;
+    let offsetY = 0;
+    const keyboardPoint = { x: WIDTH / 2, y: HEIGHT / 2 };
+    let keyboardMode = false;
+    let keyboardInk = false;
 
     const paint = () => {
-      const ctx = canvas.getContext('2d')!;
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.drawImage(board, 0, 0, canvas.width, canvas.height);
+      const view = canvas.getContext('2d')!;
+      view.clearRect(0, 0, canvas.width, canvas.height);
+      const scale = Math.min(canvas.width / WIDTH, canvas.height / HEIGHT);
+      view.drawImage(board, (canvas.width - WIDTH * scale) / 2, (canvas.height - HEIGHT * scale) / 2, WIDTH * scale, HEIGHT * scale);
+      if (keyboardMode) {
+        const x = (canvas.width - WIDTH * scale) / 2 + keyboardPoint.x * scale;
+        const y = (canvas.height - HEIGHT * scale) / 2 + keyboardPoint.y * scale;
+        view.strokeStyle = '#ffffff'; view.lineWidth = 1.5;
+        view.beginPath(); view.arc(x, y, 7, 0, Math.PI * 2); view.moveTo(x - 11, y); view.lineTo(x + 11, y); view.moveTo(x, y - 11); view.lineTo(x, y + 11); view.stroke();
+      }
     };
-
-    const resize = () => {
-      const dpr = Math.min(window.devicePixelRatio || 1, 2);
-      const rect = canvas.getBoundingClientRect();
-      canvas.width = Math.round(rect.width * dpr);
-      canvas.height = Math.round(rect.height * dpr);
+    const redraw = () => {
+      ctx.clearRect(0, 0, WIDTH, HEIGHT);
+      for (const op of operations.current) {
+        if (op.kind === 'clear') ctx.clearRect(0, 0, WIDTH, HEIGHT);
+        else paintStroke(ctx, op);
+      }
       paint();
     };
-    resize();
-    const ro = new ResizeObserver(resize);
-    ro.observe(canvas);
-
-    const toBoard = (e: PointerEvent) => {
+    const persist = () => {
+      clearTimeout(saveTimer);
+      const data = JSON.stringify({ version: 1, operations: operations.current });
+      const saved = data.length <= 2_000_000 && gameStorage.setItem(STORAGE_KEY, data);
+      setStatus(saved ? 'Guardado en este dispositivo.' : 'No se pudo guardar aquí. Descarga tu dibujo para conservarlo.');
+    };
+    const changed = () => {
+      setHistory({ undo: operations.current.length, redo: redo.current.length });
+      clearTimeout(saveTimer);
+      saveTimer = setTimeout(persist, 400);
+    };
+    const finish = () => {
+      keyboardInk = false;
+      if (!current) return;
+      operations.current.push(current);
+      redo.current = [];
+      current = null;
+      const previousPointer = pointer;
+      pointer = null;
+      if (previousPointer !== null && canvas.hasPointerCapture(previousPointer)) canvas.releasePointerCapture(previousPointer);
+      changed();
+    };
+    const resize = () => {
+      finish();
+      const rect = canvas.getBoundingClientRect();
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      canvas.width = Math.max(1, Math.round(rect.width * dpr));
+      canvas.height = Math.max(1, Math.round(rect.height * dpr));
+      displayScale = Math.min(rect.width / WIDTH, rect.height / HEIGHT) || 1;
+      offsetX = (rect.width - WIDTH * displayScale) / 2;
+      offsetY = (rect.height - HEIGHT * displayScale) / 2;
+      paint();
+    };
+    const point = (event: PointerEvent): Point => {
       const rect = canvas.getBoundingClientRect();
       return {
-        x: ((e.clientX - rect.left) / rect.width) * board.width,
-        y: ((e.clientY - rect.top) / rect.height) * board.height,
+        x: Math.max(0, Math.min(WIDTH, (event.clientX - rect.left - offsetX) / displayScale)),
+        y: Math.max(0, Math.min(HEIGHT, (event.clientY - rect.top - offsetY) / displayScale)),
       };
     };
-
-    const down = (e: PointerEvent) => {
-      e.preventDefault();
-      canvas.setPointerCapture(e.pointerId);
-      drawing.current = true;
-      last.current = toBoard(e);
-      setHasInk(true);
+    const down = (event: PointerEvent) => {
+      if (pointer !== null || event.button !== 0) return;
+      if (operations.current.length >= MAX_OPERATIONS) {
+        setStatus('El lienzo está lleno. Descárgalo o deshaz trazos antes de continuar.');
+        return;
+      }
+      event.preventDefault();
+      keyboardMode = false; keyboardInk = false; finish();
+      suspendGames();
+      canvas.focus({ preventScroll: true });
+      canvas.setPointerCapture(event.pointerId);
+      pointer = event.pointerId;
+      current = { kind: 'stroke', color: options.current.color, size: Math.min(200, options.current.size / displayScale), erase: options.current.erase, points: [point(event)] };
+      paintStroke(ctx, current);
+      paint();
+      setHistory((value) => ({ ...value, undo: operations.current.length + 1 }));
     };
-    const move = (e: PointerEvent) => {
-      if (!drawing.current || !last.current) return;
-      const p = toBoard(e);
-      const ctx = board.getContext('2d')!;
-      const scale = board.width / canvas.getBoundingClientRect().width;
-      ctx.lineCap = 'round';
-      ctx.lineJoin = 'round';
-      ctx.strokeStyle = colorRef.current;
-      ctx.lineWidth = sizeRef.current * scale;
-      ctx.beginPath();
-      ctx.moveTo(last.current.x, last.current.y);
-      // Punto medio para suavizar el trazo.
-      const mx = (last.current.x + p.x) / 2;
-      const my = (last.current.y + p.y) / 2;
-      ctx.quadraticCurveTo(last.current.x, last.current.y, mx, my);
-      ctx.lineTo(p.x, p.y);
-      ctx.stroke();
-      last.current = p;
+    const move = (event: PointerEvent) => {
+      if (!current || pointer !== event.pointerId) return;
+      const events = event.getCoalescedEvents?.() || [event];
+      for (const update of events.length ? events : [event]) {
+        if (current.points.length >= MAX_POINTS) { finish(); break; }
+        const next = point(update);
+        const previous = current.points[current.points.length - 1];
+        current.points.push(next);
+        paintStroke(ctx, { ...current, points: [previous, next] });
+      }
       paint();
     };
-    const up = () => {
-      drawing.current = false;
-      last.current = null;
+    const end = (event: PointerEvent) => { if (pointer === event.pointerId) finish(); };
+    commands.current = {
+      undo: () => { finish(); const last = operations.current.pop(); if (last) redo.current.push(last); redraw(); changed(); },
+      redo: () => { finish(); const next = redo.current.pop(); if (next) operations.current.push(next); redraw(); changed(); },
+      clear: () => {
+        finish();
+        if (!operations.current.length) return;
+        if (operations.current.length >= MAX_OPERATIONS) {
+          setStatus('Descarga el dibujo o deshaz un trazo antes de vaciar el lienzo.');
+          return;
+        }
+        operations.current.push({ kind: 'clear' });
+        redo.current = [];
+        redraw();
+        changed();
+      },
     };
-
+    const key = (event: KeyboardEvent) => {
+      if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 'z') {
+        event.preventDefault(); keyboardInk = false;
+        if (event.shiftKey) commands.current.redo(); else commands.current.undo();
+        return;
+      }
+      if (event.code === 'Escape' && keyboardInk) { event.preventDefault(); keyboardInk = false; finish(); return; }
+      const directions: Record<string, [number, number]> = { ArrowLeft: [-1, 0], ArrowRight: [1, 0], ArrowUp: [0, -1], ArrowDown: [0, 1] };
+      if (directions[event.code]) {
+        event.preventDefault(); keyboardMode = true; suspendGames();
+        const [dx, dy] = directions[event.code];
+        keyboardPoint.x = Math.max(0, Math.min(WIDTH, keyboardPoint.x + dx * 28));
+        keyboardPoint.y = Math.max(0, Math.min(HEIGHT, keyboardPoint.y + dy * 28));
+        if (keyboardInk && current) {
+          if (current.points.length >= MAX_POINTS) { keyboardInk = false; finish(); }
+          else { const previous = current.points[current.points.length - 1]; const next = { ...keyboardPoint }; current.points.push(next); paintStroke(ctx, { ...current, points: [previous, next] }); }
+        }
+        paint();
+        setStatus(keyboardInk ? 'Dibujando con las flechas. Espacio levanta el lápiz.' : 'Mueve con las flechas. Espacio apoya el lápiz.');
+      } else if (event.code === 'Space' && !event.repeat) {
+        event.preventDefault(); keyboardMode = true; suspendGames();
+        if (keyboardInk) { keyboardInk = false; finish(); }
+        else if (operations.current.length < MAX_OPERATIONS) {
+          finish(); keyboardInk = true;
+          current = { kind: 'stroke', color: options.current.color, size: Math.min(200, options.current.size / displayScale), erase: options.current.erase, points: [{ ...keyboardPoint }] };
+          paintStroke(ctx, current);
+          setHistory((value) => ({ ...value, undo: operations.current.length + 1 }));
+          setStatus('Dibujando con las flechas. Espacio levanta el lápiz.');
+        }
+        paint();
+      }
+    };
+    operations.current = readDrawing();
+    queueMicrotask(() => setHistory({ undo: operations.current.length, redo: 0 }));
+    redraw();
+    resize();
+    const observer = new ResizeObserver(resize);
+    observer.observe(canvas);
     canvas.addEventListener('pointerdown', down);
     canvas.addEventListener('pointermove', move);
-    canvas.addEventListener('pointerup', up);
-    canvas.addEventListener('pointerleave', up);
+    canvas.addEventListener('pointerup', end);
+    canvas.addEventListener('pointercancel', end);
+    canvas.addEventListener('lostpointercapture', end);
+    canvas.addEventListener('keydown', key);
     return () => {
-      ro.disconnect();
+      finish();
+      clearTimeout(saveTimer);
+      const data = JSON.stringify({ version: 1, operations: operations.current });
+      if (data.length <= 2_000_000) gameStorage.setItem(STORAGE_KEY, data);
+      observer.disconnect();
       canvas.removeEventListener('pointerdown', down);
       canvas.removeEventListener('pointermove', move);
-      canvas.removeEventListener('pointerup', up);
-      canvas.removeEventListener('pointerleave', up);
+      canvas.removeEventListener('pointerup', end);
+      canvas.removeEventListener('pointercancel', end);
+      canvas.removeEventListener('lostpointercapture', end);
+      canvas.removeEventListener('keydown', key);
     };
   }, []);
-
-  const clear = () => {
-    const board = boardRef.current;
-    const canvas = canvasRef.current;
-    if (!board || !canvas) return;
-    board.getContext('2d')!.clearRect(0, 0, board.width, board.height);
-    canvas.getContext('2d')!.clearRect(0, 0, canvas.width, canvas.height);
-    setHasInk(false);
-  };
 
   const download = () => {
     const board = boardRef.current;
     if (!board) return;
-    // Fondo oscuro de marca para que el PNG no salga transparente.
-    const out = document.createElement('canvas');
-    out.width = board.width;
-    out.height = board.height;
-    const ctx = out.getContext('2d')!;
+    const output = document.createElement('canvas');
+    output.width = WIDTH;
+    output.height = HEIGHT;
+    const ctx = output.getContext('2d')!;
     ctx.fillStyle = '#0B0716';
-    ctx.fillRect(0, 0, out.width, out.height);
+    ctx.fillRect(0, 0, WIDTH, HEIGHT);
     ctx.drawImage(board, 0, 0);
-    const a = document.createElement('a');
-    a.download = 'mi-obra-latech.png';
-    a.href = out.toDataURL('image/png');
-    a.click();
+    output.toBlob((blob) => {
+      if (!blob) { setStatus('No se pudo exportar el dibujo. Inténtalo de nuevo.'); return; }
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.download = 'mi-obra-latech.png';
+      link.href = url;
+      link.click();
+      setTimeout(() => URL.revokeObjectURL(url), 1000);
+    }, 'image/png');
   };
 
   return (
-    <div className="flex h-full flex-col">
-      <div
-        className="relative flex-1 overflow-hidden rounded-2xl"
-        style={{ background: 'rgba(7,5,14,0.55)', border: '1px solid var(--border-subtle)' }}
-      >
-        <canvas
-          ref={canvasRef}
-          className="h-full w-full"
-          style={{ cursor: PENCIL_CURSOR, touchAction: 'none' }}
-          aria-label="Pizarra para dibujar libremente"
-        />
-        {!hasInk && (
-          <p className="pointer-events-none absolute inset-0 flex items-center justify-center text-sm text-white/30">
-            Dibuja aquí lo que quieras ✏️
-          </p>
-        )}
+    <div className={styles.drawing}>
+      <div className={styles.drawingSurface}>
+        <canvas ref={canvasRef} tabIndex={0} className={styles.drawingCanvas}
+          style={{ cursor: erase ? 'cell' : 'crosshair', touchAction: 'none' }}
+          aria-label="Pizarra para dibujar. Dedo o ratón para dibujar. Teclado: flechas mueven, espacio apoya o levanta el lápiz. Control Z deshace; Control Mayúsculas Z rehace." />
+        {!history.undo && <p className={styles.drawingPlaceholder}>Tu próxima idea empieza con un trazo.</p>}
       </div>
-
-      <div className="mt-4 flex flex-wrap items-center gap-3">
-        <div className="flex items-center gap-1.5">
-          {COLORS.map((c) => (
-            <button
-              key={c}
-              onClick={() => setColor(c)}
-              aria-label={`Color ${c}`}
-              className="h-6 w-6 rounded-full transition-transform hover:scale-110"
-              style={{
-                background: c,
-                boxShadow: color === c ? `0 0 0 2px var(--bg-base), 0 0 0 4px ${c}` : 'none',
-              }}
-            />
-          ))}
-        </div>
-        <div className="flex items-center gap-1.5">
-          {SIZES.map((s) => (
-            <button
-              key={s}
-              onClick={() => setSize(s)}
-              aria-label={`Grosor ${s}`}
-              className="flex h-8 w-8 items-center justify-center rounded-lg transition-colors"
-              style={{
-                background: size === s ? 'var(--bg-glass-strong)' : 'var(--bg-glass)',
-                border: `1px solid ${size === s ? 'var(--border-glow)' : 'var(--border-subtle)'}`,
-              }}
-            >
-              <span className="rounded-full bg-white" style={{ width: s + 2, height: s + 2 }} />
-            </button>
-          ))}
-        </div>
-        <div className="ml-auto flex items-center gap-2">
-          <button
-            onClick={clear}
-            className="inline-flex items-center gap-1.5 rounded-lg px-3 py-2 text-xs text-white/70 transition-colors hover:text-white"
-            style={{ background: 'var(--bg-glass)', border: '1px solid var(--border-subtle)' }}
-          >
-            <Eraser size={13} /> Borrar
+      <div className={styles.palette} aria-label="Colores del lápiz">
+        {COLORS.map((c) => (
+          <button key={c.value} type="button" aria-label={`Color ${c.name}`} aria-pressed={color === c.value && !erase}
+            onClick={() => { setColor(c.value); setErase(false); }} className={styles.colorButton}>
+            <span style={{ background: c.value }} />
           </button>
-          <button
-            onClick={download}
-            disabled={!hasInk}
-            className="inline-flex items-center gap-1.5 rounded-lg px-3 py-2 text-xs text-white/70 transition-colors hover:text-white disabled:opacity-40"
-            style={{ background: 'var(--bg-glass)', border: '1px solid var(--border-subtle)' }}
-          >
-            <Download size={13} /> Guardar
-          </button>
+        ))}
+      </div>
+      <div className={styles.drawingTools}>
+        <div className={styles.toolGroup}>
+          <button type="button" onClick={() => commands.current.undo()} disabled={!history.undo} aria-label="Deshacer" title="Deshacer (Ctrl Z)" className={styles.iconButton}><Undo2 size={17} /></button>
+          <button type="button" onClick={() => commands.current.redo()} disabled={!history.redo} aria-label="Rehacer" title="Rehacer (Ctrl Mayúsculas Z)" className={styles.iconButton}><Redo2 size={17} /></button>
+          <button type="button" onClick={() => setErase((value) => !value)} aria-label={erase ? 'Usar lápiz' : 'Usar goma'} aria-pressed={erase} className={styles.iconButton}>{erase ? <Pencil size={17} /> : <Eraser size={17} />}</button>
+        </div>
+        <div className={styles.toolGroup} aria-label="Grosor">
+          {SIZES.map((value) => <button type="button" key={value} aria-label={`Grosor ${value}`} aria-pressed={size === value} onClick={() => setSize(value)} className={styles.iconButton}><span className={styles.brushSize} style={{ width: value + 2, height: value + 2 }} /></button>)}
         </div>
       </div>
+      <div className={styles.drawingActions}>
+        <button type="button" onClick={() => commands.current.clear()} disabled={!history.undo} className={styles.secondaryButton}><Trash2 size={14} /> Vaciar</button>
+        <button type="button" onClick={download} disabled={!history.undo} className={styles.secondaryButton}><Download size={14} /> Guardar PNG</button>
+      </div>
+      <p role="status" className={styles.storageStatus}>{status}</p>
     </div>
   );
 }

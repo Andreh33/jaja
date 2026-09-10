@@ -1,6 +1,7 @@
 import { db } from './db';
 import { posts } from '../../drizzle/schema';
 import { desc, eq } from 'drizzle-orm';
+import { findPublishedPostBySlug } from './post-queries';
 
 /**
  * Campos necesarios para listados y tarjetas (sin `content`).
@@ -44,6 +45,5 @@ export async function getPostSummaries(): Promise<PostSummary[]> {
 }
 
 export async function getPostBySlug(slug: string) {
-  const r = await db.select().from(posts).where(eq(posts.slug, slug)).limit(1);
-  return r[0] || null;
+  return findPublishedPostBySlug(db, slug);
 }

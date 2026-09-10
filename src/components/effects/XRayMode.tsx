@@ -1,149 +1,82 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { createPortal } from 'react-dom';
-import { motion, AnimatePresence } from 'framer-motion';
-import { X, Layers } from 'lucide-react';
+import * as Dialog from '@radix-ui/react-dialog';
+import { X, Layers, RotateCcw, ArrowLeft, ArrowRight, ArrowUp, ArrowDown, List } from 'lucide-react';
 
-type Layer = { label: string; tag: string; note: string };
-
-// Anotaciones rotativas (el mensaje anti-WordPress de siempre, repartido por capas).
-const NOTES = [
-  'React Server Component',
-  'HTML listo al instante',
-  '0 plugins',
-  'Datos desde Turso · edge',
-  'CSS a medida',
-  'Sin plantillas',
-  'Animaciones por GPU',
-  'Programado a mano',
-];
+type Layer = { label: string; tag: string };
 
 export default function XRayMode({ open, onClose }: { open: boolean; onClose: () => void }) {
   const [layers, setLayers] = useState<Layer[]>([]);
+  const [list, setList] = useState(false);
   const stageRef = useRef<HTMLDivElement>(null);
+  const returnFocus = useRef<HTMLElement | null>(null);
+  const rotation = useRef({ x: -14, y: -26 });
+  const pointer = useRef<{ id: number; x: number; y: number } | null>(null);
 
-  // Construye las capas a partir de las secciones REALES de la página.
   useEffect(() => {
     if (!open) return;
-    const found: Layer[] = [];
-    document.querySelectorAll<HTMLElement>('main section').forEach((sec, i) => {
-      if (sec.closest('.escape-overlay, .xray-overlay')) return;
-      const head = sec.querySelector('h1, h2, h3');
-      const label = (head?.textContent || `Sección ${i + 1}`).replace(/\s+/g, ' ').trim().slice(0, 32);
-      found.push({ label, tag: '<section>', note: NOTES[found.length % NOTES.length] });
+    let cancelled = false;
+    const found = Array.from(document.querySelectorAll<HTMLElement>('main section'))
+      .filter((section) => !section.closest('.escape-overlay, .xray-overlay'))
+      .slice(0, 9)
+      .map((section, index) => ({
+        label: (section.querySelector('h1, h2, h3')?.textContent || `Sección ${index + 1}`).replace(/\s+/g, ' ').trim().slice(0, 70),
+        tag: '<section>',
+      }));
+    queueMicrotask(() => {
+      if (!cancelled) setLayers(found.length ? found : [{ label: 'Latech', tag: '<main>' }]);
     });
-    if (!found.length) found.push({ label: 'Latech', tag: '<main>', note: NOTES[0] });
-    const list = found.slice(0, 9);
-    queueMicrotask(() => setLayers(list));
+    rotation.current = { x: -14, y: -26 };
+    return () => { cancelled = true; pointer.current = null; };
   }, [open]);
 
-  // overflow, cursor nativo (el cursor personalizado del sitio queda detrás del portal) y ESC
-  useEffect(() => {
-    if (!open) return;
-    const onKey = (e: KeyboardEvent) => { if (e.code === 'Escape') onClose(); };
-    window.addEventListener('keydown', onKey);
-    const prevOverflow = document.body.style.overflow; document.body.style.overflow = 'hidden';
-    const hadCustomCursor = document.body.classList.contains('has-custom-cursor');
-    if (hadCustomCursor) document.body.classList.remove('has-custom-cursor');
-    return () => {
-      window.removeEventListener('keydown', onKey);
-      document.body.style.overflow = prevOverflow;
-      if (hadCustomCursor) document.body.classList.add('has-custom-cursor');
-    };
-  }, [open, onClose]);
+  function turn(x: number, y: number) {
+    rotation.current = { x: Math.max(-65, Math.min(35, rotation.current.x + x)), y: rotation.current.y + y };
+    if (stageRef.current) stageRef.current.style.transform = `rotateX(${rotation.current.x}deg) rotateY(${rotation.current.y}deg)`;
+  }
+  const buttonClass = 'flex min-h-11 min-w-11 items-center justify-center gap-2 rounded-full border border-white/20 bg-[#171125] px-3 text-sm text-white/85 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-300';
 
-  // rotación: arrastre con el ratón + giro lento en reposo (manipula transform directo, sin re-render)
-  useEffect(() => {
-    if (!open) return;
-    const stage = stageRef.current; if (!stage) return;
-    const rot = { x: -14, y: -26 }; const target = { x: -14, y: -26 };
-    let dragging = false; let raf = 0;
-    const tick = () => {
-      raf = requestAnimationFrame(tick);
-      if (!dragging) target.y += 0.14;
-      rot.x += (target.x - rot.x) * 0.12; rot.y += (target.y - rot.y) * 0.12;
-      stage.style.transform = `rotateX(${rot.x}deg) rotateY(${rot.y}deg)`;
-    };
-    raf = requestAnimationFrame(tick);
-    let lastX = 0, lastY = 0;
-    const down = (e: PointerEvent) => { dragging = true; lastX = e.clientX; lastY = e.clientY; };
-    const move = (e: PointerEvent) => {
-      if (!dragging) return;
-      target.y += (e.clientX - lastX) * 0.4; target.x = Math.max(-65, Math.min(35, target.x - (e.clientY - lastY) * 0.35));
-      lastX = e.clientX; lastY = e.clientY;
-    };
-    const up = () => { dragging = false; };
-    window.addEventListener('pointerdown', down);
-    window.addEventListener('pointermove', move);
-    window.addEventListener('pointerup', up);
-    return () => { cancelAnimationFrame(raf); window.removeEventListener('pointerdown', down); window.removeEventListener('pointermove', move); window.removeEventListener('pointerup', up); };
-    // no depende de `layers` (solo usa stageRef); evita reiniciar la rotación al poblarse
-  }, [open]);
-
-  if (typeof document === 'undefined') return null;
-  const n = layers.length;
-  return createPortal(
-    <AnimatePresence>
-      {open && (
-        <motion.div className="xray-overlay fixed inset-0 z-[9999] flex items-center justify-center"
-          initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-          style={{ background: 'radial-gradient(ellipse at center, rgba(20,12,40,0.92), rgba(5,4,12,0.97))', backdropFilter: 'blur(10px)', cursor: 'grab', touchAction: 'none' }}>
-
-          <div className="pointer-events-none absolute left-1/2 top-6 -translate-x-1/2 text-center">
-            <p className="flex items-center justify-center gap-2 font-display text-lg text-white">
-              <Layers size={18} className="text-purple-300" /> Rayos X · la web por dentro
-            </p>
-            <p className="mt-1 text-xs text-white/45">arrastra para girar · cada capa es un componente real, sin plantillas</p>
+  return (
+    <Dialog.Root open={open} onOpenChange={(value) => { if (!value) onClose(); }}>
+      <Dialog.Portal>
+        <Dialog.Overlay className="fixed inset-0 z-[10000] bg-[#05040c]/95" />
+        <Dialog.Content
+          onOpenAutoFocus={() => { returnFocus.current = document.activeElement instanceof HTMLElement ? document.activeElement : null; }}
+          onCloseAutoFocus={(event) => { event.preventDefault(); if (returnFocus.current?.isConnected) returnFocus.current.focus({ preventScroll: true }); }}
+          className="latech-demo-dialog xray-overlay fixed inset-0 z-[10001] flex flex-col overflow-y-auto px-5 py-6 outline-none sm:px-8" style={{ background: 'radial-gradient(ellipse at center, rgba(20,12,40,.8), transparent)' }}>
+          <div className="relative z-10 mx-auto w-full max-w-4xl pr-12">
+            <Dialog.Title className="flex items-center gap-2 font-display text-xl font-bold text-white"><Layers size={20} className="text-purple-300" aria-hidden /> Rayos X · la web por dentro</Dialog.Title>
+            <Dialog.Description className="mt-2 max-w-2xl text-sm leading-relaxed text-white/65">Una representación de las secciones de esta página. Las capas muestran su orden y sus títulos; no reproducen la geometría completa del DOM.</Dialog.Description>
           </div>
-
-          {/* escenario 3D */}
-          <div style={{ perspective: '1400px' }} className="pointer-events-none">
-            <div ref={stageRef} style={{ transformStyle: 'preserve-3d', transition: 'none' }} className="relative">
-              {layers.map((l, i) => {
-                const z = (i - (n - 1) / 2) * 135;
-                const hue = 262 - i * 6;
-                return (
-                  <div key={i}
-                    style={{
-                      transform: `translate(-50%, -50%) translateZ(${z}px)`,
-                      transformStyle: 'preserve-3d', backfaceVisibility: 'hidden',
-                      background: `linear-gradient(135deg, hsla(${hue},70%,55%,0.16), hsla(${hue + 30},70%,45%,0.05))`,
-                      border: '1px solid hsla(' + hue + ',80%,70%,0.5)',
-                      boxShadow: `0 0 40px -8px hsla(${hue},80%,55%,0.4)`,
-                    }}
-                    className="absolute left-1/2 top-1/2 flex h-[150px] w-[320px] flex-col justify-between rounded-2xl p-4 sm:w-[420px]">
-                    <div className="flex items-center justify-between">
-                      <span className="font-display text-sm font-semibold text-white">{l.label}</span>
-                      <span className="font-mono text-[10px] text-white/40">{l.tag}</span>
-                    </div>
-                    <div className="flex flex-col gap-1.5">
-                      <span className="h-1.5 w-1/3 rounded-full bg-white/25" />
-                      <span className="h-1.5 w-2/3 rounded-full bg-white/12" />
-                      <span className="h-1.5 w-1/2 rounded-full bg-white/12" />
-                    </div>
-                    <span className="self-start rounded-full px-2.5 py-1 text-[10px] font-medium"
-                      style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.14)', color: 'rgba(255,255,255,0.8)' }}>
-                      {l.note}
-                    </span>
-                  </div>
-                );
-              })}
+          <div className="xray-controls relative z-10 mx-auto mt-5 flex flex-wrap justify-center gap-2">
+            <button type="button" className={buttonClass} aria-label="Girar a la izquierda" onClick={() => turn(0, -15)}><ArrowLeft size={18} /></button>
+            <button type="button" className={buttonClass} aria-label="Girar a la derecha" onClick={() => turn(0, 15)}><ArrowRight size={18} /></button>
+            <button type="button" className={buttonClass} aria-label="Inclinar hacia arriba" onClick={() => turn(-10, 0)}><ArrowUp size={18} /></button>
+            <button type="button" className={buttonClass} aria-label="Inclinar hacia abajo" onClick={() => turn(10, 0)}><ArrowDown size={18} /></button>
+            <button type="button" className={buttonClass} aria-label="Restablecer perspectiva" onClick={() => { rotation.current = { x: -14, y: -26 }; turn(0, 0); }}><RotateCcw size={17} /></button>
+            <button type="button" className={buttonClass} aria-pressed={list} onClick={() => setList((value) => !value)}><List size={17} /> {list ? 'Ver capas' : 'Ver lista'}</button>
+          </div>
+          <div className={`xray-stage min-h-[480px] flex-1 ${list ? 'hidden' : 'flex'}`} aria-hidden style={{ perspective: '1400px', touchAction: 'none', cursor: 'grab' }}
+            onPointerDown={(event) => { if (!event.isPrimary || event.button !== 0) return; pointer.current = { id: event.pointerId, x: event.clientX, y: event.clientY }; event.currentTarget.setPointerCapture(event.pointerId); }}
+            onPointerMove={(event) => { const previous = pointer.current; if (!previous || previous.id !== event.pointerId) return; turn(-(event.clientY - previous.y) * .3, (event.clientX - previous.x) * .4); pointer.current = { id: event.pointerId, x: event.clientX, y: event.clientY }; }}
+            onPointerUp={() => { pointer.current = null; }} onPointerCancel={() => { pointer.current = null; }} onLostPointerCapture={() => { pointer.current = null; }}>
+            <div ref={stageRef} className="relative m-auto" style={{ transformStyle: 'preserve-3d', transform: 'rotateX(-14deg) rotateY(-26deg)' }}>
+              {layers.map((layer, i) => <div key={`${layer.label}-${i}`} className="absolute left-1/2 top-1/2 flex h-[150px] w-[380px] flex-col justify-between rounded-2xl border border-purple-300/50 p-4"
+                style={{ transform: `translate(-50%, -50%) translateZ(${(i - (layers.length - 1) / 2) * 100}px)`, backfaceVisibility: 'hidden', background: 'linear-gradient(135deg, rgba(139,92,246,.28), rgba(249,115,22,.06))', boxShadow: '0 0 40px -8px rgba(139,92,246,.35)' }}>
+                <span className="font-display text-sm font-semibold text-white">{layer.label}</span>
+                <span className="font-mono text-xs text-purple-200">{String(i + 1).padStart(2, '0')} · {layer.tag}</span>
+                <span className="h-1.5 w-2/3 rounded-full bg-white/20" />
+              </div>)}
             </div>
           </div>
-
-          <p className="pointer-events-none absolute bottom-6 left-1/2 -translate-x-1/2 text-center text-xs text-white/40">
-            {n} componentes · ensamblados a mano. <span className="text-white/70">Un WordPress cargaría decenas de plugins para esto.</span>
-          </p>
-
-          <button onClick={onClose} aria-label="Cerrar"
-            className="absolute right-5 top-5 inline-flex h-10 w-10 items-center justify-center rounded-full text-white/85 transition-transform hover:scale-110"
-            style={{ background: 'var(--bg-glass-strong)', border: '1px solid var(--border-subtle)' }}>
-            <X size={17} />
-          </button>
-        </motion.div>
-      )}
-    </AnimatePresence>,
-    document.body,
+          <ol className={`xray-list mx-auto my-6 w-full max-w-3xl space-y-3 ${list ? '' : 'sr-only'}`}>
+            {layers.map((layer, i) => <li key={`${layer.label}-${i}`} className="rounded-2xl border border-purple-300/25 bg-white/[.04] p-5"><span className="mr-3 font-mono text-xs text-purple-300">{String(i + 1).padStart(2, '0')}</span><span className="font-display text-base font-semibold">{layer.label}</span><p className="mt-2 text-xs text-white/55">Sección HTML · {layer.tag}</p></li>)}
+          </ol>
+          <p className="relative z-10 mx-auto mt-auto max-w-3xl rounded-xl bg-[#0c0815]/90 p-3 text-center text-xs leading-relaxed text-white/65">{layers.length} secciones representadas. En escritorio puedes arrastrar o usar los botones. En móvil y con movimiento reducido tienes una lista completa.</p>
+          <Dialog.Close className={`${buttonClass} absolute right-4 top-4 z-20`} aria-label="Cerrar Rayos X"><X size={18} /></Dialog.Close>
+        </Dialog.Content>
+      </Dialog.Portal>
+    </Dialog.Root>
   );
 }

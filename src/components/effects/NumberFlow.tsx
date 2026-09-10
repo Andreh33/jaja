@@ -1,14 +1,13 @@
 'use client';
 
 import NumberFlowCore from '@number-flow/react';
-import { useInView } from 'framer-motion';
-import { useEffect, useRef, useState } from 'react';
+import { useReducedMotion } from 'framer-motion';
 
 export default function NumberFlow({
   value,
   suffix,
   prefix,
-  duration = 1.4,
+  duration = 0.25,
   className,
 }: {
   value: number;
@@ -17,18 +16,12 @@ export default function NumberFlow({
   duration?: number;
   className?: string;
 }) {
-  const ref = useRef<HTMLSpanElement>(null);
-  const inView = useInView(ref, { once: true, margin: '-50px' });
-  const [n, setN] = useState(0);
-
-  useEffect(() => {
-    if (inView) setN(value);
-  }, [inView, value]);
+  const reduce = useReducedMotion();
 
   return (
-    <span ref={ref} className={className}>
+    <span className={className}>
       {prefix}
-      <NumberFlowCore value={n} transformTiming={{ duration: duration * 1000, easing: 'cubic-bezier(0.16,1,0.3,1)' }} />
+      <NumberFlowCore value={value} animated={!reduce} transformTiming={{ duration: duration * 1000, easing: 'cubic-bezier(0.23,1,0.32,1)' }} />
       {suffix}
     </span>
   );

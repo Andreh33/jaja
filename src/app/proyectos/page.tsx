@@ -11,9 +11,9 @@ import Breadcrumbs from '@/components/seo/Breadcrumbs';
 import { breadcrumbJsonLd } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Proyectos: webs reales hechas para empresas',
+  title: 'Proyectos: diseño y desarrollo a medida',
   description:
-    '14 webs en producción hechas por Latech: Zona Sport, Panelex, Toldos Noa y más. Tiendas online, restauración, industria y servicios de toda España.',
+    'Explora una selección de webs, tiendas y conceptos de Latech. Diseño y desarrollo para comercio, restauración, industria y servicios.',
   alternates: {
     canonical: '/proyectos',
   },
@@ -194,7 +194,7 @@ export default function ProyectosPage() {
         data={{
           '@context': 'https://schema.org',
           '@type': 'ItemList',
-          name: 'Proyectos de Latech en producción',
+          name: 'Selección de proyectos de Latech',
           numberOfItems: PROJECTS.length,
           itemListElement: PROJECTS.map((p, i) => ({
             '@type': 'ListItem',
@@ -232,12 +232,12 @@ export default function ProyectosPage() {
                 className="font-display text-4xl text-white md:text-6xl"
                 style={{ letterSpacing: '-0.04em', fontWeight: 800 }}
               >
-                Algunos de los negocios que ya confían en nosotros
+                Proyectos con identidad propia
               </h1>
               <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/65 md:text-lg">
-                Cada proyecto que hacemos lo cuidamos como si fuera nuestro. Estos son catorce
-                proyectos que ya tienen su web en producción con Latech. Pulsa cualquiera
-                para visitarla.
+                Cada proyecto que hacemos lo cuidamos como si fuera nuestro. Explora esta selección
+                de trabajos y conceptos para conocer sus funciones y su dirección visual.
+                Las fichas de concepto se identifican expresamente.
               </p>
             </Reveal>
           </div>
@@ -286,6 +286,7 @@ export default function ProyectosPage() {
                       >
                         {p.name}
                       </h2>
+                        {p.id === 'maison-noir' && <span className="mt-2 inline-flex rounded-full border border-purple-300/30 px-2.5 py-1 text-[11px] font-medium text-purple-200">Concepto de diseño</span>}
                       <p className="mt-1 font-mono text-[11px] text-white/40">{p.domain}</p>
 
                       <div className="mt-4 flex flex-wrap items-center gap-2 text-[11px] text-white/55">

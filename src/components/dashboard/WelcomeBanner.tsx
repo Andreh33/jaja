@@ -1,30 +1,36 @@
 'use client';
 
-import { motion, AnimatePresence } from 'framer-motion';
-import { useEffect, useState } from 'react';
+import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
+import { useState, useSyncExternalStore } from 'react';
 import { X, Sparkles } from 'lucide-react';
 
 const KEY = 'latech-welcome-dismissed';
+function subscribe(listener: () => void) {
+  window.addEventListener('storage', listener);
+  return () => window.removeEventListener('storage', listener);
+}
+function shouldWelcome() {
+  try { return !localStorage.getItem(KEY); } catch { return true; }
+}
+const serverWelcome = () => false;
 
 export default function WelcomeBanner({ name }: { name?: string }) {
-  const [show, setShow] = useState(false);
-  useEffect(() => {
-    if (typeof window === 'undefined') return;
-    if (!localStorage.getItem(KEY)) setShow(true);
-  }, []);
+  const [dismissed, setDismissed] = useState(false);
+  const show = useSyncExternalStore(subscribe, shouldWelcome, serverWelcome) && !dismissed;
+  const reduced = useReducedMotion();
 
   const dismiss = () => {
-    localStorage.setItem(KEY, '1');
-    setShow(false);
+    try { localStorage.setItem(KEY, '1'); } catch { /* Dismiss still works in this visit. */ }
+    setDismissed(true);
   };
 
   return (
     <AnimatePresence>
       {show && (
         <motion.div
-          initial={{ opacity: 0, y: -16 }}
+          initial={reduced ? false : { opacity: 0, y: -16 }}
           animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -16 }}
+          exit={{ opacity: 0, y: reduced ? 0 : -16 }}
           className="relative mb-6 overflow-hidden rounded-2xl border p-5 md:p-6"
           style={{
             background: 'linear-gradient(135deg, rgba(139,92,246,0.10) 0%, rgba(249,115,22,0.06) 100%)',

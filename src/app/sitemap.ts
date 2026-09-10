@@ -1,4 +1,6 @@
 import type { MetadataRoute } from 'next';
+import { MYSTERIES } from '@/lib/lab-mysteries';
+import { experiments } from './lab/_lib/experiments';
 import { inArray } from 'drizzle-orm';
 import { getAllPosts, getPostSummaries } from '@/lib/posts';
 import { db } from '@/lib/db';
@@ -11,6 +13,8 @@ import { uniqueCategories, categorySlug } from '@/lib/blog-categories';
 // Usar `new Date()` marcaba TODO como modificado en cada build — una señal de
 // frescura falsa que Google acaba ignorando, perdiendo el valor del lastmod.
 const SITE_LAST_UPDATE = new Date('2026-07-08');
+const RELEASE_UPDATE = new Date('2026-09-10');
+const UPDATED_ROUTES = new Set(['', '/blog', '/proyectos', '/contacto', '/tienda/calculadora']);
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const base = 'https://serviciosonlineweb.com';
@@ -19,7 +23,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   ];
   const fixedEntries: MetadataRoute.Sitemap = fixed.map((p) => ({
     url: `${base}${p}`,
-    lastModified: SITE_LAST_UPDATE,
+    lastModified: UPDATED_ROUTES.has(p) ? RELEASE_UPDATE : SITE_LAST_UPDATE,
     changeFrequency: 'weekly' as const,
     priority: p === '' ? 1.0 : 0.7,
   }));
@@ -31,20 +35,21 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.7,
   }));
 
-  // lastmod REAL por-URL en los posts: la fecha de publicación, no la de build.
+  // No synthesize dates for legacy rows with an unknown publication date.
   let postEntries: MetadataRoute.Sitemap = [];
   let categoryEntries: MetadataRoute.Sitemap = [];
   try {
     const posts = await getAllPosts();
     postEntries = posts.map((p) => ({
       url: `${base}/blog/${p.slug}`,
-      lastModified: p.publishedAt ? new Date(p.publishedAt) : SITE_LAST_UPDATE,
+      ...(p.publishedAt ? { lastModified: new Date(p.publishedAt) } : {}),
       changeFrequency: 'monthly' as const,
       priority: 0.6,
     }));
 
     // Hubs de categoría del blog: rutas rastreables reales (/blog/categoria/*)
-    // que agrupan sus posts. lastmod = post más reciente de la categoría.
+    // que agrupan sus posts. La biblioteca cambió en esta entrega; una publicación
+    // posterior también actualiza el hub.
     const summaries = await getPostSummaries();
     categoryEntries = uniqueCategories(summaries).map((c) => {
       const latest = summaries
@@ -55,7 +60,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         }, null);
       return {
         url: `${base}/blog/categoria/${categorySlug(c)}`,
-        lastModified: latest ?? SITE_LAST_UPDATE,
+        lastModified: latest && latest > RELEASE_UPDATE ? latest : RELEASE_UPDATE,
         changeFrequency: 'weekly' as const,
         priority: 0.6,
       };
@@ -72,7 +77,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       .where(inArray(jobOffers.status, ['publicada', 'cerrada']));
     offerEntries = offers.map((o) => ({
       url: `${base}/empleo/${o.slug}`,
-      lastModified: o.publishedAt ? new Date(o.publishedAt * 1000) : SITE_LAST_UPDATE,
+      ...(o.publishedAt ? { lastModified: new Date(o.publishedAt * 1000) } : {}),
       changeFrequency: 'weekly' as const,
       priority: 0.6,
     }));
@@ -80,5 +85,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // job_offers query failed — continue with the rest
   }
 
-  return [...fixedEntries, ...landingEntries, ...categoryEntries, ...postEntries, ...offerEntries];
+  const labEntries: MetadataRoute.Sitemap = [
+    '/lab', ...experiments.map((experiment) => `/lab/${experiment.slug}`),
+    '/lab/misterios', ...MYSTERIES.map((episode) => `/lab/misterios/${episode.slug}`),
+    '/lab/trazo', '/briefing',
+  ].map((path) => ({ url: `${base}${path}`, lastModified: RELEASE_UPDATE, changeFrequency: 'monthly' as const, priority: .6 }));
+  return [...fixedEntries, ...landingEntries, ...categoryEntries, ...postEntries, ...offerEntries, ...labEntries];
 }

@@ -1,11 +1,10 @@
 'use client';
 
-import { useEffect } from 'react';
-import { createPortal } from 'react-dom';
-import { motion, AnimatePresence } from 'framer-motion';
-import { X, Zap } from 'lucide-react';
+import * as Dialog from '@radix-ui/react-dialog';
+import { useRef } from 'react';
+import { X, Code2 } from 'lucide-react';
 
-// Líneas de código (representativas del stack real: Next.js App Router + Turso).
+// Simplified illustration of the existing stack, not a live code inspector.
 const LINES: React.ReactNode[] = [
   <span key="0" className="text-white/35">{'// app/page.tsx · se renderiza en el servidor'}</span>,
   <span key="1"><span className="text-purple-300">export default async function</span> <span className="text-emerald-300">Home</span>() {'{'}</span>,
@@ -19,109 +18,40 @@ const LINES: React.ReactNode[] = [
   <span key="9">{'}'}</span>,
 ];
 
-const NOTES = [
-  { line: 1, text: 'React Server Component → HTML listo al instante, sin esperar a JavaScript' },
-  { line: 2, text: 'Datos en vivo desde Turso (SQLite en el edge) — no una base lenta compartida' },
-  { line: 6, text: 'Cada pieza programada a mano. Cero plugins, cero bloat.' },
-];
 
 export default function HoodReveal({ open, onClose }: { open: boolean; onClose: () => void }) {
-  useEffect(() => {
-    if (!open) return;
-    const onKey = (e: KeyboardEvent) => { if (e.code === 'Escape') onClose(); };
-    window.addEventListener('keydown', onKey);
-    const prev = document.body.style.overflow; document.body.style.overflow = 'hidden';
-    // el sitio oculta el cursor nativo (cursor personalizado que queda detrás del overlay);
-    // mientras está abierto el capó, restauramos el cursor nativo para que se vea.
-    const hadCustomCursor = document.body.classList.contains('has-custom-cursor');
-    if (hadCustomCursor) document.body.classList.remove('has-custom-cursor');
-    return () => {
-      window.removeEventListener('keydown', onKey);
-      document.body.style.overflow = prev;
-      if (hadCustomCursor) document.body.classList.add('has-custom-cursor');
-    };
-  }, [open, onClose]);
-
-  if (typeof document === 'undefined') return null;
-  return createPortal(
-    <AnimatePresence>
-      {open && (
-        <motion.div className="fixed inset-0 z-[9999] flex items-center justify-center p-4"
-          initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-          style={{ background: 'rgba(5,4,12,0.78)', backdropFilter: 'blur(8px)' }} onClick={onClose}>
-          <motion.div onClick={(e) => e.stopPropagation()}
-            initial={{ scale: 0.9, y: 24, opacity: 0 }} animate={{ scale: 1, y: 0, opacity: 1 }} exit={{ scale: 0.9, y: 24, opacity: 0 }}
-            transition={{ type: 'spring', stiffness: 200, damping: 22 }}
-            className="relative w-full max-w-2xl overflow-hidden rounded-2xl"
-            style={{ background: '#0c0a16', border: '1px solid var(--border-subtle)', boxShadow: '0 40px 100px -20px rgba(0,0,0,0.8)' }}>
-
-            {/* chrome del editor */}
-            <div className="flex items-center gap-2 border-b px-4 py-3" style={{ borderColor: 'rgba(255,255,255,0.08)', background: 'rgba(255,255,255,0.03)' }}>
-              <span className="flex gap-1.5">
-                <span className="h-3 w-3 rounded-full" style={{ background: '#ff5f57' }} />
-                <span className="h-3 w-3 rounded-full" style={{ background: '#febc2e' }} />
-                <span className="h-3 w-3 rounded-full" style={{ background: '#28c840' }} />
-              </span>
-              <span className="ml-2 rounded-md px-2 py-0.5 font-mono text-[11px] text-white/60" style={{ background: 'rgba(255,255,255,0.06)' }}>page.tsx</span>
-              <span className="font-mono text-[11px] text-white/25">Hero.tsx</span>
-              <span className="font-mono text-[11px] text-white/25">db.ts</span>
-              <span className="ml-auto text-[11px] font-semibold uppercase tracking-widest text-white/35">así por dentro</span>
-            </div>
-
-            {/* código */}
-            <div className="px-5 py-5 font-mono text-[13px] leading-7">
-              {LINES.map((ln, i) => {
-                const note = NOTES.find((n) => n.line === i);
-                return (
-                  <motion.div key={i} className="flex items-center gap-3"
-                    initial={{ opacity: 0, x: -8 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.25 + i * 0.09 }}>
-                    <span className="w-5 select-none text-right text-white/20">{i + 1}</span>
-                    <span className="whitespace-pre text-white/85">{ln}</span>
-                    {note && (
-                      <motion.span initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.25 + LINES.length * 0.09 + 0.2 }}
-                        className="ml-auto hidden max-w-[44%] rounded-full px-2.5 py-1 text-[10px] font-medium leading-tight md:inline-block"
-                        style={{ background: 'var(--bg-glass-strong)', border: '1px solid var(--border-glow)', color: 'rgba(255,255,255,0.75)' }}>
-                        ← {note.text}
-                      </motion.span>
-                    )}
-                  </motion.div>
-                );
-              })}
-            </div>
-
-            {/* comparativa de velocidad */}
-            <motion.div className="border-t px-5 py-4" style={{ borderColor: 'rgba(255,255,255,0.08)' }}
-              initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.25 + LINES.length * 0.09 + 0.4 }}>
-              <div className="mb-2 flex items-center gap-2 text-xs text-white/70"><Zap size={13} className="text-amber-300" /> Velocidad de carga</div>
-              <div className="space-y-1.5">
-                <div className="flex items-center gap-3">
-                  <span className="w-24 text-xs text-white/80">Esta web</span>
-                  <div className="h-2.5 flex-1 overflow-hidden rounded-full bg-white/5">
-                    <motion.div className="h-full rounded-full" style={{ background: 'linear-gradient(90deg, var(--purple-400), var(--accent-ia))' }}
-                      initial={{ width: 0 }} animate={{ width: '11%' }} transition={{ delay: 0.9, duration: 0.6 }} />
-                  </div>
-                  <span className="w-12 text-right font-mono text-xs text-emerald-300">0.4s</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <span className="w-24 text-xs text-white/45">WordPress medio</span>
-                  <div className="h-2.5 flex-1 overflow-hidden rounded-full bg-white/5">
-                    <motion.div className="h-full rounded-full bg-white/25" initial={{ width: 0 }} animate={{ width: '100%' }} transition={{ delay: 0.9, duration: 1.1 }} />
-                  </div>
-                  <span className="w-12 text-right font-mono text-xs text-white/45">3.8s</span>
-                </div>
-              </div>
-              <p className="mt-3 text-center text-xs text-white/45">Sin plantillas. Sin plugins. <span className="text-white/80">Programado desde cero para tu negocio.</span></p>
-            </motion.div>
-
-            <button onClick={onClose} aria-label="Cerrar"
-              className="absolute right-3 top-3 inline-flex h-9 w-9 items-center justify-center rounded-full text-white/80 transition-transform hover:scale-110"
-              style={{ background: 'var(--bg-glass-strong)', border: '1px solid var(--border-subtle)' }}>
-              <X size={16} />
-            </button>
-          </motion.div>
-        </motion.div>
-      )}
-    </AnimatePresence>,
-    document.body,
+  const returnFocus = useRef<HTMLElement | null>(null);
+  return (
+    <Dialog.Root open={open} onOpenChange={(value) => { if (!value) onClose(); }}>
+      <Dialog.Portal>
+        <Dialog.Overlay className="fixed inset-0 z-[10000] bg-black/80 backdrop-blur-sm" />
+        <Dialog.Content
+          onOpenAutoFocus={() => { returnFocus.current = document.activeElement instanceof HTMLElement ? document.activeElement : null; }}
+          onCloseAutoFocus={(event) => { event.preventDefault(); if (returnFocus.current?.isConnected) returnFocus.current.focus({ preventScroll: true }); }}
+          className="latech-demo-dialog fixed left-1/2 top-1/2 z-[10001] max-h-[calc(100dvh-2rem)] w-[calc(100%_-_2rem)] max-w-2xl -translate-x-1/2 -translate-y-1/2 overflow-y-auto rounded-2xl border border-white/15 bg-[#0c0a16] shadow-2xl outline-none">
+          <div className="flex items-center gap-2 border-b border-white/10 bg-white/[.03] px-5 py-4 pr-16">
+            <Code2 size={18} className="text-purple-300" aria-hidden />
+            <Dialog.Title className="font-display text-lg font-semibold">Abre el capó</Dialog.Title>
+            <span className="ml-auto hidden font-mono text-xs text-white/50 sm:inline">page.tsx</span>
+          </div>
+          <Dialog.Description className="px-5 pt-5 text-sm leading-relaxed text-white/65">
+            Un ejemplo simplificado de cómo se conectan las piezas de Latech. Ilustra nuestra arquitectura; no muestra datos ni código privado en tiempo real.
+          </Dialog.Description>
+          <div className="overflow-x-auto px-5 py-5 font-mono text-xs leading-7 sm:text-[13px]" role="region" aria-label="Ejemplo de código" tabIndex={0}>
+            <code>{LINES.map((line, i) => <span key={i} className="flex min-w-max gap-3"><span aria-hidden className="w-5 select-none text-right text-white/35">{i + 1}</span><span className="whitespace-pre text-white/85">{line}</span></span>)}</code>
+          </div>
+          <div className="border-t border-white/10 px-5 py-5">
+            <h3 className="font-display text-base font-semibold">Lo que hay detrás</h3>
+            <dl className="mt-4 grid gap-4 text-sm sm:grid-cols-2">
+              <div><dt className="font-medium text-purple-300">Next.js y React</dt><dd className="mt-1 leading-relaxed text-white/60">Páginas renderizadas en el servidor e interacción donde hace falta.</dd></div>
+              <div><dt className="font-medium text-orange-300">Turso</dt><dd className="mt-1 leading-relaxed text-white/60">Contenido persistente con acceso controlado desde el servidor.</dd></div>
+              <div><dt className="font-medium text-purple-300">Movimiento a medida</dt><dd className="mt-1 leading-relaxed text-white/60">CSS, Motion y GSAP, con una alternativa de movimiento reducido.</dd></div>
+              <div><dt className="font-medium text-orange-300">Rendimiento medible</dt><dd className="mt-1 leading-relaxed text-white/60">Los tiempos varían por dispositivo y conexión. Esta demo no es una prueba de velocidad.</dd></div>
+            </dl>
+          </div>
+          <Dialog.Close className="absolute right-3 top-3 flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-[#171125] text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-300" aria-label="Cerrar el capó"><X size={18} /></Dialog.Close>
+        </Dialog.Content>
+      </Dialog.Portal>
+    </Dialog.Root>
   );
 }

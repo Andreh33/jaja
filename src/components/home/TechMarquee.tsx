@@ -12,7 +12,7 @@ export default function TechMarquee() {
       <div className="py-7">
         <Marquee speed={40} pauseOnHover>
           {TECHS.map((t, i) => (
-            <span key={i} className="flex items-center gap-10 pl-10 font-mono text-sm text-white/30 transition-colors hover:text-white/90">
+            <span key={i} className="flex items-center gap-10 pl-10 font-mono text-sm text-white/60 transition-colors hover:text-white/90">
               {t}
               <span className="inline-block h-1 w-1 rounded-full bg-white/15" />
             </span>

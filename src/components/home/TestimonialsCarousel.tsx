@@ -1,7 +1,7 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import { Star } from 'lucide-react';
+import { useRef } from 'react';
+import { ArrowLeft, ArrowRight, Star } from 'lucide-react';
 import { Reveal } from '../effects/Reveal';
 
 const TESTIMONIALS = [
@@ -26,12 +26,17 @@ function Avatar({ name }: { name: string }) {
 }
 
 export default function TestimonialsCarousel() {
+  const list = useRef<HTMLDivElement>(null);
+  const scroll = (direction: number) => {
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    list.current?.scrollBy({ left: direction * Math.min(420, window.innerWidth - 32), behavior: reduced ? 'instant' : 'smooth' });
+  };
   return (
     <section className="relative z-10 py-32">
       <div className="mx-auto max-w-7xl px-6">
         <Reveal>
           <div className="mb-16 max-w-3xl">
-            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-white/40">Testimonios</p>
+            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-white/60">Testimonios</p>
             <h2 className="font-display text-balance text-4xl md:text-6xl" style={{ letterSpacing: '-0.04em', fontWeight: 800 }}>
               Quien lo prueba,<br /><span style={{ color: 'var(--purple-300)' }}>repite.</span>
             </h2>
@@ -39,20 +44,15 @@ export default function TestimonialsCarousel() {
         </Reveal>
       </div>
 
-      <motion.div
-        className="flex cursor-grab gap-5 px-6 pb-2 active:cursor-grabbing md:px-12"
-        drag="x"
-        dragConstraints={{ left: -1500, right: 0 }}
-        whileTap={{ cursor: 'grabbing' }}
-      >
+      <div className="mx-auto mb-5 flex max-w-7xl justify-end gap-3 px-6">
+        <button type="button" onClick={() => scroll(-1)} aria-label="Testimonios anteriores" aria-controls="testimonials-list" className="flex h-11 w-11 items-center justify-center rounded-full border border-white/20 text-white focus-visible:outline-2 focus-visible:outline-purple-300"><ArrowLeft size={18} /></button>
+        <button type="button" onClick={() => scroll(1)} aria-label="Más testimonios" aria-controls="testimonials-list" className="flex h-11 w-11 items-center justify-center rounded-full border border-white/20 text-white focus-visible:outline-2 focus-visible:outline-purple-300"><ArrowRight size={18} /></button>
+      </div>
+      <div ref={list} id="testimonials-list" role="region" aria-label="Testimonios de clientes" tabIndex={0} className="flex snap-x snap-proximity gap-5 overflow-x-auto overscroll-x-contain px-6 pb-4 focus-visible:outline-2 focus-visible:outline-purple-300 md:px-12">
         {TESTIMONIALS.map((t, i) => (
-          <motion.div
+          <article
             key={i}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: i * 0.06 }}
-            className="flex w-[340px] shrink-0 flex-col rounded-3xl glass p-6 md:w-[400px]"
+            className="flex w-[min(340px,calc(100vw-48px))] shrink-0 snap-start flex-col rounded-3xl glass p-6 md:w-[400px]"
           >
             <div className="mb-4 flex gap-0.5">
               {Array.from({ length: t.rating }).map((_, k) => (
@@ -67,9 +67,9 @@ export default function TestimonialsCarousel() {
                 <div className="text-xs text-white/50">{t.role} · {t.company}</div>
               </div>
             </div>
-          </motion.div>
+          </article>
         ))}
-      </motion.div>
+      </div>
     </section>
   );
 }

@@ -1,0 +1,41 @@
+.workspace { --quote-accent: var(--accent-calc, #fbbf24); }
+.panel { border: 1px solid rgba(255,255,255,.12); background: rgba(16,12,26,.88); border-radius: 24px; }
+.option { display: block; position: relative; padding: 20px; min-width: 0; border: 1px solid rgba(255,255,255,.14); border-radius: 16px; background: rgba(255,255,255,.02); cursor: pointer; transition: border-color 160ms ease, background-color 160ms ease; }
+.option[data-selected='true'] { border-color: var(--quote-accent, #fbbf24); background: rgba(251,191,36,.08); }
+.option:focus-within { outline: 2px solid var(--quote-accent, #fbbf24); outline-offset: 4px; }
+.radio { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.optionTitle { padding-right: 26px; font-size: 18px; font-weight: 650; color: #fff; }
+.marker { position: absolute; top: 23px; right: 18px; width: 16px; height: 16px; border: 1px solid rgba(255,255,255,.4); border-radius: 50%; }
+.option[data-selected='true'] .marker { border: 5px solid var(--quote-accent, #fbbf24); }
+.button { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; padding: 12px 22px; border: 1px solid rgba(255,255,255,.2); border-radius: 999px; font-weight: 600; color: #fff; cursor: pointer; transition: background-color 160ms ease, border-color 160ms ease; }
+.button:focus-visible, .textButton:focus-visible, .input:focus-visible { outline: 2px solid var(--quote-accent, #fbbf24); outline-offset: 4px; }
+.button:active { background-color: rgba(255,255,255,.12); }
+.primary { background: var(--quote-accent, #fbbf24); border-color: var(--quote-accent, #fbbf24); color: #17100a; }
+.primary:active { background: #fcd34d; }
+.button:disabled { opacity: .4; cursor: not-allowed; }
+.textButton { min-height: 44px; padding: 8px 0; color: var(--quote-accent, #fbbf24); text-decoration: underline; text-underline-offset: 4px; cursor: pointer; }
+.input { width: 100%; border: 1px solid rgba(255,255,255,.25); border-radius: 12px; background: rgba(0,0,0,.15); padding: 12px 14px; min-height: 48px; color: #fff; font-size: 16px; }
+.input[aria-invalid='true'] { border-color: #fda4af; }
+.input::placeholder { color: rgba(255,255,255,.38); }
+.heading { scroll-margin-top: 140px; }
+.heading:focus { outline: none; }
+.summary { border: 1px solid rgba(251,191,36,.28); border-radius: 20px; background: rgba(16,12,26,.96); padding: 24px; }
+.amount { font-variant-numeric: tabular-nums; white-space: nowrap; }
+.priceBox { border-top: 1px solid rgba(251,191,36,.25); border-bottom: 1px solid rgba(251,191,36,.25); padding: 20px 0; }
+.reviewRow { display: grid; grid-template-columns: minmax(0,1fr) auto; gap: 12px; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,.1); }
+.message { width: 100%; resize: vertical; min-height: 300px; font: 13px/1.7 ui-monospace, monospace; }
+.dialog { position: fixed; inset: 0; margin: auto; height: fit-content; width: min(100% - 24px, 520px); max-height: calc(100dvh - 40px); overflow-y: auto; border: 1px solid rgba(251,191,36,.3); border-radius: 24px; background: #100c1a; color: white; padding: 20px; }
+.dialog::backdrop { background: rgba(0,0,0,.75); }
+.mobileBar { display: none; }
+@media (hover: hover) and (pointer: fine) {
+  .option:hover { border-color: rgba(251,191,36,.65); }
+  .button:hover { border-color: var(--quote-accent, #fbbf24); background: rgba(255,255,255,.08); }
+  .primary:hover { background: #fcd34d; }
+}
+@media (max-width: 1023px) {
+  .workspace { padding-bottom: calc(96px + env(safe-area-inset-bottom, 0px)); }
+  .mobileBar { display: flex; position: fixed; left: 12px; right: 12px; bottom: calc(12px + env(safe-area-inset-bottom, 0px)); z-index: 35; align-items: center; justify-content: space-between; gap: 12px; border: 1px solid rgba(251,191,36,.4); border-radius: 16px; padding: 12px 16px; background: #100c1a; color: white; box-shadow: 0 8px 30px rgba(0,0,0,.35); cursor: pointer; text-align: left; }
+  .mobileBar:focus-visible { outline: 2px solid #fbbf24; outline-offset: 3px; }
+}
+@media (prefers-reduced-motion: reduce) { .option, .button { transition: none; } }
+@media print { .mobileBar { display: none; } }

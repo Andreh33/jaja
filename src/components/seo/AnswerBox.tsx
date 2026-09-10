@@ -21,7 +21,7 @@ export default function AnswerBox({
         borderLeft: '3px solid var(--purple-400)',
       }}
     >
-      <p className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/40">
+      <p className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/60">
         {question ?? 'En resumen'}
       </p>
       <p className="text-base leading-relaxed text-white/80">{children}</p>

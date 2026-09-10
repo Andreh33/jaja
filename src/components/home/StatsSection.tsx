@@ -1,7 +1,6 @@
 'use client';
 
 import BeamBorder from '../effects/BeamBorder';
-import NumberFlow from '../effects/NumberFlow';
 import { Reveal } from '../effects/Reveal';
 
 const STATS = [
@@ -41,7 +40,7 @@ export default function StatsSection() {
                       style={{ background: 'rgba(7,5,14,0.4)', border: '1px solid var(--border-subtle)' }}
                     >
                       <div className="font-display text-5xl tabular-nums leading-none text-white">
-                        <NumberFlow value={s.value} suffix={s.suffix} />
+                        {s.value}{s.suffix}
                       </div>
                       <div className="mt-3 text-xs uppercase tracking-wider text-white/50">{s.label}</div>
                     </div>

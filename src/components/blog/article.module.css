@@ -1,0 +1,28 @@
+.article { color: rgba(255,255,255,.78); overflow-wrap: anywhere; font-size: 17px; line-height: 1.85; }
+.article :is(h2,h3,h4,h5,h6) { color: #fff; line-height: 1.3; scroll-margin-top: 130px; margin-top: 2.4em; margin-bottom: .8em; }
+.article h2 { font-size: clamp(24px, 3vw, 32px); letter-spacing: -.025em; }
+.article h3 { font-size: 22px; }
+.article p { margin: 1em 0; }
+.article :is(ul,ol) { padding-left: 1.5em; margin: 1.2em 0; }
+.article ul { list-style: disc; }
+.article ol { list-style: decimal; }
+.article li { margin: .45em 0; }
+.article a { color: #c4b5fd; text-decoration: underline; text-underline-offset: 3px; }
+.article a:focus-visible { outline: 2px solid #c4b5fd; outline-offset: 4px; }
+.article strong { color: #fff; font-weight: 650; }
+.article blockquote { border-left: 3px solid #a78bfa; padding: 4px 0 4px 20px; margin: 28px 0; background: rgba(139,92,246,.05); }
+.article pre { max-width: 100%; overflow-x: auto; white-space: pre; background: rgba(0,0,0,.3); border: 1px solid rgba(255,255,255,.12); border-radius: 12px; padding: 20px; margin: 28px 0; font-size: 13px; line-height: 1.7; }
+.article code { font-family: ui-monospace, monospace; }
+.article :not(pre) > code { background: rgba(167,139,250,.12); border-radius: 4px; padding: 2px 5px; font-size: .88em; color: #ddd6fe; }
+.article :global(.table-wrap) { width: 100%; overflow-x: auto; margin: 28px 0; border: 1px solid rgba(255,255,255,.15); border-radius: 12px; }
+.article :global(.table-wrap):focus-visible { outline: 2px solid #c4b5fd; outline-offset: 4px; }
+.article table { width: 100%; min-width: 420px; border-collapse: collapse; text-align: left; font-size: 14px; line-height: 1.6; }
+.article :is(th,td) { padding: 14px 16px; border-bottom: 1px solid rgba(255,255,255,.12); }
+.article th { background: rgba(139,92,246,.12); color: #fff; font-weight: 600; }
+.article img { display: block; max-width: 100%; height: auto; margin: 28px auto; border-radius: 12px; }
+.article hr { border: 0; border-top: 1px solid rgba(255,255,255,.2); margin: 40px 0; }
+.toc { border-top: 1px solid rgba(255,255,255,.2); padding-top: 18px; }
+.toc a { display: block; padding: 7px 0; color: rgba(255,255,255,.7); font-size: 13px; line-height: 1.5; }
+.toc a:hover { color: #ddd6fe; }
+.toc a:focus-visible { outline: 2px solid #c4b5fd; outline-offset: 3px; }
+@media (max-width: 639px) { .article { font-size: 16px; line-height: 1.8; } .article pre { padding: 14px; } }

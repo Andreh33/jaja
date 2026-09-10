@@ -1,77 +1,21 @@
-'use client';
+import Link from 'next/link';
+import { MessageCircle } from 'lucide-react';
+import { whatsappLink } from '@/lib/stripe-links';
 
-import { useState } from 'react';
-import { ArrowRight } from 'lucide-react';
-import { toast } from 'sonner';
-
-export default function RecuperarClient() {
-  const [email, setEmail] = useState('');
-  const [sent, setSent] = useState(false);
-
-  const submit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    try {
-      const r = await fetch('/api/auth/forgot', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email }),
-      });
-      if (r.ok) {
-        const data = await r.json();
-        setSent(true);
-        if (data.devLink) {
-          toast.message('En producción enviaríamos email — link de prueba abajo', {
-            description: data.devLink,
-          });
-        } else {
-          toast.success('Si el email existe, te enviaremos un enlace');
-        }
-      }
-    } catch {
-      toast.error('Error inesperado');
-    }
-  };
-
+export default function RecuperarClient({ retiredLink = false }: { retiredLink?: boolean }) {
   return (
     <div className="w-full max-w-md">
       <div className="rounded-3xl glass-strong p-8 md:p-10">
-        <h1 className="font-display text-3xl text-white" style={{ letterSpacing: '-0.04em', fontWeight: 800 }}>
-          Recuperar acceso
-        </h1>
-        <p className="mt-2 text-sm text-white/55">
-          Introduce tu email y te mandaremos un enlace para restablecer la contraseña.
-        </p>
-
-        {sent ? (
-          <div className="mt-7 rounded-2xl glass p-6 text-center">
-            <div className="font-display text-xl text-white">📬 Comprueba tu bandeja</div>
-            <p className="mt-3 text-sm text-white/55">
-              Si tu email está registrado, recibirás un enlace para restablecer la contraseña.
-              Caduca en 1 hora.
-            </p>
-          </div>
-        ) : (
-          <form onSubmit={submit} className="mt-7 space-y-4">
-            <label className="block">
-              <span className="mb-2 block text-xs font-semibold uppercase tracking-wider text-white/55">Email</span>
-              <input className="input" type="email" required value={email} onChange={(e) => setEmail(e.target.value)} placeholder="tu@email.com" />
-            </label>
-            <button
-              type="submit"
-              className="group inline-flex w-full items-center justify-center gap-2 rounded-full px-6 py-3.5 text-sm font-semibold text-white transition-transform active:scale-[0.98] glow-purple"
-              style={{ background: 'var(--grad-signature)' }}
-            >
-              Enviar enlace <ArrowRight size={16} />
-            </button>
-          </form>
-        )}
+        <h1 className="font-display text-3xl text-white" style={{ letterSpacing: '-0.04em', fontWeight: 800 }}>Recuperar acceso</h1>
+        {retiredLink && <p className="mt-4 rounded-xl border border-amber-300/20 bg-amber-300/5 p-4 text-sm text-amber-100">El enlace anterior ya no es válido. Puedes solicitar ayuda al equipo para recuperar tu cuenta.</p>}
+        <p className="mt-5 text-sm leading-relaxed text-white/70">La recuperación automática por email no está disponible. Habla con el equipo de Latech: verificaremos que la cuenta te pertenece antes de ayudarte a recuperar el acceso.</p>
+        <a href={whatsappLink('Hola, necesito ayuda para recuperar el acceso a mi cuenta de Latech.')} target="_blank" rel="noopener noreferrer" className="mt-7 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full px-5 py-3 text-center text-sm font-semibold text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-purple-300" style={{ background: 'var(--grad-signature)' }}>
+          <MessageCircle size={18} aria-hidden /> Solicitar ayuda por WhatsApp
+        </a>
+        <p className="mt-4 text-xs leading-relaxed text-white/55">No envíes contraseñas, códigos de acceso ni datos de pago por WhatsApp. Abrir el chat no cambia tu contraseña ni recupera la cuenta automáticamente.</p>
+        <Link href="/contacto" className="mt-6 block text-center text-sm text-white/75 underline underline-offset-4 hover:text-white">Prefiero contactar desde la web</Link>
+        <Link href="/login" className="mt-4 block text-center text-sm text-white/55 hover:text-white">Volver a iniciar sesión</Link>
       </div>
-
-      <style jsx>{`
-        .input { width:100%; height:48px; padding:0 14px; border-radius:14px; background:rgba(7,5,14,0.5); border:1px solid var(--border-subtle); color:var(--text-primary); font-size:14px; transition:all .2s; }
-        .input::placeholder { color:rgba(255,255,255,0.3); }
-        .input:focus { outline:none; border-color:var(--purple-400); box-shadow:0 0 0 3px rgba(139,92,246,0.18); }
-      `}</style>
     </div>
   );
 }

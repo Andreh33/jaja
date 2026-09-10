@@ -12,7 +12,7 @@ export default function CustomCursor() {
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
-    if (!matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+    if (!matchMedia('(hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference)').matches) return;
     document.body.classList.add('has-custom-cursor');
 
     const onMove = (e: MouseEvent) => {
@@ -24,10 +24,6 @@ export default function CustomCursor() {
     };
 
     const hoverables = ['a', 'button', '[data-cursor="hover"]', '[role="button"]', 'input', 'textarea', 'select'];
-    const isHover = (el: Element | null): boolean => {
-      if (!el) return false;
-      return hoverables.some((sel) => (el as HTMLElement).matches?.(sel));
-    };
     const onOver = (e: MouseEvent) => {
       const t = e.target as Element;
       const target = t?.closest?.(hoverables.join(','));
@@ -75,7 +71,7 @@ export default function CustomCursor() {
     <>
       <div
         ref={dotRef}
-        className="pointer-events-none fixed left-0 top-0 z-[9999] h-1.5 w-1.5 rounded-full"
+        className="cursor-dot pointer-events-none fixed left-0 top-0 z-[9999] h-1.5 w-1.5 rounded-full"
         style={{ background: 'var(--purple-400)', mixBlendMode: 'screen' }}
         aria-hidden
       />
