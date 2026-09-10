@@ -1,102 +1,14 @@
 'use client';
-
-import { formatEUR } from '@/config/catalog';
+import { QUOTE_TAX_LABEL, formatEUR } from '@/lib/quotes/catalog';
 import type { Cart } from '../_lib/state';
-
-const ACCENT = 'var(--accent-calc)';
-
+import styles from '../quote.module.css';
 export default function Summary({ cart }: { cart: Cart }) {
-  const cadenceLabel = cart.cadence === 'yearly' ? '/año' : '/mes';
-  const recurringLabel = cart.cadence === 'yearly' ? 'Suscripción anual' : 'Suscripción mensual';
-  const hasRecurring = cart.recurringTotal > 0;
-  const hasOneTime = cart.oneTimeTotal > 0;
-
-  return (
-    <aside
-      aria-label="Resumen de tu plan"
-      className="rounded-2xl glass p-6 md:sticky md:top-24"
-      style={{ border: `1px solid ${ACCENT}30` }}
-    >
-      <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/40">Tu plan</p>
-      <h3 className="mt-2 font-display text-xl text-white" style={{ letterSpacing: '-0.02em', fontWeight: 700 }}>
-        Resumen
-      </h3>
-
-      <div className="mt-5 space-y-2 text-sm">
-        {cart.oneTime.length === 0 && cart.recurring.length === 0 ? (
-          <p className="text-white/50">Aún no hay servicios añadidos.</p>
-        ) : (
-          <>
-            {cart.oneTime.length > 0 && (
-              <div>
-                <p className="mb-2 text-[11px] uppercase tracking-wider text-white/40">Pago único</p>
-                <ul className="space-y-1.5">
-                  {cart.oneTime.map((l) => (
-                    <li key={l.catalogId} className="flex items-baseline justify-between gap-3 text-white/75">
-                      <span className="min-w-0 truncate">{l.item.name}</span>
-                      <span className="shrink-0 font-mono text-white">{formatEUR(l.lineTotal)}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-
-            {cart.recurring.length > 0 && (
-              <div className={cart.oneTime.length > 0 ? 'mt-4' : ''}>
-                <p className="mb-2 text-[11px] uppercase tracking-wider text-white/40">{recurringLabel}</p>
-                <ul className="space-y-1.5">
-                  {cart.recurring.map((l) => (
-                    <li key={l.catalogId} className="flex items-baseline justify-between gap-3 text-white/75">
-                      <span className="min-w-0 truncate">
-                        {l.item.name}
-                        {l.quantity > 1 && <span className="text-white/45"> ×{l.quantity}</span>}
-                      </span>
-                      <span className="shrink-0 font-mono text-white">
-                        {formatEUR(l.lineTotal)}
-                        <span className="text-white/45">{cadenceLabel}</span>
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-          </>
-        )}
-      </div>
-
-      <div className="mt-6 space-y-2 border-t pt-5 text-sm" style={{ borderColor: 'var(--border-subtle)' }}>
-        <Row label="Pago único hoy" value={formatEUR(cart.oneTimeTotal)} />
-        <Row
-          label={recurringLabel}
-          value={hasRecurring ? `${formatEUR(cart.recurringTotal)}${cadenceLabel}` : '—'}
-        />
-      </div>
-
-      <div className="mt-5 rounded-xl px-4 py-4" style={{ background: `${ACCENT}15`, border: `1px solid ${ACCENT}40` }}>
-        <p className="text-[11px] uppercase tracking-wider text-white/55">Total a pagar hoy</p>
-        <p className="mt-1 font-display text-3xl tabular-nums text-white" style={{ letterSpacing: '-0.02em', fontWeight: 800 }}>
-          {formatEUR(cart.todayTotal)}
-        </p>
-        {hasRecurring && hasOneTime && (
-          <p className="mt-1 text-[11px] text-white/50">
-            Pago único + primer cargo {cart.cadence === 'yearly' ? 'anual' : 'mensual'}.
-          </p>
-        )}
-        {hasRecurring && !hasOneTime && (
-          <p className="mt-1 text-[11px] text-white/50">
-            Primer cargo {cart.cadence === 'yearly' ? 'anual' : 'mensual'}.
-          </p>
-        )}
-      </div>
-    </aside>
-  );
-}
-
-function Row({ label, value }: { label: string; value: string }) {
-  return (
-    <div className="flex items-baseline justify-between gap-3">
-      <span className="text-white/55">{label}</span>
-      <span className="font-mono text-white">{value}</span>
-    </div>
-  );
+  return <aside aria-label="Desglose de tu presupuesto" className={styles.summary}>
+    <p className="text-xs font-semibold uppercase tracking-[.2em] text-amber-300">Tu presupuesto</p>
+    <p className="mt-2 text-xs leading-relaxed text-white/60">Selecciona lo que necesitas. El desglose cambia contigo.</p>
+    <div className="mt-6 space-y-6">{[{ title: 'Creación y extras · pago único', lines: cart.oneTime }, { title: 'Servicios · cada mes', lines: cart.recurring }].map(group => <div key={group.title}><h3 className="mb-3 text-xs font-medium text-white/60">{group.title}</h3><ul className="space-y-3 text-sm">{group.lines.map(l => <li key={l.catalogId} className="flex items-start justify-between gap-3"><span className="min-w-0 text-white/85">{l.item.name}{l.quantity > 1 ? ` × ${l.quantity}` : ''}</span><span className={`${styles.amount} font-mono text-white`}>{formatEUR(l.lineTotal)}</span></li>)}</ul></div>)}</div>
+    <dl className={`mt-6 space-y-3 ${styles.priceBox}`}><div className="flex justify-between gap-3"><dt className="text-sm text-white/65">Pago único</dt><dd className={`${styles.amount} font-mono text-white`}>{formatEUR(cart.oneTimeTotal)}</dd></div><div className="flex items-baseline justify-between gap-3"><dt className="text-sm text-white/65">Cuota mensual</dt><dd className={`${styles.amount} font-display text-3xl font-bold text-amber-300`}>{formatEUR(cart.recurringTotal)}<span className="text-sm font-normal">/mes</span></dd></div></dl>
+    <p className="mt-4 flex justify-between gap-3 text-xs text-white/70"><span>Primer mes con creación</span><strong className={styles.amount}>{formatEUR(cart.firstMonthTotal)}</strong></p>
+    <p className="mt-4 text-xs font-semibold text-white/85">{QUOTE_TAX_LABEL}.</p><p className="mt-2 text-xs leading-relaxed text-white/55">Importes orientativos. Confirmamos alcance y calendario contigo antes de contratar.</p>
+  </aside>;
 }

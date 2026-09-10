@@ -1,0 +1,103 @@
+{
+  "version": 1,
+  "auditedAt": "2026-09-10",
+  "baseline": [
+    {
+      "slug": "cuanto-cuesta-pagina-web-espana",
+      "fields": {
+        "title": "98269214ce55fb0398043074c5ddffe2634289f551cf9b999e9279a3d59b1778",
+        "excerpt": "87add30b9014033174802fb76eb25ee5859c8a0e6d4a03aec87f961c7ef536c8",
+        "content": "1b1d51a91e852f6cc89e46c139b748f645658a0708d222373bec29b09488d4b5",
+        "category": "697b0c221b1f6f14f815b03f542b593bddacf30c0a272eb2d769642dd71a6f1f",
+        "readingMinutes": "2c624232cdd221771294dfbb310aca000a0df6ac8b66b696d90ef06fdefb64a3"
+      },
+      "auditHtmlSha256": "06cf9c870217b227b7c8ef549418949432af65ff6e18b2329047444dda4f22fa",
+      "renderedBodySha256": "2fd073d5f549036a9c1e225040a397478fd925769f7bdc611fff824efe5dd56b"
+    },
+    {
+      "slug": "cuanto-cuesta-tienda-online",
+      "fields": {
+        "title": "d9d33e1188c389beb96e0ec77256909343e475d84e1445eb42c395e8fa73951a",
+        "excerpt": "d6f4b470b22b8fbf2c033d0b0274e3c56148bcbb124d2bb73ec19ad415f191ee",
+        "content": "2484f0475a69dcf5d69a4e936525d445fec0c88fd7a471b9f9329e5d7e9ba244",
+        "category": "8e96f35608935bc9e92d810a3c5f56fa43ce3c15f47ba5bdcfd5c8fb921d97a5",
+        "readingMinutes": "19581e27de7ced00ff1ce50b2047e7a567c76b1cbaebabe5ef03f7c3017bb5b7"
+      },
+      "auditHtmlSha256": "3ed5ce546e80854cd48bed7e62ce9077ef3854bef52eeb83099d94565159be1d",
+      "renderedBodySha256": "854b29b94ca60d8e423a8103c082e405c971224f8d38885eb8972af7f394f51e"
+    },
+    {
+      "slug": "mantenimiento-web-que-incluye",
+      "fields": {
+        "title": "f41a0a5693a25a6464dd069272473bfd1156af19f24ab9eda09bf6662ffe5112",
+        "excerpt": "e1d85134e4297407167c77547db6d565159cd5f59852111e649a4612b455b0ed",
+        "content": "56cdb7961a7f9b20cea1e54854a39ea18c9e289420c93554be8a9e8f4e05c8f6",
+        "category": "697b0c221b1f6f14f815b03f542b593bddacf30c0a272eb2d769642dd71a6f1f",
+        "readingMinutes": "7902699be42c8a8e46fbbb4501726517e86b22c56a189f7625a6da49081b2451"
+      },
+      "auditHtmlSha256": "17dc06511cc6c205d2907170efce9cd5eab4e56e513a567930974cd1a4624992",
+      "renderedBodySha256": "2aaf0c23e12c6e362448a829c3d127612511c8c61b1ce735c67efcf1ff411981"
+    },
+    {
+      "slug": "wordpress-vs-web-a-medida",
+      "fields": {
+        "title": "74084ff37085f064e0dcbc0c21e1ef659577e180eec2d13f90a78ccc0cf26fb2",
+        "excerpt": "0cbf6dba3d9349ddd376709eaff28d74edf85e5cfad8e9fa7c5bbdd37fd52b40",
+        "content": "81dbc1fd2d4aa68e35ef00a5b570130b7b66ba9a029f7457b3bd14d2d1f8a5eb",
+        "category": "697b0c221b1f6f14f815b03f542b593bddacf30c0a272eb2d769642dd71a6f1f",
+        "readingMinutes": "19581e27de7ced00ff1ce50b2047e7a567c76b1cbaebabe5ef03f7c3017bb5b7"
+      },
+      "auditHtmlSha256": "d83ccb619b52940d353297bff3da0571fbb35755329b7a4f79bfe825d087eb13",
+      "renderedBodySha256": "6201519faa0236468ca2733f2b3e963623f5965564899516c4330a09dfef0174"
+    },
+    {
+      "slug": "por-que-no-aparezco-en-google-diagnostico",
+      "fields": {
+        "title": "9285f08431bf5bed7f4b3d7b81a017d0051a04a9e92f6989a9710da5b53893e1",
+        "excerpt": "c5929db67fe39221e1068f494a07ccbe036d64a3c9ab1c8e1dd07ea9448abfb2",
+        "content": "b37e0a12abb6f4ede1407cbbd2841222018fd6897a51a4763a19d84c553c657a",
+        "category": "7b5b87d07836cf7c650c49164bee1406272436c56e10f008b99d8813057139c0",
+        "readingMinutes": "19581e27de7ced00ff1ce50b2047e7a567c76b1cbaebabe5ef03f7c3017bb5b7"
+      },
+      "auditHtmlSha256": "f6c16d269e92b2d2b9e7a3ddb0b890f5accd9edda247b57ea1789c148200031e",
+      "renderedBodySha256": "c9464c809b50789d132c6801081771e414fec427e5b7416fdd30e38fbac5cd31"
+    },
+    {
+      "slug": "seo-tiendas-online-productos",
+      "fields": {
+        "title": "c90edee1ead272d744d900c8ca9db1e6548041a4254063d33d63ebbf92569ee9",
+        "excerpt": "4b05d55fb294002f89383ed9a108613f63f602deac2a9e5326ade9260c0298dc",
+        "content": "462cbb836d60215bc7862860ea88b417f66c3080215cbb3c389b97967ff9a3ad",
+        "category": "7b5b87d07836cf7c650c49164bee1406272436c56e10f008b99d8813057139c0",
+        "readingMinutes": "19581e27de7ced00ff1ce50b2047e7a567c76b1cbaebabe5ef03f7c3017bb5b7"
+      },
+      "auditHtmlSha256": "6a15e4fa62f6cd27021ff0f8d00967e9af77f94eaab52ea033316faf59e01212",
+      "renderedBodySha256": "01f569c3ea1824bf9852c8ede1d276b35225afa09f2c72b1f27fafaae51be91f"
+    },
+    {
+      "slug": "core-web-vitals-velocidad-ventas",
+      "fields": {
+        "title": "a6e7269a921aefe029be5dc85a85259c9bffd21aa3b94c5a4082ddae8ff25bf9",
+        "excerpt": "7fb85cae0d61750310e85bf6daa5ed89b110316cecfafa6030d9732c2788c673",
+        "content": "315d31612b105cf710d1dd2a74f657ecaf9690d78ff093564ba753b59337dfbc",
+        "category": "7b5b87d07836cf7c650c49164bee1406272436c56e10f008b99d8813057139c0",
+        "readingMinutes": "2c624232cdd221771294dfbb310aca000a0df6ac8b66b696d90ef06fdefb64a3"
+      },
+      "auditHtmlSha256": "2e0a8160fa4f55f149dff2a5d1104e87d4962239621c6969443e39fb3ec1259b",
+      "renderedBodySha256": "8a7e4c410dc75e68b4ca3e8fb625968b40b30a3fd236ceeaaa1af726c7370a9e"
+    },
+    {
+      "slug": "cuanto-cuesta-agente-ia",
+      "fields": {
+        "title": "3f69442561584a0b99913a973f8f9c9fefe283b693f958441784f2972c58340b",
+        "excerpt": "8170761435b20de0a99fd3ab57ce0265a88118328a62278a36f1f64c414690fd",
+        "content": "f0db8e3107ed8c13a401cc2ef96265d34cd4ce68a3d731a1155d98e9c3c84fff",
+        "category": "a3360ce863115060d760b1403a984208ebbe7c31e745af85c44d5d432f01d2c7",
+        "readingMinutes": "19581e27de7ced00ff1ce50b2047e7a567c76b1cbaebabe5ef03f7c3017bb5b7"
+      },
+      "auditHtmlSha256": "2df584983feea80049b7f97d2f21224e852326f473f2005866c8881a94400e72",
+      "renderedBodySha256": "88cecbe7b45daa0200dfe5218e7df1a44eceda0842f81e18f67ca9da71046be2"
+    }
+  ],
+  "approvedPackageSha256": "05b4407585ae972c69dd5ec5aa6683c4308c6b207320a4abcdb337d121a48eef"
+}

@@ -22,7 +22,7 @@ export const landings: LocalLanding[] = [
       { q: '¿Trabajáis con empresas de Madrid sin estar allí físicamente?', a: 'Sí. Trabajamos 100% en remoto por videollamada con clientes de todo Madrid y de toda España. Te ahorras el sobrecoste de una agencia con oficina en el centro y ganas la misma cercanía: reuniones por videollamada y respuesta rápida.' },
       { q: '¿Cuánto tardáis en entregar una web en Madrid?', a: 'La mayoría de proyectos se entregan en 24-48h una vez tenemos tus contenidos. Para webs más grandes, definimos un calendario claro desde el primer día.' },
       { q: '¿La web estará optimizada para posicionar en Google en Madrid?', a: 'Sí. Cada web se entrega con SEO técnico, velocidad optimizada (Core Web Vitals), datos estructurados y enfoque en las búsquedas locales de Madrid relevantes para tu sector.' },
-      { q: '¿Hay permanencia o cuotas obligatorias?', a: 'No hay permanencia. La web es tuya. El mantenimiento es opcional.' },
+      { q: '¿Hay permanencia o cuotas obligatorias?', a: 'No hay permanencia. El plan incluye 600 € de creación más 60 €/mes de hosting y mantenimiento. IVA no incluido.' },
     ],
     bodyMarkdown: `## Por qué tu web importa más en Madrid
 
@@ -67,7 +67,7 @@ Si además quieres vender online o automatizar la atención al cliente, podemos 
       { q: '¿Podéis hacer la web en catalán, castellano e inglés?', a: 'Sí. Para un mercado tan internacional como el de Barcelona preparamos webs multilingües bien estructuradas para SEO, con etiquetas hreflang y navegación clara en cada idioma.' },
       { q: '¿Cuánto tardáis en entregar la web?', a: 'La mayoría de proyectos se entregan en 24-48h una vez tenemos tus textos e imágenes. Para webs grandes con varios idiomas fijamos un calendario desde el principio.' },
       { q: '¿La web posicionará en las búsquedas locales de Barcelona?', a: 'Sí. Trabajamos SEO técnico, velocidad y datos estructurados, y orientamos los contenidos a las búsquedas de tu sector y de tu zona o distrito.' },
-      { q: '¿Hay permanencia?', a: 'No. La web es tuya, sin permanencia ni cuotas obligatorias. El mantenimiento es opcional.' },
+      { q: '¿Hay permanencia?', a: 'No hay permanencia. El plan incluye 600 € de creación más 60 €/mes de hosting y mantenimiento. IVA no incluido.' },
     ],
     bodyMarkdown: `## Barcelona: una ciudad donde la web es tu escaparate internacional
 
@@ -123,7 +123,7 @@ Si además quieres vender online o automatizar reservas y consultas, podemos sum
       { q: '¿Podéis hacer la web bilingüe en valenciano y castellano?', a: 'Sí, y también en inglés u otros idiomas si exportas. Preparamos versiones bien estructuradas para SEO con hreflang.' },
       { q: '¿Sirve para empresas exportadoras y B2B?', a: 'Sí. Muchas empresas valencianas venden a distribuidores y mercados exteriores. Diseñamos webs que transmiten solvencia, con catálogo, fichas técnicas y formularios de contacto claros para captar pedidos.' },
       { q: '¿Cuánto tardáis en entregar?', a: 'La mayoría de webs se entregan en 24-48h una vez tenemos tus contenidos. Para catálogos grandes definimos un calendario.' },
-      { q: '¿Hay permanencia?', a: 'No. La web es tuya, sin permanencia. El mantenimiento es opcional.' },
+      { q: '¿Hay permanencia?', a: 'No hay permanencia. El plan incluye 600 € de creación más 60 €/mes de hosting y mantenimiento. IVA no incluido.' },
     ],
     bodyMarkdown: `## Valencia: web para una economía exportadora
 
@@ -179,7 +179,7 @@ Si quieres vender directamente o automatizar el contacto comercial, podemos suma
       { q: '¿Sirve para empresas industriales y aeronáuticas B2B?', a: 'Sí. Para el tejido de Aerópolis y la industria auxiliar diseñamos webs que transmiten rigor técnico, con catálogo, certificaciones y fichas claras para captar clientes profesionales.' },
       { q: '¿Optimizáis para el turismo y la hostelería?', a: 'Sí. Trabajamos reserva directa y SEO local para que un hotel o restaurante del centro de Sevilla aparezca cuando alguien busca dónde dormir o comer en la ciudad.' },
       { q: '¿Cuánto tardáis?', a: 'La mayoría de webs en 24-48h una vez tenemos tus contenidos. Para proyectos grandes fijamos un calendario.' },
-      { q: '¿Hay permanencia?', a: 'No. La web es tuya, sin permanencia. Mantenimiento opcional.' },
+      { q: '¿Hay permanencia?', a: 'No hay permanencia. El plan incluye 600 € de creación más 60 €/mes de hosting y mantenimiento. IVA no incluido.' },
     ],
     bodyMarkdown: `## Sevilla: dos economías, una misma necesidad
 
@@ -235,7 +235,7 @@ Si quieres vender online o automatizar reservas y consultas, podemos sumar una [
       { q: '¿Podéis hacer webs multilingües para comprador extranjero?', a: 'Sí. En Málaga es clave. Preparamos webs en inglés, alemán y otros idiomas, bien estructuradas para SEO con hreflang, ideales para inmobiliarias y turismo.' },
       { q: '¿Sirve para una startup del Parque Tecnológico?', a: 'Sí. Diseñamos landings rápidas y medibles, pensadas para convertir tráfico de campañas e inversión en clientes reales.' },
       { q: '¿Cuánto tardáis?', a: 'La mayoría de webs en 24-48h una vez tenemos tus contenidos. Para proyectos con buscador de propiedades o varios idiomas, fijamos calendario.' },
-      { q: '¿Hay permanencia?', a: 'No. La web es tuya, sin permanencia. Mantenimiento opcional.' },
+      { q: '¿Hay permanencia?', a: 'No hay permanencia. El plan incluye 600 € de creación más 60 €/mes de hosting y mantenimiento. IVA no incluido.' },
     ],
     bodyMarkdown: `## Málaga: una ciudad que mira al mundo
 
@@ -291,7 +291,7 @@ Si quieres vender online o automatizar reservas y consultas en varios idiomas, p
       { q: '¿Sirve para una empresa industrial o logística B2B?', a: 'Sí. Es nuestro fuerte. Diseñamos webs que transmiten capacidad y solvencia, con catálogo, capacidades técnicas, certificaciones y formularios de presupuesto claros para captar clientes profesionales.' },
       { q: '¿La web posicionará en Google?', a: 'Sí. Trabajamos SEO técnico, velocidad y datos estructurados, orientados a las búsquedas de tu sector industrial o de servicios.' },
       { q: '¿Cuánto tardáis?', a: 'La mayoría de webs en 24-48h una vez tenemos tus contenidos. Para catálogos grandes fijamos calendario.' },
-      { q: '¿Hay permanencia?', a: 'No. La web es tuya, sin permanencia. Mantenimiento opcional.' },
+      { q: '¿Hay permanencia?', a: 'No hay permanencia. El plan incluye 600 € de creación más 60 €/mes de hosting y mantenimiento. IVA no incluido.' },
     ],
     bodyMarkdown: `## Zaragoza: web para el nudo logístico e industrial de España
 
@@ -347,7 +347,7 @@ Si quieres vender online o automatizar la atención comercial, podemos sumar una
       { q: '¿Sirve para una exportadora hortofrutícola?', a: 'Sí, es uno de nuestros casos típicos. Diseñamos webs multilingües que transmiten calidad, certificaciones y trazabilidad, con catálogo de producto y contacto claro para compradores europeos.' },
       { q: '¿Podéis hacer la web en inglés y otros idiomas?', a: 'Sí. Para exportación preparamos versiones en inglés, francés, alemán u otros, bien estructuradas para SEO con hreflang.' },
       { q: '¿Cuánto tardáis?', a: 'La mayoría de webs en 24-48h una vez tenemos tus contenidos. Para catálogos amplios fijamos calendario.' },
-      { q: '¿Hay permanencia?', a: 'No. La web es tuya, sin permanencia. Mantenimiento opcional.' },
+      { q: '¿Hay permanencia?', a: 'No hay permanencia. El plan incluye 600 € de creación más 60 €/mes de hosting y mantenimiento. IVA no incluido.' },
     ],
     bodyMarkdown: `## Murcia: web para la huerta de Europa
 
@@ -404,7 +404,7 @@ Si quieres vender directamente o automatizar el contacto con compradores en vari
       { q: '¿Sirve para una empresa de ingeniería o industria B2B?', a: 'Sí, es nuestro terreno. Diseñamos webs que transmiten rigor técnico y solvencia, con capacidades, casos de éxito, certificaciones y un contacto claro para captar clientes industriales.' },
       { q: '¿Podéis hacer la web en euskera, castellano e inglés?', a: 'Sí. Preparamos webs multilingües bien estructuradas para SEO con hreflang, habituales en empresas vascas con clientes internacionales.' },
       { q: '¿Cuánto tardáis?', a: 'La mayoría de webs en 24-48h una vez tenemos tus contenidos. Para proyectos técnicos amplios fijamos calendario.' },
-      { q: '¿Hay permanencia?', a: 'No. La web es tuya, sin permanencia. Mantenimiento opcional.' },
+      { q: '¿Hay permanencia?', a: 'No hay permanencia. El plan incluye 600 € de creación más 60 €/mes de hosting y mantenimiento. IVA no incluido.' },
     ],
     bodyMarkdown: `## ¿Cuánto cuesta una página web en Bilbao?
 
@@ -464,7 +464,7 @@ Si quieres digitalizar pedidos o automatizar la atención técnica, podemos suma
       { q: '¿Sirve para una marca de calzado o textil que exporta?', a: 'Sí. Diseñamos webs multilingües con catálogo de producto, fichas y contacto para distribuidores, pensadas para abrir mercado fuera de España.' },
       { q: '¿Hacéis webs multilingües para el inmobiliario de costa?', a: 'Sí. Para comprador extranjero preparamos versiones en inglés, alemán u otros idiomas con buscador de propiedades, bien estructuradas para SEO con hreflang.' },
       { q: '¿Cuánto tardáis?', a: 'La mayoría de webs en 24-48h una vez tenemos tus contenidos. Para catálogos o buscadores fijamos calendario.' },
-      { q: '¿Hay permanencia?', a: 'No. La web es tuya, sin permanencia. Mantenimiento opcional.' },
+      { q: '¿Hay permanencia?', a: 'No hay permanencia. El plan incluye 600 € de creación más 60 €/mes de hosting y mantenimiento. IVA no incluido.' },
     ],
     bodyMarkdown: `## Alicante: turismo de costa e industria exportadora
 
@@ -520,7 +520,7 @@ Si quieres vender online o automatizar reservas y consultas en varios idiomas, p
       { q: '¿Sirve para un taller de joyería o una marca artesana?', a: 'Sí. Cuidamos especialmente la fotografía y el diseño para que las piezas luzcan, con catálogo y venta online si quieres, sin sacrificar la velocidad de carga.' },
       { q: '¿Podéis hacer la web de una almazara o marca de aceite?', a: 'Sí. Diseñamos webs que cuentan origen, denominación y proceso, con tienda online si vendes directo y versión en inglés para exportar.' },
       { q: '¿Cuánto tardáis?', a: 'La mayoría de webs en 24-48h una vez tenemos tus contenidos. Para catálogos o tienda fijamos calendario.' },
-      { q: '¿Hay permanencia?', a: 'No. La web es tuya, sin permanencia. Mantenimiento opcional.' },
+      { q: '¿Hay permanencia?', a: 'No hay permanencia. El plan incluye 600 € de creación más 60 €/mes de hosting y mantenimiento. IVA no incluido.' },
     ],
     bodyMarkdown: `## Córdoba: web para una economía con sello artesano
 
@@ -576,7 +576,7 @@ Si quieres vender tus piezas o tu aceite directamente, podemos sumar una [tienda
       { q: '¿Sirve para un proveedor de automoción B2B?', a: 'Sí. Diseñamos webs que transmiten capacidad técnica y solvencia, con capacidades productivas, certificaciones y un contacto claro para captar clientes industriales.' },
       { q: '¿Podéis hacer la web de una bodega con enoturismo y venta?', a: 'Sí. Combinamos imagen de marca, reserva de visitas de enoturismo y tienda online o club de vino para vender directo dentro y fuera de España.' },
       { q: '¿Cuánto tardáis?', a: 'La mayoría de webs en 24-48h una vez tenemos tus contenidos. Para tienda o catálogos amplios fijamos calendario.' },
-      { q: '¿Hay permanencia?', a: 'No. La web es tuya, sin permanencia. Mantenimiento opcional.' },
+      { q: '¿Hay permanencia?', a: 'No hay permanencia. El plan incluye 600 € de creación más 60 €/mes de hosting y mantenimiento. IVA no incluido.' },
     ],
     bodyMarkdown: `## Valladolid: web para industria y marca de producto
 
@@ -632,7 +632,7 @@ Si quieres vender tu vino o tu producto directamente o automatizar reservas y co
       { q: '¿Sirve para una empresa pesquera o conservera exportadora?', a: 'Sí. Diseñamos webs multilingües que transmiten calidad, certificaciones y trazabilidad, con catálogo de producto y contacto claro para compradores internacionales.' },
       { q: '¿Podéis hacer la web en gallego, castellano e inglés?', a: 'Sí. Preparamos webs multilingües bien estructuradas para SEO con hreflang, habituales en empresas viguesas con mercado exterior.' },
       { q: '¿Cuánto tardáis?', a: 'La mayoría de webs en 24-48h una vez tenemos tus contenidos. Para catálogos técnicos fijamos calendario.' },
-      { q: '¿Hay permanencia?', a: 'No. La web es tuya, sin permanencia. Mantenimiento opcional.' },
+      { q: '¿Hay permanencia?', a: 'No hay permanencia. El plan incluye 600 € de creación más 60 €/mes de hosting y mantenimiento. IVA no incluido.' },
     ],
     bodyMarkdown: `## Vigo: web para la ciudad industrial de Galicia
 
@@ -688,7 +688,7 @@ Si quieres vender tu producto del mar directamente o automatizar el contacto int
       { q: '¿Hacéis webs multilingües para el turismo de la Alhambra?', a: 'Sí. Para un público tan internacional preparamos webs en inglés y otros idiomas, con reserva directa y bien estructuradas para SEO con hreflang.' },
       { q: '¿Sirve para una empresa del PTS o de salud?', a: 'Sí. Diseñamos webs serias y medibles, con la información técnica y de confianza que necesita un sector tan exigente como el sanitario y biotech.' },
       { q: '¿Cuánto tardáis?', a: 'La mayoría de webs en 24-48h una vez tenemos tus contenidos. Para proyectos con varios idiomas fijamos calendario.' },
-      { q: '¿Hay permanencia?', a: 'No. La web es tuya, sin permanencia. Mantenimiento opcional.' },
+      { q: '¿Hay permanencia?', a: 'No hay permanencia. El plan incluye 600 € de creación más 60 €/mes de hosting y mantenimiento. IVA no incluido.' },
     ],
     bodyMarkdown: `## Granada: turismo, universidad y conocimiento
 
@@ -744,7 +744,7 @@ Si quieres vender online o automatizar reservas, matrículas y consultas, podemo
       { q: '¿Sirve para una marca de moda o un proveedor textil?', a: 'Sí. Cuidamos especialmente la imagen, la fotografía y el ritmo visual para que tu marca luzca, con catálogo o tienda online y sin sacrificar la velocidad de carga.' },
       { q: '¿Podéis hacer la web en gallego, castellano e inglés?', a: 'Sí. Preparamos webs multilingües bien estructuradas para SEO con hreflang, útiles si vendes o exportas fuera de Galicia.' },
       { q: '¿Cuánto tardáis?', a: 'La mayoría de webs en 24-48h una vez tenemos tus contenidos. Para tienda o catálogos amplios fijamos calendario.' },
-      { q: '¿Hay permanencia?', a: 'No. La web es tuya, sin permanencia. Mantenimiento opcional.' },
+      { q: '¿Hay permanencia?', a: 'No hay permanencia. El plan incluye 600 € de creación más 60 €/mes de hosting y mantenimiento. IVA no incluido.' },
     ],
     bodyMarkdown: `## A Coruña: web para una ciudad con cultura de marca
 
@@ -802,7 +802,7 @@ Si quieres vender online o automatizar la atención al cliente, podemos sumar un
       { q: '¿Podéis hacer la web bilingüe español-portugués?', a: 'Sí. Para empresas que trabajan con Portugal preparamos webs bilingües bien estructuradas para SEO con hreflang.' },
       { q: '¿Sirve para una instaladora de energía solar?', a: 'Sí. El sector está en plena expansión en Extremadura. Diseñamos webs que captan solicitudes de presupuesto con SEO local y formularios claros.' },
       { q: '¿Cuánto tardáis?', a: 'La mayoría de webs en 24-48h una vez tenemos tus contenidos. Para tienda online fijamos calendario.' },
-      { q: '¿Hay permanencia?', a: 'No. La web es tuya, sin permanencia. Mantenimiento opcional.' },
+      { q: '¿Hay permanencia?', a: 'No hay permanencia. El plan incluye 600 € de creación más 60 €/mes de hosting y mantenimiento. IVA no incluido.' },
     ],
     bodyMarkdown: `## ¿Cuánto cuesta una página web en Badajoz?
 
@@ -869,7 +869,7 @@ Si quieres vender tu ibérico, tu queso o tu aceite directamente, podemos sumar 
       { q: '¿Sirve para un negocio de turismo o restauración de Mérida?', a: 'Sí. Diseñamos webs con reservas, carta digital y SEO local para que te encuentren los visitantes del Teatro Romano y del Festival de Mérida, y los vecinos de la ciudad.' },
       { q: '¿Podéis integrar reservas, pagos o citas online?', a: 'Sí. Integramos reservas, pagos con Stripe o Bizum, citas y formularios avanzados según lo que necesite tu negocio.' },
       { q: '¿Cuánto tardáis?', a: 'La mayoría de webs en 24-48h una vez tenemos tus contenidos. Para tienda online o desarrollo a medida fijamos calendario.' },
-      { q: '¿Hay permanencia?', a: 'No. La web es tuya, sin permanencia. Mantenimiento opcional.' },
+      { q: '¿Hay permanencia?', a: 'No hay permanencia. El plan incluye 600 € de creación más 60 €/mes de hosting y mantenimiento. IVA no incluido.' },
     ],
     bodyMarkdown: `## ¿Cuánto cuesta una página web en Mérida?
 

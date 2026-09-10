@@ -11,7 +11,8 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
-export default function RecuperarPage() {
+export default async function RecuperarPage({ searchParams }: { searchParams: Promise<{ enlace?: string }> }) {
+  const { enlace } = await searchParams;
   return (
     <main className="relative min-h-screen">
       <AuroraBackground intensity="strong" />
@@ -21,7 +22,7 @@ export default function RecuperarPage() {
         <Link href="/login" className="text-sm text-white/60 hover:text-white">← Iniciar sesión</Link>
       </header>
       <div className="relative z-10 flex min-h-[calc(100svh-90px)] items-center justify-center px-6">
-        <RecuperarClient />
+        <RecuperarClient retiredLink={enlace === 'retirado'} />
       </div>
     </main>
   );

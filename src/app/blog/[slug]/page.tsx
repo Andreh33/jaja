@@ -11,7 +11,8 @@ import MagneticButton from '@/components/effects/MagneticButton';
 import BlogCard from '@/components/shared/BlogCard';
 import { Reveal } from '@/components/effects/Reveal';
 import { getPostSummaries, getPostBySlug } from '@/lib/posts';
-import { renderMarkdown } from '@/lib/markdown';
+import ArticleContent from '@/components/blog/ArticleContent';
+import BriefingDecision from '@/components/blog/BriefingDecision';
 import { formatDate } from '@/lib/utils';
 import { whatsappLink } from '@/lib/stripe-links';
 import JsonLd from '@/components/seo/JsonLd';
@@ -86,7 +87,6 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     .filter((p) => p.id !== post.id)
     .sort((a, b) => Number(b.category === post.category) - Number(a.category === post.category))
     .slice(0, 3);
-  const html = renderMarkdown(post.content);
   const color = (post.category && CATEGORY_COLORS[post.category]) || 'var(--purple-300)';
 
   const articleUrl = `${SITE_URL}/blog/${post.slug}`;
@@ -100,7 +100,6 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     description: post.excerpt || undefined,
     image: [articleImage],
     datePublished: post.publishedAt ? new Date(post.publishedAt).toISOString() : undefined,
-    dateModified: post.publishedAt ? new Date(post.publishedAt).toISOString() : undefined,
     // author/publisher referencian por @id el nodo Organization del @graph
     // del layout (con fundadores Person enlazados): una sola entidad para
     // Google/Bing/LLMs en vez de organizaciones sueltas por página.
@@ -114,7 +113,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c') }}
       />
       <JsonLd
         data={breadcrumbJsonLd([
@@ -128,7 +127,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       <AuroraBackground intensity="subtle" />
       <MouseGlow />
       <main className="relative z-10">
-        <article className="pt-44 pb-16">
+        <article className="pt-36 pb-16 md:pt-44">
           <div className="mx-auto max-w-3xl px-6">
             <Breadcrumbs
               items={[
@@ -165,18 +164,16 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               </div>
             </Reveal>
           </div>
+          <section className="pt-12 pb-4" aria-label="Contenido del artículo">
+            <ArticleContent content={post.content} />
+          </section>
+          <BriefingDecision slug={post.slug} />
         </article>
-
-        <section className="pb-16">
-          <div className="mx-auto max-w-3xl px-6">
-            <div className="prose-latech" dangerouslySetInnerHTML={{ __html: html }} />
-          </div>
-        </section>
 
         <section className="pb-4">
           <div className="mx-auto max-w-3xl px-6">
             <aside className="rounded-2xl glass p-6 md:p-7">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/40">Sobre el autor</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/60">Sobre el autor</p>
               <p className="mt-3 text-sm leading-relaxed text-white/70">
                 <strong className="text-white">{isTeamAuthor ? 'Equipo Latech' : post.author}</strong> — equipo de
                 diseño y desarrollo web de Latech, fundado por Andrés Rubio y Luis Grondona en Puebla de la

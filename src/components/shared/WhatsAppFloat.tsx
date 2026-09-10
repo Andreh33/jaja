@@ -8,7 +8,7 @@ import { whatsappLink } from '@/lib/stripe-links';
 export default function WhatsAppFloat() {
   const [show, setShow] = useState(false);
   const pathname = usePathname();
-  const hide = pathname?.startsWith('/admin') || pathname?.startsWith('/dashboard');
+  const hide = pathname?.startsWith('/admin') || pathname?.startsWith('/dashboard') || pathname?.startsWith('/lab') || pathname === '/briefing' || pathname === '/tienda/calculadora';
 
   useEffect(() => {
     const t = setTimeout(() => setShow(true), 2200);

@@ -25,7 +25,6 @@ function fmtDate(unix: number | null | undefined): string {
 export default async function DashboardHome() {
   const session = await auth();
   const userId = session!.user.id;
-  const [filesCount] = await db.select({ count: archivos.id }).from(archivos).where(eq(archivos.userId, userId));
   const filesAll = await db.select().from(archivos).where(eq(archivos.userId, userId));
   const empresa = (await db.select().from(empresas).where(eq(empresas.userId, userId)).limit(1))[0];
   const subscription = await getActiveLocalSubscription(userId);

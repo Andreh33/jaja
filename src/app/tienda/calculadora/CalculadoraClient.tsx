@@ -1,180 +1,69 @@
 'use client';
-
-import { useEffect, useReducer, useState, type KeyboardEvent } from 'react';
-import { ArrowLeft, ArrowRight } from 'lucide-react';
-import {
-  buildCart,
-  clearStorage,
-  INITIAL_STATE,
-  isStepValid,
-  loadFromStorage,
-  reducer,
-  saveToStorage,
-  TOTAL_STEPS,
-} from './_lib/state';
+import { track } from '@vercel/analytics';
+import { useEffect, useReducer, useRef, useState } from 'react';
+import { ArrowLeft, ArrowRight, RotateCcw } from 'lucide-react';
+import { buildCart, clearStorage, INITIAL_STATE, isStepValid, loadFromStorage, reducer, saveToStorage, TOTAL_STEPS, type WizardAction } from './_lib/state';
 import ProgressBar from './_components/ProgressBar';
 import Summary from './_components/Summary';
 import MobileSummaryBar from './_components/MobileSummaryBar';
 import SeoHorasBlock from './_components/SeoHorasBlock';
-import {
-  Step1Web,
-  Step2Hosting,
-  Step3Tienda,
-  Step4Redes,
-  Step5AgenteIa,
-  Step6Blog,
-  Step7Logo,
-  Step8Cuenta,
-  Step9Resumen,
-} from './_components/Steps';
-
-const ACCENT = 'var(--accent-calc)';
+import { StepProject, StepServices, StepContent, StepContact, StepReview } from './_components/Steps';
+import styles from './quote.module.css';
 
 export default function CalculadoraClient() {
-  const [state, dispatch] = useReducer(reducer, INITIAL_STATE);
+  const [state, rawDispatch] = useReducer(reducer, INITIAL_STATE);
+  const started = useRef(false);
+  const recordedSteps = useRef(new Set<number>());
+  function dispatch(action: WizardAction) {
+    if (action.type !== 'HYDRATE' && action.type !== 'RESET' && !started.current) {
+      started.current = true;
+      try { track('calculator_start', { source: 'quote' }); } catch { /* Optional analytics. */ }
+    }
+    rawDispatch(action);
+  }
   const [hydrated, setHydrated] = useState(false);
-  const [submitting, setSubmitting] = useState(false);
-  const [submitError, setSubmitError] = useState<string | null>(null);
-
-  // Hidratar desde sessionStorage en cliente.
+  const [notice, setNotice] = useState('');
+  const [confirmReset, setConfirmReset] = useState(false);
+  const shouldFocus = useRef(false);
+  const workspace = useRef<HTMLDivElement>(null);
   useEffect(() => {
     const restored = loadFromStorage();
-    if (restored) dispatch({ type: 'HYDRATE', state: restored });
+    if (restored) rawDispatch({ type: 'HYDRATE', state: restored });
+    // Browser-only recovery must finish before writing the initial server-rendered defaults.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setHydrated(true);
   }, []);
-
-  // Persistir cada cambio (excepto antes de hidratar para no sobrescribir).
+  useEffect(() => { if (hydrated) saveToStorage(state); }, [state, hydrated]);
   useEffect(() => {
-    if (!hydrated) return;
-    saveToStorage(state);
-  }, [state, hydrated]);
-
-  const cart = buildCart(state);
-  const stepValid = isStepValid(state.step, state);
-
-  const handleNext = () => {
-    if (!stepValid) return;
-    if (state.step < TOTAL_STEPS) dispatch({ type: 'NEXT' });
-  };
-  const handlePrev = () => {
-    if (state.step > 1) dispatch({ type: 'PREV' });
-  };
-
-  // Enter global: avanza solo si el foco NO está en un input/textarea/select.
-  const handleKeyDown = (e: KeyboardEvent<HTMLDivElement>) => {
-    if (e.key !== 'Enter') return;
-    const target = e.target as HTMLElement;
-    const tag = target.tagName;
-    if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT') return;
-    if (target.isContentEditable) return;
-    e.preventDefault();
-    if (state.step < TOTAL_STEPS) handleNext();
-  };
-
-  const handleSubmit = async () => {
-    setSubmitting(true);
-    setSubmitError(null);
-    try {
-      const res = await fetch('/api/checkout', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          selection: {
-            webPagesOver8: state.webPagesOver8,
-            hostingCadence: state.hostingCadence,
-            tienda: state.tienda,
-            social: state.social,
-            aiAgent: state.aiAgent,
-            blogPosts: state.blogPosts,
-            logo: state.logo,
-          },
-          contact: {
-            name: state.contact.name.trim(),
-            email: state.contact.email.trim().toLowerCase(),
-            phone: state.contact.phone.trim(),
-            company: state.contact.company.trim() || undefined,
-            password: state.contact.password,
-            isExistingEmail: state.contact.isExistingEmail,
-          },
-        }),
-      });
-      const data = (await res.json()) as { url?: string; error?: string };
-      if (!res.ok || !data.url) {
-        setSubmitError(data.error || 'No se pudo iniciar el pago.');
-        setSubmitting(false);
-        return;
-      }
-      clearStorage();
-      window.location.assign(data.url);
-    } catch {
-      setSubmitError('Error de red. Inténtalo de nuevo.');
-      setSubmitting(false);
+    if (!shouldFocus.current) return;
+    const heading = workspace.current?.querySelector<HTMLElement>('#quote-step-title');
+    heading?.focus({ preventScroll: true });
+    if (heading && (heading.getBoundingClientRect().top < 100 || heading.getBoundingClientRect().top > window.innerHeight * .6)) heading.scrollIntoView({ block: 'start', behavior: 'instant' });
+    shouldFocus.current = false;
+  }, [state]);
+  const goTo = (step: number) => {
+    if (step === TOTAL_STEPS && !isStepValid(4, state)) { setNotice('Revisa el email o el teléfono. Ambos pueden quedarse vacíos.'); step = 4; }
+    else setNotice('');
+    shouldFocus.current = true;
+    dispatch({ type: 'GOTO', step });
+    if (!recordedSteps.current.has(step)) {
+      recordedSteps.current.add(step);
+      try { track(step === TOTAL_STEPS ? 'calculator_complete' : 'calculator_step', { step, source: 'quote' }); } catch { /* Optional analytics. */ }
     }
   };
-
-  return (
-    <div onKeyDown={handleKeyDown}>
-      <div className="grid gap-10 lg:grid-cols-[1fr_360px]">
-        <div>
-          <ProgressBar step={state.step} total={TOTAL_STEPS} />
-
-          <div className="mt-8 rounded-3xl glass p-6 md:p-10">
-            {state.step === 1 && <Step1Web state={state} dispatch={dispatch} />}
-            {state.step === 2 && <Step2Hosting state={state} dispatch={dispatch} />}
-            {state.step === 3 && <Step3Tienda state={state} dispatch={dispatch} />}
-            {state.step === 4 && <Step4Redes state={state} dispatch={dispatch} />}
-            {state.step === 5 && <Step5AgenteIa state={state} dispatch={dispatch} />}
-            {state.step === 6 && <Step6Blog state={state} dispatch={dispatch} />}
-            {state.step === 7 && <Step7Logo state={state} dispatch={dispatch} />}
-            {state.step === 8 && <Step8Cuenta state={state} dispatch={dispatch} />}
-            {state.step === 9 && (
-              <Step9Resumen
-                state={state}
-                cart={cart}
-                loading={submitting}
-                error={submitError}
-                onSubmit={handleSubmit}
-              />
-            )}
-          </div>
-
-          {/* Navegación */}
-          {state.step < TOTAL_STEPS && (
-            <div className="mt-6 flex items-center justify-between">
-              <button
-                type="button"
-                onClick={handlePrev}
-                disabled={state.step === 1}
-                className="inline-flex min-h-[44px] items-center gap-2 rounded-full px-5 py-3 text-sm text-white/70 transition-colors hover:bg-white/5 hover:text-white disabled:cursor-not-allowed disabled:opacity-40 focus:outline-none focus-visible:ring-2 md:py-2.5"
-                aria-label="Paso anterior"
-              >
-                <ArrowLeft size={14} /> Anterior
-              </button>
-              <button
-                type="button"
-                onClick={handleNext}
-                disabled={!stepValid}
-                className="inline-flex min-h-[44px] items-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold text-black transition-all hover:opacity-90 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-50 focus:outline-none focus-visible:ring-2 md:py-3"
-                style={{ background: ACCENT }}
-                aria-label="Paso siguiente"
-              >
-                Siguiente <ArrowRight size={14} />
-              </button>
-            </div>
-          )}
-        </div>
-
-        <div>
-          <Summary cart={cart} />
-        </div>
-      </div>
-
-      <div className="mt-20">
-        <SeoHorasBlock />
-      </div>
-
-      {/* Sticky bottom bar solo en mobile */}
-      <MobileSummaryBar cart={cart} />
-    </div>
-  );
+  const next = () => {
+    if (!isStepValid(state.step, state)) { setNotice('Revisa el email o el teléfono. Ambos pueden quedarse vacíos.'); workspace.current?.querySelector<HTMLInputElement>('input[type="email"]')?.focus(); return; }
+    goTo(state.step + 1);
+  };
+  const reset = () => { clearStorage(); started.current = false; recordedSteps.current.clear(); shouldFocus.current = true; dispatch({ type: 'RESET' }); setConfirmReset(false); setNotice('Presupuesto reiniciado.'); };
+  const cart = buildCart(state);
+  return <div ref={workspace} className={styles.workspace}>
+    <div className="grid items-start gap-8 lg:grid-cols-[minmax(0,1fr)_340px] xl:gap-12"><div className="min-w-0"><ProgressBar step={state.step} onSelect={goTo} /><section aria-labelledby="quote-step-title" className={`${styles.panel} mt-6 p-5 sm:p-8 lg:p-9`}>
+      {state.step === 1 && <StepProject state={state} dispatch={dispatch} />}{state.step === 2 && <StepServices state={state} dispatch={dispatch} />}{state.step === 3 && <StepContent state={state} dispatch={dispatch} />}{state.step === 4 && <StepContact state={state} dispatch={dispatch} />}{state.step === 5 && <StepReview state={state} cart={cart} onEdit={goTo} />}
+      <p role="status" className="mt-4 text-sm text-amber-200">{notice}</p>
+      <div className="mt-8 flex items-center justify-between gap-3 border-t border-white/10 pt-6"><button type="button" onClick={() => goTo(state.step - 1)} disabled={state.step === 1} className={styles.button}><ArrowLeft size={16} /><span>Anterior</span></button>{state.step < TOTAL_STEPS && <button type="button" onClick={next} className={`${styles.button} ${styles.primary}`}><span>{state.step === 4 ? 'Ver presupuesto' : 'Continuar'}</span><ArrowRight size={16} /></button>}</div>
+    </section><div className="mt-5 flex flex-wrap items-center justify-between gap-3"><p className="max-w-sm text-xs leading-relaxed text-white/50">Tus selecciones se conservan en esta pestaña. Los datos de contacto solo se mantienen mientras usas la página.</p><button type="button" onClick={() => setConfirmReset(v => !v)} className={`${styles.textButton} inline-flex items-center gap-2 text-xs`} aria-expanded={confirmReset}><RotateCcw size={13} />Empezar de nuevo</button></div>{confirmReset && <div className="mt-3 flex flex-wrap items-center gap-4 rounded-xl border border-white/15 p-4"><p className="text-sm text-white/75">¿Descartar las selecciones y el contexto?</p><button type="button" className={styles.button} onClick={() => setConfirmReset(false)}>Conservar</button><button type="button" className={`${styles.button} ${styles.primary}`} onClick={reset}>Reiniciar</button></div>}</div><div className="sticky top-28 hidden lg:block"><Summary cart={cart} /></div></div>
+    {state.step !== TOTAL_STEPS && <MobileSummaryBar cart={cart} />}
+    <SeoHorasBlock />
+  </div>;
 }

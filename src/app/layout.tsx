@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono, Syne } from 'next/font/google';
-import { Analytics } from '@vercel/analytics/next';
+import PublicAnalytics from '@/components/shared/PublicAnalytics';
 import './globals.css';
 import { Toaster } from 'sonner';
 import CustomCursor from '@/components/effects/CustomCursor';
@@ -8,7 +8,6 @@ import ScrollProgress from '@/components/effects/ScrollProgress';
 import WhatsAppFloat from '@/components/shared/WhatsAppFloat';
 import MobileCtaBar from '@/components/shared/MobileCtaBar';
 import ContactClickTracker from '@/components/shared/ContactClickTracker';
-import SessionProvider from '@/components/providers/SessionProvider';
 import JsonLd from '@/components/seo/JsonLd';
 import { SITE_GRAPH_JSONLD } from '@/lib/seo';
 
@@ -83,15 +82,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     >
       <body className="min-h-screen antialiased">
         <JsonLd data={SITE_GRAPH_JSONLD} />
-        <SessionProvider>
-          <ScrollProgress />
-          <CustomCursor />
-          {children}
-          <WhatsAppFloat />
-          <MobileCtaBar />
-          <ContactClickTracker />
-        </SessionProvider>
+        <ScrollProgress />
+        <CustomCursor />
+        {children}
+        <WhatsAppFloat />
+        <MobileCtaBar />
+        <ContactClickTracker />
         <Toaster
+          dir="ltr"
           position="bottom-center"
           theme="dark"
           richColors
@@ -104,7 +102,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             },
           }}
         />
-        <Analytics />
+        <PublicAnalytics />
       </body>
     </html>
   );

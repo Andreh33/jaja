@@ -1,535 +1,58 @@
 'use client';
-
 import Link from 'next/link';
-import { ArrowRight, Check } from 'lucide-react';
-import { CATALOG, formatEUR, pickAiPhone, pickAiWeb, pickBlogPost, pickHosting, pickSocial, pickTienda, pickWebCreation } from '@/config/catalog';
+import { useState, type ReactNode } from 'react';
+import { ArrowUpRight, Check, Copy, MessageCircle, Pencil } from 'lucide-react';
+import { QUOTE_CATALOG as PRICE, QUOTE_TAX_LABEL, formatEUR } from '@/lib/quotes/catalog';
+import { buildWhatsAppMessage, buildWhatsAppUrl, contactErrors, type ContactState, type WizardState, type WizardAction, type Cart } from '../_lib/state';
 import { OptionCard, StepHeader, ToggleGroup } from './StepShell';
-import type { AiAgent, ContactState, WizardState } from '../_lib/state';
+import Summary from './Summary';
+import styles from '../quote.module.css';
 
-const ACCENT = 'var(--accent-calc)';
-
-type Dispatch = (action: import('../_lib/state').WizardAction) => void;
-
-/* ============ PASO 1: PÁGINA WEB (FORZADO) ============ */
-export function Step1Web({ state, dispatch }: { state: WizardState; dispatch: Dispatch }) {
-  const le8 = pickWebCreation(false);
-  const gt8 = pickWebCreation(true);
-  return (
-    <div>
-      <StepHeader
-        index={1}
-        total={9}
-        title="Página web"
-        subtitle="La base de todo. Diseño profesional, SEO técnico y entrega en 24-48h. Este servicio está incluido en tu pack."
-        forced
-      />
-      <p className="mb-4 text-sm text-white/70">¿Vas a necesitar más de 8 páginas?</p>
-      <ToggleGroup>
-        <OptionCard
-          selected={!state.webPagesOver8}
-          onClick={() => dispatch({ type: 'SET_WEB_OVER8', value: false })}
-          ariaLabel="Hasta 8 páginas"
-        >
-          <p className="font-display text-lg text-white">No, hasta 8 páginas</p>
-          <p className="mt-1 text-xs text-white/55">{le8.description}</p>
-          <p className="mt-3 font-mono text-base" style={{ color: ACCENT }}>{formatEUR(le8.amount)} <span className="text-white/45">pago único</span></p>
-        </OptionCard>
-        <OptionCard
-          selected={state.webPagesOver8}
-          onClick={() => dispatch({ type: 'SET_WEB_OVER8', value: true })}
-          ariaLabel="Más de 8 páginas"
-        >
-          <p className="font-display text-lg text-white">Sí, más de 8 páginas</p>
-          <p className="mt-1 text-xs text-white/55">{gt8.description}</p>
-          <p className="mt-3 font-mono text-base" style={{ color: ACCENT }}>{formatEUR(gt8.amount)} <span className="text-white/45">pago único</span></p>
-        </OptionCard>
-      </ToggleGroup>
-    </div>
-  );
+type StepProps = { state: WizardState; dispatch: (action: WizardAction) => void };
+function Choice({ title, children, price }: { title: string; children: ReactNode; price?: string }) {
+  return <><p className={styles.optionTitle}>{title}</p><p className="mt-2 text-sm leading-relaxed text-white/60">{children}</p>{price && <p className="mt-4 font-mono text-sm text-amber-300">{price}</p>}</>;
 }
-
-/* ============ PASO 2: HOSTING (FORZADO) ============ */
-export function Step2Hosting({ state, dispatch }: { state: WizardState; dispatch: Dispatch }) {
-  const m = pickHosting('monthly');
-  const y = pickHosting('yearly');
-  const equivalentMonthly = y.amount / 12;
-  const yearlyMonthlyEquiv = m.amount * 12;
-  const savings = yearlyMonthlyEquiv - y.amount;
-
-  return (
-    <div>
-      <StepHeader
-        index={2}
-        total={9}
-        title="Hosting + dominio + SEO básico"
-        subtitle="Hosting profesional, dominio incluido y SEO básico mensual. Este servicio está incluido en tu pack — solo eliges la cadencia."
-        forced
-      />
-      <ToggleGroup>
-        <OptionCard
-          selected={state.hostingCadence === 'monthly'}
-          onClick={() => dispatch({ type: 'SET_CADENCE', value: 'monthly' })}
-          ariaLabel="Hosting mensual"
-        >
-          <p className="font-display text-lg text-white">Mensual</p>
-          <p className="mt-1 text-xs text-white/55">Pago cada mes, sin compromiso anual.</p>
-          <p className="mt-3 font-mono text-base" style={{ color: ACCENT }}>{formatEUR(m.amount)} <span className="text-white/45">/mes</span></p>
-        </OptionCard>
-        <OptionCard
-          selected={state.hostingCadence === 'yearly'}
-          onClick={() => dispatch({ type: 'SET_CADENCE', value: 'yearly' })}
-          ariaLabel="Hosting anual"
-        >
-          <div className="flex items-center justify-between gap-2">
-            <p className="font-display text-lg text-white">Anual</p>
-            <span
-              className="rounded-full px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider"
-              style={{ background: `${ACCENT}20`, color: ACCENT, border: `1px solid ${ACCENT}50` }}
-            >
-              Recomendado
-            </span>
-          </div>
-          <p className="mt-1 text-xs text-white/55">
-            Equivale a {formatEUR(equivalentMonthly)}/mes — ahorras {formatEUR(savings)}.
-          </p>
-          <p className="mt-3 font-mono text-base" style={{ color: ACCENT }}>{formatEUR(y.amount)} <span className="text-white/45">/año</span></p>
-        </OptionCard>
-      </ToggleGroup>
-    </div>
-  );
+export function StepProject({ state, dispatch }: StepProps) {
+  return <><StepHeader title="Empecemos por tu web." subtitle="Una base de 600 € de creación, adaptada a tu marca. Cuéntanos el tamaño y si necesitas vender online." />
+    <div className="space-y-8"><ToggleGroup label="¿Cuántas páginas necesitas?"><OptionCard selected={!state.webPagesOver8} onClick={() => dispatch({ type: 'SET_WEB_OVER8', value: false })} ariaLabel="Hasta 8 páginas"><Choice title="Hasta 8 páginas" price={`${formatEUR(PRICE.creation.amount)} de creación`}>Inicio, servicios, equipo, contacto… Las secciones que tu negocio necesita.</Choice></OptionCard><OptionCard selected={state.webPagesOver8} onClick={() => dispatch({ type: 'SET_WEB_OVER8', value: true })} ariaLabel="Más de 8 páginas"><Choice title="Más de 8 páginas" price={`Base de ${formatEUR(PRICE.creation.amount)}`}>Un proyecto más amplio. Revisaremos la estructura y cualquier trabajo adicional contigo.</Choice></OptionCard></ToggleGroup>
+    <ToggleGroup label="¿Vas a vender desde la web?"><OptionCard selected={!state.tienda} onClick={() => dispatch({ type: 'SET_TIENDA', value: false })} ariaLabel="Web sin tienda"><Choice title="Mostrar y captar" price={`${formatEUR(PRICE.maintenance.amount)}/mes de mantenimiento`}>Una web para presentar tu negocio y recibir consultas.</Choice></OptionCard><OptionCard selected={state.tienda} onClick={() => dispatch({ type: 'SET_TIENDA', value: true })} ariaLabel="Web con tienda online"><Choice title="Vender online" price={`${formatEUR(PRICE.maintenance.amount + PRICE.shop.amount)}/mes de mantenimiento`}>Catálogo, carrito y pasarela de pago. Incluye el mantenimiento base y el de la tienda.</Choice></OptionCard></ToggleGroup></div>
+    <p className="mt-6 text-xs leading-relaxed text-white/55">{QUOTE_TAX_LABEL}. La creación parte de la misma base; confirmaremos el alcance antes de cerrar el presupuesto.</p></>;
 }
-
-/* ============ PASO 3: TIENDA ============ */
-export function Step3Tienda({ state, dispatch }: { state: WizardState; dispatch: Dispatch }) {
-  const item = pickTienda(state.hostingCadence);
-  const yearly = state.hostingCadence === 'yearly';
-  return (
-    <div>
-      <StepHeader
-        index={3}
-        total={9}
-        title="Tienda online"
-        subtitle="Pasarela de pago, login de clientes, subir productos y carrito. Opcional — añádelo solo si vas a vender."
-      />
-      <ToggleGroup>
-        <OptionCard selected={!state.tienda} onClick={() => dispatch({ type: 'SET_TIENDA', value: false })} ariaLabel="Sin tienda online">
-          <p className="font-display text-lg text-white">No, gracias</p>
-          <p className="mt-1 text-xs text-white/55">No necesitas vender online por ahora.</p>
-        </OptionCard>
-        <OptionCard selected={state.tienda} onClick={() => dispatch({ type: 'SET_TIENDA', value: true })} ariaLabel="Añadir tienda online">
-          <p className="font-display text-lg text-white">Sí, añadir tienda</p>
-          <p className="mt-1 text-xs text-white/55">{item.description}</p>
-          <p className="mt-3 font-mono text-base" style={{ color: ACCENT }}>
-            {yearly ? `${formatEUR(item.amount)} /año` : `${formatEUR(item.amount)} /mes`}
-          </p>
-          {yearly && (
-            <p className="mt-1 text-[11px] text-white/55">
-              Antes 240€/año, ahora 120€/año por tener hosting anual.
-            </p>
-          )}
-        </OptionCard>
-      </ToggleGroup>
-    </div>
-  );
+export function StepServices({ state, dispatch }: StepProps) {
+  return <><StepHeader title="Tu equipo, con más alcance." subtitle="El hosting y el mantenimiento ya están incluidos en tu cuota. Añade ayuda con las redes o la atención al cliente si la necesitas." />
+    <div className="mb-7 flex items-start gap-3 rounded-xl border border-white/10 p-4 text-sm text-white/75"><Check size={18} className="mt-0.5 shrink-0 text-amber-300" /><p>Hosting, SSL, mantenimiento y cambios menores: <strong className="text-white">{formatEUR(PRICE.maintenance.amount)}/mes</strong>{state.tienda && <>; tienda online: <strong className="text-white">+{formatEUR(PRICE.shop.amount)}/mes</strong></>}. Ya están en tu resumen.</p></div>
+    <div className="space-y-8"><ToggleGroup label="Redes sociales"><OptionCard selected={!state.social} onClick={() => dispatch({ type: 'SET_SOCIAL', value: false })} ariaLabel="Sin gestión de redes"><Choice title="Me encargo yo">Mantengo la gestión de mis cuentas.</Choice></OptionCard><OptionCard selected={state.social} onClick={() => dispatch({ type: 'SET_SOCIAL', value: true })} ariaLabel="Añadir gestión de redes"><Choice title="Con ayuda de Latech" price={`+${formatEUR(PRICE.social.amount)}/mes`}>Gestión de redes y 2–3 publicaciones semanales.</Choice></OptionCard></ToggleGroup>
+    <ToggleGroup label="Agente de inteligencia artificial" columns={3}><OptionCard selected={state.aiAgent === 'none'} onClick={() => dispatch({ type: 'SET_AI', value: 'none' })} ariaLabel="Sin agente IA"><Choice title="Por ahora, no">Mi equipo atiende las consultas.</Choice></OptionCard><OptionCard selected={state.aiAgent === 'web'} onClick={() => dispatch({ type: 'SET_AI', value: 'web' })} ariaLabel="Agente IA en la web"><Choice title="En mi web" price={`+${formatEUR(PRICE.aiWeb.amount)}/mes`}>Atención conversacional integrada en tu página.</Choice></OptionCard><OptionCard selected={state.aiAgent === 'phone'} onClick={() => dispatch({ type: 'SET_AI', value: 'phone' })} ariaLabel="Agente IA por teléfono"><Choice title="Por teléfono" price={`+${formatEUR(PRICE.aiPhone.amount)}/mes`}>Atención por voz con número virtual. Definimos la integración contigo.</Choice></OptionCard></ToggleGroup></div>
+    <Link href="/tienda/agente-ia" target="_blank" rel="noreferrer" className={`${styles.textButton} mt-4 inline-flex items-center gap-2 text-sm`}>Conoce las opciones de IA <ArrowUpRight size={14} /></Link><p className="mt-2 text-xs text-white/55">{QUOTE_TAX_LABEL}. Los requisitos de una integración a medida se revisan antes de contratar.</p></>;
 }
-
-/* ============ PASO 4: REDES ============ */
-export function Step4Redes({ state, dispatch }: { state: WizardState; dispatch: Dispatch }) {
-  const item = pickSocial(state.hostingCadence);
-  const yearly = state.hostingCadence === 'yearly';
-  return (
-    <div>
-      <StepHeader
-        index={4}
-        total={9}
-        title="Gestión de redes sociales"
-        subtitle="Damos visibilidad a tu marca. 2-3 publicaciones por semana, gestión completa de cuentas y comunidad."
-      />
-      <ToggleGroup>
-        <OptionCard selected={!state.social} onClick={() => dispatch({ type: 'SET_SOCIAL', value: false })} ariaLabel="Sin gestión de redes">
-          <p className="font-display text-lg text-white">No, gracias</p>
-          <p className="mt-1 text-xs text-white/55">Gestiono mis redes por mi cuenta.</p>
-        </OptionCard>
-        <OptionCard selected={state.social} onClick={() => dispatch({ type: 'SET_SOCIAL', value: true })} ariaLabel="Añadir gestión de redes">
-          <p className="font-display text-lg text-white">Sí, añadir redes</p>
-          <p className="mt-1 text-xs text-white/55">2-3 publicaciones/semana, gestión completa.</p>
-          <p className="mt-3 font-mono text-base" style={{ color: ACCENT }}>
-            {yearly ? `${formatEUR(item.amount)} /año` : `${formatEUR(item.amount)} /mes`}
-          </p>
-        </OptionCard>
-      </ToggleGroup>
-    </div>
-  );
+export function StepContent({ state, dispatch }: StepProps) {
+  return <><StepHeader title="Contenido con tu identidad." subtitle="La estructura del blog está incluida. Puedes gestionar tus artículos o añadir redacción y un logo a tu presupuesto." />
+    <div className="mb-8 rounded-2xl border border-white/15 p-5"><label htmlFor="blog-posts" className="block font-semibold text-white">Artículos gestionados al mes</label><p id="blog-posts-hint" className="mt-2 text-sm leading-relaxed text-white/65">Elige entre 0 y 100. Con 0, publicas por tu cuenta. Definimos los temas según tu negocio, sin prometer posiciones en Google.</p><div className="mt-5 flex flex-wrap items-center gap-4"><input id="blog-posts" className={`${styles.input} max-w-28 text-center font-mono`} type="number" min={0} max={100} step={1} inputMode="numeric" value={state.blogPosts} onChange={e => dispatch({ type: 'SET_BLOG_POSTS', value: Number(e.target.value) })} aria-describedby="blog-posts-hint blog-posts-price" /><p id="blog-posts-price" className="text-sm text-white/75">{state.blogPosts > 0 ? <>{state.blogPosts} × {formatEUR(PRICE.blogPost.amount)} = <strong className="font-mono text-amber-300">{formatEUR(state.blogPosts * PRICE.blogPost.amount)}/mes</strong></> : 'Sin redacción añadida a la cuota.'}</p></div></div>
+    <ToggleGroup label="¿Necesitas un logo?"><OptionCard selected={!state.logo} onClick={() => dispatch({ type: 'SET_LOGO', value: false })} ariaLabel="Sin diseño de logo"><Choice title="Ya tengo mi identidad">Trabajamos con el logo de tu marca.</Choice></OptionCard><OptionCard selected={state.logo} onClick={() => dispatch({ type: 'SET_LOGO', value: true })} ariaLabel="Añadir diseño de logo"><Choice title="Quiero un logo" price={`+${formatEUR(PRICE.logo.amount)} · pago único`}>Añadimos el diseño de logo al proyecto.</Choice></OptionCard></ToggleGroup><p className="mt-6 text-xs text-white/55">{QUOTE_TAX_LABEL} en todos los extras.</p></>;
 }
-
-/* ============ PASO 5: AGENTE IA ============ */
-export function Step5AgenteIa({ state, dispatch }: { state: WizardState; dispatch: Dispatch }) {
-  const web = pickAiWeb(state.hostingCadence);
-  const phone = pickAiPhone(state.hostingCadence);
-  const yearly = state.hostingCadence === 'yearly';
-  const set = (v: AiAgent) => dispatch({ type: 'SET_AI', value: v });
-  return (
-    <div>
-      <StepHeader
-        index={5}
-        total={9}
-        title="Agente IA"
-        subtitle="Atención automática 24/7 con voz natural. Elige uno (o ninguno)."
-      />
-      <div role="radiogroup" className="grid gap-3 md:grid-cols-3">
-        <OptionCard selected={state.aiAgent === 'none'} onClick={() => set('none')} ariaLabel="Sin agente IA">
-          <p className="font-display text-lg text-white">No, gracias</p>
-          <p className="mt-1 text-xs text-white/55">No necesitas un agente IA por ahora.</p>
-        </OptionCard>
-        <OptionCard selected={state.aiAgent === 'web'} onClick={() => set('web')} ariaLabel="Agente IA en la web">
-          <p className="font-display text-lg text-white">En la web</p>
-          <p className="mt-1 text-xs text-white/55">Widget conversacional integrado en tu sitio.</p>
-          <p className="mt-3 font-mono text-base" style={{ color: ACCENT }}>
-            {yearly ? `${formatEUR(web.amount)} /año` : `${formatEUR(web.amount)} /mes`}
-          </p>
-        </OptionCard>
-        <OptionCard selected={state.aiAgent === 'phone'} onClick={() => set('phone')} ariaLabel="Agente IA por teléfono">
-          <p className="font-display text-lg text-white">Por teléfono</p>
-          <p className="mt-1 text-xs text-white/55">Con número virtual incluido. Provisión manual tras el primer pago.</p>
-          <p className="mt-3 font-mono text-base" style={{ color: ACCENT }}>
-            {yearly ? `${formatEUR(phone.amount)} /año` : `${formatEUR(phone.amount)} /mes`}
-          </p>
-        </OptionCard>
-      </div>
-      <Link
-        href="/tienda/agente-ia"
-        target="_blank"
-        rel="noreferrer"
-        className="mt-6 inline-flex items-center gap-2 text-sm font-medium transition-colors hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
-        style={{ color: ACCENT }}
-      >
-        Conoce el agente IA en detalle <ArrowRight size={14} />
-      </Link>
-    </div>
-  );
-}
-
-/* ============ PASO 6: BLOG ============ */
-export function Step6Blog({ state, dispatch }: { state: WizardState; dispatch: Dispatch }) {
-  const item = pickBlogPost(state.hostingCadence);
-  const yearly = state.hostingCadence === 'yearly';
-  const total = item.amount * state.blogPosts;
-  return (
-    <div>
-      <StepHeader
-        index={6}
-        total={9}
-        title="Blog"
-        subtitle="El blog está incluido gratis. Si quieres que escribamos posts SEO para ti, indícanos cuántos al mes (0 si no quieres este servicio)."
-      />
-      <p className="mb-3 text-xs leading-relaxed text-white/55">
-        Los posts incluyen copywriting analizando tu web para que te encuentren en Google. Cuantos más publiques,
-        más probabilidades de aparecer cuando alguien busque temas relacionados.
-      </p>
-      <label htmlFor="blog-posts" className="mb-2 block text-sm text-white/70">
-        Posts al mes
-      </label>
-      <div className="flex flex-wrap items-center gap-4">
-        <input
-          id="blog-posts"
-          type="number"
-          min={0}
-          max={100}
-          step={1}
-          inputMode="numeric"
-          value={state.blogPosts}
-          onChange={(e) => dispatch({ type: 'SET_BLOG_POSTS', value: parseInt(e.target.value || '0', 10) })}
-          className="w-32 rounded-xl border bg-transparent px-4 py-3 text-center font-mono text-lg text-white focus:outline-none focus-visible:ring-2"
-          style={{ borderColor: 'var(--border-subtle)' }}
-          aria-describedby="blog-posts-hint"
-        />
-        <div className="flex flex-col gap-1">
-          <p className="text-[11px]" style={{ color: ACCENT }}>
-            Recomendamos 12 posts/mes para mejor SEO
-          </p>
-          <p id="blog-posts-hint" className="text-sm text-white/55">
-            {state.blogPosts === 0 ? (
-              <>Blog incluido gratis, sin posts gestionados.</>
-            ) : (
-              <>
-                {state.blogPosts} × {formatEUR(item.amount)} ={' '}
-                <span className="font-mono" style={{ color: ACCENT }}>
-                  {formatEUR(total)}
-                  {yearly ? '/año' : '/mes'}
-                </span>
-              </>
-            )}
-          </p>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-/* ============ PASO 7: LOGO ============ */
-export function Step7Logo({ state, dispatch }: { state: WizardState; dispatch: Dispatch }) {
-  return (
-    <div>
-      <StepHeader
-        index={7}
-        total={9}
-        title="Logo profesional"
-        subtitle="Logo adaptado a la identidad de tu marca. Pago único, opcional."
-      />
-      <ToggleGroup>
-        <OptionCard selected={!state.logo} onClick={() => dispatch({ type: 'SET_LOGO', value: false })} ariaLabel="Sin logo">
-          <p className="font-display text-lg text-white">No, gracias</p>
-          <p className="mt-1 text-xs text-white/55">Ya tengo logo o no lo necesito.</p>
-        </OptionCard>
-        <OptionCard selected={state.logo} onClick={() => dispatch({ type: 'SET_LOGO', value: true })} ariaLabel="Añadir logo">
-          <p className="font-display text-lg text-white">Sí, añadir logo</p>
-          <p className="mt-1 text-xs text-white/55">Logo adaptado a la identidad de tu marca.</p>
-          <p className="mt-3 font-mono text-base" style={{ color: ACCENT }}>
-            {formatEUR(CATALOG.logo.amount)} <span className="text-white/45">pago único</span>
-          </p>
-        </OptionCard>
-      </ToggleGroup>
-    </div>
-  );
-}
-
-/* ============ PASO 8: CONTACTO ============ */
-export function Step8Cuenta({ state, dispatch }: { state: WizardState; dispatch: Dispatch }) {
-  const c = state.contact;
+export function StepContact({ state, dispatch }: StepProps) {
+  const c = state.contact; const errors = contactErrors(c); const [touched, setTouched] = useState<Record<string, boolean>>({});
   const set = (patch: Partial<ContactState>) => dispatch({ type: 'SET_CONTACT', patch });
-
-  // Comprobación ligera de email contra el endpoint cuando sale del campo.
-  const onEmailBlur = async () => {
-    const email = c.email.trim().toLowerCase();
-    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      set({ isExistingEmail: null });
-      return;
-    }
-    try {
-      const res = await fetch('/api/auth/check-email', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email }),
-      });
-      if (!res.ok) {
-        set({ isExistingEmail: null });
-        return;
-      }
-      const data = (await res.json()) as { exists: boolean };
-      set({ isExistingEmail: data.exists });
-    } catch {
-      set({ isExistingEmail: null });
-    }
+  const fields = [
+    { key: 'name', label: 'Tu nombre', type: 'text', autoComplete: 'name', max: 100 },
+    { key: 'company', label: 'Tu negocio', type: 'text', autoComplete: 'organization', max: 120 },
+    { key: 'email', label: 'Email', type: 'email', autoComplete: 'email', max: 180 },
+    { key: 'phone', label: 'Teléfono', type: 'tel', autoComplete: 'tel', max: 32 },
+  ] as const;
+  return <><StepHeader title="Ponle contexto a tu idea." subtitle="Todos estos datos son opcionales. Puedes pasar directamente al resumen y hablar con nosotros desde tu WhatsApp." /><div className="grid gap-5 sm:grid-cols-2">{fields.map(field => <div key={field.key}><label htmlFor={`quote-${field.key}`} className="mb-2 block text-sm text-white/80">{field.label} <span className="text-xs text-white/45">(opcional)</span></label><input id={`quote-${field.key}`} className={styles.input} type={field.type} value={c[field.key]} autoComplete={field.autoComplete} maxLength={field.max} onChange={e => set({ [field.key]: e.target.value })} onBlur={() => setTouched(prev => ({ ...prev, [field.key]: true }))} aria-invalid={Boolean(touched[field.key] && errors[field.key])} aria-describedby={touched[field.key] && errors[field.key] ? `quote-${field.key}-error` : undefined} />{touched[field.key] && errors[field.key] && <p id={`quote-${field.key}-error`} className="mt-2 text-xs text-rose-300">{errors[field.key]}</p>}</div>)}</div><label htmlFor="quote-notes" className="mt-6 mb-2 block text-sm text-white/80">¿Qué te gustaría conseguir? <span className="text-xs text-white/45">(opcional)</span></label><textarea id="quote-notes" rows={4} className={styles.input} maxLength={600} value={c.notes} onChange={e => set({ notes: e.target.value })} placeholder="A qué te dedicas, tu web actual, una fecha importante o una idea que quieras contarnos…" aria-describedby="quote-notes-hint" /><p id="quote-notes-hint" className="mt-2 text-right text-xs text-white/45">{c.notes.length}/600</p><p className="mt-6 text-xs leading-relaxed text-white/60">Tus datos se añadirán al mensaje que tú envíes por WhatsApp. No se guardan en este navegador al recargar. Consulta nuestra <Link href="/privacidad" className="text-white underline underline-offset-4">política de privacidad</Link>.</p></>;
+}
+export function StepReview({ state, cart, onEdit }: { state: WizardState; cart: Cart; onEdit: (step: number) => void }) {
+  const [notice, setNotice] = useState(''); const [showMessage, setShowMessage] = useState(false);
+  const message = buildWhatsAppMessage(state);
+  const rows = [
+    { title: 'Proyecto', text: `${state.webPagesOver8 ? 'Más de 8 páginas · alcance por revisar' : 'Hasta 8 páginas'} · ${state.tienda ? 'con tienda online' : 'sin tienda online'}`, step: 1 },
+    { title: 'Servicios', text: `Mantenimiento mensual · ${state.social ? 'con redes' : 'sin redes'} · ${state.aiAgent === 'none' ? 'sin agente IA' : state.aiAgent === 'web' ? 'IA en la web' : 'IA por teléfono'}`, step: 2 },
+    { title: 'Contenido', text: `${state.blogPosts} artículos al mes · ${state.logo ? 'con diseño de logo' : 'sin diseño de logo'}`, step: 3 },
+    { title: 'Tu contexto', text: [state.contact.name, state.contact.company, state.contact.email, state.contact.phone, state.contact.notes].filter(Boolean).join(' · ') || 'Sin datos añadidos. Puedes contárnoslo por WhatsApp.', step: 4 },
+  ];
+  const copyMessage = async () => {
+    try { await navigator.clipboard.writeText(message); setNotice('Mensaje copiado. Puedes pegarlo en WhatsApp.'); }
+    catch { setShowMessage(true); setNotice('Selecciona y copia el mensaje de abajo.'); }
   };
-
-  return (
-    <div>
-      <StepHeader
-        index={8}
-        total={9}
-        title="Tus datos"
-        subtitle="Necesitamos crear (o reconocer) tu cuenta antes del pago. Si ya tienes cuenta, te identificamos al instante."
-      />
-      <div className="grid gap-4 md:grid-cols-2">
-        <Field id="c-name" label="Nombre completo" value={c.name} onChange={(v) => set({ name: v })} autoComplete="name" required />
-        <Field id="c-email" type="email" label="Email" value={c.email} onChange={(v) => set({ email: v })} onBlur={onEmailBlur} autoComplete="email" required />
-        <Field id="c-phone" type="tel" label="Teléfono" value={c.phone} onChange={(v) => set({ phone: v })} autoComplete="tel" required />
-        <Field id="c-company" label="Empresa (opcional)" value={c.company} onChange={(v) => set({ company: v })} autoComplete="organization" />
-      </div>
-
-      {c.isExistingEmail !== null && (
-        <p
-          className="mt-4 inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-xs"
-          style={{ background: `${ACCENT}12`, border: `1px solid ${ACCENT}40`, color: ACCENT }}
-        >
-          {c.isExistingEmail ? (
-            <>
-              <Check size={12} /> Reconocemos tu cuenta. Introduce tu contraseña.
-            </>
-          ) : (
-            <>
-              <Check size={12} /> Email nuevo. Te crearemos una cuenta.
-            </>
-          )}
-        </p>
-      )}
-
-      <div className="mt-5 grid gap-4 md:grid-cols-2">
-        <Field id="c-pass" type="password" label="Contraseña" value={c.password} onChange={(v) => set({ password: v })} autoComplete={c.isExistingEmail ? 'current-password' : 'new-password'} required />
-        {c.isExistingEmail !== true && (
-          <Field id="c-pass2" type="password" label="Confirmar contraseña" value={c.confirmPassword} onChange={(v) => set({ confirmPassword: v })} autoComplete="new-password" required />
-        )}
-      </div>
-      <p className="mt-2 text-[11px] text-white/45">Mínimo 8 caracteres con al menos una letra y un número.</p>
-
-      <label className="mt-6 flex cursor-pointer items-start gap-3 text-sm text-white/70">
-        <input
-          type="checkbox"
-          checked={c.acceptTerms}
-          onChange={(e) => set({ acceptTerms: e.target.checked })}
-          className="mt-1 h-4 w-4 rounded"
-          style={{ accentColor: '#FBBF24' }}
-        />
-        <span>
-          Acepto los{' '}
-          <Link href="/terminos" target="_blank" className="underline" style={{ color: ACCENT }}>términos</Link>{' '}
-          y la{' '}
-          <Link href="/privacidad" target="_blank" className="underline" style={{ color: ACCENT }}>política de privacidad</Link>.
-        </span>
-      </label>
-    </div>
-  );
-}
-
-function Field({
-  id,
-  label,
-  value,
-  onChange,
-  onBlur,
-  type = 'text',
-  autoComplete,
-  required,
-}: {
-  id: string;
-  label: string;
-  value: string;
-  onChange: (v: string) => void;
-  onBlur?: () => void;
-  type?: string;
-  autoComplete?: string;
-  required?: boolean;
-}) {
-  return (
-    <div>
-      <label htmlFor={id} className="mb-1.5 block text-xs uppercase tracking-wider text-white/50">
-        {label} {required && <span className="text-white/30">*</span>}
-      </label>
-      <input
-        id={id}
-        type={type}
-        value={value}
-        onChange={(e) => onChange(e.target.value)}
-        onBlur={onBlur}
-        autoComplete={autoComplete}
-        className="w-full rounded-xl border bg-transparent px-4 py-3 text-base text-white placeholder-white/30 focus:outline-none focus-visible:ring-2 md:text-sm"
-        style={{ borderColor: 'var(--border-subtle)' }}
-      />
-    </div>
-  );
-}
-
-/* ============ PASO 9: RESUMEN FINAL ============ */
-export function Step9Resumen({
-  state,
-  cart,
-  loading,
-  error,
-  onSubmit,
-}: {
-  state: WizardState;
-  cart: ReturnType<typeof import('../_lib/state').buildCart>;
-  loading: boolean;
-  error: string | null;
-  onSubmit: () => void;
-}) {
-  const cadenceLabel = cart.cadence === 'yearly' ? '/año' : '/mes';
-  return (
-    <div>
-      <StepHeader
-        index={9}
-        total={9}
-        title="Tu plan, listo"
-        subtitle="Revisa el desglose final. Al pulsar Ir a pagar te enviamos al checkout seguro de Stripe."
-      />
-
-      <div className="space-y-6">
-        {cart.oneTime.length > 0 && (
-          <Section title="Pago único">
-            {cart.oneTime.map((l) => (
-              <SummaryLine key={l.catalogId} name={l.item.name} value={`${formatEUR(l.lineTotal)}`} />
-            ))}
-            <SummaryLine
-              name={<span className="text-white/55">Subtotal pago único</span>}
-              value={<span className="font-mono text-white">{formatEUR(cart.oneTimeTotal)}</span>}
-            />
-          </Section>
-        )}
-        {cart.recurring.length > 0 && (
-          <Section title={cart.cadence === 'yearly' ? 'Suscripción anual' : 'Suscripción mensual'}>
-            {cart.recurring.map((l) => (
-              <SummaryLine
-                key={l.catalogId}
-                name={
-                  <>
-                    {l.item.name}
-                    {l.quantity > 1 && <span className="text-white/45"> ×{l.quantity}</span>}
-                  </>
-                }
-                value={`${formatEUR(l.lineTotal)}${cadenceLabel}`}
-              />
-            ))}
-            <SummaryLine
-              name={<span className="text-white/55">Subtotal {cart.cadence === 'yearly' ? 'anual' : 'mensual'}</span>}
-              value={<span className="font-mono text-white">{formatEUR(cart.recurringTotal)}{cadenceLabel}</span>}
-            />
-          </Section>
-        )}
-
-        <div className="rounded-2xl px-5 py-5" style={{ background: `${ACCENT}15`, border: `1px solid ${ACCENT}50` }}>
-          <p className="text-[11px] uppercase tracking-wider text-white/55">Total a pagar hoy</p>
-          <p className="mt-1 font-display text-4xl tabular-nums text-white" style={{ letterSpacing: '-0.02em', fontWeight: 800 }}>
-            {formatEUR(cart.todayTotal)}
-          </p>
-        </div>
-
-        {error && (
-          <p className="rounded-xl px-4 py-3 text-sm" style={{ background: 'rgba(239,68,68,0.12)', color: 'var(--danger)', border: '1px solid rgba(239,68,68,0.3)' }}>
-            {error}
-          </p>
-        )}
-
-        <button
-          type="button"
-          onClick={onSubmit}
-          disabled={loading}
-          className="inline-flex w-full items-center justify-center gap-2 rounded-full px-7 py-4 text-base font-semibold text-black transition-all hover:opacity-90 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-60 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 md:w-auto md:px-12"
-          style={{ background: ACCENT }}
-        >
-          {loading ? 'Redirigiendo…' : (<>Ir a pagar <ArrowRight size={18} /></>)}
-        </button>
-        <p className="text-[11px] text-white/45">
-          Pago seguro mediante Stripe. Te crearemos la cuenta al confirmar el pago si aún no la tenías.
-        </p>
-        {/* Datos compactos para confirmar selección */}
-        <details className="rounded-xl border px-4 py-3 text-sm text-white/65" style={{ borderColor: 'var(--border-subtle)' }}>
-          <summary className="cursor-pointer">Ver datos de contacto</summary>
-          <div className="mt-3 grid gap-1 font-mono text-xs">
-            <span>{state.contact.name}</span>
-            <span>{state.contact.email}</span>
-            <span>{state.contact.phone}</span>
-            {state.contact.company && <span>{state.contact.company}</span>}
-          </div>
-        </details>
-      </div>
-    </div>
-  );
-}
-
-function Section({ title, children }: { title: string; children: React.ReactNode }) {
-  return (
-    <div className="rounded-2xl glass p-5">
-      <p className="mb-3 text-[11px] uppercase tracking-wider text-white/45">{title}</p>
-      <ul className="space-y-2 text-sm">{children}</ul>
-    </div>
-  );
-}
-
-function SummaryLine({ name, value }: { name: React.ReactNode; value: React.ReactNode }) {
-  return (
-    <li className="flex items-baseline justify-between gap-3 text-white/80">
-      <span>{name}</span>
-      <span className="font-mono text-white">{value}</span>
-    </li>
-  );
+  return <><StepHeader title="Tu idea ya tiene números." subtitle="Revisa cada elección. Abriremos WhatsApp con el presupuesto preparado; allí podrás editar el mensaje y enviarlo tú." /><div className="mb-7">{rows.map(row => <div key={row.title} className={styles.reviewRow}><div className="min-w-0"><p className="text-xs font-semibold uppercase tracking-wider text-white/50">{row.title}</p><p className="mt-2 break-words text-sm leading-relaxed text-white/85">{row.text}</p></div><button type="button" onClick={() => onEdit(row.step)} className={`${styles.textButton} self-start text-xs`} aria-label={`Editar ${row.title.toLowerCase()}`}><Pencil size={14} aria-hidden="true" /><span className="sr-only">Editar</span></button></div>)}</div><div className="lg:hidden"><Summary cart={cart} /></div><div className="mt-7 space-y-4"><a href={buildWhatsAppUrl(state)} target="_blank" rel="noopener noreferrer" className={`${styles.button} ${styles.primary} w-full text-center text-sm sm:text-base`}><MessageCircle size={20} className="shrink-0" />Enviar presupuesto por WhatsApp</a><p className="text-xs leading-relaxed text-white/60">Abrir WhatsApp no envía el mensaje automáticamente ni contrata ningún servicio. Confirmaremos el presupuesto contigo.</p><div className="flex flex-wrap gap-x-6 gap-y-1"><button type="button" className={`${styles.textButton} inline-flex items-center gap-2 text-sm`} onClick={copyMessage}><Copy size={14} />Copiar mensaje</button><button type="button" className={`${styles.textButton} text-sm`} onClick={() => setShowMessage(v => !v)} aria-expanded={showMessage} aria-controls="quote-message">{showMessage ? 'Ocultar mensaje' : 'Ver mensaje completo'}</button></div><p className="text-xs text-amber-200" role="status">{notice}</p>{showMessage && <div id="quote-message"><label htmlFor="quote-message-text" className="mb-2 block text-xs text-white/65">Este es el mensaje que se abrirá en WhatsApp</label><textarea id="quote-message-text" readOnly value={message} className={`${styles.input} ${styles.message}`} onFocus={e => e.target.select()} /></div>}</div></>;
 }

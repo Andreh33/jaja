@@ -15,7 +15,7 @@ export default function PricingBand() {
     <section className="relative z-10 py-24">
       <div className="mx-auto max-w-3xl px-6">
         <Reveal>
-          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-white/40">Precios claros</p>
+          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-white/60">Precios claros</p>
           <h2 className="font-display text-4xl md:text-5xl" style={{ letterSpacing: '-0.04em', fontWeight: 800 }}>
             ¿Cuánto cuesta una web<br />
             <span style={{ color: 'var(--purple-300)' }}>profesional en España?</span>

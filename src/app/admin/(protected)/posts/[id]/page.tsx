@@ -1,3 +1,5 @@
+import { auth } from '@/lib/auth';
+import { redirect } from 'next/navigation';
 import { db } from '@/lib/db';
 import { posts } from '../../../../../../drizzle/schema';
 import { eq } from 'drizzle-orm';
@@ -5,8 +7,11 @@ import { notFound } from 'next/navigation';
 import PostEditor from '@/components/admin/PostEditor';
 
 export const dynamic = 'force-dynamic';
+export const metadata = { robots: { index: false, follow: false } };
 
 export default async function EditPostPage({ params }: { params: Promise<{ id: string }> }) {
+  const session = await auth();
+  if (!session || session.user.role !== 'ADMIN') redirect('/admin/login');
   const { id } = await params;
   const r = await db.select().from(posts).where(eq(posts.id, id)).limit(1);
   if (r.length === 0) notFound();
@@ -28,6 +33,7 @@ export default async function EditPostPage({ params }: { params: Promise<{ id: s
           cover: p.cover,
           readingMinutes: p.readingMinutes,
           published: p.published,
+          urlLocked: true,
         }} />
       </div>
     </div>

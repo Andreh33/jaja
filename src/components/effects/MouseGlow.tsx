@@ -7,7 +7,7 @@ export default function MouseGlow({ strong = false }: { strong?: boolean }) {
   const last = useRef(0);
 
   useEffect(() => {
-    if (typeof window === 'undefined') return;
+    if (!matchMedia('(hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference)').matches) return;
     const handle = (e: MouseEvent) => {
       const now = performance.now();
       if (now - last.current < 16) return;

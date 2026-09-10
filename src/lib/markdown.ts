@@ -1,113 +1,54 @@
-// Minimal markdown to HTML converter — supports headings, paragraphs, lists, bold, italic, code, links, blockquotes.
-// For more advanced needs, swap with `marked` or `remark`.
+import MarkdownIt from 'markdown-it';
+import { isSafeContentUrl } from './content-url';
 
-function escape(s: string) {
-  return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-}
+export type ArticleHeading = { id: string; text: string; level: number };
+type ArticleEnvironment = { headings?: ArticleHeading[] };
 
-function inline(s: string) {
-  // links [text](url)
-  s = s.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>');
-  // bold **text**
-  s = s.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
-  // italic *text*
-  s = s.replace(/(^|[^*])\*([^*\n]+)\*/g, '$1<em>$2</em>');
-  // inline code `code`
-  s = s.replace(/`([^`]+)`/g, '<code>$1</code>');
-  return s;
-}
+const parser = new MarkdownIt({ html: false, linkify: false, typographer: false });
+const validateDefault = parser.validateLink.bind(parser);
+parser.validateLink = url => validateDefault(url) && isSafeContentUrl(url);
 
-export function renderMarkdown(md: string): string {
-  const lines = md.split('\n');
-  const out: string[] = [];
-  let i = 0;
-  while (i < lines.length) {
-    const line = lines[i];
-    if (/^### /.test(line)) {
-      out.push(`<h3>${inline(escape(line.replace(/^### /, '')))}</h3>`);
-      i++;
-      continue;
-    }
-    if (/^## /.test(line)) {
-      out.push(`<h2>${inline(escape(line.replace(/^## /, '')))}</h2>`);
-      i++;
-      continue;
-    }
-    if (/^# /.test(line)) {
-      out.push(`<h1>${inline(escape(line.replace(/^# /, '')))}</h1>`);
-      i++;
-      continue;
-    }
-    if (/^> /.test(line)) {
-      const buf: string[] = [];
-      while (i < lines.length && /^> /.test(lines[i])) {
-        buf.push(lines[i].replace(/^> /, ''));
-        i++;
-      }
-      out.push(`<blockquote>${inline(escape(buf.join(' ')))}</blockquote>`);
-      continue;
-    }
-    // Tablas estilo GitHub: fila de cabecera + fila separadora (| --- | --- |)
-    // + filas de datos. Ganan featured snippet y cita de IA (dato extraíble).
-    if (/^\|(.+)\|\s*$/.test(line) && i + 1 < lines.length && /^\|[\s:|-]+\|\s*$/.test(lines[i + 1])) {
-      const splitRow = (row: string) =>
-        row.replace(/^\||\|\s*$/g, '').split('|').map((c) => c.trim());
-      const headers = splitRow(line);
-      i += 2; // salta cabecera + separador
-      const bodyRows: string[][] = [];
-      while (i < lines.length && /^\|(.+)\|\s*$/.test(lines[i])) {
-        bodyRows.push(splitRow(lines[i]));
-        i++;
-      }
-      const thead = `<thead><tr>${headers.map((h) => `<th>${inline(escape(h))}</th>`).join('')}</tr></thead>`;
-      const tbody = `<tbody>${bodyRows
-        .map((r) => `<tr>${r.map((c) => `<td>${inline(escape(c))}</td>`).join('')}</tr>`)
-        .join('')}</tbody>`;
-      out.push(`<div class="table-wrap"><table>${thead}${tbody}</table></div>`);
-      continue;
-    }
-    if (/^[-*] /.test(line)) {
-      const buf: string[] = [];
-      while (i < lines.length && /^[-*] /.test(lines[i])) {
-        buf.push(`<li>${inline(escape(lines[i].replace(/^[-*] /, '')))}</li>`);
-        i++;
-      }
-      out.push(`<ul>${buf.join('')}</ul>`);
-      continue;
-    }
-    if (/^\d+\. /.test(line)) {
-      const buf: string[] = [];
-      while (i < lines.length && /^\d+\. /.test(lines[i])) {
-        buf.push(`<li>${inline(escape(lines[i].replace(/^\d+\. /, '')))}</li>`);
-        i++;
-      }
-      out.push(`<ol>${buf.join('')}</ol>`);
-      continue;
-    }
-    if (line.trim() === '') {
-      i++;
-      continue;
-    }
-    // paragraph: gather until blank line
-    const buf: string[] = [];
-    while (i < lines.length && lines[i].trim() !== '' && !/^(#{1,3} |> |[-*] |\d+\. )/.test(lines[i])) {
-      buf.push(lines[i]);
-      i++;
-    }
-    out.push(`<p>${inline(escape(buf.join(' ')))}</p>`);
+// Assign IDs using the parsed block tree: fenced code cannot accidentally create headings.
+parser.core.ruler.after('inline', 'latech_headings', state => {
+  const headings: ArticleHeading[] = []; const used = new Set<string>();
+  for (let index = 0; index < state.tokens.length; index++) {
+    const token = state.tokens[index];
+    if (token.type !== 'heading_open') continue;
+    // The page owns the H1. Markdown content starts at H2.
+    if (token.tag === 'h1') { token.tag = 'h2'; if (state.tokens[index + 2]?.type === 'heading_close') state.tokens[index + 2].tag = 'h2'; }
+    const inline = state.tokens[index + 1];
+    const text = (inline?.children || []).map(child => child.type === 'softbreak' || child.type === 'hardbreak' ? ' ' : child.content).join('').trim();
+    const base = text.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || 'seccion';
+    let id = base; let suffix = 2;
+    while (used.has(id)) id = `${base}-${suffix++}`;
+    used.add(id); token.attrSet('id', id);
+    const level = Number(token.tag.slice(1));
+    if (level <= 3) headings.push({ id, text, level });
   }
-  return out.join('\n');
-}
+  (state.env as ArticleEnvironment).headings = headings;
+});
+const renderImage = parser.renderer.rules.image!;
+parser.renderer.rules.image = (tokens, index, options, env, renderer) => {
+  const token = tokens[index];
+  if (!isSafeContentUrl(String(token.attrGet('src') || ''), true)) return parser.utils.escapeHtml(token.content);
+  token.attrSet('loading', 'lazy'); token.attrSet('decoding', 'async'); token.attrSet('referrerpolicy', 'no-referrer');
+  return renderImage(tokens, index, options, env, renderer);
+};
+const renderLink = parser.renderer.rules.link_open;
+parser.renderer.rules.link_open = (tokens, index, options, env, renderer) => {
+  const token = tokens[index];
+  if (/^https?:\/\//.test(String(token.attrGet('href') || ''))) token.attrSet('rel', 'noopener noreferrer');
+  return renderLink ? renderLink(tokens, index, options, env, renderer) : renderer.renderToken(tokens, index, options);
+};
+parser.renderer.rules.table_open = () => '<div class="table-wrap" role="region" aria-label="Tabla de datos" tabindex="0"><table>\n';
+parser.renderer.rules.table_close = () => '</table></div>\n';
 
-export function extractHeadings(md: string): { id: string; text: string; level: number }[] {
-  const out: { id: string; text: string; level: number }[] = [];
-  for (const line of md.split('\n')) {
-    const m = /^(#{2,3})\s+(.+)$/.exec(line);
-    if (m) {
-      const text = m[2].trim();
-      const id = text.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
-      out.push({ id, text, level: m[1].length });
-    }
-  }
-  return out;
+export function renderArticle(markdown: string): { html: string; headings: ArticleHeading[] } {
+  const env: ArticleEnvironment = {};
+  const html = parser.render(markdown, env);
+  return { html, headings: env.headings || [] };
+}
+export function renderMarkdown(markdown: string): string { return renderArticle(markdown).html; }
+export function extractHeadings(markdown: string): ArticleHeading[] {
+  const env: ArticleEnvironment = {}; parser.parse(markdown, env); return env.headings || [];
 }

@@ -3,49 +3,36 @@
 import { usePathname } from 'next/navigation';
 import { Phone, MessageCircle } from 'lucide-react';
 import { whatsappLink } from '@/lib/stripe-links';
+import styles from '../layout/public-mobile.module.css';
 
-/** Rutas de aplicación (no comerciales) donde la barra molesta. */
-const HIDDEN_PREFIXES = ['/admin', '/dashboard', '/cursos', '/login', '/registro', '/recuperar'];
+/** Focused flows already provide their own actions or fixed summary. */
+const HIDDEN_PREFIXES = [
+  '/admin', '/dashboard', '/cursos', '/login', '/registro', '/recuperar',
+  '/reset-password', '/lab', '/briefing', '/tienda/calculadora', '/checkout', '/pago', '/cuenta',
+];
 
-/**
- * Barra fija de contacto para móvil (llamar + WhatsApp). En servicios la
- * decisión se toma en segundos y la mayoría del tráfico es móvil: el teléfono
- * debe estar siempre a un toque. En escritorio se oculta (ahí ya está el
- * botón flotante de WhatsApp). Los clics los registra ContactClickTracker.
- */
 export default function MobileCtaBar() {
   const pathname = usePathname();
-  if (HIDDEN_PREFIXES.some((p) => pathname?.startsWith(p))) return null;
+  if (HIDDEN_PREFIXES.some((prefix) => pathname === prefix || pathname?.startsWith(`${prefix}/`))) return null;
 
   return (
-    <nav
-      aria-label="Contacto rápido"
-      className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-2 border-t md:hidden"
-      style={{
-        borderColor: 'var(--border-subtle)',
-        background: 'rgba(7,5,14,0.92)',
-        backdropFilter: 'blur(16px)',
-        WebkitBackdropFilter: 'blur(16px)',
-        paddingBottom: 'env(safe-area-inset-bottom)',
-      }}
-    >
-      <a
-        href="tel:+34684739091"
-        className="flex h-14 items-center justify-center gap-2 text-sm font-semibold text-white"
-      >
-        <Phone size={16} style={{ color: 'var(--purple-300)' }} aria-hidden />
-        Llamar
+    <>
+    <div aria-hidden className={styles.contactSafeArea} />
+    <nav aria-label="Contacto rápido" className={styles.contactBar}>
+      <a href="tel:+34684739091" className={styles.contactPhone}>
+        <Phone size={17} aria-hidden />
+        <span>Llamar</span>
       </a>
       <a
         href={whatsappLink('Hola, quiero información sobre Latech')}
         target="_blank"
         rel="noreferrer"
-        className="flex h-14 items-center justify-center gap-2 text-sm font-semibold text-white"
-        style={{ background: '#25D366' }}
+        className={styles.contactWhatsapp}
       >
-        <MessageCircle size={16} aria-hidden />
-        WhatsApp
+        <MessageCircle size={18} aria-hidden />
+        <span>Hablemos <span className={styles.contactChannel}>por WhatsApp</span></span>
       </a>
     </nav>
+    </>
   );
 }

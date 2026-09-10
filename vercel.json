@@ -1,5 +1,10 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
+  "git": {
+    "deploymentEnabled": {
+      "codex/latech-evolution-2026-09-10": false
+    }
+  },
   "crons": [
     {
       "path": "/api/cron/cleanup-applications",

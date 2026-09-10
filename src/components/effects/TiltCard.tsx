@@ -1,6 +1,6 @@
 'use client';
 
-import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
+import { motion, useMotionValue, useSpring, useTransform, useReducedMotion } from 'framer-motion';
 import { useRef, type ReactNode, type MouseEvent } from 'react';
 import { cn } from '@/lib/utils';
 
@@ -25,9 +25,14 @@ export default function TiltCard({
   const rotateY = useTransform(sx, [0, 1], [-max, max]);
   const glareX = useTransform(sx, [0, 1], ['0%', '100%']);
   const glareY = useTransform(sy, [0, 1], ['0%', '100%']);
+  const glareBackground = useTransform(
+    [glareX, glareY],
+    ([gx, gy]) => `radial-gradient(circle at ${gx} ${gy}, rgba(255,255,255,0.18), transparent 50%)`,
+  );
+  const reduced = useReducedMotion();
 
   const onMove = (e: MouseEvent) => {
-    if (!ref.current) return;
+    if (!ref.current || reduced || !window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
     const rect = ref.current.getBoundingClientRect();
     mx.set((e.clientX - rect.left) / rect.width);
     my.set((e.clientY - rect.top) / rect.height);
@@ -44,8 +49,8 @@ export default function TiltCard({
       onMouseLeave={onLeave}
       className={cn('relative', className)}
       style={{
-        rotateX,
-        rotateY,
+        rotateX: reduced ? 0 : rotateX,
+        rotateY: reduced ? 0 : rotateY,
         transformStyle: 'preserve-3d',
         transformPerspective: 1200,
       }}
@@ -56,10 +61,7 @@ export default function TiltCard({
           aria-hidden
           className="pointer-events-none absolute inset-0 rounded-[inherit] mix-blend-overlay"
           style={{
-            background: useTransform(
-              [glareX, glareY],
-              ([gx, gy]) => `radial-gradient(circle at ${gx} ${gy}, rgba(255,255,255,0.18), transparent 50%)`,
-            ),
+            background: glareBackground,
           }}
         />
       )}

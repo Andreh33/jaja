@@ -19,7 +19,7 @@ export default function ComparisonTable({
     >
       <table className="w-full border-collapse text-sm" style={{ minWidth: '30rem' }}>
         {caption && (
-          <caption className="px-4 pt-4 text-left text-xs uppercase tracking-[0.2em] text-white/40">
+          <caption className="px-4 pt-4 text-left text-xs uppercase tracking-[0.2em] text-white/60">
             {caption}
           </caption>
         )}

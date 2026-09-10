@@ -1,7 +1,7 @@
 'use client';
 
 import { cn } from '@/lib/utils';
-import type { ReactNode } from 'react';
+import { useEffect, useRef, type CSSProperties, type ReactNode } from 'react';
 
 export function Marquee({
   children,
@@ -16,19 +16,52 @@ export function Marquee({
   className?: string;
   pauseOnHover?: boolean;
 }) {
+  const container = useRef<HTMLDivElement>(null);
+  const track = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const element = container.current;
+    const strip = track.current;
+    if (!element || !strip || !('IntersectionObserver' in window)) return;
+    const media = matchMedia('(min-width: 1024px) and (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference)');
+    let visible = false;
+    let focused = element.contains(document.activeElement);
+    let hovered = false;
+    const sync = () => strip.style.setProperty('--marquee-state', visible && media.matches && !document.hidden && !focused && !(pauseOnHover && hovered) ? 'running' : 'paused');
+    const focusIn = () => { focused = true; sync(); };
+    const focusOut = (event: FocusEvent) => { focused = event.relatedTarget instanceof Node && element.contains(event.relatedTarget); sync(); };
+    const enter = () => { hovered = true; sync(); };
+    const leave = () => { hovered = false; sync(); };
+    const observer = new IntersectionObserver(([entry]) => { visible = entry.isIntersecting; sync(); });
+    observer.observe(element);
+    element.addEventListener('focusin', focusIn);
+    element.addEventListener('focusout', focusOut);
+    element.addEventListener('mouseenter', enter);
+    element.addEventListener('mouseleave', leave);
+    media.addEventListener('change', sync);
+    document.addEventListener('visibilitychange', sync);
+    return () => {
+      observer.disconnect();
+      element.removeEventListener('focusin', focusIn);
+      element.removeEventListener('focusout', focusOut);
+      element.removeEventListener('mouseenter', enter);
+      element.removeEventListener('mouseleave', leave);
+      media.removeEventListener('change', sync);
+      document.removeEventListener('visibilitychange', sync);
+    };
+  }, [pauseOnHover]);
   return (
-    <div className={cn('group relative flex w-full overflow-hidden', className)}>
+    <div ref={container} tabIndex={0} className={cn('group relative flex w-full overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden', className)}>
       <div
+        ref={track}
         className={cn(
           'flex shrink-0 items-center gap-8 pr-8',
           reverse ? 'animate-marquee-reverse' : 'animate-marquee',
-          pauseOnHover && 'group-hover:[animation-play-state:paused]',
         )}
-        style={{ animationDuration: `${speed}s` }}
+        style={{ animationDuration: `${speed}s`, animationPlayState: 'var(--marquee-state, paused)', '--marquee-state': 'paused' } as CSSProperties}
       >
         {children}
         {/* copia visual para el bucle continuo; oculta a lectores de pantalla */}
-        <span aria-hidden="true" style={{ display: 'contents' }}>{children}</span>
+        <span aria-hidden="true" className="hidden lg:contents">{children}</span>
       </div>
     </div>
   );

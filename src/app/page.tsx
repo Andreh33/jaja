@@ -37,7 +37,7 @@ export default function Home() {
       <Navbar />
       <AuroraBackground intensity="strong" />
       <MouseGlow strong />
-      <main className="relative">
+      <main className="latech-home relative" id="main-content">
         <Hero />
         <TechMarquee />
         <Breathe><WordPressCompareSection /></Breathe>

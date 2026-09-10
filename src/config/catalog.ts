@@ -1,6 +1,8 @@
 /**
- * Catálogo único de productos y precios para la calculadora-wizard.
- * Fuente de verdad: cualquier UI o API debe leer de aquí.
+ * Catálogo de facturación y contratos Stripe existentes.
+ * El presupuesto público por WhatsApp usa src/lib/quotes/catalog.ts.
+ * Conservar estos identificadores e importes para los contratos ya creados;
+ * una actualización comercial no migra las suscripciones de los clientes.
  *
  * Reglas:
  * - Si el usuario elige hosting anual, todo lo recurrente que tenga versión

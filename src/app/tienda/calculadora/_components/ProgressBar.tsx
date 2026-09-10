@@ -1,23 +1,5 @@
 'use client';
-
-const ACCENT = 'var(--accent-calc)';
-
-export default function ProgressBar({ step, total }: { step: number; total: number }) {
-  const pct = Math.round((step / total) * 100);
-  return (
-    <div
-      role="progressbar"
-      aria-valuenow={step}
-      aria-valuemin={1}
-      aria-valuemax={total}
-      aria-label={`Paso ${step} de ${total}`}
-      className="relative h-1.5 w-full overflow-hidden rounded-full"
-      style={{ background: 'rgba(255,255,255,0.08)' }}
-    >
-      <div
-        className="absolute inset-y-0 left-0 rounded-full transition-[width] duration-500"
-        style={{ width: `${pct}%`, background: `linear-gradient(90deg, ${ACCENT}, #F97316)` }}
-      />
-    </div>
-  );
+import { STEP_LABELS } from '../_lib/state';
+export default function ProgressBar({ step, onSelect }: { step: number; onSelect: (step: number) => void }) {
+  return <nav aria-label="Etapas del presupuesto"><ol className="grid grid-cols-5 gap-1 sm:gap-3">{STEP_LABELS.map((label, index) => <li key={label}><button type="button" onClick={() => onSelect(index + 1)} aria-current={step === index + 1 ? 'step' : undefined} className={`w-full border-t-2 px-1 pt-3 pb-2 text-left focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-300 ${step === index + 1 ? 'border-amber-300 text-amber-300' : 'border-white/20 text-white/60'}`}><span className="block font-mono text-xs">0{index + 1}</span><span className="mt-1 hidden text-xs font-medium min-[390px]:block">{label}</span></button></li>)}</ol><p className="mt-4 text-xs text-white/65" aria-live="polite">Paso {step} de {STEP_LABELS.length} · {STEP_LABELS[step - 1]}<span className="sr-only">. Puedes revisar cualquier etapa con los botones anteriores.</span></p></nav>;
 }

@@ -1,66 +1,77 @@
 'use client';
 
-import { motion, type Variants } from 'framer-motion';
-import type { ReactNode } from 'react';
+import { createElement, useEffect, useRef, type ReactNode } from 'react';
 
-const fadeUp: Variants = {
-  hidden: { opacity: 0, y: 30 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } },
-};
+/** HTML is visible by default. Motion enhances below-the-fold content only. */
+function useReveal(delay: number, stagger?: number) {
+  const ref = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const element = ref.current;
+    const preference = window.matchMedia('(prefers-reduced-motion: reduce)');
+    if (!element || preference.matches || !('IntersectionObserver' in window) || !element.animate) return;
+    const animations: Animation[] = [];
+    let firstObservation = true;
+    const observer = new IntersectionObserver(([entry]) => {
+      if (!entry) return;
+      if (firstObservation) {
+        firstObservation = false;
+        // The observer supplies layout measurements in a batch. Do not force
+        // a synchronous layout for every reveal during hydration, or animate
+        // content that was already visible when its observer became ready.
+        if (entry.boundingClientRect.top < window.innerHeight) {
+          observer.disconnect();
+          return;
+        }
+      }
+      if (!entry.isIntersecting) return;
+      observer.disconnect();
+      if (preference.matches) return;
+      const targets = stagger === undefined
+        ? [element]
+        : Array.from(element.querySelectorAll<HTMLElement>('[data-reveal-item]'));
+      targets.forEach((target, index) => {
+        animations.push(target.animate([
+          { opacity: 0, transform: 'translateY(18px)' },
+          { opacity: 1, transform: 'translateY(0)' },
+        ], {
+          duration: 500,
+          delay: Math.min(300, Math.max(0, (delay + index * (stagger ?? 0)) * 1000)),
+          easing: 'cubic-bezier(0.23, 1, 0.32, 1)',
+          fill: 'backwards',
+        }));
+      });
+    }, { threshold: 0, rootMargin: '0px 0px -24px 0px' });
+    const stop = () => { if (preference.matches) animations.forEach((animation) => animation.cancel()); };
+    preference.addEventListener('change', stop);
+    observer.observe(element);
+    return () => {
+      observer.disconnect();
+      preference.removeEventListener('change', stop);
+      animations.forEach((animation) => animation.cancel());
+    };
+  }, [delay, stagger]);
+  return ref;
+}
 
-export function Reveal({
-  children,
-  delay = 0,
-  className,
-  as: Tag = 'div',
-}: {
+export function Reveal({ children, delay = 0, className, as = 'div' }: {
   children: ReactNode;
   delay?: number;
   className?: string;
-  as?: keyof typeof motion;
+  as?: 'div' | 'section' | 'article' | 'aside' | 'p';
 }) {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const Component: any = (motion as any)[Tag] || motion.div;
-  return (
-    <Component
-      className={className}
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: true, margin: '-80px' }}
-      variants={{
-        hidden: { opacity: 0, y: 30 },
-        show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1], delay } },
-      }}
-    >
-      {children}
-    </Component>
-  );
+  const ref = useReveal(delay);
+  return createElement(as, { ref, className }, children);
 }
 
-export function RevealGroup({
-  children,
-  stagger = 0.08,
-  className,
-}: {
+export function RevealGroup({ children, stagger = 0.08, className }: {
   children: ReactNode;
   stagger?: number;
   className?: string;
 }) {
-  return (
-    <motion.div
-      className={className}
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: true, margin: '-80px' }}
-      variants={{ hidden: {}, show: { transition: { staggerChildren: stagger } } }}
-    >
-      {children}
-    </motion.div>
-  );
+  const ref = useReveal(0, stagger);
+  return <div ref={ref} className={className}>{children}</div>;
 }
 
-export const RevealItem = ({ children, className }: { children: ReactNode; className?: string }) => (
-  <motion.div className={className} variants={fadeUp}>
-    {children}
-  </motion.div>
-);
+export function RevealItem({ children, className }: { children: ReactNode; className?: string }) {
+  return <div data-reveal-item className={className}>{children}</div>;
+}

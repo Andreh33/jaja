@@ -3,11 +3,12 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
+import * as Dialog from '@radix-ui/react-dialog';
+import { ArrowDownRight, ArrowUpRight, Menu, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import Logo from './Logo';
 import MagneticButton from '../effects/MagneticButton';
+import styles from './public-mobile.module.css';
 
 const NAV = [
   { href: '/', label: 'Inicio' },
@@ -15,6 +16,7 @@ const NAV = [
   { href: '/tienda', label: 'Tienda' },
   { href: '/proyectos', label: 'Proyectos' },
   { href: '/blog', label: 'Blog' },
+  { href: '/lab', label: 'Laboratorio' },
   { href: '/contacto', label: 'Contacto' },
   { href: '/empleo', label: 'Ofertas de empleo' },
 ];
@@ -23,6 +25,7 @@ export default function Navbar() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [keyboardNavigation, setKeyboardNavigation] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -31,127 +34,121 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  // cierra el menú móvil al navegar (sin setState síncrono en el efecto)
   useEffect(() => { queueMicrotask(() => setOpen(false)); }, [pathname]);
 
-  const isActive = (href: string) => {
-    if (href === '/') return pathname === '/';
-    return pathname?.startsWith(href);
-  };
+  useEffect(() => {
+    // Release the dialog's focus and scroll lock when desktop navigation appears.
+    const desktop = window.matchMedia('(min-width: 1280px)');
+    const onBreakpoint = () => { if (desktop.matches) setOpen(false); };
+    desktop.addEventListener('change', onBreakpoint);
+    return () => desktop.removeEventListener('change', onBreakpoint);
+  }, []);
+
+  const isActive = (href: string) => href === '/'
+    ? pathname === '/'
+    : pathname === href || pathname?.startsWith(`${href}/`);
 
   return (
-    <header
-      className="fixed left-0 right-0 top-7 z-50 transition-all duration-300"
-    >
-      <nav
-        className={cn(
-          'mx-auto flex w-full max-w-7xl items-center justify-between px-6 transition-all duration-300',
-          scrolled ? 'h-14' : 'h-20',
-          'glass border rounded-2xl',
-        )}
-        style={{
-          backgroundColor: scrolled ? 'rgba(7,5,14,0.85)' : 'rgba(7,5,14,0.55)',
-          borderColor: 'var(--border-subtle)',
-        }}
-      >
-        <Link href="/" className="z-10 flex items-center" aria-label="Latech inicio">
-          <Logo size={scrolled ? 'sm' : 'md'} />
-        </Link>
+    <Dialog.Root open={open} onOpenChange={setOpen}>
+      <header className={styles.header}>
+        <nav
+          aria-label="Navegación principal"
+          className={cn(styles.navbar, 'glass', scrolled && styles.navbarScrolled)}
+        >
+          <Link href="/" className={styles.logoLink} aria-label="Latech inicio">
+            <Logo size={scrolled ? 'sm' : 'md'} />
+          </Link>
 
-        <div className="hidden items-center gap-1 md:flex">
-          {NAV.map((item) => {
-            const active = isActive(item.href);
-            return (
+          <div className={styles.desktopLinks}>
+            {NAV.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className={cn(
-                  'relative rounded-full px-4 py-2 text-sm font-medium transition-colors',
-                  active ? 'text-white' : 'text-white/60 hover:text-white',
-                )}
+                aria-current={isActive(item.href) ? 'page' : undefined}
+                className={cn(styles.desktopLink, isActive(item.href) && styles.desktopLinkActive)}
               >
-                {active && (
-                  <motion.span
-                    layoutId="nav-pill"
-                    className="absolute inset-0 -z-10 rounded-full"
-                    style={{
-                      background: 'linear-gradient(135deg, rgba(139,92,246,0.18), rgba(249,115,22,0.12))',
-                      border: '1px solid rgba(139,92,246,0.3)',
-                    }}
-                    transition={{ type: 'spring', stiffness: 320, damping: 30 }}
-                  />
-                )}
                 {item.label}
               </Link>
-            );
-          })}
-        </div>
+            ))}
+          </div>
 
-        <div className="hidden items-center gap-3 md:flex">
-          <Link href="/login" className="link-underline text-sm font-medium text-white/70 transition-colors hover:text-white">
-            Iniciar sesión
-          </Link>
-          <MagneticButton href="/tienda" aria-label="Empezar tu proyecto web" className="!py-2 !px-5 !text-xs">
-            Empezar
-          </MagneticButton>
-        </div>
+          <div className={styles.desktopActions}>
+            <Link href="/login" className="link-underline text-sm font-medium text-white/70">
+              Iniciar sesión
+            </Link>
+            <MagneticButton href="/tienda" aria-label="Ver servicios y precios" className="!py-2 !px-5 !text-xs">
+              Ver servicios
+            </MagneticButton>
+          </div>
 
-        <button
-          aria-label="Abrir menú"
-          onClick={() => setOpen((s) => !s)}
-          className="z-10 inline-flex h-10 w-10 items-center justify-center rounded-full glass md:hidden"
+          <Dialog.Trigger asChild>
+            <button
+              type="button"
+              aria-label="Abrir menú"
+              className={styles.menuTrigger}
+              onPointerDown={() => setKeyboardNavigation(false)}
+              onKeyDown={(event) => {
+                if (event.key === 'Enter' || event.key === ' ') setKeyboardNavigation(true);
+              }}
+            >
+              <span>Menú</span>
+              <Menu size={18} aria-hidden />
+            </button>
+          </Dialog.Trigger>
+        </nav>
+      </header>
+
+      <Dialog.Portal>
+        <Dialog.Overlay className={styles.menuOverlay} data-motion={keyboardNavigation ? 'none' : 'enabled'} />
+        <Dialog.Content
+          className={styles.menuPanel}
+          data-motion={keyboardNavigation ? 'none' : 'enabled'}
+          onEscapeKeyDown={() => setKeyboardNavigation(true)}
         >
-          {open ? <X size={18} /> : <Menu size={18} />}
-        </button>
-      </nav>
-
-      <AnimatePresence>
-        {open && (
-          <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.2 }}
-            className="md:hidden"
-          >
-            <div className="mx-4 mt-2 rounded-2xl glass-strong p-4">
-              <div className="flex flex-col gap-1">
-                {NAV.map((item, i) => (
-                  <motion.div
-                    key={item.href}
-                    initial={{ opacity: 0, x: -10 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: i * 0.04 }}
-                  >
+          <div className={styles.menuHeading}>
+            <Dialog.Title className="sr-only">Menú de Latech</Dialog.Title>
+            <Logo />
+            <Dialog.Close asChild>
+              <button type="button" aria-label="Cerrar menú" className={styles.menuClose}>
+                <X size={20} aria-hidden />
+              </button>
+            </Dialog.Close>
+          </div>
+          <div className={styles.menuBody}>
+            <Dialog.Description className={styles.menuDescription}>
+              Tu imaginación, nuestro límite.
+            </Dialog.Description>
+            <nav aria-label="Navegación móvil">
+              <ul className={styles.menuLinks}>
+                {NAV.map((item, index) => (
+                  <li key={item.href}>
                     <Link
                       href={item.href}
-                      className={cn(
-                        'block rounded-xl px-4 py-3 text-base font-medium transition-colors',
-                        isActive(item.href) ? 'text-white' : 'text-white/70 hover:text-white',
-                      )}
-                      style={isActive(item.href) ? { background: 'rgba(139,92,246,0.15)' } : {}}
+                      onClick={() => setOpen(false)}
+                      aria-current={isActive(item.href) ? 'page' : undefined}
+                      className={styles.menuLink}
                     >
-                      {item.label}
+                      <span className={styles.menuIndex} aria-hidden>{String(index + 1).padStart(2, '0')}</span>
+                      <span>{item.label}</span>
+                      {isActive(item.href)
+                        ? <span className={styles.activeDot} aria-hidden />
+                        : <ArrowUpRight size={17} className={styles.menuArrow} aria-hidden />}
                     </Link>
-                  </motion.div>
+                  </li>
                 ))}
-                <div className="my-2 h-px" style={{ background: 'var(--border-subtle)' }} />
-                <Link href="/login" className="block rounded-xl px-4 py-3 text-base text-white/70">
-                  Iniciar sesión
-                </Link>
-                <Link
-                  href="/tienda"
-                  aria-label="Empezar tu proyecto web"
-                  className="rounded-full px-4 py-3 text-center text-base font-semibold text-white"
-                  style={{ background: 'var(--grad-signature)' }}
-                >
-                  Empezar
-                </Link>
-              </div>
+              </ul>
+            </nav>
+            <div className={styles.menuFooter}>
+              <Link href="/tienda/calculadora" onClick={() => setOpen(false)} className={styles.menuCta}>
+                Calcular mi proyecto <ArrowDownRight size={20} aria-hidden />
+              </Link>
+              <Link href="/login" onClick={() => setOpen(false)} className={styles.menuLogin}>
+                Iniciar sesión <ArrowUpRight size={15} aria-hidden />
+              </Link>
             </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </header>
+          </div>
+        </Dialog.Content>
+      </Dialog.Portal>
+    </Dialog.Root>
   );
 }

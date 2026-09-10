@@ -1,17 +1,17 @@
 'use client';
 
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { useRef } from 'react';
+import { useCallback, useRef } from 'react';
 import { Reveal } from '../effects/Reveal';
+import { useDesktopScrollEffect } from '../effects/Breathe';
 
 const CLAIMS = [
   {
     label: 'Seguridad',
-    text: 'WordPress vive de parches y plugins que hackean a diario. Nuestro código no tiene puertas que forzar.',
+    text: 'Menos dependencias innecesarias, permisos revisados y mantenimiento continuo. La seguridad se trabaja en cada capa.',
   },
   {
     label: 'Velocidad',
-    text: 'Una web media en WordPress tarda 4 segundos en cargar. Las nuestras, menos de 1.',
+    text: 'Optimizamos imágenes, carga de código y respuesta al tocar. La velocidad se comprueba en dispositivos reales.',
   },
   {
     label: 'Posibilidades',
@@ -19,43 +19,46 @@ const CLAIMS = [
   },
   {
     label: 'Mantenimiento',
-    text: 'Sin actualizaciones que rompen tu web un domingo por la noche. Nos encargamos de todo, siempre.',
+    text: 'Nos ocupamos de las actualizaciones, las copias y la evolución de tu web. Con un equipo al que puedes escribir.',
   },
   {
     label: 'SEO',
-    text: 'Google premia las webs rápidas y con código limpio. Las nuestras nacen así, sin 40 plugins de por medio.',
+    text: 'Contenido útil, estructura clara y una base técnica cuidada. El posicionamiento se construye y se mide con el tiempo.',
   },
 ];
 
 function ClaimCard({ label, text, i }: { label: string; text: string; i: number }) {
   const ref = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({ target: ref, offset: ['start 95%', 'start 45%'] });
-
+  const gradient = useRef<HTMLParagraphElement>(null);
   const even = i % 2 === 0;
   const tilt = even ? -2.8 : 2.4;
-
-  // La tarjeta entra deslizándose desde su lado, endereza el ángulo y el
-  // texto se rellena con el degradado de marca — todo guiado por el scroll.
-  const x = useTransform(scrollYProgress, [0, 1], [even ? -90 : 90, 0]);
-  const rotate = useTransform(scrollYProgress, [0, 1], [tilt * 2.6, tilt]);
-  const opacity = useTransform(scrollYProgress, [0, 0.25], [0, 1]);
-  const clipPath = useTransform(
-    scrollYProgress,
-    [0.3, 1],
-    ['inset(0 100% 0 0)', 'inset(0 0% 0 0)']
-  );
+  const render = useCallback((rect: DOMRect, height: number) => {
+    const progress = Math.max(0, Math.min(1, (height * .95 - rect.top) / (height * .5)));
+    const x = (even ? -90 : 90) * (1 - progress);
+    const rotate = tilt * (2.6 - progress * 1.6);
+    if (ref.current) ref.current.style.transform = `translateX(${x.toFixed(2)}px) rotate(${rotate.toFixed(2)}deg)`;
+    if (gradient.current) {
+      gradient.current.style.display = 'block';
+      const reveal = Math.max(0, Math.min(1, (progress - .3) / .7));
+      gradient.current.style.clipPath = `inset(0 ${((1 - reveal) * 100).toFixed(2)}% 0 0)`;
+    }
+  }, [even, tilt]);
+  const reset = useCallback(() => {
+    ref.current?.style.removeProperty('transform');
+    gradient.current?.style.removeProperty('clip-path');
+    gradient.current?.style.removeProperty('display');
+  }, []);
+  useDesktopScrollEffect(ref, render, reset);
 
   return (
-    <motion.div
+    <div
       ref={ref}
-      style={{ x, rotate, opacity, zIndex: 10 + i }}
-      className={`relative w-full md:w-[62%] ${even ? 'md:mr-auto' : 'md:ml-auto'} ${
+      style={{ zIndex: 10 + i }}
+      className={`compare-card relative w-full md:w-[62%] ${even ? 'md:mr-auto' : 'md:ml-auto'} ${
         i > 0 ? 'mt-6 md:-mt-8' : ''
       }`}
     >
-      <motion.div
-        whileHover={{ y: -6, scale: 1.015 }}
-        transition={{ type: 'spring', stiffness: 260, damping: 22 }}
+      <div
         className="rounded-3xl glass p-7 md:p-9"
         style={{ border: '1px solid var(--border-glow)', background: 'var(--bg-glass-strong)' }}
       >
@@ -77,9 +80,10 @@ function ClaimCard({ label, text, i }: { label: string; text: string; i: number 
           >
             {text}
           </p>
-          <motion.p
+          <p
+            ref={gradient}
             aria-hidden
-            className="absolute inset-0 font-display text-balance text-xl text-transparent md:text-3xl"
+            className="absolute inset-0 hidden font-display text-balance text-xl text-transparent md:text-3xl"
             style={{
               letterSpacing: '-0.03em',
               fontWeight: 700,
@@ -87,14 +91,13 @@ function ClaimCard({ label, text, i }: { label: string; text: string; i: number 
               backgroundImage: 'var(--grad-signature)',
               backgroundClip: 'text',
               WebkitBackgroundClip: 'text',
-              clipPath,
             }}
           >
             {text}
-          </motion.p>
+          </p>
         </div>
-      </motion.div>
-    </motion.div>
+      </div>
+    </div>
   );
 }
 
@@ -104,7 +107,7 @@ export default function WordPressCompareSection() {
       <div className="mx-auto max-w-5xl px-6">
         <Reveal>
           <div className="mb-20 max-w-3xl">
-            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-white/40">
+            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-white/60">
               Latech vs WordPress
             </p>
             <h2
@@ -114,7 +117,7 @@ export default function WordPressCompareSection() {
               Por qué no usamos WordPress.
             </h2>
             <p className="mt-5 text-base text-white/60">
-              El 90% de las agencias te venderá una plantilla. Nosotros programamos tu web desde cero.
+              Programamos tu web a medida para conectar diseño, negocio e integraciones.
               Esta es la diferencia, punto por punto.
             </p>
           </div>
@@ -127,7 +130,7 @@ export default function WordPressCompareSection() {
         </div>
 
         <Reveal>
-          <p className="mt-16 text-center text-xs text-white/40">
+          <p className="mt-16 text-center text-xs text-white/60">
             Esta misma animación está programada a medida con nuestro stack — el que usaríamos en tu web.
           </p>
         </Reveal>

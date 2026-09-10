@@ -3,7 +3,7 @@
 export default function AuroraBackground({ intensity = 'normal' }: { intensity?: 'normal' | 'strong' | 'subtle' }) {
   const blobOpacity = intensity === 'strong' ? 0.55 : intensity === 'subtle' ? 0.25 : 0.4;
   return (
-    <div aria-hidden className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
+    <div aria-hidden className="aurora-background pointer-events-none fixed inset-0 z-0 overflow-hidden">
       <div className="absolute inset-0 bg-grid" />
       <div
         className="absolute -left-40 -top-40 h-[600px] w-[600px] rounded-full"

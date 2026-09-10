@@ -1,4 +1,4 @@
-import { sqliteTable, text, integer, index, uniqueIndex } from 'drizzle-orm/sqlite-core';
+import { sqliteTable, text, integer, index, uniqueIndex, check } from 'drizzle-orm/sqlite-core';
 import { sql } from 'drizzle-orm';
 
 /**
@@ -385,3 +385,32 @@ export type CourseQuestion = typeof courseQuestions.$inferSelect;
 export type CourseProgress = typeof courseProgress.$inferSelect;
 export type ExamAttempt = typeof examAttempts.$inferSelect;
 export type ExamAnswer = typeof examAnswers.$inferSelect;
+
+/** Escape v2: separate from legacy escape_scores. Times are Unix milliseconds. */
+export const escapeRuns = sqliteTable('escape_runs', {
+  id: text('id').primaryKey(),
+  tokenHash: text('token_hash').notNull(),
+  mode: text('mode', { enum: ['campana', 'infinito'] }).notNull(),
+  difficulty: text('difficulty', { enum: ['facil', 'normal'] }).notNull(),
+  rulesVersion: text('rules_version').notNull(),
+  startedAt: integer('started_at').notNull(),
+  expiresAt: integer('expires_at').notNull(),
+}, (t) => [
+  index('escape_runs_category').on(t.mode, t.difficulty, t.rulesVersion),
+  index('escape_runs_expiry').on(t.expiresAt),
+  check('escape_runs_mode', sql`${t.mode} IN ('campana', 'infinito')`),
+  check('escape_runs_difficulty', sql`${t.difficulty} IN ('facil', 'normal')`),
+  check('escape_runs_expiration', sql`${t.expiresAt} > ${t.startedAt}`),
+]);
+
+export const escapeResults = sqliteTable('escape_results', {
+  runId: text('run_id').primaryKey().references(() => escapeRuns.id, { onDelete: 'cascade' }),
+  name: text('name').notNull(),
+  score: integer('score').notNull(),
+  durationMs: integer('duration_ms').notNull(),
+  createdAt: integer('created_at').notNull(),
+}, (t) => [
+  index('escape_results_order').on(t.score, t.durationMs, t.createdAt),
+  check('escape_results_score', sql`${t.score} BETWEEN 0 AND 100000`),
+  check('escape_results_duration', sql`${t.durationMs} BETWEEN 0 AND 1800000`),
+]);

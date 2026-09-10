@@ -579,3 +579,37 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .hero-enter, .hero-enter-lcp, .hero-beam { animation: none; opacity: 1; transform: none; }
 }
+
+/* Mobile has its own rhythm; the desktop composition stays intact. */
+.latech-demo-dialog, body.has-custom-cursor .latech-demo-dialog * { cursor: auto !important; }
+@media (max-width: 767px), (prefers-reduced-motion: reduce) {
+  .xray-stage, .xray-controls { display: none !important; }
+  .xray-list.sr-only { position: static; width: 100%; height: auto; padding: 0; margin-block: 1.5rem; overflow: visible; clip: auto; white-space: normal; }
+}
+@media (max-width: 767px) {
+  .latech-home > .breathe-section > section { padding-block: 4rem; }
+  .breathe-section, .compare-card { transform: none !important; }
+  .compare-card > div { padding: 1.5rem; border-radius: 1.5rem; }
+  .aurora-background > div:not(:first-child) { animation: none !important; opacity: .15 !important; filter: blur(100px) !important; }
+  .text-gradient { animation: none; background-position: 45% 50%; }
+  .beam-border::before { animation: none; }
+  .cursor-dot, .cursor-ring { display: none !important; }
+  body.has-custom-cursor, body.has-custom-cursor * { cursor: auto !important; }
+}
+
+@media (hover: none), (pointer: coarse) {
+  .cursor-dot, .cursor-ring, .spotlight, .spotlight-strong { display: none !important; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto !important; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .breathe-section, .compare-card { transform: none !important; }
+  .cursor-dot, .cursor-ring, .spotlight, .spotlight-strong { display: none !important; }
+  body.has-custom-cursor, body.has-custom-cursor * { cursor: auto !important; }
+}
