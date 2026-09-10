@@ -23,7 +23,7 @@ Preparado localmente el 10 de septiembre de 2026. **14 textos completos: ocho re
 
 ## Qué está preparado y qué sigue pendiente
 
-Los catorce cuerpos, su mapa y los textos de distribución están preparados. Quedan revisión editorial final, comprobación de la versión pública, importación autorizada, publicación y medición. No se han enviado correos, mensajes a colaboradores ni publicaciones sociales.
+Los catorce cuerpos, su mapa y los textos de distribución están preparados. La revisión editorial independiente y la comprobación del frontend local están terminadas. El usuario ha autorizado publicar el conjunto con esta actualización; quedan ejecutar y verificar la publicación en producción y comenzar la medición. No se han enviado correos, mensajes a colaboradores ni publicaciones sociales.
 
 La auditoría tiene evidencia de 76 artículos, pero no sustituye una revisión factual de todos ellos. Las otras 68 entradas permanecen sin reescritura en este paquete. Los módulos de decisión insertados en seis guías tampoco cuentan como seis actualizaciones sustantivas adicionales.
 
@@ -38,3 +38,9 @@ El helper `scripts/lib/editorial-preview.ts` prepara una transformación optativ
 El lector admite solo las claves editoriales previstas, categorías conocidas, slugs válidos y exactamente ocho actualizaciones, cuatro piezas nuevas y dos casos. Extrae únicamente el cuerpo entre los marcadores, elimina el H1 que ya representa la plantilla y deja fuera las notas internas y metadatos. Rechaza colisiones y paquetes incompletos antes de devolver artículos. Las fechas e identificadores de la copia de QA los gestiona su inicializador; no proceden de estas notas ni representan fechas de publicación reales.
 
 Preparar esa vista de prueba no publica los textos en producción ni autoriza distribuirlos. Seis pruebas focales verifican el contrato y que la colección histórica no se modifica en memoria.
+
+## Publicación del conjunto autorizado
+
+Usar `scripts/publish-editorial.ts` según el [procedimiento de publicación](publication-runbook.md). El manifiesto fija las catorce piezas aprobadas y los ocho baselines contrastados con las capturas públicas de la auditoría. El plan no escribe; la aplicación compara un snapshot privado dentro de una transacción y conserva IDs, URLs, autor, portada y fechas históricas. Nunca utiliza el inicializador de QA para producción.
+
+La escritura editorial debe preceder al build de producción que regenerará artículos, categorías, relacionadas, Open Graph y sitemap. Cualquier deriva o colisión detiene el conjunto; no se sobrescribe contenido ajeno para forzar la publicación. El coordinador registra la aplicación y verificación remota de la entrega.
