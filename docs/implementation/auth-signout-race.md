@@ -25,6 +25,8 @@ El proxy pasa a autorizar sin escribir cookies. Las rutas `/api/auth/*` quedan f
 
 La solución evita reimplementar decodificación, secretos, sales, cookies seguras o fragmentadas. No se ha demostrado ninguna relación causal con retirar `SessionProvider` y no se atribuye a ese cambio.
 
+La validación de tipos del primer CI detectó una ambigüedad adicional: el callback unario seleccionaba la sobrecarga de App Route Handler de Auth.js, cuyo segundo argumento es un contexto con `params`. La prueba real de middleware pasa `NextFetchEvent`. La firma explícita `NextAuthRequest`/`NextFetchEvent` selecciona la sobrecarga correcta, y la función exportada usa `Parameters<NextMiddleware>`. Las importaciones son públicas y solo de tipos; las guardas, el matcher y la retirada de cookies se conservan. No se sustituye el evento por un contexto ficticio para ocultar el error.
+
 ## Verificación
 
 - `npx tsx --test tests/auth-proxy.test.ts`: tres pruebas aprobadas, importando el proxy y la configuración Auth reales con base de datos en memoria y un secreto aleatorio exclusivo del proceso de test.

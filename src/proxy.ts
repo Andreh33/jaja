@@ -1,7 +1,10 @@
-import { NextResponse } from 'next/server';
+import { NextResponse, type NextFetchEvent, type NextMiddleware } from 'next/server';
+import type { NextAuthRequest } from 'next-auth';
 import { auth } from './lib/auth';
 
-const guardPrivateRoutes = auth((req) => {
+// The explicit middleware signature selects Auth.js's middleware overload,
+// rather than its otherwise-compatible App Route Handler overload.
+const authorizePrivateRoutes: (req: NextAuthRequest, event: NextFetchEvent) => ReturnType<NextMiddleware> = (req) => {
   const { pathname } = req.nextUrl;
   const session = req.auth;
 
@@ -15,14 +18,15 @@ const guardPrivateRoutes = auth((req) => {
   }
 
   return NextResponse.next();
-});
+};
+const guardPrivateRoutes = auth(authorizePrivateRoutes);
 
-export default async function proxy(...args: Parameters<typeof guardPrivateRoutes>) {
+export default async function proxy(...args: Parameters<NextMiddleware>) {
   const response = await guardPrivateRoutes(...args);
   // This guard only authorizes requests; cookie writes belong to /api/auth/*.
   // Auth.js renews cookies after its callback, so remove them from the final
   // response: an in-flight prefetch must never restore a cookie after sign-out.
-  response?.headers.delete('set-cookie');
+  if (response) response.headers.delete('set-cookie');
   return response;
 }
 

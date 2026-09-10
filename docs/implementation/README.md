@@ -2,7 +2,7 @@
 
 Trabajo aislado en `codex/latech-evolution-2026-09-10`, a partir de `541870b15afaa7ba3392020acd7f229c408d35d7`. La carpeta original del portátil y la web publicada se conservan. Estado de esta entrega: implementación y comprobaciones locales; la publicación y sus recursos externos se registran por separado.
 
-La implementación del build final está guardada en `7889772`, sobre el commit principal `c9f0606`. Los commits posteriores de documentación y evidencias no modifican esa aplicación compilada.
+La implementación del build local está guardada en `7889772`, sobre el commit principal `c9f0606`. Después se hace explícita la firma de middleware de Auth.js para la comprobación de tipos del checkout limpio; ese ajuste conserva el comportamiento del proxy comprobado en navegador. La validación remota del PR compila la fuente posterior a ese ajuste.
 
 ## Qué cambia
 
