@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { auth } from './lib/auth';
 
-export default auth((req) => {
+const guardPrivateRoutes = auth((req) => {
   const { pathname } = req.nextUrl;
   const session = req.auth;
 
@@ -16,6 +16,15 @@ export default auth((req) => {
 
   return NextResponse.next();
 });
+
+export default async function proxy(...args: Parameters<typeof guardPrivateRoutes>) {
+  const response = await guardPrivateRoutes(...args);
+  // This guard only authorizes requests; cookie writes belong to /api/auth/*.
+  // Auth.js renews cookies after its callback, so remove them from the final
+  // response: an in-flight prefetch must never restore a cookie after sign-out.
+  response?.headers.delete('set-cookie');
+  return response;
+}
 
 export const config = {
   matcher: ['/admin/:path*', '/dashboard/:path*'],

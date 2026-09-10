@@ -173,7 +173,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         <section className="pb-4">
           <div className="mx-auto max-w-3xl px-6">
             <aside className="rounded-2xl glass p-6 md:p-7">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/40">Sobre el autor</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/60">Sobre el autor</p>
               <p className="mt-3 text-sm leading-relaxed text-white/70">
                 <strong className="text-white">{isTeamAuthor ? 'Equipo Latech' : post.author}</strong> — equipo de
                 diseño y desarrollo web de Latech, fundado por Andrés Rubio y Luis Grondona en Puebla de la

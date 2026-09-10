@@ -24,27 +24,40 @@ export function Marquee({
     if (!element || !strip || !('IntersectionObserver' in window)) return;
     const media = matchMedia('(min-width: 1024px) and (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference)');
     let visible = false;
-    const sync = () => strip.style.setProperty('--marquee-state', visible && media.matches && !document.hidden ? 'running' : 'paused');
+    let focused = element.contains(document.activeElement);
+    let hovered = false;
+    const sync = () => strip.style.setProperty('--marquee-state', visible && media.matches && !document.hidden && !focused && !(pauseOnHover && hovered) ? 'running' : 'paused');
+    const focusIn = () => { focused = true; sync(); };
+    const focusOut = (event: FocusEvent) => { focused = event.relatedTarget instanceof Node && element.contains(event.relatedTarget); sync(); };
+    const enter = () => { hovered = true; sync(); };
+    const leave = () => { hovered = false; sync(); };
     const observer = new IntersectionObserver(([entry]) => { visible = entry.isIntersecting; sync(); });
     observer.observe(element);
+    element.addEventListener('focusin', focusIn);
+    element.addEventListener('focusout', focusOut);
+    element.addEventListener('mouseenter', enter);
+    element.addEventListener('mouseleave', leave);
     media.addEventListener('change', sync);
     document.addEventListener('visibilitychange', sync);
     return () => {
       observer.disconnect();
+      element.removeEventListener('focusin', focusIn);
+      element.removeEventListener('focusout', focusOut);
+      element.removeEventListener('mouseenter', enter);
+      element.removeEventListener('mouseleave', leave);
       media.removeEventListener('change', sync);
       document.removeEventListener('visibilitychange', sync);
     };
-  }, []);
+  }, [pauseOnHover]);
   return (
     <div ref={container} tabIndex={0} className={cn('group relative flex w-full overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden', className)}>
       <div
         ref={track}
         className={cn(
-          'flex shrink-0 items-center gap-8 pr-8 [animation-play-state:var(--marquee-state)] group-focus-within:[animation-play-state:paused]',
+          'flex shrink-0 items-center gap-8 pr-8',
           reverse ? 'animate-marquee-reverse' : 'animate-marquee',
-          pauseOnHover && 'group-hover:[animation-play-state:paused]',
         )}
-        style={{ animationDuration: `${speed}s`, '--marquee-state': 'paused' } as CSSProperties}
+        style={{ animationDuration: `${speed}s`, animationPlayState: 'var(--marquee-state, paused)', '--marquee-state': 'paused' } as CSSProperties}
       >
         {children}
         {/* copia visual para el bucle continuo; oculta a lectores de pantalla */}
