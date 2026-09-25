@@ -2,19 +2,16 @@
 
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowLeft, ArrowRight, Eye, EyeOff } from 'lucide-react';
-import { useRouter, useSearchParams } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { useState } from 'react';
 import { signIn } from 'next-auth/react';
 import { toast } from 'sonner';
-import MagneticButton from '@/components/effects/MagneticButton';
 
 type Stage = 'select' | 'login';
 
 export default function LoginClient() {
   const router = useRouter();
-  const params = useSearchParams();
-  const callback = params?.get('callbackUrl') || '/dashboard';
   const [stage, setStage] = useState<Stage>('select');
   const [showPwd, setShowPwd] = useState(false);
   const [email, setEmail] = useState('');
@@ -34,7 +31,7 @@ export default function LoginClient() {
         toast.error('Credenciales incorrectas');
       } else {
         toast.success('Bienvenido a Latech');
-        router.push(callback);
+        router.replace('/dashboard');
         router.refresh();
       }
     } catch {
@@ -78,7 +75,7 @@ export default function LoginClient() {
                 onClick={() => setStage('login')}
                 title="Negocios"
                 subtitle="Si nos has comprado un servicio, accede aquí para subir fotos, logos y la info de tu empresa."
-                gradient="linear-gradient(135deg, #8B5CF6 0%, #F97316 100%)"
+                gradient="linear-gradient(135deg, #3b82f6 0%, #67c4ff 100%)"
                 delay={0.15}
                 shape={(
                   <g stroke="#fff" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round">
@@ -95,7 +92,7 @@ export default function LoginClient() {
                 }}
                 title="Trabajadores"
                 subtitle="Equipo de Latech. Acceso al CRM interno."
-                gradient="linear-gradient(135deg, #8B5CF6 0%, #3B82F6 100%)"
+                gradient="linear-gradient(135deg, #3b82f6 0%, #3B82F6 100%)"
                 delay={0.3}
                 shape={(
                   <g stroke="#fff" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round">
@@ -110,7 +107,7 @@ export default function LoginClient() {
                 onClick={() => router.push('/cursos')}
                 title="Cursos"
                 subtitle="Formación del equipo comercial: accede al curso por módulos y al examen final."
-                gradient="linear-gradient(135deg, #8B5CF6 0%, #10B981 100%)"
+                gradient="linear-gradient(135deg, #3b82f6 0%, #10B981 100%)"
                 delay={0.45}
                 shape={(
                   <g stroke="#fff" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round">
@@ -216,7 +213,7 @@ export default function LoginClient() {
           height: 48px;
           padding: 0 14px;
           border-radius: 14px;
-          background: rgba(7, 5, 14, 0.5);
+          background: rgba(3,9,20, 0.5);
           border: 1px solid var(--border-subtle);
           color: var(--text-primary);
           font-size: 14px;
@@ -227,8 +224,8 @@ export default function LoginClient() {
         }
         .input:focus {
           outline: none;
-          border-color: var(--purple-400);
-          box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.18);
+          border-color: var(--brand-400);
+          box-shadow: 0 0 0 3px rgba(59,130,246, 0.18);
         }
       `}</style>
     </div>
@@ -267,12 +264,12 @@ function PortalCircle({
         className="group relative h-[260px] w-[260px] cursor-pointer rounded-full transition-all duration-500 hover:scale-[1.06] md:h-[280px] md:w-[280px]"
         style={{
           background: gradient,
-          boxShadow: '0 0 0 1px rgba(255,255,255,0.08), 0 30px 90px rgba(139,92,246,0.35)',
+          boxShadow: '0 0 0 1px rgba(255,255,255,0.08), 0 30px 90px rgba(59,130,246,0.35)',
         }}
         aria-label={title}
       >
-        <span className="absolute inset-2 rounded-full" style={{ background: 'rgba(7,5,14,0.55)', backdropFilter: 'blur(8px)' }} />
-        <span className="absolute inset-0 rounded-full opacity-0 transition-opacity duration-500 group-hover:opacity-100" style={{ boxShadow: '0 0 90px rgba(139,92,246,0.6)' }} />
+        <span className="absolute inset-2 rounded-full" style={{ background: 'rgba(3,9,20,0.55)', backdropFilter: 'blur(8px)' }} />
+        <span className="absolute inset-0 rounded-full opacity-0 transition-opacity duration-500 group-hover:opacity-100" style={{ boxShadow: '0 0 90px rgba(59,130,246,0.6)' }} />
         <svg viewBox="0 0 140 140" className="relative h-full w-full">
           {shape}
         </svg>

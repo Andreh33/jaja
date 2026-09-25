@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import confetti from 'canvas-confetti';
-import { Play, RotateCcw, Trophy, Coins } from 'lucide-react';
+import { Play, Pause, RotateCcw, Trophy, Coins } from 'lucide-react';
 
 type Block = { kind: 'block'; x: number; w: number; h: number; color: string };
 type Sweeper = { kind: 'sweeper'; x: number; len: number; speed: number; angle: number };
@@ -13,7 +13,7 @@ type Particle = { x: number; y: number; vx: number; vy: number; life: number; ma
 type Float = { x: number; y: number; vy: number; life: number; text: string; color: string };
 type Star = { x: number; y: number; r: number; tw: number; ph: number };
 
-const BLOCK_COLORS = ['#8B5CF6', '#F97316', '#3B82F6', '#10B981'];
+const BLOCK_COLORS = ['#3b82f6', '#67c4ff', '#93c5fd', '#e5f3ff'];
 const GROUND_OFFSET = 56;
 const PLAYER_X = 92;
 const GRAVITY = 1900;
@@ -21,23 +21,21 @@ const JUMP_V = -640;
 
 // Cordilleras de fondo: lejos = más claras y lentas, cerca = oscuras y rápidas (perspectiva aérea).
 const RANGES = [
-  { par: 0.05, base: 158, amp: 56, step: 20, seed: 0.0, c0: '#3a2363', c1: '#241544' },
-  { par: 0.12, base: 112, amp: 48, step: 16, seed: 2.1, c0: '#2a1547', c1: '#190d32' },
-  { par: 0.24, base: 72, amp: 40, step: 14, seed: 4.7, c0: '#160b29', c1: '#0b051b' },
+  { par: 0.05, base: 158, amp: 56, step: 20, seed: 0.0, c0: '#183e6b', c1: '#112d4c' },
+  { par: 0.12, base: 112, amp: 48, step: 16, seed: 2.1, c0: '#123052', c1: '#0b223c' },
+  { par: 0.24, base: 72, amp: 40, step: 14, seed: 4.7, c0: '#0b1d32', c1: '#061322' },
 ] as const;
 
 export default function StumbleRunner() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const [state, setState] = useState<'idle' | 'playing' | 'over'>('idle');
+  const [state, setState] = useState<'idle' | 'playing' | 'paused' | 'over'>('idle');
   const [score, setScore] = useState(0);
   const [coins, setCoins] = useState(0);
   const [best, setBest] = useState(0);
   const [isRecord, setIsRecord] = useState(false);
 
   const stateRef = useRef(state);
-  stateRef.current = state;
   const bestRef = useRef(best);
-  bestRef.current = best;
 
   const game = useRef({
     y: 0,
@@ -65,7 +63,11 @@ export default function StumbleRunner() {
   });
 
   useEffect(() => {
-    setBest(Number(localStorage.getItem('latech-runner-best') || 0));
+    try {
+      const saved = Number(localStorage.getItem('latech-runner-best') || 0);
+      bestRef.current = Number.isFinite(saved) && saved > 0 ? saved : 0;
+      queueMicrotask(() => setBest(bestRef.current));
+    } catch { /* High scores are optional when storage is unavailable. */ }
   }, []);
 
   useEffect(() => {
@@ -74,6 +76,12 @@ export default function StumbleRunner() {
     let raf = 0;
     let lastTime = 0;
     let visible = true;
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const pause = () => {
+      if (stateRef.current !== 'playing') return;
+      stateRef.current = 'paused';
+      setState('paused');
+    };
     let W = 0;
     let H = 0;
     let stars: Star[] = [];
@@ -164,7 +172,7 @@ export default function StumbleRunner() {
 
     const jump = () => {
       if (stateRef.current !== 'playing') return;
-      const coyote = g.t - g.lastGround < 0.09;
+      const coyote = g.jumpsLeft === 2 && g.t - g.lastGround < 0.09;
       if (g.onGround || coyote) {
         g.vy = JUMP_V;
         g.onGround = false;
@@ -174,28 +182,31 @@ export default function StumbleRunner() {
         // doble salto: un poco más corto + anillo de impulso
         g.vy = JUMP_V * 0.85;
         g.jumpsLeft = 0;
-        ring(PLAYER_X, g.y - 22, '#C9A6FF');
+        ring(PLAYER_X, g.y - 22, '#bfdbfe');
       }
     };
 
     const die = () => {
+      if (stateRef.current !== 'playing') return;
       g.deadVy = -480;
       g.deadRot = 0;
       g.shake = 0.4;
-      burst(PLAYER_X, g.y - 20, 28, BLOCK_COLORS.concat('#FBBF24'));
+      burst(PLAYER_X, g.y - 20, 28, BLOCK_COLORS.concat('#c5eaff'));
       const finalScore = Math.floor(g.dist / 10);
       setScore(finalScore);
-      const prevBest = Number(localStorage.getItem('latech-runner-best') || 0);
+      const prevBest = bestRef.current;
       if (finalScore > prevBest) {
-        localStorage.setItem('latech-runner-best', String(finalScore));
+        try { localStorage.setItem('latech-runner-best', String(finalScore)); } catch { /* optional */ }
+        bestRef.current = finalScore;
         setBest(finalScore);
         setIsRecord(true);
-        if (prevBest > 0) {
-          confetti({ particleCount: 90, spread: 75, origin: { y: 0.6 }, colors: ['#8B5CF6', '#C084FC', '#F97316', '#FBBF24'] });
+        if (prevBest > 0 && !reduced) {
+          confetti({ particleCount: 90, spread: 75, origin: { y: 0.6 }, colors: ['#3b82f6', '#93c5fd', '#67c4ff', '#c5eaff'] });
         }
       } else {
         setIsRecord(false);
       }
+      stateRef.current = 'over';
       setState('over');
     };
 
@@ -265,7 +276,7 @@ export default function StumbleRunner() {
         const a = Math.min(0.24, (g.speed - 330) / 900);
         for (let i = 1; i <= 4; i++) {
           ctx.globalAlpha = a / i;
-          ctx.fillStyle = i % 2 ? '#8B5CF6' : '#F97316';
+          ctx.fillStyle = i % 2 ? '#3b82f6' : '#67c4ff';
           ctx.beginPath();
           ctx.roundRect(x - i * 13 - bw / 2, y - bh, bw, bh - 2, 18);
           ctx.fill();
@@ -277,8 +288,8 @@ export default function StumbleRunner() {
       if (!dead) {
         const pulse = 0.9 + Math.sin(g.t * 6) * 0.1;
         const aura = ctx.createRadialGradient(x, y - bh / 2, 2, x, y - bh / 2, bh * 0.95 * pulse);
-        aura.addColorStop(0, airborne ? 'rgba(201,166,255,0.4)' : 'rgba(139,92,246,0.28)');
-        aura.addColorStop(1, 'rgba(139,92,246,0)');
+        aura.addColorStop(0, airborne ? 'rgba(147,197,253,0.4)' : 'rgba(59,130,246,0.28)');
+        aura.addColorStop(1, 'rgba(59,130,246,0)');
         ctx.fillStyle = aura;
         ctx.beginPath();
         ctx.arc(x, y - bh / 2, bh * 0.95 * pulse, 0, Math.PI * 2);
@@ -303,9 +314,9 @@ export default function StumbleRunner() {
 
       // ---- cuerpo: luz radial + textura + oclusión + especular + rim ----
       const bodyGrad = ctx.createRadialGradient(-bw * 0.25, -bh * 0.78, 3, 0, -bh / 2, bh * 0.95);
-      bodyGrad.addColorStop(0, '#C9A6FF');
-      bodyGrad.addColorStop(0.45, '#8B5CF6');
-      bodyGrad.addColorStop(1, '#5B21B6');
+      bodyGrad.addColorStop(0, '#bfdbfe');
+      bodyGrad.addColorStop(0.45, '#3b82f6');
+      bodyGrad.addColorStop(1, '#1e40af');
       const bodyPath = new Path2D();
       bodyPath.roundRect(-bw / 2, -bh, bw, bh - 3, 17);
       ctx.fillStyle = bodyGrad;
@@ -321,7 +332,7 @@ export default function StumbleRunner() {
       ctx.globalAlpha = 1;
       const ao = ctx.createLinearGradient(0, -16, 0, -2);
       ao.addColorStop(0, 'rgba(0,0,0,0)');
-      ao.addColorStop(1, 'rgba(15,5,35,0.5)');
+      ao.addColorStop(1, 'rgba(5,20,40,0.5)');
       ctx.fillStyle = ao;
       ctx.fillRect(-bw / 2, -18, bw, 18);
       // barriga
@@ -341,8 +352,8 @@ export default function StumbleRunner() {
       // rim light cálida en el borde derecho (la luz de la luna del fondo)
       ctx.globalAlpha = 0.7;
       const rim = ctx.createLinearGradient(bw / 2 - 8, 0, bw / 2, 0);
-      rim.addColorStop(0, 'rgba(255,200,120,0)');
-      rim.addColorStop(1, 'rgba(255,200,120,0.85)');
+      rim.addColorStop(0, 'rgba(185,231,255,0)');
+      rim.addColorStop(1, 'rgba(185,231,255,0.85)');
       ctx.fillStyle = rim;
       ctx.fillRect(bw / 2 - 8, -bh + 5, 8, bh - 14);
       ctx.restore();
@@ -358,7 +369,7 @@ export default function StumbleRunner() {
         ctx.save();
         ctx.translate(s * (bw / 2 - 1), -bh + 23);
         ctx.rotate(s * 0.35 + swing * s);
-        ctx.fillStyle = s < 0 ? '#6D28D9' : '#7C3AED';
+        ctx.fillStyle = s < 0 ? '#1d4ed8' : '#2563eb';
         ctx.beginPath();
         ctx.roundRect(-3, -1, 6, 13, 3);
         ctx.fill();
@@ -387,7 +398,7 @@ export default function StumbleRunner() {
         } else {
           const eyeG = ctx.createRadialGradient(ex - 1, faceY - 1.5, 0.5, ex, faceY, 5.5);
           eyeG.addColorStop(0, '#FFFFFF');
-          eyeG.addColorStop(1, '#D9D2EE');
+          eyeG.addColorStop(1, '#dceaff');
           ctx.fillStyle = eyeG;
           ctx.beginPath();
           ctx.ellipse(ex, faceY, 5, blink ? 0.8 : 5.4, 0, 0, Math.PI * 2);
@@ -455,8 +466,8 @@ export default function StumbleRunner() {
       // ---- corona cuando vas batiendo tu récord ----
       if (crowned) {
         const cg = ctx.createLinearGradient(-9, -bh - 11, 9, -bh);
-        cg.addColorStop(0, '#FBBF24');
-        cg.addColorStop(1, '#F97316');
+        cg.addColorStop(0, '#c5eaff');
+        cg.addColorStop(1, '#67c4ff');
         ctx.fillStyle = cg;
         ctx.beginPath();
         ctx.moveTo(-9, -bh - 1);
@@ -486,10 +497,10 @@ export default function StumbleRunner() {
     const drawBackground = (gy: number) => {
       // cielo cósmico
       const sky = ctx.createLinearGradient(0, 0, 0, gy + 30);
-      sky.addColorStop(0, '#080513');
-      sky.addColorStop(0.5, '#120a24');
-      sky.addColorStop(0.82, '#21123c');
-      sky.addColorStop(1, '#34184f');
+      sky.addColorStop(0, '#030b18');
+      sky.addColorStop(0.5, '#061a30');
+      sky.addColorStop(0.82, '#0d2a49');
+      sky.addColorStop(1, '#153756');
       ctx.fillStyle = sky;
       ctx.fillRect(0, 0, W, gy + 30);
 
@@ -511,22 +522,22 @@ export default function StumbleRunner() {
       const moonY = gy - 150 - Math.cos(g.t * 0.05) * 8;
       ctx.globalCompositeOperation = 'lighter';
       const halo = ctx.createRadialGradient(moonX, moonY, 4, moonX, moonY, 150);
-      halo.addColorStop(0, 'rgba(255,214,150,0.55)');
-      halo.addColorStop(0.4, 'rgba(249,115,22,0.16)');
-      halo.addColorStop(1, 'rgba(249,115,22,0)');
+      halo.addColorStop(0, 'rgba(185,231,255,0.55)');
+      halo.addColorStop(0.4, 'rgba(103,196,255,0.16)');
+      halo.addColorStop(1, 'rgba(103,196,255,0)');
       ctx.fillStyle = halo;
       ctx.beginPath();
       ctx.arc(moonX, moonY, 150, 0, Math.PI * 2);
       ctx.fill();
-      ctx.fillStyle = 'rgba(255,236,200,0.9)';
+      ctx.fillStyle = 'rgba(218,242,255,0.9)';
       ctx.beginPath();
       ctx.arc(moonX, moonY, 26, 0, Math.PI * 2);
       ctx.fill();
 
       // auroras: cintas onduladas con mezcla aditiva
       const auroras = [
-        { y: gy - 230, amp: 26, thick: 60, speed: 0.5, par: 0.04, c: '139,92,246' },
-        { y: gy - 180, amp: 34, thick: 52, speed: -0.35, par: 0.07, c: '249,115,22' },
+        { y: gy - 230, amp: 26, thick: 60, speed: 0.5, par: 0.04, c: '59,130,246' },
+        { y: gy - 180, amp: 34, thick: 52, speed: -0.35, par: 0.07, c: '103,196,255' },
       ];
       for (const a of auroras) {
         ctx.beginPath();
@@ -569,8 +580,8 @@ export default function StumbleRunner() {
 
       // bruma cálida en el horizonte
       const haze = ctx.createLinearGradient(0, gy - 60, 0, gy + 6);
-      haze.addColorStop(0, 'rgba(249,115,22,0)');
-      haze.addColorStop(1, 'rgba(249,115,22,0.16)');
+      haze.addColorStop(0, 'rgba(103,196,255,0)');
+      haze.addColorStop(1, 'rgba(103,196,255,0.16)');
       ctx.fillStyle = haze;
       ctx.fillRect(0, gy - 60, W, 66);
     };
@@ -580,12 +591,12 @@ export default function StumbleRunner() {
       const rw = 1 + spin * 8;
       ctx.save();
       ctx.translate(cx, cy);
-      ctx.shadowColor = '#FBBF24';
+      ctx.shadowColor = '#c5eaff';
       ctx.shadowBlur = 12;
       const cg = ctx.createLinearGradient(0, -8, 0, 8);
-      cg.addColorStop(0, '#FFE9A8');
-      cg.addColorStop(0.5, '#FBBF24');
-      cg.addColorStop(1, '#F59E0B');
+      cg.addColorStop(0, '#e9f7ff');
+      cg.addColorStop(0.5, '#c5eaff');
+      cg.addColorStop(1, '#65b6ff');
       ctx.fillStyle = cg;
       ctx.beginPath();
       ctx.ellipse(0, 0, rw, 8, 0, 0, Math.PI * 2);
@@ -596,7 +607,7 @@ export default function StumbleRunner() {
         ctx.beginPath();
         ctx.ellipse(-rw * 0.3, -2.5, rw * 0.28, 2.4, 0, 0, Math.PI * 2);
         ctx.fill();
-        ctx.strokeStyle = 'rgba(120,60,0,0.4)';
+        ctx.strokeStyle = 'rgba(10,50,90,0.4)';
         ctx.lineWidth = 1;
         ctx.beginPath();
         ctx.ellipse(0, 0, rw * 0.55, 4.4, 0, 0, Math.PI * 2);
@@ -607,7 +618,7 @@ export default function StumbleRunner() {
 
     const loop = (time: number) => {
       raf = requestAnimationFrame(loop);
-      if (!visible) { lastTime = time; return; }
+      if (!visible || document.hidden || stateRef.current === 'paused') { lastTime = time; return; }
       const dt = Math.min((time - lastTime) / 1000 || 0, 0.033);
       lastTime = time;
       g.t += dt;
@@ -643,7 +654,7 @@ export default function StumbleRunner() {
             g.particles.push({
               x: PLAYER_X - 12, y: gy + 2,
               vx: -40 - Math.random() * 40, vy: -20 - Math.random() * 30,
-              life: 0.4, max: 0.4, color: 'rgba(201,166,255,0.5)', r: 2 + Math.random() * 2,
+              life: 0.4, max: 0.4, color: 'rgba(147,197,253,0.5)', r: 2 + Math.random() * 2,
             });
           }
         }
@@ -673,11 +684,11 @@ export default function StumbleRunner() {
             g.combo += 1;
             setCoins(g.coinsGot);
             g.flash = Math.min(0.5, g.flash + 0.18);
-            burst(ccx, c.y, 8, ['#FBBF24', '#FFE9A8', '#F97316']);
+            burst(ccx, c.y, 8, ['#c5eaff', '#e9f7ff', '#67c4ff']);
             const mult = 1 + Math.floor(g.combo / 5);
-            g.floats.push({ x: ccx, y: c.y - 6, vy: -42, life: 0.8, text: mult > 1 ? `+${mult}× ` : '+1', color: '#FBBF24' });
+            g.floats.push({ x: ccx, y: c.y - 6, vy: -42, life: 0.8, text: mult > 1 ? `+${mult}× ` : '+1', color: '#c5eaff' });
             if (g.combo > 0 && g.combo % 10 === 0) {
-              g.floats.push({ x: px, y: py - 40, vy: -34, life: 1, text: `¡combo ${g.combo}!`, color: '#C9A6FF' });
+              g.floats.push({ x: px, y: py - 40, vy: -34, life: 1, text: `¡combo ${g.combo}!`, color: '#bfdbfe' });
             }
           }
         }
@@ -739,12 +750,12 @@ export default function StumbleRunner() {
 
       // suelo
       const groundGrad = ctx.createLinearGradient(0, 0, W, 0);
-      groundGrad.addColorStop(0, '#8B5CF6');
-      groundGrad.addColorStop(0.65, '#F97316');
-      groundGrad.addColorStop(1, '#FBBF24');
+      groundGrad.addColorStop(0, '#3b82f6');
+      groundGrad.addColorStop(0.65, '#67c4ff');
+      groundGrad.addColorStop(1, '#c5eaff');
       ctx.strokeStyle = groundGrad;
       ctx.lineWidth = 2.5;
-      ctx.shadowColor = 'rgba(139,92,246,0.6)';
+      ctx.shadowColor = 'rgba(59,130,246,0.6)';
       ctx.shadowBlur = 10;
       ctx.beginPath();
       ctx.moveTo(0, gy + 1);
@@ -774,7 +785,7 @@ export default function StumbleRunner() {
         const ox = o.x - g.dist;
         if (ox > W + 160) continue;
         if (o.kind === 'block') {
-          ctx.fillStyle = 'rgba(7,5,14,0.85)';
+          ctx.fillStyle = 'rgba(3,9,20,0.85)';
           ctx.strokeStyle = o.color;
           ctx.lineWidth = 2;
           ctx.beginPath();
@@ -798,8 +809,8 @@ export default function StumbleRunner() {
           const tipX = ox + Math.cos(o.angle) * o.len;
           const tipY = pivY + Math.sin(o.angle) * o.len;
           const armGrad = ctx.createLinearGradient(ox, pivY, tipX, tipY);
-          armGrad.addColorStop(0, '#F97316');
-          armGrad.addColorStop(1, '#FBBF24');
+          armGrad.addColorStop(0, '#67c4ff');
+          armGrad.addColorStop(1, '#c5eaff');
           ctx.strokeStyle = armGrad;
           ctx.lineWidth = 7;
           ctx.lineCap = 'round';
@@ -807,14 +818,14 @@ export default function StumbleRunner() {
           ctx.moveTo(ox, pivY);
           ctx.lineTo(tipX, tipY);
           ctx.stroke();
-          ctx.fillStyle = '#FBBF24';
-          ctx.shadowColor = '#FBBF24';
+          ctx.fillStyle = '#c5eaff';
+          ctx.shadowColor = '#c5eaff';
           ctx.shadowBlur = 12;
           ctx.beginPath();
           ctx.arc(tipX, tipY, 8, 0, Math.PI * 2);
           ctx.fill();
           ctx.shadowBlur = 0;
-          ctx.fillStyle = '#C9A6FF';
+          ctx.fillStyle = '#bfdbfe';
           ctx.beginPath();
           ctx.arc(ox, pivY, 5, 0, Math.PI * 2);
           ctx.fill();
@@ -857,32 +868,42 @@ export default function StumbleRunner() {
       if (g.flash > 0) {
         ctx.globalAlpha = g.flash * 0.5;
         const fl = ctx.createRadialGradient(PLAYER_X, gy - 30, 4, PLAYER_X, gy - 30, 160);
-        fl.addColorStop(0, 'rgba(251,191,36,0.5)');
-        fl.addColorStop(1, 'rgba(251,191,36,0)');
+        fl.addColorStop(0, 'rgba(197,234,255,0.5)');
+        fl.addColorStop(1, 'rgba(197,234,255,0)');
         ctx.fillStyle = fl;
         ctx.fillRect(0, 0, W, H);
         ctx.globalAlpha = 1;
       }
     };
 
-    const io = new IntersectionObserver(([e]) => { visible = e.isIntersecting; });
+    const io = new IntersectionObserver(([e]) => {
+      visible = e.isIntersecting;
+      if (!visible) pause();
+    });
     io.observe(canvas);
-    const onVis = () => { visible = !document.hidden; };
+    const onVis = () => { if (document.hidden) pause(); };
     document.addEventListener('visibilitychange', onVis);
 
     const onKey = (e: KeyboardEvent) => {
+      if (document.activeElement !== canvas || e.repeat) return;
+      if (e.code === 'KeyP' || e.code === 'Escape') { e.preventDefault(); pause(); return; }
       if ((e.code === 'Space' || e.code === 'ArrowUp') && stateRef.current === 'playing') {
         e.preventDefault();
         jump();
       }
     };
     window.addEventListener('keydown', onKey);
-    const onTap = (e: PointerEvent) => { e.preventDefault(); jump(); };
+    const onTap = (e: PointerEvent) => {
+      if (!e.isPrimary || e.button !== 0) return;
+      e.preventDefault();
+      canvas.focus({ preventScroll: true });
+      jump();
+    };
     canvas.addEventListener('pointerdown', onTap);
 
     (game.current as typeof game.current & { reset?: () => void }).reset = reset;
 
-    reset();
+    queueMicrotask(reset);
     raf = requestAnimationFrame((t) => { lastTime = t; loop(t); });
 
     return () => {
@@ -896,25 +917,33 @@ export default function StumbleRunner() {
   }, []);
 
   const start = () => {
-    (document.activeElement as HTMLElement | null)?.blur?.();
+    canvasRef.current?.focus({ preventScroll: true });
     (game.current as typeof game.current & { reset?: () => void }).reset?.();
     setScore(0);
     setCoins(0);
     setIsRecord(false);
+    stateRef.current = 'playing';
     setState('playing');
   };
+  const resume = () => {
+    stateRef.current = 'playing';
+    setState('playing');
+    canvasRef.current?.focus({ preventScroll: true });
+  };
+  const pause = () => { stateRef.current = 'paused'; setState('paused'); };
 
   return (
-    <div className="flex h-full flex-col">
+    <div className="flex h-full flex-col" data-game="runner" data-state={state} data-score={score}>
       <div
         className="relative flex-1 overflow-hidden rounded-2xl"
-        style={{ background: 'rgba(7,5,14,0.55)', border: '1px solid var(--border-subtle)' }}
+        style={{ background: 'rgba(3,9,20,0.55)', border: '1px solid var(--border-subtle)' }}
       >
         <canvas
           ref={canvasRef}
+          tabIndex={0}
           className="h-full w-full"
           style={{ touchAction: 'none', cursor: state === 'playing' ? 'pointer' : 'default' }}
-          aria-label="Minijuego: corre, salta y recoge monedas"
+          aria-label="Minijuego: espacio o flecha arriba para saltar, P para pausar"
         />
 
         {/* HUD */}
@@ -924,43 +953,50 @@ export default function StumbleRunner() {
             {score} m
           </span>
           <span className="inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 font-mono text-xs"
-            style={{ background: 'var(--bg-glass-strong)', border: '1px solid var(--border-subtle)', backdropFilter: 'blur(8px)', color: '#FBBF24' }}>
+            style={{ background: 'var(--bg-glass-strong)', border: '1px solid var(--border-subtle)', backdropFilter: 'blur(8px)', color: '#c5eaff' }}>
             <Coins size={11} /> {coins}
           </span>
         </div>
-        {best > 0 && (
+        {best > 0 && state !== 'playing' && (
           <div className="pointer-events-none absolute right-3 top-3 inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 font-mono text-xs"
-            style={{ background: 'var(--bg-glass-strong)', border: '1px solid var(--border-subtle)', backdropFilter: 'blur(8px)', color: '#FBBF24' }}>
+            style={{ background: 'var(--bg-glass-strong)', border: '1px solid var(--border-subtle)', backdropFilter: 'blur(8px)', color: '#c5eaff' }}>
             <Trophy size={11} /> {best} m
+          </div>
+        )}
+        {state === 'playing' && <button onClick={pause} className="absolute right-3 top-3 flex min-h-11 items-center gap-2 rounded-lg bg-[#071323] px-3 text-xs text-white" aria-label="Pausar juego"><Pause size={15} /> Pausa</button>}
+        {state === 'paused' && (
+          <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 bg-[#030914]/85">
+            <p className="font-display text-3xl font-bold text-white">Respira. Tu partida espera.</p>
+            <button onClick={resume} className="blue-button"><Play size={16} /> Reanudar</button>
           </div>
         )}
 
         {state === 'idle' && (
           <div className="absolute inset-0 flex flex-col items-center justify-center gap-4"
-            style={{ background: 'rgba(7,5,14,0.45)', backdropFilter: 'blur(3px)' }}>
+            style={{ background: 'rgba(3,9,20,0.45)', backdropFilter: 'blur(3px)' }}>
             <button
               onClick={start}
               className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold text-white transition-transform hover:scale-105"
-              style={{ background: 'linear-gradient(180deg, var(--purple-400), var(--purple-600))', boxShadow: '0 8px 32px var(--purple-glow)' }}
+              style={{ background: 'linear-gradient(180deg, var(--brand-400), var(--brand-600))', boxShadow: '0 8px 32px var(--brand-glow)' }}
             >
               <Play size={15} /> Jugar
             </button>
-            <p className="text-xs text-white/50">Pulsa, toca o espacio para saltar · otra vez en el aire = doble salto</p>
+            <p className="max-w-sm px-5 text-center text-xs leading-relaxed text-white/65">Toca el juego o pulsa espacio para saltar. Otra vez en el aire = doble salto. P para pausar.</p>
           </div>
         )}
 
         {state === 'over' && (
           <div className="absolute inset-0 flex flex-col items-center justify-center gap-3"
-            style={{ background: 'rgba(7,5,14,0.55)', backdropFilter: 'blur(4px)' }}>
+            style={{ background: 'rgba(3,9,20,0.55)', backdropFilter: 'blur(4px)' }}>
             <p className="font-display text-3xl font-bold text-white">¡Eliminado!</p>
             <p className="font-mono text-sm text-white/70">
-              {score} m · <span style={{ color: '#FBBF24' }}>{coins} 🪙</span>
-              {isRecord && <span style={{ color: '#FBBF24' }}> · ¡nuevo récord! 🏆</span>}
+              {score} m · <span style={{ color: '#c5eaff' }}>{coins} 🪙</span>
+              {isRecord && <span style={{ color: '#c5eaff' }}> · ¡nuevo récord! 🏆</span>}
             </p>
             <button
               onClick={start}
               className="mt-2 inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-white transition-transform hover:scale-105"
-              style={{ background: 'linear-gradient(180deg, var(--purple-400), var(--purple-600))', boxShadow: '0 8px 32px var(--purple-glow)' }}
+              style={{ background: 'linear-gradient(180deg, var(--brand-400), var(--brand-600))', boxShadow: '0 8px 32px var(--brand-glow)' }}
             >
               <RotateCcw size={14} /> Otra vez
             </button>

@@ -368,7 +368,7 @@ export function Step8Cuenta({ state, dispatch }: { state: WizardState; dispatch:
           checked={c.acceptTerms}
           onChange={(e) => set({ acceptTerms: e.target.checked })}
           className="mt-1 h-4 w-4 rounded"
-          style={{ accentColor: '#FBBF24' }}
+          style={{ accentColor: '#c5eaff' }}
         />
         <span>
           Acepto los{' '}

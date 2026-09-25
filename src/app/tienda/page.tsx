@@ -17,7 +17,7 @@ import { whatsappLink } from '@/lib/stripe-links';
 export const metadata: Metadata = {
   title: 'Precios de diseño web, tienda online y agente IA',
   description:
-    'Precios públicos y cerrados: página web 600€ + 60€/mes, tienda online 600€ + 80€/mes y agente de IA desde 150€/mes. Sin permanencia, entrega en 24-48h.',
+    'Precios públicos y cerrados: página web 800€ + 60€/mes, tienda online 800€ + 80€/mes y agente de IA desde 150€/mes. Sin permanencia, entrega en 24-48h.',
   alternates: { canonical: '/tienda' },
 };
 
@@ -29,7 +29,7 @@ const SHOPS = [
     tagline: 'Tu primera impresión digital',
     description: 'Diseño profesional, SEO técnico y velocidad excepcional. Tu carta de presentación online, lista en 48h.',
     points: ['Diseño adaptado a tu marca', 'SEO técnico + análisis local', 'Hosting seguro con SSL'],
-    price: '60€/mes + 600€ creación',
+    price: '60€/mes + 800€ creación',
     accent: 'var(--accent-web)',
     glow: 'var(--accent-web-glow)',
     accentName: 'blue' as const,
@@ -41,7 +41,7 @@ const SHOPS = [
     tagline: 'Vende mientras duermes',
     description: 'Catálogo, pasarelas seguras y analítica. Stripe, Bizum y transferencia integrados. Tu e-commerce en 48h.',
     points: ['Stripe + Bizum + transferencia', 'GA4 y Meta Pixel listos', 'SEO de productos'],
-    price: '80€/mes + 600€ creación',
+    price: '80€/mes + 800€ creación',
     accent: 'var(--accent-shop)',
     glow: 'var(--accent-shop-glow)',
     accentName: 'orange' as const,
@@ -65,7 +65,7 @@ const SHOPS = [
     tagline: 'Configura tu plan a medida',
     description: 'Elige solo los servicios que necesitas. Web, hosting, tienda, redes, agente IA, blog y logo en un único checkout.',
     points: ['Precio actualizado en tiempo real', 'Mensual o anual con descuento', 'Un solo pago para todo'],
-    price: 'Desde 600€ + lo que elijas',
+    price: 'Desde 800€ + lo que elijas',
     accent: 'var(--accent-calc)',
     glow: 'var(--accent-calc-glow)',
     accentName: 'yellow' as const,
@@ -79,14 +79,14 @@ export default function TiendaPage() {
       <Navbar />
       <AuroraBackground />
       <MouseGlow />
-      <main className="relative z-10">
+      <main id="main-content" tabIndex={-1} className="relative z-10">
         <section className="pt-44 pb-16">
           <div className="mx-auto max-w-7xl px-6 text-center">
             <Reveal>
               <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-white/40">Tienda</p>
               <h1 className="font-display text-balance text-5xl md:text-7xl" style={{ letterSpacing: '-0.04em', fontWeight: 800 }}>
                 Tres soluciones.<br />
-                <span style={{ color: 'var(--purple-300)' }}>Sin compromisos.</span>
+                <span style={{ color: 'var(--brand-300)' }}>Sin compromisos.</span>
               </h1>
               <p className="mx-auto mt-6 max-w-2xl text-base text-white/60">
                 Sin permanencia. Entrega en 24-48h. Cambios menores incluidos cada mes.
@@ -105,8 +105,8 @@ export default function TiendaPage() {
                 ¿Cuánto cuesta una web profesional en España?
               </h2>
               <AnswerBox question="Respuesta rápida">
-                Una página web profesional con Latech cuesta <strong className="text-white">600 € de creación
-                (pago único) más 60 €/mes</strong> de mantenimiento y hosting. Una tienda online son 600 € más
+                Una página web profesional con Latech cuesta <strong className="text-white">800 € de creación
+                (pago único) más 60 €/mes</strong> de mantenimiento y hosting. Una tienda online son 800 € más
                 80 €/mes, y un agente de IA desde 150 €/mes. Precios públicos y cerrados, sin permanencia y con
                 entrega en 24-48 horas.
               </AnswerBox>
@@ -114,8 +114,8 @@ export default function TiendaPage() {
                 <ComparisonTable
                   headers={['Servicio', 'Creación (pago único)', 'Cuota mensual']}
                   rows={[
-                    ['Página web', '600 €', '60 €/mes'],
-                    ['Tienda online', '600 €', '80 €/mes'],
+                    ['Página web', '800 €', '60 €/mes'],
+                    ['Tienda online', '800 €', '80 €/mes'],
                     ['Agente de IA', 'Sin coste de alta', 'Desde 150 €/mes'],
                   ]}
                   caption="Precios Latech · IVA no incluido"
@@ -174,10 +174,10 @@ export default function TiendaPage() {
                           <div
                             className="absolute inset-0 rounded-2xl"
                             style={{
-                              background: `radial-gradient(circle at 30% 30%, ${s.accent}30, transparent 60%), radial-gradient(circle at 70% 70%, var(--purple-glow), transparent 60%)`,
+                              background: `radial-gradient(circle at 30% 30%, ${s.accent}30, transparent 60%), radial-gradient(circle at 70% 70%, var(--brand-glow), transparent 60%)`,
                             }}
                           />
-                          <div className="absolute inset-6 rounded-2xl border" style={{ borderColor: 'var(--border-subtle)', background: 'rgba(7,5,14,0.6)' }}>
+                          <div className="absolute inset-6 rounded-2xl border" style={{ borderColor: 'var(--border-subtle)', background: 'rgba(3,9,20,0.6)' }}>
                             <div className="flex h-7 items-center gap-1.5 border-b px-3" style={{ borderColor: 'var(--border-subtle)' }}>
                               <div className="h-2 w-2 rounded-full bg-red-400/70" />
                               <div className="h-2 w-2 rounded-full bg-yellow-400/70" />

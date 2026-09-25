@@ -15,7 +15,7 @@ export default async function AdminProtectedLayout({ children }: { children: Rea
       {/* Patrón de puntos sutil de fondo. Solo en (protected), no en /admin/login. */}
       <div className="admin-background" aria-hidden="true" />
       <Sidebar admin userName={session.user?.name || session.user?.email || ''} />
-      <main className="relative z-10 flex-1 overflow-x-hidden">{children}</main>
+      <main id="main-content" tabIndex={-1} className="relative z-10 flex-1 overflow-x-hidden">{children}</main>
     </div>
   );
 }

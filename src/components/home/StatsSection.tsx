@@ -26,7 +26,7 @@ export default function StatsSection() {
                   <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-white/40">Datos</p>
                   <h2 className="font-display text-4xl md:text-5xl" style={{ letterSpacing: '-0.04em', fontWeight: 800 }}>
                     Números que respaldan<br />
-                    <span style={{ color: 'var(--purple-300)' }}>cada promesa.</span>
+                    <span style={{ color: 'var(--brand-300)' }}>cada promesa.</span>
                   </h2>
                   <p className="mt-5 max-w-md text-sm leading-relaxed text-white/60">
                     No prometemos lo que no podemos cumplir. Estos son los números reales de los proyectos
@@ -38,7 +38,7 @@ export default function StatsSection() {
                     <div
                       key={s.label}
                       className="rounded-2xl p-6 transition-transform hover:-translate-y-1"
-                      style={{ background: 'rgba(7,5,14,0.4)', border: '1px solid var(--border-subtle)' }}
+                      style={{ background: 'rgba(3,9,20,0.4)', border: '1px solid var(--border-subtle)' }}
                     >
                       <div className="font-display text-5xl tabular-nums leading-none text-white">
                         <NumberFlow value={s.value} suffix={s.suffix} />

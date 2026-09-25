@@ -97,7 +97,7 @@ export default function HoodReveal({ open, onClose }: { open: boolean; onClose: 
                 <div className="flex items-center gap-3">
                   <span className="w-24 text-xs text-white/80">Esta web</span>
                   <div className="h-2.5 flex-1 overflow-hidden rounded-full bg-white/5">
-                    <motion.div className="h-full rounded-full" style={{ background: 'linear-gradient(90deg, var(--purple-400), var(--accent-ia))' }}
+                    <motion.div className="h-full rounded-full" style={{ background: 'linear-gradient(90deg, var(--brand-400), var(--accent-ia))' }}
                       initial={{ width: 0 }} animate={{ width: '11%' }} transition={{ delay: 0.9, duration: 0.6 }} />
                   </div>
                   <span className="w-12 text-right font-mono text-xs text-emerald-300">0.4s</span>

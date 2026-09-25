@@ -68,7 +68,7 @@ export default function FileGallery({ files }: { files: Archivo[] }) {
                 'inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 text-xs font-medium transition-colors',
                 tab === t.id ? 'text-white' : 'text-white/55 hover:text-white',
               )}
-              style={tab === t.id ? { background: 'rgba(139,92,246,0.18)', border: '1px solid rgba(139,92,246,0.4)' } : { background: 'rgba(255,255,255,0.04)', border: '1px solid var(--border-subtle)' }}
+              style={tab === t.id ? { background: 'rgba(59,130,246,0.18)', border: '1px solid rgba(59,130,246,0.4)' } : { background: 'rgba(255,255,255,0.04)', border: '1px solid var(--border-subtle)' }}
             >
               {t.label}
               <span className="rounded-full bg-white/10 px-1.5 text-[10px]">{count}</span>

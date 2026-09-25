@@ -31,7 +31,7 @@ export default async function BlogPage() {
       <Navbar />
       <AuroraBackground />
       <MouseGlow />
-      <main className="relative z-10">
+      <main id="main-content" tabIndex={-1} className="relative z-10">
         <section className="pt-44 pb-16">
           <div className="mx-auto max-w-7xl px-6">
             <Reveal>

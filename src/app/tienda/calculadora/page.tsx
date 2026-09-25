@@ -22,16 +22,16 @@ export default function CalculadoraPage() {
       <Navbar />
       <AuroraBackground />
       <MouseGlow />
-      <main className="relative z-10 pb-32 md:pb-0">
+      <main id="main-content" tabIndex={-1} className="relative z-10 pb-32 md:pb-0">
         <section className="pt-28 pb-8 md:pt-44 md:pb-12">
           <div className="mx-auto max-w-7xl px-6 text-center">
             <Reveal>
               <span
                 className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-semibold uppercase tracking-widest"
                 style={{
-                  background: 'rgba(251,191,36,0.12)',
+                  background: 'rgba(197,234,255,0.12)',
                   color: 'var(--accent-calc)',
-                  border: '1px solid rgba(251,191,36,0.3)',
+                  border: '1px solid rgba(197,234,255,0.3)',
                 }}
               >
                 ● CALCULADORA

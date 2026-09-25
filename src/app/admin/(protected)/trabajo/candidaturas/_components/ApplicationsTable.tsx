@@ -78,7 +78,7 @@ export default function ApplicationsTable({
                 }`}
                 style={
                   active
-                    ? { background: 'rgba(251,191,36,0.15)', border: '1px solid rgba(251,191,36,0.40)' }
+                    ? { background: 'rgba(197,234,255,0.15)', border: '1px solid rgba(197,234,255,0.40)' }
                     : { background: 'rgba(255,255,255,0.04)', border: '1px solid var(--border-subtle)' }
                 }
               >

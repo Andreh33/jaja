@@ -22,9 +22,9 @@ export function brandedOgImage(opts: { title: string; subtitle?: string; badge?:
           justifyContent: 'center',
           alignItems: 'flex-start',
           padding: '72px 80px',
-          backgroundColor: '#07050E',
+          backgroundColor: '#030914',
           backgroundImage:
-            'radial-gradient(circle at 20% 25%, rgba(139,92,246,0.35), transparent 55%), radial-gradient(circle at 85% 80%, rgba(251,191,36,0.25), transparent 50%)',
+            'radial-gradient(circle at 20% 25%, rgba(59,130,246,0.35), transparent 55%), radial-gradient(circle at 85% 80%, rgba(197,234,255,0.25), transparent 50%)',
         }}
       >
         {badge ? (
@@ -87,7 +87,7 @@ export function brandedOgImage(opts: { title: string; subtitle?: string; badge?:
               height: 8,
               borderRadius: 4,
               backgroundImage:
-                'linear-gradient(90deg, #8B5CF6 0%, #C084FC 25%, #F97316 65%, #FBBF24 100%)',
+                'linear-gradient(90deg, #3b82f6 0%, #93c5fd 25%, #67c4ff 65%, #c5eaff 100%)',
             }}
           />
           <div style={{ display: 'flex', fontSize: 26, color: 'rgba(255,255,255,0.55)' }}>

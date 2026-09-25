@@ -16,7 +16,7 @@ export default function ProgressBar({ step, total }: { step: number; total: numb
     >
       <div
         className="absolute inset-y-0 left-0 rounded-full transition-[width] duration-500"
-        style={{ width: `${pct}%`, background: `linear-gradient(90deg, ${ACCENT}, #F97316)` }}
+        style={{ width: `${pct}%`, background: `linear-gradient(90deg, ${ACCENT}, #67c4ff)` }}
       />
     </div>
   );

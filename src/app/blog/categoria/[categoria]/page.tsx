@@ -86,7 +86,7 @@ export default async function BlogCategoryPage({
       <Navbar />
       <AuroraBackground intensity="subtle" />
       <MouseGlow />
-      <main className="relative z-10">
+      <main id="main-content" tabIndex={-1} className="relative z-10">
         <section className="pt-44 pb-12">
           <div className="mx-auto max-w-7xl px-6">
             <Breadcrumbs items={breadcrumb} />

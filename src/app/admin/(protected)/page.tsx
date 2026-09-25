@@ -33,7 +33,7 @@ export default async function AdminHome() {
   const filesToday = await db.select().from(archivos).where(gte(archivos.uploadedAt, today));
 
   const KPIS = [
-    { v: allClients.length, label: 'Clientes totales', icon: Users, color: 'var(--purple-300)' },
+    { v: allClients.length, label: 'Clientes totales', icon: Users, color: 'var(--brand-300)' },
     { v: recentClients.length, label: 'Nuevos este mes', icon: Sparkles, color: 'var(--accent-shop)' },
     { v: filesToday.length, label: 'Archivos hoy', icon: FolderOpen, color: 'var(--accent-web)' },
     { v: unreadMessages.length, label: 'Mensajes sin leer', icon: Mail, color: 'var(--accent-ia)' },
@@ -84,7 +84,7 @@ export default async function AdminHome() {
           <Holographic className="p-6" rounded="rounded-2xl">
             <div
               className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl"
-              style={{ background: 'rgba(251,191,36,0.10)', border: '1px solid rgba(251,191,36,0.30)', color: 'var(--accent-calc)' }}
+              style={{ background: 'rgba(197,234,255,0.10)', border: '1px solid rgba(197,234,255,0.30)', color: 'var(--accent-calc)' }}
             >
               <TrendingUp size={18} strokeWidth={1.6} />
             </div>
@@ -94,7 +94,7 @@ export default async function AdminHome() {
           <Holographic className="p-6" rounded="rounded-2xl">
             <div
               className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl"
-              style={{ background: 'rgba(139,92,246,0.10)', border: '1px solid rgba(139,92,246,0.30)', color: 'var(--purple-300)' }}
+              style={{ background: 'rgba(59,130,246,0.10)', border: '1px solid rgba(59,130,246,0.30)', color: 'var(--brand-300)' }}
             >
               <Calendar size={18} strokeWidth={1.6} />
             </div>

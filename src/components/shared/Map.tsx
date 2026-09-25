@@ -45,7 +45,7 @@ export default function Map() {
 
       const icon = L.divIcon({
         className: 'latech-marker',
-        html: `<div style="width:34px;height:34px;border-radius:50%;background:radial-gradient(circle, #8B5CF6 0%, #7C3AED 100%);box-shadow:0 0 0 3px rgba(139,92,246,0.3),0 0 20px rgba(139,92,246,0.6);display:flex;align-items:center;justify-content:center;color:white;font-size:11px;font-weight:bold;">L</div>`,
+        html: `<div style="width:34px;height:34px;border-radius:50%;background:radial-gradient(circle, #3b82f6 0%, #2563eb 100%);box-shadow:0 0 0 3px rgba(59,130,246,0.3),0 0 20px rgba(59,130,246,0.6);display:flex;align-items:center;justify-content:center;color:white;font-size:11px;font-weight:bold;">L</div>`,
         iconSize: [34, 34],
         iconAnchor: [17, 17],
       });

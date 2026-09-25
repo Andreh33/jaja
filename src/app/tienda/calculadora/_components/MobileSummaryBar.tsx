@@ -58,7 +58,7 @@ export default function MobileSummaryBar({ cart }: { cart: Cart }) {
             aria-expanded={open}
             className="fixed inset-x-0 bottom-0 z-40 flex w-full items-center justify-between gap-4 border-t px-5 pt-3 pb-[max(env(safe-area-inset-bottom),12px)] text-left md:hidden"
             style={{
-              background: 'rgba(7,5,14,0.92)',
+              background: 'rgba(3,9,20,0.92)',
               backdropFilter: 'blur(20px)',
               WebkitBackdropFilter: 'blur(20px)',
               borderColor: `${ACCENT}30`,

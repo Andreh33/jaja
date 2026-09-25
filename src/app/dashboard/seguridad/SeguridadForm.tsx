@@ -63,8 +63,8 @@ export default function SeguridadForm() {
           <Lock size={14} /> {loading ? 'Guardando…' : 'Cambiar contraseña'}
         </button>
         <style jsx>{`
-          .input { width:100%; height:46px; padding:0 14px; border-radius:12px; background:rgba(7,5,14,0.5); border:1px solid var(--border-subtle); color:var(--text-primary); font-size:14px; }
-          .input:focus { outline:none; border-color:var(--purple-400); box-shadow:0 0 0 3px rgba(139,92,246,0.18); }
+          .input { width:100%; height:46px; padding:0 14px; border-radius:12px; background:rgba(3,9,20,0.5); border:1px solid var(--border-subtle); color:var(--text-primary); font-size:14px; }
+          .input:focus { outline:none; border-color:var(--brand-400); box-shadow:0 0 0 3px rgba(59,130,246,0.18); }
         `}</style>
       </form>
 

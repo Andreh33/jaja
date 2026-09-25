@@ -33,7 +33,7 @@ export default function TestimonialsCarousel() {
           <div className="mb-16 max-w-3xl">
             <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-white/40">Testimonios</p>
             <h2 className="font-display text-balance text-4xl md:text-6xl" style={{ letterSpacing: '-0.04em', fontWeight: 800 }}>
-              Quien lo prueba,<br /><span style={{ color: 'var(--purple-300)' }}>repite.</span>
+              Quien lo prueba,<br /><span style={{ color: 'var(--brand-300)' }}>repite.</span>
             </h2>
           </div>
         </Reveal>

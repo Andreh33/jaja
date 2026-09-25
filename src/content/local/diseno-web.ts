@@ -800,12 +800,12 @@ Si quieres vender online o automatizar la atención al cliente, podemos sumar un
     ],
     bodyMarkdown: `## ¿Cuánto cuesta una página web en Badajoz?
 
-Una web profesional para una empresa de Badajoz cuesta **600 € de creación más 60 €/mes** con Latech: hosting, SEO técnico y mantenimiento incluidos, sin permanencia y con entrega en 24-48 h. Somos un equipo extremeño, así que trabajas cerca, sin desplazamientos ni intermediarios.
+Una web profesional para una empresa de Badajoz cuesta **800 € de creación más 60 €/mes** con Latech: hosting, SEO técnico y mantenimiento incluidos, sin permanencia y con entrega en 24-48 h. Somos un equipo extremeño, así que trabajas cerca, sin desplazamientos ni intermediarios.
 
 | Servicio | Precio | Entrega |
 | --- | --- | --- |
-| Página web | 600 € + 60 €/mes | 24-48 h |
-| Tienda online | 600 € + 80 €/mes | 48-72 h |
+| Página web | 800 € + 60 €/mes | 24-48 h |
+| Tienda online | 800 € + 80 €/mes | 48-72 h |
 | Agente de IA | Desde 150 €/mes | 3-5 días |
 
 ## Badajoz: nuestra tierra, nuestro producto
@@ -867,12 +867,12 @@ Si quieres vender tu ibérico, tu queso o tu aceite directamente, podemos sumar 
     ],
     bodyMarkdown: `## ¿Cuánto cuesta una página web en Mérida?
 
-Una web profesional para una empresa de Mérida cuesta **600 € de creación más 60 €/mes** con Latech, con hosting, SEO técnico y mantenimiento incluidos, sin permanencia y entregada en 24-48 h. Estamos a quince minutos, en Puebla de la Calzada, así que trabajas con un equipo cercano y sin intermediarios.
+Una web profesional para una empresa de Mérida cuesta **800 € de creación más 60 €/mes** con Latech, con hosting, SEO técnico y mantenimiento incluidos, sin permanencia y entregada en 24-48 h. Estamos a quince minutos, en Puebla de la Calzada, así que trabajas con un equipo cercano y sin intermediarios.
 
 | Servicio | Precio | Entrega |
 | --- | --- | --- |
-| Página web | 600 € + 60 €/mes | 24-48 h |
-| Tienda online | 600 € + 80 €/mes | 48-72 h |
+| Página web | 800 € + 60 €/mes | 24-48 h |
+| Tienda online | 800 € + 80 €/mes | 48-72 h |
 | Agente de IA | Desde 150 €/mes | 3-5 días |
 
 ## Mérida: la capital de Extremadura, a quince minutos de nosotros

@@ -239,7 +239,7 @@ export function loadFromStorage(): WizardState | null {
     return {
       ...INITIAL_STATE,
       ...parsed,
-      contact: { ...INITIAL_STATE.contact, ...(parsed.contact || {}) },
+      contact: { ...INITIAL_STATE.contact, ...(parsed.contact || {}), password: '', confirmPassword: '' },
     };
   } catch {
     return null;
@@ -249,7 +249,7 @@ export function loadFromStorage(): WizardState | null {
 export function saveToStorage(state: WizardState): void {
   if (typeof window === 'undefined') return;
   try {
-    window.sessionStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+    window.sessionStorage.setItem(STORAGE_KEY, JSON.stringify({ ...state, contact: { ...state.contact, password: '', confirmPassword: '' } }));
   } catch {
     // ignore quota / private mode
   }

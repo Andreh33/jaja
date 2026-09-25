@@ -41,6 +41,7 @@ function getEnv(key: string): string {
 }
 
 const stripe = new Stripe(getEnv('STRIPE_SECRET_KEY'), {
+  // @ts-expect-error Deliberately retain the verified API contract (Stripe supports older pins).
   apiVersion: '2026-04-22.dahlia',
 });
 const client = createClient({

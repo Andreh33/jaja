@@ -2,8 +2,9 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
-import { motion, AnimatePresence } from 'framer-motion';
-import { X, RotateCcw, Trophy, Volume2, VolumeX, Skull, Heart, Shield, Sparkles } from 'lucide-react';
+import * as Dialog from '@radix-ui/react-dialog';
+import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
+import { X, RotateCcw, Trophy, Volume2, VolumeX, Skull, Heart, Shield, Sparkles, Pause, Play } from 'lucide-react';
 
 type Obstacle = { node: HTMLElement; x: number; w: number; h: number; s: number; passed: boolean };
 type Particle = { x: number; y: number; vx: number; vy: number; life: number; max: number; color: string; r: number; sq?: boolean };
@@ -16,6 +17,44 @@ type Boss = { state: 'enter' | 'idle' | 'telegraph' | 'dash' | 'low' | 'return' 
 type WeatherKind = 'clear' | 'rain' | 'storm' | 'fog';
 type WeatherFx = { x: number; y: number; vx: number; vy: number; r: number; rot: number; a: number; kind: WeatherKind };
 type Hole = { x: number; w: number };
+type PauseReason = 'manual' | 'hidden' | null;
+
+const EASE_OUT = [0.23, 1, 0.32, 1] as const;
+
+// Algunos navegadores privados, iframes y políticas corporativas exponen
+// localStorage pero lanzan SecurityError al leer o escribir. Conservamos la
+// partida en memoria durante la pestaña cuando el almacenamiento está vedado.
+const memoryStorage = new Map<string, string>();
+const gameStorage = {
+  getItem(key: string): string | null {
+    if (typeof window === 'undefined') return null;
+    try {
+      const value = window.localStorage.getItem(key);
+      if (value !== null) memoryStorage.set(key, value);
+      return value ?? memoryStorage.get(key) ?? null;
+    } catch {
+      return memoryStorage.get(key) ?? null;
+    }
+  },
+  setItem(key: string, value: string): void {
+    if (typeof window === 'undefined') return;
+    memoryStorage.set(key, value);
+    try {
+      window.localStorage.setItem(key, value);
+    } catch {
+      // La copia en memoria mantiene el juego funcional durante esta pestaña.
+    }
+  },
+};
+
+const readStoredNumber = (key: string) => {
+  const value = Number(gameStorage.getItem(key) ?? 0);
+  return Number.isFinite(value) ? value : 0;
+};
+
+const isInteractiveTarget = (target: EventTarget | null) => target instanceof Element && Boolean(target.closest(
+  'input, textarea, select, button, a[href], summary, [contenteditable]:not([contenteditable="false"]), [role="button"], [role="textbox"], [role="slider"], [role="spinbutton"]',
+));
 
 const GROUND_RATIO = 0.56; // horizonte hacia el centro (antes pegado abajo)
 const RUN_X = 160;
@@ -37,9 +76,9 @@ const OWNED_KEY = 'latech-escape-owned';
 const GAMEMODE_KEY = 'latech-escape-gamemode';
 const LB_KEY = 'latech-escape-lb';
 const NAME_KEY = 'latech-escape-name';
-const readCoins = () => Number(localStorage.getItem(COINS_KEY) || 0);
-const readOwned = (): string[] => { try { const o = JSON.parse(localStorage.getItem(OWNED_KEY) || '["default"]'); return Array.isArray(o) ? o : ['default']; } catch { return ['default']; } };
-const readLB = (): { name: string; score: number }[] => { try { const l = JSON.parse(localStorage.getItem(LB_KEY) || '[]'); return Array.isArray(l) ? l : []; } catch { return []; } };
+const readCoins = () => readStoredNumber(COINS_KEY);
+const readOwned = (): string[] => { try { const o = JSON.parse(gameStorage.getItem(OWNED_KEY) || '["default"]'); return Array.isArray(o) ? o : ['default']; } catch { return ['default']; } };
+const readLB = (): { name: string; score: number }[] => { try { const l = JSON.parse(gameStorage.getItem(LB_KEY) || '[]'); return Array.isArray(l) ? l : []; } catch { return []; } };
 
 type Diff = { startSpeed: number; maxSpeed: number; accel: number; gapBase: number; bossAt: number; startLives: number; startShield: boolean; projSpeed: number; wTimer: number };
 const DIFF: Record<'facil' | 'normal', Diff> = {
@@ -49,15 +88,15 @@ const DIFF: Record<'facil' | 'normal', Diff> = {
 
 type Skin = { id: string; name: string; c0: string; c1: string; c2: string; aura: string; price: number };
 const SKINS: Skin[] = [
-  { id: 'default', name: 'Clásica', c0: '#C9A6FF', c1: '#8B5CF6', c2: '#5B21B6', aura: '139,92,246', price: 0 },
-  { id: 'dorada', name: 'Dorada', c0: '#FFE9A8', c1: '#FBBF24', c2: '#B45309', aura: '251,191,36', price: 20 },
+  { id: 'default', name: 'Clásica', c0: '#bfdbfe', c1: '#3b82f6', c2: '#1e40af', aura: '59,130,246', price: 0 },
+  { id: 'dorada', name: 'Dorada', c0: '#FFE9A8', c1: '#c5eaff', c2: '#B45309', aura: '197,234,255', price: 20 },
   { id: 'neon', name: 'Neón', c0: '#7DF9FF', c1: '#22D3EE', c2: '#9333EA', aura: '34,211,238', price: 30 },
   { id: 'esmeralda', name: 'Esmeralda', c0: '#A7F3D0', c1: '#10B981', c2: '#065F46', aura: '16,185,129', price: 40 },
-  { id: 'fuego', name: 'Fuego', c0: '#FED7AA', c1: '#F97316', c2: '#B91C1C', aura: '249,115,22', price: 55 },
+  { id: 'fuego', name: 'Fuego', c0: '#FED7AA', c1: '#67c4ff', c2: '#B91C1C', aura: '103,196,255', price: 55 },
   { id: 'hielo', name: 'Hielo', c0: '#E0F2FE', c1: '#60A5FA', c2: '#1E40AF', aura: '96,165,250', price: 70 },
   { id: 'rosa', name: 'Chicle', c0: '#FBCFE8', c1: '#EC4899', c2: '#9D174D', aura: '236,72,153', price: 90 },
   { id: 'matrix', name: 'Matrix', c0: '#86EFAC', c1: '#22C55E', c2: '#14532D', aura: '34,197,94', price: 120 },
-  { id: 'galaxia', name: 'Galaxia', c0: '#C4B5FD', c1: '#7C3AED', c2: '#1E1B4B', aura: '124,58,237', price: 160 },
+  { id: 'galaxia', name: 'Galaxia', c0: '#C4B5FD', c1: '#2563eb', c2: '#1E1B4B', aura: '124,58,237', price: 160 },
   { id: 'oro', name: 'Oro puro', c0: '#FEF3C7', c1: '#F59E0B', c2: '#78350F', aura: '245,158,11', price: 220 },
 ];
 
@@ -76,10 +115,15 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
   const layerRef = useRef<HTMLDivElement>(null);
   const zoomRef = useRef<HTMLDivElement>(null);
   const scoreRef = useRef<HTMLSpanElement>(null);
-  const onCloseRef = useRef(onClose);
-  useEffect(() => { onCloseRef.current = onClose; }, [onClose]);
+  const dialogRef = useRef<HTMLDivElement>(null);
+  const previousFocusRef = useRef<HTMLElement | null>(null);
+  const resumeButtonRef = useRef<HTMLButtonElement>(null);
+  const shouldReduceMotion = useReducedMotion();
+  const reduceMotionRef = useRef(Boolean(shouldReduceMotion));
+  useEffect(() => { reduceMotionRef.current = Boolean(shouldReduceMotion); }, [shouldReduceMotion]);
 
   const [over, setOver] = useState(false);
+  const [pauseReason, setPauseReason] = useState<PauseReason>(null);
   const [result, setResult] = useState({ score: 0, best: 0, record: false, killedBy: '' as string, runs: 0, dodged: 0, won: false });
   const [hud, setHud] = useState({ lives: 0, shield: false, coins: 0 });
   const hudRef = useRef(setHud);
@@ -88,18 +132,19 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
   useEffect(() => { mutedRef.current = muted; }, [muted]);
   const resetRef = useRef<() => void>(() => {});
   const dashRef = useRef<() => void>(() => {});
+  const pauseControlRef = useRef<(paused: boolean, reason?: Exclude<PauseReason, null>) => void>(() => {});
 
   const [mode, setMode] = useState<'facil' | 'normal'>('facil');
   const modeRef = useRef<'facil' | 'normal'>('facil');
   useEffect(() => { modeRef.current = mode; }, [mode]);
-  useEffect(() => { if (open) { const m = (localStorage.getItem(MODE_KEY) as 'facil' | 'normal') || 'facil'; queueMicrotask(() => setMode(m === 'normal' ? 'normal' : 'facil')); } }, [open]);
-  const chooseMode = (m: 'facil' | 'normal') => { setMode(m); modeRef.current = m; localStorage.setItem(MODE_KEY, m); };
+  useEffect(() => { if (open) { const m = (gameStorage.getItem(MODE_KEY) as 'facil' | 'normal') || 'facil'; queueMicrotask(() => setMode(m === 'normal' ? 'normal' : 'facil')); } }, [open]);
+  const chooseMode = (m: 'facil' | 'normal') => { setMode(m); modeRef.current = m; gameStorage.setItem(MODE_KEY, m); };
 
   const [gameMode, setGameMode] = useState<'campana' | 'infinito'>('infinito');
   const gameModeRef = useRef<'campana' | 'infinito'>('infinito');
   useEffect(() => { gameModeRef.current = gameMode; }, [gameMode]);
-  useEffect(() => { if (open) { const gm = (localStorage.getItem(GAMEMODE_KEY) as 'campana' | 'infinito') || 'infinito'; queueMicrotask(() => setGameMode(gm === 'campana' ? 'campana' : 'infinito')); } }, [open]);
-  const chooseGameMode = (gm: 'campana' | 'infinito') => { setGameMode(gm); gameModeRef.current = gm; localStorage.setItem(GAMEMODE_KEY, gm); };
+  useEffect(() => { if (open) { const gm = (gameStorage.getItem(GAMEMODE_KEY) as 'campana' | 'infinito') || 'infinito'; queueMicrotask(() => setGameMode(gm === 'campana' ? 'campana' : 'infinito')); } }, [open]);
+  const chooseGameMode = (gm: 'campana' | 'infinito') => { setGameMode(gm); gameModeRef.current = gm; gameStorage.setItem(GAMEMODE_KEY, gm); };
 
   const [skin, setSkin] = useState('default');
   const [owned, setOwned] = useState<string[]>(['default']);
@@ -111,22 +156,22 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
     if (!open) return;
     queueMicrotask(() => {
       const o = readOwned(); setOwned(o); setCoins(readCoins()); setLb(readLB());
-      const saved = localStorage.getItem(SKIN_KEY) || 'default';
+      const saved = gameStorage.getItem(SKIN_KEY) || 'default';
       setSkin(o.includes(saved) ? saved : 'default');
       // ranking GLOBAL (Turso); si falla, se queda el local
       fetch('/api/escape-leaderboard').then((r) => (r.ok ? r.json() : null)).then((d) => { if (d && Array.isArray(d.top) && d.top.length) setLb(d.top); }).catch(() => {});
     });
   }, [open]);
-  const equipSkin = (id: string) => { if (!readOwned().includes(id)) return; setSkin(id); skinRef.current = id; localStorage.setItem(SKIN_KEY, id); };
-  const buySkin = (s: Skin) => { const c = readCoins(), o = readOwned(); if (o.includes(s.id) || c < s.price) return; const nc = c - s.price, no = [...o, s.id]; localStorage.setItem(COINS_KEY, String(nc)); localStorage.setItem(OWNED_KEY, JSON.stringify(no)); setCoins(nc); setOwned(no); setSkin(s.id); skinRef.current = s.id; localStorage.setItem(SKIN_KEY, s.id); };
-  const renameLatest = (v: string) => { const nm = (v || 'Tú').slice(0, 14) || 'Tú'; localStorage.setItem(NAME_KEY, nm); const idx = lb.findIndex((e) => e.score === result.score); if (idx >= 0) { const nl = lb.map((e, i) => (i === idx ? { ...e, name: nm } : e)); localStorage.setItem(LB_KEY, JSON.stringify(nl)); setLb(nl); } };
+  const equipSkin = (id: string) => { if (!readOwned().includes(id)) return; setSkin(id); skinRef.current = id; gameStorage.setItem(SKIN_KEY, id); };
+  const buySkin = (s: Skin) => { const c = readCoins(), o = readOwned(); if (o.includes(s.id) || c < s.price) return; const nc = c - s.price, no = [...o, s.id]; gameStorage.setItem(COINS_KEY, String(nc)); gameStorage.setItem(OWNED_KEY, JSON.stringify(no)); setCoins(nc); setOwned(no); setSkin(s.id); skinRef.current = s.id; gameStorage.setItem(SKIN_KEY, s.id); };
+  const renameLatest = (v: string) => { const nm = (v || 'Tú').slice(0, 14) || 'Tú'; gameStorage.setItem(NAME_KEY, nm); const idx = lb.findIndex((e) => e.score === result.score); if (idx >= 0) { const nl = lb.map((e, i) => (i === idx ? { ...e, name: nm } : e)); gameStorage.setItem(LB_KEY, JSON.stringify(nl)); setLb(nl); } };
 
   useEffect(() => {
     if (!open) return;
+    queueMicrotask(() => { setOver(false); setPauseReason(null); });
     const canvas = canvasRef.current!;
     const layer = layerRef.current!;
     const ctx = canvas.getContext('2d')!;
-    (document.activeElement as HTMLElement | null)?.blur?.();
     const prevOverflow = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
     // el sitio oculta el cursor nativo (cursor personalizado que queda detrás del overlay);
@@ -234,7 +279,7 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
     // fondo parallax: textos reales + siluetas de cards, 2 capas
     type BgItem = { x: number; y: number; par: number; kind: 'text' | 'rect'; text?: string; w: number; h: number; alpha: number; color: string };
     let bg: BgItem[] = [];
-    const COLORS = ['139,92,246', '249,115,22', '251,191,36', '56,189,248'];
+    const COLORS = ['59,130,246', '103,196,255', '197,234,255', '56,189,248'];
     const genBg = () => {
       bg = [];
       const n = 16;
@@ -281,8 +326,23 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
       // #9 zona 404: el suelo desaparece a trozos
       holes: [] as Hole[], zone404: false, zoneTimer: 26, zoneTele: 0, zoneLeft: 0, holeGap: 0,
     };
+    let raf = 0, last = 0, isPaused = false;
     const syncHud = () => hudRef.current({ lives: g.lives, shield: g.shield, coins: g.coinsRun });
     const applyDiff = () => { const c = DIFF[modeRef.current]; g.speed = c.startSpeed; g.bossAt = c.bossAt; g.lives = c.startLives; g.shield = c.startShield; g.wTimer = c.wTimer; syncHud(); };
+
+    const setGamePaused = (paused: boolean, reason: Exclude<PauseReason, null> = 'manual') => {
+      if (paused && g.phase === 'over') return;
+      if (isPaused === paused) return;
+      isPaused = paused;
+      last = performance.now();
+      setPauseReason(paused ? reason : null);
+      if (paused) {
+        if (actx?.state === 'running') void actx.suspend().catch(() => {});
+      } else if (!mutedRef.current && actx?.state === 'suspended') {
+        void actx.resume().catch(() => {});
+      }
+    };
+    pauseControlRef.current = setGamePaused;
 
     const obstacles: Obstacle[] = [];
     const particles: Particle[] = [];
@@ -290,12 +350,13 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
     let lastScore = 0;
 
     const burst = (x: number, y: number, n: number, colors: string[], spread = 1, square = false) => {
+      if (reduceMotionRef.current) return;
       for (let i = 0; i < n; i++) {
         const a = Math.random() * Math.PI * 2; const v = (90 + Math.random() * 300) * spread; const life = 0.5 + Math.random() * 0.6;
         particles.push({ x, y, vx: Math.cos(a) * v, vy: Math.sin(a) * v - 140, life, max: life, color: colors[i % colors.length], r: 2 + Math.random() * 5, sq: square });
       }
     };
-    const float = (x: number, y: number, text: string, color: string, size = 15) => floats.push({ x, y, vy: -52, life: 1.1, text, color, size });
+    const float = (x: number, y: number, text: string, color: string, size = 15) => floats.push({ x, y, vy: reduceMotionRef.current ? 0 : -52, life: 1.1, text, color, size });
 
     const makeFallback = (label: string): HTMLElement => {
       const n = document.createElement('div'); n.textContent = label; n.className = 'glass';
@@ -311,16 +372,16 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
       // anula transiciones/animaciones del clon y sus hijos: si no, la transición CSS de transform
       // hace que el DIBUJO vaya con retraso respecto a la colisión (la card "se echa encima" y mata).
       node.querySelectorAll<HTMLElement>('*').forEach((el) => { el.style.transition = 'none'; el.style.animation = 'none'; el.style.transform = 'none'; });
-      node.style.cssText += `position:absolute;left:0;top:${gy - natH}px;width:${natW}px;height:${natH}px;margin:0;pointer-events:none;overflow:hidden;box-sizing:border-box;transform-origin:left bottom;transform:translateX(${x}px) scale(${s});transition:none!important;animation:none!important;will-change:transform;box-shadow:0 16px 50px -10px rgba(139,92,246,0.6);`;
+      node.style.cssText += `position:absolute;left:0;top:${gy - natH}px;width:${natW}px;height:${natH}px;margin:0;pointer-events:none;overflow:hidden;box-sizing:border-box;transform-origin:left bottom;transform:translateX(${x}px) scale(${s});transition:none!important;animation:none!important;will-change:transform;box-shadow:0 16px 50px -10px rgba(59,130,246,0.6);`;
       layer.appendChild(node);
       obstacles.push({ node, x, w, h, s, passed: false });
     };
 
     const groundJump = () => { g.vy = JUMP_V; g.onGround = false; g.jumpsLeft = 1; g.pressAt = -1; burst(g.beanX, groundY() + 2, 8, ['rgba(255,255,255,0.6)']); sJump(); };
-    const airJump = () => { g.vy = JUMP_V * 0.85; g.jumpsLeft = 0; g.pressAt = -1; burst(g.beanX, g.y - 22, 12, ['#C9A6FF']); sJump(); };
+    const airJump = () => { g.vy = JUMP_V * 0.85; g.jumpsLeft = 0; g.pressAt = -1; burst(g.beanX, g.y - 22, 12, ['#bfdbfe']); sJump(); };
     const requestJump = () => {
       ensureAudio();
-      if (g.phase !== 'playing') return;
+      if (isPaused || g.phase !== 'playing') return;
       g.pressAt = g.t;
       const coyote = g.t - g.lastGround < COYOTE;
       if (g.onGround || coyote) groundJump();
@@ -331,26 +392,26 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
     // dash: ráfaga invencible que destroza lo que toque
     const requestDash = () => {
       ensureAudio();
-      if (g.phase !== 'playing' || g.dashCd > 0) return;
+      if (isPaused || g.phase !== 'playing' || g.dashCd > 0) return;
       g.dashT = 0.3; g.dashCd = 2.4; g.invuln = Math.max(g.invuln, 0.34); g.shake = 0.25;
-      burst(g.beanX, g.y - 26, 16, ['#C9A6FF', '#fff', '#38BDF8']); sDash();
+      burst(g.beanX, g.y - 26, 16, ['#bfdbfe', '#fff', '#38BDF8']); sDash();
     };
 
     const endGame = (killedBy: string) => {
       if (g.phase === 'over') return;
       g.phase = 'over'; g.shake = 0.6; g.hitFlash = 0.7;
       g.invertView = false; layer.style.transform = 'none';
-      burst(g.beanX, g.y - 22, 30, ['#F97316', '#FB7185', '#FBBF24', '#fff']);
+      burst(g.beanX, g.y - 22, 30, ['#67c4ff', '#FB7185', '#c5eaff', '#fff']);
       sOver();
-      const best0 = Number(localStorage.getItem(BEST_KEY) || 0);
+      const best0 = readStoredNumber(BEST_KEY);
       const record = g.score > best0;
-      if (record) localStorage.setItem(BEST_KEY, String(g.score));
-      const runs = Number(localStorage.getItem(RUNS_KEY) || 0) + 1; localStorage.setItem(RUNS_KEY, String(runs));
-      const dodged = Number(localStorage.getItem(DODGED_KEY) || 0) + g.score; localStorage.setItem(DODGED_KEY, String(dodged));
+      if (record) gameStorage.setItem(BEST_KEY, String(g.score));
+      const runs = readStoredNumber(RUNS_KEY) + 1; gameStorage.setItem(RUNS_KEY, String(runs));
+      const dodged = readStoredNumber(DODGED_KEY) + g.score; gameStorage.setItem(DODGED_KEY, String(dodged));
       setResult({ score: g.score, best: Math.max(best0, g.score), record, killedBy, runs, dodged, won: false });
-      const coinsTotal = readCoins() + g.coinsRun; localStorage.setItem(COINS_KEY, String(coinsTotal)); setCoins(coinsTotal);
-      const nm = localStorage.getItem(NAME_KEY) || 'Tú';
-      const newLb = [...readLB(), { name: nm, score: g.score }].sort((a, b) => b.score - a.score).slice(0, 10); localStorage.setItem(LB_KEY, JSON.stringify(newLb)); setLb(newLb);
+      const coinsTotal = readCoins() + g.coinsRun; gameStorage.setItem(COINS_KEY, String(coinsTotal)); setCoins(coinsTotal);
+      const nm = gameStorage.getItem(NAME_KEY) || 'Tú';
+      const newLb = [...readLB(), { name: nm, score: g.score }].sort((a, b) => b.score - a.score).slice(0, 10); gameStorage.setItem(LB_KEY, JSON.stringify(newLb)); setLb(newLb);
       const finalScore = g.score;
       fetch('/api/escape-leaderboard', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ name: nm, score: finalScore }) }).then((r) => (r.ok ? r.json() : null)).then((d) => { if (d && Array.isArray(d.top)) setLb(d.top); }).catch(() => {});
       setOver(true);
@@ -360,16 +421,16 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
     const winGame = () => {
       if (g.phase === 'over') return;
       g.phase = 'over'; g.invertView = false; layer.style.transform = 'none'; g.whiteFlash = 0.9; g.shake = 0.4;
-      for (let k = 0; k < 3; k++) burst(W * (0.3 + 0.2 * k), groundY() - 120, 26, ['#8B5CF6', '#FBBF24', '#F97316', '#10B981', '#fff'], 1.6, true);
+      for (let k = 0; k < 3; k++) burst(W * (0.3 + 0.2 * k), groundY() - 120, 26, ['#3b82f6', '#c5eaff', '#67c4ff', '#10B981', '#fff'], 1.6, true);
       sBossDead();
-      const best0 = Number(localStorage.getItem(BEST_KEY) || 0);
-      const record = g.score > best0; if (record) localStorage.setItem(BEST_KEY, String(g.score));
-      const runs = Number(localStorage.getItem(RUNS_KEY) || 0) + 1; localStorage.setItem(RUNS_KEY, String(runs));
-      const dodged = Number(localStorage.getItem(DODGED_KEY) || 0) + g.score; localStorage.setItem(DODGED_KEY, String(dodged));
+      const best0 = readStoredNumber(BEST_KEY);
+      const record = g.score > best0; if (record) gameStorage.setItem(BEST_KEY, String(g.score));
+      const runs = readStoredNumber(RUNS_KEY) + 1; gameStorage.setItem(RUNS_KEY, String(runs));
+      const dodged = readStoredNumber(DODGED_KEY) + g.score; gameStorage.setItem(DODGED_KEY, String(dodged));
       setResult({ score: g.score, best: Math.max(best0, g.score), record, killedBy: '', runs, dodged, won: true });
-      const coinsTotal = readCoins() + g.coinsRun; localStorage.setItem(COINS_KEY, String(coinsTotal)); setCoins(coinsTotal);
-      const nm = localStorage.getItem(NAME_KEY) || 'Tú';
-      const newLb = [...readLB(), { name: nm, score: g.score }].sort((a, b) => b.score - a.score).slice(0, 10); localStorage.setItem(LB_KEY, JSON.stringify(newLb)); setLb(newLb);
+      const coinsTotal = readCoins() + g.coinsRun; gameStorage.setItem(COINS_KEY, String(coinsTotal)); setCoins(coinsTotal);
+      const nm = gameStorage.getItem(NAME_KEY) || 'Tú';
+      const newLb = [...readLB(), { name: nm, score: g.score }].sort((a, b) => b.score - a.score).slice(0, 10); gameStorage.setItem(LB_KEY, JSON.stringify(newLb)); setLb(newLb);
       const finalScore = g.score;
       fetch('/api/escape-leaderboard', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ name: nm, score: finalScore }) }).then((r) => (r.ok ? r.json() : null)).then((d) => { if (d && Array.isArray(d.top)) setLb(d.top); }).catch(() => {});
       setOver(true);
@@ -387,7 +448,7 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
     const punchBox = () => {
       g.punched = true; g.shake = 0.6; g.hitFlash = 0.4; g.whiteFlash = 0.9; g.slow = 0.32; g.phase = 'launch'; g.vy = -1700; g.onGround = false;
       ensureAudio(); sPunch(); sGlass();
-      burst(origin.x + 24, origin.y, 54, ['#8B5CF6', '#C084FC', '#F97316', '#FBBF24', '#ffffff'], 1.7, true);
+      burst(origin.x + 24, origin.y, 54, ['#3b82f6', '#93c5fd', '#67c4ff', '#c5eaff', '#ffffff'], 1.7, true);
       const cracks: Crack[] = []; const n = 13, len = Math.hypot(W, H);
       for (let i = 0; i < n; i++) {
         const a = (i / n) * Math.PI * 2 + Math.random() * 0.5;
@@ -438,7 +499,7 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
       g.invertView = false; g.flipTimer = 22; g.flipTele = 0; g.flipDur = 0; layer.style.transform = 'none';
       g.weather = 'clear'; g.weatherT = 13; g.weatherFx.length = 0; g.lightning = 0;
       g.holes.length = 0; g.zone404 = false; g.zoneTimer = 26; g.zoneTele = 0; g.zoneLeft = 0; g.holeGap = 0;
-      applyDiff(); setOver(false);
+      setGamePaused(false); applyDiff(); setOver(false);
     };
     resetRef.current = resetGame;
     dashRef.current = requestDash;
@@ -447,15 +508,15 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
     const drawBean = (x: number, y: number, big: boolean) => {
       const bw = 46, bh = 62; const airborne = !g.onGround; const gy = groundY();
       const sk = SKINS.find((s) => s.id === skinRef.current) || SKINS[0];
-      if (g.phase === 'playing' && g.speed > 420) {
+      if (!reduceMotionRef.current && g.phase === 'playing' && g.speed > 420) {
         const a = Math.min(0.22, (g.speed - 420) / 900);
-        for (let i = 1; i <= 3; i++) { ctx.globalAlpha = a / i; ctx.fillStyle = i % 2 ? '#8B5CF6' : '#F97316'; ctx.beginPath(); ctx.roundRect(x - i * 14 - bw / 2, y - bh, bw, bh - 3, 19); ctx.fill(); }
+        for (let i = 1; i <= 3; i++) { ctx.globalAlpha = a / i; ctx.fillStyle = i % 2 ? '#3b82f6' : '#67c4ff'; ctx.beginPath(); ctx.roundRect(x - i * 14 - bw / 2, y - bh, bw, bh - 3, 19); ctx.fill(); }
         ctx.globalAlpha = 1;
       }
       const hgt = Math.max(0, gy - y);
       ctx.globalAlpha = Math.max(0.1, 0.38 - hgt / 600); ctx.fillStyle = '#000'; ctx.beginPath(); ctx.ellipse(x, gy + 8, 24, 6, 0, 0, Math.PI * 2); ctx.fill(); ctx.globalAlpha = 1;
       const aura = ctx.createRadialGradient(x, y - bh / 2, 4, x, y - bh / 2, bh * (big ? 1.4 : 1));
-      aura.addColorStop(0, big ? 'rgba(249,115,22,0.4)' : `rgba(${sk.aura},0.32)`); aura.addColorStop(1, `rgba(${sk.aura},0)`);
+      aura.addColorStop(0, big ? 'rgba(103,196,255,0.4)' : `rgba(${sk.aura},0.32)`); aura.addColorStop(1, `rgba(${sk.aura},0)`);
       ctx.fillStyle = aura; ctx.beginPath(); ctx.arc(x, y - bh / 2, bh * (big ? 1.4 : 1), 0, Math.PI * 2); ctx.fill();
 
       // aberración cromática del personaje (pantalla "rota")
@@ -468,10 +529,10 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
       }
 
       ctx.save(); ctx.translate(x, y);
-      const squash = airborne ? Math.max(0.85, Math.min(1.15, 1 - g.vy / 3000)) : 1 + Math.sin(g.runPhase) * 0.05;
+      const squash = reduceMotionRef.current ? 1 : airborne ? Math.max(0.85, Math.min(1.15, 1 - g.vy / 3000)) : 1 + Math.sin(g.runPhase) * 0.05;
       ctx.scale(1 + (1 - squash) * 0.5, squash);
       ctx.fillStyle = '#4C1D95';
-      for (const s of [-1, 1] as const) { const ph = g.runPhase + (s > 0 ? Math.PI : 0); const lift = airborne ? -5 : g.phase === 'playing' ? Math.max(0, Math.sin(ph)) * -7 : 0; ctx.beginPath(); ctx.ellipse(s * 9, -3 + lift, 7.5, 5, 0, 0, Math.PI * 2); ctx.fill(); }
+      for (const s of [-1, 1] as const) { const ph = g.runPhase + (s > 0 ? Math.PI : 0); const lift = airborne ? -5 : !reduceMotionRef.current && g.phase === 'playing' ? Math.max(0, Math.sin(ph)) * -7 : 0; ctx.beginPath(); ctx.ellipse(s * 9, -3 + lift, 7.5, 5, 0, 0, Math.PI * 2); ctx.fill(); }
       const body = ctx.createRadialGradient(-bw * 0.25, -bh * 0.8, 3, 0, -bh / 2, bh);
       body.addColorStop(0, sk.c0); body.addColorStop(0.45, sk.c1); body.addColorStop(1, sk.c2);
       const path = new Path2D(); path.roundRect(-bw / 2, -bh, bw, bh - 3, 19);
@@ -489,8 +550,8 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
       if (g.fist > 0.02 && (g.phase === 'wind' || g.phase === 'launch')) {
         const f = g.fist, thrust = g.punched ? 1 : 0; const fx = x + 22 + thrust * 34 + f * 14, fy2 = y - bh * 0.5, r = 11 + f * 30;
         ctx.save(); ctx.translate(fx, fy2);
-        ctx.strokeStyle = '#6D28D9'; ctx.lineWidth = 6 + f * 9; ctx.lineCap = 'round'; ctx.beginPath(); ctx.moveTo(-24, 4); ctx.lineTo(-2, 0); ctx.stroke();
-        const fg = ctx.createRadialGradient(-r * 0.3, -r * 0.3, 2, 0, 0, r); fg.addColorStop(0, '#C9A6FF'); fg.addColorStop(1, '#7C3AED');
+        ctx.strokeStyle = '#1d4ed8'; ctx.lineWidth = 6 + f * 9; ctx.lineCap = 'round'; ctx.beginPath(); ctx.moveTo(-24, 4); ctx.lineTo(-2, 0); ctx.stroke();
+        const fg = ctx.createRadialGradient(-r * 0.3, -r * 0.3, 2, 0, 0, r); fg.addColorStop(0, '#bfdbfe'); fg.addColorStop(1, '#2563eb');
         ctx.fillStyle = fg; ctx.beginPath(); ctx.roundRect(-r, -r, r * 2, r * 2, r * 0.5); ctx.fill(); ctx.strokeStyle = 'rgba(20,8,40,0.9)'; ctx.lineWidth = 2.5; ctx.stroke();
         ctx.strokeStyle = 'rgba(20,8,40,0.5)'; ctx.lineWidth = 1.5; for (let i = -1; i <= 1; i++) { ctx.beginPath(); ctx.moveTo(i * r * 0.4, -r * 0.5); ctx.lineTo(i * r * 0.4, r * 0.2); ctx.stroke(); }
         ctx.restore();
@@ -498,11 +559,11 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
     };
 
     const drawBox = () => {
-      const x = origin.left, y = origin.top, bw = origin.w, bh = origin.h; const j = g.fist > 0.6 ? (Math.random() - 0.5) * g.fist * 7 : 0;
+      const x = origin.left, y = origin.top, bw = origin.w, bh = origin.h; const j = !reduceMotionRef.current && g.fist > 0.6 ? (Math.random() - 0.5) * g.fist * 7 : 0;
       ctx.save(); ctx.translate(j, j);
-      ctx.fillStyle = 'rgba(30,20,50,0.4)'; ctx.beginPath(); ctx.roundRect(x, y, bw, bh, 24); ctx.fill();
-      const gr = ctx.createLinearGradient(x, 0, x + bw, 0); gr.addColorStop(0, '#8B5CF6'); gr.addColorStop(0.6, '#F97316'); gr.addColorStop(1, '#FBBF24');
-      ctx.strokeStyle = gr; ctx.lineWidth = 3; ctx.shadowColor = 'rgba(139,92,246,0.7)'; ctx.shadowBlur = 18; ctx.beginPath(); ctx.roundRect(x, y, bw, bh, 24); ctx.stroke(); ctx.shadowBlur = 0;
+      ctx.fillStyle = 'rgba(10,29,52,0.4)'; ctx.beginPath(); ctx.roundRect(x, y, bw, bh, 24); ctx.fill();
+      const gr = ctx.createLinearGradient(x, 0, x + bw, 0); gr.addColorStop(0, '#3b82f6'); gr.addColorStop(0.6, '#67c4ff'); gr.addColorStop(1, '#c5eaff');
+      ctx.strokeStyle = gr; ctx.lineWidth = 3; ctx.shadowColor = 'rgba(59,130,246,0.7)'; ctx.shadowBlur = 18; ctx.beginPath(); ctx.roundRect(x, y, bw, bh, 24); ctx.stroke(); ctx.shadowBlur = 0;
       if (g.fist > 0.7) { ctx.strokeStyle = 'rgba(255,255,255,0.75)'; ctx.lineWidth = 1.5; const cx = origin.x, cy = origin.y; for (let i = 0; i < 5; i++) { const a = i * 1.3; ctx.beginPath(); ctx.moveTo(cx, cy); ctx.lineTo(cx + Math.cos(a) * bw * 0.4, cy + Math.sin(a) * bh * 0.4); ctx.stroke(); } }
       ctx.restore();
     };
@@ -564,9 +625,9 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
       }
     };
 
-    let raf = 0, last = 0;
     const loop = (time: number) => {
       raf = requestAnimationFrame(loop);
+      if (isPaused) { last = time; return; }
       let dt = Math.min((time - last) / 1000 || 0, 0.033); last = time;
       if (g.slow > 0) { g.slow -= dt; dt *= 0.35; }
       const active = g.phase !== 'over';
@@ -582,7 +643,7 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
           g.vy += GRAVITY * dt; g.y += g.vy * dt;
           if (g.phase === 'launch') {
             g.beanX += (RUN_X - g.beanX) * Math.min(1, dt * 2.2);
-            if (g.y >= gy && g.vy >= 0) { g.y = gy; g.vy = 0; g.onGround = true; g.jumpsLeft = 2; g.lastGround = g.t; g.phase = 'playing'; g.beanX = RUN_X; applyDiff(); burst(RUN_X, gy + 2, 16, ['#C9A6FF', '#fff']); sLand(); }
+            if (g.y >= gy && g.vy >= 0) { g.y = gy; g.vy = 0; g.onGround = true; g.jumpsLeft = 2; g.lastGround = g.t; g.phase = 'playing'; g.beanX = RUN_X; applyDiff(); burst(RUN_X, gy + 2, 16, ['#bfdbfe', '#fff']); sLand(); }
           }
           // en 'playing' el aterrizaje se resuelve tras calcular las plataformas (más abajo)
         }
@@ -605,20 +666,24 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
           else { g.flipTimer -= dt; if (g.flipTimer <= 0 && g.score > 6 && !g.zone404 && g.zoneTele <= 0) { g.flipTele = 1.3; float(g.beanX, g.y - 72, '▲ MODO INVERSO ▲', '#22d3ee', 22); } }
         }
         // hito cada 10 esquivados: sonido + glitch + texto
-        if (Math.floor(g.score / 10) > Math.floor(lastScore / 10)) { sMilestone(); g.whiteFlash = Math.max(g.whiteFlash, 0.3); g.glitch = Math.max(g.glitch, 0.6); g.crackT = Math.min(g.crackT, 0.9); float(g.beanX, g.y - 64, `¡${g.score}!`, '#C9A6FF', 20); }
+        if (Math.floor(g.score / 10) > Math.floor(lastScore / 10)) { sMilestone(); g.whiteFlash = Math.max(g.whiteFlash, 0.3); g.glitch = Math.max(g.glitch, 0.6); g.crackT = Math.min(g.crackT, 0.9); float(g.beanX, g.y - 64, `¡${g.score}!`, '#bfdbfe', 20); }
         lastScore = g.score;
 
-        // #5 clima dinámico (decorativo, no afecta a la jugabilidad)
-        g.weatherT -= dt;
-        if (g.weatherT <= 0) {
-          const ord: WeatherKind[] = ['clear', 'rain', 'storm', 'fog'];
-          g.weather = ord[(ord.indexOf(g.weather) + 1) % ord.length]; g.weatherT = 12 + Math.random() * 7;
-          float(g.beanX, g.y - 86, g.weather === 'rain' ? '☔ lluvia de <div>' : g.weather === 'storm' ? '⚡ tormenta de plugins' : g.weather === 'fog' ? '🍪 niebla de cookies' : '☀ despejado', '#9fb3d6', 16); sWeather();
-        }
-        if (g.weatherFx.length < 80) {
-          if (g.weather === 'rain') for (let i = 0; i < 2; i++) g.weatherFx.push({ x: Math.random() * W, y: -20, vx: -70, vy: 520 + Math.random() * 180, r: 0, rot: 0, a: 0.1 + Math.random() * 0.1, kind: 'rain' });
-          else if (g.weather === 'storm') { for (let i = 0; i < 2; i++) g.weatherFx.push({ x: Math.random() * W, y: -20, vx: -130, vy: 640 + Math.random() * 220, r: 0, rot: 0, a: 0.16 + Math.random() * 0.12, kind: 'storm' }); if (Math.random() < dt * 0.45) { g.lightning = 0.5; g.whiteFlash = Math.max(g.whiteFlash, 0.22); sThunder(); } }
-          else if (g.weather === 'fog' && g.weatherFx.length < 24 && Math.random() < dt * 9) g.weatherFx.push({ x: W + 40, y: 60 + Math.random() * (gy - 130), vx: -(18 + Math.random() * 26), vy: 0, r: 28 + Math.random() * 42, rot: 0, a: 0.05 + Math.random() * 0.05, kind: 'fog' });
+        // #5 clima dinámico (puramente decorativo; se elimina con movimiento reducido)
+        if (reduceMotionRef.current) {
+          g.weather = 'clear'; g.weatherFx.length = 0;
+        } else {
+          g.weatherT -= dt;
+          if (g.weatherT <= 0) {
+            const ord: WeatherKind[] = ['clear', 'rain', 'storm', 'fog'];
+            g.weather = ord[(ord.indexOf(g.weather) + 1) % ord.length]; g.weatherT = 12 + Math.random() * 7;
+            float(g.beanX, g.y - 86, g.weather === 'rain' ? '☔ lluvia de <div>' : g.weather === 'storm' ? '⚡ tormenta de plugins' : g.weather === 'fog' ? '🍪 niebla de cookies' : '☀ despejado', '#9fb3d6', 16); sWeather();
+          }
+          if (g.weatherFx.length < 80) {
+            if (g.weather === 'rain') for (let i = 0; i < 2; i++) g.weatherFx.push({ x: Math.random() * W, y: -20, vx: -70, vy: 520 + Math.random() * 180, r: 0, rot: 0, a: 0.1 + Math.random() * 0.1, kind: 'rain' });
+            else if (g.weather === 'storm') { for (let i = 0; i < 2; i++) g.weatherFx.push({ x: Math.random() * W, y: -20, vx: -130, vy: 640 + Math.random() * 220, r: 0, rot: 0, a: 0.16 + Math.random() * 0.12, kind: 'storm' }); if (Math.random() < dt * 0.45) { g.lightning = 0.5; g.whiteFlash = Math.max(g.whiteFlash, 0.22); sThunder(); } }
+            else if (g.weather === 'fog' && g.weatherFx.length < 24 && Math.random() < dt * 9) g.weatherFx.push({ x: W + 40, y: 60 + Math.random() * (gy - 130), vx: -(18 + Math.random() * 26), vy: 0, r: 28 + Math.random() * 42, rot: 0, a: 0.05 + Math.random() * 0.05, kind: 'fog' });
+          }
         }
 
         // #9 ZONA 404: el suelo se rompe a trozos (telegrafiado y justo; no durante jefe ni modo inverso)
@@ -636,7 +701,7 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
       g.hitFlash = Math.max(0, g.hitFlash - dt * 1.8); g.whiteFlash = Math.max(0, g.whiteFlash - dt * 2.4);
       g.dashCd = Math.max(0, g.dashCd - dt); g.glitch = Math.max(0, g.glitch - dt * 2.5); g.lightning = Math.max(0, g.lightning - dt * 2);
       if (g.dashT > 0) { g.dashT = Math.max(0, g.dashT - dt); g.invuln = Math.max(g.invuln, 0.05); }
-      if (g.crackT < 1) g.crackT = Math.min(1, g.crackT + dt * 5);
+      if (g.crackT < 1) g.crackT = reduceMotionRef.current ? 1 : Math.min(1, g.crackT + dt * 5);
       if (g.punched) g.damage = Math.min(1, g.damage + dt * 1.5); // pantalla queda dañada
 
       // #9 huecos del suelo: avanzan y desaparecen; si la judía está sobre uno, el suelo NO sostiene
@@ -656,13 +721,13 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
         const o = obstacles[i]; if (g.phase === 'playing') o.x -= g.speed * dt;
         // #11: el componente REACCIONA al acercarse (pulso + brillo)
         const near = g.phase === 'playing' && Math.abs((o.x + o.w / 2) - g.beanX) < 210;
-        const pulse = near ? 1 + 0.04 * Math.abs(Math.sin(g.t * 16)) : 1;
+        const pulse = near && !reduceMotionRef.current ? 1 + 0.04 * Math.abs(Math.sin(g.t * 16)) : 1;
         o.node.style.transform = `translateX(${o.x}px) scale(${o.s * pulse})`;
-        o.node.style.boxShadow = near ? '0 0 42px 6px rgba(201,166,255,0.75)' : '0 16px 50px -10px rgba(139,92,246,0.6)';
+        o.node.style.boxShadow = near ? '0 0 42px 6px rgba(201,166,255,0.75)' : '0 16px 50px -10px rgba(59,130,246,0.6)';
         const oy0 = gy - o.h;
         // dash: arrasa lo que toque por delante
         if (g.phase === 'playing' && g.dashT > 0 && bx1 + 90 > o.x && bx0 < o.x + o.w && by1 > oy0 && by0 < gy) {
-          burst(o.x + o.w / 2, gy - o.h / 2, 18, ['#C9A6FF', '#fff', '#FBBF24']); g.score++; g.glitch = Math.max(g.glitch, 0.45); o.node.remove(); obstacles.splice(i, 1); continue;
+          burst(o.x + o.w / 2, gy - o.h / 2, 18, ['#bfdbfe', '#fff', '#c5eaff']); g.score++; g.glitch = Math.max(g.glitch, 0.45); o.node.remove(); obstacles.splice(i, 1); continue;
         }
         // aterrizar ENCIMA = seguro (plataforma); margen generoso en X
         const overTop = bx1 > o.x + 6 && bx0 < o.x + o.w - 6;
@@ -687,7 +752,7 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
         const e = g.wEnemy;
         if (e.dead > 0) { e.dead += dt * 2.2; if (e.dead >= 1) g.wEnemy = null; }
         else { e.x -= g.speed * 1.18 * dt; const ew = 52, ex0 = e.x - ew / 2, ex1 = e.x + ew / 2, ey0 = gy - 56, ey1 = gy - 4;
-          if (bx1 > ex0 && bx0 < ex1 && by1 > ey0 && by0 < ey1) { if (g.dashT > 0 || (g.vy > 0 && by1 < ey0 + 26)) { e.dead = 0.01; g.vy = g.dashT > 0 ? g.vy : -620; g.score += 5; burst(e.x, ey0 + 10, 22, ['#ef4444', '#fff', '#dbe2ef']); float(e.x, ey0, '+5 · ¡404!', '#FBBF24'); sStomp(); } else takeHit('la W'); }
+          if (bx1 > ex0 && bx0 < ex1 && by1 > ey0 && by0 < ey1) { if (g.dashT > 0 || (g.vy > 0 && by1 < ey0 + 26)) { e.dead = 0.01; g.vy = g.dashT > 0 ? g.vy : -620; g.score += 5; burst(e.x, ey0 + 10, 22, ['#ef4444', '#fff', '#dbe2ef']); float(e.x, ey0, '+5 · ¡404!', '#c5eaff'); sStomp(); } else takeHit('la W'); }
           if (!e.passed && ex1 < g.beanX) { e.passed = true; g.score += 2; }
           if (e.x < -60) g.wEnemy = null;
         }
@@ -714,9 +779,9 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
           const bs = b.mega ? 190 : 116; const ebx0 = b.x - bs * 0.4, ebx1 = b.x + bs * 0.4, eby0 = b.y - bs * 0.4, eby1 = b.y + bs * 0.4;
           if (bx1 > ebx0 && bx0 < ebx1 && by1 > eby0 && by0 < eby1) {
             const stomp = g.dashT > 0 || (g.vy > 0 && by1 < eby0 + 40);
-            if (stomp) { b.hp -= 1; b.hitFlash = 1; g.vy = -700; g.shake = 0.35; burst(b.x, eby0 + 10, 24, ['#ef4444', '#fff', '#dbe2ef']); float(b.x, eby0, b.hp > 0 ? '¡toma!' : '¡404!', '#FBBF24', 18); sBossHit(); if (b.hp <= 0) { const bt = BOSS_TYPES.find((x) => x.id === b.type) || BOSS_TYPES[3]; b.state = 'dying'; b.deadT = 0.01; g.score += 15; g.bossNum += 1; g.whiteFlash = 0.7; g.glitch = 1; g.slow = 0.4; localStorage.setItem(BOSSKILLS_KEY, String(+(localStorage.getItem(BOSSKILLS_KEY) || 0) + 1)); burst(b.x, b.y, 60, ['#ef4444', '#fff', '#dbe2ef', '#FBBF24'], 1.6, true); float(b.x, b.y - 40, `+15 · ¡${bt.defeat}!`, '#FBBF24', 20); sBossDead();
+            if (stomp) { b.hp -= 1; b.hitFlash = 1; g.vy = -700; g.shake = 0.35; burst(b.x, eby0 + 10, 24, ['#ef4444', '#fff', '#dbe2ef']); float(b.x, eby0, b.hp > 0 ? '¡toma!' : '¡404!', '#c5eaff', 18); sBossHit(); if (b.hp <= 0) { const bt = BOSS_TYPES.find((x) => x.id === b.type) || BOSS_TYPES[3]; b.state = 'dying'; b.deadT = 0.01; g.score += 15; g.bossNum += 1; g.whiteFlash = 0.7; g.glitch = 1; g.slow = 0.4; gameStorage.setItem(BOSSKILLS_KEY, String(readStoredNumber(BOSSKILLS_KEY) + 1)); burst(b.x, b.y, 60, ['#ef4444', '#fff', '#dbe2ef', '#c5eaff'], 1.6, true); float(b.x, b.y - 40, `+15 · ¡${bt.defeat}!`, '#c5eaff', 20); sBossDead();
               // #1 mega WordPress: se rompe en MIL plugins ($)
-              if (b.mega) { g.score += 15; g.slow = 0.9; g.shake = 0.9; g.whiteFlash = 0.9; sThunder(); for (let k = 0; k < 48; k++) floats.push({ x: Math.random() * W, y: 50 + Math.random() * (gy - 130), vy: 60 + Math.random() * 150, life: 1.3 + Math.random(), text: '$', color: k % 3 ? '#FBBF24' : '#fcd34d', size: 13 + Math.random() * 18 }); for (let k = 0; k < 3; k++) burst(W * (0.25 + 0.25 * k), gy - 150, 32, ['#FBBF24', '#fcd34d', '#fff', '#F59E0B'], 1.9, true); float(W * 0.5, gy - 220, '¡roto en mil plugins!', '#FBBF24', 24); } } }
+              if (b.mega) { g.score += 15; g.slow = 0.9; g.shake = 0.9; g.whiteFlash = 0.9; sThunder(); for (let k = 0; k < 48; k++) floats.push({ x: Math.random() * W, y: 50 + Math.random() * (gy - 130), vy: 60 + Math.random() * 150, life: 1.3 + Math.random(), text: '$', color: k % 3 ? '#c5eaff' : '#fcd34d', size: 13 + Math.random() * 18 }); for (let k = 0; k < 3; k++) burst(W * (0.25 + 0.25 * k), gy - 150, 32, ['#c5eaff', '#fcd34d', '#fff', '#F59E0B'], 1.9, true); float(W * 0.5, gy - 220, '¡roto en mil plugins!', '#c5eaff', 24); } } }
             else takeHit(b.mega ? 'el SUPER WordPress' : 'el jefe WordPress');
           }
         }
@@ -735,7 +800,7 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
         const p = g.pickups[i]; if (g.phase === 'playing') p.x -= g.speed * dt; p.ph += dt * 3;
         const dx = p.x - g.beanX, dy = (p.y + Math.sin(p.ph) * 5) - (g.y - 28);
         if (g.phase === 'playing' && dx * dx + dy * dy < 34 * 34) {
-          if (p.kind === 'coin') { g.coinsRun += 1; burst(p.x, p.y, 6, ['#FBBF24', '#FFE9A8']); float(p.x, p.y, '+1', '#FBBF24', 13); }
+          if (p.kind === 'coin') { g.coinsRun += 1; burst(p.x, p.y, 6, ['#c5eaff', '#FFE9A8']); float(p.x, p.y, '+1', '#c5eaff', 13); }
           else if (p.kind === 'shield') { g.shield = true; float(p.x, p.y, '+ escudo', '#38BDF8'); }
           else { g.lives += 1; float(p.x, p.y, '+ vida', '#FB7185'); }
           sPickup(); syncHud(); g.pickups.splice(i, 1); continue;
@@ -762,12 +827,12 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
 
       ctx.clearRect(0, 0, W, H);
       ctx.save();
-      if (g.shake > 0) ctx.translate((Math.random() - 0.5) * g.shake * 34, (Math.random() - 0.5) * g.shake * 34);
+      if (!reduceMotionRef.current && g.shake > 0) ctx.translate((Math.random() - 0.5) * g.shake * 34, (Math.random() - 0.5) * g.shake * 34);
       if (g.invertView) { ctx.translate(0, H); ctx.scale(1, -1); } // volteo vertical: gravedad invertida
 
       // fondo parallax: textos reales + siluetas de cards
       for (const it of bg) {
-        let bx = it.x - g.dist * it.par; bx = ((bx % (W * 2)) + W * 2) % (W * 2) - 380;
+        let bx = it.x - g.dist * (reduceMotionRef.current ? 0 : it.par); bx = ((bx % (W * 2)) + W * 2) % (W * 2) - 380;
         ctx.globalAlpha = it.alpha;
         if (it.kind === 'text' && it.text) { ctx.fillStyle = `rgb(${it.color})`; ctx.font = `800 ${Math.round(26 + it.par * 46)}px ui-sans-serif, system-ui, sans-serif`; ctx.fillText(it.text, bx, it.y); }
         else {
@@ -781,8 +846,8 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
       ctx.globalAlpha = 1;
 
       // #5 clima dinámico (detrás del juego, decorativo)
-      if (g.weather === 'fog') { const fgr = ctx.createLinearGradient(0, gy - 170, 0, gy + 30); fgr.addColorStop(0, 'rgba(186,196,212,0)'); fgr.addColorStop(1, 'rgba(186,196,212,0.16)'); ctx.fillStyle = fgr; ctx.fillRect(0, gy - 170, W, 200); }
-      if (g.weatherFx.length) {
+      if (!reduceMotionRef.current && g.weather === 'fog') { const fgr = ctx.createLinearGradient(0, gy - 170, 0, gy + 30); fgr.addColorStop(0, 'rgba(186,196,212,0)'); fgr.addColorStop(1, 'rgba(186,196,212,0.16)'); ctx.fillStyle = fgr; ctx.fillRect(0, gy - 170, W, 200); }
+      if (!reduceMotionRef.current && g.weatherFx.length) {
         for (const f of g.weatherFx) {
           ctx.globalAlpha = f.a;
           if (f.kind === 'rain') { ctx.strokeStyle = '#9fc0ee'; ctx.lineWidth = 2; ctx.beginPath(); ctx.moveTo(f.x, f.y); ctx.lineTo(f.x + f.vx * 0.03, f.y + f.vy * 0.03); ctx.stroke(); }
@@ -793,8 +858,8 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
       }
 
       // suelo (con huecos del modo 404)
-      const grad = ctx.createLinearGradient(0, 0, W, 0); grad.addColorStop(0, '#8B5CF6'); grad.addColorStop(0.6, '#F97316'); grad.addColorStop(1, '#FBBF24');
-      ctx.strokeStyle = grad; ctx.lineWidth = 3; ctx.shadowColor = 'rgba(139,92,246,0.7)'; ctx.shadowBlur = 16;
+      const grad = ctx.createLinearGradient(0, 0, W, 0); grad.addColorStop(0, '#3b82f6'); grad.addColorStop(0.6, '#67c4ff'); grad.addColorStop(1, '#c5eaff');
+      ctx.strokeStyle = grad; ctx.lineWidth = 3; ctx.shadowColor = 'rgba(59,130,246,0.7)'; ctx.shadowBlur = 16;
       if (!g.holes.length) { ctx.beginPath(); ctx.moveTo(0, gy + 1); ctx.lineTo(W, gy + 1); ctx.stroke(); }
       else {
         // dibuja el suelo en tramos, saltándose los huecos
@@ -834,12 +899,12 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
 
       // recogibles
       for (const p of g.pickups) {
-        const oy = p.y + Math.sin(p.ph) * 5;
+        const oy = p.y + (reduceMotionRef.current ? 0 : Math.sin(p.ph) * 5);
         ctx.save(); ctx.translate(p.x, oy);
         if (p.kind === 'coin') {
-          const rw = 2 + Math.abs(Math.cos(p.ph * 1.5)) * 9; // gira
-          ctx.shadowColor = 'rgba(251,191,36,0.9)'; ctx.shadowBlur = 14;
-          const cg = ctx.createLinearGradient(0, -10, 0, 10); cg.addColorStop(0, '#FFE9A8'); cg.addColorStop(0.5, '#FBBF24'); cg.addColorStop(1, '#F59E0B');
+          const rw = reduceMotionRef.current ? 9 : 2 + Math.abs(Math.cos(p.ph * 1.5)) * 9; // gira
+          ctx.shadowColor = 'rgba(197,234,255,0.9)'; ctx.shadowBlur = 14;
+          const cg = ctx.createLinearGradient(0, -10, 0, 10); cg.addColorStop(0, '#FFE9A8'); cg.addColorStop(0.5, '#c5eaff'); cg.addColorStop(1, '#F59E0B');
           ctx.fillStyle = cg; ctx.beginPath(); ctx.ellipse(0, 0, rw, 10, 0, 0, Math.PI * 2); ctx.fill(); ctx.shadowBlur = 0;
           if (rw > 5) { ctx.strokeStyle = 'rgba(120,60,0,0.45)'; ctx.lineWidth = 1; ctx.beginPath(); ctx.ellipse(0, 0, rw * 0.5, 5, 0, 0, Math.PI * 2); ctx.stroke(); }
         } else if (p.kind === 'shield') {
@@ -869,13 +934,13 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
 
       // burbuja de escudo
       if (g.shield && g.phase !== 'over') {
-        ctx.save(); ctx.globalAlpha = 0.4 + 0.18 * Math.sin(g.t * 5); ctx.strokeStyle = '#38BDF8'; ctx.lineWidth = 2.5;
+        ctx.save(); ctx.globalAlpha = reduceMotionRef.current ? 0.5 : 0.4 + 0.18 * Math.sin(g.t * 5); ctx.strokeStyle = '#38BDF8'; ctx.lineWidth = 2.5;
         ctx.shadowColor = 'rgba(56,189,248,0.85)'; ctx.shadowBlur = 14; ctx.beginPath(); ctx.arc(g.beanX, g.y - 30, 42, 0, Math.PI * 2); ctx.stroke(); ctx.restore();
       }
       // estela de dash
-      if (g.dashT > 0) {
+      if (!reduceMotionRef.current && g.dashT > 0) {
         ctx.save(); ctx.globalCompositeOperation = 'lighter';
-        for (let i = 0; i < 7; i++) { ctx.globalAlpha = 0.18 * (g.dashT / 0.3); ctx.strokeStyle = i % 2 ? '#C9A6FF' : '#38BDF8'; ctx.lineWidth = 2; ctx.beginPath(); const yy = g.y - 8 - i * 7; ctx.moveTo(g.beanX - 10, yy); ctx.lineTo(g.beanX + 130, yy); ctx.stroke(); }
+        for (let i = 0; i < 7; i++) { ctx.globalAlpha = 0.18 * (g.dashT / 0.3); ctx.strokeStyle = i % 2 ? '#bfdbfe' : '#38BDF8'; ctx.lineWidth = 2; ctx.beginPath(); const yy = g.y - 8 - i * 7; ctx.moveTo(g.beanX - 10, yy); ctx.lineTo(g.beanX + 130, yy); ctx.stroke(); }
         ctx.restore();
       }
 
@@ -907,15 +972,15 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
       for (const f of floats) { ctx.globalAlpha = Math.min(1, f.life * 1.6); ctx.fillStyle = f.color; ctx.font = `700 ${f.size}px ui-monospace, monospace`; ctx.fillText(f.text, f.x, f.y); }
       ctx.globalAlpha = 1; ctx.textAlign = 'start';
 
-      if (!active) { ctx.fillStyle = 'rgba(7,5,14,0.45)'; ctx.fillRect(0, 0, W, H); }
+      if (!active) { ctx.fillStyle = 'rgba(3,9,20,0.45)'; ctx.fillRect(0, 0, W, H); }
 
       ctx.restore();
 
-      if (g.whiteFlash > 0) { ctx.globalAlpha = g.whiteFlash * 0.9; ctx.fillStyle = '#fff'; ctx.fillRect(0, 0, W, H); ctx.globalAlpha = 1; }
-      if (g.hitFlash > 0) { ctx.globalAlpha = g.hitFlash * 0.4; ctx.fillStyle = '#F97316'; ctx.fillRect(0, 0, W, H); ctx.globalAlpha = 1; }
+      if (!reduceMotionRef.current && g.whiteFlash > 0) { ctx.globalAlpha = g.whiteFlash * 0.9; ctx.fillStyle = '#fff'; ctx.fillRect(0, 0, W, H); ctx.globalAlpha = 1; }
+      if (!reduceMotionRef.current && g.hitFlash > 0) { ctx.globalAlpha = g.hitFlash * 0.4; ctx.fillStyle = '#67c4ff'; ctx.fillRect(0, 0, W, H); ctx.globalAlpha = 1; }
 
       // glitch VHS: bandas horizontales desplazadas con tinte RGB
-      if (g.glitch > 0.04) {
+      if (!reduceMotionRef.current && g.glitch > 0.04) {
         const dpr = Math.min(window.devicePixelRatio || 1, 2);
         const n = 2 + Math.floor(g.glitch * 5);
         for (let i = 0; i < n; i++) {
@@ -929,34 +994,53 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
       // modo inverso estilo Geometry Dash: tinte neón cian/magenta
       if (g.invertView) {
         const ng = ctx.createLinearGradient(0, 0, W, H); ng.addColorStop(0, '#22d3ee'); ng.addColorStop(1, '#d946ef');
-        ctx.globalCompositeOperation = 'overlay'; ctx.globalAlpha = 0.12 + 0.05 * Math.sin(g.t * 4); ctx.fillStyle = ng; ctx.fillRect(0, 0, W, H);
+        ctx.globalCompositeOperation = 'overlay'; ctx.globalAlpha = reduceMotionRef.current ? 0.12 : 0.12 + 0.05 * Math.sin(g.t * 4); ctx.fillStyle = ng; ctx.fillRect(0, 0, W, H);
         ctx.globalCompositeOperation = 'source-over'; ctx.globalAlpha = 1;
       }
     };
     raf = requestAnimationFrame((t) => { last = t; loop(t); });
 
     const onKey = (e: KeyboardEvent) => {
+      if (isInteractiveTarget(e.target)) return;
+      if (e.code === 'KeyP') {
+        if (!e.repeat && g.phase !== 'over') { e.preventDefault(); setGamePaused(!isPaused); }
+        return;
+      }
       if (e.code === 'Space' || e.code === 'ArrowUp' || e.code === 'KeyW') { e.preventDefault(); if (!e.repeat) requestJump(); }
       else if (e.code === 'ShiftLeft' || e.code === 'ShiftRight' || e.code === 'KeyD' || e.code === 'ArrowRight') { e.preventDefault(); requestDash(); }
-      else if (e.code === 'Escape') onCloseRef.current();
     };
-    const onKeyUp = (e: KeyboardEvent) => { if (e.code === 'Space' || e.code === 'ArrowUp' || e.code === 'KeyW') cutJump(); };
+    const onKeyUp = (e: KeyboardEvent) => { if (!isInteractiveTarget(e.target) && (e.code === 'Space' || e.code === 'ArrowUp' || e.code === 'KeyW')) cutJump(); };
+    const onVisibilityChange = () => {
+      if (document.hidden) setGamePaused(true, 'hidden');
+      else if (isPaused) requestAnimationFrame(() => resumeButtonRef.current?.focus());
+    };
     window.addEventListener('keydown', onKey);
     window.addEventListener('keyup', onKeyUp);
-    const onPointer = (e: PointerEvent) => { e.preventDefault(); requestJump(); };
+    document.addEventListener('visibilitychange', onVisibilityChange);
+    const onPointer = (e: PointerEvent) => {
+      if (!e.isPrimary || e.button !== 0) return;
+      e.preventDefault();
+      canvas.setPointerCapture(e.pointerId);
+      canvas.focus({ preventScroll: true });
+      requestJump();
+    };
     const onPointerUp = () => cutJump();
     canvas.addEventListener('pointerdown', onPointer);
     canvas.addEventListener('pointerup', onPointerUp);
+    canvas.addEventListener('pointercancel', onPointerUp);
 
     return () => {
       cancelAnimationFrame(raf);
       window.removeEventListener('resize', resize);
       window.removeEventListener('keydown', onKey);
       window.removeEventListener('keyup', onKeyUp);
+      document.removeEventListener('visibilitychange', onVisibilityChange);
       canvas.removeEventListener('pointerdown', onPointer);
       canvas.removeEventListener('pointerup', onPointerUp);
+      canvas.removeEventListener('pointercancel', onPointerUp);
       for (const o of obstacles) o.node.remove();
       actx?.close?.();
+      pauseControlRef.current = () => {};
       document.body.style.overflow = prevOverflow;
       if (hadCustomCursor) document.body.classList.add('has-custom-cursor');
     };
@@ -964,17 +1048,24 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
 
   if (typeof document === 'undefined') return null;
   return createPortal(
+    <Dialog.Root open={open} onOpenChange={(next) => { if (!next) onClose(); }}>
     <AnimatePresence>
       {open && (
-        <motion.div className="escape-overlay fixed inset-0 z-[9999]" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.25 }}>
-          <motion.div className="absolute inset-0" style={{ background: 'rgba(7,5,14,0.5)', backdropFilter: 'blur(6px)' }} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.4 }} />
+        <Dialog.Content asChild
+          onOpenAutoFocus={(event) => { event.preventDefault(); previousFocusRef.current = document.activeElement as HTMLElement; canvasRef.current?.focus({ preventScroll: true }); }}
+          onCloseAutoFocus={(event) => { event.preventDefault(); previousFocusRef.current?.focus({ preventScroll: true }); }}
+          onInteractOutside={(event) => event.preventDefault()}>
+        <motion.div ref={dialogRef} className="escape-overlay fixed inset-0 z-[9999]" data-game="escape" data-state={over ? 'over' : pauseReason ? 'paused' : 'playing'} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.2 }}>
+          <Dialog.Title className="sr-only">Escape de la plantilla</Dialog.Title>
+          <Dialog.Description className="sr-only">Espacio o toca para saltar, D para dash, P para pausar. Escape cierra el juego.</Dialog.Description>
+          <motion.div className="absolute inset-0" style={{ background: 'rgba(3,9,20,0.5)', backdropFilter: 'blur(6px)' }} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.4 }} />
           <motion.div
             ref={zoomRef} className="absolute inset-0" style={{ touchAction: 'none' }}
-            initial={{ scale: 0.12, opacity: 0, filter: 'blur(22px)' }} animate={{ scale: 1, opacity: 1, filter: 'blur(0px)' }} exit={{ scale: 0.12, opacity: 0, filter: 'blur(22px)' }}
-            transition={{ type: 'spring', stiffness: 140, damping: 19 }}
+            initial={{ scale: shouldReduceMotion ? 1 : 0.96, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: shouldReduceMotion ? 1 : 0.96, opacity: 0 }}
+            transition={{ duration: 0.25, ease: EASE_OUT }}
           >
             <div ref={layerRef} className="absolute inset-0 overflow-hidden" />
-            <canvas ref={canvasRef} className="absolute inset-0 h-full w-full" style={{ cursor: 'crosshair' }} />
+            <canvas ref={canvasRef} tabIndex={0} aria-label="Juego: espacio salta, D dash, P pausa" className="absolute inset-0 h-full w-full" style={{ cursor: 'crosshair' }} />
             {/* pantalla rota persistente: scanlines + viñeta */}
             <div className="pointer-events-none absolute inset-0" style={{
               backgroundImage: 'repeating-linear-gradient(0deg, rgba(0,0,0,0.13) 0px, rgba(0,0,0,0.13) 1px, transparent 1px, transparent 3px), radial-gradient(ellipse at center, transparent 62%, rgba(0,0,0,0.45) 100%)',
@@ -985,13 +1076,13 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
           <div className="pointer-events-none absolute left-1/2 top-5 -translate-x-1/2 flex flex-col items-center gap-2">
             <div className="flex items-center gap-2.5 rounded-full px-4 py-2"
               style={{ background: 'var(--bg-glass-strong)', border: '1px solid var(--border-subtle)', backdropFilter: 'blur(10px)' }}>
-              <span className="font-mono text-sm font-bold" style={{ color: '#FBBF24' }}>🪙 {hud.coins}</span>
+              <span className="font-mono text-sm font-bold" style={{ color: '#c5eaff' }}>🪙 {hud.coins}</span>
               {(hud.lives > 0 || hud.shield) && <span className="mx-0.5 h-5 w-px bg-white/15" />}
               {Array.from({ length: hud.lives }).map((_, i) => <Heart key={i} size={22} className="text-rose-400" fill="currentColor" />)}
               {hud.shield && <Shield size={22} className="text-sky-400" fill="currentColor" />}
             </div>
-            <p className="font-mono text-sm text-white/85">esquivados · <span ref={scoreRef} style={{ color: '#FBBF24' }}>0</span></p>
-            <p className="text-xs text-white/45">ESPACIO salta (mantén = más alto) · MAYÚS/D dash · pisa la W · ESC salir</p>
+            <p className="font-mono text-sm text-white/85">esquivados · <span ref={scoreRef} style={{ color: '#c5eaff' }}>0</span></p>
+            <p className="hidden text-xs text-white/65 md:block">ESPACIO salta · MAYÚS/D dash · P pausa · ESC salir</p>
           </div>
 
           {/* selectores de dificultad y modo */}
@@ -1007,9 +1098,13 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
           </button>
 
           {/* botón de dash (táctil) */}
+          {!over && !pauseReason && <button onClick={() => pauseControlRef.current(true)} aria-label="Pausar juego" className="absolute bottom-6 left-6 z-[210] flex h-14 items-center gap-2 rounded-full bg-[#123457] px-5 text-sm"><Pause size={18} /> Pausa</button>}
+          {pauseReason && <div className="absolute inset-0 z-[220] grid place-items-center bg-[#030914]/90 p-6">
+            <div className="text-center"><h2 className="font-display text-3xl font-bold">Partida en pausa</h2><p className="mt-3 text-sm text-blue-100/70">{pauseReason === 'hidden' ? 'Tu partida te espera. Reanuda cuando estés listo.' : 'Un respiro. Seguimos cuando tú quieras.'}</p><button ref={resumeButtonRef} onClick={() => { pauseControlRef.current(false); canvasRef.current?.focus({ preventScroll: true }); }} className="blue-button mt-6"><Play size={16} /> Reanudar</button><button onClick={onClose} className="text-button ml-5 mt-6">Salir</button></div>
+          </div>}
           <button onClick={() => dashRef.current()} aria-label="Dash"
             className="absolute bottom-6 right-6 z-[210] inline-flex h-14 w-14 items-center justify-center rounded-full text-xs font-bold text-white transition-transform active:scale-90"
-            style={{ background: 'linear-gradient(180deg, var(--purple-400), var(--purple-600))', boxShadow: '0 6px 24px var(--purple-glow)' }}>
+            style={{ background: 'linear-gradient(180deg, var(--brand-400), var(--brand-600))', boxShadow: '0 6px 24px var(--brand-glow)' }}>
             DASH
           </button>
 
@@ -1036,7 +1131,7 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
                   <p className="font-mono text-sm text-white/70">
                     {result.score} esquivados
                     {result.record
-                      ? <span style={{ color: '#FBBF24' }}> · ¡nuevo récord! 🏆</span>
+                      ? <span style={{ color: '#c5eaff' }}> · ¡nuevo récord! 🏆</span>
                       : <span className="inline-flex items-center gap-1 text-white/50"> · <Trophy size={12} /> {result.best}</span>}
                   </p>
                   <p className="text-xs text-white/40">partida #{result.runs} · {result.dodged} esquivados en total</p>
@@ -1047,7 +1142,7 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
                       <span className="text-[10px] uppercase tracking-widest text-white/35">modo</span>
                       {(['infinito', 'campana'] as const).map((gm) => (
                         <button key={gm} onClick={() => chooseGameMode(gm)} className="rounded-full px-2.5 py-1 text-xs font-semibold transition-colors"
-                          style={gameMode === gm ? { background: 'linear-gradient(180deg, var(--purple-400), var(--purple-600))', color: '#fff' } : { color: 'rgba(255,255,255,0.55)', border: '1px solid var(--border-subtle)' }}>
+                          style={gameMode === gm ? { background: 'linear-gradient(180deg, var(--brand-400), var(--brand-600))', color: '#fff' } : { color: 'rgba(255,255,255,0.55)', border: '1px solid var(--border-subtle)' }}>
                           {gm === 'infinito' ? '∞ Infinito' : '🏆 Campaña'}
                         </button>
                       ))}
@@ -1056,7 +1151,7 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
                       <span className="text-[10px] uppercase tracking-widest text-white/35">dif.</span>
                       {(['facil', 'normal'] as const).map((m) => (
                         <button key={m} onClick={() => chooseMode(m)} className="rounded-full px-2.5 py-1 text-xs font-semibold transition-colors"
-                          style={mode === m ? { background: 'linear-gradient(180deg, var(--purple-400), var(--purple-600))', color: '#fff' } : { color: 'rgba(255,255,255,0.55)', border: '1px solid var(--border-subtle)' }}>
+                          style={mode === m ? { background: 'linear-gradient(180deg, var(--brand-400), var(--brand-600))', color: '#fff' } : { color: 'rgba(255,255,255,0.55)', border: '1px solid var(--border-subtle)' }}>
                           {m === 'facil' ? '🌱' : '🔥'}
                         </button>
                       ))}
@@ -1068,13 +1163,13 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
                     <div className="mt-1 w-60 text-left">
                       <div className="mb-1 flex items-center justify-between">
                         <span className="text-[10px] uppercase tracking-widest text-white/35">Ranking</span>
-                        <input defaultValue={(typeof window !== 'undefined' && localStorage.getItem(NAME_KEY)) || 'Tú'} onChange={(e) => renameLatest(e.target.value)} maxLength={14} placeholder="tu nombre"
+                        <input defaultValue={gameStorage.getItem(NAME_KEY) || 'Tú'} onChange={(e) => renameLatest(e.target.value)} maxLength={14} placeholder="tu nombre"
                           className="w-24 rounded-md bg-white/5 px-2 py-0.5 text-right text-[11px] text-white outline-none" style={{ border: '1px solid var(--border-subtle)' }} />
                       </div>
                       <ol className="space-y-0.5">
                         {lb.slice(0, 5).map((e, i) => {
                           const mine = e.score === result.score && i === lb.findIndex((x) => x.score === result.score);
-                          return <li key={i} className="flex justify-between font-mono text-xs" style={{ color: mine ? '#FBBF24' : 'rgba(255,255,255,0.55)' }}><span className="truncate">{i + 1}. {e.name}</span><span>{e.score}</span></li>;
+                          return <li key={i} className="flex justify-between font-mono text-xs" style={{ color: mine ? '#c5eaff' : 'rgba(255,255,255,0.55)' }}><span className="truncate">{i + 1}. {e.name}</span><span>{e.score}</span></li>;
                         })}
                       </ol>
                     </div>
@@ -1082,7 +1177,7 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
 
                   {/* tienda de skins (canjea monedas) */}
                   <div className="mt-1 w-72">
-                    <p className="mb-1.5 text-[10px] uppercase tracking-widest text-white/35">Tienda · <span style={{ color: '#FBBF24' }}>🪙 {coins}</span></p>
+                    <p className="mb-1.5 text-[10px] uppercase tracking-widest text-white/35">Tienda · <span style={{ color: '#c5eaff' }}>🪙 {coins}</span></p>
                     <div className="flex flex-wrap justify-center gap-2">
                       {SKINS.map((s) => {
                         const own = owned.includes(s.id); const canBuy = coins >= s.price;
@@ -1099,7 +1194,7 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
                   </div>
                   <div className="mt-2 flex gap-3">
                     <button onClick={() => resetRef.current()} className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-white transition-transform hover:scale-105"
-                      style={{ background: 'linear-gradient(180deg, var(--purple-400), var(--purple-600))', boxShadow: '0 6px 24px var(--purple-glow)' }}>
+                      style={{ background: 'linear-gradient(180deg, var(--brand-400), var(--brand-600))', boxShadow: '0 6px 24px var(--brand-glow)' }}>
                       <RotateCcw size={14} /> Otra vez
                     </button>
                     <button onClick={onClose} className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-white/80 transition-colors hover:text-white"
@@ -1112,8 +1207,10 @@ export default function EscapeGame({ open, onClose }: { open: boolean; onClose: 
             )}
           </AnimatePresence>
         </motion.div>
+        </Dialog.Content>
       )}
-    </AnimatePresence>,
+    </AnimatePresence>
+    </Dialog.Root>,
     document.body,
   );
 }

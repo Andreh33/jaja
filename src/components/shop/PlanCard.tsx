@@ -19,7 +19,7 @@ export type Plan = {
 
 export default function PlanCard({ plan }: { plan: Plan }) {
   const accentMap = {
-    purple: 'var(--purple-400)',
+    purple: 'var(--brand-400)',
     blue: 'var(--accent-web)',
     orange: 'var(--accent-shop)',
     green: 'var(--accent-ia)',

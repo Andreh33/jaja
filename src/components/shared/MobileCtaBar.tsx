@@ -5,7 +5,7 @@ import { Phone, MessageCircle } from 'lucide-react';
 import { whatsappLink } from '@/lib/stripe-links';
 
 /** Rutas de aplicación (no comerciales) donde la barra molesta. */
-const HIDDEN_PREFIXES = ['/admin', '/dashboard', '/cursos', '/login', '/registro', '/recuperar'];
+const HIDDEN_PREFIXES = ['/admin', '/dashboard', '/cursos', '/login', '/registro', '/recuperar', '/tienda/calculadora'];
 
 /**
  * Barra fija de contacto para móvil (llamar + WhatsApp). En servicios la
@@ -23,7 +23,7 @@ export default function MobileCtaBar() {
       className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-2 border-t md:hidden"
       style={{
         borderColor: 'var(--border-subtle)',
-        background: 'rgba(7,5,14,0.92)',
+        background: 'rgba(3,9,20,0.92)',
         backdropFilter: 'blur(16px)',
         WebkitBackdropFilter: 'blur(16px)',
         paddingBottom: 'env(safe-area-inset-bottom)',
@@ -33,7 +33,7 @@ export default function MobileCtaBar() {
         href="tel:+34684739091"
         className="flex h-14 items-center justify-center gap-2 text-sm font-semibold text-white"
       >
-        <Phone size={16} style={{ color: 'var(--purple-300)' }} aria-hidden />
+        <Phone size={16} style={{ color: 'var(--brand-300)' }} aria-hidden />
         Llamar
       </a>
       <a
@@ -41,7 +41,7 @@ export default function MobileCtaBar() {
         target="_blank"
         rel="noreferrer"
         className="flex h-14 items-center justify-center gap-2 text-sm font-semibold text-white"
-        style={{ background: '#25D366' }}
+        style={{ background: '#2563eb' }}
       >
         <MessageCircle size={16} aria-hidden />
         WhatsApp

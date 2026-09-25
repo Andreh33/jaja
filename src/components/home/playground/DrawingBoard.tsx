@@ -1,203 +1,100 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
-import { Download, Eraser } from 'lucide-react';
+import { useEffect, useRef, useState, type PointerEvent } from 'react';
+import { Download, Eraser, Undo2, Redo2 } from 'lucide-react';
 
-const COLORS = ['#8B5CF6', '#C084FC', '#F97316', '#FBBF24', '#3B82F6', '#10B981', '#FF4D9D', '#FFFFFF'];
-const SIZES = [3, 6, 12];
+type Point = { x: number; y: number };
+type Stroke = { color: string; size: number; points: Point[] };
+const COLORS = [{ hex: '#3b82f6', name: 'Azul eléctrico' }, { hex: '#93c5fd', name: 'Azul cielo' }, { hex: '#b9e7ff', name: 'Azul hielo' }, { hex: '#ffffff', name: 'Blanco' }];
+const WIDTH = 1200, HEIGHT = 720;
 
-// Cursor de lápiz: SVG inline con el hotspot en la punta.
-const PENCIL_CURSOR = `url("data:image/svg+xml,${encodeURIComponent(
-  `<svg xmlns='http://www.w3.org/2000/svg' width='26' height='26' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z' fill='%23FBBF24' stroke='%2307050E'/></svg>`
-)}") 2 24, crosshair`;
+function paint(canvas: HTMLCanvasElement | null, strokes: Stroke[]) {
+  const ctx = canvas?.getContext('2d');
+  if (!ctx) return;
+  ctx.clearRect(0, 0, WIDTH, HEIGHT);
+  for (const stroke of strokes) {
+    if (!stroke.points.length) continue;
+    ctx.strokeStyle = stroke.color;
+    ctx.fillStyle = stroke.color;
+    ctx.lineWidth = stroke.size;
+    ctx.lineCap = 'round';
+    ctx.lineJoin = 'round';
+    const first = stroke.points[0];
+    if (stroke.points.length === 1) {
+      ctx.beginPath(); ctx.arc(first.x, first.y, stroke.size / 2, 0, Math.PI * 2); ctx.fill();
+    } else {
+      ctx.beginPath(); ctx.moveTo(first.x, first.y);
+      for (const p of stroke.points.slice(1)) ctx.lineTo(p.x, p.y);
+      ctx.stroke();
+    }
+  }
+}
 
 export default function DrawingBoard() {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-  // El dibujo vive en un canvas offscreen a resolución fija: sobrevive a
-  // resizes y al DPR sin emborronarse al reescalar.
-  const boardRef = useRef<HTMLCanvasElement | null>(null);
-  const drawing = useRef(false);
-  const last = useRef<{ x: number; y: number } | null>(null);
-  const [color, setColor] = useState(COLORS[0]);
-  const [size, setSize] = useState(SIZES[1]);
-  const [hasInk, setHasInk] = useState(false);
+  const canvas = useRef<HTMLCanvasElement>(null);
+  const strokes = useRef<Stroke[]>([]);
+  const undone = useRef<Stroke[]>([]);
+  const active = useRef<number | null>(null);
+  const [color, setColor] = useState(COLORS[0].hex);
+  const [size, setSize] = useState(8);
+  const [counts, setCounts] = useState({ ink: 0, undo: 0 });
+  useEffect(() => { paint(canvas.current, strokes.current); }, []);
 
-  const colorRef = useRef(color);
-  const sizeRef = useRef(size);
-  colorRef.current = color;
-  sizeRef.current = size;
-
-  useEffect(() => {
-    const canvas = canvasRef.current!;
-    const board = document.createElement('canvas');
-    board.width = 1600;
-    board.height = 1000;
-    boardRef.current = board;
-
-    const paint = () => {
-      const ctx = canvas.getContext('2d')!;
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.drawImage(board, 0, 0, canvas.width, canvas.height);
-    };
-
-    const resize = () => {
-      const dpr = Math.min(window.devicePixelRatio || 1, 2);
-      const rect = canvas.getBoundingClientRect();
-      canvas.width = Math.round(rect.width * dpr);
-      canvas.height = Math.round(rect.height * dpr);
-      paint();
-    };
-    resize();
-    const ro = new ResizeObserver(resize);
-    ro.observe(canvas);
-
-    const toBoard = (e: PointerEvent) => {
-      const rect = canvas.getBoundingClientRect();
-      return {
-        x: ((e.clientX - rect.left) / rect.width) * board.width,
-        y: ((e.clientY - rect.top) / rect.height) * board.height,
-      };
-    };
-
-    const down = (e: PointerEvent) => {
-      e.preventDefault();
-      canvas.setPointerCapture(e.pointerId);
-      drawing.current = true;
-      last.current = toBoard(e);
-      setHasInk(true);
-    };
-    const move = (e: PointerEvent) => {
-      if (!drawing.current || !last.current) return;
-      const p = toBoard(e);
-      const ctx = board.getContext('2d')!;
-      const scale = board.width / canvas.getBoundingClientRect().width;
-      ctx.lineCap = 'round';
-      ctx.lineJoin = 'round';
-      ctx.strokeStyle = colorRef.current;
-      ctx.lineWidth = sizeRef.current * scale;
-      ctx.beginPath();
-      ctx.moveTo(last.current.x, last.current.y);
-      // Punto medio para suavizar el trazo.
-      const mx = (last.current.x + p.x) / 2;
-      const my = (last.current.y + p.y) / 2;
-      ctx.quadraticCurveTo(last.current.x, last.current.y, mx, my);
-      ctx.lineTo(p.x, p.y);
-      ctx.stroke();
-      last.current = p;
-      paint();
-    };
-    const up = () => {
-      drawing.current = false;
-      last.current = null;
-    };
-
-    canvas.addEventListener('pointerdown', down);
-    canvas.addEventListener('pointermove', move);
-    canvas.addEventListener('pointerup', up);
-    canvas.addEventListener('pointerleave', up);
-    return () => {
-      ro.disconnect();
-      canvas.removeEventListener('pointerdown', down);
-      canvas.removeEventListener('pointermove', move);
-      canvas.removeEventListener('pointerup', up);
-      canvas.removeEventListener('pointerleave', up);
-    };
-  }, []);
-
-  const clear = () => {
-    const board = boardRef.current;
-    const canvas = canvasRef.current;
-    if (!board || !canvas) return;
-    board.getContext('2d')!.clearRect(0, 0, board.width, board.height);
-    canvas.getContext('2d')!.clearRect(0, 0, canvas.width, canvas.height);
-    setHasInk(false);
+  const point = (e: PointerEvent<HTMLCanvasElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    return { x: (e.clientX - rect.left) / rect.width * WIDTH, y: (e.clientY - rect.top) / rect.height * HEIGHT };
   };
-
+  const sync = () => { paint(canvas.current, strokes.current); setCounts({ ink: strokes.current.length, undo: undone.current.length }); };
+  const down = (e: PointerEvent<HTMLCanvasElement>) => {
+    if (!e.isPrimary || e.button !== 0 || active.current !== null) return;
+    e.preventDefault();
+    e.currentTarget.setPointerCapture(e.pointerId);
+    active.current = e.pointerId;
+    undone.current = [];
+    // Keep a bounded history; the canvas itself never resizes, so artwork survives rotation.
+    if (strokes.current.length >= 150) strokes.current.shift();
+    strokes.current.push({ color, size, points: [point(e)] });
+    sync();
+  };
+  const move = (e: PointerEvent<HTMLCanvasElement>) => {
+    if (active.current !== e.pointerId) return;
+    const stroke = strokes.current.at(-1);
+    if (stroke && stroke.points.length < 6000) { stroke.points.push(point(e)); paint(canvas.current, strokes.current); }
+  };
+  const up = (e: PointerEvent<HTMLCanvasElement>) => {
+    if (active.current !== e.pointerId) return;
+    active.current = null;
+    if (e.currentTarget.hasPointerCapture(e.pointerId)) e.currentTarget.releasePointerCapture(e.pointerId);
+  };
+  const undo = () => { const last = strokes.current.pop(); if (last) undone.current.push(last); sync(); };
+  const redo = () => { const last = undone.current.pop(); if (last) strokes.current.push(last); sync(); };
+  const clear = () => { strokes.current = []; undone.current = []; active.current = null; sync(); };
   const download = () => {
-    const board = boardRef.current;
-    if (!board) return;
-    // Fondo oscuro de marca para que el PNG no salga transparente.
-    const out = document.createElement('canvas');
-    out.width = board.width;
-    out.height = board.height;
-    const ctx = out.getContext('2d')!;
-    ctx.fillStyle = '#0B0716';
-    ctx.fillRect(0, 0, out.width, out.height);
-    ctx.drawImage(board, 0, 0);
-    const a = document.createElement('a');
-    a.download = 'mi-obra-latech.png';
-    a.href = out.toDataURL('image/png');
-    a.click();
+    if (!canvas.current) return;
+    const output = document.createElement('canvas'); output.width = WIDTH; output.height = HEIGHT;
+    const ctx = output.getContext('2d')!;
+    ctx.fillStyle = '#071323'; ctx.fillRect(0, 0, WIDTH, HEIGHT); ctx.drawImage(canvas.current, 0, 0);
+    const link = document.createElement('a'); link.download = 'mi-idea-latech.png'; link.href = output.toDataURL('image/png'); link.click();
   };
 
-  return (
-    <div className="flex h-full flex-col">
-      <div
-        className="relative flex-1 overflow-hidden rounded-2xl"
-        style={{ background: 'rgba(7,5,14,0.55)', border: '1px solid var(--border-subtle)' }}
-      >
-        <canvas
-          ref={canvasRef}
-          className="h-full w-full"
-          style={{ cursor: PENCIL_CURSOR, touchAction: 'none' }}
-          aria-label="Pizarra para dibujar libremente"
-        />
-        {!hasInk && (
-          <p className="pointer-events-none absolute inset-0 flex items-center justify-center text-sm text-white/30">
-            Dibuja aquí lo que quieras ✏️
-          </p>
-        )}
+  return <div className="flex h-full min-h-0 flex-col gap-3" data-game="drawing" data-strokes={counts.ink}>
+    <div className="flex flex-wrap items-center justify-between gap-2">
+      <div className="flex items-center gap-1" role="group" aria-label="Color del lápiz">
+        {COLORS.map(c => <button key={c.hex} onClick={() => setColor(c.hex)} aria-label={c.name} aria-pressed={color === c.hex} className="grid h-11 w-11 place-items-center rounded-lg border" style={{ borderColor: color === c.hex ? '#b9e7ff' : 'transparent' }}><span className="h-5 w-5 rounded-full" style={{ background: c.hex }} /></button>)}
       </div>
-
-      <div className="mt-4 flex flex-wrap items-center gap-3">
-        <div className="flex items-center gap-1.5">
-          {COLORS.map((c) => (
-            <button
-              key={c}
-              onClick={() => setColor(c)}
-              aria-label={`Color ${c}`}
-              className="h-6 w-6 rounded-full transition-transform hover:scale-110"
-              style={{
-                background: c,
-                boxShadow: color === c ? `0 0 0 2px var(--bg-base), 0 0 0 4px ${c}` : 'none',
-              }}
-            />
-          ))}
-        </div>
-        <div className="flex items-center gap-1.5">
-          {SIZES.map((s) => (
-            <button
-              key={s}
-              onClick={() => setSize(s)}
-              aria-label={`Grosor ${s}`}
-              className="flex h-8 w-8 items-center justify-center rounded-lg transition-colors"
-              style={{
-                background: size === s ? 'var(--bg-glass-strong)' : 'var(--bg-glass)',
-                border: `1px solid ${size === s ? 'var(--border-glow)' : 'var(--border-subtle)'}`,
-              }}
-            >
-              <span className="rounded-full bg-white" style={{ width: s + 2, height: s + 2 }} />
-            </button>
-          ))}
-        </div>
-        <div className="ml-auto flex items-center gap-2">
-          <button
-            onClick={clear}
-            className="inline-flex items-center gap-1.5 rounded-lg px-3 py-2 text-xs text-white/70 transition-colors hover:text-white"
-            style={{ background: 'var(--bg-glass)', border: '1px solid var(--border-subtle)' }}
-          >
-            <Eraser size={13} /> Borrar
-          </button>
-          <button
-            onClick={download}
-            disabled={!hasInk}
-            className="inline-flex items-center gap-1.5 rounded-lg px-3 py-2 text-xs text-white/70 transition-colors hover:text-white disabled:opacity-40"
-            style={{ background: 'var(--bg-glass)', border: '1px solid var(--border-subtle)' }}
-          >
-            <Download size={13} /> Guardar
-          </button>
-        </div>
+      <div className="flex items-center gap-1" role="group" aria-label="Grosor del lápiz">
+        {[4, 8, 16].map(s => <button key={s} onClick={() => setSize(s)} aria-label={'Grosor ' + s} aria-pressed={size === s} className="grid h-11 w-11 place-items-center rounded-lg border" style={{ borderColor: size === s ? '#b9e7ff' : 'transparent' }}><span className="rounded-full bg-white" style={{ width: s, height: s }} /></button>)}
       </div>
     </div>
-  );
+    <canvas ref={canvas} width={WIDTH} height={HEIGHT} onPointerDown={down} onPointerMove={move} onPointerUp={up} onPointerCancel={up} onLostPointerCapture={() => { active.current = null; }} aria-label="Lienzo de dibujo libre. Usa el ratón, lápiz o un dedo." className="min-h-0 w-full flex-1 rounded-lg border border-blue-200/15 bg-[#071323]" style={{ cursor: 'crosshair', touchAction: 'none' }} />
+    <div className="flex flex-wrap items-center justify-between gap-2">
+      <div className="flex gap-1">
+        <button onClick={undo} disabled={!counts.ink} aria-label="Deshacer trazo" className="grid h-11 w-11 place-items-center rounded-lg bg-white/5 disabled:opacity-30"><Undo2 size={17} /></button>
+        <button onClick={redo} disabled={!counts.undo} aria-label="Rehacer trazo" className="grid h-11 w-11 place-items-center rounded-lg bg-white/5 disabled:opacity-30"><Redo2 size={17} /></button>
+        <button onClick={clear} disabled={!counts.ink} aria-label="Borrar lienzo" className="grid h-11 w-11 place-items-center rounded-lg bg-white/5 disabled:opacity-30"><Eraser size={17} /></button>
+      </div>
+      <button onClick={download} disabled={!counts.ink} className="flex min-h-11 items-center gap-2 rounded-lg bg-[#b9e7ff] px-3 text-xs font-semibold text-[#071323] disabled:opacity-30"><Download size={15} /> Guardar PNG</button>
+    </div>
+    <p className="text-center text-[11px] text-white/55">Tu idea, sin plugins. Dibuja, deshaz y llévatela.</p>
+  </div>;
 }

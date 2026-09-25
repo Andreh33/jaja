@@ -41,7 +41,7 @@ export default function IntroCinematic() {
           {/* aurora de fondo que se expande */}
           <motion.div aria-hidden className="absolute h-[60vmax] w-[60vmax] rounded-full"
             initial={{ scale: 0.2, opacity: 0 }} animate={{ scale: 1.1, opacity: 0.5 }} transition={{ duration: 2.4, ease: 'easeOut' }}
-            style={{ background: 'radial-gradient(circle, rgba(139,92,246,0.5), rgba(249,115,22,0.18) 45%, transparent 70%)', filter: 'blur(70px)' }} />
+            style={{ background: 'radial-gradient(circle, rgba(59,130,246,0.5), rgba(103,196,255,0.18) 45%, transparent 70%)', filter: 'blur(70px)' }} />
           <div aria-hidden className="absolute inset-0 bg-grid" style={{ opacity: 0.25 }} />
 
           <div className="relative flex flex-col items-center text-center">
@@ -63,7 +63,7 @@ export default function IntroCinematic() {
             {/* línea que se dibuja */}
             <motion.div className="mt-7 h-px rounded-full"
               initial={{ width: 0, opacity: 0 }} animate={{ width: 180, opacity: 1 }} transition={{ delay: 1.2, duration: 1 }}
-              style={{ background: 'linear-gradient(90deg, transparent, var(--purple-400), var(--accent-ia), transparent)' }} />
+              style={{ background: 'linear-gradient(90deg, transparent, var(--brand-400), var(--accent-ia), transparent)' }} />
           </div>
 
           <button onClick={dismiss}

@@ -211,7 +211,7 @@ export default function ProyectosPage() {
         ])}
       />
       <Navbar />
-      <main className="relative min-h-screen overflow-x-hidden" style={{ background: 'var(--bg-base)' }}>
+      <main id="main-content" tabIndex={-1} className="relative min-h-screen overflow-x-hidden" style={{ background: 'var(--bg-base)' }}>
         <AuroraBackground />
         <MouseGlow />
 
@@ -272,7 +272,7 @@ export default function ProyectosPage() {
                       />
                       <span
                         className="absolute right-3 top-3 inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-                        style={{ background: 'rgba(7,5,14,0.75)', backdropFilter: 'blur(10px)' }}
+                        style={{ background: 'rgba(3,9,20,0.75)', backdropFilter: 'blur(10px)' }}
                       >
                         Ver web <ArrowUpRight size={11} />
                       </span>

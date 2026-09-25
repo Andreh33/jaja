@@ -1,10 +1,10 @@
 'use client';
 
-import { motion, type Variants } from 'framer-motion';
+import { motion, useReducedMotion, type Variants } from 'framer-motion';
 import type { ReactNode } from 'react';
 
 const fadeUp: Variants = {
-  hidden: { opacity: 0, y: 30 },
+  hidden: { opacity: 1, y: 0 },
   show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } },
 };
 
@@ -19,6 +19,7 @@ export function Reveal({
   className?: string;
   as?: keyof typeof motion;
 }) {
+  const reduced = useReducedMotion();
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const Component: any = (motion as any)[Tag] || motion.div;
   return (
@@ -28,8 +29,8 @@ export function Reveal({
       whileInView="show"
       viewport={{ once: true, margin: '-80px' }}
       variants={{
-        hidden: { opacity: 0, y: 30 },
-        show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1], delay } },
+        hidden: { opacity: 1, y: reduced ? 0 : 24 },
+        show: { opacity: 1, y: 0, transition: { duration: reduced ? 0 : 0.5, ease: [0.23, 1, 0.32, 1], delay } },
       }}
     >
       {children}

@@ -18,7 +18,7 @@ export default function PrivacidadPage() {
       <SignatureMarquee />
       <Navbar />
       <AuroraBackground intensity="subtle" />
-      <main className="relative z-10 pt-28 pb-24 md:pt-44">
+      <main id="main-content" tabIndex={-1} className="relative z-10 pt-28 pb-24 md:pt-44">
         <div className="mx-auto max-w-5xl px-6">
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-white/40">Legal</p>
           <h1 className="mb-10 font-display text-3xl md:text-5xl lg:text-6xl" style={{ letterSpacing: '-0.04em', fontWeight: 800 }}>

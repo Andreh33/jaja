@@ -76,7 +76,7 @@ export default function LandingTemplate({ landing }: { landing: LocalLanding }) 
       <Navbar />
       <AuroraBackground intensity="subtle" />
       <MouseGlow />
-      <main className="relative z-10">
+      <main id="main-content" tabIndex={-1} className="relative z-10">
         <section className="pt-44 pb-10">
           <div className="mx-auto max-w-3xl px-6">
             <Breadcrumbs

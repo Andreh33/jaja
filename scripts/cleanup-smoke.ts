@@ -39,7 +39,10 @@ async function main() {
     process.exit(1);
   }
 
-  const stripe = new Stripe(key, { apiVersion: '2026-04-22.dahlia', typescript: true });
+  const stripe = new Stripe(key, {
+    // @ts-expect-error Retain the production API contract; SDK supports older pins.
+    apiVersion: '2026-04-22.dahlia', typescript: true,
+  });
 
   // Stripe customers.list no acepta wildcards; iteramos páginas y filtramos.
   // Para una BBDD con pocos clientes test esto es suficiente.

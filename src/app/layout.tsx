@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import { Geist, Geist_Mono, Syne } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/next';
 import './globals.css';
+import './blue-experience.css';
 import { Toaster } from 'sonner';
-import CustomCursor from '@/components/effects/CustomCursor';
 import ScrollProgress from '@/components/effects/ScrollProgress';
 import WhatsAppFloat from '@/components/shared/WhatsAppFloat';
 import MobileCtaBar from '@/components/shared/MobileCtaBar';
@@ -85,7 +85,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <JsonLd data={SITE_GRAPH_JSONLD} />
         <SessionProvider>
           <ScrollProgress />
-          <CustomCursor />
+          <a href="#main-content" className="skip-link">Saltar al contenido</a>
           {children}
           <WhatsAppFloat />
           <MobileCtaBar />

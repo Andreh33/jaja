@@ -38,9 +38,14 @@ export default function CalculadoraClient() {
 
   // Hidratar desde sessionStorage en cliente.
   useEffect(() => {
-    const restored = loadFromStorage();
-    if (restored) dispatch({ type: 'HYDRATE', state: restored });
-    setHydrated(true);
+    let mounted = true;
+    queueMicrotask(() => {
+      if (!mounted) return;
+      const restored = loadFromStorage();
+      if (restored) dispatch({ type: 'HYDRATE', state: restored });
+      setHydrated(true);
+    });
+    return () => { mounted = false; };
   }, []);
 
   // Persistir cada cambio (excepto antes de hidratar para no sobrescribir).
@@ -65,7 +70,7 @@ export default function CalculadoraClient() {
     if (e.key !== 'Enter') return;
     const target = e.target as HTMLElement;
     const tag = target.tagName;
-    if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT') return;
+    if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT' || target.closest('button, a')) return;
     if (target.isContentEditable) return;
     e.preventDefault();
     if (state.step < TOTAL_STEPS) handleNext();

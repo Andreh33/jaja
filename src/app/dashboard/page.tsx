@@ -25,7 +25,6 @@ function fmtDate(unix: number | null | undefined): string {
 export default async function DashboardHome() {
   const session = await auth();
   const userId = session!.user.id;
-  const [filesCount] = await db.select({ count: archivos.id }).from(archivos).where(eq(archivos.userId, userId));
   const filesAll = await db.select().from(archivos).where(eq(archivos.userId, userId));
   const empresa = (await db.select().from(empresas).where(eq(empresas.userId, userId)).limit(1))[0];
   const subscription = await getActiveLocalSubscription(userId);
@@ -63,7 +62,7 @@ export default async function DashboardHome() {
           <div className="mt-3 font-display text-3xl text-white">{services.size}/3</div>
           <div className="mt-3 flex gap-1.5">
             {services.has('web') && <span className="rounded-full px-2.5 py-0.5 text-[10px]" style={{ background: 'rgba(59,130,246,0.15)', color: 'var(--accent-web)' }}>web</span>}
-            {services.has('tienda') && <span className="rounded-full px-2.5 py-0.5 text-[10px]" style={{ background: 'rgba(249,115,22,0.15)', color: 'var(--accent-shop)' }}>tienda</span>}
+            {services.has('tienda') && <span className="rounded-full px-2.5 py-0.5 text-[10px]" style={{ background: 'rgba(103,196,255,0.15)', color: 'var(--accent-shop)' }}>tienda</span>}
             {services.has('ia') && <span className="rounded-full px-2.5 py-0.5 text-[10px]" style={{ background: 'rgba(16,185,129,0.15)', color: 'var(--accent-ia)' }}>agente IA</span>}
             {services.size === 0 && <span className="text-xs text-white/40">Aún ninguno indicado</span>}
           </div>

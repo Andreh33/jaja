@@ -42,6 +42,7 @@ function detectMode(secretKey: string): 'test' | 'live' {
 const MODE = detectMode(key);
 
 const stripe = new Stripe(key, {
+  // @ts-expect-error Deliberately retain the verified API contract (Stripe supports older pins).
   apiVersion: '2026-04-22.dahlia',
   typescript: true,
 });

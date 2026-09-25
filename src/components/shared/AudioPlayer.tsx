@@ -78,7 +78,7 @@ export default function AudioPlayer({ src, accent = 'var(--accent-ia)' }: { src:
       const x = i * barW;
       const grad = ctx.createLinearGradient(0, h, 0, h - bh);
       grad.addColorStop(0, accent);
-      grad.addColorStop(1, '#8B5CF6');
+      grad.addColorStop(1, '#3b82f6');
       ctx.fillStyle = grad;
       ctx.fillRect(x + barW * 0.15, h - bh, barW * 0.7, bh);
     }
@@ -120,7 +120,7 @@ export default function AudioPlayer({ src, accent = 'var(--accent-ia)' }: { src:
   return (
     <div className="flex flex-col gap-4">
       <audio ref={audioRef} src={src} preload="metadata" crossOrigin="anonymous" />
-      <div className="relative h-32 w-full overflow-hidden rounded-2xl" style={{ background: 'rgba(7,5,14,0.6)', border: `1px solid ${accent}30` }}>
+      <div className="relative h-32 w-full overflow-hidden rounded-2xl" style={{ background: 'rgba(3,9,20,0.6)', border: `1px solid ${accent}30` }}>
         <canvas ref={canvasRef} className="h-full w-full" />
         {!playing && (
           <div className="pointer-events-none absolute inset-0 flex items-center justify-center text-xs font-mono text-white/40">

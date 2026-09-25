@@ -38,7 +38,7 @@ const CATEGORY_COLORS: Record<string, string> = {
   'Diseño Web': 'var(--accent-web)',
   'Tiendas Online': 'var(--accent-shop)',
   'IA': 'var(--accent-ia)',
-  'SEO': 'var(--purple-300)',
+  'SEO': 'var(--brand-300)',
   'Tutoriales': 'var(--warning)',
 };
 
@@ -87,7 +87,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     .sort((a, b) => Number(b.category === post.category) - Number(a.category === post.category))
     .slice(0, 3);
   const html = renderMarkdown(post.content);
-  const color = (post.category && CATEGORY_COLORS[post.category]) || 'var(--purple-300)';
+  const color = (post.category && CATEGORY_COLORS[post.category]) || 'var(--brand-300)';
 
   const articleUrl = `${SITE_URL}/blog/${post.slug}`;
   // PNG dinámico (1200x630) generado por ./opengraph-image.tsx
@@ -127,7 +127,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       <Navbar />
       <AuroraBackground intensity="subtle" />
       <MouseGlow />
-      <main className="relative z-10">
+      <main id="main-content" tabIndex={-1} className="relative z-10">
         <article className="pt-44 pb-16">
           <div className="mx-auto max-w-3xl px-6">
             <Breadcrumbs

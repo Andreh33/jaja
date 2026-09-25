@@ -35,6 +35,7 @@ const cols = [
       { href: '/blog', label: 'Blog' },
       { href: '/cobertura', label: 'Cobertura nacional' },
       { href: '/contacto', label: 'Contacto' },
+      { href: '/empleo', label: 'Trabaja con nosotros' },
     ],
   },
   {
@@ -55,10 +56,10 @@ export default function Footer() {
             <Logo size="lg" />
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/60">
               Diseño web, tiendas online y agentes de IA con n8n para empresas de toda España.
-              Entregamos en 24-48h. Sin permanencia.
+              Código a medida. Diseño con carácter. Sin permanencia.
             </p>
             <div className="mt-6 flex items-start gap-3 text-sm text-white/60">
-              <MapPin size={16} className="mt-0.5 shrink-0" style={{ color: 'var(--purple-300)' }} />
+              <MapPin size={16} className="mt-0.5 shrink-0" style={{ color: 'var(--brand-300)' }} />
               <span>Calle Puente 3<br />06490 Puebla de la Calzada · Badajoz</span>
             </div>
           </div>
@@ -69,7 +70,7 @@ export default function Footer() {
               <ul className="space-y-3">
                 {c.links.map((l) => (
                   <li key={l.href}>
-                    <Link href={l.href} className="link-underline text-sm text-white/70 transition-colors hover:text-white">
+                    <Link prefetch={false} href={l.href} className="link-underline text-sm text-white/70 transition-colors hover:text-white">
                       {l.label}
                     </Link>
                   </li>
@@ -88,12 +89,12 @@ export default function Footer() {
               </li>
               <li>
                 <a className="inline-flex items-center gap-2 hover:text-white" href="tel:+34684739091">
-                  <Phone size={14} style={{ color: 'var(--purple-300)' }} /> +34 684 73 90 91
+                  <Phone size={14} style={{ color: 'var(--brand-300)' }} /> +34 684 73 90 91
                 </a>
               </li>
               <li>
                 <a className="inline-flex items-center gap-2 hover:text-white" href="mailto:info@latech.es">
-                  <Mail size={14} style={{ color: 'var(--purple-300)' }} /> info@latech.es
+                  <Mail size={14} style={{ color: 'var(--brand-300)' }} /> info@latech.es
                 </a>
               </li>
               {/* Redes sociales: restaurar los iconos cuando existan los
@@ -125,9 +126,10 @@ export default function Footer() {
 
         <div className="mt-8 flex flex-col items-start justify-between gap-3 border-t pt-6 text-xs text-white/40 md:flex-row md:items-center" style={{ borderColor: 'var(--border-subtle)' }}>
           <p>© {new Date().getFullYear()} Latech · Hecho en Badajoz con cariño.</p>
-          <p className="font-mono">v1.0 · Next.js · Vercel · Turso</p>
+          <p className="font-mono">Menos plantillas. Más Latech.</p>
         </div>
       </div>
+      <div className="footer-wordmark" aria-hidden="true">LATECH</div>
       {/* Hueco para que la MobileCtaBar fija no tape el final del footer en móvil. */}
       <div aria-hidden className="h-16 md:hidden" />
     </footer>

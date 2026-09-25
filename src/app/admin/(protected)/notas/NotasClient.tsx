@@ -33,7 +33,7 @@ export default function NotasClient({
     <div className="mt-8">
       {/* KPIs */}
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        <Kpi icon={<Users size={18} />} value={kpis.totalAttempts} label="Intentos totales" color="var(--purple-300)" />
+        <Kpi icon={<Users size={18} />} value={kpis.totalAttempts} label="Intentos totales" color="var(--brand-300)" />
         <Kpi icon={<CheckCircle2 size={18} />} value={kpis.passedCount} label="Aprobados" color="#10B981" />
         <Kpi icon={<Percent size={18} />} value={`${kpis.passRate}%`} label="Tasa de aprobado" color="var(--accent-shop)" />
         <Kpi icon={<BarChart3 size={18} />} value={`${kpis.avgPct}%`} label="Nota media" color="var(--accent-web)" />
