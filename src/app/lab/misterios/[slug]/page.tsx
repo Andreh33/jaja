@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function MysteryPage({ params }: Props) {
   const { slug } = await params; const episode = getMystery(slug); if (!episode) notFound();
   const next = MYSTERIES[(MYSTERIES.indexOf(episode) + 1) % MYSTERIES.length];
-  return <><AuroraBackground intensity="subtle" /><main className={styles.page}><div className={styles.container}>
+  return <><AuroraBackground intensity="subtle" /><main id="main-content" tabIndex={-1} className={styles.page}><div className={styles.container}>
     <Link className={styles.eyebrow} href="/lab/misterios">← Misterios / caso {episode.number}</Link>
     <h1 className={styles.heading}>{episode.title}</h1><p className={styles.lede}>{episode.description}</p><span className={styles.tag}>Demostración ficticia · ningún pedido o reserva real</span>
     <MysteryProgress slug={episode.slug} />

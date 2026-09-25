@@ -111,7 +111,7 @@ export default function TraceExperience({ sharedToken }: { sharedToken?: string 
       const rect = canvas.getBoundingClientRect(), dpr = Math.min(window.devicePixelRatio || 1, 2);
       canvas.width = Math.round(rect.width * dpr); canvas.height = Math.round(rect.height * dpr); ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       ctx.clearRect(0, 0, rect.width, rect.height);
-      const gradient = ctx.createLinearGradient(0, 0, rect.width, 0); gradient.addColorStop(0, '#a78bfa'); gradient.addColorStop(.65, '#f97316'); gradient.addColorStop(1, '#fbbf24');
+      const gradient = ctx.createLinearGradient(0, 0, rect.width, 0); gradient.addColorStop(0, '#a78bfa'); gradient.addColorStop(.65, '#67c4ff'); gradient.addColorStop(1, '#c5eaff');
       ctx.strokeStyle = gradient; ctx.fillStyle = gradient; ctx.lineWidth = 5; ctx.lineCap = 'round'; ctx.lineJoin = 'round';
       if (points.length) {
         const first = points[0]; ctx.beginPath(); ctx.arc(first.x * rect.width, first.y * rect.height, 2.5, 0, Math.PI * 2); ctx.fill();

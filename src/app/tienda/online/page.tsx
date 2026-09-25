@@ -17,11 +17,11 @@ import { serviceJsonLd, faqJsonLd, breadcrumbJsonLd } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: 'Crear tienda online profesional · lista en 48h',
-  description: 'Tienda online con Stripe, Bizum, transferencia, SEO de productos y analítica integrada. 80€/mes + 600€ creación. Para toda España.',
+  description: 'Tienda online con Stripe, Bizum, transferencia, SEO de productos y analítica integrada. 80€/mes + 800€ creación. Para toda España.',
   alternates: { canonical: '/tienda/online' },
   openGraph: {
     title: 'Crear tienda online profesional · lista en 48h · Latech',
-    description: 'E-commerce con Stripe y Bizum, SEO de productos y analítica. 600€ + 80€/mes. Sin permanencia.',
+    description: 'E-commerce con Stripe y Bizum, SEO de productos y analítica. 800€ + 80€/mes. Sin permanencia.',
     url: '/tienda/online',
     siteName: 'Latech',
     locale: 'es_ES',
@@ -60,7 +60,7 @@ export default function OnlinePlanPage() {
           description:
             'Tienda online a medida con Stripe, Bizum y transferencia, SEO de productos y analítica integrada. Para empresas de toda España.',
           path: '/tienda/online',
-          price: '600',
+          price: '800',
         })}
       />
       <JsonLd data={faqJsonLd(FAQS)} />
@@ -75,7 +75,7 @@ export default function OnlinePlanPage() {
       <Navbar />
       <AuroraBackground />
       <MouseGlow />
-      <main className="relative z-10">
+      <main id="main-content" tabIndex={-1} className="relative z-10">
         <section className="pt-44 pb-20">
           <div className="mx-auto max-w-7xl px-6 text-center">
             <div className="text-left">
@@ -90,7 +90,7 @@ export default function OnlinePlanPage() {
             <Reveal>
               <span
                 className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-semibold uppercase tracking-widest"
-                style={{ background: 'rgba(249,115,22,0.12)', color: 'var(--accent-shop)', border: '1px solid rgba(249,115,22,0.3)' }}
+                style={{ background: 'rgba(103,196,255,0.12)', color: 'var(--accent-shop)', border: '1px solid rgba(103,196,255,0.3)' }}
               >
                 ● PLAN TIENDA
               </span>
@@ -114,7 +114,7 @@ export default function OnlinePlanPage() {
                 plan={{
                   badge: 'Plan Tienda',
                   price: 80,
-                  oneTime: '+ 600€ pago único de creación',
+                  oneTime: '+ 800€ pago único de creación',
                   accent: 'orange',
                   features: [
                     'Desarrollo completo de la tienda online',
@@ -155,7 +155,7 @@ export default function OnlinePlanPage() {
                     <div className="h-full rounded-2xl glass p-7 transition-transform hover:-translate-y-1">
                       <div
                         className="mb-5 inline-flex h-11 w-11 items-center justify-center rounded-xl"
-                        style={{ background: 'rgba(249,115,22,0.12)', color: 'var(--accent-shop)', border: '1px solid rgba(249,115,22,0.3)' }}
+                        style={{ background: 'rgba(103,196,255,0.12)', color: 'var(--accent-shop)', border: '1px solid rgba(103,196,255,0.3)' }}
                       >
                         <Icon size={20} strokeWidth={1.6} />
                       </div>
@@ -185,7 +185,7 @@ export default function OnlinePlanPage() {
                     <div
                       key={p}
                       className="flex h-20 items-center justify-center rounded-xl text-sm font-mono text-white/70 transition-colors hover:text-white"
-                      style={{ background: 'rgba(7,5,14,0.6)', border: '1px solid var(--border-subtle)' }}
+                      style={{ background: 'rgba(3,9,20,0.6)', border: '1px solid var(--border-subtle)' }}
                     >
                       {p}
                     </div>
@@ -261,7 +261,7 @@ export default function OnlinePlanPage() {
         </section>
 
         <section className="relative py-32">
-          <div aria-hidden className="absolute inset-0 -z-10" style={{ background: 'radial-gradient(ellipse at center, rgba(249,115,22,0.18) 0%, transparent 70%)' }} />
+          <div aria-hidden className="absolute inset-0 -z-10" style={{ background: 'radial-gradient(ellipse at center, rgba(103,196,255,0.18) 0%, transparent 70%)' }} />
           <div className="mx-auto max-w-3xl px-6 text-center">
             <Reveal>
               <h2 className="font-display text-4xl md:text-6xl" style={{ letterSpacing: '-0.04em', fontWeight: 800 }}>

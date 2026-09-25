@@ -45,7 +45,7 @@ export default function CursoLogin() {
       >
         <div
           className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-2xl text-white"
-          style={{ background: 'linear-gradient(135deg, #8B5CF6 0%, #10B981 100%)' }}
+          style={{ background: 'linear-gradient(135deg, #3b82f6 0%, #10B981 100%)' }}
         >
           <GraduationCap size={22} />
         </div>
@@ -98,7 +98,7 @@ export default function CursoLogin() {
           height: 50px;
           padding: 0 14px;
           border-radius: 14px;
-          background: rgba(7, 5, 14, 0.5);
+          background: rgba(3,9,20, 0.5);
           border: 1px solid var(--border-subtle);
           color: var(--text-primary);
           font-size: 16px; /* 16px evita el zoom automático de iOS Safari */
@@ -107,8 +107,8 @@ export default function CursoLogin() {
         .curso-input::placeholder { color: rgba(255, 255, 255, 0.3); }
         .curso-input:focus {
           outline: none;
-          border-color: var(--purple-400);
-          box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.18);
+          border-color: var(--brand-400);
+          box-shadow: 0 0 0 3px rgba(59,130,246, 0.18);
         }
       `}</style>
     </div>

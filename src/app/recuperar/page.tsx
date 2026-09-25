@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 export default async function RecuperarPage({ searchParams }: { searchParams: Promise<{ enlace?: string }> }) {
   const { enlace } = await searchParams;
   return (
-    <main className="relative min-h-screen">
+    <main id="main-content" tabIndex={-1} className="relative min-h-screen">
       <AuroraBackground intensity="strong" />
       <MouseGlow strong />
       <header className="relative z-10 mx-auto flex max-w-7xl items-center justify-between px-6 py-6">

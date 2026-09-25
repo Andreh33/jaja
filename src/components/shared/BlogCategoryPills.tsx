@@ -37,7 +37,7 @@ export default function BlogCategoryPills({
           )}
           style={
             p.isActive
-              ? { background: 'rgba(139,92,246,0.18)', border: '1px solid rgba(139,92,246,0.4)' }
+              ? { background: 'rgba(59,130,246,0.18)', border: '1px solid rgba(59,130,246,0.4)' }
               : { border: '1px solid transparent' }
           }
         >

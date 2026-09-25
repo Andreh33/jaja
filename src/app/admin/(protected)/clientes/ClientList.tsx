@@ -136,7 +136,7 @@ export default function ClientList(props: Props) {
                       <span className="rounded-full px-2 py-0.5 text-[10px]" style={{ background: 'rgba(59,130,246,0.15)', color: 'var(--accent-web)' }}>web</span>
                     )}
                     {c.services.includes('tienda') && (
-                      <span className="rounded-full px-2 py-0.5 text-[10px]" style={{ background: 'rgba(249,115,22,0.15)', color: 'var(--accent-shop)' }}>tienda</span>
+                      <span className="rounded-full px-2 py-0.5 text-[10px]" style={{ background: 'rgba(103,196,255,0.15)', color: 'var(--accent-shop)' }}>tienda</span>
                     )}
                     {c.services.includes('ia') && (
                       <span className="rounded-full px-2 py-0.5 text-[10px]" style={{ background: 'rgba(16,185,129,0.15)', color: 'var(--accent-ia)' }}>ia</span>

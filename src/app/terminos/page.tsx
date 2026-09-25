@@ -17,7 +17,7 @@ export default function TerminosPage() {
       <SignatureMarquee />
       <Navbar />
       <AuroraBackground intensity="subtle" />
-      <main className="relative z-10 pt-44 pb-24">
+      <main id="main-content" tabIndex={-1} className="relative z-10 pt-44 pb-24">
         <div className="mx-auto max-w-5xl px-6">
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-white/40">Legal</p>
           <h1 className="mb-10 font-display text-5xl md:text-6xl" style={{ letterSpacing: '-0.04em', fontWeight: 800 }}>

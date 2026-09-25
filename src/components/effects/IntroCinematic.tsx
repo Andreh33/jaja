@@ -36,7 +36,7 @@ export default function IntroCinematic() {
         <Dialog.Overlay className="fixed inset-0 z-[10000] bg-[#05040c]" />
         <Dialog.Content className="fixed inset-0 z-[10001] flex flex-col items-center justify-center overflow-hidden outline-none">
           <div aria-hidden className="pointer-events-none absolute inset-0"
-            style={{ background: 'radial-gradient(ellipse at center, rgba(139,92,246,.24), rgba(249,115,22,.07) 45%, transparent 70%)' }} />
+            style={{ background: 'radial-gradient(ellipse at center, rgba(59,130,246,.24), rgba(103,196,255,.07) 45%, transparent 70%)' }} />
           <div aria-hidden className="pointer-events-none absolute inset-0 bg-grid opacity-25" />
           <div className="relative flex flex-col items-center text-center">
             <Dialog.Title asChild>
@@ -60,7 +60,7 @@ export default function IntroCinematic() {
               initial={{ transform: 'scaleX(.1)', opacity: 0 }}
               animate={{ transform: 'scaleX(1)', opacity: 1 }}
               transition={{ delay: .2, duration: .6, ease: EASE_OUT }}
-              style={{ background: 'linear-gradient(90deg, transparent, var(--purple-400), var(--accent-ia), transparent)' }} />
+              style={{ background: 'linear-gradient(90deg, transparent, var(--brand-400), var(--accent-ia), transparent)' }} />
           </div>
           <Dialog.Close className="absolute bottom-8 right-8 min-h-11 rounded-full border border-white/20 bg-white/5 px-5 py-3 text-sm font-semibold text-white/80 transition-colors hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-purple-400">
             Saltar intro →

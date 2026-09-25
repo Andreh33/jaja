@@ -33,15 +33,15 @@ export default function WelcomeBanner({ name }: { name?: string }) {
           exit={{ opacity: 0, y: reduced ? 0 : -16 }}
           className="relative mb-6 overflow-hidden rounded-2xl border p-5 md:p-6"
           style={{
-            background: 'linear-gradient(135deg, rgba(139,92,246,0.10) 0%, rgba(249,115,22,0.06) 100%)',
-            borderColor: 'rgba(139,92,246,0.25)',
+            background: 'linear-gradient(135deg, rgba(59,130,246,0.10) 0%, rgba(103,196,255,0.06) 100%)',
+            borderColor: 'rgba(59,130,246,0.25)',
           }}
         >
           <button onClick={dismiss} aria-label="Cerrar" className="absolute right-3 top-3 inline-flex h-7 w-7 items-center justify-center rounded-full text-white/50 hover:bg-white/10 hover:text-white">
             <X size={14} />
           </button>
           <div className="flex items-start gap-4">
-            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl" style={{ background: 'rgba(139,92,246,0.18)', color: 'var(--purple-300)' }}>
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl" style={{ background: 'rgba(59,130,246,0.18)', color: 'var(--brand-300)' }}>
               <Sparkles size={18} />
             </div>
             <div>

@@ -98,7 +98,7 @@ export default function BriefingClient({ decisionId }: { decisionId?: string }) 
   };
 
   return (
-    <main data-briefing-root className={styles.root}>
+    <main id="main-content" tabIndex={-1} data-briefing-root className={styles.root}>
       <div className={styles.intro}>
         <p className={styles.eyebrow}>Una idea clara empieza antes del diseño</p>
         <h1 className={styles.title}>Tu proyecto,<br /><span>sin puntos ciegos.</span></h1>

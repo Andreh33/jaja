@@ -26,6 +26,7 @@ import {
   extractSubscriptionPeriods,
   extractSubscriptionCadence,
   buildCartItem,
+  buildCartItemFromCheckoutLine,
   buildCartItemFromSubscriptionItem,
 } from '../src/lib/stripe-shape-helpers';
 import { STRIPE_PRICES } from '../src/config/stripe-prices';
@@ -258,6 +259,76 @@ describe('buildCartItem', () => {
     });
     assert.equal(r?.quantity, 3);
     assert.equal(r?.amount_subtotal, 18000);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// buildCartItemFromCheckoutLine
+// ---------------------------------------------------------------------------
+
+describe('buildCartItemFromCheckoutLine', () => {
+  it('maps an inline web Price from validated catalog metadata', () => {
+    const r = buildCartItemFromCheckoutLine({
+      priceId: 'price_generated_inline',
+      catalogId: CATALOG.webCreationLe8.id,
+      quantity: 1,
+      amountSubtotal: 80000,
+    });
+    assert.deepEqual(r, {
+      catalog_id: CATALOG.webCreationLe8.id,
+      quantity: 1,
+      amount_subtotal: 80000,
+    });
+  });
+
+  it('keeps compatibility with legacy sessions that only have a known Price ID', () => {
+    const r = buildCartItemFromCheckoutLine({
+      priceId: HOSTING_MONTHLY_PRICE,
+      catalogId: null,
+      quantity: 1,
+      amountSubtotal: 6000,
+    });
+    assert.equal(r?.catalog_id, HOSTING_MONTHLY_CATALOG);
+  });
+
+  it('rejects contradictory metadata for a known Price ID', () => {
+    const r = buildCartItemFromCheckoutLine({
+      priceId: HOSTING_MONTHLY_PRICE,
+      catalogId: CATALOG.webCreationLe8.id,
+      quantity: 1,
+      amountSubtotal: 6000,
+    });
+    assert.equal(r, null);
+  });
+
+  it('rejects an unknown Price pretending to be a non-inline catalog item', () => {
+    const r = buildCartItemFromCheckoutLine({
+      priceId: 'price_unknown',
+      catalogId: CATALOG.hostingMonthly.id,
+      quantity: 1,
+      amountSubtotal: 6000,
+    });
+    assert.equal(r, null);
+  });
+
+  it('rejects inline web metadata when its subtotal does not match the catalog', () => {
+    const r = buildCartItemFromCheckoutLine({
+      priceId: 'price_generated_inline',
+      catalogId: CATALOG.webCreationGt8.id,
+      quantity: 1,
+      amountSubtotal: 50000,
+    });
+    assert.equal(r, null);
+  });
+
+  it('rejects unknown catalog metadata', () => {
+    const r = buildCartItemFromCheckoutLine({
+      priceId: 'price_generated_inline',
+      catalogId: 'not_in_catalog',
+      quantity: 1,
+      amountSubtotal: 80000,
+    });
+    assert.equal(r, null);
   });
 });
 

@@ -18,7 +18,7 @@ export default function AnswerBox({
       style={{
         background: 'var(--bg-glass)',
         border: '1px solid var(--border-subtle)',
-        borderLeft: '3px solid var(--purple-400)',
+        borderLeft: '3px solid var(--brand-400)',
       }}
     >
       <p className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/60">

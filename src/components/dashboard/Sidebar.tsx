@@ -30,7 +30,7 @@ export default function Sidebar({ admin = false, userName = '' }: { admin?: bool
   const items = admin ? ADMIN_ITEMS : CLIENT_ITEMS;
 
   return (
-    <aside className="hidden h-screen w-60 shrink-0 flex-col border-r md:flex" style={{ borderColor: 'var(--border-subtle)', background: 'rgba(7,5,14,0.6)', backdropFilter: 'blur(20px)', position: 'sticky', top: 0 }}>
+    <aside className="hidden h-screen w-60 shrink-0 flex-col border-r md:flex" style={{ borderColor: 'var(--border-subtle)', background: 'rgba(3,9,20,0.6)', backdropFilter: 'blur(20px)', position: 'sticky', top: 0 }}>
       <div className="flex h-20 items-center px-6">
         <Link href="/" aria-label="Latech inicio">
           <Logo size="sm" />
@@ -67,7 +67,7 @@ export default function Sidebar({ admin = false, userName = '' }: { admin?: bool
                 'mb-1 flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm transition-colors',
                 active ? 'text-white' : 'text-white/55 hover:bg-white/5 hover:text-white',
               )}
-              style={active ? { background: 'rgba(139,92,246,0.15)', border: '1px solid rgba(139,92,246,0.3)' } : {}}
+              style={active ? { background: 'rgba(59,130,246,0.15)', border: '1px solid rgba(59,130,246,0.3)' } : {}}
             >
               <Icon size={16} strokeWidth={1.6} />
               {it.label}

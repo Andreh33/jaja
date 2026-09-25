@@ -14,7 +14,7 @@ export const dynamic = 'force-dynamic';
 
 export default function CursosLayout({ children }: { children: ReactNode }) {
   return (
-    <main className="relative min-h-screen">
+    <main id="main-content" tabIndex={-1} className="relative min-h-screen">
       <AuroraBackground intensity="subtle" />
       <header className="relative z-10 mx-auto flex max-w-5xl items-center justify-between px-5 py-5">
         <Link href="/" aria-label="Latech inicio"><Logo size="sm" /></Link>

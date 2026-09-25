@@ -22,7 +22,7 @@ export const landings: LocalLanding[] = [
       { q: '¿Qué pasarelas de pago integráis: Stripe, Bizum, tarjeta?', a: 'Integramos Stripe (tarjeta, Apple Pay, Google Pay), Bizum y, si lo necesitas, transferencia o pago contra reembolso. Tú eliges. Stripe y Bizum cubren a la práctica totalidad de tus clientes y liquidan rápido.' },
       { q: '¿Tendré que pagar comisiones a un marketplace?', a: 'No. La tienda es tuya y solo pagas la comisión de la pasarela de pago (un porcentaje pequeño por transacción). Nada de las comisiones del 15-20% que se llevan los marketplaces, y los datos de tus clientes son tuyos.' },
       { q: '¿Cuánto tardáis en tener la tienda lista?', a: 'La mayoría de proyectos se entregan en 24-48h una vez tenemos tu catálogo y tus textos. Para catálogos muy grandes definimos un calendario claro desde el primer día.' },
-      { q: '¿Hay permanencia?', a: 'No hay permanencia. El plan incluye 600 € de creación más 80 €/mes de hosting y mantenimiento. IVA no incluido.' },
+      { q: '¿Hay permanencia?', a: 'No hay permanencia. El plan incluye 800 € de creación más 80 €/mes de hosting y mantenimiento. IVA no incluido.' },
     ],
     bodyMarkdown: `## Por qué tu negocio de Madrid necesita tienda propia
 
@@ -73,7 +73,7 @@ Una buena tienda no termina en el botón de pagar. Si quieres que tu marca trans
       { q: '¿Integráis Stripe y Bizum?', a: 'Sí. Stripe cubre tarjeta, Apple Pay y Google Pay con liquidación rápida, y Bizum es ya un must para el cliente español. Añadimos transferencia o pago a plazos si tu producto lo pide.' },
       { q: '¿La tienda se verá tan cuidada como mi marca?', a: 'Ese es el punto. Diseñamos a medida, no con plantillas recicladas. Tipografía, color, fichas de producto y fotografía se trabajan para que la tienda esté a la altura del nivel de diseño que se espera de una marca de Barcelona.' },
       { q: '¿Puedo gestionar la tienda en catalán y español?', a: 'Sí. Montamos la tienda multiidioma para que tus clientes compren en su lengua, con SEO en cada idioma para posicionar tanto en búsquedas en catalán como en castellano.' },
-      { q: '¿Hay permanencia?', a: 'No hay permanencia. El plan incluye 600 € de creación más 80 €/mes de hosting y mantenimiento. IVA no incluido.' },
+      { q: '¿Hay permanencia?', a: 'No hay permanencia. El plan incluye 800 € de creación más 80 €/mes de hosting y mantenimiento. IVA no incluido.' },
     ],
     bodyMarkdown: `## Barcelona vende diseño, tu tienda también debe diseñarse
 
@@ -126,7 +126,7 @@ Si además quieres reforzar tu presencia con una web de marca, cuidamos el [dise
       { q: '¿Integráis Stripe y Bizum?', a: 'Sí. Stripe para tarjeta, Apple Pay y Google Pay, y Bizum para el cliente español. Si vendes a profesionales, añadimos transferencia y pago aplazado.' },
       { q: '¿Puedo vender producto fresco o perecedero?', a: 'Sí. Para agroalimentario configuramos envío en 24-48h con agencia de frío cuando hace falta, gestión de fechas de entrega y avisos al cliente. Pensamos la logística para que el producto llegue en condiciones.' },
       { q: '¿Sirve para vender al por mayor además de al particular?', a: 'Sí. Podemos montar una zona B2B con precios por cliente, pedidos mínimos y pago aplazado, conviviendo con la tienda al público. Ideal para cerámica, hogar o agroalimentario.' },
-      { q: '¿Hay permanencia?', a: 'No hay permanencia. El plan incluye 600 € de creación más 80 €/mes de hosting y mantenimiento. IVA no incluido.' },
+      { q: '¿Hay permanencia?', a: 'No hay permanencia. El plan incluye 800 € de creación más 80 €/mes de hosting y mantenimiento. IVA no incluido.' },
     ],
     bodyMarkdown: `## El producto valenciano se vende solo, si lo dejas llegar al cliente
 
@@ -179,7 +179,7 @@ Si quieres reforzar tu marca con una web a la altura, cuidamos el [diseño web](
       { q: '¿Integráis Stripe y Bizum?', a: 'Sí. Stripe para tarjeta, Apple Pay y Google Pay, y Bizum para el cliente español. Para pedidos grandes o por encargo añadimos transferencia y señales/anticipos.' },
       { q: '¿Sirve para producto de temporada como la moda flamenca?', a: 'Perfectamente. Gestionamos colecciones por temporada, reservas, listas de espera y avisos de reposición, para que la campaña de feria no te pille con la tienda apagada.' },
       { q: '¿Puedo vender piezas hechas a medida o por encargo?', a: 'Sí. Montamos fichas con opciones, presupuestos a medida y cobro de señal online, ideal para artesanía y moda a medida.' },
-      { q: '¿Hay permanencia?', a: 'No hay permanencia. El plan incluye 600 € de creación más 80 €/mes de hosting y mantenimiento. IVA no incluido.' },
+      { q: '¿Hay permanencia?', a: 'No hay permanencia. El plan incluye 800 € de creación más 80 €/mes de hosting y mantenimiento. IVA no incluido.' },
     ],
     bodyMarkdown: `## El comercio con sello de Sevilla, ahora online
 
@@ -232,7 +232,7 @@ Si quieres una web de marca a la altura de tu producto, cuidamos el [diseño web
       { q: '¿Integráis Stripe y Bizum?', a: 'Sí. Stripe cubre tarjeta, Apple Pay y Google Pay (ideal para el cliente internacional) y Bizum para el español. Añadimos otras opciones si tu producto lo pide.' },
       { q: '¿Sirve para vender experiencias o entradas, no solo productos?', a: 'Sí. Montamos venta de tours, entradas, bonos y reservas con pago online inmediato y confirmación automática, muy útil para el sector turístico de la Costa del Sol.' },
       { q: '¿Puedo vender fruta subtropical perecedera por internet?', a: 'Sí. Configuramos envío en 24-48h con frío cuando hace falta, gestión de fechas de entrega y avisos al cliente, para que el aguacate o el mango lleguen en su punto.' },
-      { q: '¿Hay permanencia?', a: 'No hay permanencia. El plan incluye 600 € de creación más 80 €/mes de hosting y mantenimiento. IVA no incluido.' },
+      { q: '¿Hay permanencia?', a: 'No hay permanencia. El plan incluye 800 € de creación más 80 €/mes de hosting y mantenimiento. IVA no incluido.' },
     ],
     bodyMarkdown: `## Málaga vende a un cliente global, tu tienda debe estar a la altura
 
@@ -285,7 +285,7 @@ Si quieres reforzar tu marca con una web cuidada, nos encargamos del [diseño we
       { q: '¿Integráis Stripe y Bizum?', a: 'Sí. Stripe para tarjeta, Apple Pay y Google Pay, y Bizum para el cliente español. Para B2B añadimos transferencia y pago aplazado.' },
       { q: '¿Puedo vender vino online cumpliendo la normativa?', a: 'Sí. Montamos la tienda con verificación de edad, configuración de impuestos y envío especializado en vino. Vender por botella, por caja o con un club de suscripción es perfectamente viable.' },
       { q: '¿Sirve para vender al por mayor además del particular?', a: 'Sí. Montamos una zona B2B con precios por cliente, pedidos mínimos y pago aplazado, conviviendo con la venta al público. Útil para industria, distribución y agroalimentario.' },
-      { q: '¿Hay permanencia?', a: 'No hay permanencia. El plan incluye 600 € de creación más 80 €/mes de hosting y mantenimiento. IVA no incluido.' },
+      { q: '¿Hay permanencia?', a: 'No hay permanencia. El plan incluye 800 € de creación más 80 €/mes de hosting y mantenimiento. IVA no incluido.' },
     ],
     bodyMarkdown: `## Zaragoza tiene la mejor logística de España, aprovéchala
 
@@ -338,7 +338,7 @@ Si quieres una web corporativa a la altura, cuidamos el [diseño web](/tienda/we
       { q: '¿Integráis Stripe y Bizum?', a: 'Sí. Stripe para tarjeta, Apple Pay y Google Pay, y Bizum para el cliente español. Para cooperativas y venta al por mayor añadimos transferencia y pago aplazado.' },
       { q: '¿Puedo vender fruta y verdura fresca por internet?', a: 'Sí. Configuramos envío en 24-48h con frío cuando hace falta, gestión de fechas de entrega y avisos al cliente, para que el producto llegue del campo a la mesa en su punto.' },
       { q: '¿Sirve para una cooperativa o varios productores?', a: 'Sí. Montamos catálogos con varios productores o referencias, zona B2B con precios por cliente y la venta al público a la vez. Ideal para cooperativas que quieren un canal directo.' },
-      { q: '¿Hay permanencia?', a: 'No hay permanencia. El plan incluye 600 € de creación más 80 €/mes de hosting y mantenimiento. IVA no incluido.' },
+      { q: '¿Hay permanencia?', a: 'No hay permanencia. El plan incluye 800 € de creación más 80 €/mes de hosting y mantenimiento. IVA no incluido.' },
     ],
     bodyMarkdown: `## La huerta de Europa también vende online
 
@@ -391,7 +391,7 @@ Si quieres una web de marca a la altura del producto, cuidamos el [diseño web](
       { q: '¿Integráis Stripe y Bizum?', a: 'Sí. Stripe para tarjeta, Apple Pay y Google Pay, y Bizum para el cliente español. Para B2B e industria añadimos transferencia y pago aplazado.' },
       { q: '¿La tienda se verá a la altura de una marca vasca de calidad?', a: 'Ese es el objetivo. Diseñamos a medida, no con plantillas. La presentación importa especialmente en gourmet y producto de autor, donde la tienda forma parte de la percepción de calidad.' },
       { q: '¿Puedo gestionar la tienda en euskera y castellano?', a: 'Sí. Montamos la tienda multiidioma con SEO en cada lengua, para que tus clientes compren en euskera o en castellano y posiciones en ambos.' },
-      { q: '¿Hay permanencia?', a: 'No hay permanencia. El plan incluye 600 € de creación más 80 €/mes de hosting y mantenimiento. IVA no incluido.' },
+      { q: '¿Hay permanencia?', a: 'No hay permanencia. El plan incluye 800 € de creación más 80 €/mes de hosting y mantenimiento. IVA no incluido.' },
     ],
     bodyMarkdown: `## Bilbao vende calidad, tu tienda debe transmitirla
 
@@ -444,7 +444,7 @@ Si quieres una web corporativa a la altura, cuidamos el [diseño web](/tienda/we
       { q: '¿Integráis Stripe y Bizum?', a: 'Sí. Stripe para tarjeta, Apple Pay y Google Pay (útil para el cliente extranjero), y Bizum para el español. Para mayorista añadimos transferencia y pago aplazado.' },
       { q: '¿Sirve para producto de temporada como el turrón?', a: 'Sí. Gestionamos campañas de Navidad, listas de espera, reposiciones y suscripciones, para que la temporada fuerte te pille con la tienda a punto y no se te escape ninguna venta.' },
       { q: '¿Cómo se gestionan las tallas y devoluciones del calzado?', a: 'Montamos fichas con guía de tallas, variantes por horma y color, y un proceso de devolución claro. Reducir la incertidumbre de talla es clave para vender zapato online y bajar las devoluciones.' },
-      { q: '¿Hay permanencia?', a: 'No hay permanencia. El plan incluye 600 € de creación más 80 €/mes de hosting y mantenimiento. IVA no incluido.' },
+      { q: '¿Hay permanencia?', a: 'No hay permanencia. El plan incluye 800 € de creación más 80 €/mes de hosting y mantenimiento. IVA no incluido.' },
     ],
     bodyMarkdown: `## La provincia que fabrica, ahora vendiendo directo
 
@@ -497,7 +497,7 @@ Si quieres una web de marca a la altura, cuidamos el [diseño web](/tienda/web),
       { q: '¿Integráis Stripe y Bizum?', a: 'Sí. Stripe para tarjeta, Apple Pay y Google Pay, y Bizum para el cliente español. En joyería de ticket alto, Stripe aporta un checkout seguro que da confianza al comprador.' },
       { q: '¿Es seguro vender joyería de valor por internet?', a: 'Sí, montándolo bien. Usamos pago seguro con Stripe, envío asegurado y trazable, fichas con fotografía profesional y opciones de personalización. Para ticket alto, la confianza en el proceso es lo que cierra la venta.' },
       { q: '¿Puedo vender aceite y vino por botella, caja y suscripción?', a: 'Sí. Montamos venta por unidad, por lote y club de suscripción recurrente, con verificación de edad e impuestos para el vino. El AOVE y el vino funcionan especialmente bien con clientes que repiten.' },
-      { q: '¿Hay permanencia?', a: 'No hay permanencia. El plan incluye 600 € de creación más 80 €/mes de hosting y mantenimiento. IVA no incluido.' },
+      { q: '¿Hay permanencia?', a: 'No hay permanencia. El plan incluye 800 € de creación más 80 €/mes de hosting y mantenimiento. IVA no incluido.' },
     ],
     bodyMarkdown: `## Los oficios de Córdoba, con cliente en toda España
 
@@ -550,7 +550,7 @@ Si quieres una web de marca a la altura del oficio, cuidamos el [diseño web](/t
       { q: '¿Integráis Stripe y Bizum?', a: 'Sí. Stripe para tarjeta, Apple Pay y Google Pay, y Bizum para el cliente español. Para hostelería y B2B añadimos transferencia y pago aplazado.' },
       { q: '¿Puedo vender vino online cumpliendo la normativa?', a: 'Sí. Montamos la tienda con verificación de edad, configuración de impuestos y envío especializado en vino. Vender por botella, por caja o con club de suscripción es perfectamente viable y muy rentable.' },
       { q: '¿Sirve para vender a hostelería además del particular?', a: 'Sí. Montamos una zona B2B con precios por cliente, pedidos mínimos y pago aplazado, conviviendo con la venta al público. Útil para bodegas que venden a restaurantes y a particulares.' },
-      { q: '¿Hay permanencia?', a: 'No hay permanencia. El plan incluye 600 € de creación más 80 €/mes de hosting y mantenimiento. IVA no incluido.' },
+      { q: '¿Hay permanencia?', a: 'No hay permanencia. El plan incluye 800 € de creación más 80 €/mes de hosting y mantenimiento. IVA no incluido.' },
     ],
     bodyMarkdown: `## El vino de Valladolid llega más lejos con tienda propia
 
@@ -603,7 +603,7 @@ Si quieres una web de marca a la altura, cuidamos el [diseño web](/tienda/web),
       { q: '¿Integráis Stripe y Bizum?', a: 'Sí. Stripe para tarjeta, Apple Pay y Google Pay, y Bizum para el cliente español. Para B2B e industria añadimos transferencia y pago aplazado.' },
       { q: '¿Puedo vender marisco o pescado fresco por internet?', a: 'Sí. Configuramos envío en 24-48h con cadena de frío, gestión de fechas de entrega y avisos al cliente, para que el producto del mar llegue fresco. La conserva, además, viaja sin problema a cualquier punto.' },
       { q: '¿Puedo gestionar la tienda en gallego y castellano?', a: 'Sí. Montamos la tienda multiidioma con SEO en cada lengua, para que tus clientes compren en gallego o castellano y posiciones en ambos.' },
-      { q: '¿Hay permanencia?', a: 'No hay permanencia. El plan incluye 600 € de creación más 80 €/mes de hosting y mantenimiento. IVA no incluido.' },
+      { q: '¿Hay permanencia?', a: 'No hay permanencia. El plan incluye 800 € de creación más 80 €/mes de hosting y mantenimiento. IVA no incluido.' },
     ],
     bodyMarkdown: `## Vigo fabrica y exporta, ahora también vende directo
 
@@ -656,7 +656,7 @@ Si quieres una web corporativa a la altura, cuidamos el [diseño web](/tienda/we
       { q: '¿Integráis Stripe y Bizum?', a: 'Sí. Stripe para tarjeta, Apple Pay y Google Pay (útil con tanto cliente internacional), y Bizum para el español. Añadimos otras opciones si las necesitas.' },
       { q: '¿Sirve para vender experiencias turísticas, no solo productos?', a: 'Sí. Montamos venta de entradas, tours y bonos con pago online inmediato y confirmación automática, muy útil para el sector turístico granadino, que mueve millones de visitantes.' },
       { q: '¿Puedo vender artesanía hecha a mano o por encargo?', a: 'Sí. Montamos fichas con opciones, presupuestos a medida y cobro de señal online, ideal para taracea, cerámica y cuero hechos a mano.' },
-      { q: '¿Hay permanencia?', a: 'No hay permanencia. El plan incluye 600 € de creación más 80 €/mes de hosting y mantenimiento. IVA no incluido.' },
+      { q: '¿Hay permanencia?', a: 'No hay permanencia. El plan incluye 800 € de creación más 80 €/mes de hosting y mantenimiento. IVA no incluido.' },
     ],
     bodyMarkdown: `## El encanto de Granada, vendiendo todo el año
 
@@ -709,7 +709,7 @@ Si quieres una web de marca a la altura, cuidamos el [diseño web](/tienda/web),
       { q: '¿Integráis Stripe y Bizum?', a: 'Sí. Stripe para tarjeta, Apple Pay y Google Pay, y Bizum para el cliente español. Para mayorista añadimos transferencia y pago aplazado.' },
       { q: '¿Cómo se gestionan tallas y devoluciones en moda?', a: 'Montamos fichas con guía de tallas, variantes por color y talla, lookbooks y un proceso de devolución claro. Reducir la incertidumbre de talla es lo que más sube la conversión y baja las devoluciones en moda online.' },
       { q: '¿Puedo vender producto del mar fresco por internet?', a: 'Sí. Configuramos envío en 24-48h con cadena de frío para marisco y pescado, y la conserva viaja sin problema a cualquier punto de España.' },
-      { q: '¿Hay permanencia?', a: 'No hay permanencia. El plan incluye 600 € de creación más 80 €/mes de hosting y mantenimiento. IVA no incluido.' },
+      { q: '¿Hay permanencia?', a: 'No hay permanencia. El plan incluye 800 € de creación más 80 €/mes de hosting y mantenimiento. IVA no incluido.' },
     ],
     bodyMarkdown: `## En la ciudad de la moda, tu tienda no puede ser una plantilla
 
@@ -762,7 +762,7 @@ Si quieres una web de marca a la altura, cuidamos el [diseño web](/tienda/web),
       { q: '¿Integráis Stripe y Bizum?', a: 'Sí. Stripe para tarjeta, Apple Pay y Google Pay, y Bizum para el cliente español. Para hostelería y mayorista añadimos transferencia y pago aplazado.' },
       { q: '¿Puedo vender jamón loncheado y piezas con envío en condiciones?', a: 'Sí. Configuramos la venta de pieza entera, media y loncheado al vacío, con envío en 24-48h y embalaje adecuado para que el producto llegue perfecto. El ibérico viaja muy bien si la logística está bien montada.' },
       { q: '¿Sirve para una cooperativa o varios productores de la zona?', a: 'Sí. Montamos catálogos con varias referencias o productores, zona B2B con precios por cliente y venta al público a la vez. Ideal para cooperativas y para productores que quieren un canal directo.' },
-      { q: '¿Hay permanencia?', a: 'No hay permanencia. El plan incluye 600 € de creación más 80 €/mes de hosting y mantenimiento. IVA no incluido.' },
+      { q: '¿Hay permanencia?', a: 'No hay permanencia. El plan incluye 800 € de creación más 80 €/mes de hosting y mantenimiento. IVA no incluido.' },
     ],
     bodyMarkdown: `## El producto de la dehesa merece vender con su propia marca
 

@@ -7,7 +7,7 @@ export type Particle = { x: number; y: number; vx: number; vy: number; life: num
 export type Float = { x: number; y: number; vy: number; life: number; text: string; color: string };
 export type Star = { x: number; y: number; r: number; tw: number; ph: number };
 
-export const BLOCK_COLORS = ['#8B5CF6', '#F97316', '#3B82F6', '#10B981'];
+export const BLOCK_COLORS = ['#3b82f6', '#67c4ff', '#3B82F6', '#10B981'];
 export const GROUND_OFFSET = 56;
 export const PLAYER_X = 92;
 export const GRAVITY = 1900;
@@ -15,9 +15,9 @@ export const JUMP_V = -640;
 
 // Cordilleras de fondo: lejos = más claras y lentas, cerca = oscuras y rápidas (perspectiva aérea).
 export const RANGES = [
-  { par: 0.05, base: 158, amp: 56, step: 20, seed: 0.0, c0: '#3a2363', c1: '#241544' },
-  { par: 0.12, base: 112, amp: 48, step: 16, seed: 2.1, c0: '#2a1547', c1: '#190d32' },
-  { par: 0.24, base: 72, amp: 40, step: 14, seed: 4.7, c0: '#160b29', c1: '#0b051b' },
+  { par: 0.05, base: 158, amp: 56, step: 20, seed: 0.0, c0: '#183e6b', c1: '#112d4c' },
+  { par: 0.12, base: 112, amp: 48, step: 16, seed: 2.1, c0: '#123052', c1: '#0b223c' },
+  { par: 0.24, base: 72, amp: 40, step: 14, seed: 4.7, c0: '#0b1d32', c1: '#061322' },
 ] as const;
 
 

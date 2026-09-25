@@ -121,9 +121,9 @@ export default function ContactForm() {
       </div>
       <p className="text-center text-xs text-white/40">Te respondemos en menos de 24h con propuesta o asesoramiento.</p>
       <style jsx>{`
-        .input { width:100%; height:48px; padding:0 14px; border-radius:14px; background:rgba(7,5,14,0.5); border:1px solid var(--border-subtle); color:var(--text-primary); font-size:16px; transition:border-color .2s,box-shadow .2s; }
+        .input { width:100%; height:48px; padding:0 14px; border-radius:14px; background:rgba(3,9,20,0.5); border:1px solid var(--border-subtle); color:var(--text-primary); font-size:16px; transition:border-color .2s,box-shadow .2s; }
         .input::placeholder { color:rgba(255,255,255,0.4); }
-        .input:focus { outline:none; border-color:var(--purple-400); box-shadow:0 0 0 3px rgba(139,92,246,0.18); }
+        .input:focus { outline:none; border-color:var(--brand-400); box-shadow:0 0 0 3px rgba(59,130,246,0.18); }
         .input[aria-invalid="true"] { border-color:#fda4af; }
         textarea.input { min-height:140px; padding-top:12px; }
       `}</style>

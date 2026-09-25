@@ -20,11 +20,11 @@ import { serviceJsonLd, faqJsonLd, breadcrumbJsonLd } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: 'Diseño web profesional para empresas en 48h',
-  description: 'Página web profesional con SEO técnico, optimización móvil y entrega en 24-48h. 60€/mes + 600€ creación. Sin permanencia. Para toda España.',
+  description: 'Página web profesional con SEO técnico, optimización móvil y entrega en 24-48h. 60€/mes + 800€ creación. Sin permanencia. Para toda España.',
   alternates: { canonical: '/tienda/web' },
   openGraph: {
     title: 'Diseño web profesional para empresas en 48h · Latech',
-    description: 'Web profesional con SEO técnico y entrega en 24-48h. 60€/mes + 600€ creación. Sin permanencia.',
+    description: 'Web profesional con SEO técnico y entrega en 24-48h. 60€/mes + 800€ creación. Sin permanencia.',
     url: '/tienda/web',
     siteName: 'Latech',
     locale: 'es_ES',
@@ -63,7 +63,7 @@ export default function WebPlanPage() {
           description:
             'Página web profesional a medida con SEO técnico, optimización móvil y entrega en 24-48h. Para empresas de toda España.',
           path: '/tienda/web',
-          price: '600',
+          price: '800',
         })}
       />
       <JsonLd data={faqJsonLd(FAQS)} />
@@ -78,7 +78,7 @@ export default function WebPlanPage() {
       <Navbar />
       <AuroraBackground />
       <MouseGlow />
-      <main className="relative z-10">
+      <main id="main-content" tabIndex={-1} className="relative z-10">
         <section className="pt-44 pb-20">
           <div className="mx-auto max-w-7xl px-6 text-center">
             <div className="text-left">
@@ -119,7 +119,7 @@ export default function WebPlanPage() {
                 ¿Cuánto cuesta una página web profesional?
               </h2>
               <AnswerBox question="Respuesta rápida">
-                Una página web profesional a medida con Latech cuesta <strong className="text-white">600 € de
+                Una página web profesional a medida con Latech cuesta <strong className="text-white">800 € de
                 creación más 60 €/mes</strong>, con hosting en Vercel, SSL, SEO técnico, mantenimiento y cambios
                 menores incluidos. Sin permanencia y entregada en 24-48 horas. El código y el dominio son tuyos
                 si algún día decides marcharte.
@@ -128,7 +128,7 @@ export default function WebPlanPage() {
                 <ComparisonTable
                   headers={['Aspecto', 'Latech', 'Agencia tradicional']}
                   rows={[
-                    ['Creación', '600 € (pago único)', '1.500 – 4.000 €'],
+                    ['Creación', '800 € (pago único)', '1.500 – 4.000 €'],
                     ['Cuota mensual', '60 €/mes todo incluido', 'Variable / por horas'],
                     ['Entrega', '24-48 horas', '4 – 12 semanas'],
                     ['Permanencia', 'Ninguna', '12 meses habitual'],
@@ -148,7 +148,7 @@ export default function WebPlanPage() {
                 plan={{
                   badge: 'Plan Web',
                   price: 60,
-                  oneTime: '+ 600€ pago único de creación',
+                  oneTime: '+ 800€ pago único de creación',
                   accent: 'blue',
                   features: [
                     'Desarrollo completo de la página web',

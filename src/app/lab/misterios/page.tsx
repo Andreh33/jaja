@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   twitter: { card: 'summary_large_image', title: 'Misterios de negocio: aprende probando', description: 'Tres casos ficticios para aprender a mejorar una web probando.' },
 };
 export default function MysteriesPage() {
-  return <><AuroraBackground intensity="subtle" /><main className={styles.page}><div className={styles.container}>
+  return <><AuroraBackground intensity="subtle" /><main id="main-content" tabIndex={-1} className={styles.page}><div className={styles.container}>
     <Link className={styles.eyebrow} href="/lab">← Laboratorio Latech</Link>
     <h1 className={styles.heading}>Hay un problema.<br /><span className="text-gradient">Tú tienes el control.</span></h1>
     <p className={styles.lede}>Ponte en el lugar de un cliente, descubre qué le frena y cambia la demo para solucionarlo. Tres pequeños misterios sobre decisiones que importan en una web.</p>

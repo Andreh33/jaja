@@ -29,24 +29,61 @@ export type WizardSelection = {
 type ResolvedItem = {
   item: CatalogItem;
   quantity: number;
+  productId: string;
   priceId: string;
 };
 
-function priceIdFor(item: CatalogItem): string {
+function stripeIdsFor(item: CatalogItem): { productId: string; priceId: string } {
   const prices = getCurrentPrices();
   for (const key in CATALOG) {
     const k = key as keyof typeof CATALOG;
-    if (CATALOG[k].id === item.id) return prices[k as keyof typeof prices].priceId;
+    if (CATALOG[k].id === item.id) {
+      const ids = prices[k as keyof typeof prices];
+      if (!ids.productId || !ids.priceId) {
+        throw new Error(`Incomplete Stripe mapping for catalog item ${item.id}`);
+      }
+      return ids;
+    }
   }
-  throw new Error(`No Stripe priceId mapped for catalog item ${item.id}`);
+  throw new Error(`No Stripe mapping for catalog item ${item.id}`);
 }
 
 function resolve(item: CatalogItem, quantity = 1): ResolvedItem {
-  return { item, quantity, priceId: priceIdFor(item) };
+  return { item, quantity, ...stripeIdsFor(item) };
+}
+
+function isWebCreation(item: CatalogItem): boolean {
+  return item.id === CATALOG.webCreationLe8.id || item.id === CATALOG.webCreationGt8.id;
+}
+
+function toCheckoutLineItem(
+  resolved: ResolvedItem,
+): Stripe.Checkout.SessionCreateParams.LineItem {
+  const common = {
+    quantity: resolved.quantity,
+    metadata: { catalog_id: resolved.item.id },
+  };
+
+  // Los IDs de Price existentes conservan los importes históricos. Para las
+  // dos variantes web creamos el Price inline desde el catálogo actual, unido
+  // al Product ya existente; así Checkout cobra exactamente 800 € sin tocar
+  // ni archivar precios previos en Stripe.
+  if (isWebCreation(resolved.item)) {
+    return {
+      ...common,
+      price_data: {
+        currency: resolved.item.currency,
+        product: resolved.productId,
+        unit_amount: resolved.item.amount,
+      },
+    };
+  }
+
+  return { ...common, price: resolved.priceId };
 }
 
 /**
- * Convierte la selección del wizard en items resueltos con priceId.
+ * Convierte la selección del wizard en items resueltos con IDs de Stripe.
  * Devuelve oneTime / recurring por separado para construir la session correctamente.
  */
 export function resolveSelection(s: WizardSelection): {
@@ -101,8 +138,8 @@ export function buildCheckoutSessionParams(args: {
 }): Stripe.Checkout.SessionCreateParams {
   const { oneTime, recurring } = resolveSelection(args.selection);
   const allLineItems = [
-    ...recurring.map((r) => ({ price: r.priceId, quantity: r.quantity })),
-    ...oneTime.map((r) => ({ price: r.priceId, quantity: r.quantity })),
+    ...recurring.map(toCheckoutLineItem),
+    ...oneTime.map(toCheckoutLineItem),
   ];
 
   if (recurring.length > 0) {

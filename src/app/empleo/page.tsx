@@ -30,7 +30,7 @@ export default async function EmpleoPage() {
   return (
     <>
       <Navbar />
-      <main className="relative min-h-screen overflow-x-hidden" style={{ background: 'var(--bg-base)' }}>
+      <main id="main-content" tabIndex={-1} className="relative min-h-screen overflow-x-hidden" style={{ background: 'var(--bg-base)' }}>
         <AuroraBackground />
         <MouseGlow />
 

@@ -162,7 +162,7 @@ export default async function AdminClienteDetail({ params }: { params: Promise<{
                   <span className="rounded-full px-2.5 py-0.5 text-[10px]" style={{ background: 'rgba(59,130,246,0.15)', color: 'var(--accent-web)' }}>web</span>
                 )}
                 {subCategories.includes('tienda') && (
-                  <span className="rounded-full px-2.5 py-0.5 text-[10px]" style={{ background: 'rgba(249,115,22,0.15)', color: 'var(--accent-shop)' }}>tienda</span>
+                  <span className="rounded-full px-2.5 py-0.5 text-[10px]" style={{ background: 'rgba(103,196,255,0.15)', color: 'var(--accent-shop)' }}>tienda</span>
                 )}
                 {subCategories.includes('ia') && (
                   <span className="rounded-full px-2.5 py-0.5 text-[10px]" style={{ background: 'rgba(16,185,129,0.15)', color: 'var(--accent-ia)' }}>agente IA</span>

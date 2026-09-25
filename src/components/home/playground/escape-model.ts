@@ -44,15 +44,15 @@ export const DIFF: Record<'facil' | 'normal', Diff> = {
 
 export type Skin = { id: string; name: string; c0: string; c1: string; c2: string; aura: string; price: number };
 export const SKINS: Skin[] = [
-  { id: 'default', name: 'Clásica', c0: '#C9A6FF', c1: '#8B5CF6', c2: '#5B21B6', aura: '139,92,246', price: 0 },
-  { id: 'dorada', name: 'Dorada', c0: '#FFE9A8', c1: '#FBBF24', c2: '#B45309', aura: '251,191,36', price: 20 },
+  { id: 'default', name: 'Clásica', c0: '#bfdbfe', c1: '#3b82f6', c2: '#1e40af', aura: '59,130,246', price: 0 },
+  { id: 'dorada', name: 'Dorada', c0: '#FFE9A8', c1: '#c5eaff', c2: '#B45309', aura: '197,234,255', price: 20 },
   { id: 'neon', name: 'Neón', c0: '#7DF9FF', c1: '#22D3EE', c2: '#9333EA', aura: '34,211,238', price: 30 },
   { id: 'esmeralda', name: 'Esmeralda', c0: '#A7F3D0', c1: '#10B981', c2: '#065F46', aura: '16,185,129', price: 40 },
-  { id: 'fuego', name: 'Fuego', c0: '#FED7AA', c1: '#F97316', c2: '#B91C1C', aura: '249,115,22', price: 55 },
+  { id: 'fuego', name: 'Fuego', c0: '#FED7AA', c1: '#67c4ff', c2: '#B91C1C', aura: '103,196,255', price: 55 },
   { id: 'hielo', name: 'Hielo', c0: '#E0F2FE', c1: '#60A5FA', c2: '#1E40AF', aura: '96,165,250', price: 70 },
   { id: 'rosa', name: 'Chicle', c0: '#FBCFE8', c1: '#EC4899', c2: '#9D174D', aura: '236,72,153', price: 90 },
   { id: 'matrix', name: 'Matrix', c0: '#86EFAC', c1: '#22C55E', c2: '#14532D', aura: '34,197,94', price: 120 },
-  { id: 'galaxia', name: 'Galaxia', c0: '#C4B5FD', c1: '#7C3AED', c2: '#1E1B4B', aura: '124,58,237', price: 160 },
+  { id: 'galaxia', name: 'Galaxia', c0: '#bfdbfe', c1: '#2563eb', c2: '#1E1B4B', aura: '124,58,237', price: 160 },
   { id: 'oro', name: 'Oro puro', c0: '#FEF3C7', c1: '#F59E0B', c2: '#78350F', aura: '245,158,11', price: 220 },
 ];
 

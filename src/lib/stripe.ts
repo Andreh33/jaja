@@ -51,6 +51,7 @@ export const stripe = new Stripe(key || 'sk_invalid_at_runtime', {
   // root para tolerar redeliveries de eventos viejos. Antes de cambiar este
   // pin, REVISA esos helpers y los tests en tests/webhook-handlers.test.ts —
   // y consulta docs/MIGRATION_NOTES.md para más contexto.
+  // @ts-expect-error Deliberately retain the verified API contract (Stripe supports older pins).
   apiVersion: '2026-04-22.dahlia',
   typescript: true,
   appInfo: {

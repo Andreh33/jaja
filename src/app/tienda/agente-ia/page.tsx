@@ -103,7 +103,7 @@ export default function AgenteIaPage() {
       <Navbar />
       <AuroraBackground intensity="strong" />
       <MouseGlow strong />
-      <main className="relative z-10">
+      <main id="main-content" tabIndex={-1} className="relative z-10">
         <section className="pt-44 pb-20">
           <div className="mx-auto max-w-7xl px-6">
             <Breadcrumbs
@@ -161,7 +161,7 @@ export default function AgenteIaPage() {
                     <div
                       className="absolute inset-0"
                       style={{
-                        background: 'radial-gradient(circle at 30% 30%, rgba(16,185,129,0.35), transparent 60%), radial-gradient(circle at 70% 70%, rgba(139,92,246,0.4), transparent 60%)',
+                        background: 'radial-gradient(circle at 30% 30%, rgba(16,185,129,0.35), transparent 60%), radial-gradient(circle at 70% 70%, rgba(59,130,246,0.4), transparent 60%)',
                       }}
                     />
                     <svg viewBox="0 0 400 400" className="absolute inset-0 h-full w-full">
@@ -196,7 +196,7 @@ export default function AgenteIaPage() {
                         })}
                       </g>
                       <g transform="translate(170,140)">
-                        <rect x="0" y="0" width="60" height="120" rx="14" fill="rgba(7,5,14,0.85)" stroke="rgba(255,255,255,0.15)" />
+                        <rect x="0" y="0" width="60" height="120" rx="14" fill="rgba(3,9,20,0.85)" stroke="rgba(255,255,255,0.15)" />
                         <rect x="6" y="14" width="48" height="86" rx="6" fill="rgba(16,185,129,0.12)" />
                         <circle cx="30" cy="110" r="3" fill="rgba(255,255,255,0.4)" />
                       </g>

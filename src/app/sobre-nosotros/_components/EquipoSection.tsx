@@ -42,7 +42,7 @@ function MiembroCard({ miembro }: { miembro: Miembro }) {
         <h3 className="font-display text-[21px] text-white" style={{ letterSpacing: '-0.02em' }}>
           {miembro.nombre}
         </h3>
-        <p className="mt-1 text-[13px] font-medium" style={{ color: 'var(--purple-300)' }}>
+        <p className="mt-1 text-[13px] font-medium" style={{ color: 'var(--brand-300)' }}>
           {miembro.rol}
         </p>
         <Parrafos
@@ -94,7 +94,7 @@ export default function EquipoSection() {
             <div className="flex flex-col justify-center p-6 md:p-8 lg:col-span-7 lg:p-10">
               <p
                 className="mb-3 text-[12px] font-semibold uppercase tracking-[0.2em]"
-                style={{ color: 'var(--purple-300)' }}
+                style={{ color: 'var(--brand-300)' }}
               >
                 {fundadores.rol}
               </p>
@@ -107,7 +107,7 @@ export default function EquipoSection() {
               {fundadores.lema && (
                 <p
                   className="mt-4 border-l-2 pl-3 font-display text-[17px] italic md:text-[19px]"
-                  style={{ borderColor: 'var(--purple-400)', color: 'var(--purple-100)' }}
+                  style={{ borderColor: 'var(--brand-400)', color: 'var(--brand-100)' }}
                 >
                   «{fundadores.lema}»
                 </p>

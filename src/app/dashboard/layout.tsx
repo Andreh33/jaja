@@ -11,7 +11,7 @@ export default async function DashboardLayout({ children }: { children: ReactNod
   return (
     <div className="flex min-h-screen" style={{ background: 'var(--bg-base)' }}>
       <Sidebar userName={session.user?.name || session.user?.email || ''} />
-      <main className="flex-1 overflow-x-hidden">{children}</main>
+      <main id="main-content" tabIndex={-1} className="flex-1 overflow-x-hidden">{children}</main>
     </div>
   );
 }

@@ -1,85 +1,14 @@
-'use client';
-
-import { motion, useScroll, useTransform, useReducedMotion } from 'framer-motion';
-import { useRef } from 'react';
 import { Reveal } from '../effects/Reveal';
 
-const STEPS = [
-  { n: '01', title: 'Conversamos', desc: 'Una llamada de 15 minutos para entender tu negocio, tus objetivos y tus clientes.' },
-  { n: '02', title: 'Diseñamos', desc: 'Propuesta visual y técnica adaptada a tu marca. Aprobamos juntos antes de programar.' },
-  { n: '03', title: 'Construimos', desc: 'Desarrollo en 24-48h con stack moderno: Next.js, Vercel, Tailwind, Stripe, n8n.' },
-  { n: '04', title: 'Lanzamos', desc: 'Despliegue, monitorización y soporte continuo desde el día 1. Cambios incluidos cada mes.' },
+const steps = [
+  ['01', 'La idea.', 'Nos cuentas qué quieres conseguir. Escuchamos, preguntamos y definimos el alcance.'],
+  ['02', 'La dirección.', 'Damos forma a tu identidad digital. Diseño, contenido y recorrido aprobados contigo.'],
+  ['03', 'El código.', 'Construimos cada detalle. Interacciones, integraciones y pruebas en móvil y escritorio.'],
+  ['04', 'El despegue.', 'Publicamos, medimos y seguimos a tu lado. Tu web evoluciona con tu negocio.'],
 ];
-
 export default function ProcessSection() {
-  const ref = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({ target: ref, offset: ['start 70%', 'end 30%'] });
-  const pathLength = useTransform(scrollYProgress, [0, 1], [0, 1]);
-  const reduced = useReducedMotion();
-
-  return (
-    <section ref={ref} className="relative z-10 py-32">
-      <div className="mx-auto max-w-7xl px-6">
-        <Reveal>
-          <div className="mb-20 max-w-3xl">
-            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-white/60">Proceso</p>
-            <h2 className="font-display text-balance text-4xl md:text-6xl" style={{ letterSpacing: '-0.04em', fontWeight: 800 }}>
-              Cómo trabajamos
-            </h2>
-            <p className="mt-5 text-base text-white/60">
-              Cuatro pasos. Sin sorpresas. Sin reuniones eternas.
-            </p>
-          </div>
-        </Reveal>
-
-        <div className="relative">
-          <svg
-            className="absolute left-0 right-0 top-12 hidden h-px w-full md:block"
-            preserveAspectRatio="none"
-            viewBox="0 0 1000 1"
-            aria-hidden
-          >
-            <line x1="0" y1="0.5" x2="1000" y2="0.5" stroke="rgba(255,255,255,0.06)" strokeWidth="1" />
-            <motion.line
-              x1="0"
-              y1="0.5"
-              x2="1000"
-              y2="0.5"
-              stroke="url(#processGrad)"
-              strokeWidth="2"
-              style={{ pathLength: reduced ? 1 : pathLength }}
-            />
-            <defs>
-              <linearGradient id="processGrad" x1="0%" x2="100%">
-                <stop offset="0%" stopColor="#8B5CF6" />
-                <stop offset="50%" stopColor="#F97316" />
-                <stop offset="100%" stopColor="#FBBF24" />
-              </linearGradient>
-            </defs>
-          </svg>
-
-          <div className="grid gap-10 md:grid-cols-4">
-            {STEPS.map((s, i) => (
-              <Reveal
-                key={s.n}
-                delay={i * .08}
-                className="relative"
-              >
-                <div className="mb-6 flex items-center gap-4">
-                  <div
-                    className="flex h-14 w-14 items-center justify-center rounded-2xl glass font-mono text-base font-semibold text-white"
-                    style={{ background: 'var(--bg-elevated)', border: '1px solid var(--border-glow)' }}
-                  >
-                    {s.n}
-                  </div>
-                </div>
-                <h3 className="font-display text-2xl font-bold text-white">{s.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-white/60">{s.desc}</p>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
-  );
+  return <section className="section-space"><div className="site-container">
+    <Reveal className="section-heading"><div><p className="eyebrow">04 / DEL «Y SI…» AL «YA ESTÁ»</p><h2>Así lo hacemos<br /><span className="muted-heading">realidad.</span></h2></div><p className="max-w-xs text-sm leading-relaxed text-white/50">Comunicación directa. Un proceso claro.<br />Y obsesión por los detalles.</p></Reveal>
+    <div className="blue-process">{steps.map(([n,title,desc],i) => <Reveal key={n} delay={i*.06} className="process-step"><span>{n} /</span><h3>{title}</h3><p>{desc}</p></Reveal>)}</div>
+  </div></section>;
 }

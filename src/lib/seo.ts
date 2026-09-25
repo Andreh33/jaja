@@ -104,7 +104,7 @@ const ORGANIZATION_NODE = {
     itemListElement: [
       {
         '@type': 'Offer',
-        price: '600',
+        price: '800',
         priceCurrency: 'EUR',
         itemOffered: {
           '@type': 'Service',
@@ -115,7 +115,7 @@ const ORGANIZATION_NODE = {
       },
       {
         '@type': 'Offer',
-        price: '600',
+        price: '800',
         priceCurrency: 'EUR',
         itemOffered: {
           '@type': 'Service',

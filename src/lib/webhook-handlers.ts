@@ -30,7 +30,7 @@ import { db } from './db';
 import { orders, subscriptions, users } from '../../drizzle/schema';
 import { stripe } from './stripe';
 import {
-  buildCartItem,
+  buildCartItemFromCheckoutLine,
   buildCartItemFromSubscriptionItem,
   extractInvoiceSubscriptionId,
   extractSubscriptionCadence,
@@ -41,8 +41,9 @@ import {
 type Tx = Parameters<Parameters<typeof db.transaction>[0]>[0];
 
 /**
- * Reconstruye el carrito desde line_items de Stripe usando el mapping
- * priceId → catalogId. Items desconocidos se omiten con warning.
+ * Reconstruye el carrito desde line_items de Stripe. Las sesiones actuales
+ * llevan metadata.catalog_id; las anteriores conservan fallback por Price ID.
+ * Items desconocidos o con identificadores contradictorios se omiten.
  */
 async function listCartFromSession(sessionId: string): Promise<CartLine[]> {
   const lines: CartLine[] = [];
@@ -50,17 +51,17 @@ async function listCartFromSession(sessionId: string): Promise<CartLine[]> {
   const li = await stripe.checkout.sessions.listLineItems(sessionId, { limit: 100, expand: ['data.price'] });
   for (const item of li.data) {
     const priceId = (typeof item.price === 'object' && item.price?.id) || null;
-    if (!priceId) {
-      console.warn(`[stripe-webhook] result=warn reason=line_item_no_price session_id=${sessionId}`);
-      continue;
-    }
-    const cartItem = buildCartItem({
+    const catalogId = item.metadata?.catalog_id ?? null;
+    const cartItem = buildCartItemFromCheckoutLine({
       priceId,
+      catalogId,
       quantity: item.quantity ?? 1,
       amountSubtotal: item.amount_subtotal ?? 0,
     });
     if (!cartItem) {
-      console.warn(`[stripe-webhook] result=warn reason=price_not_in_catalog price_id=${priceId} session_id=${sessionId}`);
+      console.warn(
+        `[stripe-webhook] result=warn reason=line_item_not_in_catalog price_id=${priceId ?? 'none'} catalog_id=${catalogId ?? 'none'} session_id=${sessionId}`,
+      );
       continue;
     }
     lines.push(cartItem);

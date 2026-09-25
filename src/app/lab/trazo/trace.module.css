@@ -1,31 +1,31 @@
 .shell { max-width: 1144px; padding: 150px 32px 100px; margin: 0 auto; }
 .header { margin-bottom: 48px; }
 .back { display: inline-flex; align-items: center; gap: 8px; color: var(--text-secondary); font-size: 12px; margin-bottom: 38px; }
-.eyebrow { color: var(--purple-200); font-size: 11px; letter-spacing: .09em; text-transform: uppercase; }
+.eyebrow { color: var(--brand-200); font-size: 11px; letter-spacing: .09em; text-transform: uppercase; }
 .header h1 { margin: 16px 0 20px; font-family: var(--font-syne), sans-serif; font-size: clamp(56px, 8vw, 100px); font-weight: 700; line-height: .98; letter-spacing: -.065em; }
-.header h1 span { color: var(--purple-200); }
+.header h1 span { color: var(--brand-200); }
 .header > p:last-child { max-width: 520px; color: var(--text-secondary); font-size: 16px; line-height: 1.65; }
 .experience { display: grid; gap: 20px; }
 .steps { display: flex; justify-content: space-between; border-top: 1px solid var(--border-strong); padding: 17px 0 0; color: var(--text-secondary); font-size: 12px; }
-.steps [aria-current='step'] { color: #fbbf24; }
+.steps [aria-current='step'] { color: #c5eaff; }
 .editor, .player { border: 1px solid var(--border-strong); border-radius: 26px; background: #100a1c; overflow: hidden; }
 .editor { padding: 28px; display: flex; flex-direction: column; gap: 23px; }
 .editorTitle { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
 .editorTitle h2 { margin-top: 6px; font-family: var(--font-syne), sans-serif; font-weight: 700; font-size: 28px; letter-spacing: -.035em; }
-.drawingArea { position: relative; border: 1px dashed rgba(201,166,255,.3); border-radius: 18px; background-color: #0b0716; background-image: radial-gradient(rgba(201,166,255,.18) 1px, transparent 1px); background-size: 24px 24px; }
+.drawingArea { position: relative; border: 1px dashed rgba(147,197,253,.3); border-radius: 18px; background-color: #06101e; background-image: radial-gradient(rgba(147,197,253,.18) 1px, transparent 1px); background-size: 24px 24px; }
 .drawCanvas { display: block; width: 100%; height: 280px; touch-action: none; cursor: crosshair; }
 .drawHint { position: absolute; inset: 0; pointer-events: none; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 15px; padding: 20px; color: #bdafd0; text-align: center; font-size: 18px; }
 .drawHint span { color: #9988ad; font-size: 12px; }
 .presets { display: flex; align-items: center; justify-content: space-between; gap: 15px; font-size: 12px; color: var(--text-secondary); }
 .presets > div { display: flex; flex-wrap: wrap; gap: 8px; }
 .primary, .secondary, .smallButton { display: inline-flex; align-items: center; justify-content: center; gap: 8px; border-radius: 999px; min-height: 46px; padding: 11px 21px; font-size: 12px; font-weight: 600; }
-.primary { color: #fff; background: #7c3aed; border: 1px solid #a78bfa; }
+.primary { color: #fff; background: #2563eb; border: 1px solid #a78bfa; }
 .secondary { color: #e4d9f8; background: #1c112e; border: 1px solid var(--border-strong); }
 .smallButton { color: #c8bddb; border: 1px solid var(--border-strong); padding: 8px 12px; min-height: 40px; font-size: 11px; }
 .experience button:disabled { opacity: .45; cursor: default; }
-.experience button:focus-visible, .experience a:focus-visible, .experience canvas:focus-visible, .experience input:focus-visible { outline: 2px solid #c9a6ff; outline-offset: 3px; }
+.experience button:focus-visible, .experience a:focus-visible, .experience canvas:focus-visible, .experience input:focus-visible { outline: 2px solid #bfdbfe; outline-offset: 3px; }
 .gameHeader { padding: 17px 22px; display: flex; align-items: center; justify-content: space-between; gap: 15px; font-size: 13px; }
-.gameHeader > span > span { color: #f97316; margin-left: 8px; }
+.gameHeader > span > span { color: #67c4ff; margin-left: 8px; }
 .scene { position: relative; height: 400px; }
 .gameCanvas { display: block; width: 100%; height: 100%; touch-action: none; }
 .gameOverlay { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 17px; padding: 25px; overflow-y: auto; text-align: center; background: rgba(8,5,16,.86); }
@@ -45,12 +45,12 @@
 .shareActions h3, .explanation h3 { font-family: var(--font-syne), sans-serif; font-weight: 700; font-size: 19px; }
 .shareActions p { margin-top: 5px; color: var(--text-secondary); font-size: 12px; line-height: 1.6; }
 .shareLink { display: grid; gap: 8px; color: #c8bddb; font-size: 12px; }
-.shareLink input { width: 100%; min-width: 0; border: 1px solid var(--border-strong); border-radius: 10px; padding: 12px; background: #0b0716; color: #e4d9f8; font-size: 14px; }
+.shareLink input { width: 100%; min-width: 0; border: 1px solid var(--border-strong); border-radius: 10px; padding: 12px; background: #06101e; color: #e4d9f8; font-size: 14px; }
 .status { min-height: 40px; color: #c8bddb; font-size: 12px; line-height: 1.6; }
 .explanation { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; border-top: 1px solid var(--border-strong); padding: 34px 0; }
 .explanation p { margin-top: 10px; color: var(--text-secondary); font-size: 13px; line-height: 1.75; }
 .project { display: flex; align-items: center; justify-content: space-between; gap: 20px; border-top: 1px solid var(--border-strong); padding: 24px 0; font-family: var(--font-syne), sans-serif; font-size: 21px; }
-.project > span { display: inline-flex; align-items: center; gap: 8px; color: var(--purple-200); font-family: var(--font-geist-sans), sans-serif; font-size: 12px; }
+.project > span { display: inline-flex; align-items: center; gap: 8px; color: var(--brand-200); font-family: var(--font-geist-sans), sans-serif; font-size: 12px; }
 @media (max-width: 680px) {
   .shell { padding: 120px 20px 80px; }
   .header { margin-bottom: 32px; }

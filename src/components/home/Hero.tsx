@@ -1,93 +1,47 @@
+'use client';
+
+import { useRef } from 'react';
+import { motion, useScroll, useTransform, useReducedMotion } from 'framer-motion';
+import { ArrowDown, ArrowUpRight, Code2, Orbit } from 'lucide-react';
 import Link from 'next/link';
-import { ArrowRight, ArrowUpRight, MessageCircle } from 'lucide-react';
-import GradientText from '../effects/GradientText';
-import MagneticButton from '../effects/MagneticButton';
 import { whatsappLink } from '@/lib/stripe-links';
-import { QUOTE_CATALOG, formatEUR, QUOTE_TAX_LABEL } from '@/lib/quotes/catalog';
-import styles from '../layout/public-mobile.module.css';
 
-// Server component a propósito: el contenido principal se pinta
-// con el HTML inicial. La entrada se anima con CSS (hero-enter*), no con
-// framer-motion, para que no dependa de la hidratación.
 export default function Hero() {
+  const ref = useRef<HTMLElement>(null);
+  const reduce = useReducedMotion();
+  const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] });
+  const orbit = useTransform(scrollYProgress, [0, 1], ['rotate(-18deg) scale(1)', 'rotate(75deg) scale(0.78)']);
+  const text = useTransform(scrollYProgress, [0, 1], ['translateY(0px)', 'translateY(100px)']);
   return (
-    <section className={`relative z-10 flex min-h-[100svh] items-center pt-44 pb-24 ${styles.hero}`}>
-      <div className={`mx-auto w-full max-w-7xl px-6 ${styles.heroContainer}`}>
-        <div className={`mx-auto max-w-5xl text-center ${styles.heroContent}`}>
-          <p className={styles.mobileMotto}>Tu imaginación, nuestro límite.</p>
-          <div className={`hero-enter mx-auto mb-7 inline-flex items-center gap-2 rounded-full glass px-4 py-1.5 text-xs font-medium text-white/80 ${styles.availability}`}>
-            <span className="relative inline-flex h-2 w-2">
-              <span className="absolute inset-0 rounded-full bg-emerald-400 animate-pulse-dot" />
-              <span className="relative h-2 w-2 rounded-full bg-emerald-400" />
-            </span>
-            Disponible para nuevos proyectos · Entrega en 24-48h
+    <section ref={ref} className="blue-hero" aria-labelledby="hero-title">
+      <div className="hero-grid" aria-hidden="true" />
+      <div className="site-container hero-meta"><span>ESTUDIO DIGITAL INDEPENDIENTE</span><span>ESPAÑA · SIN LÍMITES</span></div>
+      <div className="site-container hero-composition">
+        <motion.div className="hero-copy" style={{ transform: reduce ? 'none' : text }}>
+          <p className="eyebrow"><span className="status-dot" /> Ideas ambiciosas. Código propio.</p>
+          <h1 id="hero-title" className="hero-heading">Diseño web.{' '}<br />Fuera de{' '}<br /><span>lo normal.</span></h1>
+          <p className="hero-description">Webs que se sienten. Tiendas que venden. IA que trabaja.<br className="hidden md:block" /> Llevamos tu negocio a un lugar donde las plantillas no llegan.</p>
+          <div className="hero-actions">
+            <Link href="/tienda/calculadora" className="blue-button">Construir mi proyecto <ArrowUpRight size={18} /></Link>
+            <a href={whatsappLink('Hola, quiero una web fuera de lo normal')} className="text-button" target="_blank" rel="noopener noreferrer">Hablemos <ArrowUpRight size={17} /></a>
           </div>
-
-          <h1
-            className={`hero-enter-lcp font-display text-balance ${styles.heroTitle}`}
-            style={{
-              fontSize: 'clamp(2.75rem, 9vw, 8.5rem)',
-              lineHeight: 0.95,
-              letterSpacing: '-0.045em',
-              fontWeight: 800,
-            }}
-          >
-            <span className="block">Diseño web que{' '}</span>
-            <GradientText as="span" className="block">convierte visitas{' '}</GradientText>
-            <span className="block">en clientes.</span>
-          </h1>
-
-          <p className={`hero-enter hero-delay-1 mx-auto mt-7 max-w-2xl text-pretty text-base leading-relaxed text-white/65 md:text-lg ${styles.heroDescription}`}>
-            Webs profesionales, tiendas online y agentes de IA con n8n para empresas de toda España.
-            Desarrollo en 24-48 horas. Sin permanencia.
-          </p>
-
-          <div className={`hero-enter hero-delay-2 mt-10 flex flex-wrap items-center justify-center gap-4 ${styles.heroActions}`}>
-            <MagneticButton href="/tienda" className={styles.desktopPlanLink}>
-              Ver planes <ArrowRight size={16} />
-            </MagneticButton>
-            <MagneticButton href="/tienda/calculadora" className={styles.mobilePlanLink}>
-              Calcular mi proyecto <ArrowUpRight size={17} aria-hidden />
-            </MagneticButton>
-            <MagneticButton href={whatsappLink('Hola, quiero más información sobre Latech')} variant="secondary" target="_blank" rel="noreferrer">
-              <MessageCircle size={16} /> Hablar por WhatsApp
-            </MagneticButton>
-          </div>
-
-          <div className={styles.mobileProjectNote}>
-            <p>
-              <strong>{formatEUR(QUOTE_CATALOG.creation.amount)} de creación</strong>
-              + {formatEUR(QUOTE_CATALOG.maintenance.amount)}/mes · {QUOTE_TAX_LABEL}
-            </p>
-            <Link href="/tienda">Ver planes <ArrowUpRight size={15} aria-hidden /></Link>
-          </div>
-
-          <div className={`hero-enter hero-delay-3 mx-auto mt-16 grid w-full max-w-2xl grid-cols-2 gap-4 md:grid-cols-4 ${styles.heroStats}`}>
-            {[
-              { v: 50, suf: '+', l: 'webs entregadas' },
-              { v: 24, suf: 'h', l: 'tiempo medio' },
-              { v: 100, suf: '%', l: 'sin permanencia' },
-              { v: 5, suf: '★', l: 'valoración Google' },
-            ].map((s, i) => (
-              <div key={i} className="rounded-2xl glass px-3 py-4 text-center">
-                <div className="font-display text-2xl tabular-nums text-white md:text-3xl">
-                  {s.v}{s.suf}
-                </div>
-                <div className="mt-1 text-[11px] uppercase tracking-wider text-white/50">{s.l}</div>
-              </div>
-            ))}
-          </div>
+        </motion.div>
+        <div className="hero-visual" aria-hidden="true">
+          <div className="orbit-coordinate coordinate-top">LATECH / DIGITAL CORE</div>
+          <motion.div className="orbital-scene" style={{ transform: reduce ? 'none' : orbit }}>
+            <div className="orbital-halo" />
+            <div className="orbital-ring ring-one" /><div className="orbital-ring ring-two" /><div className="orbital-ring ring-three" />
+            <div className="orbital-core"><Code2 strokeWidth={1.1} /><span>LT<span className="core-dot">.</span></span></div>
+            <div className="orbit-satellite satellite-one"><Orbit size={16} /> Next.js</div>
+            <div className="orbit-satellite satellite-two">&lt;/&gt; CÓDIGO A MEDIDA</div>
+            <div className="orbit-point point-one" /><div className="orbit-point point-two" />
+          </motion.div>
+          <div className="orbit-coordinate coordinate-bottom"><span>DISEÑO × TECNOLOGÍA</span><span>01 — ∞</span></div>
         </div>
       </div>
-
-      <div aria-hidden className={`absolute bottom-8 left-1/2 -translate-x-1/2 ${styles.heroScroll}`}>
-        <div className="hero-enter hero-delay-3 flex flex-col items-center gap-2 text-white/30">
-          <span className="text-[10px] uppercase tracking-widest">scroll</span>
-          <div
-            className="hero-beam h-12 w-px"
-            style={{ background: 'linear-gradient(180deg, transparent, var(--purple-300), transparent)' }}
-          />
-        </div>
+      <div className="site-container hero-baseline">
+        <a href="#proyectos" className="scroll-invite"><ArrowDown size={16} /><span>BAJA. ESTO ACABA DE EMPEZAR.</span></a>
+        <span>DESARROLLO A MEDIDA</span><span>SIN PERMANENCIA</span><span className="hero-baseline-last">CERO PLANTILLAS.</span>
       </div>
     </section>
   );

@@ -130,7 +130,7 @@ export function createRunnerEngine(options: RunnerOptions) {
       // doble salto: un poco más corto + anillo de impulso
       g.vy = JUMP_V * 0.85;
       g.jumpsLeft = 0;
-      ring(playerX, g.y - 22, '#C9A6FF');
+      ring(playerX, g.y - 22, '#bfdbfe');
     }
   };
 
@@ -138,7 +138,7 @@ export function createRunnerEngine(options: RunnerOptions) {
     g.deadVy = -480;
     g.deadRot = 0;
     g.shake = 0.4;
-    burst(playerX, g.y - 20, 28, BLOCK_COLORS.concat('#FBBF24'));
+    burst(playerX, g.y - 20, 28, BLOCK_COLORS.concat('#c5eaff'));
     const finalScore = Math.floor(g.dist / 10);
     setScore(finalScore);
     const prevBest = readGameNumber('latech-runner-best');
@@ -147,7 +147,7 @@ export function createRunnerEngine(options: RunnerOptions) {
       setBest(finalScore);
       setIsRecord(true);
       if (prevBest > 0 && !reduceRef.current) {
-        confetti({ particleCount: 90, spread: 75, origin: { y: 0.6 }, colors: ['#8B5CF6', '#C084FC', '#F97316', '#FBBF24'] });
+        confetti({ particleCount: 90, spread: 75, origin: { y: 0.6 }, colors: ['#3b82f6', '#93c5fd', '#67c4ff', '#c5eaff'] });
       }
     } else {
       setIsRecord(false);
@@ -223,7 +223,7 @@ export function createRunnerEngine(options: RunnerOptions) {
       const a = Math.min(0.24, (g.speed - 330) / 900);
       for (let i = 1; i <= 4; i++) {
         ctx.globalAlpha = a / i;
-        ctx.fillStyle = i % 2 ? '#8B5CF6' : '#F97316';
+        ctx.fillStyle = i % 2 ? '#3b82f6' : '#67c4ff';
         ctx.beginPath();
         ctx.roundRect(x - i * 13 - bw / 2, y - bh, bw, bh - 2, 18);
         ctx.fill();
@@ -235,8 +235,8 @@ export function createRunnerEngine(options: RunnerOptions) {
     if (!dead) {
       const pulse = 0.9 + Math.sin(g.t * 6) * 0.1;
       const aura = ctx.createRadialGradient(x, y - bh / 2, 2, x, y - bh / 2, bh * 0.95 * pulse);
-      aura.addColorStop(0, airborne ? 'rgba(201,166,255,0.4)' : 'rgba(139,92,246,0.28)');
-      aura.addColorStop(1, 'rgba(139,92,246,0)');
+      aura.addColorStop(0, airborne ? 'rgba(147,197,253,0.4)' : 'rgba(59,130,246,0.28)');
+      aura.addColorStop(1, 'rgba(59,130,246,0)');
       ctx.fillStyle = aura;
       ctx.beginPath();
       ctx.arc(x, y - bh / 2, bh * 0.95 * pulse, 0, Math.PI * 2);
@@ -261,9 +261,9 @@ export function createRunnerEngine(options: RunnerOptions) {
 
     // ---- cuerpo: luz radial + textura + oclusión + especular + rim ----
     const bodyGrad = ctx.createRadialGradient(-bw * 0.25, -bh * 0.78, 3, 0, -bh / 2, bh * 0.95);
-    bodyGrad.addColorStop(0, '#C9A6FF');
-    bodyGrad.addColorStop(0.45, '#8B5CF6');
-    bodyGrad.addColorStop(1, '#5B21B6');
+    bodyGrad.addColorStop(0, '#bfdbfe');
+    bodyGrad.addColorStop(0.45, '#3b82f6');
+    bodyGrad.addColorStop(1, '#1e40af');
     const bodyPath = new Path2D();
     bodyPath.roundRect(-bw / 2, -bh, bw, bh - 3, 17);
     ctx.fillStyle = bodyGrad;
@@ -316,7 +316,7 @@ export function createRunnerEngine(options: RunnerOptions) {
       ctx.save();
       ctx.translate(s * (bw / 2 - 1), -bh + 23);
       ctx.rotate(s * 0.35 + swing * s);
-      ctx.fillStyle = s < 0 ? '#6D28D9' : '#7C3AED';
+      ctx.fillStyle = s < 0 ? '#1d4ed8' : '#2563eb';
       ctx.beginPath();
       ctx.roundRect(-3, -1, 6, 13, 3);
       ctx.fill();
@@ -413,8 +413,8 @@ export function createRunnerEngine(options: RunnerOptions) {
     // ---- corona cuando vas batiendo tu récord ----
     if (crowned) {
       const cg = ctx.createLinearGradient(-9, -bh - 11, 9, -bh);
-      cg.addColorStop(0, '#FBBF24');
-      cg.addColorStop(1, '#F97316');
+      cg.addColorStop(0, '#c5eaff');
+      cg.addColorStop(1, '#67c4ff');
       ctx.fillStyle = cg;
       ctx.beginPath();
       ctx.moveTo(-9, -bh - 1);
@@ -444,10 +444,10 @@ export function createRunnerEngine(options: RunnerOptions) {
   const drawBackground = (gy: number) => {
     // cielo cósmico
     const sky = ctx.createLinearGradient(0, 0, 0, gy + 30);
-    sky.addColorStop(0, '#080513');
-    sky.addColorStop(0.5, '#120a24');
-    sky.addColorStop(0.82, '#21123c');
-    sky.addColorStop(1, '#34184f');
+    sky.addColorStop(0, '#030b18');
+    sky.addColorStop(0.5, '#061a30');
+    sky.addColorStop(0.82, '#0d2a49');
+    sky.addColorStop(1, '#153756');
     ctx.fillStyle = sky;
     ctx.fillRect(0, 0, W, gy + 30);
 
@@ -470,8 +470,8 @@ export function createRunnerEngine(options: RunnerOptions) {
     ctx.globalCompositeOperation = 'lighter';
     const halo = ctx.createRadialGradient(moonX, moonY, 4, moonX, moonY, 150);
     halo.addColorStop(0, 'rgba(255,214,150,0.55)');
-    halo.addColorStop(0.4, 'rgba(249,115,22,0.16)');
-    halo.addColorStop(1, 'rgba(249,115,22,0)');
+    halo.addColorStop(0.4, 'rgba(103,196,255,0.16)');
+    halo.addColorStop(1, 'rgba(103,196,255,0)');
     ctx.fillStyle = halo;
     ctx.beginPath();
     ctx.arc(moonX, moonY, 150, 0, Math.PI * 2);
@@ -483,8 +483,8 @@ export function createRunnerEngine(options: RunnerOptions) {
 
     // auroras: cintas onduladas con mezcla aditiva
     const auroras = [
-      { y: gy - 230, amp: 26, thick: 60, speed: 0.5, par: 0.04, c: '139,92,246' },
-      { y: gy - 180, amp: 34, thick: 52, speed: -0.35, par: 0.07, c: '249,115,22' },
+      { y: gy - 230, amp: 26, thick: 60, speed: 0.5, par: 0.04, c: '59,130,246' },
+      { y: gy - 180, amp: 34, thick: 52, speed: -0.35, par: 0.07, c: '103,196,255' },
     ];
     for (const a of auroras) {
       ctx.beginPath();
@@ -527,8 +527,8 @@ export function createRunnerEngine(options: RunnerOptions) {
 
     // bruma cálida en el horizonte
     const haze = ctx.createLinearGradient(0, gy - 60, 0, gy + 6);
-    haze.addColorStop(0, 'rgba(249,115,22,0)');
-    haze.addColorStop(1, 'rgba(249,115,22,0.16)');
+    haze.addColorStop(0, 'rgba(103,196,255,0)');
+    haze.addColorStop(1, 'rgba(103,196,255,0.16)');
     ctx.fillStyle = haze;
     ctx.fillRect(0, gy - 60, W, 66);
   };
@@ -538,11 +538,11 @@ export function createRunnerEngine(options: RunnerOptions) {
     const rw = 1 + spin * 8;
     ctx.save();
     ctx.translate(cx, cy);
-    ctx.shadowColor = '#FBBF24';
+    ctx.shadowColor = '#c5eaff';
     ctx.shadowBlur = 12;
     const cg = ctx.createLinearGradient(0, -8, 0, 8);
     cg.addColorStop(0, '#FFE9A8');
-    cg.addColorStop(0.5, '#FBBF24');
+    cg.addColorStop(0.5, '#c5eaff');
     cg.addColorStop(1, '#F59E0B');
     ctx.fillStyle = cg;
     ctx.beginPath();
@@ -597,7 +597,7 @@ export function createRunnerEngine(options: RunnerOptions) {
           g.particles.push({
             x: playerX - 12, y: gy + 2,
             vx: -40 - Math.random() * 40, vy: -20 - Math.random() * 30,
-            life: 0.4, max: 0.4, color: 'rgba(201,166,255,0.5)', r: 2 + Math.random() * 2,
+            life: 0.4, max: 0.4, color: 'rgba(147,197,253,0.5)', r: 2 + Math.random() * 2,
           });
         }
       }
@@ -627,11 +627,11 @@ export function createRunnerEngine(options: RunnerOptions) {
           g.combo += 1;
           setCoins(g.coinsGot);
           g.flash = Math.min(0.5, g.flash + 0.18);
-          burst(ccx, c.y, 8, ['#FBBF24', '#FFE9A8', '#F97316']);
+          burst(ccx, c.y, 8, ['#c5eaff', '#FFE9A8', '#67c4ff']);
           const mult = 1 + Math.floor(g.combo / 5);
-          g.floats.push({ x: ccx, y: c.y - 6, vy: -42, life: 0.8, text: mult > 1 ? `+${mult}× ` : '+1', color: '#FBBF24' });
+          g.floats.push({ x: ccx, y: c.y - 6, vy: -42, life: 0.8, text: mult > 1 ? `+${mult}× ` : '+1', color: '#c5eaff' });
           if (g.combo > 0 && g.combo % 10 === 0) {
-            g.floats.push({ x: px, y: py - 40, vy: -34, life: 1, text: `¡combo ${g.combo}!`, color: '#C9A6FF' });
+            g.floats.push({ x: px, y: py - 40, vy: -34, life: 1, text: `¡combo ${g.combo}!`, color: '#bfdbfe' });
           }
         }
       }
@@ -693,12 +693,12 @@ export function createRunnerEngine(options: RunnerOptions) {
 
     // suelo
     const groundGrad = ctx.createLinearGradient(0, 0, W, 0);
-    groundGrad.addColorStop(0, '#8B5CF6');
-    groundGrad.addColorStop(0.65, '#F97316');
-    groundGrad.addColorStop(1, '#FBBF24');
+    groundGrad.addColorStop(0, '#3b82f6');
+    groundGrad.addColorStop(0.65, '#67c4ff');
+    groundGrad.addColorStop(1, '#c5eaff');
     ctx.strokeStyle = groundGrad;
     ctx.lineWidth = 2.5;
-    ctx.shadowColor = 'rgba(139,92,246,0.6)';
+    ctx.shadowColor = 'rgba(59,130,246,0.6)';
     ctx.shadowBlur = 10;
     ctx.beginPath();
     ctx.moveTo(0, gy + 1);
@@ -728,7 +728,7 @@ export function createRunnerEngine(options: RunnerOptions) {
       const ox = o.x - g.dist;
       if (ox > W + 160) continue;
       if (o.kind === 'block') {
-        ctx.fillStyle = 'rgba(7,5,14,0.85)';
+        ctx.fillStyle = 'rgba(3,9,20,0.85)';
         ctx.strokeStyle = o.color;
         ctx.lineWidth = 2;
         ctx.beginPath();
@@ -752,8 +752,8 @@ export function createRunnerEngine(options: RunnerOptions) {
         const tipX = ox + Math.cos(o.angle) * o.len;
         const tipY = pivY + Math.sin(o.angle) * o.len;
         const armGrad = ctx.createLinearGradient(ox, pivY, tipX, tipY);
-        armGrad.addColorStop(0, '#F97316');
-        armGrad.addColorStop(1, '#FBBF24');
+        armGrad.addColorStop(0, '#67c4ff');
+        armGrad.addColorStop(1, '#c5eaff');
         ctx.strokeStyle = armGrad;
         ctx.lineWidth = 7;
         ctx.lineCap = 'round';
@@ -761,14 +761,14 @@ export function createRunnerEngine(options: RunnerOptions) {
         ctx.moveTo(ox, pivY);
         ctx.lineTo(tipX, tipY);
         ctx.stroke();
-        ctx.fillStyle = '#FBBF24';
-        ctx.shadowColor = '#FBBF24';
+        ctx.fillStyle = '#c5eaff';
+        ctx.shadowColor = '#c5eaff';
         ctx.shadowBlur = 12;
         ctx.beginPath();
         ctx.arc(tipX, tipY, 8, 0, Math.PI * 2);
         ctx.fill();
         ctx.shadowBlur = 0;
-        ctx.fillStyle = '#C9A6FF';
+        ctx.fillStyle = '#bfdbfe';
         ctx.beginPath();
         ctx.arc(ox, pivY, 5, 0, Math.PI * 2);
         ctx.fill();
@@ -811,8 +811,8 @@ export function createRunnerEngine(options: RunnerOptions) {
     if (g.flash > 0 && !reduceRef.current) {
       ctx.globalAlpha = g.flash * 0.5;
       const fl = ctx.createRadialGradient(playerX, gy - 30, 4, playerX, gy - 30, 160);
-      fl.addColorStop(0, 'rgba(251,191,36,0.5)');
-      fl.addColorStop(1, 'rgba(251,191,36,0)');
+      fl.addColorStop(0, 'rgba(197,234,255,0.5)');
+      fl.addColorStop(1, 'rgba(197,234,255,0)');
       ctx.fillStyle = fl;
       ctx.fillRect(0, 0, W, H);
       ctx.globalAlpha = 1;

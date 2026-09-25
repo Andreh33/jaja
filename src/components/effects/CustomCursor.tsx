@@ -72,27 +72,27 @@ export default function CustomCursor() {
       <div
         ref={dotRef}
         className="cursor-dot pointer-events-none fixed left-0 top-0 z-[9999] h-1.5 w-1.5 rounded-full"
-        style={{ background: 'var(--purple-400)', mixBlendMode: 'screen' }}
+        style={{ background: 'var(--brand-400)', mixBlendMode: 'screen' }}
         aria-hidden
       />
       <div
         ref={ringRef}
         className="cursor-ring pointer-events-none fixed left-0 top-0 z-[9998] h-8 w-8 rounded-full border transition-[width,height,background] duration-200 ease-out"
-        style={{ borderColor: 'rgba(139,92,246,0.5)' }}
+        style={{ borderColor: 'rgba(59,130,246,0.5)' }}
         aria-hidden
       />
       <style jsx global>{`
         .cursor-ring.is-hover {
           width: 56px;
           height: 56px;
-          background: rgba(139, 92, 246, 0.18);
-          border-color: rgba(139, 92, 246, 0.7);
+          background: rgba(59,130,246, 0.18);
+          border-color: rgba(59,130,246, 0.7);
         }
         .cursor-ring.is-text {
           width: 4px;
           height: 32px;
           border-radius: 2px;
-          background: rgba(139, 92, 246, 0.7);
+          background: rgba(59,130,246, 0.7);
           border-color: transparent;
         }
       `}</style>

@@ -2,7 +2,7 @@ import { CATALOG, formatEUR } from '@/config/catalog';
 
 /** Public quotation prices. Never used to charge or change existing subscriptions. */
 export const QUOTE_CATALOG = {
-  creation: { id: 'quote_web_creation', name: 'Creación de la web', amount: 60000 },
+  creation: { id: 'quote_web_creation', name: 'Creación de la web', amount: 80000 },
   maintenance: { id: 'quote_maintenance', name: 'Hosting y mantenimiento web', amount: 6000 },
   shop: { id: 'quote_shop', name: 'Tienda online', amount: 2000 },
   social: { id: 'quote_social', name: 'Gestión de redes sociales', amount: CATALOG.socialMedia.amount },

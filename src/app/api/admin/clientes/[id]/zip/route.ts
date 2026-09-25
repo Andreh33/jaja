@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import archiver from 'archiver';
+import { ZipArchive } from 'archiver';
 import { auth } from '@/lib/auth';
 import { db } from '@/lib/db';
 import { archivos } from '../../../../../../../drizzle/schema';
@@ -15,7 +15,7 @@ export async function GET(_req: Request, ctx: { params: Promise<{ id: string }> 
   const files = await db.select().from(archivos).where(eq(archivos.userId, id));
   if (files.length === 0) return NextResponse.json({ error: 'Sin archivos' }, { status: 404 });
 
-  const arch = archiver('zip', { zlib: { level: 9 } });
+  const arch = new ZipArchive({ zlib: { level: 9 } });
 
   (async () => {
     for (const f of files) {

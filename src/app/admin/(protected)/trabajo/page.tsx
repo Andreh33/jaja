@@ -31,7 +31,7 @@ export default async function AdminTrabajoHome() {
 
       <div className="mt-8 grid gap-4 md:grid-cols-3">
         <Holographic className="p-6" rounded="rounded-2xl">
-          <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl" style={{ background: 'rgba(251,191,36,0.10)', border: '1px solid rgba(251,191,36,0.30)', color: 'var(--accent-calc)' }}>
+          <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl" style={{ background: 'rgba(197,234,255,0.10)', border: '1px solid rgba(197,234,255,0.30)', color: 'var(--accent-calc)' }}>
             <Briefcase size={18} strokeWidth={1.6} />
           </div>
           <div className="font-display text-3xl text-white">{metrics.activeOffers}</div>
@@ -45,7 +45,7 @@ export default async function AdminTrabajoHome() {
           <div className="mt-2 text-xs uppercase tracking-wider text-white/50">Candidaturas pendientes</div>
         </Holographic>
         <Holographic className="p-6" rounded="rounded-2xl">
-          <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl" style={{ background: 'rgba(139,92,246,0.10)', border: '1px solid rgba(139,92,246,0.30)', color: 'var(--purple-300)' }}>
+          <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl" style={{ background: 'rgba(59,130,246,0.10)', border: '1px solid rgba(59,130,246,0.30)', color: 'var(--brand-300)' }}>
             <Mail size={18} strokeWidth={1.6} />
           </div>
           <div className="font-display text-3xl text-white">{metrics.applicationsLast30d}</div>

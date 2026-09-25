@@ -97,9 +97,9 @@ export default function RegistroClient() {
       </div>
 
       <style jsx>{`
-        .input { width:100%; height:48px; padding:0 14px; border-radius:14px; background:rgba(7,5,14,0.5); border:1px solid var(--border-subtle); color:var(--text-primary); font-size:14px; transition:all .2s; }
+        .input { width:100%; height:48px; padding:0 14px; border-radius:14px; background:rgba(3,9,20,0.5); border:1px solid var(--border-subtle); color:var(--text-primary); font-size:14px; transition:all .2s; }
         .input::placeholder { color:rgba(255,255,255,0.3); }
-        .input:focus { outline:none; border-color:var(--purple-400); box-shadow:0 0 0 3px rgba(139,92,246,0.18); }
+        .input:focus { outline:none; border-color:var(--brand-400); box-shadow:0 0 0 3px rgba(59,130,246,0.18); }
       `}</style>
     </div>
   );

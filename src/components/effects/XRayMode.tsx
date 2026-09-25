@@ -63,7 +63,7 @@ export default function XRayMode({ open, onClose }: { open: boolean; onClose: ()
             onPointerUp={() => { pointer.current = null; }} onPointerCancel={() => { pointer.current = null; }} onLostPointerCapture={() => { pointer.current = null; }}>
             <div ref={stageRef} className="relative m-auto" style={{ transformStyle: 'preserve-3d', transform: 'rotateX(-14deg) rotateY(-26deg)' }}>
               {layers.map((layer, i) => <div key={`${layer.label}-${i}`} className="absolute left-1/2 top-1/2 flex h-[150px] w-[380px] flex-col justify-between rounded-2xl border border-purple-300/50 p-4"
-                style={{ transform: `translate(-50%, -50%) translateZ(${(i - (layers.length - 1) / 2) * 100}px)`, backfaceVisibility: 'hidden', background: 'linear-gradient(135deg, rgba(139,92,246,.28), rgba(249,115,22,.06))', boxShadow: '0 0 40px -8px rgba(139,92,246,.35)' }}>
+                style={{ transform: `translate(-50%, -50%) translateZ(${(i - (layers.length - 1) / 2) * 100}px)`, backfaceVisibility: 'hidden', background: 'linear-gradient(135deg, rgba(59,130,246,.28), rgba(103,196,255,.06))', boxShadow: '0 0 40px -8px rgba(59,130,246,.35)' }}>
                 <span className="font-display text-sm font-semibold text-white">{layer.label}</span>
                 <span className="font-mono text-xs text-purple-200">{String(i + 1).padStart(2, '0')} · {layer.tag}</span>
                 <span className="h-1.5 w-2/3 rounded-full bg-white/20" />

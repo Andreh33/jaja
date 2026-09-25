@@ -1,9 +1,4 @@
 import type { Metadata } from 'next';
-import AuroraBackground from '@/components/effects/AuroraBackground';
-import MouseGlow from '@/components/effects/MouseGlow';
-import Breathe from '@/components/effects/Breathe';
-import IntroCinematic from '@/components/effects/IntroCinematic';
-import { SignatureMarquee } from '@/components/effects/Marquee';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import Hero from '@/components/home/Hero';
@@ -11,8 +6,7 @@ import TechMarquee from '@/components/home/TechMarquee';
 import ServicesGrid from '@/components/home/ServicesGrid';
 import PricingBand from '@/components/home/PricingBand';
 import ProcessSection from '@/components/home/ProcessSection';
-import StatsSection from '@/components/home/StatsSection';
-import TestimonialsCarousel from '@/components/home/TestimonialsCarousel';
+import SelectedProjects from '@/components/home/SelectedProjects';
 import FAQSection from '@/components/home/FAQSection';
 import CTABanner from '@/components/home/CTABanner';
 import WordPressCompareSection from '@/components/home/WordPressCompareSection';
@@ -32,23 +26,18 @@ export default function Home() {
   return (
     <>
       <JsonLd data={faqJsonLd(FAQS)} />
-      <IntroCinematic />
-      <SignatureMarquee />
       <Navbar />
-      <AuroraBackground intensity="strong" />
-      <MouseGlow strong />
-      <main className="latech-home relative" id="main-content">
+      <main id="main-content" tabIndex={-1} className="relative">
         <Hero />
         <TechMarquee />
-        <Breathe><WordPressCompareSection /></Breathe>
-        <Breathe><ServicesGrid /></Breathe>
-        <Breathe><PricingBand /></Breathe>
-        <Breathe><ProcessSection /></Breathe>
+        <SelectedProjects />
+        <WordPressCompareSection />
+        <ServicesGrid />
+        <PricingBand />
+        <ProcessSection />
         <PlaygroundSection />
-        <Breathe><StatsSection /></Breathe>
-        <Breathe><TestimonialsCarousel /></Breathe>
-        <Breathe><FAQSection /></Breathe>
-        <Breathe><CTABanner /></Breathe>
+        <FAQSection />
+        <CTABanner />
       </main>
       <Footer />
     </>

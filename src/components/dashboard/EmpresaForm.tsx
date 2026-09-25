@@ -152,7 +152,7 @@ export default function EmpresaForm({ initial }: { initial: Empresa | null }) {
         <textarea className="input min-h-[100px] py-3" value={form.notasInternas} onChange={(e) => setForm({ ...form, notasInternas: e.target.value })} placeholder="Cualquier cosa que quieras transmitirnos..." />
       </Section>
 
-      <div className="sticky bottom-0 -mx-6 -mb-12 flex items-center justify-between gap-4 border-t bg-bg-base/85 px-6 py-4 md:-mx-10 md:px-10" style={{ borderColor: 'var(--border-subtle)', background: 'rgba(7,5,14,0.85)', backdropFilter: 'blur(20px)' }}>
+      <div className="sticky bottom-0 -mx-6 -mb-12 flex items-center justify-between gap-4 border-t bg-bg-base/85 px-6 py-4 md:-mx-10 md:px-10" style={{ borderColor: 'var(--border-subtle)', background: 'rgba(3,9,20,0.85)', backdropFilter: 'blur(20px)' }}>
         <span className="text-xs text-white/45">
           {lastSaved ? `Guardado · ${lastSaved.toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' })}` : 'Auto-guardado activo'}
         </span>
@@ -167,9 +167,9 @@ export default function EmpresaForm({ initial }: { initial: Empresa | null }) {
       </div>
 
       <style jsx>{`
-        .input { width:100%; height:46px; padding:0 14px; border-radius:12px; background:rgba(7,5,14,0.5); border:1px solid var(--border-subtle); color:var(--text-primary); font-size:14px; transition:all .2s; }
+        .input { width:100%; height:46px; padding:0 14px; border-radius:12px; background:rgba(3,9,20,0.5); border:1px solid var(--border-subtle); color:var(--text-primary); font-size:14px; transition:all .2s; }
         .input::placeholder { color:rgba(255,255,255,0.3); }
-        .input:focus { outline:none; border-color:var(--purple-400); box-shadow:0 0 0 3px rgba(139,92,246,0.18); }
+        .input:focus { outline:none; border-color:var(--brand-400); box-shadow:0 0 0 3px rgba(59,130,246,0.18); }
         textarea.input { min-height:100px; }
       `}</style>
     </form>

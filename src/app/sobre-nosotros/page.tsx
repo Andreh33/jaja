@@ -44,7 +44,7 @@ export default function SobreNosotrosPage() {
       <Navbar />
       <AuroraBackground />
       <MouseGlow />
-      <main className="relative z-10">
+      <main id="main-content" tabIndex={-1} className="relative z-10">
         <section className="pt-44 pb-20">
           <div className="mx-auto max-w-4xl px-6 text-center">
             <Reveal>
@@ -182,7 +182,7 @@ export default function SobreNosotrosPage() {
                 return (
                   <RevealItem key={v.t}>
                     <div className="h-full rounded-3xl glass p-8 text-center">
-                      <div className="mx-auto mb-5 inline-flex h-12 w-12 items-center justify-center rounded-2xl" style={{ background: 'rgba(139,92,246,0.15)', color: 'var(--purple-300)', border: '1px solid rgba(139,92,246,0.3)' }}>
+                      <div className="mx-auto mb-5 inline-flex h-12 w-12 items-center justify-center rounded-2xl" style={{ background: 'rgba(59,130,246,0.15)', color: 'var(--brand-300)', border: '1px solid rgba(59,130,246,0.3)' }}>
                         <Icon size={22} strokeWidth={1.6} />
                       </div>
                       <h3 className="font-display text-2xl text-white">{v.t}</h3>

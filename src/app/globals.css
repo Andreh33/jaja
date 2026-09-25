@@ -3,47 +3,47 @@
 /* === LATECH DESIGN SYSTEM === */
 :root {
   /* Core */
-  --bg-base: #07050E;
-  --bg-elevated: #0D0918;
-  --bg-glass: rgba(20, 14, 35, 0.55);
-  --bg-glass-strong: rgba(30, 20, 50, 0.75);
+  --bg-base: #030914;
+  --bg-elevated: #071323;
+  --bg-glass: rgba(10,25,45, 0.55);
+  --bg-glass-strong: rgba(10,29,52, 0.75);
 
-  /* Morado */
-  --purple-50: #F4ECFF;
-  --purple-100: #E5D4FF;
-  --purple-200: #C9A6FF;
-  --purple-300: #A578FF;
-  --purple-400: #8B5CF6;
-  --purple-500: #7C3AED;
-  --purple-600: #6D28D9;
-  --purple-700: #5B21B6;
-  --purple-glow: rgba(139, 92, 246, 0.45);
+  /* Azul Latech */
+  --brand-50: #eff6ff;
+  --brand-100: #dbeafe;
+  --brand-200: #bfdbfe;
+  --brand-300: #93c5fd;
+  --brand-400: #3b82f6;
+  --brand-500: #2563eb;
+  --brand-600: #1d4ed8;
+  --brand-700: #1e40af;
+  --brand-glow: rgba(59,130,246, 0.45);
 
   /* Gradiente firma */
-  --grad-signature: linear-gradient(135deg, #8B5CF6 0%, #C084FC 25%, #F97316 65%, #FBBF24 100%);
-  --grad-signature-soft: linear-gradient(135deg, rgba(139,92,246,0.4) 0%, rgba(249,115,22,0.4) 65%, rgba(251,191,36,0.4) 100%);
-  --grad-radial: radial-gradient(ellipse at top, rgba(139,92,246,0.25), transparent 60%);
-  --grad-conic: conic-gradient(from 180deg at 50% 50%, #8B5CF6, #F97316, #FBBF24, #8B5CF6);
+  --grad-signature: linear-gradient(135deg, #3b82f6 0%, #93c5fd 25%, #67c4ff 65%, #c5eaff 100%);
+  --grad-signature-soft: linear-gradient(135deg, rgba(59,130,246,0.4) 0%, rgba(103,196,255,0.4) 65%, rgba(197,234,255,0.4) 100%);
+  --grad-radial: radial-gradient(ellipse at top, rgba(59,130,246,0.25), transparent 60%);
+  --grad-conic: conic-gradient(from 180deg at 50% 50%, #3b82f6, #67c4ff, #c5eaff, #3b82f6);
 
   /* Acentos por sección */
   --accent-web: #3B82F6;
   --accent-web-glow: rgba(59,130,246,0.4);
-  --accent-shop: #F97316;
-  --accent-shop-glow: rgba(249,115,22,0.4);
+  --accent-shop: #67c4ff;
+  --accent-shop-glow: rgba(103,196,255,0.4);
   --accent-ia: #10B981;
   --accent-ia-glow: rgba(16,185,129,0.4);
-  --accent-calc: #FBBF24;
-  --accent-calc-glow: rgba(251,191,36,0.4);
+  --accent-calc: #c5eaff;
+  --accent-calc-glow: rgba(197,234,255,0.4);
 
   /* Texto */
   --text-primary: #F8F7FB;
-  --text-secondary: #B5B0C5;
-  --text-muted: #6B6580;
-  --text-faded: #3D3852;
+  --text-secondary: #a4b5cb;
+  --text-muted: #7e93ad;
+  --text-faded: #536985;
 
   /* Bordes */
   --border-subtle: rgba(255,255,255,0.06);
-  --border-glow: rgba(139,92,246,0.2);
+  --border-glow: rgba(59,130,246,0.2);
   --border-strong: rgba(255,255,255,0.12);
 
   /* Estados */
@@ -68,14 +68,14 @@
   --color-border-subtle: var(--border-subtle);
   --color-border-glow: var(--border-glow);
   --color-border-strong: var(--border-strong);
-  --color-purple-50: var(--purple-50);
-  --color-purple-100: var(--purple-100);
-  --color-purple-200: var(--purple-200);
-  --color-purple-300: var(--purple-300);
-  --color-purple-400: var(--purple-400);
-  --color-purple-500: var(--purple-500);
-  --color-purple-600: var(--purple-600);
-  --color-purple-700: var(--purple-700);
+  --color-purple-50: var(--brand-50);
+  --color-purple-100: var(--brand-100);
+  --color-purple-200: var(--brand-200);
+  --color-purple-300: var(--brand-300);
+  --color-purple-400: var(--brand-400);
+  --color-purple-500: var(--brand-500);
+  --color-purple-600: var(--brand-600);
+  --color-purple-700: var(--brand-700);
   --color-accent-web: var(--accent-web);
   --color-accent-shop: var(--accent-shop);
   --color-accent-ia: var(--accent-ia);
@@ -108,7 +108,7 @@ body {
 
 /* Selection */
 ::selection {
-  background: var(--purple-400);
+  background: var(--brand-400);
   color: #fff;
 }
 
@@ -121,12 +121,12 @@ body {
   background: var(--bg-base);
 }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, var(--purple-500), var(--purple-700));
+  background: linear-gradient(180deg, var(--brand-500), var(--brand-700));
   border-radius: 10px;
   border: 2px solid var(--bg-base);
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, var(--purple-400), var(--purple-600));
+  background: linear-gradient(180deg, var(--brand-400), var(--brand-600));
 }
 
 /* Hide native cursor on desktop */
@@ -172,7 +172,7 @@ body {
 }
 
 .glow-purple {
-  box-shadow: 0 0 60px rgba(139,92,246,0.35), 0 0 120px rgba(249,115,22,0.15);
+  box-shadow: 0 0 60px rgba(59,130,246,0.35), 0 0 120px rgba(103,196,255,0.15);
 }
 
 .glow-blue {
@@ -180,7 +180,7 @@ body {
 }
 
 .glow-orange {
-  box-shadow: 0 0 60px rgba(249,115,22,0.4), 0 0 120px rgba(249,115,22,0.15);
+  box-shadow: 0 0 60px rgba(103,196,255,0.4), 0 0 120px rgba(103,196,255,0.15);
 }
 
 .glow-green {
@@ -188,7 +188,7 @@ body {
 }
 
 .glow-yellow {
-  box-shadow: 0 0 60px rgba(251,191,36,0.4), 0 0 120px rgba(251,191,36,0.15);
+  box-shadow: 0 0 60px rgba(197,234,255,0.4), 0 0 120px rgba(197,234,255,0.15);
 }
 
 .bg-grid {
@@ -201,11 +201,11 @@ body {
 }
 
 .spotlight {
-  background: radial-gradient(600px circle at var(--mx) var(--my), rgba(139,92,246,0.15), transparent 40%);
+  background: radial-gradient(600px circle at var(--mx) var(--my), rgba(59,130,246,0.15), transparent 40%);
 }
 
 .spotlight-strong {
-  background: radial-gradient(800px circle at var(--mx) var(--my), rgba(139,92,246,0.25), transparent 45%);
+  background: radial-gradient(800px circle at var(--mx) var(--my), rgba(59,130,246,0.25), transparent 45%);
 }
 
 /* Beam border animado — el gradiente recorre el contorno, NO la card rota */
@@ -225,7 +225,7 @@ body {
   inset: 0;
   padding: 1.5px;
   border-radius: inherit;
-  background: conic-gradient(from var(--beam-angle), transparent 0%, var(--purple-400) 20%, var(--accent-shop) 40%, var(--warning) 55%, var(--accent-ia) 70%, transparent 92%);
+  background: conic-gradient(from var(--beam-angle), transparent 0%, var(--brand-400) 20%, var(--accent-shop) 40%, var(--warning) 55%, var(--accent-ia) 70%, transparent 92%);
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   -webkit-mask-composite: xor;
@@ -238,7 +238,7 @@ body {
 /* Fallback for browsers without @property support: graceful static gradient */
 @supports not (background: paint(something)) {
   .beam-border::before {
-    background: conic-gradient(from 0deg, transparent 0%, var(--purple-400) 20%, var(--accent-shop) 40%, var(--warning) 55%, var(--accent-ia) 70%, transparent 92%);
+    background: conic-gradient(from 0deg, transparent 0%, var(--brand-400) 20%, var(--accent-shop) 40%, var(--warning) 55%, var(--accent-ia) 70%, transparent 92%);
     animation: none;
   }
 }
@@ -263,7 +263,7 @@ body {
   background: conic-gradient(
     from var(--team-line-angle),
     transparent 0%,
-    var(--team-line-color, var(--purple-400)) 18%,
+    var(--team-line-color, var(--brand-400)) 18%,
     transparent 36%,
     transparent 100%
   );
@@ -284,7 +284,7 @@ body {
     background: conic-gradient(
       from 0deg,
       transparent 0%,
-      var(--team-line-color, var(--purple-400)) 18%,
+      var(--team-line-color, var(--brand-400)) 18%,
       transparent 36%
     );
     animation: none;
@@ -296,7 +296,7 @@ body {
 .holographic {
   position: relative;
   background:
-    linear-gradient(135deg, rgba(139,92,246,0.10) 0%, rgba(249,115,22,0.06) 50%, rgba(251,191,36,0.08) 100%),
+    linear-gradient(135deg, rgba(59,130,246,0.10) 0%, rgba(103,196,255,0.06) 50%, rgba(197,234,255,0.08) 100%),
     var(--bg-glass-strong);
   backdrop-filter: blur(24px) saturate(180%);
   -webkit-backdrop-filter: blur(24px) saturate(180%);
@@ -381,7 +381,7 @@ body {
   100% { background-position: 200% 0; }
 }
 .skeleton {
-  background: linear-gradient(90deg, var(--bg-elevated) 0%, rgba(139,92,246,0.1) 50%, var(--bg-elevated) 100%);
+  background: linear-gradient(90deg, var(--bg-elevated) 0%, rgba(59,130,246,0.1) 50%, var(--bg-elevated) 100%);
   background-size: 200% 100%;
   animation: shimmer 2s infinite;
 }
@@ -424,18 +424,18 @@ body {
   width: 6px;
   height: 6px;
   border-radius: 9999px;
-  background: var(--purple-400);
-  box-shadow: 0 0 10px var(--purple-glow);
+  background: var(--brand-400);
+  box-shadow: 0 0 10px var(--brand-glow);
 }
 .prose-latech a {
-  color: var(--purple-300);
+  color: var(--brand-300);
   text-decoration: underline;
-  text-decoration-color: var(--purple-700);
+  text-decoration-color: var(--brand-700);
   text-underline-offset: 3px;
 }
 .prose-latech strong { color: var(--text-primary); }
 .prose-latech blockquote {
-  border-left: 3px solid var(--purple-400);
+  border-left: 3px solid var(--brand-400);
   padding-left: 1.25rem;
   margin: 1.5rem 0;
   color: var(--text-primary);
@@ -447,7 +447,7 @@ body {
   border-radius: 0.25rem;
   font-family: var(--font-mono);
   font-size: 0.9em;
-  color: var(--purple-200);
+  color: var(--brand-200);
 }
 /* Tablas citables (featured snippet + extracción por IA). El wrapper permite
    scroll horizontal en móvil sin romper el layout de la página. */
@@ -525,7 +525,7 @@ body {
   background-color: transparent !important;
   background-image:
     /* 1. Tinte amarillo sutil (visible solo en padding-box). */
-    linear-gradient(rgba(251, 191, 36, 0.06), rgba(251, 191, 36, 0.06)),
+    linear-gradient(rgba(197,234,255, 0.06), rgba(197,234,255, 0.06)),
     /* 2. Capa OPACA con el color base del fondo (padding-box) — bloquea el conic. */
     linear-gradient(var(--bg-base), var(--bg-base)),
     /* 3. Capa de borde: conic-gradient con segmento negro rotando (border-box). */

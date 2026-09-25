@@ -35,7 +35,7 @@ export default function ContactoPage() {
       <Navbar />
       <AuroraBackground />
       <MouseGlow />
-      <main className="relative z-10">
+      <main id="main-content" tabIndex={-1} className="relative z-10">
         <section className="pt-44 pb-16">
           <div className="mx-auto max-w-7xl px-6 text-center">
             <Reveal>
@@ -81,7 +81,7 @@ export default function ContactoPage() {
 
                 <a href="tel:+34684739091" className="block rounded-3xl glass p-6 transition-transform hover:-translate-y-1">
                   <div className="flex items-start gap-4">
-                    <div className="flex h-11 w-11 items-center justify-center rounded-xl" style={{ background: 'rgba(139,92,246,0.15)', color: 'var(--purple-300)', border: '1px solid rgba(139,92,246,0.3)' }}>
+                    <div className="flex h-11 w-11 items-center justify-center rounded-xl" style={{ background: 'rgba(59,130,246,0.15)', color: 'var(--brand-300)', border: '1px solid rgba(59,130,246,0.3)' }}>
                       <Phone size={20} strokeWidth={1.6} />
                     </div>
                     <div>
@@ -94,7 +94,7 @@ export default function ContactoPage() {
 
                 <a href="mailto:info@latech.es" className="block rounded-3xl glass p-6 transition-transform hover:-translate-y-1">
                   <div className="flex items-start gap-4">
-                    <div className="flex h-11 w-11 items-center justify-center rounded-xl" style={{ background: 'rgba(249,115,22,0.15)', color: 'var(--accent-shop)', border: '1px solid rgba(249,115,22,0.3)' }}>
+                    <div className="flex h-11 w-11 items-center justify-center rounded-xl" style={{ background: 'rgba(103,196,255,0.15)', color: 'var(--accent-shop)', border: '1px solid rgba(103,196,255,0.3)' }}>
                       <Mail size={20} strokeWidth={1.6} />
                     </div>
                     <div>
@@ -120,7 +120,7 @@ export default function ContactoPage() {
 
                 <div className="rounded-3xl glass p-6">
                   <div className="flex items-start gap-4">
-                    <div className="flex h-11 w-11 items-center justify-center rounded-xl" style={{ background: 'rgba(139,92,246,0.15)', color: 'var(--purple-300)', border: '1px solid rgba(139,92,246,0.3)' }}>
+                    <div className="flex h-11 w-11 items-center justify-center rounded-xl" style={{ background: 'rgba(59,130,246,0.15)', color: 'var(--brand-300)', border: '1px solid rgba(59,130,246,0.3)' }}>
                       <Clock size={20} strokeWidth={1.6} />
                     </div>
                     <div>

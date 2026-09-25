@@ -13,6 +13,7 @@
  */
 
 import type Stripe from 'stripe';
+import { CATALOG, type CatalogItem } from '@/config/catalog';
 import { findCatalogItemByPriceId } from '@/config/stripe-price-helpers';
 
 /** Shape único de items persistidos en `subscriptions.items` y `orders.line_items`. */
@@ -81,11 +82,8 @@ export function extractSubscriptionPeriods(sub: Stripe.Subscription): {
 /**
  * Construye una línea de carrito persistible a partir de un priceId Stripe.
  *
- * Se usa desde:
- *   - handleCheckoutSessionCompleted (vía listLineItems, donde Stripe ya da
- *     amount_subtotal pre-calculado).
- *   - handleCustomerSubscriptionUpdated (donde Stripe da unit_amount y
- *     calculamos amount_subtotal = unit_amount * quantity).
+ * Se usa como compatibilidad por Price ID y desde
+ * handleCustomerSubscriptionUpdated, donde calculamos el subtotal.
  *
  * Devuelve null si el priceId no está en el catálogo (p.ej. price viejo
  * desactivado, item ajeno a nuestro flujo).
@@ -99,6 +97,63 @@ export function buildCartItem(args: {
   if (!catalogItem) return null;
   return {
     catalog_id: catalogItem.id,
+    quantity: args.quantity,
+    amount_subtotal: args.amountSubtotal,
+  };
+}
+
+function findCatalogItemByCatalogId(catalogId: string): CatalogItem | null {
+  for (const key of Object.keys(CATALOG) as Array<keyof typeof CATALOG>) {
+    if (CATALOG[key].id === catalogId) return CATALOG[key];
+  }
+  return null;
+}
+
+function isInlineWebCreation(item: CatalogItem): boolean {
+  return item.id === CATALOG.webCreationLe8.id || item.id === CATALOG.webCreationGt8.id;
+}
+
+/**
+ * Reconstruye una línea de Checkout admitiendo dos contratos:
+ * - actual: metadata.catalog_id firmada por Stripe, con Price inline solo para web;
+ * - legacy: Price ID fijo presente en STRIPE_PRICES.
+ *
+ * Si existen ambos identificadores deben apuntar al mismo producto. Un Price
+ * desconocido solo puede aceptarse para las dos variantes web inline y cuando
+ * el subtotal coincide exactamente con el catálogo; esto evita convertir
+ * metadata arbitraria en una línea válida.
+ */
+export function buildCartItemFromCheckoutLine(args: {
+  priceId: string | null;
+  catalogId: string | null;
+  quantity: number;
+  amountSubtotal: number;
+}): CartLine | null {
+  const fromPrice = args.priceId ? findCatalogItemByPriceId(args.priceId) : null;
+
+  // Sesiones creadas antes de añadir metadata: compatibilidad por Price ID.
+  if (!args.catalogId) {
+    if (!fromPrice) return null;
+    return {
+      catalog_id: fromPrice.id,
+      quantity: args.quantity,
+      amount_subtotal: args.amountSubtotal,
+    };
+  }
+
+  const fromMetadata = findCatalogItemByCatalogId(args.catalogId);
+  if (!fromMetadata) return null;
+
+  // Un Price fijo conocido nunca puede ser reclasificado mediante metadata.
+  if (fromPrice && fromPrice.id !== fromMetadata.id) return null;
+
+  if (!fromPrice) {
+    if (!isInlineWebCreation(fromMetadata)) return null;
+    if (args.amountSubtotal !== fromMetadata.amount * args.quantity) return null;
+  }
+
+  return {
+    catalog_id: fromMetadata.id,
     quantity: args.quantity,
     amount_subtotal: args.amountSubtotal,
   };

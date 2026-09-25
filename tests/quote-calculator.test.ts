@@ -14,19 +14,19 @@ class MemoryStorage implements QuoteStorage {
 }
 
 describe('public quote pricing', () => {
-  it('quotes the approved 600€ base and 60€/80€ monthly maintenance', () => {
-    assert.equal(QUOTE_CATALOG.creation.amount, 60000);
+  it('quotes the approved 800€ base and 60€/80€ monthly maintenance', () => {
+    assert.equal(QUOTE_CATALOG.creation.amount, 80000);
     const web = buildCart(state());
-    assert.equal(web.oneTimeTotal, 60000); assert.equal(web.recurringTotal, 6000); assert.equal(web.firstMonthTotal, 66000);
+    assert.equal(web.oneTimeTotal, 80000); assert.equal(web.recurringTotal, 6000); assert.equal(web.firstMonthTotal, 86000);
     const shop = buildCart(state({ tienda: true, webPagesOver8: true }));
-    assert.equal(shop.oneTimeTotal, 60000); assert.equal(shop.recurringTotal, 8000); assert.equal(shop.firstMonthTotal, 68000);
+    assert.equal(shop.oneTimeTotal, 80000); assert.equal(shop.recurringTotal, 8000); assert.equal(shop.firstMonthTotal, 88000);
   });
   it('keeps optional services separate and never mixes annual prices', () => {
     for (const tienda of [false, true]) for (const social of [false, true]) for (const logo of [false, true]) for (const aiAgent of ['none', 'web', 'phone'] as const) for (const blogPosts of [0, 1, 12, 100]) {
       const cart = buildCart(state({ tienda, social, logo, aiAgent, blogPosts }));
       const monthly = 6000 + (tienda ? 2000 : 0) + (social ? 10000 : 0) + (aiAgent === 'web' ? 15000 : aiAgent === 'phone' ? 20000 : 0) + blogPosts * 300;
       assert.equal(cart.recurringTotal, monthly);
-      assert.equal(cart.oneTimeTotal, 60000 + (logo ? 3000 : 0));
+      assert.equal(cart.oneTimeTotal, 80000 + (logo ? 3000 : 0));
       assert.equal(cart.firstMonthTotal, cart.oneTimeTotal + monthly);
       assert.equal(cart.recurring.some(l => l.catalogId === 'quote_blog_post'), blogPosts > 0);
       assert.equal(new Set([...cart.oneTime, ...cart.recurring].map(l => l.catalogId)).size, cart.oneTime.length + cart.recurring.length);
@@ -46,7 +46,7 @@ describe('WhatsApp quotation handoff', () => {
     assert.equal(url.origin, 'https://wa.me'); assert.equal(url.pathname, `/${QUOTE_WHATSAPP_NUMBER}`);
     assert.equal(url.searchParams.get('text'), message);
     for (const selected of ['más de 8', 'Tienda online: sí', 'Redes sociales: sí', 'por teléfono', '12 artículos', 'Logo: sí', 'María & José', 'Pan / café?', 'Sin perder mi marca.', 'IVA no incluido', 'confirmar alcance']) assert.ok(message.includes(selected), selected);
-    assert.match(message, /630\s*€/); assert.match(message, /416\s*€/); assert.match(message, /1046|1\.046/);
+    assert.match(message, /830\s*€/); assert.match(message, /416\s*€/); assert.match(message, /1246|1\.246/);
     assert.ok(!message.includes('pagar hoy')); assert.ok(!url.searchParams.has('email'));
   });
   it('includes unselected options and works without any personal details', () => {

@@ -10,12 +10,12 @@ const CATEGORY_COLORS: Record<string, string> = {
   'Diseño Web': 'var(--accent-web)',
   'Tiendas Online': 'var(--accent-shop)',
   'IA': 'var(--accent-ia)',
-  'SEO': 'var(--purple-300)',
+  'SEO': 'var(--brand-300)',
   'Tutoriales': 'var(--warning)',
 };
 
 export default function BlogCard({ post }: { post: PostSummary }) {
-  const color = (post.category && CATEGORY_COLORS[post.category]) || 'var(--purple-300)';
+  const color = (post.category && CATEGORY_COLORS[post.category]) || 'var(--brand-300)';
   return (
     <Link href={`/blog/${post.slug}`} className="group block h-full">
       <TiltCard max={5} className="h-full">
@@ -31,7 +31,7 @@ export default function BlogCard({ post }: { post: PostSummary }) {
                 />
                 <div
                   className="pointer-events-none absolute inset-0 transition-opacity duration-300 group-hover:opacity-50"
-                  style={{ background: 'linear-gradient(180deg, transparent 50%, rgba(7,5,14,0.45))', opacity: 0.7 }}
+                  style={{ background: 'linear-gradient(180deg, transparent 50%, rgba(3,9,20,0.45))', opacity: 0.7 }}
                 />
               </>
             ) : (
@@ -39,7 +39,7 @@ export default function BlogCard({ post }: { post: PostSummary }) {
                 <div
                   className="absolute inset-0 transition-transform duration-700 group-hover:scale-105"
                   style={{
-                    background: `radial-gradient(circle at 30% 30%, ${color}40, transparent 60%), radial-gradient(circle at 70% 70%, var(--purple-glow), transparent 60%), var(--bg-elevated)`,
+                    background: `radial-gradient(circle at 30% 30%, ${color}40, transparent 60%), radial-gradient(circle at 70% 70%, var(--brand-glow), transparent 60%), var(--bg-elevated)`,
                   }}
                 />
                 <div className="absolute inset-0 flex items-center justify-center opacity-15">

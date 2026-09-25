@@ -39,14 +39,14 @@ export default function MensajesClient({ initial }: { initial: ContactMessage[] 
         <div
           key={m.id}
           className="rounded-2xl glass p-5 transition-colors"
-          style={!m.read ? { background: 'rgba(139,92,246,0.06)', borderColor: 'rgba(139,92,246,0.2)' } : {}}
+          style={!m.read ? { background: 'rgba(59,130,246,0.06)', borderColor: 'rgba(59,130,246,0.2)' } : {}}
         >
           <div className="flex flex-wrap items-start justify-between gap-3">
             <div className="min-w-0 flex-1">
               <div className="flex items-center gap-2">
-                {!m.read && <span className="h-2 w-2 rounded-full" style={{ background: 'var(--purple-400)', boxShadow: '0 0 8px var(--purple-glow)' }} />}
+                {!m.read && <span className="h-2 w-2 rounded-full" style={{ background: 'var(--brand-400)', boxShadow: '0 0 8px var(--brand-glow)' }} />}
                 <h3 className="font-display text-lg text-white">{m.name}</h3>
-                {m.service && <span className="rounded-full px-2 py-0.5 text-[10px] uppercase tracking-wider" style={{ background: 'rgba(139,92,246,0.15)', color: 'var(--purple-300)' }}>{m.service}</span>}
+                {m.service && <span className="rounded-full px-2 py-0.5 text-[10px] uppercase tracking-wider" style={{ background: 'rgba(59,130,246,0.15)', color: 'var(--brand-300)' }}>{m.service}</span>}
               </div>
               <div className="mt-1 flex flex-wrap items-center gap-3 text-xs text-white/55">
                 <a className="link-underline inline-flex items-center gap-1 hover:text-white" href={`mailto:${m.email}`}><Mail size={11} /> {m.email}</a>
