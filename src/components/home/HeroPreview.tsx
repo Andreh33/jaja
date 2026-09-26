@@ -14,6 +14,7 @@ import StudioBrowser from './StudioBrowser';
 import styles from './HeroPreview.module.css';
 
 const StudioGravity = dynamic(() => import('./StudioGravity'), { loading: () => <p className={styles.loading}>Preparando el escenario…</p> });
+const StudioActivate = dynamic(() => import('./StudioActivate'), { loading: () => <p className={styles.loading} role="status">Preparando tu transformación…</p> });
 const projectStories = [
   ['Actitud en movimiento.', 'Una identidad directa, producto protagonista y un recorrido que invita a descubrir el catálogo.', 'Urbano', 'Producto', 'Ecommerce'],
   ['Toda la energía.', 'Un universo deportivo con el catálogo en primer plano y una presentación clara de sus especialidades.', 'Deporte', 'Catálogo', 'Identidad'],
@@ -88,7 +89,7 @@ export default function HeroPreview({ blueprint, expanded = false, active = true
           <p className={styles.eyebrow}>ESTO NO ES PARA MIRARLO DESDE FUERA.</p>
           <h3 ref={heading} tabIndex={-1}>Diseño que{' '}<br />se <em>siente.</em></h3>
           <p className={styles.copy}>Entra. Cambia las reglas. Pon tu marca aquí.{' '}<br />Esto es una pequeña muestra de lo que podemos crear contigo.</p>
-          <div className={styles.actionRow}><button type="button" className={styles.cta} onClick={event => navigate('create', event.detail === 0)}>Hazlo tuyo <ArrowUpRight size={14} /></button><button type="button" className={styles.textLink} onClick={event => navigate('projects', event.detail === 0)}>Ver proyectos ↗</button></div>
+          <div className={styles.actionRow}><button type="button" className={styles.cta} onClick={event => navigate('activate', event.detail === 0)}>Activa Latech <ArrowUpRight size={14} /></button><button type="button" className={styles.textLink} onClick={event => navigate('create', event.detail === 0)}>Hazlo tuyo ↗</button></div>
           <StudioShowcase viewport={viewport} onOpen={openProject} />
           <div className={styles.sectionTitle}><span>01 / TRABAJO REAL</span><button type="button" onClick={event => navigate('projects', event.detail === 0)}>Ver todos ↗</button></div>
           {featuredProjects.map((item, index) => <button key={item.name} className={styles.projectRow} type="button" onClick={() => openProject(index)}><Image src={item.image} alt="" width={150} height={100} sizes="100px" /><span><small>{item.category}</small><strong>{item.name}</strong></span><ArrowUpRight size={17} /></button>)}
@@ -107,6 +108,10 @@ export default function HeroPreview({ blueprint, expanded = false, active = true
           <p className={styles.copy}>Un mismo cuidado por el detalle. Una dirección distinta para cada negocio.</p>
           <Link className={styles.textLink} href="/proyectos">El portfolio completo <ArrowUpRight size={13} /></Link>
           <button type="button" className={styles.cta} onClick={event => navigate('create', event.detail === 0)}>Ahora imagina tu marca <ArrowUpRight size={13} /></button>
+        </>}
+        {page === 'activate' && <>
+          <div className={styles.activationIntro}>{intro('EL MISMO NEGOCIO. OTRA FORMA DE PRESENTARSE.', 'Activa', 'Latech.')}</div>
+          <StudioActivate state={studio.activation} dispatch={studio.dispatchActivation} active={active && !menu} viewport={viewport} expanded={expanded} onExpand={() => studio.setExpanded(true)} onInterest={() => { studio.setSettings(value => ({ ...value, sector: studio.activation.business === 'restaurant' ? 'Restauración' : studio.activation.business === 'shop' ? 'Comercio' : 'Servicios' })); navigate('contact', true); }} />
         </>}
         {page === 'create' && <>
           <div className={styles.creatorIntro}>{intro('UN PUNTO DE PARTIDA PARA TU PROYECTO.', 'Tu marca.', 'Tu estilo.')}<p className={styles.copy}>Ponle nombre y prueba cómo cambia su personalidad. Una idea visual para empezar a hablar, no una web generada.</p></div>

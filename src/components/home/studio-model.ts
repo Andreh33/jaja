@@ -1,6 +1,6 @@
 export const studioPages = [
   { id: 'home', label: 'Inicio' }, { id: 'projects', label: 'Proyectos' },
-  { id: 'create', label: 'Tu marca' }, { id: 'play', label: 'Sin gravedad' },
+  { id: 'activate', label: 'Activa Latech' }, { id: 'create', label: 'Tu marca' }, { id: 'play', label: 'Sin gravedad' },
   { id: 'services', label: 'Servicios' }, { id: 'studio', label: 'El estudio' },
   { id: 'contact', label: 'Hablemos' },
 ] as const;

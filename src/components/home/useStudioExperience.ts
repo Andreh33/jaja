@@ -1,7 +1,8 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useReducer, useState } from 'react';
 import { defaultStudio, parseStudioHash, type StudioPage } from './studio-model';
+import { activationReducer, initialActivation } from './activation-model';
 
 export function useStudioExperience() {
   const [page, setPage] = useState<StudioPage>('home');
@@ -10,6 +11,7 @@ export function useStudioExperience() {
   const [project, setProject] = useState(0);
   const [browsing, setBrowsing] = useState(false);
   const [expanded, setExpanded] = useState(false);
+  const [activation, dispatchActivation] = useReducer(activationReducer, initialActivation);
 
   useEffect(() => {
     function restore() {
@@ -31,6 +33,6 @@ export function useStudioExperience() {
     if (!previous) return;
     setHistory(history.slice(0, -1)); setPage(previous);
   }
-  return { page, navigate, back, history, settings, setSettings, project, setProject, browsing, setBrowsing, expanded, setExpanded };
+  return { page, navigate, back, history, settings, setSettings, project, setProject, browsing, setBrowsing, expanded, setExpanded, activation, dispatchActivation };
 }
 export type StudioExperience = ReturnType<typeof useStudioExperience>;

@@ -25,6 +25,7 @@
 @media(max-width:767px){.preview[data-expanded=true] .nav{padding-inline:12px}.preview[data-expanded=true] .nav nav>button{font-size:9px}.preview[data-expanded=true] .projectWorld{padding:17px}.preview[data-expanded=true] .conceptHero{padding:30px 17px 150px}.preview[data-expanded=true] .conceptNav>span{font-size:6px}.preview[data-expanded=true] .conceptFoot{font-size:6px}}
 @media(prefers-reduced-motion:reduce){.content{animation:none}.feature img,.cta{transition:none}.feature:hover img{transform:none}}
 .creatorWorkspace{min-width:0}.creatorWorkspace>*{min-width:0}
+.preview .activationIntro h3.compact{font-size:clamp(28px,9cqw,55px);margin-block:14px;line-height:1}.activationIntro h3 br{display:none}.activationIntro h3 em{margin-left:.1em}
 .preview{--studio-screen-height:425px;--studio-nav-height:94px}
 @media(min-width:768px) and (max-height:800px){.preview{--studio-screen-height:310px}}
 @media(max-width:767px){.preview{--studio-screen-height:365px}}

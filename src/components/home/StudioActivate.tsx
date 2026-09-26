@@ -1,0 +1,77 @@
+'use client';
+
+import { useEffect, useId, useRef, type Dispatch, type RefObject } from 'react';
+import { ArrowLeft, ArrowRight, ArrowUpRight, Check, ChevronsLeftRight, Maximize2, Minus, Plus, RotateCcw, ShoppingBag } from 'lucide-react';
+import ActivationArtwork from './ActivationArtwork';
+import { activationBusinesses, activationConcepts, activationPrice, activationProducts, activationTotal, bookingDays, bookingTimes, companyServices, type ActivationAction, type ActivationBusiness, type ActivationState } from './activation-model';
+import styles from './StudioActivate.module.css';
+
+type Props = { state: ActivationState; dispatch: Dispatch<ActivationAction>; active: boolean; viewport: RefObject<HTMLDivElement | null>; expanded?: boolean; onExpand?: () => void; onInterest: () => void };
+const artwork = (business: ActivationBusiness) => business === 'shop' ? 'lamp' : business;
+
+function ConceptHero({ business, basic = false }: { business: ActivationBusiness; basic?: boolean }) {
+  const concept = activationConcepts[business];
+  return <div className={`${styles.hero} ${basic ? styles.basicHero : ''}`} data-business={business}>
+    <div className={styles.heroCopy}><span className={styles.heroEyebrow}>{concept.descriptor}</span><h4>{concept.title[0]}<br /><em>{concept.title[1]}</em></h4><p>{concept.copy}</p><span className={styles.visualAction}>{concept.action} <ArrowUpRight size={16} /></span></div>
+    <div className={styles.art}><ActivationArtwork kind={artwork(business)} /></div>
+    <span className={styles.heroFoot}>{concept.detail}</span>
+  </div>;
+}
+
+export default function StudioActivate({ state, dispatch, active, viewport, expanded = false, onExpand, onInterest }: Props) {
+  const id = useId();
+  const scene = useRef<HTMLDivElement>(null);
+  const livePage = useRef<HTMLDivElement>(null);
+  const concept = activationConcepts[state.business];
+  const product = activationProducts.find(item => item.id === state.product) || activationProducts[0];
+  const count = Object.values(state.bag).reduce((sum, quantity) => sum + quantity, 0);
+  const total = activationTotal(state.bag);
+
+  useEffect(() => {
+    if (!active || !state.exploring) return;
+    livePage.current?.focus({ preventScroll: true });
+    const container = viewport.current;
+    if (container && scene.current) {
+      const top = scene.current.getBoundingClientRect().top - container.getBoundingClientRect().top + container.scrollTop;
+      container.scrollTo({ top: Math.max(0, top - 8), behavior: 'instant' });
+    }
+  }, [active, state.exploring, state.view, state.business, viewport]);
+
+  const open = (value: ActivationState['view']) => dispatch({ type: 'view', value });
+  const nav = (label: string, value: ActivationState['view']) => <button type="button" aria-current={state.view === value ? 'page' : undefined} onClick={() => open(value)}>{label}</button>;
+
+  return <section className={styles.activation} aria-label="Activa Latech" data-activation-business={state.business} data-activation-progress={state.progress} data-activation-exploring={state.exploring}>
+    <p className={styles.intro}>Elige un negocio. Arrastra la línea. Después, entra y prueba cómo se siente.</p>
+    {!expanded && onExpand && <button type="button" className={styles.enlarge} onClick={onExpand}><Maximize2 size={14} />Ampliar experiencia</button>}
+    <div className={styles.businesses} aria-label="Elegir negocio de demostración">{activationBusinesses.map((business, index) => <button type="button" key={business} aria-pressed={state.business === business} onClick={() => dispatch({ type: 'business', value: business })}><small aria-hidden="true">0{index + 1}</small>{activationConcepts[business].label}</button>)}</div>
+    <div className={styles.demoNotice}><span className={styles.dot} /> CONCEPTO FICTICIO · DEMOSTRACIÓN INTERACTIVA</div>
+    <div ref={scene} className={styles.scene}>
+      {!state.exploring ? <>
+        <div className={styles.comparison}>
+          <div className={`${styles.layer} ${styles.basic}`} aria-hidden="true"><div className={styles.brandBar}><strong>{concept.brand}</strong><span>Inicio · {state.business === 'restaurant' ? 'Carta' : state.business === 'shop' ? 'Colección' : 'Servicios'} · Contacto</span></div><ConceptHero business={state.business} basic /></div>
+          <div className={`${styles.layer} ${styles.premium}`} aria-hidden="true" style={{ clipPath: `inset(0 ${100 - state.progress}% 0 0)` }}><div className={styles.brandBar}><strong>{concept.brand}<i>®</i></strong><span>{concept.descriptor}</span></div><ConceptHero business={state.business} /></div>
+          <div className={styles.scanline} aria-hidden="true" style={{ transform: `translateX(${state.progress}%)` }}><span><ChevronsLeftRight size={21} /></span></div>
+          <input className={styles.slider} type="range" min="0" max="100" step="1" value={state.progress} aria-label="Transformar el diseño" aria-valuetext={`${state.progress}% de diseño Latech. ${state.progress === 100 ? 'Listo para explorar.' : 'Lleva el control al 100% para explorar.'}`} aria-describedby={`${id}-hint`} onChange={event => dispatch({ type: 'progress', value: Number(event.target.value) })} />
+        </div>
+        <div className={styles.comparisonFooter}><span>CON DIRECCIÓN PROPIA</span><strong>{state.progress}<small>%</small></strong><span>VERSIÓN BÁSICA</span></div>
+        <p id={`${id}-hint`} className={styles.hint}>Arrastra sobre el diseño o usa las flechas del teclado. No es una comparación de tecnologías: es una demostración visual.</p>
+        <div className={styles.activationActions}><button type="button" className={styles.primary} onClick={() => state.progress === 100 ? dispatch({ type: 'explore' }) : dispatch({ type: 'progress', value: 100 })}>{state.progress === 100 ? 'Entrar y explorar' : 'Activar al completo'} <ArrowRight size={17} /></button><button type="button" className={styles.reset} onClick={() => dispatch({ type: 'progress', value: 0 })} aria-label="Volver al diseño básico"><RotateCcw size={14} />Ver el inicio</button></div>
+        <p className={styles.ready} role="status">{state.progress === 100 ? 'Ya está activa. Entra: los botones y recorridos funcionan.' : 'El mismo negocio. Otra forma de presentarse.'}</p>
+      </> : <>
+        <div className={styles.exploreBar}><span><Check size={12} /> ESTÁS DENTRO</span><button type="button" onClick={() => dispatch({ type: 'compare' })}><ChevronsLeftRight size={14} />Comparar otra vez</button></div>
+        <div ref={livePage} className={styles.website} tabIndex={-1} aria-label={`${concept.brand}, página de demostración`} data-activation-view={state.view}>
+          <nav className={styles.liveNav} aria-label={`Navegación de ${concept.brand}`}><button type="button" className={styles.brandButton} aria-label={`Inicio de ${concept.brand}`} onClick={() => open('home')}>{concept.brand}<i>®</i></button><div>{state.business === 'restaurant' ? <>{nav('Carta', 'catalog')}{nav('Reservar', 'booking')}</> : state.business === 'shop' ? <>{nav('Colección', 'catalog')}{nav(`Bolsa (${count})`, 'bag')}</> : nav('Servicios', 'services')}</div></nav>
+          {state.view === 'home' && <><ConceptHero business={state.business} /><div className={styles.homeActions}><button type="button" className={styles.siteButton} onClick={() => open(state.business === 'company' ? 'services' : 'catalog')}>{concept.action} <ArrowUpRight size={17} /></button>{state.business === 'restaurant' && <button type="button" onClick={() => open('booking')}>Una mesa para ti <ArrowRight size={16} /></button>}</div><div className={styles.manifesto}><span>01 / EL DETALLE IMPORTA</span><p>{state.business === 'restaurant' ? 'Hay planes que empiezan con «¿nos vemos?».' : state.business === 'shop' ? 'Lo que eliges dice mucho de cómo vives.' : 'No diseñamos metros. Diseñamos maneras de vivir.'}</p></div></>}
+          {state.view === 'catalog' && state.business === 'restaurant' && <div className={styles.page}><span className={styles.overline}>TEMPORADA / CARTA DE EJEMPLO</span><h4>Elige tu<br /><em>próximo antojo.</em></h4><p>Una muestra ficticia para explorar la experiencia.</p><div className={styles.menuList}>{[['01', 'Para compartir', 'Burrata, tomate asado y albahaca', 'Pan de masa madre y aceite de oliva'], ['02', 'Con calma', 'Arroz de setas y verduras a la brasa', 'Pescado del día, limón y hierbas'], ['03', 'Un último sí', 'Tarta cremosa de queso', 'Chocolate, sal y aceite de oliva']].map(([number, title, ...dishes]) => <article key={title}><span>{number}</span><div><h5>{title}</h5>{dishes.map(dish => <p key={dish}>{dish}</p>)}</div></article>)}</div><button type="button" className={styles.siteButton} onClick={() => open('booking')}>Probar una reserva <ArrowUpRight size={16} /></button></div>}
+          {state.view === 'booking' && <div className={styles.page}><span className={styles.overline}>TU PRÓXIMO ENCUENTRO</span><h4>Te guardamos<br /><em>la idea.</em></h4><p>Prueba el recorrido. No se reservará ninguna mesa ni pediremos tus datos.</p><div className={styles.booking}><label>Día de ejemplo<select value={state.day} onChange={event => dispatch({ type: 'booking', field: 'day', value: event.target.value })}>{bookingDays.map(day => <option key={day}>{day}</option>)}</select></label><label>Hora<select value={state.time} onChange={event => dispatch({ type: 'booking', field: 'time', value: event.target.value })}>{bookingTimes.map(time => <option key={time}>{time}</option>)}</select></label><label>Personas<select value={state.guests} onChange={event => dispatch({ type: 'booking', field: 'guests', value: Number(event.target.value) })}>{[1, 2, 3, 4, 5, 6].map(guests => <option key={guests} value={guests}>{guests} {guests === 1 ? 'persona' : 'personas'}</option>)}</select></label></div><button type="button" className={styles.siteButton} onClick={() => dispatch({ type: 'confirm' })}>Probar confirmación <ArrowRight size={16} /></button>{state.confirmed && <div className={styles.confirmation} role="status"><Check size={22} /><strong>Así de fácil podría ser.</strong><p>{state.day} · {state.time} · {state.guests} {state.guests === 1 ? 'persona' : 'personas'}.</p><small>Demostración terminada. No hay una reserva real.</small></div>}</div>}
+          {state.view === 'catalog' && state.business === 'shop' && <div className={styles.page}><span className={styles.overline}>COLECCIÓN / 01</span><h4>Tu espacio.<br /><em>Tus piezas.</em></h4><p>Objetos y precios ficticios. Prueba una ficha y añade algo a la bolsa.</p><div className={styles.products}>{activationProducts.map(item => <button type="button" key={item.id} className={styles.product} onClick={() => dispatch({ type: 'product', value: item.id })}><div><ActivationArtwork kind={item.kind} /></div><span><strong>{item.name}</strong><small>{activationPrice(item.price)} <ArrowUpRight size={14} /></small></span></button>)}</div></div>}
+          {state.view === 'detail' && <div className={styles.page}><button type="button" className={styles.back} onClick={() => open('catalog')}><ArrowLeft size={14} />Volver a la colección</button><div className={styles.productDetail}><div className={styles.productArt}><ActivationArtwork kind={product.kind} /></div><div><span className={styles.overline}>FORMA / OBJETO DE DEMOSTRACIÓN</span><h4>{product.name}</h4><p>{product.description}</p><strong className={styles.productPrice}>{activationPrice(product.price)}</strong><button type="button" className={styles.siteButton} disabled={(state.bag[product.id] || 0) >= 9} onClick={() => dispatch({ type: 'quantity', id: product.id, delta: 1 })}><Plus size={16} />Añadir a la bolsa</button><p className={styles.bagStatus} role="status">{state.bag[product.id] ? `${state.bag[product.id]} en tu bolsa de demostración.` : 'Sin pagos. Sin pedidos reales.'}</p><button type="button" className={styles.back} onClick={() => open('bag')}>Ver la bolsa <ArrowRight size={14} /></button></div></div></div>}
+          {state.view === 'bag' && <div className={styles.page}><span className={styles.overline}>TU SELECCIÓN</span><h4>Buenas<br /><em>elecciones.</em></h4>{count ? <><div className={styles.bag}>{activationProducts.filter(item => state.bag[item.id]).map(item => <div key={item.id}><span><strong>{item.name}</strong><small>{activationPrice(item.price * state.bag[item.id])}</small></span><div><button type="button" aria-label={`Quitar una unidad de ${item.name}`} onClick={() => dispatch({ type: 'quantity', id: item.id, delta: -1 })}><Minus size={13} /></button><span>{state.bag[item.id]}</span><button type="button" aria-label={`Añadir una unidad de ${item.name}`} disabled={state.bag[item.id] >= 9} onClick={() => dispatch({ type: 'quantity', id: item.id, delta: 1 })}><Plus size={13} /></button></div></div>)}</div><div className={styles.total}><span>Total de ejemplo</span><strong>{activationPrice(total)}</strong></div><button type="button" className={styles.siteButton} onClick={() => dispatch({ type: 'confirm' })}>Terminar la demostración <Check size={16} /></button>{state.confirmed && <div className={styles.confirmation} role="status"><ShoppingBag size={22} /><strong>Una compra sin perder el hilo.</strong><p>Así termina esta prueba. No se ha cobrado ni realizado ningún pedido.</p></div>}</> : <><p>Tu bolsa está vacía. Hay algo bonito esperándote en la colección.</p><button type="button" className={styles.siteButton} onClick={() => open('catalog')}>Explorar objetos <ArrowRight size={16} /></button></>}</div>}
+          {state.view === 'services' && <div className={styles.page}><span className={styles.overline}>DE LA IDEA AL ESPACIO</span><h4>Empezamos<br /><em>por escucharte.</em></h4><p>Elige qué te gustaría transformar. Esta consulta es solo una demostración.</p><div className={styles.services}>{companyServices.map((service, index) => <button type="button" key={service} aria-pressed={state.service === service} onClick={() => dispatch({ type: 'service', value: service })}><span>0{index + 1}</span><strong>{service}</strong>{state.service === service ? <Check size={18} /> : <Plus size={18} />}</button>)}</div><div className={styles.serviceDetail}><strong>{state.service === 'Mi vivienda' ? 'Un hogar que se parece a ti.' : state.service === 'Mi negocio' ? 'Un espacio que cuenta tu marca.' : 'Todo empieza con una posibilidad.'}</strong><p>{state.service === 'Mi vivienda' ? 'Distribución, luz y materiales pensados para tu día a día.' : state.service === 'Mi negocio' ? 'Del primer encuentro a cada detalle del recorrido de tus clientes.' : 'Escuchar, dibujar y dar forma a una manera nueva de habitar.'}</p></div><button type="button" className={styles.siteButton} onClick={() => dispatch({ type: 'confirm' })}>Probar la consulta <ArrowUpRight size={16} /></button>{state.confirmed && <div className={styles.confirmation} role="status"><Check size={22} /><strong>Tu idea tiene un punto de partida.</strong><p>{state.service}. En una web real, aquí continuaríamos la conversación.</p><small>No se ha enviado ninguna consulta.</small></div>}</div>}
+          <div className={styles.siteFooter}><strong>{concept.brand}</strong><span>UN CONCEPTO DE LATECH · NO ES UN NEGOCIO REAL</span></div>
+        </div>
+        <div className={styles.conversion}><span>AHORA IMAGINA TU NEGOCIO AQUÍ.</span><p>Esto era una muestra.<br /><strong>Lo siguiente puede ser tuyo.</strong></p><button type="button" onClick={onInterest}>Hablemos de mi web <ArrowUpRight size={17} /></button></div>
+      </>}
+    </div>
+  </section>;
+}
