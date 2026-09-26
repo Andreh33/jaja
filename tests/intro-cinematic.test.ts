@@ -6,10 +6,11 @@ const source = readFileSync(new URL('../src/components/effects/IntroCinematic.ts
 const css = readFileSync(new URL('../src/components/effects/IntroCinematic.module.css', import.meta.url), 'utf8');
 
 describe('First-visit brand opening', () => {
-  it('adds exactly one second and shares its duration with the fail-safe', () => {
+  it('keeps the mobile duration and bounds real preloading with a fail-safe', () => {
     assert.match(source, /const OPENING_DURATION_MS = 2500;/);
-    assert.match(source, /setTimeout\(dismiss, OPENING_DURATION_MS \+ 300\)/);
-    assert.match(source, /if \(!show\) return;\s*const timeout = setTimeout/);
+    assert.match(source, /const PRELOAD_DEADLINE_MS = 4200;/);
+    assert.match(source, /setTimeout\(dismiss, PRELOAD_DEADLINE_MS \+ OPENING_DURATION_MS \+ 300\)/);
+    assert.match(source, /if \(!show\) return;/);
     assert.match(source, /'--opening-duration': `\$\{OPENING_DURATION_MS\}ms`/);
     assert.match(css, /animation-duration:var\(--opening-duration\)/);
   });
@@ -33,5 +34,21 @@ describe('First-visit brand opening', () => {
     assert.doesNotMatch(source, /prefers-reduced-motion/);
     assert.doesNotMatch(css, /\.opening\{display:none\}/);
     assert.match(css, /\.opening \.curtain\{animation-duration:var\(--opening-duration\)!important\}/);
+  });
+
+  it('uses resource completion, not a fictional progress timer', () => {
+    assert.match(source, /document\.fonts\.ready/);
+    assert.match(source, /image\.decode\(\)/);
+    assert.match(source, /Promise\.allSettled\(\[\.\.\.warmImages, fonts\]\)/);
+    assert.match(source, /new URL\(url, location\.href\)\.origin === location\.origin/);
+    assert.doesNotMatch(source, /setInterval/);
+  });
+
+  it('projects the desktop logo into the real television and preserves mobile curtains', () => {
+    assert.match(source, /desktop \? \['camera'\] : \['left', 'right'\]/);
+    assert.match(source, /\[data-crt-corner\]/);
+    assert.match(source, /crtCameraFrames\(window\.innerWidth, window\.innerHeight, corners\)/);
+    assert.match(source, /animations\.forEach\(animation => animation\.cancel\(\)\)/);
+    assert.match(source, /window\.addEventListener\('resize', onResize\)/);
   });
 });

@@ -72,3 +72,15 @@
   .heading{font-size:clamp(100px,min(22cqw,16svh),152px);margin-block:24px}
   .visual{padding-block:24px 30px}
 }
+
+/* The CRT is a surround, so its depth never shifts the headline or mobile layout. */
+@media(min-width:768px){
+  .meta{position:relative;z-index:3}
+  .visual{z-index:1}
+  .artwork{left:-52px}
+  .backPlate,.middlePlate{display:none}
+  .browser{border-color:transparent;border-radius:5% / 6%;box-shadow:none}
+  .previewTools{transform:translateY(67px)}
+  .baseline{margin-top:67px}
+}
+@media(min-width:768px) and (max-width:1100px){.artwork{left:-20px}}

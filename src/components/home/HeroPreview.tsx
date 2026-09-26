@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useId, useRef, useState, type CSSProperties } from 'react';
+import { useEffect, useId, useImperativeHandle, useRef, useState, type CSSProperties, type Ref } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
@@ -26,7 +26,9 @@ const services = [
   ['03', 'Más tiempo para ti.', 'Asistentes y automatizaciones que ayudan a atender consultas y simplificar tareas repetitivas de tu negocio.', '/tienda/agente-ia', 'Atención · Organización · Automatización'],
 ];
 
-export default function HeroPreview({ blueprint, expanded = false, active = true, studio }: { blueprint: boolean; expanded?: boolean; active?: boolean; studio: StudioExperience }) {
+export type HeroPreviewHandle = { navigate: (page: StudioPage, keyboardInput: boolean) => void };
+
+export default function HeroPreview({ blueprint, expanded = false, active = true, studio, navigationRef }: { blueprint: boolean; expanded?: boolean; active?: boolean; studio: StudioExperience; navigationRef?: Ref<HeroPreviewHandle> }) {
   const id = useId();
   const { page, project, settings } = studio;
   const [menu, setMenu] = useState(false);
@@ -47,6 +49,11 @@ export default function HeroPreview({ blueprint, expanded = false, active = true
     setKeyboard(keyboardInput); studio.navigate(next); setMenu(false); setStatus('');
     if (keyboardInput) requestAnimationFrame(() => heading.current?.focus({ preventScroll: true }));
   }
+  useImperativeHandle(navigationRef, () => ({ navigate(next, keyboardInput) {
+    studio.setBrowsing(false);
+    navigate(next, keyboardInput);
+    viewport.current?.scrollTo({ top: 0, behavior: 'instant' });
+  } }));
   function back(keyboardInput: boolean) {
     setKeyboard(keyboardInput); studio.back(); setMenu(false);
     if (keyboardInput) requestAnimationFrame(() => heading.current?.focus({ preventScroll: true }));
@@ -70,12 +77,12 @@ export default function HeroPreview({ blueprint, expanded = false, active = true
 
   return <div className={styles.preview} data-live-preview data-blueprint={blueprint} data-expanded={expanded} data-active={active} role="region" aria-label="Latech Studio, experiencia interactiva">
     {studio.browsing ? <StudioBrowser project={project} active={active} expanded={expanded} onProject={studio.setProject} onExpand={() => studio.setExpanded(true)} onClose={() => { studio.setBrowsing(false); requestAnimationFrame(() => heading.current?.focus({ preventScroll: true })); }} /> : <>
-    <div className={styles.toolbar}>
+    <div className={styles.toolbar} data-studio-navigation>
       <button type="button" onClick={event => back(event.detail === 0)} disabled={!studio.history.length} aria-label="Atrás en Latech Studio"><ArrowLeft size={12} /></button>
       <span>latech / studio / {studioPages.find(item => item.id === page)?.label.toLowerCase()}</span>
       <span className={styles.live}><i /> INTERACTIVO</span>
     </div>
-    <div className={styles.nav}>
+    <div className={styles.nav} data-studio-navigation>
       <button className={styles.brand} type="button" onClick={event => navigate('home', event.detail === 0)} aria-label="Inicio de Latech Studio"><Image src="/brand/latech-logo.webp" alt="" width={42} height={22} /><span>LATECH<small>STUDIO</small></span></button>
       <nav aria-label="Navegación de Latech Studio">{studioPages.slice(1, 3).map(item => <button key={item.id} type="button" onClick={event => navigate(item.id, event.detail === 0)} aria-current={page === item.id ? 'page' : undefined}>{item.label}</button>)}</nav>
       <button ref={menuButton} type="button" className={styles.menuButton} aria-label={menu ? 'Cerrar menú de Studio' : 'Abrir menú de Studio'} aria-expanded={menu} aria-controls={id} onClick={() => setMenu(value => !value)}>{menu ? <X size={16} /> : <Menu size={16} />}</button>
