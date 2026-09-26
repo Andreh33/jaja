@@ -1,0 +1,40 @@
+.section { position: relative; border-top: 1px solid #8dc5ff16; }
+.emphasis { color: #ff9853; }
+.intro { max-width: 290px; color: #9aafc6; font-size: 13px; line-height: 1.8; }
+.timeline { position: relative; }
+.rail { position: absolute; top: 13px; left: 7px; right: calc(25% - 30px); height: 1px; background: #8bbdf433; }
+.rail > span { display: block; width: 100%; height: 100%; background: linear-gradient(90deg, #9dcfff, #ff9853); transform-origin: left center; }
+.steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; list-style: none; padding: 0; margin: 0; }
+.step { position: relative; padding-top: 55px; }
+.marker { position: absolute; top: 7px; left: 0; width: 13px; height: 13px; border: 1px solid #81a9cf; border-radius: 50%; background: #071323; }
+.marker > span { position: absolute; inset: 2px; border-radius: inherit; background: #ff9853; box-shadow: 0 0 17px #ff985373; transition: opacity 160ms ease; }
+.number { display: block; margin-bottom: 26px; color: #315271; font: 500 clamp(56px, 6vw, 88px)/1 var(--font-display); letter-spacing: -.07em; }
+.step h3 { margin-bottom: 14px; color: #e6f3ff; font: 600 27px/1.15 var(--font-display); letter-spacing: -.045em; }
+.step p { max-width: 245px; color: #94abc3; font-size: 12px; line-height: 1.85; }
+
+@media (max-width: 1023px) {
+  .rail { display: none; }
+  .steps { grid-template-columns: repeat(2, 1fr); gap: 38px 32px; }
+  .step { border-top: 1px solid #8bbdf433; padding-top: 26px; }
+  .marker { top: -7px; }
+  .number { font-size: 64px; margin-bottom: 20px; }
+  .step p { max-width: 340px; }
+}
+
+@media (max-width: 540px) {
+  .intro { font-size: 12px; }
+  .steps { grid-template-columns: 1fr; gap: 0; }
+  .step { display: grid; grid-template-columns: 52px 1fr; gap: 22px; border-top: 0; padding: 0 0 34px 25px; }
+  .step::before { content: ''; position: absolute; left: 5px; top: 6px; bottom: -5px; width: 1px; background: #8bbdf433; }
+  .step:last-child { padding-bottom: 0; }
+  .step:last-child::before { display: none; }
+  .marker { width: 11px; height: 11px; top: 6px; }
+  .number { font-size: 46px; margin: 0; color: #3f6384; }
+  .step h3 { font-size: 24px; margin: 0 0 10px; }
+  .step p { font-size: 12px; line-height: 1.8; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rail > span { transform: none !important; }
+  .marker > span { opacity: 1 !important; transition: none; }
+}

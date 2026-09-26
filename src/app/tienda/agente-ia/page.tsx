@@ -21,7 +21,7 @@ import Breadcrumbs from '@/components/seo/Breadcrumbs';
 import { serviceJsonLd, breadcrumbJsonLd } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Agente de IA · recepcionista virtual 24/7 con n8n',
+  title: 'Agente de IA · atención al cliente y reservas 24/7',
   description: 'Agente de IA que atiende llamadas 24/7, gestiona reservas, cobra con Stripe y recuerda a cada cliente. Desde 150€/mes. Para toda España.',
   alternates: { canonical: '/tienda/agente-ia' },
   openGraph: {
@@ -130,8 +130,8 @@ export default function AgenteIaPage() {
                     con <GradientText as="span">inteligencia artificial</GradientText>.
                   </h1>
                   <p className="mt-6 max-w-xl text-base leading-relaxed text-white/65">
-                    Atiende llamadas, gestiona reservas, procesa pedidos, cobra con Stripe, recuerda a cada cliente
-                    y nunca se cansa — sin nómina ni errores.
+                    Atiende llamadas, gestiona reservas, procesa pedidos, facilita el pago, recuerda a cada cliente
+                    y ayuda a tu equipo a centrarse en las conversaciones que necesitan una persona.
                   </p>
                   <ul className="mt-7 space-y-2 text-sm text-white/75">
                     {['Disponible 24/7 · 365 días', 'Hasta 20 llamadas simultáneas', 'Memoria de clientes con RGPD', 'Integración web + WhatsApp', 'Desde 150€/mes'].map((b) => (
@@ -245,7 +245,7 @@ export default function AgenteIaPage() {
                 <p className="text-base text-white/85">
                   <span className="text-2xl">💡</span>{' '}
                   <span className="font-semibold">La solución existe.</span>{' '}
-                  Un agente de IA conectado a tu negocio vía n8n puede hacer todo eso — y mucho más — por <span className="font-mono" style={{ color: 'var(--accent-ia)' }}>150€/mes</span>.
+                  Un asistente conectado a tu negocio puede ayudarte con esas tareas desde <span className="font-mono" style={{ color: 'var(--accent-ia)' }}>150€/mes</span>.
                 </p>
               </div>
             </Reveal>
@@ -324,14 +324,14 @@ export default function AgenteIaPage() {
                 <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-white/40">Comparativa</p>
                 <h2 className="font-display text-4xl md:text-5xl" style={{ letterSpacing: '-0.04em', fontWeight: 800 }}>
                   Recepcionista humano <span className="text-white/40">vs</span><br />
-                  <span style={{ color: 'var(--accent-ia)' }}>Agente IA con n8n</span>
+                  <span style={{ color: 'var(--accent-ia)' }}>Tu asistente de IA</span>
                 </h2>
               </div>
 
               <div className="overflow-hidden rounded-3xl glass">
                 <div className="grid grid-cols-2 border-b text-xs uppercase tracking-wider text-white/40" style={{ borderColor: 'var(--border-subtle)' }}>
                   <div className="px-6 py-4">Recepcionista humano</div>
-                  <div className="px-6 py-4 text-right" style={{ background: 'rgba(16,185,129,0.05)', color: 'var(--accent-ia)' }}>Agente IA con n8n</div>
+                  <div className="px-6 py-4 text-right" style={{ background: 'rgba(16,185,129,0.05)', color: 'var(--accent-ia)' }}>Tu asistente de IA</div>
                 </div>
                 {COMPARATIVA.map((row, i) => (
                   <div key={i} className="grid grid-cols-2 border-b last:border-0" style={{ borderColor: 'var(--border-subtle)' }}>

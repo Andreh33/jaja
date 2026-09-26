@@ -5,12 +5,13 @@ import Link from 'next/link';
 import { suspendGames } from './game-session';
 import { useEffect, useRef, useState, type ReactNode } from 'react';
 import * as Tabs from '@radix-ui/react-tabs';
-import { Gamepad2, Pencil, Maximize2, Code2, ScanLine } from 'lucide-react';
+import { Gamepad2, Pencil, Maximize2, Code2, ScanLine, TrendingUp } from 'lucide-react';
 import { Reveal } from '../../effects/Reveal';
 
 const loading = () => <p className="grid h-full place-items-center text-sm text-blue-200" role="status">Preparando el laboratorio…</p>;
 const DrawingBoard = dynamic(() => import('./DrawingBoard'), { ssr: false, loading });
 const StumbleRunner = dynamic(() => import('./StumbleRunner'), { ssr: false, loading });
+const RankRush = dynamic(() => import('./RankRush'), { ssr: false, loading });
 const EscapeGame = dynamic(() => import('./EscapeGame'), { ssr: false });
 const HoodReveal = dynamic(() => import('./HoodReveal'), { ssr: false });
 const XRayMode = dynamic(() => import('../../effects/XRayMode'), { ssr: false });
@@ -32,7 +33,8 @@ function DeferredDemo({ children }: { children: ReactNode }) {
 }
 
 export default function PlaygroundSection() {
-  const [tab, setTab] = useState('runner');
+  const [tab, setTab] = useState('rank');
+  const [runnerVisited, setRunnerVisited] = useState(false);
   const [drawingVisited, setDrawingVisited] = useState(false);
   const [escape, setEscape] = useState(false);
   const [hood, setHood] = useState(false);
@@ -43,14 +45,16 @@ export default function PlaygroundSection() {
         <div><p className="eyebrow"><span className="status-dot" /> 05 / El laboratorio</p><h2>Aquí se viene<br /><span className="muted-heading">a jugar.</span></h2></div>
         <p className="max-w-sm text-sm leading-relaxed text-[#8ba3be]">Esto no es una maqueta. Es código vivo.<br />Toca, salta, dibuja. Y luego imagina tu negocio aquí.</p>
       </div></Reveal>
-      <Tabs.Root value={tab} onValueChange={(value) => { setTab(value); if (value === 'drawing') setDrawingVisited(true); }}>
+      <Tabs.Root value={tab} onValueChange={(value) => { suspendGames(); setTab(value); if (value === 'drawing') setDrawingVisited(true); if (value === 'runner') setRunnerVisited(true); }}>
         <Tabs.List className="lab-tabs" aria-label="Elige una experiencia">
+          <Tabs.Trigger value="rank"><TrendingUp size={16} /> Rank Rush</Tabs.Trigger>
           <Tabs.Trigger value="runner"><Gamepad2 size={16} /> Orbit Runner</Tabs.Trigger>
           <Tabs.Trigger value="drawing"><Pencil size={16} /> Lienzo libre</Tabs.Trigger>
         </Tabs.List>
         <div className="lab-frame" data-escape-origin>
           <div className="lab-frame-header"><span>LATECH / PLAYGROUND_01</span><span>100% INTERACTIVO · 0 PLANTILLAS</span></div>
-          <Tabs.Content value="runner" forceMount hidden={tab !== 'runner'} className="lab-frame-body"><DeferredDemo><StumbleRunner /></DeferredDemo></Tabs.Content>
+          <Tabs.Content value="rank" forceMount hidden={tab !== 'rank'} className="lab-frame-body" style={{ height: 'auto', minHeight: 450 }}><DeferredDemo><RankRush /></DeferredDemo></Tabs.Content>
+          <Tabs.Content value="runner" forceMount hidden={tab !== 'runner'} className="lab-frame-body">{runnerVisited && <StumbleRunner />}</Tabs.Content>
           <Tabs.Content value="drawing" forceMount hidden={tab !== 'drawing'} className="lab-frame-body">{drawingVisited && <DrawingBoard />}</Tabs.Content>
         </div>
       </Tabs.Root>

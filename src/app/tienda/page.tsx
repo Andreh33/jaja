@@ -39,8 +39,8 @@ const SHOPS = [
     icon: ShoppingBag,
     title: 'TIENDA ONLINE',
     tagline: 'Vende mientras duermes',
-    description: 'Catálogo, pasarelas seguras y analítica. Stripe, Bizum y transferencia integrados. Tu e-commerce en 48h.',
-    points: ['Stripe + Bizum + transferencia', 'GA4 y Meta Pixel listos', 'SEO de productos'],
+    description: 'Tus productos, una compra sencilla y pagos seguros. Una tienda pensada para convertir el interés en pedidos.',
+    points: ['Compra fácil desde el móvil', 'Pagos seguros y seguimiento de ventas', 'Productos preparados para buscadores'],
     price: '80€/mes + 800€ creación',
     accent: 'var(--accent-shop)',
     glow: 'var(--accent-shop-glow)',
@@ -51,8 +51,8 @@ const SHOPS = [
     icon: Bot,
     title: 'AGENTE IA',
     tagline: 'Tu recepcionista que nunca duerme',
-    description: 'Atiende llamadas 24/7 con voz natural, conectado por n8n a WhatsApp, Stripe y tu CRM.',
-    points: ['20 llamadas simultáneas', 'Memoria de clientes RGPD', 'Pagos por voz con Stripe'],
+    description: 'Atiende consultas, organiza reservas y acompaña a tus clientes incluso cuando tú estás ocupado.',
+    points: ['Atención fuera de tu horario', 'Reservas y consultas organizadas', 'Menos tareas repetitivas'],
     price: 'Desde 150€/mes',
     accent: 'var(--accent-ia)',
     glow: 'var(--accent-ia-glow)',
@@ -80,7 +80,7 @@ export default function TiendaPage() {
       <AuroraBackground />
       <MouseGlow />
       <main id="main-content" tabIndex={-1} className="relative z-10">
-        <section className="pt-44 pb-16">
+        <section className="pt-32 pb-12 md:pt-44 md:pb-16">
           <div className="mx-auto max-w-7xl px-6 text-center">
             <Reveal>
               <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-white/40">Tienda</p>
@@ -133,20 +133,20 @@ export default function TiendaPage() {
               <Reveal key={s.href}>
                 <Link href={s.href} className="group block">
                   <TiltCard max={4}>
-                    <Holographic className="relative overflow-hidden p-8 transition-all md:p-14" rounded="rounded-[2.5rem]">
+                    <Holographic className="relative overflow-hidden p-6 md:p-14" rounded="rounded-2xl md:rounded-3xl">
                       <div
-                        className="pointer-events-none absolute inset-0 rounded-[2.5rem] opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                        className="pointer-events-none absolute inset-0 rounded-[inherit] opacity-0 transition-opacity duration-200 group-hover:opacity-100"
                         style={{ boxShadow: `0 0 100px ${s.glow}` }}
                       />
                       <div className={`grid gap-10 md:grid-cols-2 md:items-center ${reverse ? 'md:[direction:rtl]' : ''}`}>
                         <div className={reverse ? '[direction:ltr]' : ''}>
                           <div
                             className="mb-7 inline-flex h-14 w-14 items-center justify-center rounded-2xl"
-                            style={{ background: `${s.accent}1A`, border: `1px solid ${s.accent}40`, color: s.accent }}
+                            style={{ background: `color-mix(in srgb, ${s.accent} 10%, transparent)`, border: `1px solid color-mix(in srgb, ${s.accent} 25%, transparent)`, color: s.accent }}
                           >
                             <Icon size={26} strokeWidth={1.6} />
                           </div>
-                          <h2 className="font-display text-4xl md:text-6xl" style={{ letterSpacing: '-0.04em', fontWeight: 800 }}>
+                          <h2 className="font-display text-[clamp(1.625rem,6vw,2.25rem)] md:text-6xl" style={{ letterSpacing: '-0.04em', fontWeight: 800 }}>
                             {s.title}
                           </h2>
                           <p className="mt-2 text-lg" style={{ color: s.accent }}>{s.tagline}</p>
@@ -159,10 +159,10 @@ export default function TiendaPage() {
                               </li>
                             ))}
                           </ul>
-                          <div className="mt-8 flex items-center gap-4">
+                          <div className="mt-8 flex flex-wrap items-center gap-x-4 gap-y-3">
                             <span
-                              className="inline-flex items-center gap-1 rounded-full px-4 py-2 text-xs font-semibold transition-colors"
-                              style={{ color: s.accent, background: `${s.accent}15`, border: `1px solid ${s.accent}30` }}
+                              className="inline-flex min-h-11 shrink-0 items-center gap-2 rounded-lg px-4 py-2 text-xs font-semibold transition-colors"
+                              style={{ color: 'var(--ice, #b9e7ff)', background: `color-mix(in srgb, ${s.accent} 8%, transparent)`, border: `1px solid color-mix(in srgb, ${s.accent} 19%, transparent)` }}
                             >
                               Ver plan completo <ArrowRight size={12} />
                             </span>
@@ -174,7 +174,7 @@ export default function TiendaPage() {
                           <div
                             className="absolute inset-0 rounded-2xl"
                             style={{
-                              background: `radial-gradient(circle at 30% 30%, ${s.accent}30, transparent 60%), radial-gradient(circle at 70% 70%, var(--brand-glow), transparent 60%)`,
+                              background: `radial-gradient(circle at 30% 30%, color-mix(in srgb, ${s.accent} 19%, transparent), transparent 60%), radial-gradient(circle at 70% 70%, var(--brand-glow), transparent 60%)`,
                             }}
                           />
                           <div className="absolute inset-6 rounded-2xl border" style={{ borderColor: 'var(--border-subtle)', background: 'rgba(3,9,20,0.6)' }}>
@@ -187,7 +187,7 @@ export default function TiendaPage() {
                               <div className="h-2 w-1/2 rounded" style={{ background: s.accent, opacity: 0.6 }} />
                               <div className="h-2 w-3/4 rounded bg-white/10" />
                               <div className="h-2 w-2/3 rounded bg-white/10" />
-                              <div className="mt-4 h-20 rounded-lg" style={{ background: `linear-gradient(135deg, ${s.accent}30, transparent)` }} />
+                              <div className="mt-4 h-20 rounded-lg" style={{ background: `linear-gradient(135deg, color-mix(in srgb, ${s.accent} 19%, transparent), transparent)` }} />
                               <div className="grid grid-cols-3 gap-2">
                                 <div className="h-12 rounded bg-white/5" />
                                 <div className="h-12 rounded bg-white/5" />

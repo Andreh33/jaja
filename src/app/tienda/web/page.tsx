@@ -39,12 +39,12 @@ const GUIDES = [
 ];
 
 const FEATURES = [
-  { icon: Code2, title: 'Stack moderno', desc: 'Next.js, React, Tailwind, Vercel. La misma tecnología que usan OpenAI y Notion.' },
-  { icon: Smartphone, title: 'Mobile-first', desc: 'Diseñada primero para móvil, donde está el 70% de tus visitantes.' },
-  { icon: Search, title: 'SEO técnico', desc: 'Auditoría completa, Core Web Vitals, schema markup y sitemap optimizado.' },
-  { icon: Zap, title: 'Velocidad extrema', desc: 'Carga en menos de 1 segundo. Lighthouse score 95+ en todas las métricas.' },
-  { icon: Shield, title: 'Seguridad sólida', desc: 'SSL automático, headers de seguridad, protección DDoS y backups diarios.' },
-  { icon: Globe, title: 'Análisis local', desc: 'Investigación de palabras clave de tu zona y competencia para dominar tu mercado.' },
+  { icon: Code2, title: 'Tu marca, sin moldes', desc: 'Una presencia reconocible, con el tono, la personalidad y el recorrido que necesita tu negocio.' },
+  { icon: Smartphone, title: 'Cómoda en el móvil', desc: 'Leer, contactar y comprar sin pelear con la pantalla. Cada detalle se adapta a quien te visita.' },
+  { icon: Search, title: 'Preparada para encontrarte', desc: 'Contenido bien organizado y una base de posicionamiento que habla el idioma de tus clientes.' },
+  { icon: Zap, title: 'Sin hacer esperar', desc: 'Optimizamos la carga y las interacciones para que la experiencia acompañe al interés.' },
+  { icon: Shield, title: 'Tranquilidad incluida', desc: 'Conexión segura, mantenimiento y un equipo que conoce tu web y responde cuando lo necesitas.' },
+  { icon: Globe, title: 'Pensada para tu mercado', desc: 'Estudiamos tu competencia y lo que busca tu cliente para dar a tu propuesta el lugar que merece.' },
 ];
 
 const FAQS = [
@@ -120,7 +120,7 @@ export default function WebPlanPage() {
               </h2>
               <AnswerBox question="Respuesta rápida">
                 Una página web profesional a medida con Latech cuesta <strong className="text-white">800 € de
-                creación más 60 €/mes</strong>, con hosting en Vercel, SSL, SEO técnico, mantenimiento y cambios
+                creación más 60 €/mes</strong>, con alojamiento, conexión segura, SEO, mantenimiento y cambios
                 menores incluidos. Sin permanencia y entregada en 24-48 horas. El código y el dominio son tuyos
                 si algún día decides marcharte.
               </AnswerBox>
@@ -158,7 +158,7 @@ export default function WebPlanPage() {
                     'Optimización de la web (velocidad y Core Web Vitals)',
                     'Implementación de medidas de seguridad (SSL, headers, protección)',
                     'Análisis de competencia y palabras clave locales',
-                    'Hosting de máximo nivel en Vercel incluido',
+                    'Alojamiento y puesta en marcha incluidos',
                     'Cambios menores incluidos cada mes',
                     'Soporte por WhatsApp y email',
                   ],

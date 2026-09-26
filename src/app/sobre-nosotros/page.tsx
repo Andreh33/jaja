@@ -23,10 +23,10 @@ export const metadata: Metadata = {
 const VALORES = [
   { icon: Heart, t: 'Cercanía', d: 'Trato directo, sin intermediarios. Hablas siempre con quien va a tocar el código de tu proyecto.' },
   { icon: Shield, t: 'Confianza', d: 'Sin permanencia, código transferible y precios públicos. Sin candados ni sorpresas.' },
-  { icon: Award, t: 'Calidad', d: 'Stack moderno, atención al detalle y compromiso con que cada entrega esté técnicamente impecable.' },
+  { icon: Award, t: 'Calidad', d: 'Atención al detalle y compromiso con una experiencia que represente a tu negocio en cada pantalla.' },
 ];
 
-const TECHS = ['Next.js', 'React', 'TypeScript', 'n8n', 'OpenAI', 'Stripe', 'Vercel', 'Turso', 'Tailwind', 'Framer Motion', 'GSAP', 'Anthropic'];
+const CAPABILITIES = ['Identidad', 'Diseño web', 'Tiendas online', 'Experiencias interactivas', 'Posicionamiento', 'Automatización', 'Atención al cliente'];
 
 export default function SobreNosotrosPage() {
   return (
@@ -45,7 +45,7 @@ export default function SobreNosotrosPage() {
       <AuroraBackground />
       <MouseGlow />
       <main id="main-content" tabIndex={-1} className="relative z-10">
-        <section className="pt-44 pb-20">
+        <section className="pt-32 pb-14 md:pt-44 md:pb-20">
           <div className="mx-auto max-w-4xl px-6 text-center">
             <Reveal>
               <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-white/40">Quiénes somos</p>
@@ -87,22 +87,21 @@ export default function SobreNosotrosPage() {
                   y qué le diferencia de su competencia. Solo entonces diseñamos.
                 </p>
                 <p>
-                  Trabajamos con stack moderno (Next.js, React, Tailwind, Vercel) — la misma tecnología que utilizan
-                  empresas como OpenAI, Notion o Linear. Esto significa webs <strong>extremadamente rápidas</strong>,
-                  <strong> técnicamente impecables</strong> y preparadas para escalar contigo.
+                  Queremos que tu cliente entienda lo que ofreces, confíe en ti y sepa qué hacer después.
+                  Por eso cuidamos la primera impresión, la claridad de cada página y el recorrido hasta
+                  <strong> una consulta, una reserva o una compra</strong>.
                 </p>
                 <p>
-                  Cada web sale con SEO técnico completo, mobile-first, schema markup, sitemap optimizado y análisis
-                  de la competencia local para identificar palabras clave reales que generen tráfico desde el primer mes.
+                  Diseñamos para móvil desde el principio y preparamos el contenido para los buscadores.
+                  Estudiamos tu mercado para que tu web hable de lo que importa a las personas que buscas atraer.
                 </p>
               </Reveal>
 
               <Reveal>
                 <h2>Mantenimiento y seguridad sin sustos</h2>
                 <p>
-                  Una web no se entrega y se olvida. Nuestros planes incluyen monitorización continua, certificado SSL,
-                  headers de seguridad correctamente configurados, protección DDoS y backups diarios. Todo desplegado
-                  sobre infraestructura Vercel, con CDN global y uptime garantizado del 99.9%.
+                  Una web no se entrega y se olvida. Nuestros planes incluyen alojamiento, conexión segura
+                  y mantenimiento. Te explicamos qué está incluido, cómo pedir cambios y quién se ocupa de cada cosa.
                 </p>
                 <p>
                   Y si algo se rompe — que pasará, porque el software es así — lo arreglamos rápido. Sin tickets,
@@ -132,10 +131,9 @@ export default function SobreNosotrosPage() {
                   Si quieres quedarte, lo haces porque cumplimos.
                 </p>
                 <p>
-                  Y vamos un paso más allá: somos pioneros en España integrando agentes de IA con n8n
-                  para pequeñas y medianas empresas. Mientras la mayoría sigue hablando de IA en abstracto,
-                  nosotros llevamos meses construyendo asistentes que atienden llamadas reales,
-                  gestionan reservas y procesan pagos por voz.
+                  También ayudamos a reducir tareas repetitivas: atender consultas, organizar reservas
+                  y conectar los procesos que hoy te roban tiempo. La inteligencia artificial tiene sentido
+                  cuando resuelve un problema concreto, no cuando solo sirve para llenar un titular.
                 </p>
               </Reveal>
 
@@ -195,15 +193,15 @@ export default function SobreNosotrosPage() {
           </div>
         </section>
 
-        {/* Tech */}
+        {/* Capacidades orientadas al negocio */}
         <section className="py-16">
           <Reveal>
             <p className="mb-6 text-center text-xs font-semibold uppercase tracking-[0.2em] text-white/40">
-              <Code2 size={12} className="mr-2 inline" /> Stack tecnológico
+              <Code2 size={12} className="mr-2 inline" /> Lo que podemos hacer por tu marca
             </p>
           </Reveal>
           <Marquee speed={45}>
-            {TECHS.map((t, i) => (
+            {CAPABILITIES.map((t, i) => (
               <span key={i} className="flex items-center gap-10 pl-10 font-mono text-2xl text-white/30 hover:text-white/80">
                 {t}<span className="inline-block h-1.5 w-1.5 rounded-full bg-white/15" />
               </span>

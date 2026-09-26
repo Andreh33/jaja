@@ -57,8 +57,8 @@ export default function Footer() {
           <div className="md:col-span-4">
             <Logo size="lg" />
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/60">
-              Diseño web, tiendas online y agentes de IA con n8n para empresas de toda España.
-              Código a medida. Diseño con carácter. Sin permanencia.
+              Webs que representan tu marca, tiendas que invitan a comprar y asistentes que te devuelven tiempo.
+              Diseño con carácter. Un equipo a tu lado. Sin permanencia.
             </p>
             <div className="mt-6 flex items-start gap-3 text-sm text-white/60">
               <MapPin size={16} className="mt-0.5 shrink-0" style={{ color: 'var(--brand-300)' }} />

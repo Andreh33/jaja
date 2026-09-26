@@ -73,7 +73,7 @@ export function SignatureMarquee() {
     'TIENDAS ONLINE',
     'AGENTES DE IA',
     'POSICIONAMIENTO SEO',
-    'AUTOMATIZACIONES N8N',
+    'AUTOMATIZACIÓN ÚTIL',
     'MANTENIMIENTO WEB',
     'PASARELAS DE PAGO',
     'SOPORTE 24H',

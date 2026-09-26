@@ -36,7 +36,7 @@ export default function ContactoPage() {
       <AuroraBackground />
       <MouseGlow />
       <main id="main-content" tabIndex={-1} className="relative z-10">
-        <section className="pt-44 pb-16">
+        <section className="pt-32 pb-12 md:pt-44 md:pb-16">
           <div className="mx-auto max-w-7xl px-6 text-center">
             <Reveal>
               <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-white/40">Contacto</p>
@@ -53,7 +53,7 @@ export default function ContactoPage() {
         <section className="py-12">
           <div className="mx-auto grid max-w-7xl gap-10 px-6 md:grid-cols-2">
             <Reveal>
-              <Holographic className="p-8 md:p-10" rounded="rounded-3xl">
+              <Holographic className="p-6 md:p-10" rounded="rounded-2xl md:rounded-3xl">
                 <h2 className="font-display text-2xl text-white" style={{ letterSpacing: '-0.03em', fontWeight: 700 }}>
                   Envíanos un mensaje
                 </h2>
@@ -66,9 +66,9 @@ export default function ContactoPage() {
 
             <Reveal>
               <div className="space-y-4">
-                <a href={whatsappLink('Hola, me gustaría hablar con Latech')} target="_blank" rel="noreferrer" className="block rounded-3xl glass p-6 transition-transform hover:-translate-y-1">
+                <a href={whatsappLink('Hola, me gustaría hablar con Latech')} target="_blank" rel="noreferrer" className="block rounded-2xl glass p-6 transition-colors duration-200 hover:border-white/25">
                   <div className="flex items-start gap-4">
-                    <div className="flex h-11 w-11 items-center justify-center rounded-xl" style={{ background: 'rgba(37,211,102,0.15)', color: '#25D366', border: '1px solid rgba(37,211,102,0.3)' }}>
+                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl" style={{ background: 'rgba(37,211,102,0.15)', color: '#25D366', border: '1px solid rgba(37,211,102,0.3)' }}>
                       <MessageCircle size={20} strokeWidth={1.6} />
                     </div>
                     <div>
@@ -79,9 +79,9 @@ export default function ContactoPage() {
                   </div>
                 </a>
 
-                <a href="tel:+34684739091" className="block rounded-3xl glass p-6 transition-transform hover:-translate-y-1">
+                <a href="tel:+34684739091" className="block rounded-2xl glass p-6 transition-colors duration-200 hover:border-white/25">
                   <div className="flex items-start gap-4">
-                    <div className="flex h-11 w-11 items-center justify-center rounded-xl" style={{ background: 'rgba(59,130,246,0.15)', color: 'var(--brand-300)', border: '1px solid rgba(59,130,246,0.3)' }}>
+                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl" style={{ background: 'rgba(59,130,246,0.15)', color: 'var(--brand-300)', border: '1px solid rgba(59,130,246,0.3)' }}>
                       <Phone size={20} strokeWidth={1.6} />
                     </div>
                     <div>
@@ -92,9 +92,9 @@ export default function ContactoPage() {
                   </div>
                 </a>
 
-                <a href="mailto:info@latech.es" className="block rounded-3xl glass p-6 transition-transform hover:-translate-y-1">
+                <a href="mailto:info@latech.es" className="block rounded-2xl glass p-6 transition-colors duration-200 hover:border-white/25">
                   <div className="flex items-start gap-4">
-                    <div className="flex h-11 w-11 items-center justify-center rounded-xl" style={{ background: 'rgba(103,196,255,0.15)', color: 'var(--accent-shop)', border: '1px solid rgba(103,196,255,0.3)' }}>
+                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl" style={{ background: 'rgba(103,196,255,0.15)', color: 'var(--accent-shop)', border: '1px solid rgba(103,196,255,0.3)' }}>
                       <Mail size={20} strokeWidth={1.6} />
                     </div>
                     <div>
@@ -105,9 +105,9 @@ export default function ContactoPage() {
                   </div>
                 </a>
 
-                <div className="rounded-3xl glass p-6">
+                <div className="rounded-2xl glass p-6">
                   <div className="flex items-start gap-4">
-                    <div className="flex h-11 w-11 items-center justify-center rounded-xl" style={{ background: 'rgba(255,255,255,0.06)', color: 'var(--text-secondary)', border: '1px solid var(--border-subtle)' }}>
+                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl" style={{ background: 'rgba(255,255,255,0.06)', color: 'var(--text-secondary)', border: '1px solid var(--border-subtle)' }}>
                       <MapPin size={20} strokeWidth={1.6} />
                     </div>
                     <div>
@@ -118,9 +118,9 @@ export default function ContactoPage() {
                   </div>
                 </div>
 
-                <div className="rounded-3xl glass p-6">
+                <div className="rounded-2xl glass p-6">
                   <div className="flex items-start gap-4">
-                    <div className="flex h-11 w-11 items-center justify-center rounded-xl" style={{ background: 'rgba(59,130,246,0.15)', color: 'var(--brand-300)', border: '1px solid rgba(59,130,246,0.3)' }}>
+                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl" style={{ background: 'rgba(59,130,246,0.15)', color: 'var(--brand-300)', border: '1px solid rgba(59,130,246,0.3)' }}>
                       <Clock size={20} strokeWidth={1.6} />
                     </div>
                     <div>

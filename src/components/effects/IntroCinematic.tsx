@@ -1,72 +1,58 @@
 'use client';
 
 import { useCallback, useEffect, useState } from 'react';
+import Image from 'next/image';
 import * as Dialog from '@radix-ui/react-dialog';
-import { motion } from 'framer-motion';
+import styles from './IntroCinematic.module.css';
 
-const SEEN_KEY = 'latech-intro-v1';
-const EASE_OUT = [0.23, 1, 0.32, 1] as const;
+const SEEN_KEY = 'latech-brand-opening-v2';
 
-/** Brief desktop welcome. Mobile and reduced-motion visitors go straight to the hero. */
+/** A first-visit brand opening, never a fake loading screen. Content is SSR-visible. */
 export default function IntroCinematic() {
   const [show, setShow] = useState(false);
-  const dismiss = useCallback(() => {
-    try { localStorage.setItem(SEEN_KEY, '1'); } catch { /* Storage is optional. */ }
-    setShow(false);
-  }, []);
+  const dismiss = useCallback(() => setShow(false), []);
 
   useEffect(() => {
-    const eligible = window.matchMedia('(min-width: 1024px) and (prefers-reduced-motion: no-preference)');
-    if (!eligible.matches) return;
-    try { if (localStorage.getItem(SEEN_KEY) === '1') return; } catch { return; }
-    const frame = requestAnimationFrame(() => setShow(true));
+    const preference = window.matchMedia('(prefers-reduced-motion: reduce)');
+    if (preference.matches || window.location.hash || window.scrollY > 20) return;
+    try {
+      if (sessionStorage.getItem(SEEN_KEY)) return;
+    } catch { return; }
+    const frame = requestAnimationFrame(() => {
+      try { sessionStorage.setItem(SEEN_KEY, '1'); } catch { return; }
+      setShow(true);
+    });
     const timeout = setTimeout(dismiss, 1800);
-    const changed = () => { if (!eligible.matches) dismiss(); };
-    eligible.addEventListener('change', changed);
+    const changed = () => { if (preference.matches) dismiss(); };
+    preference.addEventListener('change', changed);
     return () => {
       cancelAnimationFrame(frame);
       clearTimeout(timeout);
-      eligible.removeEventListener('change', changed);
+      preference.removeEventListener('change', changed);
     };
   }, [dismiss]);
 
-  return (
-    <Dialog.Root open={show} onOpenChange={(open) => { if (!open) dismiss(); }}>
-      <Dialog.Portal>
-        <Dialog.Overlay className="fixed inset-0 z-[10000] bg-[#05040c]" />
-        <Dialog.Content className="fixed inset-0 z-[10001] flex flex-col items-center justify-center overflow-hidden outline-none">
-          <div aria-hidden className="pointer-events-none absolute inset-0"
-            style={{ background: 'radial-gradient(ellipse at center, rgba(59,130,246,.24), rgba(103,196,255,.07) 45%, transparent 70%)' }} />
-          <div aria-hidden className="pointer-events-none absolute inset-0 bg-grid opacity-25" />
-          <div className="relative flex flex-col items-center text-center">
-            <Dialog.Title asChild>
-              <motion.p className="font-display text-8xl font-extrabold tracking-tight text-gradient"
-                initial={{ opacity: 0, transform: 'translateY(16px)' }}
-                animate={{ opacity: 1, transform: 'translateY(0)' }}
-                transition={{ duration: .5, ease: EASE_OUT }}>
-                Latech
-              </motion.p>
-            </Dialog.Title>
-            <Dialog.Description asChild>
-              <motion.p className="mt-4 text-2xl text-white/80"
-                initial={{ opacity: 0, transform: 'translateY(8px)' }}
-                animate={{ opacity: 1, transform: 'translateY(0)' }}
-                transition={{ delay: .12, duration: .5, ease: EASE_OUT }}>
-                Tu imaginación, <span className="text-white">nuestro límite.</span>
-              </motion.p>
-            </Dialog.Description>
-            <p className="mt-2 text-xs uppercase tracking-[0.35em] text-white/60">cero plantillas · cero límites</p>
-            <motion.div aria-hidden className="mt-7 h-px w-44 rounded-full"
-              initial={{ transform: 'scaleX(.1)', opacity: 0 }}
-              animate={{ transform: 'scaleX(1)', opacity: 1 }}
-              transition={{ delay: .2, duration: .6, ease: EASE_OUT }}
-              style={{ background: 'linear-gradient(90deg, transparent, var(--brand-400), var(--accent-ia), transparent)' }} />
-          </div>
-          <Dialog.Close className="absolute bottom-8 right-8 min-h-11 rounded-full border border-white/20 bg-white/5 px-5 py-3 text-sm font-semibold text-white/80 transition-colors hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-purple-400">
-            Saltar intro →
-          </Dialog.Close>
-        </Dialog.Content>
-      </Dialog.Portal>
-    </Dialog.Root>
-  );
+  return <Dialog.Root open={show} onOpenChange={(open) => { if (!open) dismiss(); }}>
+    <Dialog.Portal>
+      <Dialog.Content className={styles.opening} onCloseAutoFocus={(event) => {
+        event.preventDefault();
+        document.getElementById('main-content')?.focus({ preventScroll: true });
+      }}>
+        <Dialog.Title className="sr-only">Latech. Fuera del molde.</Dialog.Title>
+        <Dialog.Description className="sr-only">Una breve presentación de nuestra marca. Puedes saltarla o pulsar Escape.</Dialog.Description>
+        <div className={styles.stage} aria-hidden="true">
+          {['left', 'right'].map((side) => <div key={side} className={`${styles.curtain} ${styles[side]}`}
+            onAnimationEnd={side === 'right' ? (event) => { if (event.target === event.currentTarget) dismiss(); } : undefined}>
+            <div className={styles.grid} />
+            <span className={styles.wordmark}>LATECH</span>
+            <div className={styles.emblem}><Image src="/brand/latech-logo.webp" alt="" width={512} height={264} unoptimized loading="eager" /><span>FUERA DEL MOLDE.</span></div>
+            <span className={styles.coordinate}>DISEÑADO PARA DEJAR HUELLA.</span>
+            <span className={styles.signature}>ESTUDIO DIGITAL / ESPAÑA</span>
+          </div>)}
+          <div className={styles.cut} />
+        </div>
+        <Dialog.Close className={styles.skip}>Saltar entrada <span aria-hidden>↗</span></Dialog.Close>
+      </Dialog.Content>
+    </Dialog.Portal>
+  </Dialog.Root>;
 }
