@@ -58,8 +58,14 @@ Motion verdict: approved for release after browser checks; native scroll, gated 
 - Native edited result: 1747x900 RGBA. The 3840x1978 PNG is a Lanczos-resampled 4K-wide export, not recovered original vector detail.
 - Web asset: `public/brand/latech-logo.webp` (512px wide, approximately 24KB). Download asset: `public/brand/latech-logo-4k.png`. Matching browser/apple icons are derived exports.
 
-## Final checks pending
-Publication and deployment verification. All five mobile miniwebsite views were exercised with pointer input and internal horizontal overflow checked; the final production build generates 193 pages.
+## Publication verified
+- Code release `3c9c9c9` pushed to `main`; GitHub attributes both author and committer to Andreh33.
+- GitHub Actions run `36207672808`: successful clean install, lint, 171 tests, typecheck and build.
+- Vercel deployment `dpl_HHoFDcmfSFnPy8pzGPyNPabEX3kb`: production Ready and assigned to https://serviciosonlineweb.com.
+- Live mobile smoke: miniwebsite pointer navigation works without horizontal overflow or JavaScript exceptions. A touch-enabled browser started, played and paused Rank Rush on its live route without JavaScript exceptions.
+- Live home, Rank Rush, sitemap and 4K PNG returned 200. Downloaded logo confirmed as 3840x1978 with alpha.
+- Final local production build: 193 pages. All five mobile miniwebsite views were exercised with pointer input; headings fit their available width.
+- Nonblocking CI notices: the v4 GitHub runner actions are being forced to Node 24, and ubuntu-latest has a future image migration notice. The job itself uses project Node 24 and passed. No dependency/security or production error was inferred from those notices.
 
 ## Operational boundaries
 From September26 onward only the root agent is active, per user request. Heavy checks run sequentially. Existing untracked audits/progress and the preexisting line-ending stash are excluded from the release.
