@@ -93,7 +93,7 @@ export default function HeroPreview({ blueprint, expanded = false, active = true
           <StudioShowcase viewport={viewport} onOpen={openProject} />
           <div className={styles.sectionTitle}><span>01 / TRABAJO REAL</span><button type="button" onClick={event => navigate('projects', event.detail === 0)}>Ver todos ↗</button></div>
           {featuredProjects.map((item, index) => <button key={item.name} className={styles.projectRow} type="button" onClick={() => openProject(index)}><Image src={item.image} alt="" width={150} height={100} sizes="100px" /><span><small>{item.category}</small><strong>{item.name}</strong></span><ArrowUpRight size={17} /></button>)}
-          <button type="button" className={styles.labTeaser} onClick={event => navigate('play', event.detail === 0)}><span>02 / ENSAYO SIN LÍMITES</span><strong>Aquí, ni la gravedad{' '}<br />es obligatoria.</strong><span>Entra al laboratorio <ArrowUpRight size={16} /></span></button>
+          <button type="button" className={styles.labTeaser} onClick={event => navigate('play', event.detail === 0)}><svg className={styles.labMark} viewBox="0 0 100 100" fill="none" aria-hidden="true" focusable="false"><path d="M50 3v94M3 50h94M17 17l66 66M17 83l66-66" stroke="currentColor" strokeWidth="13" /></svg><span>02 / ENSAYO SIN LÍMITES</span><strong>Aquí, ni la gravedad{' '}<br />es obligatoria.</strong><span>Entra al laboratorio <ArrowUpRight size={16} /></span></button>
           <div className={styles.manifesto}><span>BUEN DISEÑO.</span><span>BUENAS IDEAS.</span><em>CERO INDIFERENCIA.</em></div>
         </>}
         {page === 'projects' && <>
