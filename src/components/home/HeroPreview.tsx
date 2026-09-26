@@ -4,12 +4,13 @@ import { useEffect, useId, useRef, useState, type CSSProperties } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
-import { ArrowLeft, ArrowUpRight, Check, Download, Layers, Maximize2, Menu, Share2, X } from 'lucide-react';
+import { ArrowLeft, ArrowUpRight, Check, Download, Maximize2, Menu, Share2, X } from 'lucide-react';
 import { whatsappLink } from '@/lib/stripe-links';
 import { featuredProjects } from './featured-projects';
 import { accents, directions, directionLabels, sectors, sectorCopy, studioBrief, studioHash, studioPages, type StudioPage } from './studio-model';
 import type { StudioExperience } from './useStudioExperience';
-import StudioSculpture from './StudioSculpture';
+import StudioShowcase from './StudioShowcase';
+import StudioBrowser from './StudioBrowser';
 import styles from './HeroPreview.module.css';
 
 const StudioGravity = dynamic(() => import('./StudioGravity'), { loading: () => <p className={styles.loading}>Preparando el escenario…</p> });
@@ -33,8 +34,6 @@ export default function HeroPreview({ blueprint, expanded = false, active = true
   const [status, setStatus] = useState('');
   const [exporting, setExporting] = useState(false);
   const [shareUrl, setShareUrl] = useState('');
-  const [anatomy, setAnatomy] = useState(false);
-  const [layer, setLayer] = useState(0);
   const viewport = useRef<HTMLDivElement>(null);
   const heading = useRef<HTMLHeadingElement>(null);
   const menuButton = useRef<HTMLButtonElement>(null);
@@ -51,6 +50,9 @@ export default function HeroPreview({ blueprint, expanded = false, active = true
     setKeyboard(keyboardInput); studio.back(); setMenu(false);
     if (keyboardInput) requestAnimationFrame(() => heading.current?.focus({ preventScroll: true }));
   }
+  function openProject(index: number) {
+    studio.setProject(index); studio.setBrowsing(true); setMenu(false);
+  }
   async function exportPoster() {
     setExporting(true); setStatus('Preparando tu póster…');
     try { const { downloadStudioPoster } = await import('./studio-poster'); await downloadStudioPoster(settings); setStatus('Tu póster está listo. Revisa las descargas.'); }
@@ -66,6 +68,7 @@ export default function HeroPreview({ blueprint, expanded = false, active = true
   const intro = (eyebrow: string, first: string, second: string) => <><p className={styles.eyebrow}>{eyebrow}</p><h3 ref={heading} tabIndex={-1} className={styles.compact}>{first}{' '}<br /><em>{second}</em></h3></>;
 
   return <div className={styles.preview} data-live-preview data-blueprint={blueprint} data-expanded={expanded} data-active={active} role="region" aria-label="Latech Studio, experiencia interactiva">
+    {studio.browsing ? <StudioBrowser project={project} active={active} expanded={expanded} onProject={studio.setProject} onExpand={() => studio.setExpanded(true)} onClose={() => { studio.setBrowsing(false); requestAnimationFrame(() => heading.current?.focus({ preventScroll: true })); }} /> : <>
     <div className={styles.toolbar}>
       <button type="button" onClick={event => back(event.detail === 0)} disabled={!studio.history.length} aria-label="Atrás en Latech Studio"><ArrowLeft size={12} /></button>
       <span>latech / studio / {studioPages.find(item => item.id === page)?.label.toLowerCase()}</span>
@@ -86,9 +89,9 @@ export default function HeroPreview({ blueprint, expanded = false, active = true
           <h3 ref={heading} tabIndex={-1}>Diseño que{' '}<br />se <em>siente.</em></h3>
           <p className={styles.copy}>Entra. Cambia las reglas. Pon tu marca aquí.{' '}<br />Esto es una pequeña muestra de lo que podemos crear contigo.</p>
           <div className={styles.actionRow}><button type="button" className={styles.cta} onClick={event => navigate('create', event.detail === 0)}>Hazlo tuyo <ArrowUpRight size={14} /></button><button type="button" className={styles.textLink} onClick={event => navigate('projects', event.detail === 0)}>Ver proyectos ↗</button></div>
-          <StudioSculpture viewport={viewport} />
+          <StudioShowcase viewport={viewport} onOpen={openProject} />
           <div className={styles.sectionTitle}><span>01 / TRABAJO REAL</span><button type="button" onClick={event => navigate('projects', event.detail === 0)}>Ver todos ↗</button></div>
-          {featuredProjects.map((item, index) => <button key={item.name} className={styles.projectRow} type="button" onClick={event => { studio.setProject(index); navigate('projects', event.detail === 0); }}><Image src={item.image} alt="" width={150} height={100} sizes="100px" /><span><small>{item.category}</small><strong>{item.name}</strong></span><ArrowUpRight size={17} /></button>)}
+          {featuredProjects.map((item, index) => <button key={item.name} className={styles.projectRow} type="button" onClick={() => openProject(index)}><Image src={item.image} alt="" width={150} height={100} sizes="100px" /><span><small>{item.category}</small><strong>{item.name}</strong></span><ArrowUpRight size={17} /></button>)}
           <button type="button" className={styles.labTeaser} onClick={event => navigate('play', event.detail === 0)}><span>02 / ENSAYO SIN LÍMITES</span><strong>Aquí, ni la gravedad{' '}<br />es obligatoria.</strong><span>Entra al laboratorio <ArrowUpRight size={16} /></span></button>
           <div className={styles.manifesto}><span>BUEN DISEÑO.</span><span>BUENAS IDEAS.</span><em>CERO INDIFERENCIA.</em></div>
         </>}
@@ -97,7 +100,7 @@ export default function HeroPreview({ blueprint, expanded = false, active = true
           <div className={styles.projectTabs} aria-label="Elegir proyecto en Studio">{featuredProjects.map((item,index) => <button type="button" key={item.name} aria-pressed={project === index} onClick={() => studio.setProject(index)}>{item.name}</button>)}</div>
           <div className={styles.projectWorld} data-world={project}>
             <div className={styles.worldHeading}><span>0{project + 1} / {selected.category}</span><strong>{selected.name}</strong><i aria-hidden="true">↗</i></div>
-            <a className={styles.feature} href={selected.url} target="_blank" rel="noopener noreferrer" aria-label={`Abrir la web de ${selected.name} en otra pestaña`}><Image src={selected.image} alt={`Vista de ${selected.name}`} width={800} height={500} sizes="(max-width: 767px) 350px, 650px" /><span>Explorar la web real <ArrowUpRight size={17} /></span></a>
+            <button type="button" className={styles.feature} onClick={() => openProject(project)} aria-label={`Abrir ${selected.name} dentro de Latech Studio`}><Image src={selected.image} alt={`Vista de ${selected.name}`} width={800} height={500} sizes="(max-width: 767px) 350px, 650px" /><span>Explorar aquí <ArrowUpRight size={17} /></span></button>
             <h4>{projectStories[project][0]}</h4><p>{projectStories[project][1]}</p>
             <div className={styles.tags}>{projectStories[project].slice(2).map(tag => <span key={tag}>{tag}</span>)}</div>
           </div>
@@ -106,21 +109,20 @@ export default function HeroPreview({ blueprint, expanded = false, active = true
           <button type="button" className={styles.cta} onClick={event => navigate('create', event.detail === 0)}>Ahora imagina tu marca <ArrowUpRight size={13} /></button>
         </>}
         {page === 'create' && <>
-          {intro('LA DIRECCIÓN CREATIVA, EN TUS MANOS.', 'Tu nombre.', 'Otra dimensión.')}
-          <p className={styles.copy}>Prueba una dirección, cambia su carácter y llévate un póster. Es un concepto interactivo, no el diseño definitivo de tu web.</p>
+          <div className={styles.creatorIntro}>{intro('UN PUNTO DE PARTIDA PARA TU PROYECTO.', 'Tu marca.', 'Tu estilo.')}<p className={styles.copy}>Ponle nombre y prueba cómo cambia su personalidad. Una idea visual para empezar a hablar, no una web generada.</p></div>
           <div className={styles.creatorWorkspace}><div className={styles.creatorControls}>
             <label htmlFor={`${id}-name`}>01 / NOMBRE DE TU MARCA<input id={`${id}-name`} maxLength={36} value={settings.name} placeholder="Tu próxima gran idea" autoComplete="off" onChange={event => { studio.setSettings(value => ({ ...value, name: event.target.value })); setShareUrl(''); }} /></label>
             <label htmlFor={`${id}-sector`}>02 / TU MUNDO<select id={`${id}-sector`} value={settings.sector} onChange={event => { studio.setSettings(value => ({ ...value, sector: event.target.value as typeof value.sector })); setShareUrl(''); }}>{sectors.map(sector => <option key={sector}>{sector}</option>)}</select></label>
             <fieldset><legend>03 / CARÁCTER</legend><div className={styles.directionPicker}>{directions.map(direction => <button type="button" key={direction} aria-pressed={settings.direction === direction} onClick={() => { studio.setSettings(value => ({ ...value, direction })); setShareUrl(''); }}>{directionLabels[direction]}</button>)}</div></fieldset>
             <fieldset><legend>04 / ACENTO</legend><div className={styles.colorPicker}>{(Object.keys(accents) as (keyof typeof accents)[]).map(accent => <button type="button" key={accent} style={{ background: accents[accent] }} aria-label={`Acento ${accent === 'blue' ? 'azul' : accent === 'orange' ? 'naranja' : 'tinta'}`} aria-pressed={settings.accent === accent} onClick={() => { studio.setSettings(value => ({ ...value, accent })); setShareUrl(''); }}>{settings.accent === accent && <Check size={15} />}</button>)}</div></fieldset>
           </div>
-          <div className={styles.brandConcept} data-direction={settings.direction} data-anatomy={anatomy} style={{ '--studio-accent': accents[settings.accent] } as CSSProperties}>
+          <div className={styles.brandConcept} data-direction={settings.direction} style={{ '--studio-accent': accents[settings.accent] } as CSSProperties}>
+            <div className={styles.conceptLabel}>VISTA DE TU CONCEPTO <span aria-hidden="true">↙</span></div>
             <div className={styles.conceptNav}><strong>{settings.name || 'TU MARCA'}</strong><span>{settings.sector}</span></div>
-            <div className={styles.conceptHero}><small>HECHO PARA DEJAR HUELLA.</small><h4>{copy[0]}{' '}<br /><em>{copy[1]}</em></h4><p>{copy[2]}</p><a href={whatsappLink(studioBrief(settings))} target="_blank" rel="noopener noreferrer">Hagámoslo real <ArrowUpRight size={14} /></a><div className={styles.conceptShape} aria-hidden="true"><i /><i /><i /></div></div>
+            <div className={styles.conceptHero}><small>{settings.sector.toUpperCase()} / UNA VISIÓN PROPIA</small><h4>{copy[0]}{' '}<br /><em>{copy[1]}</em></h4><p>{copy[2]}</p><a href={whatsappLink(studioBrief(settings))} target="_blank" rel="noopener noreferrer">Hablemos de tu proyecto <ArrowUpRight size={14} /></a></div>
+            <div className={styles.conceptSections}><div><span>01</span><strong>Tu propuesta.</strong><p>Qué te hace diferente, contado con claridad.</p></div><div><span>02</span><strong>Tu siguiente paso.</strong><p>Una invitación sencilla para conectar contigo.</p></div></div>
             <div className={styles.conceptFoot}><span>UNA VOZ PROPIA.</span><span>{directionLabels[settings.direction].toUpperCase()} ↗</span></div>
           </div></div>
-          <button className={styles.textLink} type="button" aria-pressed={anatomy} onClick={() => setAnatomy(value => !value)}><Layers size={14} />{anatomy ? 'Cerrar radiografía' : 'Ver la radiografía del diseño'}</button>
-          {anatomy && <div className={styles.anatomy}><div className={styles.directionPicker}>{['Jerarquía', 'Carácter', 'Acción'].map((label, i) => <button key={label} type="button" aria-pressed={layer === i} onClick={() => setLayer(i)}>{label}</button>)}</div><p>{['Primero tu mensaje, después los detalles. El tamaño y el espacio ordenan la mirada sin pedir esfuerzo.', 'Tipografía, composición y color construyen una personalidad. No todo negocio debe hablar con la misma voz.', 'La invitación a hablar aparece después de entender la propuesta. Una acción clara, sin competir con diez botones.'][layer]}</p></div>}
           <div className={styles.exportRow}><button type="button" onClick={exportPoster} disabled={exporting}><Download size={15} />{exporting ? 'Creando…' : 'Guardar póster'}</button><button type="button" onClick={share}><Share2 size={15} />Copiar enlace</button></div>
           <p className={styles.note} role="status">{status || 'Tus cambios se quedan en este navegador. Solo se comparten cuando tú copias el enlace.'}</p>
           {shareUrl && <label className={styles.shareField}>Enlace de tu composición<input readOnly value={shareUrl} onFocus={event => event.currentTarget.select()} /></label>}
@@ -160,5 +162,6 @@ export default function HeroPreview({ blueprint, expanded = false, active = true
         <div className={styles.studioFooter}><span>LATECH<small>STUDIO / HECHO PARA EXPLORAR</small></span><button type="button" onClick={event => navigate('contact', event.detail === 0)}>Hablemos ↗</button></div>
       </div>
     </div>
+    </>}
   </div>;
 }

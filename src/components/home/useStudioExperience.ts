@@ -8,12 +8,13 @@ export function useStudioExperience() {
   const [history, setHistory] = useState<StudioPage[]>([]);
   const [settings, setSettings] = useState(defaultStudio);
   const [project, setProject] = useState(0);
+  const [browsing, setBrowsing] = useState(false);
   const [expanded, setExpanded] = useState(false);
 
   useEffect(() => {
     function restore() {
       const saved = parseStudioHash(window.location.hash);
-      if (saved) { setSettings(saved); setPage('create'); setExpanded(true); }
+      if (saved) { setSettings(saved); setPage('create'); setBrowsing(false); setExpanded(true); }
     }
     restore();
     window.addEventListener('hashchange', restore);
@@ -30,6 +31,6 @@ export function useStudioExperience() {
     if (!previous) return;
     setHistory(history.slice(0, -1)); setPage(previous);
   }
-  return { page, navigate, back, history, settings, setSettings, project, setProject, expanded, setExpanded };
+  return { page, navigate, back, history, settings, setSettings, project, setProject, browsing, setBrowsing, expanded, setExpanded };
 }
 export type StudioExperience = ReturnType<typeof useStudioExperience>;

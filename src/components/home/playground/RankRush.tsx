@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState, type PointerEvent, type MouseEvent, type KeyboardEvent } from 'react';
 import { useReducedMotion } from 'framer-motion';
 import { ArrowUpRight, MousePointer2, Pause, Play, RotateCcw, Search, Trophy, Zap } from 'lucide-react';
 import { createGameSession, PAUSE_LABELS, type GameSession, type PauseReason } from './game-session';
@@ -104,6 +104,20 @@ export default function RankRush() {
     if (!sessionRef.current?.canPlay()) { resume(); return; }
     publish(tapRankRush(advanceClock(performance.now())));
   };
+  const pointerPress = (event: PointerEvent<HTMLButtonElement>) => {
+    if (event.button !== 0) return;
+    // Respond before touchend/click. Prevent compatibility mouse events and
+    // selection; keyboard and assistive-technology clicks keep their own path.
+    event.preventDefault();
+    event.currentTarget.focus({ preventScroll: true });
+    press();
+  };
+  const accessibleClick = (event: MouseEvent<HTMLButtonElement>) => { if (event.detail === 0) press(); };
+  const keyboardPress = (event: KeyboardEvent<HTMLButtonElement>) => {
+    if (event.code !== 'Space' && event.code !== 'Enter') return;
+    event.preventDefault();
+    if (!event.repeat) press();
+  };
   const setMode = (mode: RankRushMode) => {
     if (game.current.status === 'playing' && sessionRef.current?.canPlay()) return;
     sessionRef.current?.stop();
@@ -125,7 +139,7 @@ export default function RankRush() {
         : snapshot.status === 'playing' ? `Posición ${rank} de 6. ${rank <= 3 ? 'Último esfuerzo. Sube el ritmo.' : 'Cada clic te acerca a la cima.'}`
           : 'Haz despegar tu web. Un clic cada vez.';
 
-  return <div ref={surfaceRef} className={styles.game} data-rank-rush-state={paused ? 'paused' : snapshot.status}
+  return <div ref={surfaceRef} className={styles.game} data-rank-rush-state={paused ? 'paused' : snapshot.status} data-rank-rush-taps={snapshot.taps}
     onKeyDown={(event) => {
       if ((event.key.toLowerCase() === 'p' || event.key === 'Escape') && game.current.status === 'playing') {
         event.preventDefault();
@@ -135,7 +149,7 @@ export default function RankRush() {
     }}>
     <div className={styles.console}>
       <div className={styles.titleRow}><span className={styles.kicker}><Zap size={12} aria-hidden /> RANK RUSH</span><span className={styles.liveTag}>ARCADE SEO</span></div>
-      <h3>La cima no<br />se regala<span>.</span></h3>
+      <h3>La cima no{' '}<br />se regala<span>.</span></h3>
       <p className={styles.intro}>Sube tu web al primer puesto. Cuanto más alto llegas, más rápido tendrás que pulsar. Si aflojas, caes.</p>
       <fieldset className={styles.modes} disabled={active}>
         <legend className="sr-only">Ritmo del juego</legend>
@@ -147,12 +161,8 @@ export default function RankRush() {
         <div><span>TIEMPO</span><strong>{timeLeft}<small>s</small></strong></div>
         <div><span>RITMO</span><strong>{rate}<small>/s</small></strong></div>
       </div>
-      <button ref={tapRef} type="button" className={styles.tapButton} onClick={press}
-        onKeyDown={(event) => {
-          if (event.code !== 'Space' && event.code !== 'Enter') return;
-          event.preventDefault();
-          if (!event.repeat) press();
-        }} aria-label={active ? 'Impulsar tu web, pulsa repetidamente' : label}>
+      <button ref={tapRef} type="button" className={styles.tapButton} onPointerDown={pointerPress} onClick={accessibleClick}
+        onKeyDown={keyboardPress} aria-label={active ? 'Impulsar tu web, pulsa repetidamente' : label}>
         {active ? <MousePointer2 size={20} aria-hidden /> : snapshot.status === 'playing' ? <Play size={18} aria-hidden /> : <ArrowUpRight size={20} aria-hidden />}
         <span>{label}</span><span className={styles.keyCap} aria-hidden>↵</span>
       </button>
@@ -161,7 +171,7 @@ export default function RankRush() {
           <button type="button" onClick={() => paused ? resume() : sessionRef.current?.pause()}>{paused ? <Play size={13} /> : <Pause size={13} />}{paused ? 'Reanudar' : 'Pausar'}</button>
           <button type="button" onClick={start}><RotateCcw size={13} /> Reiniciar</button>
         </>}
-        {snapshot.status !== 'playing' && <span>Clic, toque, espacio o enter.</span>}
+        {snapshot.status !== 'playing' && <span>Toca el botón o los resultados. También espacio o enter.</span>}
       </div>
       <p className={styles.best}><Trophy size={12} aria-hidden /> {best[snapshot.mode] ? `Tu récord: ${seconds(best[snapshot.mode])}` : 'Tu próximo récord empieza aquí.'}</p>
     </div>
@@ -183,12 +193,13 @@ export default function RankRush() {
           <div><small>tu-negocio.example <b>ESTA ES LA TUYA</b></small><strong>Una web que juega en otra liga <ArrowUpRight size={13} /></strong></div>
         </div>
       </div>
-      {snapshot.status !== 'idle' && <div className={styles.pressure}><span>{active ? `Para mantenerte: ${requiredRate.toFixed(1)} clics/s` : snapshot.status === 'won' ? 'La primera posición ya es tuya.' : paused ? 'Tu posición está a salvo.' : 'Cada intento cuenta.'}</span><span>{Math.floor(snapshot.progress)}%</span></div>}
+      <div className={styles.pressure}><span>{active ? `Para mantenerte: ${requiredRate.toFixed(1)} pulsaciones/s` : snapshot.status === 'won' ? 'La primera posición ya es tuya.' : paused ? 'Tu posición está a salvo.' : snapshot.status === 'idle' ? 'Toca aquí o el botón para empezar.' : 'Cada intento cuenta.'}</span><span>{Math.floor(snapshot.progress)}%</span></div>
       {(paused || snapshot.status === 'won' || snapshot.status === 'over') && <div className={styles.browserOverlay}>
         {snapshot.status === 'won' ? <Trophy size={34} aria-hidden /> : paused ? <Pause size={30} aria-hidden /> : <RotateCcw size={30} aria-hidden />}
         <strong>{snapshot.status === 'won' ? 'Arriba del todo.' : paused ? 'Respira. Seguimos.' : 'La cima te espera.'}</strong>
-        <p>{snapshot.status === 'won' ? `${snapshot.elapsed.toFixed(1)} segundos. ${snapshot.taps} clics. Una buena remontada.` : paused ? 'Reanuda cuando quieras. El reloj también descansa.' : `Llegaste al puesto #${rankRushPosition(snapshot.peak)}. Prueba a mantener un ritmo constante.`}</p>
+        <p>{snapshot.status === 'won' ? `${snapshot.elapsed.toFixed(1)} segundos. ${snapshot.taps} pulsaciones. Una buena remontada.` : paused ? 'Reanuda cuando quieras. El reloj también descansa.' : `Llegaste al puesto #${rankRushPosition(snapshot.peak)}. Prueba a mantener un ritmo constante.`}</p>
       </div>}
+      <button type="button" className={styles.tapSurface} aria-label={active ? 'Impulsar tocando los resultados' : `${label} desde los resultados`} onPointerDown={pointerPress} onClick={accessibleClick} onKeyDown={keyboardPress} />
     </div>
     <p className={styles.status} role="status" aria-live="polite">{message}</p>
     <p className={styles.disclaimer}>Simulación independiente, no afiliada a Google. El SEO real no funciona a clics. Récord guardado solo en este dispositivo.</p>

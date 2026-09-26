@@ -4,7 +4,7 @@ export const experiments = [
     description: 'Tu web empieza abajo. Pulsa, gana posiciones y no pierdas el ritmo: cuanto más cerca estás de la cima, más cuesta mantenerte.',
     short: 'La cima no se regala. Se conquista.',
     action: 'Abrir Rank Rush',
-    controls: ['Empieza y pulsa repetidamente el botón con el ratón, el dedo, espacio o enter.', 'Mantén el ritmo para subir. Si aflojas, tu web pierde posiciones. Tienes 60 segundos de juego activo.', 'Pausa con P, Escape o el botón. Puedes elegir Ritmo suave antes de empezar o durante una pausa.'],
+    controls: ['Toca el botón o cualquier zona de los resultados para empezar y subir. También puedes usar espacio o enter.', 'Mantén el ritmo para subir. Si aflojas, tu web pierde posiciones. Tienes 60 segundos de juego activo.', 'Pausa con P, Escape o el botón. Puedes elegir Ritmo suave antes de empezar o durante una pausa.'],
     detail: 'Un arcade de reflejos dentro de un buscador ficticio. La presión aumenta durante la subida y cada partida invita a mejorar tu tiempo. El modo suave permite jugar a un ritmo más tranquilo.',
     privacy: 'Es una simulación independiente, no afiliada a Google. El SEO real no funciona a clics. El récord se guarda solo en este dispositivo si permite almacenamiento; no hay clasificación online ni peticiones a buscadores.',
   },
