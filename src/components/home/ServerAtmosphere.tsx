@@ -21,7 +21,7 @@ export default function ServerAtmosphere({ paused }: { paused: boolean }) {
       const shouldPlay = inView && !document.hidden && !pauseRequested.current && !reduce.matches && !connection?.saveData && !failed;
       if (!shouldPlay) { element.pause(); return; }
       if (!element.getAttribute('src')) {
-        const source = serverVideoSource(window.innerWidth, window.devicePixelRatio, connection?.saveData, reduce.matches);
+        const source = serverVideoSource(window.innerWidth, connection?.saveData, reduce.matches);
         if (!source) return;
         element.src = source;
       }
@@ -57,7 +57,7 @@ export default function ServerAtmosphere({ paused }: { paused: boolean }) {
   return <div className={styles.atmosphere} aria-hidden="true" data-server-atmosphere>
     <div className={styles.film}>
       <video ref={video} data-hero-server-video className={styles.video} poster={SERVER_POSTER}
-        width={3840} height={2160} muted loop playsInline preload="metadata" disablePictureInPicture tabIndex={-1} />
+        width={1920} height={1080} muted loop playsInline preload="metadata" disablePictureInPicture tabIndex={-1} />
     </div>
     <div className={styles.shade} />
   </div>;

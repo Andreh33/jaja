@@ -1,5 +1,7 @@
 # Server atmosphere and living CRT
 
+> Historical implementation record for e3f050d. The source film, opacity and resolution selection were subsequently replaced; see [Mirrored server background](2026-09-26-mirrored-server-background.md) for the current media treatment. The CRT and interaction implementation below is unchanged.
+
 ## Direction and constraints
 
 The server film is decorative atmosphere, not a claim that Latech owns a data centre. Preserve the existing first-visit desktop camera opening, mobile curtains, animated PulseGrid, pointer-following light, scrolling grid, orange-to-blue headline, television angle and hero text coordinates. A single agent implemented the work. No new runtime dependency.
