@@ -38,7 +38,7 @@ export default function Hero() {
     <section ref={ref} className={styles.hero} aria-labelledby="hero-title" onPointerMove={onPointerMove} onPointerLeave={() => { pointerX.set(0); pointerY.set(0); }}>
       <motion.div className={styles.grid} aria-hidden="true" style={{ transform: backgroundTransform }}><PulseGrid paused={pulsePaused || studio.expanded} /></motion.div>
       <motion.div className={styles.light} aria-hidden="true" style={{ transform: lightTransform }} />
-      <div className={`site-container ${styles.meta}`}><span>ESTUDIO DIGITAL INDEPENDIENTE</span><button type="button" className={styles.pulseControl} aria-label={pulsePaused ? 'Activar pulso de la cuadrícula' : 'Pausar pulso de la cuadrícula'} aria-pressed={!pulsePaused} onClick={() => setPulsePaused(value => !value)}>{pulsePaused ? <Play size={11} /> : <Pause size={11} />}<span>PULSO {pulsePaused ? 'OFF' : 'ON'}</span></button></div>
+      <div className={`site-container ${styles.meta}`}><span className={styles.desktopHidden}>ESTUDIO DIGITAL INDEPENDIENTE</span><button type="button" className={styles.pulseControl} aria-label={pulsePaused ? 'Activar pulso de la cuadrícula' : 'Pausar pulso de la cuadrícula'} aria-pressed={!pulsePaused} onClick={() => setPulsePaused(value => !value)}>{pulsePaused ? <Play size={11} /> : <Pause size={11} />}<span>PULSO {pulsePaused ? 'OFF' : 'ON'}</span></button></div>
       <div className={`site-container ${styles.composition}`}>
         <div className={styles.copy}>
           <p className={styles.motto}><span className="status-dot" aria-hidden="true" /><span>Tu imaginación es nuestro límite.</span></p>
@@ -50,7 +50,7 @@ export default function Hero() {
           </div>
         </div>
         <div className={styles.visual}>
-          <div className={styles.visualCaption}><span>LA MISMA MARCA. OTRO MUNDO.</span><span>ENTRA EN LATECH STUDIO ↘</span></div>
+          <div className={styles.visualCaption}><span className={styles.desktopHidden}>LA MISMA MARCA. OTRO MUNDO.</span><span>ENTRA EN LATECH STUDIO ↘</span></div>
           <div className={styles.orbitLines} aria-hidden="true"><i /><i /><i /></div>
           <motion.div className={`${styles.artwork} ${blueprint ? styles.blueprint : ''}`} style={{ transform: objectTransform }}>
             <div className={styles.backPlate} aria-hidden="true" /><div className={styles.middlePlate} aria-hidden="true" />

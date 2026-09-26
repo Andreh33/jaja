@@ -44,3 +44,24 @@
 @media(max-width:767px){.windowHandle{display:none!important}.previewDialog{width:calc(100vw - 20px)}.previewDialogHeader{padding-inline:12px}.visualCaption{font-size:6px}.pulseControl{font-size:7px}}
 @media(max-width:359px){.lead{font-size:.72em}}
 @media(prefers-reduced-motion:reduce){.pulseControl{display:none}.warm{color:#ff9853!important}}
+
+/* Desktop gets a wider stage; the mobile composition stays independent. */
+@media(min-width:768px){
+  .desktopHidden{display:none}
+  .meta{justify-content:flex-end}
+  .visualCaption{justify-content:flex-start}
+}
+@media(min-width:1101px){
+  .hero .meta,.hero .composition,.hero .baseline{width:min(1680px,calc(100% - 80px))}
+  .composition{grid-template-columns:minmax(0,1fr) minmax(0,1fr);padding-block:40px 50px}
+  .copy{container-type:inline-size}
+  .heading{font-size:clamp(84px,22cqw,180px)}
+  .visual{width:100%;padding:35px 32px 40px 0}
+  .artwork{width:96%}
+  .codeTag{right:20px}
+}
+@media(min-width:1101px) and (max-height:800px){
+  .composition{padding-block:24px 30px}
+  .heading{font-size:clamp(84px,min(22cqw,16svh),128px)}
+  .visual{padding-block:22px 25px}
+}

@@ -21,6 +21,17 @@ describe('Home brand and Studio sizing', () => {
     assert.match(preview, /data-expanded=true[^}]*--studio-screen-height:min\(740px,calc\(100dvh - 190px\)\)/);
   });
 
+  it('hides the two secondary labels only on desktop without removing the pulse control', () => {
+    const hero = source('home/Hero.tsx');
+    const css = source('home/Hero.module.css');
+    assert.match(hero, /className=\{styles\.desktopHidden\}>ESTUDIO DIGITAL INDEPENDIENTE/);
+    assert.match(hero, /className=\{styles\.desktopHidden\}>LA MISMA MARCA\. OTRO MUNDO\./);
+    assert.match(css, /@media\(min-width:768px\)\{\s*\.desktopHidden\{display:none\}/);
+    assert.match(hero, /className=\{styles\.pulseControl\}/);
+    assert.match(css, /\.copy\{container-type:inline-size\}/);
+    assert.match(css, /font-size:clamp\(84px,22cqw,180px\)/);
+  });
+
   it('reduces only mobile menu background alpha, leaving the whole panel opaque', () => {
     const nav = source('layout/Navbar.module.css');
     const mobile = nav.slice(nav.indexOf('@media (max-width: 767px)'));
