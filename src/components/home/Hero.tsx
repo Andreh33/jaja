@@ -12,6 +12,8 @@ import PulseGrid from './PulseGrid';
 import { useStudioExperience } from './useStudioExperience';
 import StudioWindowHandle from './StudioWindowHandle';
 import CrtTelevision from './CrtTelevision';
+import ServerAtmosphere from './ServerAtmosphere';
+import { crtChannel } from './crt-channel';
 
 export default function Hero() {
   const ref = useRef<HTMLElement>(null);
@@ -39,6 +41,7 @@ export default function Hero() {
   }
   return (
     <section ref={ref} className={styles.hero} aria-labelledby="hero-title" onPointerMove={onPointerMove} onPointerLeave={() => { pointerX.set(0); pointerY.set(0); }}>
+      <ServerAtmosphere paused={pulsePaused || studio.expanded} />
       <motion.div className={styles.grid} aria-hidden="true" style={{ transform: backgroundTransform }}><PulseGrid paused={pulsePaused || studio.expanded} /></motion.div>
       <motion.div className={styles.light} aria-hidden="true" style={{ transform: lightTransform }} />
       <div className={`site-container ${styles.meta}`}><span className={styles.desktopHidden}>ESTUDIO DIGITAL INDEPENDIENTE</span><button type="button" className={styles.pulseControl} aria-label={pulsePaused ? 'Activar pulso de la cuadrícula' : 'Pausar pulso de la cuadrícula'} aria-pressed={!pulsePaused} onClick={() => setPulsePaused(value => !value)}>{pulsePaused ? <Play size={11} /> : <Pause size={11} />}<span>PULSO {pulsePaused ? 'OFF' : 'ON'}</span></button></div>
@@ -57,7 +60,7 @@ export default function Hero() {
           <div className={styles.orbitLines} aria-hidden="true"><i /><i /><i /></div>
           <motion.div className={`${styles.artwork} ${blueprint ? styles.blueprint : ''}`} style={{ transform: objectTransform }}>
             <div className={styles.backPlate} aria-hidden="true" /><div className={styles.middlePlate} aria-hidden="true" />
-            <CrtTelevision paused={pulsePaused || studio.expanded} onNavigate={(page, keyboard) => previewRef.current?.navigate(page, keyboard)} onExpand={trigger => { televisionTrigger.current = trigger; studio.setExpanded(true); }}>
+            <CrtTelevision channel={crtChannel(studio.page, studio.browsing, studio.project, studio.settings.accent)} paused={pulsePaused || studio.expanded} onNavigate={(page, keyboard) => previewRef.current?.navigate(page, keyboard)} onExpand={trigger => { televisionTrigger.current = trigger; studio.setExpanded(true); }}>
               <div className={styles.browser} onFocus={() => { pointerX.set(0); pointerY.set(0); }}><HeroPreview navigationRef={previewRef} blueprint={blueprint} studio={studio} active={!studio.expanded} /></div>
             </CrtTelevision>
             <div className={styles.codeTag} aria-hidden="true"><b>No es una imagen.</b><br />Toca. Explora. Haz clic.</div>

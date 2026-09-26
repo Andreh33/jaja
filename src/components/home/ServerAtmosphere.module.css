@@ -1,0 +1,8 @@
+.atmosphere{position:absolute;inset:0;z-index:-3;pointer-events:none;overflow:hidden;opacity:1;transition:opacity 1250ms var(--ease-out)}
+.film{position:absolute;inset:0;background:url('/video/server-atmosphere-poster.webp') center/cover no-repeat;opacity:.27}
+.video{display:block;width:100%;height:100%;object-fit:cover;object-position:center;opacity:0;transition:opacity 500ms var(--ease-out)}
+.video[data-ready=true]{opacity:1}
+.shade{position:absolute;inset:0;background:linear-gradient(90deg,#03091488,transparent 66%),linear-gradient(0deg,#030914,transparent 24% 88%,#03091444)}
+:global(html[data-brand-opening=loading]) .atmosphere{opacity:0;transition:none}
+@media(max-width:767px){.film{background-position:35% center}.video{object-position:35% center}.shade{background:linear-gradient(0deg,#030914,transparent 25% 80%,#03091455),linear-gradient(90deg,#03091444,transparent)}}
+@media(prefers-reduced-motion:reduce){.atmosphere,.video{transition:none}.video{display:none}}

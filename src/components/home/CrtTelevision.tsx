@@ -1,25 +1,48 @@
 'use client';
 
-import { useEffect, useId, useRef, useState, type ReactNode } from 'react';
+import { useEffect, useId, useRef, useState, type ReactNode, type PointerEvent } from 'react';
+import { motion, useMotionValue, useSpring, useTransform, useReducedMotion } from 'framer-motion';
 import { FolderOpen, Home, Maximize2, Power } from 'lucide-react';
 import styles from './CrtTelevision.module.css';
+import { crtChannel, crtTones, type CrtChannel } from './crt-channel';
 
 type CrtTelevisionProps = {
   children?: ReactNode;
   paused: boolean;
+  channel?: CrtChannel;
   onNavigate: (page: 'home' | 'projects', keyboard: boolean) => void;
   onExpand: (trigger: HTMLButtonElement) => void;
 };
 
 /** A physical surround for the existing live DOM, never a screenshot of it. */
-export default function CrtTelevision({ children, paused, onNavigate, onExpand }: CrtTelevisionProps) {
+export default function CrtTelevision({ children, paused, channel = crtChannel('home'), onNavigate, onExpand }: CrtTelevisionProps) {
   const [tubeEffect, setTubeEffect] = useState(true);
   const [keyboard, setKeyboard] = useState(false);
   const [visible, setVisible] = useState(true);
   const [tuning, setTuning] = useState(false);
+  const [showChannel, setShowChannel] = useState(false);
   const root = useRef<HTMLDivElement>(null);
   const tuningTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const wearId = useId();
+  const reduce = useReducedMotion();
+  const pointerX = useMotionValue(0);
+  const pointerY = useMotionValue(0);
+  const reflectionX = useSpring(pointerX, { stiffness: 90, damping: 22 });
+  const reflectionY = useSpring(pointerY, { stiffness: 90, damping: 22 });
+  const reflectionTransform = useTransform(() => `translate3d(${reflectionX.get()}px, ${reflectionY.get()}px, 0) rotate(-12deg)`);
+
+  useEffect(() => {
+    const frame = requestAnimationFrame(() => setShowChannel(!keyboard && !reduce && !paused));
+    const timer = setTimeout(() => setShowChannel(false), 1400);
+    return () => { cancelAnimationFrame(frame); clearTimeout(timer); };
+  }, [channel.key, keyboard, reduce, paused]);
+
+  function reflect(event: PointerEvent<HTMLDivElement>) {
+    if (reduce || paused || !visible || event.pointerType !== 'mouse' || !window.matchMedia('(min-width:768px) and (hover:hover) and (pointer:fine)').matches) return;
+    const bounds = event.currentTarget.getBoundingClientRect();
+    pointerX.set(((event.clientX - bounds.left) / bounds.width - .5) * 32);
+    pointerY.set(((event.clientY - bounds.top) / bounds.height - .5) * 20);
+  }
 
   useEffect(() => {
     let inView = true;
@@ -38,8 +61,10 @@ export default function CrtTelevision({ children, paused, onNavigate, onExpand }
   }
 
   return (
-    <div ref={root} className={styles.television} data-crt-television data-tube={tubeEffect} data-paused={paused || !visible} data-keyboard={keyboard} data-tuning={tuning} onClickCapture={event => { if (event.detail > 0 && (event.target as Element).closest('[data-studio-navigation] button')) tune(); }}>
-      <div className={styles.halo} aria-hidden="true" />
+    <div ref={root} className={styles.television} data-crt-television data-channel={channel.key} data-tone={channel.tone} data-tube={tubeEffect} data-paused={paused || !visible} data-keyboard={keyboard} data-tuning={tuning}
+      onPointerMove={reflect} onPointerLeave={() => { pointerX.set(0); pointerY.set(0); }} onKeyDownCapture={() => setKeyboard(true)} onPointerDownCapture={() => setKeyboard(false)}
+      onClickCapture={event => { if (event.detail > 0 && (event.target as Element).closest('[data-studio-navigation] button')) tune(); }}>
+      <div className={styles.halo} aria-hidden="true">{crtTones.map(tone => <i key={tone} data-crt-halo={tone} data-active={channel.tone === tone} />)}</div>
       <div className={styles.shadow} aria-hidden="true" />
       <div className={styles.rear} aria-hidden="true" />
       <div className={styles.top} aria-hidden="true" />
@@ -49,7 +74,7 @@ export default function CrtTelevision({ children, paused, onNavigate, onExpand }
         <div className={styles.paint} />
         <svg className={styles.wear} viewBox="0 0 700 600" preserveAspectRatio="none" fill="none">
           <defs><filter id={wearId} x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency=".16 .7" numOctaves="3" seed="9" result="roughness" /><feDisplacementMap in="SourceGraphic" in2="roughness" scale="2.5" xChannelSelector="R" yChannelSelector="G" /></filter></defs>
-          <g filter={`url(#${wearId})`}>
+          <g filter={`url(#${wearId})`} opacity=".55">
           <path d="M17 52c-1-17 1-29 11-34m7-3 14-1M647 14l20 2 10 6M687 110l1 14M20 540l3 20 8 10 12 4M83 584l28 1m28 0 13-1M652 583l17-4 9-6" stroke="#a3acb4" strokeWidth="3.5" opacity=".42" strokeLinecap="round" />
           <path d="m22 43 2-12 4-7m-7 29 1 7M660 20l9 1 8 7M26 551l4 13 10 8M91 581h20m-6 3h26M653 580l9-2" stroke="#d8d9d4" strokeWidth="1.2" opacity=".38" />
           <path d="M19 55c-2-20 1-34 21-37m-19 13 1-5m34-10 36-1M656 16l15 2 7 5M685 86l1 30M22 546l4 18 10 8M649 579l16-2 8-4M106 582l34 1m-11-4 13 1" stroke="#b8d6ff" strokeWidth="1.2" opacity=".36" />
@@ -58,6 +83,10 @@ export default function CrtTelevision({ children, paused, onNavigate, onExpand }
           <path d="m42 553 31-7m-29 12 43-10m-34 13 19-5m-35-5 8-2M595 35l39-5m-27 9 31-5m-16 7 8-1M308 579l41-1m-32-3 16-1M685 262l-1 36m4-17-1 9" stroke="#bbc4c9" strokeWidth=".9" opacity=".44" />
           <path d="m46 555 27-6m-11 9 13-3M607 36l28-4M314 578h24M686 265l-1 12" stroke="#020d1c" strokeWidth=".75" opacity=".72" />
           </g>
+        </svg>
+        <svg className={styles.controlWear} viewBox="0 0 700 80" preserveAspectRatio="none" fill="none">
+          <path d="m524 27 7-2m-5 6 8-2m-7 7 5-1M609 19c-7 2-11 8-12 15m3-7-1 8m29 21 9-3m-7 7 8-4M65 51l17-1m-10 4 7-1M151 40l8 1m-3 4 5-1" stroke="#b6c5cc" strokeWidth=".7" opacity=".36" strokeLinecap="round" />
+          <path d="m528 29 6-2m70-4-3 9m28 24 7-2M69 54l14-1" stroke="#030c13" strokeWidth=".8" opacity=".6" />
         </svg>
         <span className={styles.caseSeam} />
       </div>
@@ -70,8 +99,10 @@ export default function CrtTelevision({ children, paused, onNavigate, onExpand }
         <span className={styles.sweep} />
         <span className={styles.signal} />
         <span className={styles.reflection} />
+        <motion.span className={styles.movingReflection} style={{ transform: reflectionTransform }} />
+        <span className={styles.channelReadout} data-visible={showChannel} data-crt-readout><b>{channel.number}</b><small>{channel.label}</small><i>STEREO · AV</i></span>
       </div>
-      <div className={styles.controls} data-crt-controls onKeyDownCapture={() => setKeyboard(true)} onPointerDownCapture={() => setKeyboard(false)}>
+      <div className={styles.controls} data-crt-controls>
         <span className={styles.jack} aria-hidden="true" />
         <div className={styles.speaker} aria-hidden="true" />
         <div className={styles.badge} aria-hidden="true"><b>LATECH</b><span>COLOUR / STUDIO</span></div>

@@ -5,6 +5,7 @@ import Image from 'next/image';
 import * as Dialog from '@radix-ui/react-dialog';
 import styles from './IntroCinematic.module.css';
 import { crtCameraFrames } from './crt-projection';
+import { SERVER_POSTER } from '../home/server-atmosphere';
 
 const SEEN_KEY = 'latech-brand-opening-v4';
 const OPENING_DURATION_MS = 2500;
@@ -37,18 +38,30 @@ export default function IntroCinematic() {
   // Real resource completion gates the exit. Network failure can never trap the visitor.
   useEffect(() => {
     if (!show) return;
+    document.documentElement.dataset.brandOpening = 'loading';
     let active = true;
     let release: () => void;
     const started = performance.now();
     const animations: Animation[] = [];
     const timers: ReturnType<typeof setTimeout>[] = [];
-    const urls = new Set(['/brand/latech-logo.webp']);
+    const mediaCleanup: (() => void)[] = [];
+    const urls = new Set(['/brand/latech-logo.webp', SERVER_POSTER]);
     if (desktop) urls.add('/textures/crt-aged-plastic.webp');
     document.querySelectorAll<HTMLImageElement>('main img').forEach(image => {
       const url = image.currentSrc || image.src;
       if (url && new URL(url, location.href).origin === location.origin) urls.add(url);
     });
-    const total = urls.size + 1;
+    const video = document.querySelector<HTMLVideoElement>('[data-hero-server-video]');
+    const warmVideo = video?.getAttribute('src') ? new Promise<void>(resolve => {
+      // Only the first decodable frame, never the complete decorative film.
+      if (video.readyState >= 2 || video.error) { resolve(); return; }
+      const finish = () => { video.removeEventListener('loadeddata', finish); video.removeEventListener('error', finish); resolve(); };
+      video.addEventListener('loadeddata', finish, { once: true });
+      video.addEventListener('error', finish, { once: true });
+      mediaCleanup.push(finish);
+      timers.push(setTimeout(finish, 1200));
+    }) : null;
+    const total = urls.size + 1 + (warmVideo ? 1 : 0);
     let done = 0;
     const settled = () => { done++; if (active) setResources({ done, total }); };
     const warmImages = [...urls].map(url => new Promise<void>(resolve => {
@@ -58,12 +71,15 @@ export default function IntroCinematic() {
       image.src = url;
     }).finally(settled));
     const fonts = document.fonts.ready.then(() => {}).finally(settled);
+    const initialResources = [...warmImages, fonts];
+    if (warmVideo) initialResources.push(warmVideo.finally(settled));
     const deadline = new Promise<void>(resolve => { release = resolve; timers.push(setTimeout(resolve, PRELOAD_DEADLINE_MS)); });
     const minimum = new Promise<void>(resolve => { timers.push(setTimeout(resolve, desktop ? 2200 : 0)); });
 
     async function enter() {
-      await Promise.all([Promise.race([Promise.allSettled([...warmImages, fonts]), deadline]), minimum]);
+      await Promise.all([Promise.race([Promise.allSettled(initialResources), deadline]), minimum]);
       if (!active) return;
+      document.documentElement.dataset.brandOpening = 'revealing';
       setReady(true);
       if (!desktop) return;
       const corners = [...document.querySelectorAll<HTMLElement>('[data-crt-corner]')].map(element => {
@@ -81,7 +97,7 @@ export default function IntroCinematic() {
     timers.push(setTimeout(dismiss, PRELOAD_DEADLINE_MS + OPENING_DURATION_MS + 300));
     const onResize = () => { if (performance.now() - started > 80) dismiss(); };
     window.addEventListener('resize', onResize);
-    return () => { active = false; release?.(); timers.forEach(clearTimeout); animations.forEach(animation => animation.cancel()); window.removeEventListener('resize', onResize); };
+    return () => { active = false; delete document.documentElement.dataset.brandOpening; release?.(); mediaCleanup.forEach(cleanup => cleanup()); timers.forEach(clearTimeout); animations.forEach(animation => animation.cancel()); window.removeEventListener('resize', onResize); };
   }, [show, desktop, dismiss]);
 
   return <Dialog.Root open={show} onOpenChange={(open) => { if (!open) dismiss(); }}>

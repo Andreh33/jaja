@@ -5,7 +5,14 @@
 @media(min-width:768px){
   .television{display:block;position:relative;transform-style:preserve-3d;--case-edge:32px;--case-bottom:76px;--case-depth:240px;--tube-radius:5% / 6%}
   .halo,.shadow,.rear,.top,.side,.foot,.body,.bezel,.glass{display:block;position:absolute;pointer-events:none}
-  .halo{inset:-19% -23% -26%;transform:translateZ(-145px);background:radial-gradient(ellipse at 52% 51%,#1d68ff20 0%,#1966e912 39%,transparent 68%);filter:blur(18px)}
+  .halo{inset:-19% -23% -26%;transform:translateZ(-145px);filter:blur(18px);transition:opacity 1250ms var(--ease-out)}
+  .halo i{position:absolute;inset:0;opacity:0;transition:opacity 250ms var(--ease-out);background:radial-gradient(ellipse at 52% 51%,var(--halo-core) 0%,var(--halo-edge) 39%,transparent 68%)}
+  .halo i[data-active=true]{opacity:1}
+  .halo i[data-crt-halo=blue]{--halo-core:#3189ff38;--halo-edge:#1966e91d}
+  .halo i[data-crt-halo=cyan]{--halo-core:#47d6ff42;--halo-edge:#1687b826}
+  .halo i[data-crt-halo=amber]{--halo-core:#ffb3653d;--halo-edge:#c778311e}
+  .halo i[data-crt-halo=green]{--halo-core:#85efa23b;--halo-edge:#289e671e}
+  :global(html[data-brand-opening=loading]) .halo{opacity:0;transition:none}
   .shadow{inset:auto -10% -120px -2%;height:80px;border-radius:50%;background:#0009;filter:blur(22px);transform:translateZ(-85px) rotateX(52deg)}
   .rear{inset:-20px -20px -70px;transform:translate3d(calc(var(--case-depth) * .4226),0,calc(var(--case-depth) * -.9063)) scale(.94);border-radius:38px;background:linear-gradient(125deg,#284362,#091725 72%);border:1px solid #6f839b47;box-shadow:10px 18px 35px #0008,inset -5px -4px 12px #010922}
   .top{left:calc(-1 * var(--case-edge) + 12px);right:calc(-1 * var(--case-edge) + 10px);top:calc(-1 * var(--case-edge) + 1px);height:var(--case-depth);transform-origin:center top;transform:matrix3d(1,0,0,0,.4226,0,-.9063,0,0,1,0,0,0,0,0,1);border-radius:14px 14px 25px 25px;background:linear-gradient(180deg,#6e8cac,#2d4e75 23%,#102640 100%);border:1px solid #88a2bc77}
@@ -21,20 +28,25 @@
   .body::before{content:'';position:absolute;inset:2px;border-radius:inherit;background:radial-gradient(ellipse 31% 4% at 25% 0%,#e7eff5bb,transparent 70%),radial-gradient(ellipse 2% 41% at 0% 37%,#b6c6d68c,transparent 85%),radial-gradient(ellipse 28% 10% at 76% 98%,#06162970,transparent),linear-gradient(140deg,#dae2e924,transparent 15% 83%,#8698aa1a);box-shadow:inset 0 0 0 1px #172a4477}
   .paint{position:absolute;inset:2px;border-radius:inherit;opacity:.78;background:url('/textures/crt-aged-plastic.webp') center/100% 100%;mix-blend-mode:soft-light}
   .wear{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+  .controlWear{position:absolute;left:0;right:0;bottom:0;width:100%;height:76px}
   .caseSeam{position:absolute;left:4px;right:4px;bottom:69px;height:1px;background:#02154d77;box-shadow:0 1px #4e8fea45}
   .bezel{inset:-10px;transform:translateZ(0);border-radius:6% / 7%;background:#010816;box-shadow:0 -2px 3px #081334,0 2px 2px #548aea77,inset 0 0 0 3px #02091b,inset 0 3px 8px #000,0 0 0 1px #092565}
   .glass{inset:0;z-index:3;transform:translateZ(2px);border-radius:var(--tube-radius);overflow:hidden;box-shadow:inset 0 0 5px 2px #01070a,inset 0 0 20px #01142670,inset 0 0 52px #03112321;border:1px solid #a6c9da66}
   .glass>span{position:absolute;inset:0;pointer-events:none}
   .corner{position:absolute;width:0;height:0;pointer-events:none}
   .corner[data-crt-corner='0']{left:0;top:0}.corner[data-crt-corner='1']{right:0;top:0}.corner[data-crt-corner='2']{right:0;bottom:0}.corner[data-crt-corner='3']{left:0;bottom:0}
-  .scanlines{inset:-3px 0!important;background:repeating-linear-gradient(0deg,#0928392b 0 1px,transparent 1px 3px);opacity:.28;animation:scanDrift 1s linear infinite;transition:opacity 180ms ease}
-  .phosphor{background:repeating-linear-gradient(90deg,#e3546412 0 1px,#58bfbd0b 1px 2px,#607bd416 2px 3px);opacity:.4;mix-blend-mode:multiply;transition:opacity 180ms ease}
+  .scanlines{inset:-3px 0!important;background:repeating-linear-gradient(0deg,#0928392b 0 1px,transparent 1px 3px);opacity:.25;mask-image:radial-gradient(ellipse,#0004 15%,#0008 55%,#000 87%);animation:scanDrift 1s linear infinite;transition:opacity 180ms ease}
+  .phosphor{background:repeating-linear-gradient(90deg,#e3546412 0 1px,#58bfbd0b 1px 2px,#607bd416 2px 3px);opacity:.3;mask-image:radial-gradient(ellipse,#0003 15%,#0009 65%,#000);mix-blend-mode:multiply;transition:opacity 180ms ease}
   .sweep{background:linear-gradient(transparent 30%,#0614240b 41%,#c3e9f92e 48%,#f4fcff4d 50%,#b9dcee0a 54%,transparent 66%);transform:translateY(-100%);animation:tubeSweep 9s linear infinite;opacity:.65;transition:opacity 180ms ease}
   .signal{background:repeating-linear-gradient(0deg,#19334320 0 2px,transparent 2px 5px),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='90'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%2383919d' filter='url(%23n)' d='M0 0h90v90H0z'/%3E%3C/svg%3E");opacity:0;transition:opacity 180ms var(--ease-out);mix-blend-mode:multiply}
   .television[data-tuning=true] .signal{opacity:.24}
   .reflection{background:radial-gradient(ellipse 65% 13% at 28% 0%,#fff5,transparent 75%),linear-gradient(127deg,#d9f1ff16 0%,transparent 22% 70%,#769db318 100%);box-shadow:inset 3px 3px 11px #eafaff1c,inset -2px -2px 12px #fff1}
   .reflection::before{content:'';position:absolute;top:9px;left:8%;width:43%;height:5px;border-radius:50%;background:linear-gradient(90deg,transparent,#fff8,transparent);filter:blur(2px);transform:rotate(-2deg)}
   .reflection::after{content:'';position:absolute;top:2%;left:2%;width:85%;height:18%;border-radius:50%;border-top:1px solid #f7fdff33;transform:rotate(-6deg);filter:blur(.6px);mask-image:linear-gradient(90deg,transparent,#000 15% 38%,transparent 80%)}
+  .movingReflection{inset:-10%!important;background:linear-gradient(110deg,transparent 14%,#d6edff0a 24%,#edfbff1d 26%,#f5fdff08 29%,transparent 39% 65%,#9bddff08 74%,transparent 84%);opacity:.65;filter:blur(3px);will-change:transform}
+  .glass .channelReadout{inset:26px 28px auto auto;display:grid;gap:5px;min-width:114px;padding:12px 15px;border:1px solid #adffe044;border-radius:3px;background:#061b25e8;color:#bdfbd7;text-shadow:0 0 6px #7effb33d;box-shadow:0 4px 16px #00121d26;font-family:var(--font-mono);opacity:0;transform:translateY(-3px);transition:opacity 160ms var(--ease-out),transform 160ms var(--ease-out)}
+  .channelReadout b{font-size:20px;line-height:1.1;letter-spacing:.03em}.channelReadout small{font-size:8px;text-transform:uppercase;letter-spacing:.12em}.channelReadout i{font-size:6px;font-style:normal;opacity:.6;letter-spacing:.08em}
+  .channelReadout[data-visible=true]{opacity:1;transform:translateY(0)}
   .controls{display:flex;align-items:center;gap:16px;position:absolute;top:calc(100% + 17px);left:0;right:0;height:44px;transform:translateZ(3px);color:#b2ccf0}
   .jack{width:14px;height:14px;flex:none;border:3px solid #122438;border-radius:50%;background:#02080f;box-shadow:0 1px 1px #7187a8,inset 0 1px 3px #000,0 0 0 1px #73859c55}
   .speaker{width:13%;height:23px;flex:none;border-radius:50%;background:repeating-linear-gradient(0deg,#0a1c31 0 1px,#627e9c 1px 2px,transparent 2px 4px);opacity:.8;mask-image:radial-gradient(ellipse,#000 45%,transparent 72%)}
@@ -57,6 +69,8 @@
   .television[data-paused=true] .sweep,.television[data-paused=true] .scanlines,.television[data-tube=false] .sweep,.television[data-tube=false] .scanlines{animation-play-state:paused}
   .television[data-keyboard=true] .power,.television[data-keyboard=true] .scanlines,.television[data-keyboard=true] .sweep{transition:none}
   .television[data-keyboard=true] button:active,.television[data-keyboard=true] button:active::before{transform:none}
+  .television[data-keyboard=true] .halo i{transition:none}
+  .television[data-keyboard=true] .channelReadout,.television[data-paused=true] .channelReadout,.television[data-tube=false] .channelReadout{opacity:0;transition:none}
 }
 
 @media(min-width:768px) and (max-width:1100px){
@@ -74,6 +88,9 @@
   .scanlines{animation:none}
   .signal{display:none}
   .power,.scanlines,.sweep{transition:none}
+  .halo,.halo i{transition:none}
+  .movingReflection{display:none}
+  .channelReadout{display:none!important}
 }
 @keyframes tubeSweep{to{transform:translateY(100%)}}
 @keyframes scanDrift{to{transform:translateY(3px)}}

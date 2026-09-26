@@ -39,9 +39,21 @@ describe('First-visit brand opening', () => {
   it('uses resource completion, not a fictional progress timer', () => {
     assert.match(source, /document\.fonts\.ready/);
     assert.match(source, /image\.decode\(\)/);
-    assert.match(source, /Promise\.allSettled\(\[\.\.\.warmImages, fonts\]\)/);
+    assert.match(source, /const initialResources = \[\.\.\.warmImages, fonts\]/);
+    assert.match(source, /Promise\.allSettled\(initialResources\)/);
     assert.match(source, /new URL\(url, location\.href\)\.origin === location\.origin/);
     assert.doesNotMatch(source, /setInterval/);
+  });
+
+  it('reveals the new atmosphere without waiting for the whole film', () => {
+    assert.match(source, /SERVER_POSTER/);
+    assert.match(source, /video\.readyState >= 2/);
+    assert.match(source, /setTimeout\(finish, 1200\)/);
+    assert.match(source, /dataset\.brandOpening = 'loading'/);
+    assert.match(source, /dataset\.brandOpening = 'revealing'/);
+    assert.match(source, /delete document\.documentElement\.dataset\.brandOpening/);
+    assert.match(source, /mediaCleanup\.forEach/);
+    assert.doesNotMatch(source, /canplaythrough/);
   });
 
   it('projects the desktop logo into the real television and preserves mobile curtains', () => {
