@@ -39,4 +39,12 @@ describe('Home brand and Studio sizing', () => {
     assert.match(mobile, /\.panel \{[^}]*background: rgb\(5 14 27 \/ \.9\)/);
     assert.doesNotMatch(mobile, /\.panel \{[^}]*\bopacity:/);
   });
+
+  it('insets the laptop composition and sizes it against available height', () => {
+    const hero = source('home/Hero.module.css');
+    const preview = source('home/HeroPreview.module.css');
+    assert.match(hero, /width:min\(1680px,calc\(100% - clamp\(128px,13vw,240px\)\)\)/);
+    assert.match(hero, /@media\(min-width:1101px\) and \(max-width:1700px\) and \(max-height:950px\)/);
+    assert.match(preview, /--studio-screen-height:clamp\(390px,calc\(100svh - 380px\),500px\)/);
+  });
 });

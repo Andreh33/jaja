@@ -1,11 +1,12 @@
 'use client';
 
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useState, type CSSProperties } from 'react';
 import Image from 'next/image';
 import * as Dialog from '@radix-ui/react-dialog';
 import styles from './IntroCinematic.module.css';
 
-const SEEN_KEY = 'latech-brand-opening-v2';
+const SEEN_KEY = 'latech-brand-opening-v3';
+const OPENING_DURATION_MS = 2500;
 
 /** A first-visit brand opening, never a fake loading screen. Content is SSR-visible. */
 export default function IntroCinematic() {
@@ -13,8 +14,7 @@ export default function IntroCinematic() {
   const dismiss = useCallback(() => setShow(false), []);
 
   useEffect(() => {
-    const preference = window.matchMedia('(prefers-reduced-motion: reduce)');
-    if (preference.matches || window.location.hash || window.scrollY > 20) return;
+    if (window.location.hash || window.scrollY > 20) return;
     try {
       if (sessionStorage.getItem(SEEN_KEY)) return;
     } catch { return; }
@@ -22,30 +22,38 @@ export default function IntroCinematic() {
       try { sessionStorage.setItem(SEEN_KEY, '1'); } catch { return; }
       setShow(true);
     });
-    const timeout = setTimeout(dismiss, 1800);
-    const changed = () => { if (preference.matches) dismiss(); };
-    preference.addEventListener('change', changed);
-    return () => {
-      cancelAnimationFrame(frame);
-      clearTimeout(timeout);
-      preference.removeEventListener('change', changed);
-    };
-  }, [dismiss]);
+    return () => cancelAnimationFrame(frame);
+  }, []);
+
+  // Start the safety deadline only after the dialog mounts, not during hydration.
+  useEffect(() => {
+    if (!show) return;
+    const timeout = setTimeout(dismiss, OPENING_DURATION_MS + 300);
+    return () => clearTimeout(timeout);
+  }, [show, dismiss]);
 
   return <Dialog.Root open={show} onOpenChange={(open) => { if (!open) dismiss(); }}>
     <Dialog.Portal>
-      <Dialog.Content className={styles.opening} onCloseAutoFocus={(event) => {
+      <Dialog.Content className={styles.opening} style={{ '--opening-duration': `${OPENING_DURATION_MS}ms` } as CSSProperties} onCloseAutoFocus={(event) => {
         event.preventDefault();
         document.getElementById('main-content')?.focus({ preventScroll: true });
       }}>
-        <Dialog.Title className="sr-only">Latech. Fuera del molde.</Dialog.Title>
+        <Dialog.Title className="sr-only">Latech. Tu imaginación es nuestro límite.</Dialog.Title>
         <Dialog.Description className="sr-only">Una breve presentación de nuestra marca. Puedes saltarla o pulsar Escape.</Dialog.Description>
         <div className={styles.stage} aria-hidden="true">
           {['left', 'right'].map((side) => <div key={side} className={`${styles.curtain} ${styles[side]}`}
             onAnimationEnd={side === 'right' ? (event) => { if (event.target === event.currentTarget) dismiss(); } : undefined}>
+            <div className={styles.halo} />
             <div className={styles.grid} />
+            <div className={styles.flare} />
             <span className={styles.wordmark}>LATECH</span>
-            <div className={styles.emblem}><Image src="/brand/latech-logo.webp" alt="" width={512} height={264} unoptimized loading="eager" /><span>FUERA DEL MOLDE.</span></div>
+            <div className={styles.emblem}>
+              <div className={styles.logo}>
+                <Image src="/brand/latech-logo.webp" alt="" width={512} height={264} unoptimized loading="eager" />
+                <div className={styles.logoShine} />
+              </div>
+              <span>Tu imaginación es nuestro límite.</span>
+            </div>
             <span className={styles.coordinate}>DISEÑADO PARA DEJAR HUELLA.</span>
             <span className={styles.signature}>ESTUDIO DIGITAL / ESPAÑA</span>
           </div>)}
