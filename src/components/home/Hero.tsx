@@ -41,7 +41,7 @@ export default function Hero() {
       <div className={`site-container ${styles.meta}`}><span>ESTUDIO DIGITAL INDEPENDIENTE</span><button type="button" className={styles.pulseControl} aria-label={pulsePaused ? 'Activar pulso de la cuadrícula' : 'Pausar pulso de la cuadrícula'} aria-pressed={!pulsePaused} onClick={() => setPulsePaused(value => !value)}>{pulsePaused ? <Play size={11} /> : <Pause size={11} />}<span>PULSO {pulsePaused ? 'OFF' : 'ON'}</span></button></div>
       <div className={`site-container ${styles.composition}`}>
         <div className={styles.copy}>
-          <p className="eyebrow"><span className="status-dot" /> Tu próxima ventaja empieza aquí.</p>
+          <p className={styles.motto}><span className="status-dot" aria-hidden="true" /><span>Tu imaginación es nuestro límite.</span></p>
           <h1 id="hero-title" className={styles.heading}><span className={styles.lead}>Diseño web.</span>{' '}Rompe{' '}<br /><motion.span style={{ color: warmColor }} className={styles.warm}>el molde<span className={styles.fullStop}>.</span></motion.span></h1>
           <p className={styles.description}>Tu negocio no nació para parecerse a los demás.<br className={styles.desktopBreak} /> Tu web tampoco. Diseño a medida, animaciones que<br className={styles.desktopBreak} /> sorprenden y una experiencia que deja huella.</p>
           <div className={styles.actions}>
