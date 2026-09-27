@@ -414,3 +414,30 @@ export const escapeResults = sqliteTable('escape_results', {
   check('escape_results_score', sql`${t.score} BETWEEN 0 AND 100000`),
   check('escape_results_duration', sql`${t.durationMs} BETWEEN 0 AND 1800000`),
 ]);
+
+/** Isolated TV pairing. Unix milliseconds; coarse CRM records retained 30 days. */
+export const tvRemoteSessions = sqliteTable('tv_remote_sessions', {
+  id: text('id').primaryKey(),
+  hostTokenHash: text('host_token_hash'), inviteTokenHash: text('invite_token_hash'), controllerTokenHash: text('controller_token_hash'), creatorIpHash: text('creator_ip_hash'),
+  createdAt: integer('created_at').notNull(), inviteExpiresAt: integer('invite_expires_at').notNull(), expiresAt: integer('expires_at').notNull(),
+  pairedAt: integer('paired_at'), revokedAt: integer('revoked_at'), hostSeenAt: integer('host_seen_at').notNull(), controllerSeenAt: integer('controller_seen_at'),
+  channel: text('channel').notNull().default('studio'), expanded: integer('expanded', { mode: 'boolean' }).notNull().default(false),
+  commandVersion: integer('command_version').notNull().default(0), appliedVersion: integer('applied_version').notNull().default(0),
+  displayedChannel: text('displayed_channel').notNull().default('studio'), displayedExpanded: integer('displayed_expanded', { mode: 'boolean' }).notNull().default(false),
+  lastAction: text('last_action').notNull().default('channel'), lastCommandAt: integer('last_command_at').notNull().default(0), commandCount: integer('command_count').notNull().default(0),
+  hostInfo: text('host_info', { mode: 'json' }).$type<TvDeviceInfo>().notNull(), controllerInfo: text('controller_info', { mode: 'json' }).$type<TvDeviceInfo>(),
+  controllerUserId: text('controller_user_id'), controllerName: text('controller_name'),
+}, (t) => [index('tv_remote_created').on(t.createdAt), index('tv_remote_creator').on(t.creatorIpHash, t.createdAt), index('tv_remote_expiry').on(t.expiresAt)]);
+export type TvDeviceInfo = { browser: string; os: string; device: string; country: string | null; city: string | null };
+
+/** Ephemeral two-controller arcade. SDP is deleted on expiry, never shown in CRM. */
+export type ArcadeSeat = { tokenHash: string | null; inviteHash: string | null; joinedAt: number | null; seenAt: number; info: TvDeviceInfo | null; userId: string | null; name: string | null; offer: string | null; answer: string | null; signalId: string | null };
+export const tvArcadeSessions = sqliteTable('tv_arcade_sessions', {
+  id: text('id').primaryKey(), hostTokenHash: text('host_token_hash'), creatorIpHash: text('creator_ip_hash'),
+  createdAt: integer('created_at').notNull(), expiresAt: integer('expires_at').notNull(), inviteExpiresAt: integer('invite_expires_at').notNull(),
+  hostSeenAt: integer('host_seen_at').notNull(), revokedAt: integer('revoked_at'),
+  mode: text('mode').notNull().default('lobby'), version: integer('version').notNull().default(0),
+  game: text('game', { mode: 'json' }).$type<import('../src/lib/arcade-engine').ArcadeGame>(),
+  seats: text('seats', { mode: 'json' }).$type<[ArcadeSeat, ArcadeSeat]>().notNull(),
+  hostInfo: text('host_info', { mode: 'json' }).$type<TvDeviceInfo>().notNull(),
+}, (t) => [index('tv_arcade_expiry').on(t.expiresAt), index('tv_arcade_creator').on(t.creatorIpHash, t.createdAt)]);

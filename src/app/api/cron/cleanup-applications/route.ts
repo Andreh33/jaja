@@ -16,8 +16,9 @@ import { timingSafeEqual } from 'crypto';
 import { eq, and, lt, ne } from 'drizzle-orm';
 import { del as blobDel } from '@vercel/blob';
 import { db } from '@/lib/db';
-import { jobApplications } from '../../../../../drizzle/schema';
+import { jobApplications, tvRemoteSessions } from '../../../../../drizzle/schema';
 import { runCleanup } from '@/lib/jobs-cleanup';
+import { cleanupArcade } from '@/lib/arcade-retention';
 
 export const runtime = 'nodejs';
 // Cron jobs no tienen TTL fijo de Function; mantenemos default para 5 min máx.
@@ -67,10 +68,18 @@ export async function GET(req: Request) {
     },
   });
 
+  let tvCleanupOk = true;
+  try {
+    const now = Date.now();
+    await db.delete(tvRemoteSessions).where(lt(tvRemoteSessions.createdAt, now - 30 * 86_400_000));
+    await db.update(tvRemoteSessions).set({ hostTokenHash: null, inviteTokenHash: null, controllerTokenHash: null }).where(lt(tvRemoteSessions.expiresAt, now));
+    await db.update(tvRemoteSessions).set({ creatorIpHash: null }).where(lt(tvRemoteSessions.createdAt, now - 86_400_000));
+  } catch { tvCleanupOk = false; console.error('[cron-cleanup] TV retention cleanup unavailable'); }
+  try { await cleanupArcade(db); } catch { tvCleanupOk = false; console.error('[cron-cleanup] Arcade retention cleanup unavailable'); }
   const processedAt = new Date().toISOString();
   console.log(
     `[cron-cleanup] result=ok processedAt=${processedAt} deletedApplications=${result.deletedApplications} deletedCvs=${result.deletedCvs} failedCvDeletes=${result.failedCvDeletes}`,
   );
 
-  return NextResponse.json({ ok: true, ...result, processedAt });
+  return NextResponse.json({ ok: true, ...result, tvCleanupOk, processedAt });
 }

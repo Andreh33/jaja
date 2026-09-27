@@ -51,7 +51,7 @@ const cols = [
 
 export default function Footer() {
   return (
-    <footer className="relative z-10 border-t" style={{ borderColor: 'var(--border-subtle)' }}>
+    <footer id="remote-contact" className="relative z-10 border-t" style={{ borderColor: 'var(--border-subtle)' }}>
       <div className="mx-auto max-w-7xl px-6 py-16">
         <div className="grid gap-12 md:grid-cols-12">
           <div className="md:col-span-4">

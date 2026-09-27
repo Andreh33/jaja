@@ -4,8 +4,9 @@ import { useRef, useState, type RefObject } from 'react';
 import Image from 'next/image';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
-import { featuredProjects } from './featured-projects';
+import { tvProjects } from '@/lib/tv-channels';
 import styles from './StudioShowcase.module.css';
+const featuredProjects = tvProjects.slice(0, 3);
 
 export default function StudioShowcase({ viewport, onOpen }: { viewport: RefObject<HTMLDivElement | null>; onOpen: (index: number) => void }) {
   const target = useRef<HTMLDivElement>(null);

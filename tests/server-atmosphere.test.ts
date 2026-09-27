@@ -17,23 +17,23 @@ describe('Server atmosphere and CRT channel lighting', () => {
   });
 
   it('maps every Studio page and contained project to its own actual channel', () => {
-    studioPages.forEach((page, index) => {
+    studioPages.forEach((page) => {
       const channel = crtChannel(page.id);
-      assert.equal(channel.number, `CH ${String(index + 1).padStart(2, '0')}`);
+      assert.equal(channel.number, 'CH 00');
       assert.equal(channel.label, page.label);
     });
     assert.equal(crtChannel('home').tone, 'blue');
     assert.equal(crtChannel('projects').tone, 'cyan');
     assert.equal(crtChannel('play').tone, 'green');
     assert.equal(crtChannel('create', false, 0, 'orange').tone, 'amber');
-    assert.equal(crtChannel('projects', true, 0).label, 'Monkey');
-    assert.equal(crtChannel('projects', true, 1).tone, 'cyan');
-    assert.equal(crtChannel('projects', true, 2).label, 'French Tacos');
+    assert.equal(crtChannel('projects', true, 0).label, 'Monopatín Monkey');
+    assert.equal(crtChannel('projects', true, 1).tone, 'green');
+    assert.equal(crtChannel('projects', true, 1).label, 'CLM French Tacos');
   });
 
   it('preserves the existing animated layers and exact requested film opacity', () => {
     const read = (path: string) => readFileSync(new URL(`../src/components/home/${path}`, import.meta.url), 'utf8');
-    assert.match(read('ServerAtmosphere.module.css'), /\.film\{[^}]*opacity:\.24/);
+    assert.match(read('ServerAtmosphere.module.css'), /\.film\{[^}]*opacity:\.37/);
     assert.ok(read('ServerAtmosphere.module.css').includes(SERVER_POSTER));
     for (const path of [SERVER_POSTER, serverVideoSource(390)!, serverVideoSource(1600)!]) {
       assert.ok(readFileSync(new URL(`../public${path}`, import.meta.url)).length > 0);

@@ -8,7 +8,7 @@ import { crtCameraFrames } from './crt-projection';
 import { SERVER_POSTER } from '../home/server-atmosphere';
 
 const SEEN_KEY = 'latech-brand-opening-v4';
-const OPENING_DURATION_MS = 2500;
+const OPENING_DURATION_MS = 4000;
 const PRELOAD_DEADLINE_MS = 4200;
 const CAMERA_DURATION_MS = 1250;
 
@@ -74,7 +74,7 @@ export default function IntroCinematic() {
     const initialResources = [...warmImages, fonts];
     if (warmVideo) initialResources.push(warmVideo.finally(settled));
     const deadline = new Promise<void>(resolve => { release = resolve; timers.push(setTimeout(resolve, PRELOAD_DEADLINE_MS)); });
-    const minimum = new Promise<void>(resolve => { timers.push(setTimeout(resolve, desktop ? 2200 : 0)); });
+    const minimum = new Promise<void>(resolve => { timers.push(setTimeout(resolve, desktop ? OPENING_DURATION_MS - CAMERA_DURATION_MS : 0)); });
 
     async function enter() {
       await Promise.all([Promise.race([Promise.allSettled(initialResources), deadline]), minimum]);

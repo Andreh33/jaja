@@ -14,6 +14,8 @@ import StudioWindowHandle from './StudioWindowHandle';
 import CrtTelevision from './CrtTelevision';
 import ServerAtmosphere from './ServerAtmosphere';
 import { crtChannel } from './crt-channel';
+import TvRemoteHost from './TvRemoteHost';
+import ArcadePortal from '@/components/arcade/ArcadePortal';
 
 export default function Hero() {
   const ref = useRef<HTMLElement>(null);
@@ -22,6 +24,7 @@ export default function Hero() {
   const reduce = useReducedMotion();
   const [blueprint, setBlueprint] = useState(false);
   const [pulsePaused, setPulsePaused] = useState(false);
+  const [arcadeOpen, setArcadeOpen] = useState(false);
   const studio = useStudioExperience();
   const pointerX = useMotionValue(0);
   const pointerY = useMotionValue(0);
@@ -41,8 +44,8 @@ export default function Hero() {
   }
   return (
     <section ref={ref} className={styles.hero} aria-labelledby="hero-title" onPointerMove={onPointerMove} onPointerLeave={() => { pointerX.set(0); pointerY.set(0); }}>
-      <ServerAtmosphere paused={pulsePaused || studio.expanded} />
-      <motion.div className={styles.grid} aria-hidden="true" style={{ transform: backgroundTransform }}><PulseGrid paused={pulsePaused || studio.expanded} /></motion.div>
+      <ServerAtmosphere paused={pulsePaused || studio.expanded || arcadeOpen} />
+      <motion.div className={styles.grid} aria-hidden="true" style={{ transform: backgroundTransform }}><PulseGrid paused={pulsePaused || studio.expanded || arcadeOpen} /></motion.div>
       <motion.div className={styles.light} aria-hidden="true" style={{ transform: lightTransform }} />
       <div className={`site-container ${styles.meta}`}><span className={styles.desktopHidden}>ESTUDIO DIGITAL INDEPENDIENTE</span><button type="button" className={styles.pulseControl} aria-label={pulsePaused ? 'Activar pulso de la cuadrícula' : 'Pausar pulso de la cuadrícula'} aria-pressed={!pulsePaused} onClick={() => setPulsePaused(value => !value)}>{pulsePaused ? <Play size={11} /> : <Pause size={11} />}<span>PULSO {pulsePaused ? 'OFF' : 'ON'}</span></button></div>
       <div className={`site-container ${styles.composition}`}>
@@ -60,7 +63,7 @@ export default function Hero() {
           <div className={styles.orbitLines} aria-hidden="true"><i /><i /><i /></div>
           <motion.div className={`${styles.artwork} ${blueprint ? styles.blueprint : ''}`} style={{ transform: objectTransform }}>
             <div className={styles.backPlate} aria-hidden="true" /><div className={styles.middlePlate} aria-hidden="true" />
-            <CrtTelevision channel={crtChannel(studio.page, studio.browsing, studio.project, studio.settings.accent)} paused={pulsePaused || studio.expanded} onNavigate={(page, keyboard) => previewRef.current?.navigate(page, keyboard)} onExpand={trigger => { televisionTrigger.current = trigger; studio.setExpanded(true); }}>
+            <CrtTelevision channel={crtChannel(studio.page, studio.browsing, studio.project, studio.settings.accent)} paused={pulsePaused || studio.expanded || arcadeOpen} onNavigate={(page, keyboard) => previewRef.current?.navigate(page, keyboard)} onExpand={trigger => { televisionTrigger.current = trigger; studio.setExpanded(true); }}>
               <div className={styles.browser} onFocus={() => { pointerX.set(0); pointerY.set(0); }}><HeroPreview navigationRef={previewRef} blueprint={blueprint} studio={studio} active={!studio.expanded} /></div>
             </CrtTelevision>
             <div className={styles.codeTag} aria-hidden="true"><b>No es una imagen.</b><br />Toca. Explora. Haz clic.</div>
@@ -69,9 +72,11 @@ export default function Hero() {
             <button type="button" className={styles.viewToggle} aria-pressed={blueprint} onClick={() => setBlueprint(value => !value)}><Braces size={15} />{blueprint ? 'Volver al diseño' : 'Mira bajo la superficie'}<span>↗</span></button>
             <Dialog.Root open={studio.expanded} onOpenChange={studio.setExpanded}><Dialog.Trigger className={styles.expand} aria-label="Ampliar Latech Studio"><Maximize2 size={15} /></Dialog.Trigger><Dialog.Portal><Dialog.Overlay className={styles.previewOverlay} /><Dialog.Content data-studio-window className={styles.previewDialog} onCloseAutoFocus={event => { const trigger = televisionTrigger.current; televisionTrigger.current = null; if (trigger?.checkVisibility()) { event.preventDefault(); trigger.focus({ preventScroll: true }); } }}><div className={styles.previewDialogHeader}><Dialog.Title>Latech Studio</Dialog.Title><StudioWindowHandle /><Dialog.Close aria-label="Volver a la web"><X size={19} /></Dialog.Close></div><Dialog.Description className="sr-only">Explora, crea tu marca y juega. La barra superior permite mover la ventana con el ratón o las flechas del teclado. Escape vuelve a la web.</Dialog.Description><HeroPreview blueprint={false} expanded studio={studio} /></Dialog.Content></Dialog.Portal></Dialog.Root>
           </div>
+          <TvRemoteHost studio={studio} />
         </div>
       </div>
       <div className={`site-container ${styles.baseline}`}><a href="#proyectos"><ArrowDown size={17} /><span>HAZ SCROLL. SAL DEL MOLDE.</span></a><span>NI PLANTILLAS.<br />NI MEDIAS TINTAS.</span><span>WEB · ECOMMERCE · IA</span></div>
+      <ArcadePortal onActiveChange={setArcadeOpen} />
     </section>
   );
 }

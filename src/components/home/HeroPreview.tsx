@@ -6,7 +6,7 @@ import Link from 'next/link';
 import dynamic from 'next/dynamic';
 import { ArrowLeft, ArrowUpRight, Check, Download, Maximize2, Menu, Share2, X } from 'lucide-react';
 import { whatsappLink } from '@/lib/stripe-links';
-import { featuredProjects } from './featured-projects';
+import { tvProjects as featuredProjects } from '@/lib/tv-channels';
 import { accents, directions, directionLabels, sectors, sectorCopy, studioBrief, studioHash, studioPages, type StudioPage } from './studio-model';
 import type { StudioExperience } from './useStudioExperience';
 import StudioShowcase from './StudioShowcase';
@@ -15,11 +15,6 @@ import styles from './HeroPreview.module.css';
 
 const StudioGravity = dynamic(() => import('./StudioGravity'), { loading: () => <p className={styles.loading}>Preparando el escenario…</p> });
 const StudioActivate = dynamic(() => import('./StudioActivate'), { loading: () => <p className={styles.loading} role="status">Preparando tu transformación…</p> });
-const projectStories = [
-  ['Actitud en movimiento.', 'Una identidad directa, producto protagonista y un recorrido que invita a descubrir el catálogo.', 'Urbano', 'Producto', 'Ecommerce'],
-  ['Toda la energía.', 'Un universo deportivo con el catálogo en primer plano y una presentación clara de sus especialidades.', 'Deporte', 'Catálogo', 'Identidad'],
-  ['Primero entra por los ojos.', 'El sabor se convierte en lenguaje visual: una carta digital con personalidad y acceso a lo que importa.', 'Restauración', 'Carta digital', 'Marca'],
-];
 const services = [
   ['01', 'Webs con carácter.', 'Tu marca tiene algo que decir. Le damos una voz visual propia, una estructura clara y movimiento con intención.', '/tienda/web', 'Identidad · Animación · Experiencia móvil'],
   ['02', 'Tiendas que invitan.', 'Producto, confianza y una compra fácil de entender. Cuidamos el camino completo, desde descubrir hasta decidir.', '/tienda/online', 'Catálogo · Compra · Detalle de producto'],
@@ -99,18 +94,18 @@ export default function HeroPreview({ blueprint, expanded = false, active = true
           <div className={styles.actionRow}><button type="button" className={styles.cta} onClick={event => navigate('activate', event.detail === 0)}>Activa Latech <ArrowUpRight size={14} /></button><button type="button" className={styles.textLink} onClick={event => navigate('create', event.detail === 0)}>Hazlo tuyo ↗</button></div>
           <StudioShowcase viewport={viewport} onOpen={openProject} />
           <div className={styles.sectionTitle}><span>01 / TRABAJO REAL</span><button type="button" onClick={event => navigate('projects', event.detail === 0)}>Ver todos ↗</button></div>
-          {featuredProjects.map((item, index) => <button key={item.name} className={styles.projectRow} type="button" onClick={() => openProject(index)}><Image src={item.image} alt="" width={150} height={100} sizes="100px" /><span><small>{item.category}</small><strong>{item.name}</strong></span><ArrowUpRight size={17} /></button>)}
+          {featuredProjects.slice(0, 3).map((item, index) => <button key={item.name} className={styles.projectRow} type="button" onClick={() => openProject(index)}><Image src={item.image} alt="" width={150} height={100} sizes="100px" /><span><small>{item.category}</small><strong>{item.name}</strong></span><ArrowUpRight size={17} /></button>)}
           <button type="button" className={styles.labTeaser} onClick={event => navigate('play', event.detail === 0)}><svg className={styles.labMark} viewBox="0 0 100 100" fill="none" aria-hidden="true" focusable="false"><path d="M50 3v94M3 50h94M17 17l66 66M17 83l66-66" stroke="currentColor" strokeWidth="13" /></svg><span>02 / ENSAYO SIN LÍMITES</span><strong>Aquí, ni la gravedad{' '}<br />es obligatoria.</strong><span>Entra al laboratorio <ArrowUpRight size={16} /></span></button>
           <div className={styles.manifesto}><span>BUEN DISEÑO.</span><span>BUENAS IDEAS.</span><em>CERO INDIFERENCIA.</em></div>
         </>}
         {page === 'projects' && <>
-          {intro('TRES MARCAS. TRES FORMAS DE SENTIR.', 'No lo imagines.', 'Míralo.')}
-          <div className={styles.projectTabs} aria-label="Elegir proyecto en Studio">{featuredProjects.map((item,index) => <button type="button" key={item.name} aria-pressed={project === index} onClick={() => studio.setProject(index)}>{item.name}</button>)}</div>
+          {intro(`${featuredProjects.length} PROYECTOS. CAMBIA DE UNIVERSO.`, 'No lo imagines.', 'Míralo.')}
+          <label className={styles.projectSelector}>GUÍA DE PROYECTOS<select aria-label="Elegir proyecto en Studio" value={project} onChange={event => studio.setProject(Number(event.target.value))}>{featuredProjects.map((item,index) => <option key={item.id} value={index}>{String(index + 1).padStart(2, '0')} · {item.name}</option>)}</select></label>
           <div className={styles.projectWorld} data-world={project}>
-            <div className={styles.worldHeading}><span>0{project + 1} / {selected.category}</span><strong>{selected.name}</strong><i aria-hidden="true">↗</i></div>
+            <div className={styles.worldHeading}><span>{String(project + 1).padStart(2, '0')} / {selected.category}</span><strong>{selected.name}</strong><i aria-hidden="true">↗</i></div>
             <button type="button" className={styles.feature} onClick={() => openProject(project)} aria-label={`Abrir ${selected.name} dentro de Latech Studio`}><Image src={selected.image} alt={`Vista de ${selected.name}`} width={800} height={500} sizes="(max-width: 767px) 350px, 650px" /><span>Explorar aquí <ArrowUpRight size={17} /></span></button>
-            <h4>{projectStories[project][0]}</h4><p>{projectStories[project][1]}</p>
-            <div className={styles.tags}>{projectStories[project].slice(2).map(tag => <span key={tag}>{tag}</span>)}</div>
+            <h4>{selected.sector}</h4><p>{selected.description}</p>
+            <div className={styles.tags}><span>{selected.location}</span><span>Web interactiva</span></div>
           </div>
           <p className={styles.copy}>Un mismo cuidado por el detalle. Una dirección distinta para cada negocio.</p>
           <Link className={styles.textLink} href="/proyectos">El portfolio completo <ArrowUpRight size={13} /></Link>

@@ -1,6 +1,6 @@
 /** Coarse route names: never send dynamic path values or query strings as event data. */
 export function measurementPath(pathname: string): string | null {
-  if (/^\/(admin|dashboard|cursos?|login|registro|recuperar|reset-password|checkout|pago|cuenta)(\/|$)/.test(pathname)) return null;
+  if (/^\/(admin|dashboard|cursos?|login|registro|recuperar|reset-password|checkout|pago|cuenta|mando)(\/|$)/.test(pathname)) return null;
   const fixed = ['/', '/blog', '/lab', '/briefing', '/contacto', '/proyectos', '/sobre-nosotros', '/tienda', '/tienda/web', '/tienda/online', '/tienda/agente-ia', '/tienda/calculadora', '/cobertura'];
   if (fixed.includes(pathname)) return pathname;
   if (pathname.startsWith('/blog/')) return '/blog/articulo';

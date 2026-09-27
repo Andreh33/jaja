@@ -10,7 +10,7 @@ import { publicQaPosts } from './lib/public-qa-posts';
 import { loadEditorialPreview } from './lib/editorial-preview';
 
 async function main() {
-  const { values } = parseArgs({ options: { 'editorial-preview': { type: 'boolean', default: false }, help: { type: 'boolean', default: false } }, allowPositionals: false, strict: true });
+  const { values } = parseArgs({ options: { 'editorial-preview': { type: 'boolean', default: false }, database: { type: 'string', default: 'qa.db' }, help: { type: 'boolean', default: false } }, allowPositionals: false, strict: true });
   if (values.help) {
     console.log('Local file-only QA fixture: 76 historical public posts by default. Optional --editorial-preview applies 8 editorial replacements and 6 additions to .local/qa.db only. Existing dates are preserved; no customer accounts or external services.');
     return;
@@ -20,7 +20,8 @@ async function main() {
   const changedSlugs = new Set(selectedPosts.filter(post => JSON.stringify(post) !== JSON.stringify(historical.get(post.slug))).map(post => post.slug));
   const directory = resolve('.local');
   mkdirSync(directory, { recursive: true });
-  const databasePath = resolve(directory, 'qa.db');
+  if (!/^[a-z0-9-]+\.db$/.test(values.database!)) throw new Error('QA database must be a simple .db filename inside .local.');
+  const databasePath = resolve(directory, values.database!);
   const fresh = !existsSync(databasePath);
   const client = createClient({ url: `file:${databasePath}` });
   try {

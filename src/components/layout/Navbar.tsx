@@ -30,6 +30,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [compact, setCompact] = useState(false);
   const [keyboardOpen, setKeyboardOpen] = useState(false);
+  const logoTaps = useRef({ count: 0, at: 0 });
 
   useEffect(() => {
     const element = sentinel.current;
@@ -58,7 +59,15 @@ export default function Navbar() {
       <header className={styles.header} data-compact={compact}>
         <nav className={styles.island} aria-label="Navegación principal">
           <div className={styles.surface} aria-hidden="true" />
-          <Link href="/" className={styles.brand} aria-label="Latech, inicio"><Brand /></Link>
+          <Link href="/" className={styles.brand} aria-label="Latech, inicio" onClick={event => {
+            if (pathname !== '/') return;
+            // Already home: avoid router work between taps. Native event timing
+            // preserves the gesture even while the hero is rendering a frame.
+            event.preventDefault();
+            const now = event.timeStamp; logoTaps.current.count = now - logoTaps.current.at < 900 ? logoTaps.current.count + 1 : 1; logoTaps.current.at = now;
+            if (event.detail >= 3 || logoTaps.current.count >= 3) { logoTaps.current.count = 0; window.dispatchEvent(new Event('latech:arcade')); }
+            else if (logoTaps.current.count === 1) window.scrollTo({ top: 0, behavior: 'instant' });
+          }}><Brand /></Link>
           <div className={styles.links}>
             {PRIMARY_NAV.map(item => (
               <Link key={item.href} href={item.href} aria-current={active(item.href) ? 'page' : undefined}>

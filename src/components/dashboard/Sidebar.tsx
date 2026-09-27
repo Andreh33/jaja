@@ -21,6 +21,7 @@ const ADMIN_ITEMS = [
   { href: '/admin/clientes', label: 'Clientes', icon: Users },
   { href: '/admin/posts', label: 'Posts', icon: FileText },
   { href: '/admin/mensajes', label: 'Mensajes', icon: Inbox },
+  { href: '/admin/mandos', label: 'Mandos QR', icon: Users },
   { href: '/admin/trabajo', label: 'Trabajo', icon: Briefcase },
   { href: '/admin/notas', label: 'Notas exámenes', icon: GraduationCap },
 ];

@@ -1,0 +1,11 @@
+# Checkpoint operativo · arcade
+
+Objetivo: completar mando QR, CRM y arcade secreto con dos teléfonos y arte de ImageGen.
+Restricciones: un solo agente; conservar cambios preexistentes; no prometer cero lag. El usuario autorizó explícitamente las dos tablas de producción y la publicación con «Si hazlo» el 27/09/2026.
+Confirmado en filesystem: nueve recursos ImageGen en public/arcade, cuatro mundos con fondos distintos, mando TV, cuatro juegos, backend aislado y entrada de cuatro segundos. WebRTC solo para input del plataformas. Componentes en src/components/arcade y lógica en src/lib/arcade*.
+Verificado: suite completa 248/248 (46 suites, sin fallos), incluyendo arcade 19/19 y todos los saltos de los cuatro mundos. Lint completo y focal sin errores. Typecheck y build final con 193 páginas completados tras los últimos retoques, usando LATECH_ISOLATED_QA=1 y base SQLite local.
+Producción: migración limitada ejecutada con TV_REMOTE_SCHEMA_ONLY=1 npm run db:push -- --strict --verbose; solo CREATE de tv_remote_sessions, tv_arcade_sessions y cinco índices. Ambas guardas pasaron. Las 41 estructuras previas mantienen exactamente el mismo SHA-256 de esquema. No despliegue ni commit todavía.
+Conexiones verificadas: GitHub CLI y conector Andreh33 (119471787); autor/committer con correo privado correcto. Vercel CLI autenticado, proyecto latech (prj_9UWOA07aNokytyJ9KMrETbrGPwte), equipo latech767-8157s-projects. Los valores secretos de producción no se pueden descargar; no sustituirlos por placeholders.
+QA confirmado: dos mandos autoemparejados, fragmentos limpiados, señal WebRTC y movimiento, recarga/reconexión; dos turnos en naval, Space Wars y cuatro en raya; Escape y retorno de foco; mandos a 320/390 px y menú móvil sin overflow; once canales cargan en iframe; API del mando TV y guarda CRM aprobadas. Comprobación final: triple clic con movimiento normal funciona, reabrir el mismo QR conserva mando TV y cambia a French Tacos en la tele real. No dispositivos físicos/Safari ni latencia entre redes reales.
+Efímero: servidor QA 3103 sesión 72596 y Playwright arcade-qa abiertos para comprobación final. Servidor preexistente 3001 no modificado. Cambios preparados en staging; no commit/push todavía.
+Pendiente: commit/push con Andreh33 y comprobar deployment Ready. Mantener fuera de commits docs/audits, otros docs/progress y output preexistentes.

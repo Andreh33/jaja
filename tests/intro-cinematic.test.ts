@@ -6,8 +6,8 @@ const source = readFileSync(new URL('../src/components/effects/IntroCinematic.ts
 const css = readFileSync(new URL('../src/components/effects/IntroCinematic.module.css', import.meta.url), 'utf8');
 
 describe('First-visit brand opening', () => {
-  it('keeps the mobile duration and bounds real preloading with a fail-safe', () => {
-    assert.match(source, /const OPENING_DURATION_MS = 2500;/);
+  it('uses the requested four-second opening and bounds real preloading with a fail-safe', () => {
+    assert.match(source, /const OPENING_DURATION_MS = 4000;/);
     assert.match(source, /const PRELOAD_DEADLINE_MS = 4200;/);
     assert.match(source, /setTimeout\(dismiss, PRELOAD_DEADLINE_MS \+ OPENING_DURATION_MS \+ 300\)/);
     assert.match(source, /if \(!show\) return;/);
