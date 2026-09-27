@@ -65,7 +65,9 @@ Suite completa: 248/248, 46 suites, sin fallos, ejecutada en serie para limitar 
 QA local con build de producción (27/09/2026): dos pestañas móviles se emparejan automáticamente y limpian el fragmento; WebRTC establece señal directa y transmite movimiento; recargar el mando recupera la conexión; naval, Space Wars y cuatro en raya completan una jugada por jugador y devuelven el turno al primero. Escape cierra y devuelve foco al logo. Anchos 390 y 320 px sin overflow horizontal. Capturas en `output/playwright/arcade-*`, excluidas de Git.
 Comprobación final con movimiento normal: triple clic abre el canal secreto; la recuperación del QR de TV en el mismo móvil conserva su credencial y cambia correctamente a French Tacos. El build definitivo genera 193 páginas y pasa TypeScript. La duración total observada con carga fría y el portátil ocupado puede superar los cuatro segundos de animación; no se ha medido como promesa de tiempo de carga real.
 
-Límites de evidencia: Chromium emulado, no teléfonos físicos ni Safari. El único error de consola del host local es `/_vercel/insights/script.js` 404, propio de ejecutar Analytics de Vercel fuera de Vercel. No equivale a medir latencia en redes móviles reales.
+Producción verificada en `serviciosonlineweb.com`, commit funcional `22c4883`, despliegue `dpl_H3sRMjz6E2KWZv8giqwTeZ1wFKKD` Ready: emparejamiento del mando TV, dos gamepads conectados, señal directa de ambos y dos turnos de Space Wars completados. Arcade final a 320 px sin overflow. Se cerraron las sesiones de prueba. Margen de QR de cuatro módulos para mantener su zona blanca de lectura.
+
+Límites de evidencia: Chromium emulado, no teléfonos físicos ni Safari. En local, `/_vercel/insights/script.js` devuelve 404 al ejecutar Analytics fuera de Vercel; un sondeo puede recibir el 410 esperado al desconectar la sesión. No equivale a medir latencia en redes móviles reales.
 
 ## Revisión de interacción
 

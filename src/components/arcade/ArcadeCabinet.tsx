@@ -47,7 +47,7 @@ export default function ArcadeCabinet({ onClose, origin }: { onClose: () => void
       if (closing.current) { await arcadeFetch({ action: 'close', id: result.id, role: 'host' }, result.token).catch(() => {}); return null; }
       const credential: ArcadeCredentials = { id: result.id, token: result.token, role: 'host' }; setCredentials(credential); setState(result); creds.current = credential; current.current = result;
       const urls = result.invites.map((invite, slot) => `${location.origin}/mando/jugar#${result.id}.${slot}.${invite}`); const qr = await import('qrcode');
-      setLinks(urls); setQrs(await Promise.all(urls.map(url => qr.toDataURL(url, { width: 280, margin: 2, errorCorrectionLevel: 'M', color: { dark: '#061527', light: '#ffffff' } })))); setRoom(true);
+      setLinks(urls); setQrs(await Promise.all(urls.map(url => qr.toDataURL(url, { width: 280, margin: 4, errorCorrectionLevel: 'M', color: { dark: '#061527', light: '#ffffff' } })))); setRoom(true);
       return { credential, snapshot: result };
     } catch (cause) { setError(cause instanceof Error ? cause.message : 'No se pudo crear la sala.'); return null; } finally { setBusy(false); }
   }
