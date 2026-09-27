@@ -4,7 +4,7 @@ import { useCallback,useEffect, useRef, useState, type CSSProperties } from 'rea
 import * as Dialog from '@radix-ui/react-dialog';
 import { Gamepad2, Grid2X2, RotateCcw, X } from 'lucide-react';
 import dynamic from 'next/dynamic';
-import { arcadeFetch, ArcadeHttpError, type ArcadeCredentials, type ArcadeMode, type ArcadeState } from '@/lib/arcade-protocol';
+import { arcadeFetch, selectArcadeMode, ArcadeHttpError, type ArcadeCredentials, type ArcadeMode, type ArcadeState } from '@/lib/arcade-protocol';
 import { useHostPeers } from './useArcadePeers';
 import ArcadeBoard from './ArcadeBoard';
 import styles from './Arcade.module.css';
@@ -14,11 +14,11 @@ const loadingGame=()=> <p className={styles.message} role="status">Preparando un
 const PlatformGame=dynamic(()=>import('./PlatformGame'),{ssr:false,loading:loadingGame});
 const FightGame=dynamic(()=>import('./FightGame'),{ssr:false,loading:loadingGame});
 const BlocksGame=dynamic(()=>import('./BlocksGame'),{ssr:false,loading:loadingGame});
-const ASSETS = ['platform-world', 'platform-world-2', 'platform-world-3', 'platform-world-4', 'platform-sprites', 'space-world', 'naval-world', 'tactical-sprites', 'worn-plastic'];
+const ASSETS = ['platform-world', 'platform-world-2', 'platform-world-3', 'platform-world-4', 'platform-sprites', 'fight-stage', 'fight-fighters', 'blocks-cover', 'blocks-atlas-v2', 'space-world', 'naval-world', 'tactical-sprites', 'worn-plastic'];
 const GAMES: { id: ArcadeMode; name: string; type: string; text: string; image: string }[] = [
-  { id: 'platform', name: 'Salto Zero', type: '01 / PLATAFORMAS · 1–2 JUGADORES', text: 'Cuatro mundos, doble salto y vidas compartidas. Llegad juntos al portal.', image: 'platform-world' },
-  { id: 'fight', name: 'Neon Clash', type: '02 / LUCHA · 2 JUGADORES', text: 'Volt contra Ember. Bloquea, salta y encuentra tu momento. Al mejor de tres.', image: 'fight-stage' },
-  { id: 'blocks', name: 'Isla libre', type: '03 / CREATIVO · 2 JUGADORES', text: 'Un mundo compartido. Construye, explora y deja volar las ideas.', image: 'blocks-cover' },
+  { id: 'platform', name: 'Salto Zero', type: '01 / PLATAFORMAS · 1–2 JUGADORES', text: 'Doble salto, impulso y reliquias escondidas. Cuatro mundos para recorrer juntos.', image: 'platform-world' },
+  { id: 'fight', name: 'Neon Clash', type: '02 / LUCHA · 1–2 JUGADORES', text: 'Combos, esquivas y defensa perfecta. Reta a un amigo o entrena con la CPU.', image: 'fight-stage' },
+  { id: 'blocks', name: 'Isla libre', type: '03 / CREATIVO · 2 JUGADORES', text: 'Montañas, cuevas y 16 materiales. Un archipiélago enorme para construir juntos.', image: 'blocks-cover' },
   { id: 'space', name: 'Space Wars', type: '04 / COOPERATIVO · 2 JUGADORES', text: 'Dos pilotos, diez misiones. La galaxia necesita una buena estrategia.', image: 'space-world' },
   { id: 'naval', name: 'Mar abierto', type: '05 / ESTRATEGIA · 2 JUGADORES', text: 'Oculta tu flota. Lee al rival. Cada coordenada puede cambiarlo todo.', image: 'naval-world' },
 ];
@@ -43,13 +43,13 @@ export default function ArcadeCabinet({ onClose, origin }: { onClose: () => void
     return () => { stopped = true; clearTimeout(timer); clearTimeout(deadline); };
   }, []);
   useEffect(() => {
-    if (!credentials) return; let stopped = false; let timer: ReturnType<typeof setTimeout>; const abort = new AbortController();
+    if (!credentials) return; let stopped = false; let timer: ReturnType<typeof setTimeout>; const abort = new AbortController();const started=Date.now();
     async function poll() {
       if (stopped) return;
       if (!document.hidden && navigator.onLine) try { const result = await arcadeFetch({ action: 'poll', id: credentials!.id, role: 'host' }, credentials!.token, abort.signal);
         if (!stopped) setState(previous => !previous || result.version >= previous.version ? result : previous);
       } catch (cause) { if (!stopped) { setError(cause instanceof Error ? cause.message : 'Señal interrumpida.'); if (cause instanceof ArcadeHttpError && [401, 410].includes(cause.status)) { setCredentials(null); setState(null); setQrs([]); setLinks([]); return; } } }
-      timer = setTimeout(poll, 1100);
+      timer = setTimeout(poll, Date.now()-started<20000?500:1000);
     }
     void poll(); return () => { stopped = true; abort.abort(); clearTimeout(timer); };
   }, [credentials]);
@@ -71,11 +71,11 @@ export default function ArcadeCabinet({ onClose, origin }: { onClose: () => void
     if (next === 'lobby' && !credentials) { setMode(next); return; }
     const connection = credentials && current.current ? { credential: credentials, snapshot: current.current } : await connect();
     if (!connection) return; setBusy(true);
-    try { const result = await arcadeFetch({ action: 'select', id: connection.credential.id, role: 'host', mode: next, version: connection.snapshot.version }, connection.credential.token); setState(result); current.current = result; setMode(next); if (result.players.every(player => player.connected)) setRoom(false); }
+    try { const result = await selectArcadeMode(connection.credential, next, connection.snapshot.version); setState(result); current.current = result; setMode(next); if (result.players.every(player => player.connected)) setRoom(false); }
     catch (cause) { setError(cause instanceof Error ? cause.message : 'No se pudo iniciar la partida.'); } finally { setBusy(false); }
   }
   async function close() { closing.current = true; const credential = creds.current; if (credential) void arcadeFetch({ action: 'close', id: credential.id, role: 'host' }, credential.token).catch(() => {}); onClose(); }
-  async function openRoom() { const connection = await connect(); if (connection && mode !== connection.snapshot.mode) { const result = await arcadeFetch({ action: 'select', id: connection.credential.id, role: 'host', mode, version: connection.snapshot.version }, connection.credential.token).catch(() => null); if (result) setState(result); } }
+  async function openRoom() { const connection = await connect(); if (connection && mode !== connection.snapshot.mode) { const result = await selectArcadeMode(connection.credential, mode, connection.snapshot.version).catch(() => null); if (result) setState(result); } }
   const actualMode = credentials && state ? state.mode : mode;
   const gameKey=`${actualMode}-${state?.version??0}`;
   return <Dialog.Root open onOpenChange={open => { if (!open) void close(); }}><Dialog.Portal><Dialog.Overlay className={styles.overlay} /><Dialog.Content className={styles.cabinet} style={origin} onEscapeKeyDown={event=>{if(document.pointerLockElement){event.preventDefault();document.exitPointerLock();}}} onCloseAutoFocus={event => { event.preventDefault(); document.querySelector<HTMLAnchorElement>('a[aria-label="Latech, inicio"]')?.focus(); }}>
@@ -87,7 +87,7 @@ export default function ArcadeCabinet({ onClose, origin }: { onClose: () => void
         <span className={styles.eyebrow}>HAS ENCONTRADO EL CANAL SECRETO</span><h2>Las mejores ideas<br/>también se juegan.</h2><p className={styles.menuIntro}>Tu televisión acaba de convertirse en una consola. Un móvil, un mando. Dos móviles, una buena rivalidad.</p>
         <div className={styles.games}>{GAMES.map(game=><button className={styles.gameCard} key={game.id} disabled={busy} onClick={()=>void select(game.id)}><img src={`/arcade/${game.image}.webp`} alt=""/><span className={styles.cartridgeLabel}>LATECH ORIGINAL / INSERT & PLAY</span><span className={styles.cardCopy}><small>{game.type}</small><strong>{game.name} ↗</strong><span>{game.text}</span></span></button>)}</div>
         <div className={styles.bonus}><span>Arte propio. Mandos con historia. Ganas de jugar.</span><button className={styles.button} disabled={busy} onClick={()=>void select('orbit')}>BONUS / Cuatro en órbita ↗</button></div>
-      </div>:actualMode==='platform'?<PlatformGame key={gameKey} remote={peers.inputs} pairedSecond={state?.players[1].connected} pauseSignal={pauseSignal} onFinished={finished} onRestart={credentials?()=>void select('platform'):undefined}/>:actualMode==='fight'?<FightGame key={gameKey} remote={peers.inputs} pauseSignal={pauseSignal} onFinished={finished} onRestart={credentials?()=>void select('fight'):undefined}/>:actualMode==='blocks'?<BlocksGame key={gameKey} remote={peers.inputs} pauseSignal={pauseSignal}/>:state?.game?<ArcadeBoard game={state.game}/>:<p className={styles.message}>Conecta los mandos para preparar la partida.</p>}
+      </div>:actualMode==='platform'?<PlatformGame key={gameKey} remote={peers.inputs} pairedSecond={state?.players[1].connected} pauseSignal={pauseSignal} onFinished={finished} onRestart={credentials?()=>void select('platform'):undefined}/>:actualMode==='fight'?<FightGame key={gameKey} remote={peers.inputs} pairedSecond={state?.players[1].connected} pauseSignal={pauseSignal} onFinished={finished} onRestart={credentials?()=>void select('fight'):undefined}/>:actualMode==='blocks'?<BlocksGame key={gameKey} remote={peers.inputs} pauseSignal={pauseSignal}/>:state?.game?<ArcadeBoard game={state.game}/>:<p className={styles.message}>Conecta los mandos para preparar la partida.</p>}
       {attract&&actualMode==='lobby'&&<div className={styles.attract}><div inert><FightGame remote={peers.inputs} demo/></div><button className={styles.attractPrompt} onClick={()=>setAttract(false)}>MODO DEMOSTRACIÓN · TOCA PARA ELEGIR TU JUEGO</button></div>}
     </div>
     {room && <aside className={styles.room} aria-label="Conectar los dos mandos"><div className={styles.roomHead}><h3>Dos mandos. Una pantalla.</h3><button className={styles.iconButton} onClick={() => setRoom(false)} aria-label="Ocultar códigos QR"><X size={16} /></button></div><p>Escanea tu QR con la cámara del móvil. Se conecta automáticamente. Mantén abierta esta televisión.</p><div className={styles.qrGrid}>{[0, 1].map(slot => <div className={styles.qrSeat} key={slot}><b>JUGADOR {slot + 1}</b>{state?.players[slot].connected ? <div className={styles.connected}>✓<small>{state.players[slot].online ? 'Mando conectado' : 'Mando en pausa'}</small></div> : qrs[slot] ? <img src={qrs[slot]} alt={`Código QR para el jugador ${slot + 1}`} /> : <p>Preparando QR…</p>}<small>{state?.players[slot].connected ? peers.status[slot] : 'QR válido durante 5 minutos'}</small>{!state?.players[slot].connected && links[slot] && <a href={links[slot]} target="_blank" rel="noopener noreferrer">Abrir este mando ↗</a>}</div>)}</div><p>Salto Zero, Neon Clash e Isla libre: dos mandos o teclado. Space Wars, Mar abierto y Cuatro en órbita: por turnos. La conexión directa depende de tu red.</p></aside>}

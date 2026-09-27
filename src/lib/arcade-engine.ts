@@ -28,7 +28,8 @@ function fleet(random: () => number) {
   return [...occupied];
 }
 function wave(level: number, random: () => number) {
-  return shuffled(40, random).slice(0, 2 + Math.ceil(level / 2)).map((cell, index) => ({ cell, hp: level >= 6 && index < level - 5 ? 2 : 1 }));
+  // Spawn above the danger rows, giving both pilots time to read the formation.
+  return shuffled(24, random).slice(0, 2 + Math.ceil(level / 2)).map((cell, index) => ({ cell, hp: index === 0 && level % 5 === 0 ? 4 : level >= 6 && index < level - 5 ? 2 : 1 }));
 }
 export function newArcadeGame(kind: GameKind, random = Math.random): ArcadeGame {
   const base = { turn: 0 as Player, winner: null, moves: 0, last: -1, message: 'Jugador 1, te toca.' };
@@ -77,9 +78,11 @@ export function arcadeMove(game: ArcadeGame, player: Player, cell: number, rando
   else {
     const target = next.enemies.find(enemy => enemy.cell === cell);
     if (!target) throw new ArcadeRuleError('Selecciona una nave enemiga.');
-    target.hp -= 1 + next.charge[player]; next.charge[player] = 0;
-    if (target.hp <= 0) { next.enemies = next.enemies.filter(enemy => enemy !== target); next.scores[player] += 100 * next.level; }
-    next.message = target.hp <= 0 ? `Piloto ${player + 1}: nave neutralizada.` : 'Escudo enemigo tocado. Necesita otro impacto.';
+    const charge = next.charge[player]; target.hp -= 1 + charge; next.charge[player] = 0;
+    if (charge === 2) for (const enemy of next.enemies) if (enemy !== target && Math.abs(enemy.cell % 8 - cell % 8) + Math.abs(Math.floor(enemy.cell / 8) - Math.floor(cell / 8)) === 1) enemy.hp -= 2;
+    const destroyed = next.enemies.filter(enemy => enemy.hp <= 0).length;
+    next.enemies = next.enemies.filter(enemy => enemy.hp > 0); next.scores[player] += destroyed * 100 * next.level;
+    next.message = charge === 2 ? `Piloto ${player + 1}: sobrecarga. ${destroyed} naves neutralizadas.` : target.hp <= 0 ? `Piloto ${player + 1}: nave neutralizada.` : 'Escudo enemigo tocado. Necesita otro impacto.';
   }
   if (!next.enemies.length) {
     if (next.level === 10) { next.winner = 'team'; next.message = 'Galaxia liberada. Diez misiones, dos pilotos, un equipo.'; }

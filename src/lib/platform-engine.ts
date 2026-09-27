@@ -1,10 +1,10 @@
 /** Fixed-step local physics. The remote transports inputs, never coordinates. */
-export type Platform = { x: number; y: number; w: number; h: number; brick?: boolean; checkpoint?: boolean };
-export type Runner = { x: number; y: number; vx: number; vy: number; facing: number; grounded: boolean; coyote: number; buffer: number; lastJump: boolean; invulnerable: number; airJumps: number; shield: number };
-export type PlatformEvent = { id: number; kind: 'jump' | 'coin' | 'hit' | 'checkpoint' | 'power' | 'finish'; x: number; y: number; text: string; life: number };
+export type Platform = { x: number; y: number; w: number; h: number; brick?: boolean; checkpoint?: boolean; baseY?: number; travel?: number; phase?: number; spring?: boolean };
+export type Runner = { x: number; y: number; vx: number; vy: number; facing: number; grounded: boolean; coyote: number; buffer: number; lastJump: boolean; invulnerable: number; airJumps: number; shield: number; dash: number; dashCooldown: number; lastDash: boolean };
+export type PlatformEvent = { id: number; kind: 'jump' | 'coin' | 'hit' | 'checkpoint' | 'power' | 'finish' | 'dash'; x: number; y: number; text: string; life: number };
 export type PlatformWorld = {
   level: number; title: string; width: number; platforms: Platform[];
-  coins: { x: number; y: number; taken: boolean }[]; cores: { x: number; y: number; taken: boolean }[];
+  coins: { x: number; y: number; taken: boolean }[]; cores: { x: number; y: number; taken: boolean }[]; relics: { x: number; y: number; taken: boolean }[];
   enemies: { x: number; y: number; min: number; max: number; direction: number; dead: boolean; drone: boolean }[];
   player: Runner; players: Runner[]; checkpoint: number; lives: number; score: number; time: number; camera: number;
   state: 'playing' | 'dead' | 'complete'; waiting: boolean; combo: number; comboTime: number; coinsCollected: number;
@@ -15,10 +15,10 @@ export const PLATFORM_WIDTH = 1024;
 export const PLATFORM_HEIGHT = 576;
 const W = 38; const H = 52;
 const titles = ['El valle de las ideas', 'Jardines en el cielo', 'La ruta de los guardianes', 'Más allá del molde'];
-function runner(x = 100, y = 400): Runner { return { x, y, vx: 0, vy: 0, facing: 1, grounded: false, coyote: 0, buffer: 0, lastJump: false, invulnerable: 0, airJumps: 1, shield: 0 }; }
+function runner(x = 100, y = 400): Runner { return { x, y, vx: 0, vy: 0, facing: 1, grounded: false, coyote: 0, buffer: 0, lastJump: false, invulnerable: 0, airJumps: 1, shield: 0, dash: 0, dashCooldown: 0, lastDash: false }; }
 export function newPlatformWorld(level = 1, score = 0, lives = 3): PlatformWorld {
   const platforms: Platform[] = [{ x: 0, y: 482, w: 620, h: 140, checkpoint: true }];
-  const coins: PlatformWorld['coins'] = []; const cores: PlatformWorld['cores'] = []; const enemies: PlatformWorld['enemies'] = [];
+  const coins: PlatformWorld['coins'] = []; const cores: PlatformWorld['cores'] = []; const relics: PlatformWorld['relics'] = []; const enemies: PlatformWorld['enemies'] = [];
   let x = 690;
   for (let n = 0; n < 14; n++) {
     const y = [455, 390, 450, 360, 420, 480, 400][(n + level - 1) % 7]; const w = n % 3 === 0 ? 280 : 210;
@@ -26,12 +26,17 @@ export function newPlatformWorld(level = 1, score = 0, lives = 3): PlatformWorld
     for (let c = 0; c < 3; c++) coins.push({ x: x + 40 + c * 56, y: y - 70, taken: false });
     if (n % 3 === 1) { platforms.push({ x: x + 60, y: y - 125, w: 100, h: 34, brick: true }); coins.push({ x: x + 108, y: y - 180, taken: false }); }
     if (n % 4 === 2) cores.push({ x: x + w / 2, y: y - 110, taken: false });
+    if (n % 4 === 1) {
+      platforms.push({ x: x + w - 25, y: y - 100, baseY: y - 100, travel: 32, phase: n, w: 95, h: 25, brick: true });
+      relics.push({ x: x + w + 10, y: y - 220, taken: false });
+    }
+    if (n === 4 || n === 10) platforms.push({ x: x + 40, y: y - 8, w: 48, h: 12, spring: true });
     if (n > 1 && n % (level < 3 ? 3 : 2) === 0) enemies.push({ x: x + 80, y: y - 34, min: x + 8, max: x + w - 46, direction: 1, dead: false, drone: level >= 3 && n % 4 === 0 });
     x += w + 75 + Math.min(level * 10, 35);
   }
   platforms.push({ x, y: 465, w: 520, h: 150 });
   const player = runner();
-  return { level, title: titles[level - 1] || titles[3], width: x + 520, platforms, coins, cores, enemies,
+  return { level, title: titles[level - 1] || titles[3], width: x + 520, platforms, coins, cores, relics, enemies,
     player, players: [player], checkpoint: 0, lives, score, time: 0, camera: 0, state: 'playing', particles: [],
     waiting: false, combo: 0, comboTime: 0, coinsCollected: 0, events: [], eventId: 0 };
 }
@@ -60,6 +65,11 @@ export function stepPlatform(world: PlatformWorld, input: number | readonly [num
   dt = Math.min(Math.max(dt, 0), 1 / 30);
   if (world.state !== 'playing') return;
   world.time += dt; world.comboTime = Math.max(0, world.comboTime - dt); if (!world.comboTime) world.combo = 0;
+  for (const platform of world.platforms) if (platform.baseY !== undefined) {
+    const oldY = platform.y;
+    platform.y = platform.baseY + Math.sin(world.time * 1.4 + (platform.phase || 0)) * (platform.travel || 0);
+    for (const p of world.players) if (p.grounded && Math.abs(p.y + H - oldY) < 2 && p.x + W > platform.x && p.x < platform.x + platform.w) p.y += platform.y - oldY;
+  }
   for (const enemy of world.enemies) {
     if (enemy.dead) continue;
     enemy.x += enemy.direction * (55 + world.level * 12) * dt;
@@ -71,10 +81,14 @@ export function stepPlatform(world: PlatformWorld, input: number | readonly [num
     const previousY = p.y; const jump = !!(mask & 4); const pressed = jump && !p.lastJump;
     const direction = (mask & 2 ? 1 : 0) - (mask & 1 ? 1 : 0);
     p.invulnerable = Math.max(0, p.invulnerable - dt); p.shield = Math.max(0, p.shield - dt);
+    p.dash = Math.max(0, p.dash - dt); p.dashCooldown = Math.max(0, p.dashCooldown - dt);
+    if ((mask & 16) && !p.lastDash && p.dashCooldown === 0) { p.dash = .18; p.dashCooldown = 1.25; if (direction) p.facing = direction; p.vy = 0; event(world, 'dash', p.x, p.y); burst(world, p.x + 19, p.y + 26, '#b6ffff'); }
+    p.lastDash = !!(mask & 16);
     p.coyote = p.grounded ? .11 : Math.max(0, p.coyote - dt);
     p.buffer = pressed ? .13 : Math.max(0, p.buffer - dt); p.lastJump = jump;
     const target = direction * (mask & 8 ? 420 : 290); const acceleration = direction ? 2300 : 2000;
-    p.vx += Math.sign(target - p.vx) * Math.min(Math.abs(target - p.vx), acceleration * dt);
+    if (p.dash > 0) p.vx = p.facing * 720;
+    else p.vx += Math.sign(target - p.vx) * Math.min(Math.abs(target - p.vx), acceleration * dt);
     if (direction) p.facing = direction;
     const groundJump = p.buffer > 0 && p.coyote > 0;
     const airJump = pressed && !p.grounded && p.coyote <= 0 && p.airJumps > 0;
@@ -83,11 +97,12 @@ export function stepPlatform(world: PlatformWorld, input: number | readonly [num
       if (airJump) p.airJumps--; burst(world, p.x + 20, p.y + H, slot ? '#ffbc6b' : '#a3f4ff'); event(world, 'jump', p.x, p.y);
     }
     if (!jump && p.vy < -280) p.vy += 1800 * dt;
-    p.vy = Math.min(900, p.vy + 1650 * dt); p.x = Math.max(0, Math.min(world.width - W, p.x + p.vx * dt)); p.y += p.vy * dt; p.grounded = false;
+    p.vy = p.dash > 0 ? 0 : Math.min(900, p.vy + 1650 * dt); p.x = Math.max(0, Math.min(world.width - W, p.x + p.vx * dt)); p.y += p.vy * dt; p.grounded = false;
     for (const [index, platform] of world.platforms.entries()) {
       if (p.x + W <= platform.x || p.x >= platform.x + platform.w) continue;
       if (p.vy >= 0 && previousY + H <= platform.y + 4 && p.y + H >= platform.y) {
         p.y = platform.y - H; p.vy = 0; p.grounded = true; p.airJumps = 1;
+        if (platform.spring) { p.vy = -880; p.grounded = false; burst(world, p.x + 19, platform.y, '#ffb778'); event(world, 'jump', p.x, p.y, '¡IMPULSO!'); }
         if (platform.checkpoint && index > world.checkpoint) { world.checkpoint = index; event(world, 'checkpoint', platform.x + 30, platform.y - 100, 'PUNTO DE CONTROL'); burst(world, platform.x + 30, platform.y - 45, '#7cffee'); }
       } else if (platform.brick && p.vy < 0 && previousY >= platform.y + platform.h && p.y <= platform.y + platform.h) { p.y = platform.y + platform.h; p.vy = 80; }
     }
@@ -100,10 +115,13 @@ export function stepPlatform(world: PlatformWorld, input: number | readonly [num
     for (const core of world.cores) if (!core.taken && Math.hypot(p.x + W / 2 - core.x, p.y + H / 2 - core.y) < 40) {
       core.taken = true; p.shield = 8; world.score += 300; event(world, 'power', p.x, p.y - 35, 'ESCUDO · 8 SEGUNDOS'); burst(world, core.x, core.y, '#84f3ff');
     }
+    for (const relic of world.relics) if (!relic.taken && Math.hypot(p.x + W / 2 - relic.x, p.y + H / 2 - relic.y) < 40) {
+      relic.taken = true; world.score += 750; p.dashCooldown = 0; burst(world, relic.x, relic.y, '#ffb7f3'); event(world, 'power', relic.x, relic.y, 'RELIQUIA +750');
+    }
     for (const enemy of world.enemies) {
       if (enemy.dead) continue;
       if (p.x + W > enemy.x && p.x < enemy.x + 36 && p.y + H > enemy.y && p.y < enemy.y + 34) {
-        if (p.shield > 0 || p.vy > 0 && previousY + H < enemy.y + 17) { enemy.dead = true; p.vy = -440; p.airJumps = 1; world.score += 200; burst(world, enemy.x + 18, enemy.y, '#fdad46'); event(world, 'coin', enemy.x, enemy.y, '+200'); }
+        if (p.shield > 0 || p.dash > 0 || p.vy > 0 && previousY + H < enemy.y + 17) { enemy.dead = true; p.vy = p.dash > 0 ? 0 : -440; p.airJumps = 1; world.score += 200; burst(world, enemy.x + 18, enemy.y, '#fdad46'); event(world, 'coin', enemy.x, enemy.y, '+200'); }
         else hurt(world, p);
       }
     }

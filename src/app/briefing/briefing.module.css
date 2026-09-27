@@ -40,8 +40,8 @@
 @media (max-width:850px) { .layout { grid-template-columns:1fr; } .root { padding:128px 20px 115px; } .report { padding:24px; } }
 @media (max-width:360px) { .root { padding-inline:16px; } .panel,.report { padding:20px; } .actions .button { width:100%; } }
 @media print {
-  :global(body:has([data-briefing-root])) { background:white!important; color:black!important; }
-  :global(body:has([data-briefing-root])) > :not(:has([data-briefing-report])) { display:none!important; }
+  :global(body):has(.root) { background:white!important; color:black!important; }
+  :global(body):has(.root) > :not(:has(.report)) { display:none!important; }
   .root { display:block!important; max-width:none; margin:0; padding:0; }
   .intro,.controls,.actions,.progress,.noPrint { display:none!important; }
   .layout { display:block; }

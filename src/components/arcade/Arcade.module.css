@@ -80,6 +80,13 @@ button.cell:disabled {cursor:default;}
 .orbitDisc[data-player='1'] {background:radial-gradient(at 30% 25%,#ffe1af,#ff9a49 60%,#80501a);}
 .orbitDisc[data-last=true] {animation:discArrive 240ms cubic-bezier(.23,1,.32,1) both;}
 .orbitDisc[data-winning=true] {outline:3px solid #fff0c9;outline-offset:3px;}
+.orbitDisc[data-preview=true] {background:radial-gradient(circle,#afe7f955 0 47%,transparent 50%);outline:1px dashed #c4f2ff;outline-offset:-6px;}
+.tacticalInfo {display:flex;justify-content:center;gap:12px 28px;flex-wrap:wrap;margin:16px auto 8px;font:10px var(--font-mono),monospace;color:#c0f1f8;}
+.tacticalInfo span:last-child {color:#ffd39d;}
+.tacticalRule {max-width:610px;text-align:center;font-size:11px;line-height:1.6;color:#b6cad8;margin:8px auto;}
+.enemyHp {position:absolute;bottom:4px;font:9px monospace;letter-spacing:2px;color:#ffe4ad;text-shadow:0 1px 3px #000;}
+.sprite[data-boss=true] {filter:hue-rotate(140deg) drop-shadow(0 0 9px #ffad4b);transform:scale(1.08);}
+button.cell:focus-visible,.orbitColumns button:focus-visible {outline:2px solid #b6f6ff;outline-offset:-2px;background:#abf6ff22;}
 .orbitColumns {display:grid;grid-template-columns:repeat(7,1fr);gap:7px;width:min(520px,100%);margin:0 auto 10px;}
 .platform {position:relative;width:100%;height:100%;min-height:0;background:#061321;overflow:hidden;}
 /* Size the canvas box in both axes; its intrinsic 16:9 bitmap stays fully visible. */
@@ -122,6 +129,7 @@ button.cell:disabled {cursor:default;}
 .blockReticle[data-player='0'] {left:25%;}.blockReticle[data-player='1'] {left:75%;}
 .blockHud {position:absolute;top:16px;inset-inline:18px;display:flex;justify-content:space-around;gap:20px;pointer-events:none;}
 .blockHud span {padding:8px 12px;border-radius:8px;background:#0b233bca;color:white;font:11px monospace;}
+.blockHud span{display:grid;grid-template-columns:1fr 18px;gap:5px;max-width:44%;backdrop-filter:blur(6px)}.blockHud b,.blockHud small{grid-column:1/-1}.blockHud small{font-size:8px;color:#bcd8df}.blockHud select{pointer-events:auto;min-width:0;max-width:160px;min-height:32px;border:1px solid #8eb9bd66;border-radius:5px;background:#0e2939;color:#e9fbff;font:10px monospace;padding:4px}.blockHud i{width:16px;height:16px;align-self:center;box-shadow:inset 0 1px #fff8,0 2px #0008}
 .blockStatus {position:absolute;bottom:15px;left:18px;font:9px monospace;padding:8px;background:#0b233bca;border-radius:6px;max-width:42%;}
 .blockInstructions {padding:14px 20px;border:1px solid #8fc7d32c;border-radius:10px;background:#06192b9c;text-align:left;max-width:650px;}
 .blockInstructions p {font-size:12px;margin:4px 0;}
@@ -155,7 +163,9 @@ button.cell:disabled {cursor:default;}
 .dpad .padButton:nth-child(1) {grid-column:1;grid-row:2;border-radius:8px 0 0 8px;}
 .dpad .padButton:nth-child(2) {grid-column:3;grid-row:2;border-radius:0 8px 8px 0;}
 .dpad:before {content:'';grid-column:2;grid-row:1/4;border-radius:8px;background:linear-gradient(#333d45,#171e25);border:1px solid #424b54;}
-.ab {display:flex;gap:14px;transform:rotate(-20deg);}
+.ab {display:grid;grid-template-columns:repeat(2,58px);gap:14px;transform:rotate(-20deg);}
+.ab .padButton:first-child {grid-column:2;background:radial-gradient(at 30% 20%,#b5bd9a,#62774b 70%,#35432b);}
+.fightButtons .padButton:last-child {grid-column:1/-1;width:auto;border-radius:24px;background:radial-gradient(at 30% 20%,#91a998,#415e52);}
 .ab .padButton {width:58px;height:58px;border-radius:50%;background:radial-gradient(at 30% 20%,#78c8e6,#217493 70%,#124b62);box-shadow:inset 0 2px #cbf3ff65,0 5px #062230,0 7px 8px #0007;}
 .ab .padButton:last-child {background:radial-gradient(at 30% 20%,#efb57c,#a96838 70%,#623f26);box-shadow:inset 0 2px #ffe7c855,0 5px #392114,0 7px 8px #0007;}
 .padCaption {color:#a0adb3;text-align:center;font:10px var(--font-mono),monospace;line-height:1.6;margin:10px 5px;}
@@ -172,5 +182,7 @@ button.cell:disabled {cursor:default;}
 @keyframes shotRing {from {transform:scale(.4);opacity:1;}to {transform:scale(1.3);opacity:0;}}
 @keyframes discArrive {from {transform:translateY(-14px) scale(.85);opacity:.4;}to {transform:translateY(0) scale(1);opacity:1;}}
 @media(prefers-reduced-motion:reduce) {.sprite,.game:before,.cabinet,.boot:before,.bootLogo,.bootTrack i,.cell[data-last=true]:after,.orbitDisc[data-last=true] {animation:none;}.cell[data-last=true]:after {display:none;}.gameCard,.button,.iconButton,.padButton {transition:none;}}
-@media(max-width:360px){.padArea,.blockPadArea{flex-wrap:wrap;justify-content:center;gap:24px}.lookPad{flex-shrink:0}.padBrand{gap:8px}.padBrand small{font-size:8px}}
+@media(max-width:360px){.padArea,.blockPadArea{flex-wrap:nowrap;justify-content:space-between;gap:8px}.lookPad{width:112px;height:112px;flex-shrink:0}.ab{grid-template-columns:repeat(2,52px);gap:8px;transform:none}.fightButtons{grid-template-columns:repeat(2,48px);gap:8px;transform:none}.fightButtons .padButton{width:48px;height:44px}.padBrand{gap:8px}.padBrand small{font-size:8px}}
+/* Keep both thumbs' controls in the same viewport on short phones. */
+@media(max-width:600px) and (max-height:740px){.phone{padding:8px 10px max(8px,env(safe-area-inset-bottom))}.gamepad{padding:16px 12px 28px;border-radius:32px 32px 42px 42px}.padBrand{margin:0 6px 10px}.lcd{min-height:0;padding:10px 8px;border-width:5px}.lcd b{font-size:19px;margin:3px 0}.lcd small{font-size:9px}.padArea{padding:18px 0 12px}.blockPadArea{padding:16px 0;gap:8px}.builderButtons{gap:8px}.padCaption{font-size:9px;line-height:1.5;margin:9px 2px}.padActions{margin-top:12px}.gamepad>.padCaption:last-child{display:none}.gamepad:before,.gamepad:after{bottom:11px}}
 @media(max-height:520px){.gameIntro{justify-content:safe center;overflow:auto}.gameIntro h3{font-size:30px}.gameIntro p{font-size:11px;line-height:1.4}.gameIntro{gap:10px}}

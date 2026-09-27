@@ -9,7 +9,7 @@ Tres pulsaciones del logo principal en el inicio abren un CRT casi a pantalla co
 - **Mar abierto:** batalla naval con dos flotas privadas, una en cada móvil. La pantalla pública nunca recibe las posiciones ocultas.
 - **Cuatro en órbita:** bonus de cuatro en raya para dos.
 
-Los controles del plataformas usan un canal WebRTC no ordenado, sin retransmisión de paquetes antiguos, con máscaras de cuatro bits y número de secuencia. Un watchdog libera los botones tras 320 ms sin señal. No se pide cámara ni micrófono. STUN público de Cloudflare, sin contratar TURN. Redes restrictivas pueden impedir la conexión directa: se informa y siguen disponibles teclado y juegos por turnos. No se promete latencia cero.
+Los controles de acción usan un canal WebRTC no ordenado, sin retransmisión de estados antiguos, con máscaras de nueve bits, secuencia y recuperación de la última pulsación. Un watchdog libera los botones tras 320 ms sin señal. No se pide cámara ni micrófono para jugar. STUN público de Cloudflare; soporte opcional TURN sin contratar ni configurar un relay. Redes restrictivas pueden impedir la conexión directa: se informa y siguen disponibles teclado y juegos por turnos. No se promete latencia cero. Detalles en [red de los mandos](arcade-network.md).
 
 ## Arte de ImageGen
 

@@ -23,7 +23,7 @@ export type ArcadeRequest = z.infer<typeof arcadeRequestSchema>;
 export type ArcadeState = { id: string; expiresAt: number; inviteExpiresAt: number; hostOnline: boolean; mode: ArcadeMode; version: number; game: ArcadeView | null;
   players: [ { connected: boolean; online: boolean;rematchReady?:boolean }, { connected: boolean; online: boolean;rematchReady?:boolean } ]; canRematch?:boolean;
   signals: [ { offer?: string | null; answer?: string | null; signalId: string | null }, { offer?: string | null; answer?: string | null; signalId: string | null } ];
-  token?: string; invites?: [string, string] };
+  token?: string; invites?: [string, string]; iceServers?: RTCIceServer[] };
 export type ArcadeCredentials = { id: string; token: string; role: ArcadeRole; slot?: Player };
 export class ArcadeHttpError extends Error { constructor(public status: number, message: string) { super(message); } }
 export async function arcadeFetch(request: ArcadeRequest, token?: string, signal?: AbortSignal): Promise<ArcadeState> {
@@ -37,3 +37,14 @@ export async function arcadeFetch(request: ArcadeRequest, token?: string, signal
   return result;
 }
 export function arcadeToken() { return Array.from(crypto.getRandomValues(new Uint8Array(32)), value => value.toString(16).padStart(2, '0')).join(''); }
+
+/** A host's explicit game change may overtake the previous turn's poll. */
+export async function selectArcadeMode(credentials: Pick<ArcadeCredentials, 'id' | 'token'>, mode: ArcadeMode, version: number, send = arcadeFetch): Promise<ArcadeState> {
+  const select = (currentVersion: number) => send({ action: 'select', id: credentials.id, role: 'host', mode, version: currentVersion }, credentials.token);
+  try { return await select(version); }
+  catch (error) {
+    if (!(error instanceof ArcadeHttpError) || error.status !== 409) throw error;
+    const fresh = await send({ action: 'poll', id: credentials.id, role: 'host' }, credentials.token);
+    return select(fresh.version); // One bounded retry; never replay a player's move.
+  }
+}

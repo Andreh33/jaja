@@ -20,6 +20,7 @@ const names: Record<string, string> = { lobby: 'Elige en la televisión', platfo
 export default function ArcadeController() {
   const [credentials, setCredentials] = useState<ArcadeCredentials | null>(null); const [state, setState] = useState<ArcadeState | null>(null); const [error, setError] = useState(''); const [busy, setBusy] = useState(false); const initialized = useRef(false);
   const peer = useControllerPeer(credentials, state);
+  useEffect(()=>{if(!credentials||!navigator.wakeLock)return;let stopped=false,pending=false;let lock:WakeLockSentinel|null=null;const acquire=async()=>{if(document.hidden||lock||pending||stopped)return;pending=true;try{const next=await navigator.wakeLock.request('screen');if(stopped){await next.release();return;}lock=next;next.addEventListener('release',()=>{if(lock===next)lock=null;});}catch{/* The OS may deny wake lock in battery saving mode. */}finally{pending=false;}};void acquire();document.addEventListener('visibilitychange',acquire);return()=>{stopped=true;document.removeEventListener('visibilitychange',acquire);void lock?.release();};},[credentials]);
   useEffect(() => {
     if (initialized.current) return; initialized.current = true;
     async function start() {
@@ -44,11 +45,11 @@ export default function ArcadeController() {
     void start();
   }, []);
   useEffect(() => {
-    if (!credentials) return; let stopped = false; let timer: ReturnType<typeof setTimeout>; const abort = new AbortController();
+    if (!credentials) return; let stopped = false; let timer: ReturnType<typeof setTimeout>; const abort = new AbortController();const started=Date.now();
     async function poll() { if (stopped) return;
       if (!document.hidden && navigator.onLine) try { const result = await arcadeFetch({ action: 'poll', id: credentials!.id, role: credentials!.role }, credentials!.token, abort.signal); if (!stopped) { setState(previous => !previous || result.version >= previous.version ? result : previous); setError(''); } }
       catch (cause) { if (!stopped) { setError(cause instanceof Error ? cause.message : 'Señal interrumpida.'); if (cause instanceof ArcadeHttpError && [401, 410].includes(cause.status)) { setCredentials(null); setState(null); forgetController(); return; } } }
-      timer = setTimeout(poll, 1300);
+      timer = setTimeout(poll, Date.now()-started<20000?500:1000);
     }
     void poll(); return () => { stopped = true; clearTimeout(timer); abort.abort(); };
   }, [credentials]);
