@@ -12,6 +12,7 @@ export const tvProjects = projects
     color: project.id === 'french-tacos' ? '#f3a54c' : '#86caff' }));
 
 export const tvChannels = [{ id: 'studio', name: 'Latech Studio', image: '/brand/latech-logo.webp', category: 'Tu imaginación es nuestro límite.' },
+  {id:'teletext',name:'Latech Teletexto',image:'/equipo/fundadores/foto.jpeg',category:'Andrés y Luis. La historia detrás de Latech.'},
   ...tvProjects.map(project => ({ id: project.slug, name: project.name, image: project.image, category: project.sector }))];
 export const tvChannelIds = tvChannels.map(channel => channel.id);
 export const isTvChannel = (value: string) => tvChannelIds.includes(value);

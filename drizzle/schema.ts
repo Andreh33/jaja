@@ -431,7 +431,7 @@ export const tvRemoteSessions = sqliteTable('tv_remote_sessions', {
 export type TvDeviceInfo = { browser: string; os: string; device: string; country: string | null; city: string | null };
 
 /** Ephemeral two-controller arcade. SDP is deleted on expiry, never shown in CRM. */
-export type ArcadeSeat = { tokenHash: string | null; inviteHash: string | null; joinedAt: number | null; seenAt: number; info: TvDeviceInfo | null; userId: string | null; name: string | null; offer: string | null; answer: string | null; signalId: string | null };
+export type ArcadeSeat = { tokenHash: string | null; inviteHash: string | null; joinedAt: number | null; seenAt: number; info: TvDeviceInfo | null; userId: string | null; name: string | null; offer: string | null; answer: string | null; signalId: string | null; rematchReady?:boolean; gameEnded?:boolean };
 export const tvArcadeSessions = sqliteTable('tv_arcade_sessions', {
   id: text('id').primaryKey(), hostTokenHash: text('host_token_hash'), creatorIpHash: text('creator_ip_hash'),
   createdAt: integer('created_at').notNull(), expiresAt: integer('expires_at').notNull(), inviteExpiresAt: integer('invite_expires_at').notNull(),

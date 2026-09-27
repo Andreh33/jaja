@@ -19,6 +19,7 @@ export default function TvRemoteController() {
   const [connecting, setConnecting] = useState(true); const [error, setError] = useState(''); const [ended, setEnded] = useState(false);
   const [sending, setSending] = useState(false); const [network, setNetwork] = useState(true); const [retry, setRetry] = useState(0);
   const pending = useRef(false); const latestVersion = useRef(0);
+  const wakePoll = useRef<(() => void) | null>(null); const awaitingAck = useRef(false);
   const [now, setNow] = useState(0);
   const remaining = state ? Math.max(0, Math.ceil((state.expiresAt - now) / 60_000)) : 0;
 
@@ -55,23 +56,25 @@ export default function TvRemoteController() {
 
   useEffect(() => {
     if (!credentials) return;
-    let stopped = false; let timer: ReturnType<typeof setTimeout>; const abort = new AbortController();
+    let stopped = false; let polling = false; let timer: ReturnType<typeof setTimeout>; const abort = new AbortController();
     async function poll() {
-      if (stopped) return;
+      if (stopped || polling) return;
       if (document.hidden || !navigator.onLine) { if (!navigator.onLine) setNetwork(false); timer = setTimeout(poll, 1500); return; }
+      polling = true;
       try {
         const result = await remoteFetch({ action: 'poll', id: credentials!.id, role: 'controller' }, credentials!.token, abort.signal);
         if (stopped) return;
-        if (result.commandVersion >= latestVersion.current) { setState(result); latestVersion.current = result.commandVersion; }
+        if (result.commandVersion >= latestVersion.current) { setState(result); latestVersion.current = result.commandVersion; awaitingAck.current = result.appliedVersion < result.commandVersion; }
         setNetwork(true); setNow(Date.now());
       } catch (cause) {
         if (stopped) return;
         setNetwork(false);
         if (cause instanceof RemoteHttpError && [401, 410].includes(cause.status)) { save(null); setEnded(true); setCredentials(null); setState(null); setError(cause.message); return; }
-      }
-      timer = setTimeout(poll, 1600);
+      } finally { polling = false; }
+      timer = setTimeout(poll, awaitingAck.current ? 200 : 1600);
     }
-    void poll(); return () => { stopped = true; clearTimeout(timer); abort.abort(); };
+    wakePoll.current = () => { clearTimeout(timer); if (!polling) timer = setTimeout(poll, 80); };
+    void poll(); return () => { stopped = true; wakePoll.current = null; clearTimeout(timer); abort.abort(); };
   }, [credentials]);
 
   async function command(action: RemoteCommand, channel?: string) {
@@ -79,7 +82,7 @@ export default function TvRemoteController() {
     pending.current = true; setSending(true); setError('');
     try {
       const result = await remoteFetch({ action: 'command', id: credentials.id, command: action, ...(channel ? { channel } : {}) }, credentials.token);
-      latestVersion.current = result.commandVersion; setState(result); setNetwork(true);
+      latestVersion.current = result.commandVersion; setState(result); setNetwork(true); awaitingAck.current = true; wakePoll.current?.();
       if (navigator.vibrate) navigator.vibrate(12);
     } catch (cause) { setError(cause instanceof Error ? cause.message : 'No se pudo enviar la señal.'); }
     finally { pending.current = false; setSending(false); }
@@ -107,10 +110,10 @@ export default function TvRemoteController() {
       <div className={styles.remoteShortcuts}><button type="button" disabled={disabled} onClick={() => command('channel', 'studio')}><Home size={17} /><span>STUDIO</span></button><button type="button" disabled={disabled} onClick={() => command('expand')}><Expand size={17} /><span>{state?.expanded ? 'REDUCIR' : 'AMPLIAR'}</span></button></div>
       <div className={styles.keypad}>{tvChannels.map(item => <button type="button" key={item.id} disabled={disabled} aria-label={`Canal ${channelNumber(item.id)}: ${item.name}`} aria-pressed={state?.displayedChannel === item.id} onClick={() => command('channel', item.id)}>{channelNumber(item.id)}<small>{item.id === 'studio' ? 'LATECH' : item.name.replace('Monopatín ', '').slice(0, 14)}</small></button>)}</div>
       <TvChannelGuide channel={state?.displayedChannel ?? ''} disabled={disabled} onSelect={id => command('channel', id)} />
-      <div className={styles.controlLabel}>LA WEB / RECORRIDO</div>
+      <div className={styles.controlLabel}>{state?.expanded ? 'LA PANTALLA / RECORRIDO' : 'LA WEB / RECORRIDO'}</div>
       <div className={styles.scrollPad}><button type="button" disabled={disabled} onClick={() => command('scroll-up')} aria-label="Subir en la web"><ArrowUp size={23} /><span>SUBIR</span></button><button type="button" disabled={disabled} onClick={() => command('scroll-down')} aria-label="Bajar en la web"><ArrowDown size={23} /><span>BAJAR</span></button></div>
       <div className={styles.colorKeys}>{(['visit-home', 'visit-projects', 'visit-lab', 'visit-contact'] as const).map((action, index) => <button type="button" key={action} disabled={disabled} onClick={() => command(action)}><i /><span>{['INICIO', 'TRABAJO', 'JUEGOS', 'HABLEMOS'][index]}</span></button>)}</div>
-      {state && <p className={styles.remoteHint}>{!network ? 'Sin red. La conexión se recuperará automáticamente.' : !state.hostOnline ? 'Vuelve a la pestaña de la televisión para continuar.' : 'La señal mueve la web de la otra pantalla.'}</p>}
+      {state && <p className={styles.remoteHint}>{!network ? 'Sin red. La conexión se recuperará automáticamente.' : !state.hostOnline ? 'Vuelve a la pestaña de la televisión para continuar.' : state.expanded ? 'SUBIR y BAJAR recorren Studio dentro de la pantalla ampliada. Los proyectos externos necesitan compatibilidad propia.' : 'SUBIR y BAJAR recorren la web del ordenador. Amplía Studio para navegar dentro de su pantalla.'}</p>}
       {state && error && <p role="alert" className={styles.error}>{error}</p>}
       <div className={styles.remoteFoot}><span>LT—96</span><span>IMAGINATION, UNLIMITED.</span><i aria-hidden="true" /></div>
     </div>

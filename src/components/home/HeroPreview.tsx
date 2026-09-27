@@ -12,6 +12,8 @@ import type { StudioExperience } from './useStudioExperience';
 import StudioShowcase from './StudioShowcase';
 import StudioBrowser from './StudioBrowser';
 import styles from './HeroPreview.module.css';
+import TvTeletext from './TvTeletext';
+import TvPhotoScreen from './TvPhotoScreen';
 
 const StudioGravity = dynamic(() => import('./StudioGravity'), { loading: () => <p className={styles.loading}>Preparando el escenario…</p> });
 const StudioActivate = dynamic(() => import('./StudioActivate'), { loading: () => <p className={styles.loading} role="status">Preparando tu transformación…</p> });
@@ -45,6 +47,7 @@ export default function HeroPreview({ blueprint, expanded = false, active = true
     if (keyboardInput) requestAnimationFrame(() => heading.current?.focus({ preventScroll: true }));
   }
   useImperativeHandle(navigationRef, () => ({ navigate(next, keyboardInput) {
+    studio.setTeletext(false); studio.setPhoto(null);
     studio.setBrowsing(false);
     navigate(next, keyboardInput);
     viewport.current?.scrollTo({ top: 0, behavior: 'instant' });
@@ -71,7 +74,7 @@ export default function HeroPreview({ blueprint, expanded = false, active = true
   const intro = (eyebrow: string, first: string, second: string) => <><p className={styles.eyebrow}>{eyebrow}</p><h3 ref={heading} tabIndex={-1} className={styles.compact}>{first}{' '}<br /><em>{second}</em></h3></>;
 
   return <div className={styles.preview} data-live-preview data-blueprint={blueprint} data-expanded={expanded} data-active={active} role="region" aria-label="Latech Studio, experiencia interactiva">
-    {studio.browsing ? <StudioBrowser project={project} active={active} expanded={expanded} onProject={studio.setProject} onExpand={() => studio.setExpanded(true)} onClose={() => { studio.setBrowsing(false); requestAnimationFrame(() => heading.current?.focus({ preventScroll: true })); }} /> : <>
+    {studio.photo ? <TvPhotoScreen photo={studio.photo} onClose={()=>studio.setPhoto(null)}/>:studio.teletext ? <TvTeletext onClose={()=>studio.setTeletext(false)}/> : studio.browsing ? <StudioBrowser project={project} active={active} expanded={expanded} onProject={studio.setProject} onExpand={() => studio.setExpanded(true)} onClose={() => { studio.setBrowsing(false); requestAnimationFrame(() => heading.current?.focus({ preventScroll: true })); }} /> : <>
     <div className={styles.toolbar} data-studio-navigation>
       <button type="button" onClick={event => back(event.detail === 0)} disabled={!studio.history.length} aria-label="Atrás en Latech Studio"><ArrowLeft size={12} /></button>
       <span>latech / studio / {studioPages.find(item => item.id === page)?.label.toLowerCase()}</span>
@@ -82,10 +85,10 @@ export default function HeroPreview({ blueprint, expanded = false, active = true
       <nav aria-label="Navegación de Latech Studio">{studioPages.slice(1, 3).map(item => <button key={item.id} type="button" onClick={event => navigate(item.id, event.detail === 0)} aria-current={page === item.id ? 'page' : undefined}>{item.label}</button>)}</nav>
       <button ref={menuButton} type="button" className={styles.menuButton} aria-label={menu ? 'Cerrar menú de Studio' : 'Abrir menú de Studio'} aria-expanded={menu} aria-controls={id} onClick={() => setMenu(value => !value)}>{menu ? <X size={16} /> : <Menu size={16} />}</button>
     </div>
-    {menu && <nav id={id} aria-label="Todas las páginas de Latech Studio" className={styles.menu} onKeyDown={event => { if (event.key === 'Escape') { event.stopPropagation(); setMenu(false); menuButton.current?.focus(); } }}>
+    {menu && <nav id={id} data-studio-scroll-menu aria-label="Todas las páginas de Latech Studio" className={styles.menu} onKeyDown={event => { if (event.key === 'Escape') { event.stopPropagation(); setMenu(false); menuButton.current?.focus(); } }}>
       {studioPages.map((item, index) => <button type="button" key={item.id} aria-current={page === item.id ? 'page' : undefined} onClick={event => navigate(item.id, event.detail === 0)}><small>0{index + 1}</small>{item.label}<ArrowUpRight size={16} /></button>)}
     </nav>}
-    <div ref={viewport} className={styles.screen} inert={menu || !active} tabIndex={0} aria-label="Contenido desplazable de Latech Studio">
+    <div ref={viewport} data-studio-scroll className={styles.screen} inert={menu || !active} tabIndex={0} aria-label="Contenido desplazable de Latech Studio">
       <div key={page} className={styles.content} data-keyboard={keyboard}>
         {page === 'home' && <>
           <p className={styles.eyebrow}>ESTO NO ES PARA MIRARLO DESDE FUERA.</p>

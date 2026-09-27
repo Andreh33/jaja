@@ -5,9 +5,13 @@ import * as Dialog from '@radix-ui/react-dialog';
 import { Check, Copy, Power, QrCode, RefreshCw, Smartphone, X } from 'lucide-react';
 import { remoteFetch, RemoteHttpError, type RemoteCredentials, type RemoteState } from '@/lib/tv-remote-protocol';
 import { tvProjects } from '@/lib/tv-channels';
+import { scrollRemoteView } from '@/lib/tv-remote-view';
 import type { StudioExperience } from './useStudioExperience';
 import TvChannelGuide from './TvChannelGuide';
 import styles from './TvRemote.module.css';
+import ArcadeSoundToggle from '../arcade/ArcadeSoundToggle';
+import {playArcadeSound} from '@/lib/arcade-audio';
+import TvPhotoBooth from './TvPhotoBooth';
 
 export default function TvRemoteHost({ studio }: { studio: StudioExperience }) {
   const [open, setOpen] = useState(false);
@@ -19,9 +23,10 @@ export default function TvRemoteHost({ studio }: { studio: StudioExperience }) {
   const [now, setNow] = useState(0);
   const latest = useRef(studio); const applied = useRef(0); const generation = useRef(0); const paired = useRef(false);
   useEffect(() => { latest.current = studio; });
-  const channel = studio.browsing ? tvProjects[studio.project].slug : 'studio';
+  const channel = studio.teletext?'teletext':studio.browsing ? tvProjects[studio.project].slug : 'studio';
   function select(id: string) {
     const current = latest.current;
+    playArcadeSound('select');current.setPhoto(null);current.setTeletext(id==='teletext');if(id==='teletext')return;
     if (id === 'studio') { current.setBrowsing(false); current.navigate('home'); }
     else { const index = tvProjects.findIndex(project => project.slug === id); if (index >= 0) { current.setProject(index); current.setBrowsing(true); } }
   }
@@ -37,28 +42,34 @@ export default function TvRemoteHost({ studio }: { studio: StudioExperience }) {
       if (document.hidden || !navigator.onLine) { timer = setTimeout(poll, 1500); return; }
       try {
         const current = latest.current;
-        const result = await remoteFetch({ action: 'poll', id: credentials!.id, role: 'host', appliedVersion: applied.current, channel: current.browsing ? tvProjects[current.project].slug : 'studio', expanded: current.expanded }, credentials!.token, abort.signal);
+        const result = await remoteFetch({ action: 'poll', id: credentials!.id, role: 'host', appliedVersion: applied.current, channel: current.teletext?'teletext':current.browsing ? tvProjects[current.project].slug : 'studio', expanded: current.expanded }, credentials!.token, abort.signal);
         if (stopped) return;
         setState(result); setError(''); setNow(Date.now());
         if (result.paired && !paired.current) { paired.current = true; setLink(''); setQr(''); setOpen(false); }
         if (result.commandVersion > applied.current) {
-          selectRef.current(result.channel); current.setExpanded(result.expanded);
-          if (result.lastAction.startsWith('visit-') || result.lastAction.startsWith('scroll-')) {
+          const shownChannel = current.teletext?'teletext':current.browsing ? tvProjects[current.project].slug : 'studio';
+          if (result.channel !== shownChannel) selectRef.current(result.channel);
+          if (result.expanded !== current.expanded) current.setExpanded(result.expanded);
+          if (result.lastAction.startsWith('scroll-')) {
+            scrollRemoteView(result.lastAction === 'scroll-up' ? -1 : 1, result.expanded);
+          } else if (result.lastAction.startsWith('visit-')) {
             requestAnimationFrame(() => requestAnimationFrame(() => {
               const behavior = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth';
               const targets: Record<string, string> = { 'visit-home': 'hero-title', 'visit-projects': 'proyectos', 'visit-lab': 'laboratorio', 'visit-contact': 'remote-contact' };
-              if (result.lastAction.startsWith('scroll-')) window.scrollBy({ top: window.innerHeight * .72 * (result.lastAction === 'scroll-up' ? -1 : 1), behavior });
-              else document.getElementById(targets[result.lastAction])?.scrollIntoView({ behavior, block: 'start' });
+              document.getElementById(targets[result.lastAction])?.scrollIntoView({ behavior, block: 'start' });
             }));
           }
           applied.current = result.commandVersion;
+          // Acknowledge now, not after another full polling interval.
+          const ack = await remoteFetch({ action: 'poll', id: credentials!.id, role: 'host', appliedVersion: applied.current, channel: result.channel, expanded: result.expanded }, credentials!.token, abort.signal);
+          if (!stopped) setState(ack);
         }
       } catch (cause) {
         if (stopped) return;
         setError(cause instanceof Error ? cause.message : 'Señal interrumpida. Reintentando…');
         if (cause instanceof RemoteHttpError && [401, 410].includes(cause.status)) { setCredentials(null); setState(null); setLink(''); setQr(''); return; }
       }
-      timer = setTimeout(poll, 900);
+      timer = setTimeout(poll, paired.current ? 400 : 900);
     }
     void poll();
     return () => { stopped = true; clearTimeout(timer); abort.abort(); };
@@ -91,6 +102,8 @@ export default function TvRemoteHost({ studio }: { studio: StudioExperience }) {
   const remaining = state ? Math.max(0, Math.ceil(((state.paired ? state.expiresAt : state.inviteExpiresAt) - now) / 1000)) : 0;
   return <div className={styles.hostTools}>
     <TvChannelGuide channel={channel} onSelect={select} />
+    <ArcadeSoundToggle className={styles.guideTrigger}/>
+    <TvPhotoBooth studio={studio}/>
     <Dialog.Root open={open} onOpenChange={setOpen}>
       <Dialog.Trigger className={styles.remoteTrigger} onClick={event => setKeyboard(event.detail === 0)}><Smartphone size={17} /><span>{state?.paired ? 'Mando conectado' : 'Usa tu móvil de mando'}</span>{state?.paired && <i className={styles.led} />}</Dialog.Trigger>
       <Dialog.Portal><Dialog.Overlay data-keyboard={keyboard} className={styles.overlay} /><Dialog.Content data-keyboard={keyboard} className={`${styles.dialog} ${styles.pairDialog}`}>

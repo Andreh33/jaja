@@ -80,7 +80,8 @@
   .artwork{left:-52px}
   .backPlate,.middlePlate{display:none}
   .browser{border-color:transparent;border-radius:5% / 6%;box-shadow:none}
-  .previewTools{transform:translateY(67px)}
-  .baseline{margin-top:67px}
+  .previewDock{position:relative;z-index:4;margin-top:110px}
+  .previewTools{margin:0;transform:none}
+  .baseline{margin-top:0}
 }
 @media(min-width:768px) and (max-width:1100px){.artwork{left:-20px}}

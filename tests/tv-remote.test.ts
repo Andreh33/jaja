@@ -64,6 +64,18 @@ describe('Temporary TV remote', () => {
     assert.equal(remoteRequestSchema.safeParse({ action: 'command', id: crypto.randomUUID(), command: 'channel' }).success, false);
     assert.equal(remoteRequestSchema.safeParse({ action: 'create', channel: 'studio', expanded: false, url: 'https://evil.example' }).success, false);
   });
+  it('keeps scroll inside the expanded screen; only page shortcuts close it', async () => {
+    const { host, controller } = await pair();
+    await execute({ action: 'poll', id: host.id, role: 'host', appliedVersion: 0, channel: 'studio', expanded: true }, { ...context(), token: host.token });
+    for (const command of ['scroll-down', 'scroll-up'] as const) {
+      now += 200;
+      const result = await execute({ action: 'command', id: host.id, command }, { ...context(), token: controller });
+      assert.equal(result.expanded, true);
+    }
+    now += 200;
+    const visit = await execute({ action: 'command', id: host.id, command: 'visit-projects' }, { ...context(), token: controller });
+    assert.equal(visit.expanded, false);
+  });
   it('expires QR invitations, sessions and offline hosts', async () => {
     const host = await create(); assert.ok('invite' in host);
     now += TV_INVITE_MS;
@@ -90,5 +102,5 @@ describe('Temporary TV remote', () => {
     assert.equal(tvDeviceInfo(headers, true).city, 'Madrid');
     assert.equal(measurementPath('/mando'), null);
   });
-  it('offers every permitted project and keeps blocked projects out of the TV', () => { assert.equal(tvProjects.length, 11); assert.equal(tvChannels.length, 12); assert.equal(tvProjects[0].slug, 'monkey'); assert.ok(!tvProjects.some(project => project.id === 'zonasport')); });
+  it('offers every permitted project, teletext and keeps blocked projects out of the TV', () => { assert.equal(tvProjects.length, 11); assert.equal(tvChannels.length, 13); assert.ok(tvChannels.some(channel=>channel.id==='teletext')); assert.equal(tvProjects[0].slug, 'monkey'); assert.ok(!tvProjects.some(project => project.id === 'zonasport')); });
 });

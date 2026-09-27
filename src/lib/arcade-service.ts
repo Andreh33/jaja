@@ -14,7 +14,8 @@ function view(row: Row, role: ArcadeRole, now: number): ArcadeState {
   const player = role === 'host' ? null : role === 'p0' ? 0 : 1;
   return { id: row.id, expiresAt: row.expiresAt, inviteExpiresAt: row.inviteExpiresAt, mode: row.mode as ArcadeMode, version: row.version, hostOnline: now - row.hostSeenAt < ARCADE_OFFLINE_MS,
     game: row.game ? arcadeView(row.game, player) : null,
-    players: row.seats.map(seat => ({ connected: !!seat.joinedAt, online: !!seat.joinedAt && now - seat.seenAt < ARCADE_OFFLINE_MS })) as ArcadeState['players'],
+    canRematch:!!(row.game&&row.game.winner!==null)||!!row.seats[0].gameEnded,
+    players: row.seats.map(seat => ({ connected: !!seat.joinedAt, online: !!seat.joinedAt && now - seat.seenAt < ARCADE_OFFLINE_MS,rematchReady:!!seat.rematchReady })) as ArcadeState['players'],
     signals: row.seats.map((seat, index) => role === 'host' ? { answer: seat.answer, signalId: seat.signalId } : player === index ? { offer: seat.offer, signalId: seat.signalId } : { signalId: null }) as ArcadeState['signals'] };
 }
 export function createArcadeService<TSchema extends Record<string, unknown>>(database: LibSQLDatabase<TSchema>, clock = Date.now) {
@@ -60,7 +61,7 @@ export function createArcadeService<TSchema extends Record<string, unknown>>(dat
       }
       if (request.action === 'select' || request.action === 'move') {
         if (request.version !== row.version) throw new RemoteError(409, 'La partida ha cambiado. Espera a que llegue la nueva jugada.');
-        if (request.action === 'select') { changes.mode = request.mode; changes.game = request.mode === 'lobby' || request.mode === 'platform' ? null : newArcadeGame(request.mode); }
+        if (request.action === 'select') { changes.mode = request.mode; changes.game = request.mode === 'naval' || request.mode === 'space' || request.mode === 'orbit' ? newArcadeGame(request.mode) : null;for(const seat of seats){seat.rematchReady=false;seat.gameEnded=false;}changes.seats=seats; }
         else {
           if (now - row.hostSeenAt >= ARCADE_OFFLINE_MS) throw new RemoteError(409, 'La televisión está en pausa.');
           if (!row.game || !seats.every(seat => seat.joinedAt)) throw new RemoteError(409, 'Conecta los dos mandos antes de jugar.');
@@ -69,6 +70,20 @@ export function createArcadeService<TSchema extends Record<string, unknown>>(dat
         changes.version = row.version + 1;
       }
       if (request.action === 'reconnect') { Object.assign(seats[player], { offer: null, answer: null, signalId: null }); changes.seats = seats; }
+      if(request.action==='finished'){
+        if(request.version!==row.version)throw new RemoteError(409,'La partida ya ha cambiado.');
+        if(!['platform','fight'].includes(row.mode))throw new RemoteError(400,'Este juego no tiene final de partida local.');
+        seats[0].gameEnded=true;changes.seats=seats;
+      }
+      if(request.action==='rematch'){
+        if(request.version!==row.version)throw new RemoteError(409,'La siguiente partida ya ha empezado.');
+        if(!seats.every(seat=>seat.joinedAt)||!(row.game&&row.game.winner!==null)&&!seats[0].gameEnded)throw new RemoteError(409,'La revancha estará disponible al terminar.');
+        seats[player].rematchReady=true;changes.seats=seats;
+        if(seats.every(seat=>seat.rematchReady)){
+          changes.game=row.mode==='naval'||row.mode==='space'||row.mode==='orbit'?newArcadeGame(row.mode):null;changes.version=row.version+1;
+          for(const seat of seats){seat.rematchReady=false;seat.gameEnded=false;}
+        }
+      }
       if (request.action === 'signal') {
         if (role !== 'host' && request.slot !== player) throw new RemoteError(403, 'Ese mando pertenece a otro jugador.');
         if (!seats[request.slot].joinedAt) throw new RemoteError(409, 'Conecta ese mando primero.');

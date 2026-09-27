@@ -1,0 +1,13 @@
+import{describe,it}from'node:test';
+import assert from'node:assert/strict';
+import {readFileSync}from'node:fs';
+import{receiveTvPhotos,TV_PHOTO_MAX}from'../src/lib/tv-photo-transfer';
+describe('Temporary photo transfer',()=>{
+  it('reserves the full Studio height for photo and teletext, including in the expanded dialog',()=>{for(const file of['TvPhotoScreen','TvTeletext'])assert.match(readFileSync(new URL(`../src/components/home/${file}.module.css`,import.meta.url),'utf8'),/height:calc\(var\(--studio-screen-height\) \+ var\(--studio-nav-height\)\)/);});
+  function setup(){const photos:Blob[]=[];const channel={onmessage:null as null|((event:{data:unknown})=>void),onclose:null,binaryType:''};const close=receiveTvPhotos(channel as unknown as RTCDataChannel,blob=>photos.push(blob));const send=(data:unknown)=>channel.onmessage?.({data});return{photos,send,close};}
+  it('accepts only complete bounded JPEG frames',()=>{const t=setup();t.send(JSON.stringify({type:'photo',size:4}));t.send(new Uint8Array([255,216,255,217]).buffer);assert.equal(t.photos.length,1);assert.equal(t.photos[0].type,'image/jpeg');assert.equal(t.photos[0].size,4);});
+  it('rejects excess bytes, wrong signatures and unannounced chunks',()=>{for(const header of[JSON.stringify({type:'photo',size:TV_PHOTO_MAX+1}),'x'.repeat(90),JSON.stringify({type:'photo',size:3})]){const t=setup();t.send(header);t.send(new Uint8Array([255,216,255,217]).buffer);assert.equal(t.photos.length,0);}const t=setup();t.send(new Uint8Array([255,216,255,217]).buffer);t.send(JSON.stringify({type:'photo',size:4}));t.send(new Uint8Array([60,115,118,103]).buffer);assert.equal(t.photos.length,0);});
+  it('drops buffered data when the channel is cleaned up',()=>{const t=setup();t.send(JSON.stringify({type:'photo',size:4}));t.send(new Uint8Array([255,216]).buffer);t.close();t.send(new Uint8Array([255,217]).buffer);assert.equal(t.photos.length,0);});
+  it('accepts JPEG markers split across chunk boundaries',()=>{const t=setup();t.send(JSON.stringify({type:'photo',size:4}));for(const byte of[255,216,255,217])t.send(new Uint8Array([byte]).buffer);assert.equal(t.photos.length,1);});
+  it('acknowledges only a complete received photo with the matching identifier',()=>{const messages:string[]=[];const channel={readyState:'open',binaryType:'',onmessage:null as null|((event:{data:unknown})=>void),onclose:null,send:(message:string)=>messages.push(message)};const id='aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee';receiveTvPhotos(channel as unknown as RTCDataChannel,()=>{});channel.onmessage?.({data:JSON.stringify({type:'photo',id,size:4})});assert.equal(messages.length,0);channel.onmessage?.({data:new Uint8Array([255,216,255,217]).buffer});assert.deepEqual(JSON.parse(messages[0]),{type:'photo-ack',id});});
+});

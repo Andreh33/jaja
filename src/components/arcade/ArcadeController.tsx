@@ -1,9 +1,11 @@
 'use client';
 import Link from 'next/link';
-import { useEffect, useRef, useState, type PointerEvent } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { arcadeFetch, ArcadeHttpError, arcadeToken, type ArcadeCredentials, type ArcadeState } from '@/lib/arcade-protocol';
 import { useControllerPeer } from './useArcadePeers';
 import ArcadeBoard from './ArcadeBoard';
+import ArcadeLiveControls from './ArcadeLiveControls';
+import TvPhotoCapture from './TvPhotoCapture';
 import styles from './Arcade.module.css';
 const KEY = 'latech-arcade-controller';
 function savedController(): (ArcadeCredentials & { invite?: string }) | null {
@@ -14,7 +16,7 @@ function savedController(): (ArcadeCredentials & { invite?: string }) | null {
 }
 function saveController(value: ArcadeCredentials & { invite?: string }) { try { sessionStorage.setItem(KEY, JSON.stringify(value)); } catch { /* Pairing still works without persistence. */ } }
 function forgetController() { try { sessionStorage.removeItem(KEY); } catch { /* Storage may be disabled. */ } }
-const names: Record<string, string> = { lobby: 'Elige en la televisión', platform: 'Salto Zero', space: 'Space Wars', naval: 'Mar abierto', orbit: 'Cuatro en órbita' };
+const names: Record<string, string> = { lobby: 'Elige en la televisión', platform: 'Salto Zero', fight:'Neon Clash', blocks:'Isla libre',photo:'Tu foto en la tele', space: 'Space Wars', naval: 'Mar abierto', orbit: 'Cuatro en órbita' };
 export default function ArcadeController() {
   const [credentials, setCredentials] = useState<ArcadeCredentials | null>(null); const [state, setState] = useState<ArcadeState | null>(null); const [error, setError] = useState(''); const [busy, setBusy] = useState(false); const initialized = useRef(false);
   const peer = useControllerPeer(credentials, state);
@@ -55,13 +57,12 @@ export default function ArcadeController() {
     try { const result = await arcadeFetch({ action: 'move', id: credentials.id, role: credentials.role as 'p0' | 'p1', cell, version: state.version }, credentials.token); setState(result); }
     catch (cause) { setError(cause instanceof Error ? cause.message : 'La jugada no ha llegado.'); } finally { setBusy(false); }
   }
-  function press(event: PointerEvent<HTMLButtonElement>, bit: number) { if (!credentials || !state?.hostOnline) return; event.preventDefault(); event.currentTarget.setPointerCapture(event.pointerId); peer.setInput(bit, true); if ('vibrate' in navigator) navigator.vibrate(9); }
-  function release(bit: number) { peer.setInput(bit, false); }
-  const bind = (bit: number) => ({ onPointerDown: (event: PointerEvent<HTMLButtonElement>) => press(event, bit), onPointerUp: () => release(bit), onPointerCancel: () => release(bit), onLostPointerCapture: () => release(bit), onContextMenu: (event: React.MouseEvent) => event.preventDefault() });
   async function reconnect() { if (!credentials) return; setBusy(true); try { const result = await arcadeFetch({ action: 'reconnect', id: credentials.id, role: credentials.role as 'p0' | 'p1' }, credentials.token); setState(result); } catch (cause) { setError(cause instanceof Error ? cause.message : 'No se pudo reconectar.'); } finally { setBusy(false); } }
-  return <main className={styles.phone}><div className={styles.gamepad}><div className={styles.padBrand}>LATECH <small>WIRELESS / 1999</small></div><div className={styles.lcd}><small>{credentials ? `JUGADOR ${(credentials.slot ?? 0) + 1} / ${state?.hostOnline ? 'TELEVISIÓN CONECTADA' : 'TELEVISIÓN EN PAUSA'}` : 'BUSCANDO UNA NUEVA PARTIDA'}</small><b>{state ? names[state.mode] : 'Tu móvil. Tu mando.'}</b><small>{state?.mode === 'platform' ? credentials?.slot === 1 ? 'El plataformas lo controla el jugador 1.' : peer.status : state?.game ? state.game.winner !== null ? 'Partida terminada' : `Turno del jugador ${state.game.turn + 1}` : 'Escanea el QR de la televisión para conectar.'}</small></div>
+  async function rematch(){if(!credentials||!state||busy)return;setBusy(true);try{setState(await arcadeFetch({action:'rematch',id:credentials.id,role:credentials.role as'p0'|'p1',version:state.version},credentials.token));}catch(cause){setError(cause instanceof Error?cause.message:'No ha llegado la confirmación.');}finally{setBusy(false);}}
+  return <main className={styles.phone}><div className={styles.gamepad}><div className={styles.padBrand}>LATECH <small>WIRELESS / 1999</small></div><div className={styles.lcd}><small>{credentials ? `JUGADOR ${(credentials.slot ?? 0) + 1} / ${state?.hostOnline ? 'TELEVISIÓN CONECTADA' : 'TELEVISIÓN EN PAUSA'}` : 'BUSCANDO UNA NUEVA PARTIDA'}</small><b>{state ? names[state.mode] : 'Tu móvil. Tu mando.'}</b><small>{state && ['platform','fight','blocks'].includes(state.mode) ? peer.status : state?.game ? state.game.winner !== null ? 'Partida terminada' : `Turno del jugador ${state.game.turn + 1}` : 'Escanea el QR de la televisión para conectar.'}</small></div>
     {error && <p className={styles.error} role="alert">{error}</p>}
-    {state?.game && credentials ? <div className={styles.phoneBoard}><ArcadeBoard game={state.game} player={credentials.slot ?? 0} onMove={cell => void move(cell)} busy={busy || !state.hostOnline || !state.players.every(player => player.connected)} /></div> : <><div className={styles.padArea}><div className={styles.dpad}><button className={styles.padButton} {...bind(1)} aria-label="Mover a la izquierda" disabled={!state?.hostOnline || state.mode !== 'platform' || credentials?.slot === 1}>◀</button><button className={styles.padButton} {...bind(2)} aria-label="Mover a la derecha" disabled={!state?.hostOnline || state.mode !== 'platform' || credentials?.slot === 1}>▶</button></div><div className={styles.ab}><button className={styles.padButton} {...bind(8)} aria-label="Correr" disabled={!state?.hostOnline || state.mode !== 'platform' || credentials?.slot === 1}>B</button><button className={styles.padButton} {...bind(4)} aria-label="Saltar" disabled={!state?.hostOnline || state.mode !== 'platform' || credentials?.slot === 1}>A</button></div></div><p className={styles.padCaption}>CRUCETA · MOVER &nbsp; B · CORRER &nbsp; A · SALTAR<br />Mantén A para un salto más alto.</p></>}
+    {state?.canRematch&&<div className={styles.padActions}><button className={styles.button} disabled={busy||state.players[credentials?.slot??0].rematchReady} onClick={()=>void rematch()}>{state.players[credentials?.slot??0].rematchReady?'Listo. Esperando al otro jugador…':'¡Revancha! Estoy listo'}</button></div>}
+    {state?.mode==='photo'?<TvPhotoCapture sendPhoto={peer.sendPhoto} disabled={!state.hostOnline||!peer.status.includes('lista')}/>:state?.game && credentials ? <div className={styles.phoneBoard}><ArcadeBoard game={state.game} player={credentials.slot ?? 0} onMove={cell => void move(cell)} busy={busy || !state.hostOnline || !state.players.every(player => player.connected)} /></div> : <ArcadeLiveControls mode={state?.mode??'lobby'} disabled={!credentials||!state?.hostOnline} setInput={peer.setInput} setLook={peer.setLook}/>}
     <div className={styles.padActions}>{credentials ? <button className={styles.button} disabled={busy} onClick={() => void reconnect()}>Reconectar señal</button> : <>{error && <button className={styles.button} onClick={() => location.reload()}>Reintentar conexión</button>}<Link className={styles.button} href="/">Volver a Latech ↗</Link></>}</div><p className={styles.padCaption}>{state?.game ? 'Los turnos se confirman en la televisión.' : 'Para jugar, deja esta pantalla encendida.'}</p>
   </div></main>;
 }

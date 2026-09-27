@@ -10,6 +10,8 @@ export function useStudioExperience() {
   const [settings, setSettings] = useState(defaultStudio);
   const [project, setProject] = useState(0);
   const [browsing, setBrowsing] = useState(false);
+  const [teletext, setTeletext] = useState(false);
+  const [photo,setPhoto]=useState<{src:string;until:number}|null>(null);
   const [expanded, setExpanded] = useState(false);
   const [activation, dispatchActivation] = useReducer(activationReducer, initialActivation);
 
@@ -33,6 +35,6 @@ export function useStudioExperience() {
     if (!previous) return;
     setHistory(history.slice(0, -1)); setPage(previous);
   }
-  return { page, navigate, back, history, settings, setSettings, project, setProject, browsing, setBrowsing, expanded, setExpanded, activation, dispatchActivation };
+  return { page, navigate, back, history, settings, setSettings, project, setProject, browsing, setBrowsing, teletext, setTeletext, photo,setPhoto, expanded, setExpanded, activation, dispatchActivation };
 }
 export type StudioExperience = ReturnType<typeof useStudioExperience>;

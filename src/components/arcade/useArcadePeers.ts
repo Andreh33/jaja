@@ -1,17 +1,22 @@
 'use client';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { arcadeFetch, type ArcadeCredentials, type ArcadeState } from '@/lib/arcade-protocol';
-import { decodeInput, gatherCandidates, PEER_CONFIGURATION, type RemoteInput } from '@/lib/arcade-peer';
+import { bufferInput,decodeInput, gatherCandidates, PEER_CONFIGURATION, type RemoteInput } from '@/lib/arcade-peer';
 import type { Player } from '@/lib/arcade-engine';
+import {receiveTvPhotos,sendTvPhoto} from '@/lib/tv-photo-transfer';
+import {recordArcade} from '@/lib/arcade-diagnostics';
 type Link = { pc: RTCPeerConnection; channel?: RTCDataChannel; signalId: string; sending?: boolean; applied?: boolean };
 export function useHostPeers(credentials: ArcadeCredentials | null, state: ArcadeState | null) {
   const peers = useRef<[Link | null, Link | null]>([null, null]);
   const inputs = useRef<[RemoteInput, RemoteInput]>([{ mask: 0, at: 0, sequence: -1 }, { mask: 0, at: 0, sequence: -1 }]);
   const [status, setStatus] = useState<[string, string]>(['Sin mando', 'Sin mando']);
+  const statusValue=useRef<[string,string]>(['Sin mando','Sin mando']);
+  const [photo,setPhoto]=useState<Blob|null>(null);
   useEffect(() => { const inputArray = inputs.current; return () => { peers.current.forEach(peer => peer?.pc.close()); peers.current = [null, null]; inputArray.forEach(input => { input.mask = 0; input.at = 0; }); }; }, [credentials?.id]);
+  useEffect(()=>{if(!credentials)return;const timer=setInterval(()=>{for(const slot of[0,1]as const)if(statusValue.current[slot]==='Señal directa'&&inputs.current[slot].at>0&&performance.now()-inputs.current[slot].at>800){statusValue.current[slot]='Señal en pausa';setStatus([...statusValue.current]);recordArcade('peer:heartbeat-paused',slot);}},250);return()=>clearInterval(timer);},[credentials]);
   useEffect(() => {
     if (!credentials || !state || typeof RTCPeerConnection === 'undefined') return;
-    const update = (slot: Player, value: string) => setStatus(old => old.map((item, index) => index === slot ? value : item) as [string, string]);
+    const update = (slot: Player, value: string) => {if(statusValue.current[slot]===value)return;statusValue.current[slot]=value;setStatus([...statusValue.current]);};
     for (const slot of [0, 1] as Player[]) {
       if (!state.players[slot].connected) continue;
       let link = peers.current[slot]; const signal = state.signals[slot];
@@ -19,11 +24,14 @@ export function useHostPeers(credentials: ArcadeCredentials | null, state: Arcad
       if (!link) {
         const pc = new RTCPeerConnection(PEER_CONFIGURATION); const channel = pc.createDataChannel('latech-input', { ordered: false, maxRetransmits: 0 });
         const current: Link = { pc, channel, signalId: crypto.randomUUID(), sending: true }; peers.current[slot] = current;
+        if(state.mode==='photo'&&slot===0){const media=pc.createDataChannel('latech-photo',{ordered:true});receiveTvPhotos(media,blob=>{if(peers.current[slot]?.pc===pc){setPhoto(blob);recordArcade('photo:received',blob.size);}});}
         inputs.current[slot] = { mask: 0, at: 0, sequence: -1 }; update(slot, 'Conectando señal directa…');
-        channel.onopen = () => update(slot, 'Señal directa');
-        channel.onclose = () => { inputs.current[slot].mask = 0; update(slot, 'Sin señal directa'); };
-        channel.onmessage = event => { const decoded = decodeInput(event.data, inputs.current[slot].sequence); if (decoded) inputs.current[slot] = { ...decoded, at: performance.now() }; };
-        pc.onconnectionstatechange = () => { if (['failed', 'disconnected', 'closed'].includes(pc.connectionState)) { inputs.current[slot].mask = 0; update(slot, 'Sin señal directa'); } };
+        channel.onopen = () => {if(peers.current[slot]?.pc!==pc)return;update(slot, 'Señal directa');recordArcade('peer:connected',slot);};
+        channel.onclose = () => {if(peers.current[slot]?.pc!==pc)return; inputs.current[slot].mask = 0; inputs.current[slot].pressed = 0; update(slot, 'Sin señal directa');recordArcade('peer:disconnected',slot); };
+        channel.onmessage = event => {if(peers.current[slot]?.pc!==pc)return; const decoded = decodeInput(event.data, inputs.current[slot].sequence); if (decoded) {inputs.current[slot] = bufferInput(inputs.current[slot],decoded,performance.now());update(slot,'Señal directa');} };
+        pc.onconnectionstatechange = () => {if(peers.current[slot]?.pc!==pc)return; if (['failed', 'disconnected', 'closed'].includes(pc.connectionState)) { inputs.current[slot].mask = 0; inputs.current[slot].pressed = 0; update(slot, 'Sin señal directa'); }
+          if(['failed','disconnected'].includes(pc.connectionState))setTimeout(()=>{if(peers.current[slot]?.pc===pc&&['failed','disconnected'].includes(pc.connectionState)){pc.close();peers.current[slot]=null;recordArcade('peer:reconnect',slot);}},3500);
+        };
         void (async () => {
           try { await pc.setLocalDescription(await pc.createOffer()); await gatherCandidates(pc); if (pc.signalingState === 'closed') return;
             await arcadeFetch({ action: 'signal', id: credentials.id, role: 'host', slot, signalId: current.signalId, sdp: pc.localDescription!.sdp }, credentials.token);
@@ -37,26 +45,30 @@ export function useHostPeers(credentials: ArcadeCredentials | null, state: Arcad
       }
     }
   }, [credentials, state]);
-  return { inputs, status };
+  return { inputs, status, photo };
 }
 export function useControllerPeer(credentials: ArcadeCredentials | null, state: ArcadeState | null) {
-  const mask = useRef(0); const channel = useRef<RTCDataChannel | null>(null); const sequence = useRef(0);
+  const mask = useRef(0); const look = useRef<[number,number]>([0,0]); const channel = useRef<RTCDataChannel | null>(null); const sequence = useRef(0);
+  const media=useRef<RTCDataChannel|null>(null);
+  const sendInput = useCallback(() => { const current = channel.current; if (current?.readyState === 'open' && current.bufferedAmount < 4096) { try { current.send(JSON.stringify({m:document.hidden?0:mask.current,x:document.hidden?0:look.current[0],y:document.hidden?0:look.current[1],s:++sequence.current})); } catch { /* The next heartbeat retries after a transient channel close. */ } } },[]);
   const [status, setStatus] = useState('Conectando señal directa…'); const slot = credentials?.slot ?? 0;
   const signalId = state?.signals[slot].signalId; const offer = state?.signals[slot].offer;
-  useEffect(() => { mask.current = 0; }, [state?.mode]);
+  useEffect(() => { mask.current = 0; look.current = [0,0]; sendInput(); }, [state?.mode,sendInput]);
   useEffect(() => {
     if (!credentials || !offer || !signalId || typeof RTCPeerConnection === 'undefined') return;
     let disposed = false; const pc = new RTCPeerConnection(PEER_CONFIGURATION);
-    const reset = () => { mask.current = 0; if (channel.current?.readyState === 'open') channel.current.send(JSON.stringify({ m: 0, s: ++sequence.current })); };
-    pc.ondatachannel = event => { channel.current = event.channel; event.channel.onopen = () => { if (!disposed) setStatus('Señal directa · lista'); }; event.channel.onclose = () => { if (!disposed) setStatus('Señal directa interrumpida'); }; };
+    const reset = () => { mask.current = 0; look.current = [0,0]; sendInput(); };
+    pc.ondatachannel = event => {if(event.channel.label==='latech-photo'){media.current=event.channel;return;} channel.current = event.channel; event.channel.onopen = () => { if (!disposed) setStatus('Señal directa · lista'); }; event.channel.onclose = () => { if (!disposed) setStatus('Señal directa interrumpida'); }; };
     const timer = setTimeout(() => { if (!disposed && channel.current?.readyState !== 'open') setStatus('Esta red no permite señal directa. Los juegos por turnos sí funcionan.'); }, 16000);
-    const send = setInterval(() => { if (channel.current?.readyState === 'open' && channel.current.bufferedAmount < 4096) channel.current.send(JSON.stringify({ m: document.hidden ? 0 : mask.current, s: ++sequence.current })); }, 40);
+    const send = setInterval(sendInput, 40);
     void (async () => { try { await pc.setRemoteDescription({ type: 'offer', sdp: offer }); await pc.setLocalDescription(await pc.createAnswer()); await gatherCandidates(pc); if (disposed) return;
       await arcadeFetch({ action: 'signal', id: credentials.id, role: credentials.role, slot, signalId, sdp: pc.localDescription!.sdp }, credentials.token);
     } catch { if (!disposed) setStatus('Solo juegos por turnos disponibles en esta red.'); } })();
     window.addEventListener('blur', reset); document.addEventListener('visibilitychange', reset);
-    return () => { disposed = true; reset(); clearTimeout(timer); clearInterval(send); pc.close(); channel.current = null; window.removeEventListener('blur', reset); document.removeEventListener('visibilitychange', reset); };
-  }, [credentials, offer, signalId, slot]);
-  const setInput = useCallback((bit: number, pressed: boolean) => { if (pressed) mask.current |= bit; else mask.current &= ~bit; }, []);
-  return { setInput, status };
+    return () => { disposed = true; reset(); clearTimeout(timer); clearInterval(send); pc.close(); channel.current = null;media.current=null; window.removeEventListener('blur', reset); document.removeEventListener('visibilitychange', reset); };
+  }, [credentials, offer, signalId, slot, sendInput]);
+  const setInput = useCallback((bit: number, pressed: boolean) => { if (pressed) mask.current |= bit; else mask.current &= ~bit; sendInput(); }, [sendInput]);
+  const setLook = useCallback((x:number,y:number) => {look.current=[Math.max(-1,Math.min(1,x)),Math.max(-1,Math.min(1,y))];sendInput();},[sendInput]);
+  const sendPhoto=useCallback((blob:Blob)=>sendTvPhoto(media.current,blob),[]);
+  return { setInput, setLook, sendPhoto, status };
 }

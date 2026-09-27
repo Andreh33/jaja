@@ -16,7 +16,8 @@ export async function POST(request: Request) {
     expectedOrigin.host = request.headers.get('host') || expectedOrigin.host;
     if (!origin || origin !== expectedOrigin.origin || request.headers.get('sec-fetch-site') === 'cross-site') return Response.json({ error: 'Origen no permitido.' }, { status: 403, headers });
     if (!request.headers.get('content-type')?.startsWith('application/json')) return Response.json({ error: 'Formato no válido.' }, { status: 415, headers });
-    if (!rateLimit(`tv-remote:${getClientIp(request)}`, { max: 180, windowMs: 60_000 }).allowed) return Response.json({ error: 'Demasiadas señales. Espera un momento.' }, { status: 429, headers });
+    // Host + handset may share one public IP; allow the faster, authenticated poll cadence.
+    if (!rateLimit(`tv-remote:${getClientIp(request)}`, { max: 360, windowMs: 60_000 }).allowed) return Response.json({ error: 'Demasiadas señales. Espera un momento.' }, { status: 429, headers });
     const reader = request.body?.getReader();
     if (!reader) return Response.json({ error: 'Falta la orden.' }, { status: 400, headers });
     const chunks: Uint8Array[] = []; let size = 0;

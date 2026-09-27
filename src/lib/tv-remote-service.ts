@@ -68,16 +68,16 @@ export function createTvRemoteService<TSchema extends Record<string, unknown>>(d
         changes.channel = request.command === 'next' ? tvChannelIds[(current + 1) % tvChannelIds.length]
           : request.command === 'previous' ? tvChannelIds[(current - 1 + tvChannelIds.length) % tvChannelIds.length]
           : request.command === 'channel' ? request.channel : row.channel;
-        changes.expanded = request.command === 'expand' ? !row.expanded : request.command.startsWith('visit-') || request.command.startsWith('scroll-') ? false : row.expanded;
+        changes.expanded = request.command === 'expand' ? !row.expanded : request.command.startsWith('visit-') ? false : row.expanded;
         changes.commandVersion = row.commandVersion + 1; changes.lastAction = request.command;
         changes.lastCommandAt = now; changes.commandCount = row.commandCount + 1;
       } else if (role === 'host' && request.appliedVersion !== undefined && request.appliedVersion <= row.commandVersion && request.appliedVersion >= row.appliedVersion) {
-        changes.appliedVersion = request.appliedVersion;
-        if (request.channel !== undefined) changes.displayedChannel = request.channel;
-        if (request.expanded !== undefined) changes.displayedExpanded = request.expanded;
+        if (request.appliedVersion !== row.appliedVersion) changes.appliedVersion = request.appliedVersion;
+        if (request.channel !== undefined && request.channel !== row.displayedChannel) changes.displayedChannel = request.channel;
+        if (request.expanded !== undefined && request.expanded !== row.displayedExpanded) changes.displayedExpanded = request.expanded;
         if (request.appliedVersion === row.commandVersion) {
-          if (request.channel !== undefined) changes.channel = request.channel;
-          if (request.expanded !== undefined) changes.expanded = request.expanded;
+          if (request.channel !== undefined && request.channel !== row.channel) changes.channel = request.channel;
+          if (request.expanded !== undefined && request.expanded !== row.expanded) changes.expanded = request.expanded;
         }
       }
       if (!Object.keys(changes).length) return snapshot(row, now);

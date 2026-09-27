@@ -18,11 +18,18 @@ export default function StudioBrowser({ project, active, expanded, onProject, on
   const [reload, setReload] = useState(0);
   const [loadedKey, setLoadedKey] = useState('');
   const [help, setHelp] = useState(false);
+  const [remoteHint, setRemoteHint] = useState(false);
   const close = useRef<HTMLButtonElement>(null);
   const frameKey = `${project}-${reload}`;
   const loaded = loadedKey === frameKey;
 
   useEffect(() => { if (active) close.current?.focus({ preventScroll: true }); }, [active]);
+  useEffect(() => {
+    if (!active || !expanded) return;
+    const explain = () => setRemoteHint(true);
+    window.addEventListener('latech:project-scroll-unavailable', explain);
+    return () => window.removeEventListener('latech:project-scroll-unavailable', explain);
+  }, [active, expanded]);
 
   return <section className={styles.browser} aria-label={`Navegador de proyectos: ${selected.name}`}>
     <label className={styles.channelPicker}><span>CH {channelNumber(selected.slug)}</span><select aria-label="Elegir canal de proyecto" value={project} onChange={event => { onProject(Number(event.target.value)); setHelp(false); }}>{tvProjects.map((item, index) => <option value={index} key={item.slug}>{channelNumber(item.slug)} · {item.name}</option>)}</select><small>{tvProjects.length} CANALES</small></label>
@@ -41,6 +48,7 @@ export default function StudioBrowser({ project, active, expanded, onProject, on
       </> : <div className={styles.loading}><strong>El proyecto está abierto en la ventana ampliada.</strong></div>}
     </div>
     <div className={styles.footer}><span>Navegación limitada al dominio de este proyecto</span><button type="button" aria-expanded={help} onClick={() => setHelp(value => !value)}>¿No carga?</button></div>
+    {remoteHint && <div className={styles.help} role="status"><p>Este proyecto externo todavía no admite scroll desde el mando. Puedes recorrerlo con el ratón o el trackpad dentro de esta pantalla. En el canal Studio el mando sí controla el scroll.</p><button type="button" onClick={() => setRemoteHint(false)}>Entendido</button></div>}
     {help && <div className={styles.help} role="status"><p>La web puede bloquear esta vista o tardar en responder. Puedes recargar su inicio o volver a Studio con la flecha superior.</p><button type="button" onClick={() => { setReload(value => value + 1); setHelp(false); }}>Recargar el proyecto</button><button type="button" onClick={() => setHelp(false)}>Cerrar aviso</button></div>}
   </section>;
 }
