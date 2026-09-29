@@ -6,6 +6,7 @@ import { metadata as terminos } from "../src/app/terminos/page";
 import { metadata as privacidad } from "../src/app/privacidad/page";
 
 const expected = {
+  barcelona: "Diseño web en Barcelona desde 800 € | Latech",
   badajoz: "Diseño web en Badajoz desde 800 € | Latech",
   bilbao: "Diseño web en Bilbao desde 800 € | Latech",
 } as const;
@@ -18,7 +19,7 @@ for (const [city, title] of Object.entries(expected)) {
     assert.ok(landing.description.includes("800 €"));
     assert.ok(landing.description.length >= 120);
     assert.ok(landing.description.length <= 155);
-    assert.equal((landing as { updatedAt?: string }).updatedAt, "2026-07-22");
+    assert.equal((landing as { updatedAt?: string }).updatedAt, "2026-09-29");
   });
 }
 

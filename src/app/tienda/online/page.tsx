@@ -46,7 +46,7 @@ const FEATURES = [
 
 const FAQS = [
   { q: '¿Funciona con Stripe en España?', a: 'Sí. Stripe es la pasarela mundial líder. Permite cobrar en EUR, con Bizum, Apple Pay, Google Pay, transferencia y tarjetas. Sin cuotas mensuales.' },
-  { q: '¿Cuánto cobra Stripe por venta?', a: 'En España, 1.4% + 0.25€ por transacción europea. Bizum un 1.5%. Sin coste si no vendes. Las comisiones más competitivas del mercado.' },
+  { q: '¿Cuánto cobra Stripe por venta?', a: 'Stripe publica una tarifa estándar de 1,5 % + 0,25 € para tarjetas estándar del Espacio Económico Europeo. Otras tarjetas, métodos de pago y servicios tienen tarifas diferentes. Consulta stripe.com/es/pricing y las condiciones de tu cuenta antes de calcular el margen; estas comisiones son independientes de la creación y el mantenimiento de la tienda.' },
   { q: '¿Y si quiero vender también en Amazon?', a: 'No te impide vender en marketplaces. Tu tienda propia y Amazon coexisten perfectamente. Estrategia híbrida recomendada para muchos sectores.' },
   { q: '¿Soporta suscripciones?', a: 'Sí. Stripe Billing está integrado: cobros recurrentes mensuales o anuales, reintentos automáticos, gestión de cancelaciones y facturas con IVA.' },
 ];

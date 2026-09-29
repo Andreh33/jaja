@@ -17,8 +17,9 @@ import { formatDate } from '@/lib/utils';
 import { whatsappLink } from '@/lib/stripe-links';
 import JsonLd from '@/components/seo/JsonLd';
 import Breadcrumbs from '@/components/seo/Breadcrumbs';
-import { breadcrumbJsonLd, truncateDescription, ORG_REF } from '@/lib/seo';
+import { breadcrumbJsonLd, truncateDescription, ORG_REF, isOrganizationAuthor } from '@/lib/seo';
 import { categorySlug } from '@/lib/blog-categories';
+import { editorialUpdate } from '@/lib/editorial-dates';
 
 // ISR: el contenido editorial cambia poco; evita golpear la DB en cada visita.
 export const revalidate = 900;
@@ -66,6 +67,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       description,
       siteName: 'Latech',
       publishedTime: post.publishedAt ? new Date(post.publishedAt).toISOString() : undefined,
+      modifiedTime: editorialUpdate(post)?.toISOString(),
       authors: post.author ? [post.author] : undefined,
     },
     twitter: {
@@ -92,7 +94,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   const articleUrl = `${SITE_URL}/blog/${post.slug}`;
   // PNG dinámico (1200x630) generado por ./opengraph-image.tsx
   const articleImage = `${articleUrl}/opengraph-image`;
-  const isTeamAuthor = !post.author || /equipo/i.test(post.author);
+  const isTeamAuthor = isOrganizationAuthor(post.author);
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Article',
@@ -100,6 +102,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     description: post.excerpt || undefined,
     image: [articleImage],
     datePublished: post.publishedAt ? new Date(post.publishedAt).toISOString() : undefined,
+    dateModified: editorialUpdate(post)?.toISOString(),
     // author/publisher referencian por @id el nodo Organization del @graph
     // del layout (con fundadores Person enlazados): una sola entidad para
     // Google/Bing/LLMs en vez de organizaciones sueltas por página.

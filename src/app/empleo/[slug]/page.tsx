@@ -72,6 +72,8 @@ export default async function EmpleoDetailPage({
 
   const isClosed = offer.status === 'cerrada';
   const isOpen = offer.status === 'publicada';
+  // Free-text remote locations do not specify eligible countries. Do not invent one.
+  const isRemote = /remoto|remote|teletrabajo|desde casa/i.test(offer.location ?? '');
 
   const jobPostingJsonLd = {
     '@context': 'https://schema.org',
@@ -79,7 +81,7 @@ export default async function EmpleoDetailPage({
     title: offer.title,
     description: offer.description,
     datePosted: offer.publishedAt ? new Date(offer.publishedAt * 1000).toISOString() : undefined,
-    validThrough: offer.closedAt ? new Date(offer.closedAt * 1000).toISOString() : undefined,
+    // closedAt records a past status transition, not an application deadline.
     employmentType: offer.contractType ? EMPLOYMENT_TYPES[offer.contractType] : undefined,
     hiringOrganization: {
       '@type': 'Organization',
@@ -95,22 +97,14 @@ export default async function EmpleoDetailPage({
         addressCountry: 'ES',
       },
     },
-    ...(offer.salary
-      ? {
-          baseSalary: {
-            '@type': 'MonetaryAmount',
-            currency: 'EUR',
-            value: { '@type': 'QuantitativeValue', value: offer.salary },
-          },
-        }
-      : {}),
+    // Salary is free text (including commissions), not a numeric base salary.
     totalJobOpenings: offer.positionsCount,
     url: `${SITE_URL}/empleo/${offer.slug}`,
   };
 
   return (
     <>
-      {isOpen && <JsonLd data={jobPostingJsonLd} />}
+      {isOpen && !isRemote && <JsonLd data={jobPostingJsonLd} />}
       <JsonLd
         data={breadcrumbJsonLd([
           { name: 'Inicio', path: '/' },

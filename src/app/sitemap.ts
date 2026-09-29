@@ -2,7 +2,8 @@ import type { MetadataRoute } from 'next';
 import { MYSTERIES } from '@/lib/lab-mysteries';
 import { experiments } from './lab/_lib/experiments';
 import { inArray } from 'drizzle-orm';
-import { getAllPosts, getPostSummaries } from '@/lib/posts';
+import { getAllPosts } from '@/lib/posts';
+import { editorialUpdate } from '@/lib/editorial-dates';
 import { db } from '@/lib/db';
 import { jobOffers } from '../../drizzle/schema';
 import { allLandings } from '@/content/local';
@@ -15,6 +16,8 @@ import { uniqueCategories, categorySlug } from '@/lib/blog-categories';
 const SITE_LAST_UPDATE = new Date('2026-07-08');
 const RELEASE_UPDATE = new Date('2026-09-10');
 const UPDATED_ROUTES = new Set(['', '/blog', '/proyectos', '/contacto', '/tienda/calculadora']);
+const SEO_UPDATED_ROUTES = new Set(['/tienda/online', '/tienda/agente-ia']);
+export const revalidate = 900;
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const base = 'https://serviciosonlineweb.com';
@@ -23,7 +26,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   ];
   const fixedEntries: MetadataRoute.Sitemap = fixed.map((p) => ({
     url: `${base}${p}`,
-    lastModified: UPDATED_ROUTES.has(p) ? RELEASE_UPDATE : SITE_LAST_UPDATE,
+    lastModified: SEO_UPDATED_ROUTES.has(p) ? new Date('2026-09-29') : UPDATED_ROUTES.has(p) ? RELEASE_UPDATE : SITE_LAST_UPDATE,
     changeFrequency: 'weekly' as const,
     priority: p === '' ? 1.0 : 0.7,
   }));
@@ -42,7 +45,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const posts = await getAllPosts();
     postEntries = posts.map((p) => ({
       url: `${base}/blog/${p.slug}`,
-      ...(p.publishedAt ? { lastModified: new Date(p.publishedAt) } : {}),
+      ...((editorialUpdate(p) ?? p.publishedAt) ? { lastModified: editorialUpdate(p) ?? new Date(p.publishedAt!) } : {}),
       changeFrequency: 'monthly' as const,
       priority: 0.6,
     }));
@@ -50,12 +53,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // Hubs de categoría del blog: rutas rastreables reales (/blog/categoria/*)
     // que agrupan sus posts. La biblioteca cambió en esta entrega; una publicación
     // posterior también actualiza el hub.
-    const summaries = await getPostSummaries();
+    const summaries = posts;
     categoryEntries = uniqueCategories(summaries).map((c) => {
       const latest = summaries
-        .filter((p) => p.category === c && p.publishedAt)
+        .filter((p) => p.category === c && (editorialUpdate(p) ?? p.publishedAt))
         .reduce<Date | null>((acc, p) => {
-          const d = new Date(p.publishedAt as Date);
+          const d = editorialUpdate(p) ?? new Date(p.publishedAt as Date);
           return !acc || d > acc ? d : acc;
         }, null);
       return {
@@ -65,8 +68,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         priority: 0.6,
       };
     });
+    const latestPost = postEntries.reduce<Date | undefined>((latest, entry) => {
+      const date = entry.lastModified ? new Date(entry.lastModified) : undefined;
+      return date && (!latest || date > latest) ? date : latest;
+    }, undefined);
+    const blog = fixedEntries.find(entry => entry.url === `${base}/blog`);
+    if (blog && latestPost && latestPost > RELEASE_UPDATE) blog.lastModified = latestPost;
   } catch {
-    // posts unavailable — continue with the rest
+    // A failed regeneration must not replace the last good sitemap with missing posts.
+    throw new Error('SITEMAP_POSTS_UNAVAILABLE');
   }
 
   let offerEntries: MetadataRoute.Sitemap = [];
@@ -82,7 +92,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.6,
     }));
   } catch {
-    // job_offers query failed — continue with the rest
+    throw new Error('SITEMAP_OFFERS_UNAVAILABLE');
   }
 
   const labEntries: MetadataRoute.Sitemap = [

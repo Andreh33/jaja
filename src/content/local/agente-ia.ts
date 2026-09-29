@@ -5,6 +5,7 @@ import type { LocalLanding } from './types';
 export const landings: LocalLanding[] = [
   {
     service: 'agente-ia',
+    updatedAt: '2026-09-29',
     citySlug: 'madrid',
     title: 'Agente de IA en Madrid · 24-48h | Latech',
     description:
@@ -23,7 +24,7 @@ export const landings: LocalLanding[] = [
       { q: '¿Qué pasa con las llamadas que entran fuera de horario o cuando todos están ocupados?', a: 'Esas son justo las que más dinero pierden. El agente las coge igual: informa, agenda la cita o recoge los datos del cliente y te deja el aviso. Ninguna llamada se queda sin respuesta.' },
       { q: '¿El agente suena robótico o el cliente nota que no es una persona?', a: 'Usamos voz natural y respuestas conversacionales. La mayoría de clientes resuelve su gestión sin fricción. Y si la consulta se complica, el agente la deriva a una persona de tu equipo.' },
       { q: '¿Se integra con mi agenda y mis herramientas actuales?', a: 'Sí. Con automatizaciones n8n lo conectamos a tu calendario, tu CRM o tu hoja de reservas para que las citas entren directas, sin doble trabajo.' },
-      { q: '¿Hay permanencia?', a: 'No. Sin permanencia y sin cuotas obligatorias. Definimos el alcance y lo que pagas es lo acordado.' },
+      { q: '¿Hay cuota mensual o permanencia?', a: 'Sin permanencia. Hay una cuota mensual: la calculadora de Latech muestra 150 €/mes para el agente web y 200 €/mes para el telefónico, IVA no incluido. La configuración, el uso y las integraciones se concretan en la propuesta.' },
     ],
     bodyMarkdown: `## Madrid llama mucho, y cada llamada perdida cuesta dinero
 
@@ -58,6 +59,7 @@ Cuéntanos tu caso y te decimos, sin humo, qué puede automatizar un agente de I
   },
   {
     service: 'agente-ia',
+    updatedAt: '2026-09-29',
     citySlug: 'barcelona',
     title: 'Agente de IA en Barcelona · 24-48h | Latech',
     description:
@@ -77,7 +79,7 @@ Cuéntanos tu caso y te decimos, sin humo, qué puede automatizar un agente de I
       { q: '¿Puede atender en catalán, castellano y a clientes extranjeros?', a: 'Sí. Configuramos el agente para que entienda y responda en varios idiomas, algo clave en una ciudad con tanto cliente internacional como Barcelona. Detecta el idioma y se adapta.' },
       { q: '¿Sirve para gestionar reservas en un restaurante o una clínica con mucho volumen?', a: 'Para eso destaca. Coge la reserva por teléfono o WhatsApp, comprueba disponibilidad real, la confirma y envía el recordatorio, descargando a tu equipo en las horas de máxima presión.' },
       { q: '¿Se conecta con mi sistema de reservas o mi CRM?', a: 'Sí, con automatizaciones n8n lo integramos con tu agenda, tu motor de reservas o tu CRM para que todo entre sincronizado y sin doble trabajo.' },
-      { q: '¿Hay permanencia o cuotas obligatorias?', a: 'No. Sin permanencia. Acordamos el alcance y el precio por adelantado, sin sorpresas.' },
+      { q: '¿Hay cuota mensual o permanencia?', a: 'Sin permanencia. Hay una cuota mensual: la calculadora de Latech muestra 150 €/mes para el agente web y 200 €/mes para el telefónico, IVA no incluido. La configuración, el uso y las integraciones se concretan en la propuesta.' },
     ],
     bodyMarkdown: `## Barcelona no para, y tu atención tampoco debería
 
@@ -110,6 +112,7 @@ Escríbenos y te explicamos, con franqueza, qué puede automatizar un agente de 
   },
   {
     service: 'agente-ia',
+    updatedAt: '2026-09-29',
     citySlug: 'valencia',
     title: 'Agente de IA en Valencia · 24-48h | Latech',
     description:
@@ -129,7 +132,7 @@ Escríbenos y te explicamos, con franqueza, qué puede automatizar un agente de 
       { q: '¿Puede recoger pedidos o peticiones cuando el almacén está en plena faena?', a: 'Sí. El agente coge el pedido o la consulta por teléfono o WhatsApp, registra los datos y avisa a tu equipo, justo cuando nadie puede soltar lo que está haciendo para atender el móvil.' },
       { q: '¿Funciona para reservas de restaurante en hora punta?', a: 'Sí. Atiende varias reservas a la vez, comprueba disponibilidad, confirma y envía recordatorio, sin colas ni llamadas perdidas en los momentos de más presión.' },
       { q: '¿Lo conectáis con mi sistema de gestión?', a: 'Sí. Con automatizaciones n8n lo integramos con tu ERP, tu CRM o tu agenda para que pedidos y citas entren sincronizados, sin copiar datos a mano.' },
-      { q: '¿Hay permanencia?', a: 'No. Sin permanencia ni cuotas obligatorias. Acordamos alcance y precio desde el principio.' },
+      { q: '¿Hay cuota mensual o permanencia?', a: 'Sin permanencia. Hay una cuota mensual: la calculadora de Latech muestra 150 €/mes para el agente web y 200 €/mes para el telefónico, IVA no incluido. La configuración, el uso y las integraciones se concretan en la propuesta.' },
     ],
     bodyMarkdown: `## En Valencia, la actividad no espera al teléfono
 
@@ -162,6 +165,7 @@ Cuéntanos tu caso y te decimos, sin humo, qué puede automatizar un agente de I
   },
   {
     service: 'agente-ia',
+    updatedAt: '2026-09-29',
     citySlug: 'sevilla',
     title: 'Agente de IA en Sevilla · 24-48h | Latech',
     description:
@@ -181,7 +185,7 @@ Cuéntanos tu caso y te decimos, sin humo, qué puede automatizar un agente de I
       { q: '¿Aguanta los picos de feria, congresos o puentes?', a: 'Para eso brilla. El agente atiende muchas consultas y reservas a la vez sin colas, justo cuando tu equipo está desbordado y se pierden más clientes.' },
       { q: '¿Puede atender a turistas en otros idiomas?', a: 'Sí. Lo configuramos para responder en varios idiomas, útil con el volumen de visitantes que recibe Sevilla. Detecta el idioma y se adapta.' },
       { q: '¿Se integra con mi agenda o sistema de reservas?', a: 'Sí. Con automatizaciones n8n lo conectamos a tu motor de reservas, tu calendario o tu CRM para que todo entre sincronizado, sin doble trabajo.' },
-      { q: '¿Hay permanencia?', a: 'No. Sin permanencia ni cuotas obligatorias. Acordamos alcance y precio desde el principio.' },
+      { q: '¿Hay cuota mensual o permanencia?', a: 'Sin permanencia. Hay una cuota mensual: la calculadora de Latech muestra 150 €/mes para el agente web y 200 €/mes para el telefónico, IVA no incluido. La configuración, el uso y las integraciones se concretan en la propuesta.' },
     ],
     bodyMarkdown: `## En Sevilla la demanda llega a oleadas
 
@@ -214,6 +218,7 @@ Escríbenos y te contamos, sin humo, qué puede automatizar un agente de IA en t
   },
   {
     service: 'agente-ia',
+    updatedAt: '2026-09-29',
     citySlug: 'malaga',
     title: 'Agente de IA en Málaga · 24-48h | Latech',
     description:
@@ -233,7 +238,7 @@ Escríbenos y te contamos, sin humo, qué puede automatizar un agente de IA en t
       { q: '¿Puede atender a clientes extranjeros en su idioma?', a: 'Sí, y en Málaga es clave. Configuramos el agente para entender y responder en varios idiomas; detecta el idioma del cliente y se adapta, algo muy útil con el volumen internacional de la Costa del Sol.' },
       { q: '¿Sirve para gestionar reservas con mucho volumen en temporada alta?', a: 'Para eso destaca. Atiende muchas reservas y consultas a la vez, comprueba disponibilidad, confirma y envía recordatorio, sin colas en los meses de máxima afluencia.' },
       { q: '¿Lo conectáis con mi sistema de reservas o CRM?', a: 'Sí. Con automatizaciones n8n lo integramos con tu motor de reservas, tu calendario o tu CRM para que todo entre sincronizado y sin doble trabajo.' },
-      { q: '¿Hay permanencia?', a: 'No. Sin permanencia ni cuotas obligatorias. Acordamos alcance y precio desde el principio.' },
+      { q: '¿Hay cuota mensual o permanencia?', a: 'Sin permanencia. Hay una cuota mensual: la calculadora de Latech muestra 150 €/mes para el agente web y 200 €/mes para el telefónico, IVA no incluido. La configuración, el uso y las integraciones se concretan en la propuesta.' },
     ],
     bodyMarkdown: `## En la Costa del Sol, atender bien es atender en su idioma
 
@@ -266,6 +271,7 @@ Cuéntanos tu caso y te decimos, sin humo, qué puede automatizar un agente de I
   },
   {
     service: 'agente-ia',
+    updatedAt: '2026-09-29',
     citySlug: 'zaragoza',
     title: 'Agente de IA en Zaragoza · 24-48h | Latech',
     description:
@@ -285,7 +291,7 @@ Cuéntanos tu caso y te decimos, sin humo, qué puede automatizar un agente de I
       { q: '¿Puede recoger pedidos o avisos cuando el equipo está en planta o en ruta?', a: 'Sí. El agente coge el pedido, el aviso o la consulta por teléfono o WhatsApp, registra los datos y avisa a tu equipo, justo cuando nadie puede soltar lo que está haciendo para atender el móvil.' },
       { q: '¿Sirve para coordinar logística sin bloquear la línea?', a: 'Sí. Atiende varias llamadas a la vez, recoge la información de recogida o entrega y la pasa ordenada, sin tener la línea ocupada mientras se cuadra la operativa.' },
       { q: '¿Lo integráis con mi ERP o agenda?', a: 'Sí. Con automatizaciones n8n lo conectamos a tu ERP, tu CRM o tu calendario para que pedidos y citas entren sincronizados, sin copiar datos a mano.' },
-      { q: '¿Hay permanencia?', a: 'No. Sin permanencia ni cuotas obligatorias. Acordamos alcance y precio desde el principio.' },
+      { q: '¿Hay cuota mensual o permanencia?', a: 'Sin permanencia. Hay una cuota mensual: la calculadora de Latech muestra 150 €/mes para el agente web y 200 €/mes para el telefónico, IVA no incluido. La configuración, el uso y las integraciones se concretan en la propuesta.' },
     ],
     bodyMarkdown: `## En Zaragoza, el teléfono compite con la operativa
 
@@ -318,6 +324,7 @@ Cuéntanos tu caso y te decimos, sin humo, qué puede automatizar un agente de I
   },
   {
     service: 'agente-ia',
+    updatedAt: '2026-09-29',
     citySlug: 'murcia',
     title: 'Agente de IA en Murcia · 24-48h | Latech',
     description:
@@ -337,7 +344,7 @@ Cuéntanos tu caso y te decimos, sin humo, qué puede automatizar un agente de I
       { q: '¿Puede recoger pedidos cuando el equipo está en el campo o el almacén?', a: 'Sí. El agente coge el pedido o la consulta por teléfono o WhatsApp, registra los datos y avisa a tu equipo, justo cuando nadie puede parar la faena para atender el móvil.' },
       { q: '¿Atiende a clientes de exportación en otros idiomas?', a: 'Sí. Lo configuramos para responder en varios idiomas, útil para el cliente de exportación del sector hortofrutícola. Detecta el idioma y se adapta.' },
       { q: '¿Lo conectáis con mi sistema de gestión?', a: 'Sí. Con automatizaciones n8n lo integramos con tu ERP, tu CRM o tu agenda para que pedidos y citas entren sincronizados, sin doble trabajo.' },
-      { q: '¿Hay permanencia?', a: 'No. Sin permanencia ni cuotas obligatorias. Acordamos alcance y precio desde el principio.' },
+      { q: '¿Hay cuota mensual o permanencia?', a: 'Sin permanencia. Hay una cuota mensual: la calculadora de Latech muestra 150 €/mes para el agente web y 200 €/mes para el telefónico, IVA no incluido. La configuración, el uso y las integraciones se concretan en la propuesta.' },
     ],
     bodyMarkdown: `## En la huerta de Europa, los pedidos no esperan
 
@@ -370,6 +377,7 @@ Cuéntanos tu caso y te decimos, sin humo, qué puede automatizar un agente de I
   },
   {
     service: 'agente-ia',
+    updatedAt: '2026-09-29',
     citySlug: 'bilbao',
     title: 'Agente de IA en Bilbao · 24-48h | Latech',
     description:
@@ -388,7 +396,7 @@ Cuéntanos tu caso y te decimos, sin humo, qué puede automatizar un agente de I
       { q: '¿Puede atender en euskera y castellano?', a: 'Sí. Configuramos el agente para entender y responder en varios idiomas, también en euskera, algo que muchos clientes de Bilbao agradecen. Detecta el idioma y se adapta.' },
       { q: '¿Sirve para un negocio B2B con consultas técnicas?', a: 'Sí. El agente filtra y cualifica la consulta, recoge los datos del cliente y agenda la reunión con la persona adecuada, sin interrumpir el trabajo de proyecto.' },
       { q: '¿Se integra con mi agenda o CRM?', a: 'Sí. Con automatizaciones n8n lo conectamos a tu calendario, tu CRM o tu sistema de citas para que todo entre sincronizado, sin doble trabajo.' },
-      { q: '¿Hay permanencia?', a: 'No. Sin permanencia ni cuotas obligatorias. Acordamos alcance y precio desde el principio.' },
+      { q: '¿Hay cuota mensual o permanencia?', a: 'Sin permanencia. Hay una cuota mensual: la calculadora de Latech muestra 150 €/mes para el agente web y 200 €/mes para el telefónico, IVA no incluido. La configuración, el uso y las integraciones se concretan en la propuesta.' },
     ],
     bodyMarkdown: `## En Bilbao, la atención compite con el proyecto
 
@@ -421,6 +429,7 @@ Cuéntanos tu caso y te decimos, sin humo, qué puede automatizar un agente de I
   },
   {
     service: 'agente-ia',
+    updatedAt: '2026-09-29',
     citySlug: 'alicante',
     title: 'Agente de IA en Alicante · 24-48h | Latech',
     description:
@@ -439,7 +448,7 @@ Cuéntanos tu caso y te decimos, sin humo, qué puede automatizar un agente de I
       { q: '¿Puede atender a clientes extranjeros en su idioma?', a: 'Sí, y en la Costa Blanca es esencial. Configuramos el agente para responder en varios idiomas; detecta el idioma del cliente y se adapta, muy útil con el volumen internacional de la zona.' },
       { q: '¿Sirve para reservas con mucho volumen en temporada alta?', a: 'Para eso destaca. Atiende muchas reservas y consultas a la vez, comprueba disponibilidad, confirma y envía recordatorio, sin colas en los meses de máxima afluencia.' },
       { q: '¿Lo conectáis con mi sistema de reservas o CRM?', a: 'Sí. Con automatizaciones n8n lo integramos con tu motor de reservas, tu calendario o tu CRM para que todo entre sincronizado y sin doble trabajo.' },
-      { q: '¿Hay permanencia?', a: 'No. Sin permanencia ni cuotas obligatorias. Acordamos alcance y precio desde el principio.' },
+      { q: '¿Hay cuota mensual o permanencia?', a: 'Sin permanencia. Hay una cuota mensual: la calculadora de Latech muestra 150 €/mes para el agente web y 200 €/mes para el telefónico, IVA no incluido. La configuración, el uso y las integraciones se concretan en la propuesta.' },
     ],
     bodyMarkdown: `## En la Costa Blanca, atender es atender en su idioma
 
@@ -472,6 +481,7 @@ Cuéntanos tu caso y te decimos, sin humo, qué puede automatizar un agente de I
   },
   {
     service: 'agente-ia',
+    updatedAt: '2026-09-29',
     citySlug: 'cordoba',
     title: 'Agente de IA en Córdoba · 24-48h | Latech',
     description:
@@ -491,7 +501,7 @@ Cuéntanos tu caso y te decimos, sin humo, qué puede automatizar un agente de I
       { q: '¿Aguanta los picos de feria o temporada alta?', a: 'Para eso brilla. El agente atiende muchas consultas y reservas a la vez sin colas, justo cuando tu equipo está desbordado y se pierden más clientes.' },
       { q: '¿Puede atender a turistas en otros idiomas?', a: 'Sí. Lo configuramos para responder en varios idiomas, útil con el volumen de visitantes que recibe Córdoba. Detecta el idioma y se adapta.' },
       { q: '¿Lo conectáis con mi agenda o sistema de reservas?', a: 'Sí. Con automatizaciones n8n lo integramos con tu motor de reservas, tu calendario o tu CRM para que todo entre sincronizado, sin doble trabajo.' },
-      { q: '¿Hay permanencia?', a: 'No. Sin permanencia ni cuotas obligatorias. Acordamos alcance y precio desde el principio.' },
+      { q: '¿Hay cuota mensual o permanencia?', a: 'Sin permanencia. Hay una cuota mensual: la calculadora de Latech muestra 150 €/mes para el agente web y 200 €/mes para el telefónico, IVA no incluido. La configuración, el uso y las integraciones se concretan en la propuesta.' },
     ],
     bodyMarkdown: `## En Córdoba, la demanda llega a oleadas
 
@@ -524,6 +534,7 @@ Escríbenos y te contamos, sin humo, qué puede automatizar un agente de IA en t
   },
   {
     service: 'agente-ia',
+    updatedAt: '2026-09-29',
     citySlug: 'valladolid',
     title: 'Agente de IA en Valladolid · 24-48h | Latech',
     description:
@@ -543,7 +554,7 @@ Escríbenos y te contamos, sin humo, qué puede automatizar un agente de IA en t
       { q: '¿Puede recoger pedidos o consultas cuando el equipo está en planta o bodega?', a: 'Sí. El agente coge el pedido o la consulta por teléfono o WhatsApp, registra los datos y avisa a tu equipo, justo cuando nadie puede parar la faena para atender el móvil.' },
       { q: '¿Sirve para gestionar visitas a bodega o reservas?', a: 'Sí. Atiende las solicitudes, comprueba disponibilidad, confirma la visita o reserva y envía el recordatorio, sin colas ni llamadas perdidas.' },
       { q: '¿Lo integráis con mi ERP o agenda?', a: 'Sí. Con automatizaciones n8n lo conectamos a tu ERP, tu CRM o tu calendario para que pedidos y citas entren sincronizados, sin copiar datos a mano.' },
-      { q: '¿Hay permanencia?', a: 'No. Sin permanencia ni cuotas obligatorias. Acordamos alcance y precio desde el principio.' },
+      { q: '¿Hay cuota mensual o permanencia?', a: 'Sin permanencia. Hay una cuota mensual: la calculadora de Latech muestra 150 €/mes para el agente web y 200 €/mes para el telefónico, IVA no incluido. La configuración, el uso y las integraciones se concretan en la propuesta.' },
     ],
     bodyMarkdown: `## En Valladolid, la atención compite con la planta y la bodega
 
@@ -576,6 +587,7 @@ Cuéntanos tu caso y te decimos, sin humo, qué puede automatizar un agente de I
   },
   {
     service: 'agente-ia',
+    updatedAt: '2026-09-29',
     citySlug: 'vigo',
     title: 'Agente de IA en Vigo · 24-48h | Latech',
     description:
@@ -595,7 +607,7 @@ Cuéntanos tu caso y te decimos, sin humo, qué puede automatizar un agente de I
       { q: '¿Puede atender en gallego y castellano?', a: 'Sí. Configuramos el agente para entender y responder en varios idiomas, también en gallego, algo que muchos clientes de Vigo agradecen. Detecta el idioma y se adapta.' },
       { q: '¿Puede recoger pedidos o avisos cuando el equipo está en planta o muelle?', a: 'Sí. El agente coge el pedido, el aviso o la consulta por teléfono o WhatsApp, registra los datos y avisa a tu equipo, justo cuando nadie puede soltar lo que está haciendo.' },
       { q: '¿Lo integráis con mi ERP o agenda?', a: 'Sí. Con automatizaciones n8n lo conectamos a tu ERP, tu CRM o tu calendario para que pedidos y citas entren sincronizados, sin copiar datos a mano.' },
-      { q: '¿Hay permanencia?', a: 'No. Sin permanencia ni cuotas obligatorias. Acordamos alcance y precio desde el principio.' },
+      { q: '¿Hay cuota mensual o permanencia?', a: 'Sin permanencia. Hay una cuota mensual: la calculadora de Latech muestra 150 €/mes para el agente web y 200 €/mes para el telefónico, IVA no incluido. La configuración, el uso y las integraciones se concretan en la propuesta.' },
     ],
     bodyMarkdown: `## En Vigo, el teléfono compite con la planta y el muelle
 
@@ -628,6 +640,7 @@ Cuéntanos tu caso y te decimos, sin humo, qué puede automatizar un agente de I
   },
   {
     service: 'agente-ia',
+    updatedAt: '2026-09-29',
     citySlug: 'granada',
     title: 'Agente de IA en Granada · 24-48h | Latech',
     description:
@@ -646,7 +659,7 @@ Cuéntanos tu caso y te decimos, sin humo, qué puede automatizar un agente de I
       { q: '¿Aguanta los picos de temporada alta y hora punta?', a: 'Para eso brilla. El agente atiende muchas reservas y consultas a la vez sin colas, justo cuando tu equipo está desbordado y se pierden más clientes.' },
       { q: '¿Puede atender a turistas en otros idiomas?', a: 'Sí. Lo configuramos para responder en varios idiomas, útil con el volumen de visitantes que recibe Granada. Detecta el idioma y se adapta.' },
       { q: '¿Lo conectáis con mi agenda o sistema de reservas?', a: 'Sí. Con automatizaciones n8n lo integramos con tu motor de reservas, tu calendario o tu CRM para que todo entre sincronizado, sin doble trabajo.' },
-      { q: '¿Hay permanencia?', a: 'No. Sin permanencia ni cuotas obligatorias. Acordamos alcance y precio desde el principio.' },
+      { q: '¿Hay cuota mensual o permanencia?', a: 'Sin permanencia. Hay una cuota mensual: la calculadora de Latech muestra 150 €/mes para el agente web y 200 €/mes para el telefónico, IVA no incluido. La configuración, el uso y las integraciones se concretan en la propuesta.' },
     ],
     bodyMarkdown: `## En Granada, la reserva se gana en el momento
 
@@ -679,6 +692,7 @@ Escríbenos y te contamos, sin humo, qué puede automatizar un agente de IA en t
   },
   {
     service: 'agente-ia',
+    updatedAt: '2026-09-29',
     citySlug: 'a-coruna',
     title: 'Agente de IA en A Coruña · 24-48h | Latech',
     description:
@@ -698,7 +712,7 @@ Escríbenos y te contamos, sin humo, qué puede automatizar un agente de IA en t
       { q: '¿Puede atender en gallego y castellano?', a: 'Sí. Configuramos el agente para entender y responder en varios idiomas, también en gallego, algo que muchos clientes de A Coruña agradecen. Detecta el idioma y se adapta.' },
       { q: '¿Sirve para atención posventa y dudas de pedidos en comercio?', a: 'Sí. El agente resuelve seguimiento de pedidos, cambios, disponibilidad y dudas frecuentes por teléfono y WhatsApp, descargando al equipo de tienda en las horas de más trabajo.' },
       { q: '¿Lo integráis con mi sistema de gestión?', a: 'Sí. Con automatizaciones n8n lo conectamos a tu CRM, tu ERP o tu agenda para que pedidos y citas entren sincronizados, sin copiar datos a mano.' },
-      { q: '¿Hay permanencia?', a: 'No. Sin permanencia ni cuotas obligatorias. Acordamos alcance y precio desde el principio.' },
+      { q: '¿Hay cuota mensual o permanencia?', a: 'Sin permanencia. Hay una cuota mensual: la calculadora de Latech muestra 150 €/mes para el agente web y 200 €/mes para el telefónico, IVA no incluido. La configuración, el uso y las integraciones se concretan en la propuesta.' },
     ],
     bodyMarkdown: `## En A Coruña, la atención no puede parar
 
@@ -731,6 +745,7 @@ Cuéntanos tu caso y te decimos, sin humo, qué puede automatizar un agente de I
   },
   {
     service: 'agente-ia',
+    updatedAt: '2026-09-29',
     citySlug: 'badajoz',
     title: 'Agente de IA en Badajoz · 24-48h | Latech',
     description:
@@ -750,7 +765,7 @@ Cuéntanos tu caso y te decimos, sin humo, qué puede automatizar un agente de I
       { q: '¿Puede atender a clientes de Portugal en portugués?', a: 'Sí. Lo configuramos para responder en varios idiomas, también en portugués, muy útil por la cercanía de la frontera y el cliente luso. Detecta el idioma y se adapta.' },
       { q: '¿Puede recoger pedidos cuando el equipo está en faena?', a: 'Sí. El agente coge el pedido o la consulta por teléfono o WhatsApp, registra los datos y avisa a tu equipo, justo cuando nadie puede parar para atender el móvil.' },
       { q: '¿Lo integráis con mi sistema de gestión?', a: 'Sí. Con automatizaciones n8n lo conectamos a tu ERP, tu CRM o tu agenda para que pedidos y citas entren sincronizados, sin copiar datos a mano.' },
-      { q: '¿Hay permanencia?', a: 'No. Sin permanencia ni cuotas obligatorias. Acordamos alcance y precio desde el principio.' },
+      { q: '¿Hay cuota mensual o permanencia?', a: 'Sin permanencia. Hay una cuota mensual: la calculadora de Latech muestra 150 €/mes para el agente web y 200 €/mes para el telefónico, IVA no incluido. La configuración, el uso y las integraciones se concretan en la propuesta.' },
     ],
     bodyMarkdown: `## Badajoz es nuestra tierra, y la conocemos bien
 

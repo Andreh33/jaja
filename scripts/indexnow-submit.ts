@@ -1,57 +1,24 @@
-/**
- * Envía las URLs nuevas a IndexNow (Bing + Yandex).
- * Uso: npx tsx scripts/indexnow-submit.ts
- * La clave es pública (vive en /<KEY>.txt), no es un secreto.
- */
-import { allLandings } from '../src/content/local';
-import { posts as b6 } from './posts-data/seo-batch-6';
-import { posts as b7 } from './posts-data/seo-batch-7';
-import { posts as b8 } from './posts-data/seo-batch-8';
-import { posts as b9 } from './posts-data/seo-batch-9';
-
+/** Read the live sitemap; submit only with --submit. The ownership key is public. */
+import { parseArgs } from 'node:util';
+import { sitemapUrls } from './lib/indexnow-sitemap';
 const HOST = 'serviciosonlineweb.com';
 const KEY = 'bd701979484e06a606e375952baea796';
 const base = `https://${HOST}`;
-
-const newPosts = [...b6, ...b7, ...b8, ...b9];
-
-// Hubs de categoría del blog (rutas rastreables reales /blog/categoria/*).
-// Slugs derivados de las categorías reales de los posts en Turso.
-const CATEGORY_HUBS = ['diseno-web', 'tiendas-online', 'ia', 'seo', 'tutoriales'];
-
-const urlList = [
-  `${base}/cobertura`,
-  `${base}/blog`,
-  ...CATEGORY_HUBS.map((c) => `${base}/blog/categoria/${c}`),
-  ...allLandings().map((l) => `${base}/${l.service}/${l.citySlug}`),
-  ...newPosts.map((p) => `${base}/blog/${p.slug}`),
-];
-
 async function main() {
-  console.log(`📡 Enviando ${urlList.length} URLs a IndexNow...`);
-  const res = await fetch('https://api.indexnow.org/indexnow', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json; charset=utf-8' },
-    body: JSON.stringify({
-      host: HOST,
-      key: KEY,
-      keyLocation: `${base}/${KEY}.txt`,
-      urlList,
-    }),
+  const { values } = parseArgs({ options: { submit: { type: 'boolean', default: false } }, strict: true, allowPositionals: false });
+  const response = await fetch(`${base}/sitemap.xml`, { signal: AbortSignal.timeout(20_000) });
+  if (!response.ok || new URL(response.url).origin !== base) throw new Error('SITEMAP_UNAVAILABLE');
+  const urlList = sitemapUrls(await response.text(), base);
+  console.log(JSON.stringify({ status: values.submit ? 'submitting' : 'preview-no-submission', urls: urlList.length }));
+  if (!values.submit) return;
+  const keyLocation = `${base}/${KEY}.txt`;
+  const proof = await fetch(keyLocation, { signal: AbortSignal.timeout(20_000) });
+  if (!proof.ok || proof.url !== keyLocation || (await proof.text()).trim() !== KEY) throw new Error('OWNERSHIP_PROOF_UNAVAILABLE');
+  const result = await fetch('https://api.indexnow.org/indexnow', {
+    method: 'POST', headers: { 'Content-Type': 'application/json; charset=utf-8' },
+    body: JSON.stringify({ host: HOST, key: KEY, keyLocation, urlList }), signal: AbortSignal.timeout(30_000),
   });
-  const text = await res.text();
-  console.log(`Status: ${res.status} ${res.statusText}`);
-  console.log(text ? `Respuesta: ${text}` : '(sin cuerpo)');
-  // 200/202 = aceptado. 422 = alguna URL no válida. 403 = clave no verificada.
-  if (res.status === 200 || res.status === 202) {
-    console.log(`✅ IndexNow aceptó ${urlList.length} URLs.`);
-  } else {
-    console.log('⚠️  Revisa el estado (403 = clave aún no desplegada; reintenta tras el deploy).');
-    process.exit(1);
-  }
+  if (![200, 202].includes(result.status)) throw new Error(`INDEXNOW_HTTP_${result.status}`);
+  console.log(JSON.stringify({ status: 'accepted-not-guaranteed-indexed', http: result.status, urls: urlList.length }));
 }
-
-main().catch((e) => {
-  console.error(e);
-  process.exit(1);
-});
+main().catch(error => { console.error(error instanceof Error ? error.message : 'INDEXNOW_FAILED'); process.exitCode = 1; });

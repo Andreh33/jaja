@@ -16,6 +16,10 @@ export const FOUNDER_LUIS_ID = `${SITE_URL}/sobre-nosotros#luis-grondona`;
  *  NO inventar URLs: un sameAs que no resuelve daña la entidad. */
 export const SOCIAL_PROFILES: string[] = [];
 
+export function isOrganizationAuthor(author: string | null | undefined): boolean {
+  return !author?.trim() || /^(?:equipo\s+)?latech$/i.test(author.trim()) || /^equipo$/i.test(author.trim());
+}
+
 /** Referencia mínima a la Organization para author/publisher de Articles:
  *  mismo @id que el nodo completo del @graph del layout, así los parsers
  *  consolidan en una única entidad. */
@@ -130,7 +134,7 @@ const ORGANIZATION_NODE = {
         priceCurrency: 'EUR',
         itemOffered: {
           '@type': 'Service',
-          name: 'Agente de IA (recepcionista virtual)',
+          name: 'Agente de IA en la web',
           url: `${SITE_URL}/tienda/agente-ia`,
           areaServed: { '@type': 'Country', name: 'España' },
         },

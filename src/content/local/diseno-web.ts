@@ -49,58 +49,54 @@ Si además quieres vender online o automatizar la atención al cliente, podemos 
   {
     service: 'diseno-web',
     citySlug: 'barcelona',
-    title: 'Diseño web en Barcelona · 24-48h | Latech',
+    title: 'Diseño web en Barcelona desde 800 € | Latech',
     description:
-      'Diseño web profesional para empresas de Barcelona: turismo, tecnología, diseño y comercio. Webs rápidas, optimizadas para Google y sin permanencia.',
-    h1: 'Diseño web profesional en Barcelona',
+      'Webs a medida para empresas de Barcelona: 800 € + 60 €/mes, IVA no incluido. SEO técnico, trabajo en remoto y sin permanencia.',
+    h1: 'Diseño web a medida para empresas de Barcelona',
+    updatedAt: '2026-09-29',
     intro:
-      'Barcelona vive del turismo, del comercio, del diseño y de un ecosistema tecnológico que crece sin parar entre el 22@ y los grandes congresos como el Mobile World Congress. En una ciudad donde la imagen lo es todo y entra mucho cliente internacional, una web pobre te resta credibilidad al instante. Diseñamos webs rápidas, cuidadas y multilingües cuando hace falta, en remoto y con entrega en 24-48h, sin permanencia.',
+      'Una reserva, una consulta o una visita al catálogo: cada negocio necesita un recorrido distinto. Diseñamos webs para empresas de Barcelona que quieren explicar bien su oferta y facilitar el siguiente paso. Trabajamos en remoto desde Puebla de la Calzada, con reuniones por videollamada, una propuesta de alcance y revisión contigo antes de publicar.',
     sectores: [
-      { nombre: 'Turismo y hostelería', gancho: 'Hoteles, restaurantes y experiencias que reciben público nacional e internacional y necesitan reservas claras.' },
-      { nombre: 'Tecnología y startups', gancho: 'Webs y landings rápidas para el ecosistema del 22@ que convierten tráfico de campañas e inversión en clientes.' },
-      { nombre: 'Diseño, moda y creatividad', gancho: 'Estudios y marcas que necesitan una web tan cuidada como su trabajo.' },
-      { nombre: 'Comercio y retail', gancho: 'Tiendas de barrio y cadenas que quieren aparecer en las búsquedas locales de cada distrito.' },
-      { nombre: 'Logística y B2B', gancho: 'Empresas ligadas al puerto y a la exportación que necesitan transmitir solvencia.' },
+      { nombre: 'Restaurantes y alojamientos', gancho: 'Carta, ubicación, horarios y acceso a reservas fáciles de encontrar desde el móvil.' },
+      { nombre: 'Estudios y profesionales creativos', gancho: 'Portfolio con contexto: qué haces, para quién y cómo solicitar una propuesta.' },
+      { nombre: 'Comercio y marcas', gancho: 'Productos y servicios bien organizados; venta online cuando el proyecto necesita carrito y pagos.' },
+      { nombre: 'Empresas de servicios', gancho: 'Páginas por servicio y formularios que recojan la información necesaria para responder.' },
+      { nombre: 'Negocios con varios idiomas', gancho: 'Versiones en catalán, castellano o inglés según el público y los contenidos disponibles.' },
     ],
     faq: [
-      { q: '¿Trabajáis con empresas de Barcelona sin oficina en la ciudad?', a: 'Sí. Trabajamos 100% en remoto por videollamada con clientes de toda Barcelona y de Cataluña. Te ahorras el recargo de una agencia con oficina en el Eixample o el 22@ y mantienes la misma cercanía y rapidez.' },
-      { q: '¿Podéis hacer la web en catalán, castellano e inglés?', a: 'Sí. Para un mercado tan internacional como el de Barcelona preparamos webs multilingües bien estructuradas para SEO, con etiquetas hreflang y navegación clara en cada idioma.' },
-      { q: '¿Cuánto tardáis en entregar la web?', a: 'La mayoría de proyectos se entregan en 24-48h una vez tenemos tus textos e imágenes. Para webs grandes con varios idiomas fijamos un calendario desde el principio.' },
-      { q: '¿La web posicionará en las búsquedas locales de Barcelona?', a: 'Sí. Trabajamos SEO técnico, velocidad y datos estructurados, y orientamos los contenidos a las búsquedas de tu sector y de tu zona o distrito.' },
-      { q: '¿Hay permanencia?', a: 'No hay permanencia. El plan incluye 800 € de creación más 60 €/mes de hosting y mantenimiento. IVA no incluido.' },
+      { q: '¿Tenéis oficina en Barcelona?', a: 'Nuestra sede está en Calle Puente 3, Puebla de la Calzada, Badajoz. Los proyectos de Barcelona los trabajamos en remoto: videollamadas, contenidos compartidos y revisión de la web antes de publicarla.' },
+      { q: '¿Cuánto cuesta una web y qué se paga cada mes?', a: 'El plan web parte de 800 € de creación más 60 €/mes de hosting y mantenimiento, IVA no incluido y sin permanencia. Idiomas, reservas, tienda y otras funciones se revisan y presupuestan según el alcance; no se añaden sin acordarlo.' },
+      { q: '¿Podéis preparar la web en catalán, castellano e inglés?', a: 'Sí. Acordamos qué idiomas necesita tu público, qué páginas se traducen y quién aporta y revisa los textos. Preparamos la navegación y las etiquetas hreflang para relacionar las versiones. El alcance multilingüe queda incluido en la propuesta.' },
+      { q: '¿Cuánto tarda el proyecto?', a: 'La referencia para una web sencilla es de 24-48 horas desde que recibimos los contenidos completos y acordamos el alcance. Si hay varios idiomas, un catálogo amplio o integraciones, fijamos un calendario específico antes de empezar.' },
+      { q: '¿Incluye SEO para búsquedas en Barcelona?', a: 'Incluye la base técnica: títulos, descripciones, estructura de páginas, sitemap y datos estructurados cuando correspondan. Revisamos cómo explicar tus servicios y tu zona de atención. No garantizamos posiciones; los resultados también dependen del contenido, la competencia y el trabajo continuado.' },
     ],
-    bodyMarkdown: `## Barcelona: una ciudad donde la web es tu escaparate internacional
+    bodyMarkdown: `## Diseño web en Barcelona: precio y alcance
 
-Pocas ciudades españolas reciben tanto público de fuera como Barcelona. Turistas, congresistas del Mobile World Congress, nómadas digitales, inversores que miran el ecosistema del 22@... Mucha de esa gente te va a conocer primero por el móvil y en otro idioma. Si tu web carga lenta, no está traducida o parece de hace diez años, pierdes la oportunidad antes de la primera conversación.
+La referencia del [plan de diseño web](/tienda/web) es **800 € de creación más 60 €/mes de hosting y mantenimiento, IVA no incluido y sin permanencia**. Incluye una web adaptada al móvil, SEO técnico y los cambios menores previstos en el plan. Antes de empezar dejamos por escrito las páginas, los materiales y las funciones que tendrá tu proyecto.
 
-Diseñamos webs pensadas para ese contexto: **rápidas, claras, multilingües cuando hace falta y orientadas a que el visitante haga algo** (reservar, escribir, comprar). Sin plantillas recicladas que se ven en cualquier parte.
+Puedes usar la [calculadora de presupuesto](/tienda/calculadora) para separar creación, cuota mensual y complementos. Si necesitas varios idiomas, reservas o venta online, revisamos esas opciones contigo para confirmar qué incluyen y cuánto cuestan.
 
-## Sectores que movemos en Barcelona
+## Una web que ayude a reservar, comparar o contactar
 
-### Turismo y hostelería
-Un hotel boutique del Born o un restaurante del Eixample compiten en buscadores y en plataformas con cientos de opciones. Una web propia, rápida y con reserva directa te libera de comisiones y te da control sobre tu imagen.
+Para un restaurante de Barcelona, el recorrido puede empezar por consultar la carta en el móvil y terminar en una reserva. Para un estudio creativo, suele importar ver trabajos, entender tu especialidad y pedir una propuesta. Definir esa acción antes de diseñar ayuda a decidir qué información debe aparecer primero.
 
-### Tecnología y startups del 22@
-El distrito tecnológico de Barcelona concentra startups que necesitan landings que conviertan tráfico de campañas y rondas en clientes reales. Trabajamos velocidad, claridad de mensaje y medición desde el primer día.
+Si atiendes en catalán, castellano e inglés, acordamos qué contenido necesita cada público. Una versión multilingüe requiere textos revisados, navegación entre idiomas y datos de contacto coherentes. No basta con traducir el menú y dejar el resto a medias.
 
-### Diseño, moda y creatividad
-Si tu trabajo es visual, tu web no puede ser menos. Cuidamos tipografía, ritmo y carga de imágenes para que tu portfolio luzca sin penalizar la velocidad.
+## Qué preparar antes de encargar la web
 
-## Qué incluimos en cada web
+- Servicios o productos que quieres presentar y la acción principal que esperas del visitante.
+- Logo, fotografías con permiso de uso y ejemplos del tono de tu marca.
+- Horarios, dirección y zona de atención reales, si recibes clientes o te desplazas.
+- Idiomas necesarios y responsable de revisar cada traducción.
+- Sistema de reservas, catálogo o herramienta que haya que conectar, si existe.
 
-- Diseño a medida con tu identidad, no una plantilla.
-- Velocidad y Core Web Vitals optimizados.
-- SEO técnico: datos estructurados, metadatos, sitemap y, si procede, multilingüe con hreflang.
-- Adaptada al móvil, donde está la mayoría de tu tráfico turístico y local.
-- Textos orientados a convertir.
+El [briefing de tu proyecto](/briefing) permite ordenar esta información y exportarla antes de compartirla. Así podemos revisar una necesidad concreta y evitar que un idioma o una integración aparezca cuando la web ya está terminada.
 
-Puedes ver planes y precios en [diseño web](/tienda/web) o contarnos tu caso sin compromiso.
+## Cómo trabajamos contigo desde Barcelona
 
-## La ventaja de trabajar en remoto
+Nuestra sede está en **Puebla de la Calzada, Badajoz**. Colaboramos en remoto: revisamos el briefing, acordamos contenido y dirección, y comprobamos contigo la web antes de publicar. En una web sencilla, la referencia es de 24-48 horas desde que contamos con los materiales completos; el plazo de un proyecto más amplio se define en la propuesta.
 
-No necesitas pagar la estructura de una agencia con oficina en pleno Passeig de Gràcia. Somos un equipo de Extremadura que trabaja para empresas de toda España y Cataluña: misma calidad, reuniones por videollamada, entrega en 24-48h y un precio sin el recargo de una agencia del centro de Barcelona.
-
-Si además quieres vender online o automatizar reservas y consultas, podemos sumar una [tienda online](/tienda/online) o un [agente de IA](/tienda/agente-ia) que atienda en varios idiomas.`,
+Antes de decidir, recorre los [proyectos de Latech](/proyectos) desde tu móvil. Fíjate en la navegación, en cómo se presentan los servicios y en lo fácil que resulta encontrar el contacto. Encontrarás ejemplos de nuestro trabajo con negocios de distintos sectores.`,
   },
   {
     service: 'diseno-web',
@@ -387,61 +383,53 @@ Si quieres vender directamente o automatizar el contacto con compradores en vari
     citySlug: 'bilbao',
     title: 'Diseño web en Bilbao desde 800 € | Latech',
     description:
-      'Diseño web en Bilbao desde 800 €, entrega en 24-48 h y sin permanencia. Trabajamos en remoto para industria, pymes y profesionales.',
-    h1: 'Diseño web profesional en Bilbao',
-    updatedAt: '2026-07-22',
+      'Web a medida para tu empresa en Bilbao: 800 € + 60 €/mes, IVA no incluido. Trabajo en remoto, SEO técnico y sin permanencia.',
+    h1: 'Diseño web a medida para empresas de Bilbao',
+    updatedAt: '2026-09-29',
     intro:
-      'Bilbao y su entorno son el corazón industrial del País Vasco: ingeniería, máquina herramienta, siderurgia, energía y un sector de servicios avanzados B2B con vocación internacional. Es una economía de alto valor donde el cliente exige rigor y solvencia. Diseñamos webs que transmiten capacidad técnica y profesionalidad, en remoto, con entrega en 24-48h y sin permanencia.',
+      'Si buscas un diseñador web para tu empresa en Bilbao, empezamos por lo que necesita saber tu cliente: qué servicios prestas, qué capacidad tienes y cómo pedirte presupuesto. Construimos webs para presentar esa información con claridad. Somos un equipo de Puebla de la Calzada, Badajoz, y trabajamos con Bilbao y Bizkaia en remoto por videollamada.',
     sectores: [
-      { nombre: 'Ingeniería y máquina herramienta', gancho: 'Empresas técnicas que venden a industria global y necesitan transmitir capacidad y precisión.' },
-      { nombre: 'Industria y metalurgia', gancho: 'Fabricantes y auxiliares que captan clientes B2B con catálogo y capacidades claras.' },
-      { nombre: 'Energía y servicios avanzados', gancho: 'Consultoras técnicas e ingenierías que necesitan autoridad y casos de éxito.' },
-      { nombre: 'Servicios profesionales', gancho: 'Despachos, asesorías y consultoras que captan por Google y referencias.' },
-      { nombre: 'Comercio y hostelería', gancho: 'Negocios de la ría que quieren aparecer en las búsquedas locales.' },
+      { nombre: 'Ingeniería y servicios técnicos', gancho: 'Especialidades, proceso de trabajo y documentación que ayuden al cliente a valorar tu propuesta.' },
+      { nombre: 'Fabricantes y proveedores B2B', gancho: 'Catálogo, capacidades y fichas organizadas para facilitar una consulta comercial concreta.' },
+      { nombre: 'Consultorías y despachos', gancho: 'Servicios, equipo y forma de trabajar explicados antes de solicitar una reunión.' },
+      { nombre: 'Comercio y hostelería', gancho: 'Información práctica para encontrar el negocio, consultar su oferta y contactar desde el móvil.' },
+      { nombre: 'Empresas con clientes internacionales', gancho: 'Contenido en euskera, castellano o inglés según los mercados y los materiales del proyecto.' },
     ],
     faq: [
-      { q: '¿Trabajáis con empresas de Bilbao en remoto?', a: 'Sí. Trabajamos 100% por videollamada con clientes de Bilbao y de todo Bizkaia. Te ahorras el coste de una agencia con oficina y mantienes la cercanía y la rapidez.' },
-      { q: '¿Sirve para una empresa de ingeniería o industria B2B?', a: 'Sí, es nuestro terreno. Diseñamos webs que transmiten rigor técnico y solvencia, con capacidades, casos de éxito, certificaciones y un contacto claro para captar clientes industriales.' },
-      { q: '¿Podéis hacer la web en euskera, castellano e inglés?', a: 'Sí. Preparamos webs multilingües bien estructuradas para SEO con hreflang, habituales en empresas vascas con clientes internacionales.' },
-      { q: '¿Cuánto tardáis?', a: 'La mayoría de webs en 24-48h una vez tenemos tus contenidos. Para proyectos técnicos amplios fijamos calendario.' },
-      { q: '¿Hay permanencia?', a: 'No hay permanencia. El plan incluye 800 € de creación más 60 €/mes de hosting y mantenimiento. IVA no incluido.' },
+      { q: '¿Sois un estudio de diseño web con oficina en Bilbao?', a: 'Nuestra sede está en Puebla de la Calzada, Badajoz. Prestamos el servicio para Bilbao y Bizkaia en remoto, con reuniones por videollamada y revisión del proyecto contigo. Puedes conocer al equipo y ver nuestro portfolio antes de contratar.' },
+      { q: '¿Cuál es el precio de una página web?', a: 'El plan web parte de 800 € de creación y 60 €/mes de hosting y mantenimiento, IVA no incluido y sin permanencia. Un catálogo técnico, varios idiomas o integraciones pueden ampliar el alcance y se presupuestan antes de comenzar.' },
+      { q: '¿Podéis diseñar una web para una empresa industrial o B2B?', a: 'Sí. Organizamos los servicios, capacidades, fichas y vías de contacto a partir de la información de tu empresa. Los proyectos, resultados y certificaciones publicados deben ser reales y estar aprobados por ti. Si necesitas buscador, descargas o un catálogo amplio, lo detallamos en la propuesta.' },
+      { q: '¿La web puede estar en euskera, castellano e inglés?', a: 'Sí. Definimos los idiomas y las páginas que necesita cada versión, y acordamos quién aporta y valida las traducciones. Preparamos navegación y etiquetas hreflang; el presupuesto recoge el alcance de ese trabajo.' },
+      { q: '¿En cuánto tiempo se entrega y qué SEO incluye?', a: 'Para una web sencilla, la referencia es de 24-48 horas desde que están completos los materiales y acordado el alcance. Los proyectos más amplios tienen su propio calendario. Incluimos SEO técnico y una estructura comprensible para buscadores, sin prometer posiciones ni un volumen de contactos.' },
     ],
-    bodyMarkdown: `## ¿Cuánto cuesta una página web en Bilbao?
+    bodyMarkdown: `## Cuánto cuesta una web para tu empresa en Bilbao
 
-Una web profesional para una empresa de Bilbao cuesta **800 € de creación más 60 €/mes** con Latech: hosting, SEO técnico y mantenimiento incluidos, entrega en 24-48 h y sin permanencia. Trabajamos en remoto por videollamada y atendemos proyectos de toda Bizkaia.
+El [plan web de Latech](/tienda/web) parte de **800 € de creación más 60 €/mes de hosting y mantenimiento, IVA no incluido y sin permanencia**. Una web corporativa y un catálogo con cientos de referencias requieren trabajos distintos: antes de contratar concretamos páginas, contenido, idiomas y funciones.
 
-## Bilbao: web para una economía industrial y técnica
+La [calculadora de presupuesto](/tienda/calculadora) permite consultar la creación, la cuota y los complementos por separado. Para una web técnica, también necesitamos conocer cómo están organizadas las fichas y si deben conectarse con alguna herramienta de la empresa.
 
-Bilbao es uno de los grandes polos industriales de España. Alrededor de la ría se concentra **ingeniería, máquina herramienta, siderurgia, energía y servicios avanzados**, con un fuerte componente exportador y B2B. Es una economía de **alto valor añadido**, donde el cliente que te contrata es exigente y técnico: compara proveedores, mira certificaciones y juzga tu seriedad antes de la primera reunión.
+## Lo que necesita ver un comprador antes de pedir presupuesto
 
-En ese contexto, una web amateur te resta credibilidad. Diseñamos webs que **transmiten capacidad técnica y solvencia**, sin humo: claras, rápidas y orientadas a que un responsable de compras o un director técnico confíe en ti.
+En un proyecto industrial o de servicios B2B, una fotografía de la instalación aporta contexto, pero no explica por sí sola qué puedes resolver. Conviene ordenar la información para que quien compara proveedores encuentre:
 
-## Sectores que movemos en Bilbao
+- Qué servicios, materiales o procesos ofreces y qué queda fuera de tu actividad.
+- Capacidades y especificaciones con datos que tu equipo haya validado.
+- Fichas, certificaciones vigentes y ejemplos de trabajo que puedas publicar.
+- Zona de servicio y forma de enviar los requisitos de una consulta.
 
-### Ingeniería y máquina herramienta
-El sector vasco de máquina herramienta vende a industria de todo el mundo. La web tiene que comunicar precisión, capacidades y referencias. Trabajamos fichas técnicas, casos de éxito y un mensaje claro para un cliente que sabe lo que busca.
+Diseñamos ese recorrido para que se pueda leer desde el móvil y para que el contacto tenga contexto. Un formulario puede pedir servicio, ubicación y una descripción de la necesidad; los campos y cualquier documentación adicional se acuerdan según tu proceso comercial.
 
-### Industria y metalurgia
-Fabricantes y auxiliares que captan clientes B2B necesitan que su web explique procesos, capacidades productivas y certificaciones de calidad de forma ordenada y creíble.
+## Cómo preparar el contenido sin retrasar el proyecto
 
-### Energía y servicios avanzados
-Consultoras técnicas e ingenierías se contratan por autoridad. Una web con casos, metodología y resultados bien presentados convierte visitas en peticiones de propuesta.
+Reúne las fichas actualizadas y elige a la persona que revisará los términos técnicos. Si habrá versiones en euskera o inglés, decide qué páginas necesitan traducción y quién comprobará los textos. También conviene identificar qué documentación es pública y qué información no debe publicarse.
 
-## Qué incluimos
+Puedes organizarlo en el [briefing](/briefing). Primero revisamos esos materiales, después acordamos la estructura y finalmente comprobamos contenido, navegación y vías de contacto antes de publicar. Las 24-48 horas son la referencia para una web sencilla con el material completo; un catálogo o una integración se planifica aparte.
 
-- Diseño a medida con identidad industrial seria.
-- Velocidad y Core Web Vitals optimizados.
-- SEO técnico y multilingüe con hreflang.
-- Capacidades, casos de éxito y certificaciones bien estructurados.
-- Adaptada al móvil y a la tablet del decisor profesional.
+## Un equipo en remoto que puedes conocer antes de decidir
 
-Consulta planes y precios en [diseño web](/tienda/web) o cuéntanos tu caso sin compromiso.
+Trabajamos desde **Puebla de la Calzada, Badajoz**, con videollamadas para los proyectos de Bilbao y Bizkaia. En [sobre nosotros](/sobre-nosotros) puedes conocer al equipo; en el [portfolio](/proyectos), revisar cómo resolvemos webs de servicios, comercio y proyectos B2B.
 
-## La ventaja de trabajar en remoto
-
-No pagas la estructura de una agencia con oficina en pleno centro de Bilbao. Somos un equipo de Extremadura que trabaja para toda España: reuniones por videollamada, entrega en 24-48h y precio sin recargo de oficina. Para una empresa industrial de Bizkaia, eso significa una web a la altura de su exigencia técnica sin pagar de más.
-
-Si quieres digitalizar pedidos o automatizar la atención técnica, podemos sumar una [tienda online](/tienda/online) o un [agente de IA](/tienda/agente-ia).`,
+Compara esos ejemplos con tu necesidad: claridad de la oferta, orden del catálogo y facilidad para pedir información. Si lo que buscas es vender y cobrar directamente, revisamos el alcance de una [tienda online](/tienda/online) como parte del presupuesto.`,
   },
   {
     service: 'diseno-web',
@@ -784,68 +772,51 @@ Si quieres vender online o automatizar la atención al cliente, podemos sumar un
     citySlug: 'badajoz',
     title: 'Diseño web en Badajoz desde 800 € | Latech',
     description:
-      'Diseño web en Badajoz desde 800 €, entrega en 24-48 h y sin permanencia. Equipo extremeño para empresas, comercios y profesionales.',
-    h1: 'Diseño web profesional en Badajoz',
-    updatedAt: '2026-07-22',
+      'Diseño web en Badajoz: 800 € + 60 €/mes, IVA no incluido. Equipo en Puebla de la Calzada, con SEO técnico y sin permanencia.',
+    h1: 'Diseño web en Badajoz con un equipo de Extremadura',
+    updatedAt: '2026-09-29',
     intro:
-      'Badajoz es nuestra tierra. Conocemos de primera mano su economía: el agroalimentario y el ibérico de la dehesa, la ganadería, la logística que aprovecha la frontera con Portugal y el auge de la energía solar. Es una provincia con producto excelente que muchas veces no se vende bien por internet. Diseñamos webs que ponen en valor lo que hacéis, en remoto, con entrega en 24-48h y sin permanencia.',
+      'Latech tiene su sede en Calle Puente 3, Puebla de la Calzada. Diseñamos webs para negocios de Badajoz y su provincia: presentar servicios, mostrar un catálogo o facilitar una solicitud de presupuesto. Podemos trabajar por videollamada o acordar una reunión presencial. Antes de empezar concretamos lo que necesitas, los materiales y el precio.',
     sectores: [
-      { nombre: 'Agroalimentario e ibérico', gancho: 'Productores de la dehesa, ibérico, quesos y aceite que necesitan vender origen y calidad dentro y fuera.' },
-      { nombre: 'Ganadería y dehesa', gancho: 'Explotaciones y marcas que cuentan su producto y su trazabilidad a distribuidores y consumidor.' },
-      { nombre: 'Logística y comercio con Portugal', gancho: 'Empresas que aprovechan la frontera y necesitan web bilingüe y seria para clientes de ambos lados.' },
-      { nombre: 'Energía solar y servicios', gancho: 'Instaladoras y empresas del sector renovable en plena expansión que captan clientes por Google.' },
-      { nombre: 'Comercio y hostelería', gancho: 'Negocios locales que quieren visibilidad en las búsquedas de la ciudad y la provincia.' },
+      { nombre: 'Comercio y hostelería', gancho: 'Horarios, catálogo o carta y contacto accesibles para quien consulta el negocio desde el móvil.' },
+      { nombre: 'Productores y distribuidores', gancho: 'Productos, origen y documentación organizados para clientes particulares o profesionales.' },
+      { nombre: 'Instaladoras y empresas de servicios', gancho: 'Servicios y zonas de atención claros para recibir solicitudes de presupuesto con contexto.' },
+      { nombre: 'Despachos y profesionales', gancho: 'Especialidad, equipo y pasos para consultar o solicitar una cita.' },
+      { nombre: 'Negocios que trabajan con Portugal', gancho: 'Contenido en español y portugués cuando tu actividad y tu público necesitan ambas versiones.' },
     ],
     faq: [
-      { q: '¿Trabajáis con empresas de Badajoz?', a: 'Sí, y muy de cerca. Somos un equipo de Extremadura: conocemos la provincia, su economía y su producto. Trabajamos por videollamada con la cercanía de quien es de la tierra, con entrega en 24-48h.' },
-      { q: '¿Sirve para un productor de ibérico, queso o aceite?', a: 'Sí. Diseñamos webs que cuentan origen, dehesa y proceso, con tienda online para vender directo y versión en inglés o portugués si exportas.' },
-      { q: '¿Podéis hacer la web bilingüe español-portugués?', a: 'Sí. Para empresas que trabajan con Portugal preparamos webs bilingües bien estructuradas para SEO con hreflang.' },
-      { q: '¿Sirve para una instaladora de energía solar?', a: 'Sí. El sector está en plena expansión en Extremadura. Diseñamos webs que captan solicitudes de presupuesto con SEO local y formularios claros.' },
-      { q: '¿Cuánto tardáis?', a: 'La mayoría de webs en 24-48h una vez tenemos tus contenidos. Para tienda online fijamos calendario.' },
-      { q: '¿Hay permanencia?', a: 'No hay permanencia. El plan incluye 800 € de creación más 60 €/mes de hosting y mantenimiento. IVA no incluido.' },
+      { q: '¿Dónde está Latech? ¿Podemos reunirnos en persona?', a: 'Estamos en Calle Puente 3, 06490 Puebla de la Calzada, en la provincia de Badajoz. Podemos acordar una reunión presencial o trabajar por videollamada. La sede está en Puebla de la Calzada, no en Badajoz capital.' },
+      { q: '¿Cuánto cuesta una página web en Badajoz?', a: 'El plan web parte de 800 € de creación más 60 €/mes de hosting y mantenimiento, IVA no incluido y sin permanencia. Acordamos páginas, contenido y funciones antes de comenzar. La tienda online, los idiomas y otras opciones se desglosan según las necesidades del proyecto.' },
+      { q: '¿Puedo ver proyectos vuestros de Extremadura?', a: 'Sí. En nuestro portfolio puedes consultar Zona Sport, comercio de Puebla de la Calzada, y Panelex, proyecto del sector de la construcción en Extremadura. Puedes abrir las webs y valorar su navegación, contenido y contacto antes de decidir.' },
+      { q: '¿Podéis preparar una web en español y portugués?', a: 'Sí. Revisamos qué páginas necesitan ambos idiomas y quién aporta y valida las traducciones. Acordamos el alcance multilingüe en el presupuesto y preparamos navegación y etiquetas hreflang para relacionar las versiones.' },
+      { q: '¿Cuánto tarda y qué necesitáis para empezar?', a: 'La referencia para una web sencilla es de 24-48 horas desde que tenemos el contenido completo y el alcance acordado. Necesitamos los textos, imágenes, logo y datos de contacto. Los catálogos amplios, idiomas e integraciones requieren un calendario específico.' },
+      { q: '¿Incluye aparecer en Google?', a: 'Preparamos la base técnica para que los buscadores entiendan la web: estructura, títulos, descripciones, sitemap y datos estructurados cuando correspondan. Trabajamos con tus servicios y zonas de atención reales. La indexación y las posiciones las decide Google; no prometemos resultados ni plazos de posicionamiento.' },
     ],
-    bodyMarkdown: `## ¿Cuánto cuesta una página web en Badajoz?
+    bodyMarkdown: `## Precio de una web en Badajoz, con los conceptos separados
 
-Una web profesional para una empresa de Badajoz cuesta **800 € de creación más 60 €/mes** con Latech: hosting, SEO técnico y mantenimiento incluidos, sin permanencia y con entrega en 24-48 h. Somos un equipo extremeño, así que trabajas cerca, sin desplazamientos ni intermediarios.
+La referencia del [plan web](/tienda/web) es **800 € de creación más 60 €/mes de hosting y mantenimiento, IVA no incluido y sin permanencia**. El presupuesto concreta las páginas, los materiales que hay que preparar y las funciones incluidas. Los cambios menores previstos en el plan y el trabajo adicional se distinguen antes de empezar.
 
-| Servicio | Precio | Entrega |
-| --- | --- | --- |
-| Página web | 800 € + 60 €/mes | 24-48 h |
-| Tienda online | 800 € + 80 €/mes | 48-72 h |
-| Agente de IA | Desde 150 €/mes | 3-5 días |
+Si quieres vender online, añadir idiomas o conectar otras herramientas, consulta la [calculadora de presupuesto](/tienda/calculadora). Te permite ver los complementos y separar el pago inicial de la cuota mensual para revisar una propuesta con el mismo alcance.
 
-## Badajoz: nuestra tierra, nuestro producto
+## Nuestra sede está en Puebla de la Calzada
 
-Badajoz no es una ciudad más en este listado: **es nuestra tierra**. Conocemos su economía sin necesidad de que nadie nos la explique. El **agroalimentario y el ibérico de la dehesa**, los quesos y el aceite, la **ganadería**, la **logística** que aprovecha la frontera con Portugal y el espectacular auge de la **energía solar** en la provincia.
+Estamos en **Calle Puente 3, 06490 Puebla de la Calzada, Badajoz**. Puedes conocer al [equipo de Latech](/sobre-nosotros) y acordar una reunión presencial, o trabajar por videollamada si te resulta más cómodo. Atendemos proyectos de Badajoz capital y de la provincia desde esta sede en Extremadura.
 
-Lo decimos con cariño y con conocimiento de causa: Extremadura tiene un producto excelente que, demasiadas veces, **no se vende bien por internet**. Webs lentas, anticuadas o inexistentes dejan escapar a un consumidor y a un distribuidor que hoy buscan y compran online. Eso es justo lo que arreglamos.
+Para valorar nuestro trabajo tienes ejemplos que puedes abrir: **Zona Sport**, comercio de Puebla de la Calzada, y **Panelex**, del sector de la construcción en Extremadura, están en el [portfolio](/proyectos). Revisa cómo se presenta cada oferta y cómo se llega al contacto; el alcance de tu web se definirá según tu negocio.
 
-## Sectores que movemos en Badajoz
+## La web debe explicar qué haces y dónde atiendes
 
-### Agroalimentario e ibérico
-Un productor de ibérico, queso o aceite de la dehesa tiene una historia que vale oro: origen, tradición y calidad. Diseñamos webs que cuentan esa historia y, con una **tienda online**, te permiten vender directo al consumidor de toda España sin intermediarios que se queden el margen.
+Una instaladora necesita que el visitante entienda sus servicios, la zona de trabajo y qué datos enviar para pedir presupuesto. Un comercio puede necesitar un catálogo y contacto directo; si quiere cobrar online, habrá que definir productos, pagos y entrega dentro del proyecto de tienda.
 
-### Logística y comercio con Portugal
-La cercanía con Portugal es una ventaja que muchas empresas pacenses aprovechan. Preparamos webs **bilingües español-portugués** para que tus clientes de ambos lados de la frontera te entiendan y confíen.
+Para productores y distribuidores, organizamos la información de producto, origen y documentación que puedas acreditar. Si trabajas con Portugal, acordamos las páginas en portugués y quién revisará las traducciones. No añadimos idiomas ni funciones que no formen parte de la propuesta.
 
-### Energía solar y renovables
-Extremadura es una de las grandes apuestas solares de España. Para instaladoras y empresas del sector, una web con SEO local y formularios de presupuesto claros es una fuente constante de clientes.
+## De la idea a una web revisada contigo
 
-## Qué incluimos
+Empieza por el [briefing](/briefing): qué quieres conseguir, a quién atiendes y qué materiales tienes. Nos ayuda a detectar si faltan fotografías, textos, horarios o datos necesarios antes de diseñar.
 
-- Diseño a medida que pone en valor tu producto.
-- Velocidad y Core Web Vitals optimizados.
-- SEO técnico, local y bilingüe español-portugués si trabajas con Portugal.
-- Tienda online, catálogo o captación de presupuestos según tu negocio.
-- Adaptada al móvil.
+Después acordamos estructura y contenido, preparamos la web y la revisamos contigo desde escritorio y móvil. Comprobamos que servicios, contacto y navegación correspondan a lo aprobado. La referencia de 24-48 horas se aplica a webs sencillas con los materiales completos; para catálogos, varios idiomas o integraciones fijamos un calendario propio.
 
-Consulta planes y precios en [diseño web](/tienda/web) o cuéntanos tu caso sin compromiso.
-
-## La ventaja de ser de aquí y trabajar en remoto
-
-No necesitamos una oficina cara para estar cerca de ti: **somos de Extremadura**. Trabajamos por videollamada con la cercanía de quien conoce la provincia, con entrega en 24-48h y sin permanencia. Para una empresa de Badajoz, eso es tener al lado a un equipo que entiende su producto y su mercado.
-
-Si quieres vender tu ibérico, tu queso o tu aceite directamente, podemos sumar una [tienda online](/tienda/online), o automatizar pedidos y consultas con un [agente de IA](/tienda/agente-ia).`,
+El SEO técnico forma parte de la base, pero no equivale a prometer posiciones. Trabajamos con información real del negocio y de su zona de atención, para que el visitante pueda decidir si tu servicio encaja con lo que necesita.`,
   },
   {
     service: 'diseno-web',

@@ -7,7 +7,7 @@ export const contentType = 'image/png';
 export default function Image() {
   return brandedOgImage({
     title: 'Tu recepcionista con inteligencia artificial',
-    subtitle: 'Atiende llamadas 24/7, gestiona reservas y cobra por voz · desde 150€/mes',
+    subtitle: 'Asistente web desde 150€/mes · Teléfono desde 200€/mes',
     badge: 'Agente de IA',
   });
 }

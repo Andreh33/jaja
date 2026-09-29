@@ -22,11 +22,11 @@ import { serviceJsonLd, breadcrumbJsonLd } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: 'Agente de IA · atención al cliente y reservas 24/7',
-  description: 'Agente de IA que atiende llamadas 24/7, gestiona reservas, cobra con Stripe y recuerda a cada cliente. Desde 150€/mes. Para toda España.',
+  description: 'Agentes de IA para empresas de toda España: asistente web desde 150 €/mes y atención telefónica desde 200 €/mes. Sin permanencia. IVA no incluido.',
   alternates: { canonical: '/tienda/agente-ia' },
   openGraph: {
     title: 'Agente de IA · recepcionista virtual 24/7 · Latech',
-    description: 'Atiende llamadas 24/7, gestiona reservas y cobra por voz con Stripe. Desde 150€/mes.',
+    description: 'Agente web desde 150 €/mes y agente telefónico desde 200 €/mes. Atención y reservas para empresas de toda España. IVA no incluido.',
     url: '/tienda/agente-ia',
     siteName: 'Latech',
     locale: 'es_ES',
@@ -61,7 +61,7 @@ const COMPARATIVA = [
   { human: 'No recuerda a todos los clientes', ia: 'Recuerda a cada cliente' },
   { human: 'Sin informes automáticos', ia: 'Informes automáticos siempre' },
   { human: 'No disponible 24h ni festivos', ia: 'Disponible 24h, 365 días' },
-  { human: '1.200€-1.800€/mes', ia: 'Desde 150€/mes' },
+  { human: '1.200€-1.800€/mes', ia: 'Web: 150€/mes · Teléfono: 200€/mes' },
 ];
 
 const STEPS = [
@@ -87,7 +87,7 @@ export default function AgenteIaPage() {
         data={serviceJsonLd({
           name: 'Agente de IA para empresas',
           description:
-            'Agente de inteligencia artificial que atiende llamadas 24/7, gestiona reservas, cobra con Stripe y recuerda a cada cliente. Para empresas de toda España.',
+            'Asistente web desde 150 €/mes o agente telefónico desde 200 €/mes para atención y reservas. IVA no incluido. Alcance y configuración según propuesta.',
           path: '/tienda/agente-ia',
           price: '150',
         })}
@@ -134,7 +134,7 @@ export default function AgenteIaPage() {
                     y ayuda a tu equipo a centrarse en las conversaciones que necesitan una persona.
                   </p>
                   <ul className="mt-7 space-y-2 text-sm text-white/75">
-                    {['Disponible 24/7 · 365 días', 'Hasta 20 llamadas simultáneas', 'Memoria de clientes con RGPD', 'Integración web + WhatsApp', 'Desde 150€/mes'].map((b) => (
+                    {['Disponible 24/7 · 365 días', 'Hasta 20 llamadas simultáneas', 'Memoria de clientes con RGPD', 'Integración web + WhatsApp', 'Web desde 150€/mes · Teléfono desde 200€/mes'].map((b) => (
                       <li key={b} className="flex items-center gap-2">
                         <span className="relative inline-flex h-2 w-2">
                           <span className="absolute inset-0 rounded-full bg-emerald-400/60 animate-pulse-dot" />
@@ -245,7 +245,7 @@ export default function AgenteIaPage() {
                 <p className="text-base text-white/85">
                   <span className="text-2xl">💡</span>{' '}
                   <span className="font-semibold">La solución existe.</span>{' '}
-                  Un asistente conectado a tu negocio puede ayudarte con esas tareas desde <span className="font-mono" style={{ color: 'var(--accent-ia)' }}>150€/mes</span>.
+                  Un asistente web parte de <span className="font-mono" style={{ color: 'var(--accent-ia)' }}>150€/mes</span>; la modalidad telefónica parte de 200€/mes. IVA no incluido.
                 </p>
               </div>
             </Reveal>
@@ -459,7 +459,7 @@ export default function AgenteIaPage() {
                       className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-semibold uppercase tracking-widest"
                       style={{ background: 'rgba(16,185,129,0.15)', color: 'var(--accent-ia)', border: '1px solid rgba(16,185,129,0.4)' }}
                     >
-                      <Bot size={12} /> Agente IA · Plan Inicial
+                      <Bot size={12} /> Agente IA · Modalidad web
                     </span>
                   </div>
                   <div className="mb-2">
@@ -467,13 +467,13 @@ export default function AgenteIaPage() {
                     <span className="font-display ml-3 text-7xl font-bold leading-none text-white tabular-nums">150€</span>
                     <span className="ml-2 text-base text-white/50">/mes</span>
                   </div>
-                  <p className="mb-2 text-sm text-white/60">Configuración: a convenir según complejidad</p>
+                  <p className="mb-2 text-sm text-white/60">Modalidad telefónica: desde 200€/mes. IVA no incluido. Configuración y alcance: según propuesta.</p>
                   <p className="mb-8 text-sm text-white/60">Sin permanencia · Sin instalación · Soporte español · RGPD</p>
 
                   <ul className="mb-10 space-y-3">
                     {[
                       'Agente conversacional con voz natural personalizada',
-                      'Hasta 20 llamadas simultáneas, 24/7/365',
+                      'Atención 24/7; telefonía y concurrencia según modalidad',
                       'Memoria de clientes con base de datos segura RGPD',
                       'Integración con WhatsApp Business, email y Stripe',
                       'Widget de llamada por voz para tu web',
