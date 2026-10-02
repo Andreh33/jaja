@@ -4,6 +4,7 @@ import { createElement } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import StudioBrowser from '../src/components/home/StudioBrowser';
 import { studioBrowserProject } from '../src/components/home/studio-browser-model';
+import { channelNumber, tvProjects } from '../src/lib/tv-channels';
 import { GET } from '../src/app/studio-browser/[project]/route';
 
 const callbacks = { onClose() {}, onProject() {}, onExpand() {} };
@@ -51,5 +52,42 @@ describe('Studio project browser', () => {
       const response = await GET(new Request('https://example.com/'), { params: Promise.resolve({ project: slug }) });
       assert.equal(response.status, status);
     }
+  });
+  it('opens each new project with an exact-origin frame and the existing sandbox', async () => {
+    for (const slug of ['fulldip-sur', 'granja-orea', 'f5-arquitectos', 'quality-homes', 'megias-frutas']) {
+      const index = tvProjects.findIndex(project => project.slug === slug);
+      assert.ok(index >= 0, slug);
+      const model = studioBrowserProject(index);
+      assert.equal(model.embeddable, true);
+      const html = render(index);
+      assert.ok(html.includes(`<iframe`), slug);
+      assert.ok(html.includes(`src="/studio-browser/${slug}"`), slug);
+      assert.ok(!render(index, false).includes('<iframe'), slug);
+      const response = await GET(new Request('https://example.com/'), { params: Promise.resolve({ project: slug }) });
+      assert.equal(response.status, 200, slug);
+      assert.ok(response.headers.get('Content-Security-Policy')?.includes(`frame-src ${model.origin};`), slug);
+      const shell = await response.text();
+      assert.ok(shell.includes('sandbox="allow-scripts allow-same-origin allow-forms"'), slug);
+      assert.ok(!shell.includes('allow-top-navigation'), slug);
+    }
+  });
+  it('keeps the original channel numbers and appends all five new projects', () => {
+    assert.equal(channelNumber('monkey'), '02');
+    assert.equal(channelNumber('el-refugio-de-a-cabana'), '12');
+    ['fulldip-sur', 'granja-orea', 'f5-arquitectos', 'quality-homes', 'megias-frutas'].forEach((slug, index) => {
+      assert.equal(channelNumber(slug), String(index + 13));
+    });
+  });
+  it('opens Frutas Megías live with the same origin and sandbox restrictions as existing channels', async () => {
+    const index = tvProjects.findIndex(project => project.slug === 'megias-frutas');
+    assert.ok(index >= 0);
+    assert.equal(studioBrowserProject(index).embeddable, true);
+    assert.ok(render(index).includes('src="/studio-browser/megias-frutas"'));
+    const response = await GET(new Request('https://example.com/'), { params: Promise.resolve({ project: 'megias-frutas' }) });
+    assert.equal(response.status, 200);
+    assert.ok(response.headers.get('Content-Security-Policy')?.includes('frame-src https://megias-fruta.vercel.app;'));
+    const html = await response.text();
+    assert.ok(html.includes('sandbox="allow-scripts allow-same-origin allow-forms"'));
+    assert.ok(!html.includes('allow-top-navigation'));
   });
 });

@@ -9,6 +9,7 @@ import { Reveal, RevealGroup, RevealItem } from '@/components/effects/Reveal';
 import JsonLd from '@/components/seo/JsonLd';
 import Breadcrumbs from '@/components/seo/Breadcrumbs';
 import { breadcrumbJsonLd } from '@/lib/seo';
+import { channelNumber, tvProjects } from '@/lib/tv-channels';
 
 export const metadata: Metadata = {
   title: 'Proyectos: diseño y desarrollo a medida',
@@ -122,6 +123,8 @@ export default function ProyectosPage() {
                       </h2>
                         {p.id === 'maison-noir' && <span className="mt-2 inline-flex rounded-full border border-purple-300/30 px-2.5 py-1 text-[11px] font-medium text-purple-200">Concepto de diseño</span>}
                       <p className="mt-1 font-mono text-[11px] text-white/40">{p.domain}</p>
+                      {p.services && <p className="mt-3 text-[11px] leading-relaxed text-sky-200">{p.services.join(' · ')}</p>}
+                      {p.services && tvProjects.some(project => project.id === p.id) && <p className="mt-2 font-mono text-[10px] text-white/55">CH {channelNumber(p.id)} · LATECH TV</p>}
 
                       <div className="mt-4 flex flex-wrap items-center gap-2 text-[11px] text-white/55">
                         <span className="inline-flex items-center gap-1.5">

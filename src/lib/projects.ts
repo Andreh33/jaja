@@ -7,9 +7,70 @@ export type Project = {
   location: string;
   description: string;
   image: string;
+  services?: readonly string[];
 };
 
 export const projects: Project[] = [
+  {
+    id: 'fulldip-sur',
+    name: 'FullDip Sur',
+    url: 'https://fulldip-sur.vercel.app/',
+    domain: 'fulldip-sur.vercel.app',
+    sector: 'Vinilo líquido, wrapping y personalización de vehículos',
+    location: 'Fuenlabrada (Madrid)',
+    description:
+      'Una web de estética automotriz para explorar el trabajo de FullDip Sur. La portada audiovisual conduce a un configurador que permite combinar colores por piezas, una galería de trabajos del taller, el catálogo de productos y los vehículos de ocasión. Negro, verde ácido y azul eléctrico acompañan una navegación pensada para descubrir acabados y consultar al equipo por WhatsApp.',
+    image: '/proyectos/fulldip-sur.webp',
+    services: ['Diseño y desarrollo', 'Configurador visual', 'Catálogo y ocasión'],
+  },
+  {
+    id: 'granja-orea',
+    name: 'Granja Orea · Orea Camp',
+    url: 'https://www.oreacamp.com/',
+    domain: 'oreacamp.com',
+    sector: 'Granja escuela, campamentos e hípica',
+    location: 'Ciudad Real',
+    description:
+      'Una web editorial para descubrir Granja Orea y Orea Camp. Vídeo, fotografía y contenidos organizan campamentos, visitas escolares, hípica y estancias de grupo. El proyecto conecta consultas por WhatsApp, noticias administrables, una aplicación web instalable y un recorrido móvil mediante QR, junto con herramientas privadas para coordinar la actividad del equipo. Una experiencia digital que lleva el carácter de la granja a cada pantalla.',
+    image: '/proyectos/granja-orea.webp',
+    services: ['Diseño y desarrollo', 'PWA y recorrido QR', 'Gestión de contenidos'],
+  },
+  {
+    id: 'f5-arquitectos',
+    name: 'F5 Arquitectos',
+    url: 'https://www.f5arquitectos.com/',
+    domain: 'f5arquitectos.com',
+    sector: 'Estudio de arquitectura',
+    location: 'Ciudad Real',
+    description:
+      'Un portfolio de arquitectura que da espacio a cada proyecto. Imágenes a gran formato, composición editorial y una navegación contenida ponen las obras en primer plano. El catálogo por categorías y las fichas detalladas permiten explorar el trabajo del estudio, mientras una administración propia facilita mantener proyectos y contenidos al día. Una presencia digital construida alrededor de los espacios y de quienes los habitan.',
+    image: '/proyectos/f5-arquitectos.webp',
+    services: ['Diseño y desarrollo', 'Portfolio de arquitectura', 'Panel de gestión'],
+  },
+  {
+    id: 'quality-homes',
+    name: 'Quality Homes CR',
+    url: 'https://www.qualityhomescr.es/',
+    domain: 'qualityhomescr.es',
+    sector: 'Promoción inmobiliaria residencial',
+    location: 'Ciudad Real',
+    description:
+      'Una web inmobiliaria clara y visual para descubrir promociones en Ciudad Real. Fotografías, vídeo, planos y disponibilidad por vivienda ayudan a conocer cada propuesta y dar el siguiente paso. Las consultas se conectan con un CRM propio y la gestión de contenidos permite actualizar las promociones. Un diseño luminoso y cuidado que acompaña al visitante desde la primera imagen hasta el contacto con el equipo.',
+    image: '/proyectos/quality-homes.webp',
+    services: ['Diseño y desarrollo', 'Catálogo inmobiliario', 'CRM y contenidos'],
+  },
+  {
+    id: 'megias-frutas',
+    name: 'Frutas Megías',
+    url: 'https://megias-fruta.vercel.app/',
+    domain: 'megias-fruta.vercel.app',
+    sector: 'Distribución mayorista de frutas y verduras',
+    location: 'Ciudad Real',
+    description:
+      'Una presencia digital con el color y el carácter de un mayorista de frutas y verduras. Fotografía de producto, información para distintos sectores profesionales y contenido editorial se unen en una web ágil que facilita la consulta directa. La estructura presenta la actividad de la empresa y sus productos con claridad, con una experiencia adaptada al móvil y contenido orientado a su mercado local.',
+    image: '/proyectos/megias-frutas.webp',
+    services: ['Diseño y desarrollo', 'Web corporativa B2B', 'Contenido y SEO local'],
+  },
   {
     id: 'zonasport',
     name: 'Zona Sport',

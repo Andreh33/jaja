@@ -3,7 +3,10 @@ import { projects } from './projects';
 // Headers checked 2026-09-27. These sites explicitly disallow cross-origin frames.
 // Keep them in the public portfolio, never proxy around their framing policy.
 export const excludedTvProjects = ['zonasport', 'industrial-fighters', 'maison-noir'] as const;
-const order = ['monopatinmonkey', 'french-tacos', 'sear'];
+// Preserve existing channel numbers when the public portfolio is reordered.
+const order = ['monopatinmonkey', 'french-tacos', 'sear', 'panelex', 'the-boat-house',
+  'toldos-noa', 'autoselect-sevilla', 'pruden-hijos', 'meson-casa-andres',
+  'proyecto-1', 'el-refugio-de-a-cabana'];
 export const tvProjects = projects
   .filter(project => !(excludedTvProjects as readonly string[]).includes(project.id))
   .sort((a, b) => (order.includes(a.id) ? order.indexOf(a.id) : 99) - (order.includes(b.id) ? order.indexOf(b.id) : 99))

@@ -102,5 +102,5 @@ describe('Temporary TV remote', () => {
     assert.equal(tvDeviceInfo(headers, true).city, 'Madrid');
     assert.equal(measurementPath('/mando'), null);
   });
-  it('offers every permitted project, teletext and keeps blocked projects out of the TV', () => { assert.equal(tvProjects.length, 11); assert.equal(tvChannels.length, 13); assert.ok(tvChannels.some(channel=>channel.id==='teletext')); assert.equal(tvProjects[0].slug, 'monkey'); assert.ok(!tvProjects.some(project => project.id === 'zonasport')); });
+  it('offers live projects and teletext while preserving existing exclusions', () => { assert.equal(tvProjects.length, 16); assert.equal(tvChannels.length, 18); assert.ok(tvChannels.some(channel=>channel.id==='teletext')); assert.equal(tvProjects[0].slug, 'monkey'); assert.ok(!tvProjects.some(project => project.id === 'zonasport')); });
 });
