@@ -6,10 +6,10 @@ import { SignatureMarquee } from '@/components/effects/Marquee';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import { Reveal, RevealGroup, RevealItem } from '@/components/effects/Reveal';
-import PlanCard from '@/components/shop/PlanCard';
+import ProjectInquiryForm from '@/components/shared/ProjectInquiryForm';
 import GradientText from '@/components/effects/GradientText';
 import MagneticButton from '@/components/effects/MagneticButton';
-import { STRIPE_LINKS, whatsappLink } from '@/lib/stripe-links';
+import { whatsappLink } from '@/lib/stripe-links';
 import Link from 'next/link';
 import JsonLd from '@/components/seo/JsonLd';
 import Breadcrumbs from '@/components/seo/Breadcrumbs';
@@ -17,11 +17,11 @@ import { serviceJsonLd, faqJsonLd, breadcrumbJsonLd } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: 'Crear tienda online profesional · lista en 48h',
-  description: 'Tienda online con Stripe, Bizum, transferencia, SEO de productos y analítica integrada. 80€/mes + 800€ creación. Para toda España.',
+  description: 'Tienda online con Stripe, Bizum, transferencia, SEO de productos y analítica integrada. Propuesta a medida por WhatsApp. Para toda España.',
   alternates: { canonical: '/tienda/online' },
   openGraph: {
     title: 'Crear tienda online profesional · lista en 48h · Latech',
-    description: 'E-commerce con Stripe y Bizum, SEO de productos y analítica. 800€ + 80€/mes. Sin permanencia.',
+    description: 'E-commerce con Stripe y Bizum, SEO de productos y analítica. Propuesta a medida por WhatsApp. Sin permanencia.',
     url: '/tienda/online',
     siteName: 'Latech',
     locale: 'es_ES',
@@ -60,14 +60,13 @@ export default function OnlinePlanPage() {
           description:
             'Tienda online a medida con Stripe, Bizum y transferencia, SEO de productos y analítica integrada. Para empresas de toda España.',
           path: '/tienda/online',
-          price: '800',
         })}
       />
       <JsonLd data={faqJsonLd(FAQS)} />
       <JsonLd
         data={breadcrumbJsonLd([
           { name: 'Inicio', path: '/' },
-          { name: 'Tienda', path: '/tienda' },
+          { name: 'Servicios', path: '/tienda' },
           { name: 'Plan Tienda Online', path: '/tienda/online' },
         ])}
       />
@@ -75,14 +74,14 @@ export default function OnlinePlanPage() {
       <Navbar />
       <AuroraBackground />
       <MouseGlow />
-      <main id="main-content" tabIndex={-1} className="relative z-10">
+      <main id="main-content" tabIndex={-1} className="public-interior relative z-10">
         <section className="pt-44 pb-20">
           <div className="mx-auto max-w-7xl px-6 text-center">
             <div className="text-left">
               <Breadcrumbs
                 items={[
                   { name: 'Inicio', path: '/' },
-                  { name: 'Tienda', path: '/tienda' },
+                  { name: 'Servicios', path: '/tienda' },
                   { name: 'Plan Tienda Online', path: '/tienda/online' },
                 ]}
               />
@@ -110,28 +109,7 @@ export default function OnlinePlanPage() {
         <section className="pb-24">
           <div className="mx-auto max-w-3xl px-6">
             <Reveal>
-              <PlanCard
-                plan={{
-                  badge: 'Plan Tienda',
-                  price: 80,
-                  oneTime: '+ 800€ pago único de creación',
-                  accent: 'orange',
-                  features: [
-                    'Desarrollo completo de la tienda online',
-                    'Diseño e-commerce adaptado a la marca',
-                    'Optimización SEO técnica para productos y categorías',
-                    'Pasarelas de pago seguras (Stripe, Bizum, transferencia)',
-                    'Gestión y organización del catálogo',
-                    'Medidas de seguridad para transacciones (PCI compliant)',
-                    'Analítica y seguimiento de ventas (GA4, Meta Pixel)',
-                    'Análisis de competencia y SEO nacional',
-                    'Hosting Vercel + CDN global',
-                    'Cambios menores incluidos cada mes',
-                  ],
-                  cta: { label: 'Contratar plan tienda', href: STRIPE_LINKS.tienda, target: '_blank', rel: 'noreferrer' },
-                  microtext: 'Pago seguro mediante Stripe. Te contactaremos en menos de 24h tras la suscripción.',
-                }}
-              />
+              <div id="proyecto" className="service-inquiry"><h2>Vamos a dar forma a tu tienda.</h2><p>Cuéntanos qué necesitas. Revisaremos el alcance contigo por WhatsApp.</p><ProjectInquiryForm initialType="tienda" /></div>
             </Reveal>
           </div>
         </section>
@@ -269,8 +247,8 @@ export default function OnlinePlanPage() {
                 <span style={{ color: 'var(--accent-shop)' }}>esta semana.</span>
               </h2>
               <div className="mt-10 flex flex-wrap justify-center gap-4">
-                <MagneticButton href={STRIPE_LINKS.tienda} target="_blank" rel="noreferrer" accent="orange">
-                  Contratar plan tienda <ArrowRight size={16} />
+                <MagneticButton href="#proyecto" accent="orange">
+                  Hablar de mi tienda <ArrowRight size={16} />
                 </MagneticButton>
                 <MagneticButton href={whatsappLink('Hola, me interesa el plan tienda online de Latech')} target="_blank" rel="noreferrer" variant="secondary">
                   Hablar primero

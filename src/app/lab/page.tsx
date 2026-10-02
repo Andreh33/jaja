@@ -36,7 +36,7 @@ export default function LabPage() {
     </section>
     <section className={styles.manifesto}>
       <p className={styles.eyebrow}>Ideas que se pueden tocar</p><h2>Una web también puede<br /><span>hacerte participar.</span></h2>
-      <div><p>Un juego, una herramienta o una interacción propia pueden dar a tus visitantes un motivo para quedarse. Aquí probamos esas ideas en primera persona.</p><Link href="/tienda/calculadora" className={styles.textLink}>Dale forma a tu proyecto <ArrowUpRight size={19} /></Link><Link href="/blog" className={styles.secondaryLink}>Lee cómo construimos para la web →</Link></div>
+      <div><p>Un juego, una herramienta o una interacción propia pueden dar a tus visitantes un motivo para quedarse. Aquí probamos esas ideas en primera persona.</p><Link href="/contacto#proyecto" className={styles.textLink}>Dale forma a tu proyecto <ArrowUpRight size={19} /></Link><Link href="/blog" className={styles.secondaryLink}>Lee cómo construimos para la web →</Link></div>
     </section>
   </main>;
 }

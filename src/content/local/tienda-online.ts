@@ -5,6 +5,7 @@ export const landings: LocalLanding[] = [
   {
     service: 'tienda-online',
     citySlug: 'madrid',
+    updatedAt: '2026-10-02',
     title: 'Tienda online en Madrid · entrega 24-48h | Latech',
     description:
       'Tiendas online a medida para empresas de Madrid: pasarelas Stripe y Bizum, catálogo y envíos. Vende a toda España. Remoto, 24-48h y sin permanencia.',
@@ -22,7 +23,7 @@ export const landings: LocalLanding[] = [
       { q: '¿Qué pasarelas de pago integráis: Stripe, Bizum, tarjeta?', a: 'Integramos Stripe (tarjeta, Apple Pay, Google Pay), Bizum y, si lo necesitas, transferencia o pago contra reembolso. Tú eliges. Stripe y Bizum cubren a la práctica totalidad de tus clientes y liquidan rápido.' },
       { q: '¿Tendré que pagar comisiones a un marketplace?', a: 'No. La tienda es tuya y solo pagas la comisión de la pasarela de pago (un porcentaje pequeño por transacción). Nada de las comisiones del 15-20% que se llevan los marketplaces, y los datos de tus clientes son tuyos.' },
       { q: '¿Cuánto tardáis en tener la tienda lista?', a: 'La mayoría de proyectos se entregan en 24-48h una vez tenemos tu catálogo y tus textos. Para catálogos muy grandes definimos un calendario claro desde el primer día.' },
-      { q: '¿Hay permanencia?', a: 'No hay permanencia. El plan incluye 800 € de creación más 80 €/mes de hosting y mantenimiento. IVA no incluido.' },
+      { q: '¿Hay permanencia?', a: 'Sin permanencia. Cuéntanos tu proyecto por WhatsApp y acordamos las funciones, el mantenimiento y el presupuesto antes de empezar.' },
     ],
     bodyMarkdown: `## Por qué tu negocio de Madrid necesita tienda propia
 
@@ -56,6 +57,7 @@ Una buena tienda no termina en el botón de pagar. Si quieres que tu marca trans
   {
     service: 'tienda-online',
     citySlug: 'barcelona',
+    updatedAt: '2026-10-02',
     title: 'Tienda online en Barcelona · 24-48h | Latech',
     description:
       'Tiendas online a medida para empresas de Barcelona y Cataluña: moda, diseño y gourmet. Pago Stripe y Bizum. Remoto, entrega 24-48h y sin permanencia.',
@@ -73,7 +75,7 @@ Una buena tienda no termina en el botón de pagar. Si quieres que tu marca trans
       { q: '¿Integráis Stripe y Bizum?', a: 'Sí. Stripe cubre tarjeta, Apple Pay y Google Pay con liquidación rápida, y Bizum es ya un must para el cliente español. Añadimos transferencia o pago a plazos si tu producto lo pide.' },
       { q: '¿La tienda se verá tan cuidada como mi marca?', a: 'Ese es el punto. Diseñamos a medida, no con plantillas recicladas. Tipografía, color, fichas de producto y fotografía se trabajan para que la tienda esté a la altura del nivel de diseño que se espera de una marca de Barcelona.' },
       { q: '¿Puedo gestionar la tienda en catalán y español?', a: 'Sí. Montamos la tienda multiidioma para que tus clientes compren en su lengua, con SEO en cada idioma para posicionar tanto en búsquedas en catalán como en castellano.' },
-      { q: '¿Hay permanencia?', a: 'No hay permanencia. El plan incluye 800 € de creación más 80 €/mes de hosting y mantenimiento. IVA no incluido.' },
+      { q: '¿Hay permanencia?', a: 'Sin permanencia. Cuéntanos tu proyecto por WhatsApp y acordamos las funciones, el mantenimiento y el presupuesto antes de empezar.' },
     ],
     bodyMarkdown: `## Barcelona vende diseño, tu tienda también debe diseñarse
 
@@ -90,7 +92,7 @@ Muchas marcas catalanas crecieron en Instagram o vendiendo a través de tiendas 
 - Carrito y checkout optimizados para reducir el abandono.
 - Panel claro para gestionar pedidos y productos por tu cuenta.
 
-Consulta planes y precios en [tienda online](/tienda/online), o escríbenos y vemos tu caso sin compromiso.
+Conoce las opciones de [tienda online](/tienda/online), o escríbenos y vemos tu caso sin compromiso.
 
 ## De Cataluña a Europa
 
@@ -109,6 +111,7 @@ Si además quieres reforzar tu presencia con una web de marca, cuidamos el [dise
   {
     service: 'tienda-online',
     citySlug: 'valencia',
+    updatedAt: '2026-10-02',
     title: 'Tienda online en Valencia · 24-48h | Latech',
     description:
       'Tiendas online a medida para empresas de Valencia: agroalimentario, cerámica y moda. Pago Stripe y Bizum. Remoto, entrega 24-48h y sin permanencia.',
@@ -126,7 +129,7 @@ Si además quieres reforzar tu presencia con una web de marca, cuidamos el [dise
       { q: '¿Integráis Stripe y Bizum?', a: 'Sí. Stripe para tarjeta, Apple Pay y Google Pay, y Bizum para el cliente español. Si vendes a profesionales, añadimos transferencia y pago aplazado.' },
       { q: '¿Puedo vender producto fresco o perecedero?', a: 'Sí. Para agroalimentario configuramos envío en 24-48h con agencia de frío cuando hace falta, gestión de fechas de entrega y avisos al cliente. Pensamos la logística para que el producto llegue en condiciones.' },
       { q: '¿Sirve para vender al por mayor además de al particular?', a: 'Sí. Podemos montar una zona B2B con precios por cliente, pedidos mínimos y pago aplazado, conviviendo con la tienda al público. Ideal para cerámica, hogar o agroalimentario.' },
-      { q: '¿Hay permanencia?', a: 'No hay permanencia. El plan incluye 800 € de creación más 80 €/mes de hosting y mantenimiento. IVA no incluido.' },
+      { q: '¿Hay permanencia?', a: 'Sin permanencia. Cuéntanos tu proyecto por WhatsApp y acordamos las funciones, el mantenimiento y el presupuesto antes de empezar.' },
     ],
     bodyMarkdown: `## El producto valenciano se vende solo, si lo dejas llegar al cliente
 
@@ -143,7 +146,7 @@ Una **tienda online propia** rompe esa dependencia. Vendes directo al consumidor
 - SEO técnico para posicionar en Google por tu producto y tu zona.
 - Panel sencillo para gestionar pedidos y catálogo sin depender de nadie.
 
-Mira planes y precios en [tienda online](/tienda/online), o cuéntanos qué vendes y te asesoramos sin compromiso.
+Mira servicios y propuestas en [tienda online](/tienda/online), o cuéntanos qué vendes y te asesoramos sin compromiso.
 
 ## Del campo y el taller a toda España
 
@@ -162,6 +165,7 @@ Si quieres reforzar tu marca con una web a la altura, cuidamos el [diseño web](
   {
     service: 'tienda-online',
     citySlug: 'sevilla',
+    updatedAt: '2026-10-02',
     title: 'Tienda online en Sevilla · 24-48h | Latech',
     description:
       'Tiendas online a medida para empresas de Sevilla: moda flamenca, gourmet y artesanía. Pago Stripe y Bizum. Remoto, entrega 24-48h y sin permanencia.',
@@ -179,7 +183,7 @@ Si quieres reforzar tu marca con una web a la altura, cuidamos el [diseño web](
       { q: '¿Integráis Stripe y Bizum?', a: 'Sí. Stripe para tarjeta, Apple Pay y Google Pay, y Bizum para el cliente español. Para pedidos grandes o por encargo añadimos transferencia y señales/anticipos.' },
       { q: '¿Sirve para producto de temporada como la moda flamenca?', a: 'Perfectamente. Gestionamos colecciones por temporada, reservas, listas de espera y avisos de reposición, para que la campaña de feria no te pille con la tienda apagada.' },
       { q: '¿Puedo vender piezas hechas a medida o por encargo?', a: 'Sí. Montamos fichas con opciones, presupuestos a medida y cobro de señal online, ideal para artesanía y moda a medida.' },
-      { q: '¿Hay permanencia?', a: 'No hay permanencia. El plan incluye 800 € de creación más 80 €/mes de hosting y mantenimiento. IVA no incluido.' },
+      { q: '¿Hay permanencia?', a: 'Sin permanencia. Cuéntanos tu proyecto por WhatsApp y acordamos las funciones, el mantenimiento y el presupuesto antes de empezar.' },
     ],
     bodyMarkdown: `## El comercio con sello de Sevilla, ahora online
 
@@ -196,7 +200,7 @@ Una **tienda online propia** convierte ese producto local en un negocio nacional
 - SEO técnico para posicionar por tu producto cuando lo buscan desde toda España.
 - Panel claro para gestionar pedidos y catálogo por tu cuenta.
 
-Consulta planes y precios en [tienda online](/tienda/online), o cuéntanos qué vendes y lo vemos sin compromiso.
+Conoce las opciones de [tienda online](/tienda/online), o cuéntanos qué vendes y lo vemos sin compromiso.
 
 ## Vender todo el año, no solo en feria
 
@@ -215,6 +219,7 @@ Si quieres una web de marca a la altura de tu producto, cuidamos el [diseño web
   {
     service: 'tienda-online',
     citySlug: 'malaga',
+    updatedAt: '2026-10-02',
     title: 'Tienda online en Málaga · 24-48h | Latech',
     description:
       'Tiendas online a medida para empresas de Málaga: gourmet subtropical, vino y turismo. Pago Stripe y Bizum. Remoto, entrega 24-48h y sin permanencia.',
@@ -232,7 +237,7 @@ Si quieres una web de marca a la altura de tu producto, cuidamos el [diseño web
       { q: '¿Integráis Stripe y Bizum?', a: 'Sí. Stripe cubre tarjeta, Apple Pay y Google Pay (ideal para el cliente internacional) y Bizum para el español. Añadimos otras opciones si tu producto lo pide.' },
       { q: '¿Sirve para vender experiencias o entradas, no solo productos?', a: 'Sí. Montamos venta de tours, entradas, bonos y reservas con pago online inmediato y confirmación automática, muy útil para el sector turístico de la Costa del Sol.' },
       { q: '¿Puedo vender fruta subtropical perecedera por internet?', a: 'Sí. Configuramos envío en 24-48h con frío cuando hace falta, gestión de fechas de entrega y avisos al cliente, para que el aguacate o el mango lleguen en su punto.' },
-      { q: '¿Hay permanencia?', a: 'No hay permanencia. El plan incluye 800 € de creación más 80 €/mes de hosting y mantenimiento. IVA no incluido.' },
+      { q: '¿Hay permanencia?', a: 'Sin permanencia. Cuéntanos tu proyecto por WhatsApp y acordamos las funciones, el mantenimiento y el presupuesto antes de empezar.' },
     ],
     bodyMarkdown: `## Málaga vende a un cliente global, tu tienda debe estar a la altura
 
@@ -249,7 +254,7 @@ Una **tienda online propia**, bien montada y multiidioma cuando hace falta, te p
 - Venta de experiencias, entradas y reservas con pago inmediato, si es tu caso.
 - Panel sencillo para gestionarlo todo por tu cuenta.
 
-Mira planes y precios en [tienda online](/tienda/online), o cuéntanos tu caso sin compromiso.
+Mira servicios y propuestas en [tienda online](/tienda/online), o cuéntanos tu caso sin compromiso.
 
 ## Del producto subtropical a la experiencia turística
 
@@ -268,6 +273,7 @@ Si quieres reforzar tu marca con una web cuidada, nos encargamos del [diseño we
   {
     service: 'tienda-online',
     citySlug: 'zaragoza',
+    updatedAt: '2026-10-02',
     title: 'Tienda online en Zaragoza · 24-48h | Latech',
     description:
       'Tiendas online a medida para empresas de Zaragoza: logística, vino y agroalimentario. Pago Stripe y Bizum. Remoto, entrega 24-48h y sin permanencia.',
@@ -285,7 +291,7 @@ Si quieres reforzar tu marca con una web cuidada, nos encargamos del [diseño we
       { q: '¿Integráis Stripe y Bizum?', a: 'Sí. Stripe para tarjeta, Apple Pay y Google Pay, y Bizum para el cliente español. Para B2B añadimos transferencia y pago aplazado.' },
       { q: '¿Puedo vender vino online cumpliendo la normativa?', a: 'Sí. Montamos la tienda con verificación de edad, configuración de impuestos y envío especializado en vino. Vender por botella, por caja o con un club de suscripción es perfectamente viable.' },
       { q: '¿Sirve para vender al por mayor además del particular?', a: 'Sí. Montamos una zona B2B con precios por cliente, pedidos mínimos y pago aplazado, conviviendo con la venta al público. Útil para industria, distribución y agroalimentario.' },
-      { q: '¿Hay permanencia?', a: 'No hay permanencia. El plan incluye 800 € de creación más 80 €/mes de hosting y mantenimiento. IVA no incluido.' },
+      { q: '¿Hay permanencia?', a: 'Sin permanencia. Cuéntanos tu proyecto por WhatsApp y acordamos las funciones, el mantenimiento y el presupuesto antes de empezar.' },
     ],
     bodyMarkdown: `## Zaragoza tiene la mejor logística de España, aprovéchala
 
@@ -302,7 +308,7 @@ Aragón además tiene producto: el vino de Cariñena, Calatayud y Campo de Borja
 - SEO técnico para posicionar por tu producto en toda España.
 - Panel sencillo para gestionar pedidos y catálogo por tu cuenta.
 
-Mira planes y precios en [tienda online](/tienda/online), o cuéntanos tu caso sin compromiso.
+Mira servicios y propuestas en [tienda online](/tienda/online), o cuéntanos tu caso sin compromiso.
 
 ## Vino, agroalimentario y B2B
 
@@ -321,6 +327,7 @@ Si quieres una web corporativa a la altura, cuidamos el [diseño web](/tienda/we
   {
     service: 'tienda-online',
     citySlug: 'murcia',
+    updatedAt: '2026-10-02',
     title: 'Tienda online en Murcia · 24-48h | Latech',
     description:
       'Tiendas online a medida para empresas de Murcia: agroalimentario, conservas y vino. Pago Stripe y Bizum. Remoto, entrega 24-48h y sin permanencia.',
@@ -338,7 +345,7 @@ Si quieres una web corporativa a la altura, cuidamos el [diseño web](/tienda/we
       { q: '¿Integráis Stripe y Bizum?', a: 'Sí. Stripe para tarjeta, Apple Pay y Google Pay, y Bizum para el cliente español. Para cooperativas y venta al por mayor añadimos transferencia y pago aplazado.' },
       { q: '¿Puedo vender fruta y verdura fresca por internet?', a: 'Sí. Configuramos envío en 24-48h con frío cuando hace falta, gestión de fechas de entrega y avisos al cliente, para que el producto llegue del campo a la mesa en su punto.' },
       { q: '¿Sirve para una cooperativa o varios productores?', a: 'Sí. Montamos catálogos con varios productores o referencias, zona B2B con precios por cliente y la venta al público a la vez. Ideal para cooperativas que quieren un canal directo.' },
-      { q: '¿Hay permanencia?', a: 'No hay permanencia. El plan incluye 800 € de creación más 80 €/mes de hosting y mantenimiento. IVA no incluido.' },
+      { q: '¿Hay permanencia?', a: 'Sin permanencia. Cuéntanos tu proyecto por WhatsApp y acordamos las funciones, el mantenimiento y el presupuesto antes de empezar.' },
     ],
     bodyMarkdown: `## La huerta de Europa también vende online
 
@@ -355,7 +362,7 @@ Una **tienda online propia** cambia esa ecuación. Vendes directo al consumidor 
 - SEO técnico para posicionar por tu producto en toda España.
 - Panel sencillo para gestionar pedidos y catálogo por tu cuenta.
 
-Mira planes y precios en [tienda online](/tienda/online), o cuéntanos qué produces y lo vemos sin compromiso.
+Mira servicios y propuestas en [tienda online](/tienda/online), o cuéntanos qué produces y lo vemos sin compromiso.
 
 ## Del campo a la mesa, sin intermediarios
 
@@ -374,6 +381,7 @@ Si quieres una web de marca a la altura del producto, cuidamos el [diseño web](
   {
     service: 'tienda-online',
     citySlug: 'bilbao',
+    updatedAt: '2026-10-02',
     title: 'Tienda online en Bilbao · 24-48h | Latech',
     description:
       'Tiendas online a medida para empresas de Bilbao: gourmet vasco, conservas y diseño. Pago Stripe y Bizum. Remoto, entrega 24-48h y sin permanencia.',
@@ -391,7 +399,7 @@ Si quieres una web de marca a la altura del producto, cuidamos el [diseño web](
       { q: '¿Integráis Stripe y Bizum?', a: 'Sí. Stripe para tarjeta, Apple Pay y Google Pay, y Bizum para el cliente español. Para B2B e industria añadimos transferencia y pago aplazado.' },
       { q: '¿La tienda se verá a la altura de una marca vasca de calidad?', a: 'Ese es el objetivo. Diseñamos a medida, no con plantillas. La presentación importa especialmente en gourmet y producto de autor, donde la tienda forma parte de la percepción de calidad.' },
       { q: '¿Puedo gestionar la tienda en euskera y castellano?', a: 'Sí. Montamos la tienda multiidioma con SEO en cada lengua, para que tus clientes compren en euskera o en castellano y posiciones en ambos.' },
-      { q: '¿Hay permanencia?', a: 'No hay permanencia. El plan incluye 800 € de creación más 80 €/mes de hosting y mantenimiento. IVA no incluido.' },
+      { q: '¿Hay permanencia?', a: 'Sin permanencia. Cuéntanos tu proyecto por WhatsApp y acordamos las funciones, el mantenimiento y el presupuesto antes de empezar.' },
     ],
     bodyMarkdown: `## Bilbao vende calidad, tu tienda debe transmitirla
 
@@ -408,7 +416,7 @@ Por eso no trabajamos con plantillas recicladas. Montamos **tiendas a medida** q
 - Logística configurada, incluido frío para gourmet perecedero.
 - Panel claro para gestionar pedidos y catálogo por tu cuenta.
 
-Consulta planes y precios en [tienda online](/tienda/online), o cuéntanos tu caso sin compromiso.
+Conoce las opciones de [tienda online](/tienda/online), o cuéntanos tu caso sin compromiso.
 
 ## Del gourmet vasco a la industria B2B
 
@@ -427,6 +435,7 @@ Si quieres una web corporativa a la altura, cuidamos el [diseño web](/tienda/we
   {
     service: 'tienda-online',
     citySlug: 'alicante',
+    updatedAt: '2026-10-02',
     title: 'Tienda online en Alicante · 24-48h | Latech',
     description:
       'Tiendas online a medida para empresas de Alicante: calzado, turrón y gourmet. Pago Stripe y Bizum. Remoto, entrega 24-48h y sin permanencia.',
@@ -444,7 +453,7 @@ Si quieres una web corporativa a la altura, cuidamos el [diseño web](/tienda/we
       { q: '¿Integráis Stripe y Bizum?', a: 'Sí. Stripe para tarjeta, Apple Pay y Google Pay (útil para el cliente extranjero), y Bizum para el español. Para mayorista añadimos transferencia y pago aplazado.' },
       { q: '¿Sirve para producto de temporada como el turrón?', a: 'Sí. Gestionamos campañas de Navidad, listas de espera, reposiciones y suscripciones, para que la temporada fuerte te pille con la tienda a punto y no se te escape ninguna venta.' },
       { q: '¿Cómo se gestionan las tallas y devoluciones del calzado?', a: 'Montamos fichas con guía de tallas, variantes por horma y color, y un proceso de devolución claro. Reducir la incertidumbre de talla es clave para vender zapato online y bajar las devoluciones.' },
-      { q: '¿Hay permanencia?', a: 'No hay permanencia. El plan incluye 800 € de creación más 80 €/mes de hosting y mantenimiento. IVA no incluido.' },
+      { q: '¿Hay permanencia?', a: 'Sin permanencia. Cuéntanos tu proyecto por WhatsApp y acordamos las funciones, el mantenimiento y el presupuesto antes de empezar.' },
     ],
     bodyMarkdown: `## La provincia que fabrica, ahora vendiendo directo
 
@@ -461,7 +470,7 @@ El comercio electrónico cambia eso. Con una **tienda online propia**, el fabric
 - Envíos nacionales e internacionales configurados, con tienda multiidioma opcional.
 - Panel sencillo para gestionar pedidos y catálogo por tu cuenta.
 
-Mira planes y precios en [tienda online](/tienda/online), o cuéntanos qué fabricas y lo vemos sin compromiso.
+Mira servicios y propuestas en [tienda online](/tienda/online), o cuéntanos qué fabricas y lo vemos sin compromiso.
 
 ## Temporada, tallas y exportación
 
@@ -480,6 +489,7 @@ Si quieres una web de marca a la altura, cuidamos el [diseño web](/tienda/web),
   {
     service: 'tienda-online',
     citySlug: 'cordoba',
+    updatedAt: '2026-10-02',
     title: 'Tienda online en Córdoba · 24-48h | Latech',
     description:
       'Tiendas online a medida para empresas de Córdoba: joyería, aceite y gourmet. Pago Stripe y Bizum. Remoto, entrega 24-48h y sin permanencia.',
@@ -497,7 +507,7 @@ Si quieres una web de marca a la altura, cuidamos el [diseño web](/tienda/web),
       { q: '¿Integráis Stripe y Bizum?', a: 'Sí. Stripe para tarjeta, Apple Pay y Google Pay, y Bizum para el cliente español. En joyería de ticket alto, Stripe aporta un checkout seguro que da confianza al comprador.' },
       { q: '¿Es seguro vender joyería de valor por internet?', a: 'Sí, montándolo bien. Usamos pago seguro con Stripe, envío asegurado y trazable, fichas con fotografía profesional y opciones de personalización. Para ticket alto, la confianza en el proceso es lo que cierra la venta.' },
       { q: '¿Puedo vender aceite y vino por botella, caja y suscripción?', a: 'Sí. Montamos venta por unidad, por lote y club de suscripción recurrente, con verificación de edad e impuestos para el vino. El AOVE y el vino funcionan especialmente bien con clientes que repiten.' },
-      { q: '¿Hay permanencia?', a: 'No hay permanencia. El plan incluye 800 € de creación más 80 €/mes de hosting y mantenimiento. IVA no incluido.' },
+      { q: '¿Hay permanencia?', a: 'Sin permanencia. Cuéntanos tu proyecto por WhatsApp y acordamos las funciones, el mantenimiento y el presupuesto antes de empezar.' },
     ],
     bodyMarkdown: `## Los oficios de Córdoba, con cliente en toda España
 
@@ -514,7 +524,7 @@ Una **tienda online propia** abre ese mercado. Vendes directo, construyes marca 
 - Verificación de edad e impuestos para venta de vino.
 - Panel sencillo para gestionar pedidos y catálogo por tu cuenta.
 
-Mira planes y precios en [tienda online](/tienda/online), o cuéntanos qué vendes y lo vemos sin compromiso.
+Mira servicios y propuestas en [tienda online](/tienda/online), o cuéntanos qué vendes y lo vemos sin compromiso.
 
 ## Joyería de ticket alto: confianza ante todo
 
@@ -533,6 +543,7 @@ Si quieres una web de marca a la altura del oficio, cuidamos el [diseño web](/t
   {
     service: 'tienda-online',
     citySlug: 'valladolid',
+    updatedAt: '2026-10-02',
     title: 'Tienda online en Valladolid · 24-48h | Latech',
     description:
       'Tiendas online a medida para empresas de Valladolid: vino Ribera y Rueda, gourmet y agroalimentario. Pago Stripe y Bizum. Remoto, 24-48h y sin permanencia.',
@@ -550,7 +561,7 @@ Si quieres una web de marca a la altura del oficio, cuidamos el [diseño web](/t
       { q: '¿Integráis Stripe y Bizum?', a: 'Sí. Stripe para tarjeta, Apple Pay y Google Pay, y Bizum para el cliente español. Para hostelería y B2B añadimos transferencia y pago aplazado.' },
       { q: '¿Puedo vender vino online cumpliendo la normativa?', a: 'Sí. Montamos la tienda con verificación de edad, configuración de impuestos y envío especializado en vino. Vender por botella, por caja o con club de suscripción es perfectamente viable y muy rentable.' },
       { q: '¿Sirve para vender a hostelería además del particular?', a: 'Sí. Montamos una zona B2B con precios por cliente, pedidos mínimos y pago aplazado, conviviendo con la venta al público. Útil para bodegas que venden a restaurantes y a particulares.' },
-      { q: '¿Hay permanencia?', a: 'No hay permanencia. El plan incluye 800 € de creación más 80 €/mes de hosting y mantenimiento. IVA no incluido.' },
+      { q: '¿Hay permanencia?', a: 'Sin permanencia. Cuéntanos tu proyecto por WhatsApp y acordamos las funciones, el mantenimiento y el presupuesto antes de empezar.' },
     ],
     bodyMarkdown: `## El vino de Valladolid llega más lejos con tienda propia
 
@@ -567,7 +578,7 @@ Una **tienda online propia** cambia eso. La bodega vende directo al consumidor, 
 - SEO técnico para posicionar por tu denominación y tu producto.
 - Panel sencillo para gestionar pedidos y catálogo por tu cuenta.
 
-Mira planes y precios en [tienda online](/tienda/online), o cuéntanos tu caso sin compromiso.
+Mira servicios y propuestas en [tienda online](/tienda/online), o cuéntanos tu caso sin compromiso.
 
 ## Club de vino: ingresos recurrentes
 
@@ -586,6 +597,7 @@ Si quieres una web de marca a la altura, cuidamos el [diseño web](/tienda/web),
   {
     service: 'tienda-online',
     citySlug: 'vigo',
+    updatedAt: '2026-10-02',
     title: 'Tienda online en Vigo · 24-48h | Latech',
     description:
       'Tiendas online a medida para empresas de Vigo: conservas del mar, moda gallega y gourmet. Pago Stripe y Bizum. Remoto, entrega 24-48h y sin permanencia.',
@@ -603,7 +615,7 @@ Si quieres una web de marca a la altura, cuidamos el [diseño web](/tienda/web),
       { q: '¿Integráis Stripe y Bizum?', a: 'Sí. Stripe para tarjeta, Apple Pay y Google Pay, y Bizum para el cliente español. Para B2B e industria añadimos transferencia y pago aplazado.' },
       { q: '¿Puedo vender marisco o pescado fresco por internet?', a: 'Sí. Configuramos envío en 24-48h con cadena de frío, gestión de fechas de entrega y avisos al cliente, para que el producto del mar llegue fresco. La conserva, además, viaja sin problema a cualquier punto.' },
       { q: '¿Puedo gestionar la tienda en gallego y castellano?', a: 'Sí. Montamos la tienda multiidioma con SEO en cada lengua, para que tus clientes compren en gallego o castellano y posiciones en ambos.' },
-      { q: '¿Hay permanencia?', a: 'No hay permanencia. El plan incluye 800 € de creación más 80 €/mes de hosting y mantenimiento. IVA no incluido.' },
+      { q: '¿Hay permanencia?', a: 'Sin permanencia. Cuéntanos tu proyecto por WhatsApp y acordamos las funciones, el mantenimiento y el presupuesto antes de empezar.' },
     ],
     bodyMarkdown: `## Vigo fabrica y exporta, ahora también vende directo
 
@@ -620,7 +632,7 @@ Una **tienda online propia** te lleva del mayorista y la exportación clásica a
 - Tienda multiidioma (gallego, castellano) con SEO por idioma.
 - Panel sencillo para gestionar pedidos y catálogo por tu cuenta.
 
-Mira planes y precios en [tienda online](/tienda/online), o cuéntanos qué vendes y lo vemos sin compromiso.
+Mira servicios y propuestas en [tienda online](/tienda/online), o cuéntanos qué vendes y lo vemos sin compromiso.
 
 ## Del Atlántico a la mesa de toda España
 
@@ -639,6 +651,7 @@ Si quieres una web corporativa a la altura, cuidamos el [diseño web](/tienda/we
   {
     service: 'tienda-online',
     citySlug: 'granada',
+    updatedAt: '2026-10-02',
     title: 'Tienda online en Granada · 24-48h | Latech',
     description:
       'Tiendas online a medida para empresas de Granada: artesanía, gourmet de la Alpujarra y turismo. Pago Stripe y Bizum. Remoto, 24-48h y sin permanencia.',
@@ -656,7 +669,7 @@ Si quieres una web corporativa a la altura, cuidamos el [diseño web](/tienda/we
       { q: '¿Integráis Stripe y Bizum?', a: 'Sí. Stripe para tarjeta, Apple Pay y Google Pay (útil con tanto cliente internacional), y Bizum para el español. Añadimos otras opciones si las necesitas.' },
       { q: '¿Sirve para vender experiencias turísticas, no solo productos?', a: 'Sí. Montamos venta de entradas, tours y bonos con pago online inmediato y confirmación automática, muy útil para el sector turístico granadino, que mueve millones de visitantes.' },
       { q: '¿Puedo vender artesanía hecha a mano o por encargo?', a: 'Sí. Montamos fichas con opciones, presupuestos a medida y cobro de señal online, ideal para taracea, cerámica y cuero hechos a mano.' },
-      { q: '¿Hay permanencia?', a: 'No hay permanencia. El plan incluye 800 € de creación más 80 €/mes de hosting y mantenimiento. IVA no incluido.' },
+      { q: '¿Hay permanencia?', a: 'Sin permanencia. Cuéntanos tu proyecto por WhatsApp y acordamos las funciones, el mantenimiento y el presupuesto antes de empezar.' },
     ],
     bodyMarkdown: `## El encanto de Granada, vendiendo todo el año
 
@@ -673,7 +686,7 @@ Una **tienda online propia** convierte ese encanto en ingresos durante todo el a
 - Logística con envío en frío para gourmet perecedero.
 - Panel sencillo para gestionar pedidos y catálogo por tu cuenta.
 
-Mira planes y precios en [tienda online](/tienda/online), o cuéntanos tu caso sin compromiso.
+Mira servicios y propuestas en [tienda online](/tienda/online), o cuéntanos tu caso sin compromiso.
 
 ## Artesanía, gourmet y experiencias
 
@@ -692,6 +705,7 @@ Si quieres una web de marca a la altura, cuidamos el [diseño web](/tienda/web),
   {
     service: 'tienda-online',
     citySlug: 'a-coruna',
+    updatedAt: '2026-10-02',
     title: 'Tienda online en A Coruña · 24-48h | Latech',
     description:
       'Tiendas online a medida para empresas de A Coruña: moda, conservas gourmet y producto del mar. Pago Stripe y Bizum. Remoto, 24-48h y sin permanencia.',
@@ -709,7 +723,7 @@ Si quieres una web de marca a la altura, cuidamos el [diseño web](/tienda/web),
       { q: '¿Integráis Stripe y Bizum?', a: 'Sí. Stripe para tarjeta, Apple Pay y Google Pay, y Bizum para el cliente español. Para mayorista añadimos transferencia y pago aplazado.' },
       { q: '¿Cómo se gestionan tallas y devoluciones en moda?', a: 'Montamos fichas con guía de tallas, variantes por color y talla, lookbooks y un proceso de devolución claro. Reducir la incertidumbre de talla es lo que más sube la conversión y baja las devoluciones en moda online.' },
       { q: '¿Puedo vender producto del mar fresco por internet?', a: 'Sí. Configuramos envío en 24-48h con cadena de frío para marisco y pescado, y la conserva viaja sin problema a cualquier punto de España.' },
-      { q: '¿Hay permanencia?', a: 'No hay permanencia. El plan incluye 800 € de creación más 80 €/mes de hosting y mantenimiento. IVA no incluido.' },
+      { q: '¿Hay permanencia?', a: 'Sin permanencia. Cuéntanos tu proyecto por WhatsApp y acordamos las funciones, el mantenimiento y el presupuesto antes de empezar.' },
     ],
     bodyMarkdown: `## En la ciudad de la moda, tu tienda no puede ser una plantilla
 
@@ -726,7 +740,7 @@ Una **tienda online a medida** te pone a la altura: diseño cuidado, catálogo v
 - Logística con cadena de frío para producto del mar fresco.
 - Panel sencillo para gestionar pedidos y catálogo por tu cuenta.
 
-Mira planes y precios en [tienda online](/tienda/online), o cuéntanos tu caso sin compromiso.
+Mira servicios y propuestas en [tienda online](/tienda/online), o cuéntanos tu caso sin compromiso.
 
 ## Moda online: tallas, fotos y devoluciones
 
@@ -745,6 +759,7 @@ Si quieres una web de marca a la altura, cuidamos el [diseño web](/tienda/web),
   {
     service: 'tienda-online',
     citySlug: 'badajoz',
+    updatedAt: '2026-10-02',
     title: 'Tienda online en Badajoz · 24-48h | Latech',
     description:
       'Tiendas online a medida para empresas de Badajoz: ibéricos, gourmet extremeño y vino. Pago Stripe y Bizum. Remoto, entrega 24-48h y sin permanencia.',
@@ -762,7 +777,7 @@ Si quieres una web de marca a la altura, cuidamos el [diseño web](/tienda/web),
       { q: '¿Integráis Stripe y Bizum?', a: 'Sí. Stripe para tarjeta, Apple Pay y Google Pay, y Bizum para el cliente español. Para hostelería y mayorista añadimos transferencia y pago aplazado.' },
       { q: '¿Puedo vender jamón loncheado y piezas con envío en condiciones?', a: 'Sí. Configuramos la venta de pieza entera, media y loncheado al vacío, con envío en 24-48h y embalaje adecuado para que el producto llegue perfecto. El ibérico viaja muy bien si la logística está bien montada.' },
       { q: '¿Sirve para una cooperativa o varios productores de la zona?', a: 'Sí. Montamos catálogos con varias referencias o productores, zona B2B con precios por cliente y venta al público a la vez. Ideal para cooperativas y para productores que quieren un canal directo.' },
-      { q: '¿Hay permanencia?', a: 'No hay permanencia. El plan incluye 800 € de creación más 80 €/mes de hosting y mantenimiento. IVA no incluido.' },
+      { q: '¿Hay permanencia?', a: 'Sin permanencia. Cuéntanos tu proyecto por WhatsApp y acordamos las funciones, el mantenimiento y el presupuesto antes de empezar.' },
     ],
     bodyMarkdown: `## El producto de la dehesa merece vender con su propia marca
 
@@ -779,7 +794,7 @@ Como agencia extremeña, esto nos toca de cerca. Una **tienda online propia** pe
 - Verificación de edad e impuestos para venta de vino.
 - Panel sencillo para gestionar pedidos y catálogo por tu cuenta.
 
-Mira planes y precios en [tienda online](/tienda/online), o cuéntanos qué produces y lo vemos sin compromiso.
+Mira servicios y propuestas en [tienda online](/tienda/online), o cuéntanos qué produces y lo vemos sin compromiso.
 
 ## Ibéricos, gourmet y vino que viajan bien
 

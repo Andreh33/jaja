@@ -180,6 +180,6 @@ export default function TraceExperience({ sharedToken }: { sharedToken?: string 
     </>}
     <p className={styles.status} role="status">{message}</p>
     <div id="trace-explanation" className={styles.explanation}><div><h3>Tu línea pone la idea.</h3><p>Convertimos su perfil en plataformas, suavizamos los saltos bruscos y limitamos las distancias. Los bucles se leen de izquierda a derecha. La destreza la pones tú.</p></div><div><h3>Sin publicar tu dibujo.</h3><p>Todo se genera en tu navegador. El enlace contiene 16 alturas y una versión de reglas. Descargar o compartir es siempre tu decisión.</p></div></div>
-    <Link href="/tienda/calculadora" className={styles.project}>¿Una experiencia así para tu marca?<span>Da forma a tu proyecto <ArrowUpRight size={18} /></span></Link>
+    <Link href="/contacto#proyecto" className={styles.project}>¿Una experiencia así para tu marca?<span>Da forma a tu proyecto <ArrowUpRight size={18} /></span></Link>
   </div>;
 }

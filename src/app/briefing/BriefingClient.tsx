@@ -98,7 +98,7 @@ export default function BriefingClient({ decisionId }: { decisionId?: string }) 
   };
 
   return (
-    <main id="main-content" tabIndex={-1} data-briefing-root className={styles.root}>
+    <main id="main-content" tabIndex={-1} data-briefing-root className={`public-interior ${styles.root}`}>
       <div className={styles.intro}>
         <p className={styles.eyebrow}>Una idea clara empieza antes del diseño</p>
         <h1 className={styles.title}>Tu proyecto,<br /><span>sin puntos ciegos.</span></h1>
@@ -161,7 +161,7 @@ export default function BriefingClient({ decisionId }: { decisionId?: string }) 
           </div>
           {copyFallback && <label className={`${styles.field} ${styles.noPrint}`}><span className={styles.label}>Selecciona y copia tu briefing</span><textarea readOnly rows={10} value={text} className={styles.input} onFocus={event => event.currentTarget.select()} /></label>}
           <p className={`${styles.help} ${styles.noPrint} mt-4`}>Imprimir o copiar no envía el documento. WhatsApp abre un mensaje para que lo revises y decidas si enviarlo.</p>
-          <div className={`${styles.noPrint} mt-7 border-t border-white/15 pt-5`}><p className={styles.help}>¿Quieres estudiar también el precio? El briefing define lo que necesitas; el configurador prepara un presupuesto orientativo de web y extras.</p><Link href="/tienda/calculadora" className={`${styles.button} mt-4`}>Abrir la calculadora <ArrowRight size={15} /></Link></div>
+          <div className={`${styles.noPrint} mt-7 border-t border-white/15 pt-5`}><p className={styles.help}>¿Listo para hablar de tu proyecto? Lleva las ideas de tu briefing a la conversación y concretamos el alcance contigo por WhatsApp.</p><Link href="/contacto#proyecto" className={`${styles.button} mt-4`}>Preparar mi consulta <ArrowRight size={15} /></Link></div>
           <p className={styles.printFooter}>Creado con serviciosonlineweb.com/briefing. Compartir este documento no confirma una contratación ni una fecha de entrega.</p>
         </section>
       </div>

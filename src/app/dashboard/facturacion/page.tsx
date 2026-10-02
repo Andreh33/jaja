@@ -172,7 +172,7 @@ export default async function FacturacionPage() {
                 </p>
               )}
               <div className="mt-5">
-                <PortalButton disabled={data.customerDeleted} />
+                <PortalButton />
               </div>
             </>
           ) : (

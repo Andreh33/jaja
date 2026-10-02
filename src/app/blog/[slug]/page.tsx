@@ -129,7 +129,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       <Navbar />
       <AuroraBackground intensity="subtle" />
       <MouseGlow />
-      <main id="main-content" tabIndex={-1} className="relative z-10">
+      <main id="main-content" tabIndex={-1} className="public-interior relative z-10">
         <article className="pt-36 pb-16 md:pt-44">
           <div className="mx-auto max-w-3xl px-6">
             <Breadcrumbs

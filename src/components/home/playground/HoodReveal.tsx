@@ -49,7 +49,7 @@ export default function HoodReveal({ open, onClose }: { open: boolean; onClose: 
               <div><dt className="font-medium text-orange-300">Rendimiento medible</dt><dd className="mt-1 leading-relaxed text-white/60">Los tiempos varían por dispositivo y conexión. Esta demo no es una prueba de velocidad.</dd></div>
             </dl>
           </div>
-          <Dialog.Close className="absolute right-3 top-3 flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-[#171125] text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-300" aria-label="Cerrar el capó"><X size={18} /></Dialog.Close>
+          <Dialog.Close className="absolute right-3 top-3 flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-[#071323] text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-300" aria-label="Cerrar el capó"><X size={18} /></Dialog.Close>
         </Dialog.Content>
       </Dialog.Portal>
     </Dialog.Root>

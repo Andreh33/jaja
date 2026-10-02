@@ -31,6 +31,6 @@ export default async function ExperimentPage({ params }: Props) {
     <section className={styles.instructions} aria-labelledby="how-to-title"><div><p className={styles.eyebrow}>Antes de entrar</p><h2 id="how-to-title">Así se juega.<br />Así se explora.</h2></div><ol>{experiment.controls.map((control) => <li key={control}>{control}</li>)}</ol></section>
     <section className={styles.details}><div><h2>Lo que estás probando</h2><p>{experiment.detail}</p></div><div><h2>Tus datos y tu progreso</h2><p>{experiment.privacy}</p></div></section>
     <section className={styles.related}><div><p className={styles.eyebrow}>Sigue curioseando</p><h2>Prueba otra idea.</h2></div><div className={styles.relatedLinks}>{experiments.filter((item) => item.slug !== experiment.slug).slice(0, 3).map((item) => <Link href={`/lab/${item.slug}`} key={item.slug}><span>{item.title}</span><ArrowUpRight size={19} /></Link>)}</div></section>
-    <div className={styles.projectLink}><p>¿Y si tu web tuviera una experiencia propia?</p><Link href="/tienda/calculadora" className={styles.textLink}>Configura tu proyecto <ArrowUpRight size={19} /></Link></div>
+    <div className={styles.projectLink}><p>¿Y si tu web tuviera una experiencia propia?</p><Link href="/contacto#proyecto" className={styles.textLink}>Configura tu proyecto <ArrowUpRight size={19} /></Link></div>
   </main>;
 }

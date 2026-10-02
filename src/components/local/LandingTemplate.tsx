@@ -76,7 +76,7 @@ export default function LandingTemplate({ landing }: { landing: LocalLanding }) 
       <Navbar />
       <AuroraBackground intensity="subtle" />
       <MouseGlow />
-      <main id="main-content" tabIndex={-1} className="relative z-10">
+      <main id="main-content" tabIndex={-1} className="public-interior relative z-10">
         <section className="pt-44 pb-10">
           <div className="mx-auto max-w-3xl px-6">
             <Breadcrumbs
@@ -99,7 +99,7 @@ export default function LandingTemplate({ landing }: { landing: LocalLanding }) 
               <p className="mt-6 text-lg leading-relaxed text-white/65">{landing.intro}</p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <MagneticButton href={SERVICE_CTA[landing.service]}>
-                  Ver planes <ArrowRight size={14} />
+                  Ver el servicio <ArrowRight size={14} />
                 </MagneticButton>
                 <MagneticButton
                   href={whatsappLink(`Hola, soy de ${city.name} y me interesa ${label.toLowerCase()}`)}

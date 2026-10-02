@@ -35,7 +35,7 @@ export default function XRayMode({ open, onClose }: { open: boolean; onClose: ()
     rotation.current = { x: Math.max(-65, Math.min(35, rotation.current.x + x)), y: rotation.current.y + y };
     if (stageRef.current) stageRef.current.style.transform = `rotateX(${rotation.current.x}deg) rotateY(${rotation.current.y}deg)`;
   }
-  const buttonClass = 'flex min-h-11 min-w-11 items-center justify-center gap-2 rounded-full border border-white/20 bg-[#171125] px-3 text-sm text-white/85 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-300';
+  const buttonClass = 'flex min-h-11 min-w-11 items-center justify-center gap-2 rounded-full border border-white/20 bg-[#071323] px-3 text-sm text-white/85 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-300';
 
   return (
     <Dialog.Root open={open} onOpenChange={(value) => { if (!value) onClose(); }}>

@@ -6,25 +6,23 @@ import { SignatureMarquee } from '@/components/effects/Marquee';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import { Reveal, RevealGroup, RevealItem } from '@/components/effects/Reveal';
-import PlanCard from '@/components/shop/PlanCard';
+import ProjectInquiryForm from '@/components/shared/ProjectInquiryForm';
 import GradientText from '@/components/effects/GradientText';
 import MagneticButton from '@/components/effects/MagneticButton';
-import { STRIPE_LINKS, whatsappLink } from '@/lib/stripe-links';
+import { whatsappLink } from '@/lib/stripe-links';
 import NumberFlow from '@/components/effects/NumberFlow';
 import Link from 'next/link';
 import JsonLd from '@/components/seo/JsonLd';
 import Breadcrumbs from '@/components/seo/Breadcrumbs';
-import AnswerBox from '@/components/seo/AnswerBox';
-import ComparisonTable from '@/components/seo/ComparisonTable';
 import { serviceJsonLd, faqJsonLd, breadcrumbJsonLd } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: 'Diseño web profesional para empresas en 48h',
-  description: 'Página web profesional con SEO técnico, optimización móvil y entrega en 24-48h. 60€/mes + 800€ creación. Sin permanencia. Para toda España.',
+  description: 'Página web profesional con SEO técnico, optimización móvil y entrega en 24-48h. Propuesta a medida por WhatsApp. Sin permanencia. Para toda España.',
   alternates: { canonical: '/tienda/web' },
   openGraph: {
     title: 'Diseño web profesional para empresas en 48h · Latech',
-    description: 'Web profesional con SEO técnico y entrega en 24-48h. 60€/mes + 800€ creación. Sin permanencia.',
+    description: 'Web profesional con SEO técnico y entrega en 24-48h. Propuesta a medida por WhatsApp. Sin permanencia.',
     url: '/tienda/web',
     siteName: 'Latech',
     locale: 'es_ES',
@@ -63,14 +61,13 @@ export default function WebPlanPage() {
           description:
             'Página web profesional a medida con SEO técnico, optimización móvil y entrega en 24-48h. Para empresas de toda España.',
           path: '/tienda/web',
-          price: '800',
         })}
       />
       <JsonLd data={faqJsonLd(FAQS)} />
       <JsonLd
         data={breadcrumbJsonLd([
           { name: 'Inicio', path: '/' },
-          { name: 'Tienda', path: '/tienda' },
+          { name: 'Servicios', path: '/tienda' },
           { name: 'Plan Web', path: '/tienda/web' },
         ])}
       />
@@ -78,14 +75,14 @@ export default function WebPlanPage() {
       <Navbar />
       <AuroraBackground />
       <MouseGlow />
-      <main id="main-content" tabIndex={-1} className="relative z-10">
+      <main id="main-content" tabIndex={-1} className="public-interior relative z-10">
         <section className="pt-44 pb-20">
           <div className="mx-auto max-w-7xl px-6 text-center">
             <div className="text-left">
               <Breadcrumbs
                 items={[
                   { name: 'Inicio', path: '/' },
-                  { name: 'Tienda', path: '/tienda' },
+                  { name: 'Servicios', path: '/tienda' },
                   { name: 'Plan Web', path: '/tienda/web' },
                 ]}
               />
@@ -110,62 +107,10 @@ export default function WebPlanPage() {
           </div>
         </section>
 
-        {/* Answer-first + comparativa citable: responde "cuánto cuesta una
-            página web profesional" con cifras y contexto que la IA puede citar. */}
-        <section className="pb-16">
-          <div className="mx-auto max-w-3xl px-6 text-left">
-            <Reveal>
-              <h2 className="mb-5 font-display text-2xl md:text-3xl" style={{ letterSpacing: '-0.03em', fontWeight: 800 }}>
-                ¿Cuánto cuesta una página web profesional?
-              </h2>
-              <AnswerBox question="Respuesta rápida">
-                Una página web profesional a medida con Latech cuesta <strong className="text-white">800 € de
-                creación más 60 €/mes</strong>, con alojamiento, conexión segura, SEO, mantenimiento y cambios
-                menores incluidos. Sin permanencia y entregada en 24-48 horas. El código y el dominio son tuyos
-                si algún día decides marcharte.
-              </AnswerBox>
-              <div className="mt-6">
-                <ComparisonTable
-                  headers={['Aspecto', 'Latech', 'Agencia tradicional']}
-                  rows={[
-                    ['Creación', '800 € (pago único)', '1.500 – 4.000 €'],
-                    ['Cuota mensual', '60 €/mes todo incluido', 'Variable / por horas'],
-                    ['Entrega', '24-48 horas', '4 – 12 semanas'],
-                    ['Permanencia', 'Ninguna', '12 meses habitual'],
-                    ['Código y dominio', 'Tuyos, transferibles', 'A menudo bloqueados'],
-                  ]}
-                  caption="Comparativa orientativa · rangos típicos del sector"
-                />
-              </div>
-            </Reveal>
-          </div>
-        </section>
-
         <section className="pb-24">
           <div className="mx-auto max-w-3xl px-6">
             <Reveal>
-              <PlanCard
-                plan={{
-                  badge: 'Plan Web',
-                  price: 60,
-                  oneTime: '+ 800€ pago único de creación',
-                  accent: 'blue',
-                  features: [
-                    'Desarrollo completo de la página web',
-                    'Diseño profesional adaptado a la imagen de la empresa',
-                    'Optimización SEO técnica del sitio web',
-                    'Adaptación a dispositivos móviles',
-                    'Optimización de la web (velocidad y Core Web Vitals)',
-                    'Implementación de medidas de seguridad (SSL, headers, protección)',
-                    'Análisis de competencia y palabras clave locales',
-                    'Alojamiento y puesta en marcha incluidos',
-                    'Cambios menores incluidos cada mes',
-                    'Soporte por WhatsApp y email',
-                  ],
-                  cta: { label: 'Contratar plan web', href: STRIPE_LINKS.web, target: '_blank', rel: 'noreferrer' },
-                  microtext: 'Pago seguro mediante Stripe. Te contactaremos en menos de 24h tras la suscripción.',
-                }}
-              />
+              <div id="proyecto" className="service-inquiry"><h2>Tu web empieza con una conversación.</h2><p>Cuéntanos qué necesitas. Revisaremos el alcance contigo por WhatsApp.</p><ProjectInquiryForm initialType="web" /></div>
             </Reveal>
           </div>
         </section>
@@ -316,8 +261,8 @@ export default function WebPlanPage() {
                 <span style={{ color: 'var(--accent-web)' }}>Estará lista pasado mañana.</span>
               </h2>
               <div className="mt-10 flex flex-wrap justify-center gap-4">
-                <MagneticButton href={STRIPE_LINKS.web} target="_blank" rel="noreferrer" accent="blue">
-                  Contratar plan web <ArrowRight size={16} />
+                <MagneticButton href="#proyecto" accent="blue">
+                  Hablar de mi web <ArrowRight size={16} />
                 </MagneticButton>
                 <MagneticButton href={whatsappLink('Hola, me interesa el plan web de Latech')} target="_blank" rel="noreferrer" variant="secondary">
                   Hablar primero

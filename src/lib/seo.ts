@@ -108,8 +108,6 @@ const ORGANIZATION_NODE = {
     itemListElement: [
       {
         '@type': 'Offer',
-        price: '800',
-        priceCurrency: 'EUR',
         itemOffered: {
           '@type': 'Service',
           name: 'Diseño web profesional',
@@ -119,8 +117,6 @@ const ORGANIZATION_NODE = {
       },
       {
         '@type': 'Offer',
-        price: '800',
-        priceCurrency: 'EUR',
         itemOffered: {
           '@type': 'Service',
           name: 'Tienda online',
@@ -130,8 +126,6 @@ const ORGANIZATION_NODE = {
       },
       {
         '@type': 'Offer',
-        price: '150',
-        priceCurrency: 'EUR',
         itemOffered: {
           '@type': 'Service',
           name: 'Agente de IA en la web',
@@ -206,7 +200,7 @@ export function serviceJsonLd(opts: {
   name: string;
   description: string;
   path: string;
-  price: string;
+  price?: string;
   priceCurrency?: string;
 }) {
   return {
@@ -217,12 +211,6 @@ export function serviceJsonLd(opts: {
     url: `${SITE_URL}${opts.path}`,
     provider: { '@id': `${SITE_URL}/#organization` },
     areaServed: { '@type': 'Country', name: 'España' },
-    offers: {
-      '@type': 'Offer',
-      price: opts.price,
-      priceCurrency: opts.priceCurrency ?? 'EUR',
-      availability: 'https://schema.org/InStock',
-    },
   };
 }
 

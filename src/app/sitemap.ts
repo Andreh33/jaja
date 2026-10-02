@@ -14,19 +14,19 @@ import { uniqueCategories, categorySlug } from '@/lib/blog-categories';
 // Usar `new Date()` marcaba TODO como modificado en cada build — una señal de
 // frescura falsa que Google acaba ignorando, perdiendo el valor del lastmod.
 const SITE_LAST_UPDATE = new Date('2026-07-08');
-const RELEASE_UPDATE = new Date('2026-09-10');
-const UPDATED_ROUTES = new Set(['', '/blog', '/proyectos', '/contacto', '/tienda/calculadora']);
-const SEO_UPDATED_ROUTES = new Set(['/tienda/online', '/tienda/agente-ia']);
+const RELEASE_UPDATE = new Date('2026-10-02');
+const UPDATED_ROUTES = new Set(['', '/blog', '/proyectos', '/contacto']);
+const SEO_UPDATED_ROUTES = new Set(['/tienda', '/tienda/web', '/tienda/online', '/tienda/agente-ia']);
 export const revalidate = 900;
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const base = 'https://serviciosonlineweb.com';
   const fixed = [
-    '', '/sobre-nosotros', '/blog', '/tienda', '/tienda/web', '/tienda/online', '/tienda/agente-ia', '/tienda/calculadora', '/proyectos', '/empleo', '/contacto', '/cobertura', '/terminos', '/privacidad',
+    '', '/sobre-nosotros', '/blog', '/tienda', '/tienda/web', '/tienda/online', '/tienda/agente-ia', '/proyectos', '/empleo', '/contacto', '/cobertura', '/terminos', '/privacidad',
   ];
   const fixedEntries: MetadataRoute.Sitemap = fixed.map((p) => ({
     url: `${base}${p}`,
-    lastModified: SEO_UPDATED_ROUTES.has(p) ? new Date('2026-09-29') : UPDATED_ROUTES.has(p) ? RELEASE_UPDATE : SITE_LAST_UPDATE,
+    lastModified: SEO_UPDATED_ROUTES.has(p) ? new Date('2026-10-02') : UPDATED_ROUTES.has(p) ? RELEASE_UPDATE : SITE_LAST_UPDATE,
     changeFrequency: 'weekly' as const,
     priority: p === '' ? 1.0 : 0.7,
   }));

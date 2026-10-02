@@ -168,3 +168,10 @@ button:disabled { cursor: not-allowed; }
   *,*::before,*::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; }
   .wordpress-battle { min-height: auto; }.battle-sticky { position: relative; top: 0; }.hero-copy,.orbital-scene,.selected-project,.project-image-inner,.plugin-card,.battle-core { transform: none !important; }.plugin-card { opacity:.65!important; }.orbital-scene { transform: rotate(-18deg) !important; }.hero-beam,.animate-pulse-dot { opacity: 1; }.blue-button:active { transform: none; }
 }
+
+/* One public identity, including the service and contact pages. */
+.project-statement{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(32px,6vw,90px);align-items:start;padding:clamp(24px,5vw,64px);border:1px solid var(--border-strong);border-radius:12px;background:linear-gradient(135deg,#0b203c,#071323 65%)}
+.project-statement h2{margin-top:24px;font:700 clamp(30px,3.3vw,49px)/1.1 var(--font-display);letter-spacing:-.045em}.project-statement h2 span{color:var(--ice)}.project-statement>div>p:not(.eyebrow){max-width:440px;margin-top:24px;font-size:14px;line-height:1.9;color:var(--text-secondary)}.project-statement .project-contact-note{color:var(--ice)}
+.public-interior{background:radial-gradient(ellipse at 10% 0%,#10274c66,transparent 45%)}.public-interior .glass{background:rgba(7,19,35,.8);border-color:var(--border-subtle)}.public-interior .holographic{background:var(--bg-elevated);border:1px solid var(--border-strong)}.public-interior .holographic::before,.public-interior .holographic::after{display:none}.public-interior h1,.public-interior h2{letter-spacing:-.045em}.public-interior :is(a,button):focus-visible{outline-color:var(--ice)}
+.service-inquiry{scroll-margin-top:115px}.service-inquiry h2{font:700 clamp(28px,3.5vw,44px)/1.1 var(--font-display);margin-bottom:16px}.service-inquiry>p{color:var(--text-secondary);font-size:14px;line-height:1.8;margin-bottom:28px}
+@media(max-width:850px){.project-statement{grid-template-columns:1fr;gap:32px}.project-statement>div>p:not(.eyebrow){max-width:100%}}

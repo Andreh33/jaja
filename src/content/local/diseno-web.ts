@@ -6,6 +6,7 @@ export const landings: LocalLanding[] = [
   {
     service: 'diseno-web',
     citySlug: 'madrid',
+    updatedAt: '2026-10-02',
     title: 'Diseño web en Madrid · entrega 24-48h | Latech',
     description:
       'Diseño web profesional para empresas de Madrid: webs rápidas, optimizadas para Google y sin permanencia. Trabajamos en remoto con entrega en 24-48h.',
@@ -22,7 +23,7 @@ export const landings: LocalLanding[] = [
       { q: '¿Trabajáis con empresas de Madrid sin estar allí físicamente?', a: 'Sí. Trabajamos 100% en remoto por videollamada con clientes de todo Madrid y de toda España. Te ahorras el sobrecoste de una agencia con oficina en el centro y ganas la misma cercanía: reuniones por videollamada y respuesta rápida.' },
       { q: '¿Cuánto tardáis en entregar una web en Madrid?', a: 'La mayoría de proyectos se entregan en 24-48h una vez tenemos tus contenidos. Para webs más grandes, definimos un calendario claro desde el primer día.' },
       { q: '¿La web estará optimizada para posicionar en Google en Madrid?', a: 'Sí. Cada web se entrega con SEO técnico, velocidad optimizada (Core Web Vitals), datos estructurados y enfoque en las búsquedas locales de Madrid relevantes para tu sector.' },
-      { q: '¿Hay permanencia o cuotas obligatorias?', a: 'No hay permanencia. El plan incluye 800 € de creación más 60 €/mes de hosting y mantenimiento. IVA no incluido.' },
+      { q: '¿Hay permanencia o cuotas obligatorias?', a: 'Sin permanencia. Cuéntanos tu proyecto por WhatsApp y acordamos las funciones, el mantenimiento y el presupuesto antes de empezar.' },
     ],
     bodyMarkdown: `## Por qué tu web importa más en Madrid
 
@@ -38,7 +39,7 @@ Nuestro enfoque es simple: una web que **carga al instante, se entiende en cinco
 - Adaptada al móvil de verdad, donde está la mayoría de tu tráfico.
 - Textos orientados a convertir, no a rellenar.
 
-Mira los planes y precios en [diseño web](/tienda/web), o cuéntanos tu caso y te asesoramos sin compromiso.
+Mira los servicios y propuestas en [diseño web](/tienda/web), o cuéntanos tu caso y te asesoramos sin compromiso.
 
 ## La ventaja de trabajar en remoto
 
@@ -49,11 +50,11 @@ Si además quieres vender online o automatizar la atención al cliente, podemos 
   {
     service: 'diseno-web',
     citySlug: 'barcelona',
-    title: 'Diseño web en Barcelona desde 800 € | Latech',
+    updatedAt: '2026-10-02',
+    title: 'Diseño web en Barcelona a medida | Latech',
     description:
-      'Webs a medida para empresas de Barcelona: 800 € + 60 €/mes, IVA no incluido. SEO técnico, trabajo en remoto y sin permanencia.',
+      'Webs a medida para empresas de Barcelona. SEO técnico, trabajo en remoto y sin permanencia. Cuéntanos tu proyecto por WhatsApp.',
     h1: 'Diseño web a medida para empresas de Barcelona',
-    updatedAt: '2026-09-29',
     intro:
       'Una reserva, una consulta o una visita al catálogo: cada negocio necesita un recorrido distinto. Diseñamos webs para empresas de Barcelona que quieren explicar bien su oferta y facilitar el siguiente paso. Trabajamos en remoto desde Puebla de la Calzada, con reuniones por videollamada, una propuesta de alcance y revisión contigo antes de publicar.',
     sectores: [
@@ -65,16 +66,16 @@ Si además quieres vender online o automatizar la atención al cliente, podemos 
     ],
     faq: [
       { q: '¿Tenéis oficina en Barcelona?', a: 'Nuestra sede está en Calle Puente 3, Puebla de la Calzada, Badajoz. Los proyectos de Barcelona los trabajamos en remoto: videollamadas, contenidos compartidos y revisión de la web antes de publicarla.' },
-      { q: '¿Cuánto cuesta una web y qué se paga cada mes?', a: 'El plan web parte de 800 € de creación más 60 €/mes de hosting y mantenimiento, IVA no incluido y sin permanencia. Idiomas, reservas, tienda y otras funciones se revisan y presupuestan según el alcance; no se añaden sin acordarlo.' },
+      { q: '¿Cuánto cuesta una web y qué se paga cada mes?', a: 'Preparamos una propuesta a medida por WhatsApp, sin permanencia y con el alcance acordado antes de empezar. Idiomas, reservas, tienda y otras funciones se revisan y presupuestan según el alcance; no se añaden sin acordarlo.' },
       { q: '¿Podéis preparar la web en catalán, castellano e inglés?', a: 'Sí. Acordamos qué idiomas necesita tu público, qué páginas se traducen y quién aporta y revisa los textos. Preparamos la navegación y las etiquetas hreflang para relacionar las versiones. El alcance multilingüe queda incluido en la propuesta.' },
       { q: '¿Cuánto tarda el proyecto?', a: 'La referencia para una web sencilla es de 24-48 horas desde que recibimos los contenidos completos y acordamos el alcance. Si hay varios idiomas, un catálogo amplio o integraciones, fijamos un calendario específico antes de empezar.' },
       { q: '¿Incluye SEO para búsquedas en Barcelona?', a: 'Incluye la base técnica: títulos, descripciones, estructura de páginas, sitemap y datos estructurados cuando correspondan. Revisamos cómo explicar tus servicios y tu zona de atención. No garantizamos posiciones; los resultados también dependen del contenido, la competencia y el trabajo continuado.' },
     ],
     bodyMarkdown: `## Diseño web en Barcelona: precio y alcance
 
-La referencia del [plan de diseño web](/tienda/web) es **800 € de creación más 60 €/mes de hosting y mantenimiento, IVA no incluido y sin permanencia**. Incluye una web adaptada al móvil, SEO técnico y los cambios menores previstos en el plan. Antes de empezar dejamos por escrito las páginas, los materiales y las funciones que tendrá tu proyecto.
+El [diseño web](/tienda/web) se define con una **propuesta a medida**, según las necesidades de tu negocio. Incluye una web adaptada al móvil, SEO técnico y los cambios menores previstos en el plan. Antes de empezar dejamos por escrito las páginas, los materiales y las funciones que tendrá tu proyecto.
 
-Puedes usar la [calculadora de presupuesto](/tienda/calculadora) para separar creación, cuota mensual y complementos. Si necesitas varios idiomas, reservas o venta online, revisamos esas opciones contigo para confirmar qué incluyen y cuánto cuestan.
+Puedes usar el [formulario de proyecto](/contacto#proyecto) para explicar qué necesitas y preparar tu consulta por WhatsApp. Si necesitas varios idiomas, reservas o venta online, revisamos esas opciones contigo para confirmar qué incluyen y cuánto cuestan.
 
 ## Una web que ayude a reservar, comparar o contactar
 
@@ -101,6 +102,7 @@ Antes de decidir, recorre los [proyectos de Latech](/proyectos) desde tu móvil.
   {
     service: 'diseno-web',
     citySlug: 'valencia',
+    updatedAt: '2026-10-02',
     title: 'Diseño web en Valencia · 24-48h | Latech',
     description:
       'Diseño web profesional para empresas de Valencia: agroalimentario, cerámica, mueble, comercio y exportación. Webs rápidas y sin permanencia.',
@@ -119,7 +121,7 @@ Antes de decidir, recorre los [proyectos de Latech](/proyectos) desde tu móvil.
       { q: '¿Podéis hacer la web bilingüe en valenciano y castellano?', a: 'Sí, y también en inglés u otros idiomas si exportas. Preparamos versiones bien estructuradas para SEO con hreflang.' },
       { q: '¿Sirve para empresas exportadoras y B2B?', a: 'Sí. Muchas empresas valencianas venden a distribuidores y mercados exteriores. Diseñamos webs que transmiten solvencia, con catálogo, fichas técnicas y formularios de contacto claros para captar pedidos.' },
       { q: '¿Cuánto tardáis en entregar?', a: 'La mayoría de webs se entregan en 24-48h una vez tenemos tus contenidos. Para catálogos grandes definimos un calendario.' },
-      { q: '¿Hay permanencia?', a: 'No hay permanencia. El plan incluye 800 € de creación más 60 €/mes de hosting y mantenimiento. IVA no incluido.' },
+      { q: '¿Hay permanencia?', a: 'Sin permanencia. Cuéntanos tu proyecto por WhatsApp y acordamos las funciones, el mantenimiento y el presupuesto antes de empezar.' },
     ],
     bodyMarkdown: `## Valencia: web para una economía exportadora
 
@@ -146,7 +148,7 @@ Del centro de Valencia a la zona de playa, los negocios locales compiten en Goog
 - Catálogo y fichas técnicas pensados para B2B cuando hace falta.
 - Adaptada al móvil y a la tablet del comprador profesional.
 
-Consulta planes y precios en [diseño web](/tienda/web) o cuéntanos tu caso sin compromiso.
+Conoce las opciones de [diseño web](/tienda/web) o cuéntanos tu caso sin compromiso.
 
 ## La ventaja de trabajar en remoto
 
@@ -157,6 +159,7 @@ Si quieres vender directamente o automatizar el contacto comercial, podemos suma
   {
     service: 'diseno-web',
     citySlug: 'sevilla',
+    updatedAt: '2026-10-02',
     title: 'Diseño web en Sevilla · 24-48h | Latech',
     description:
       'Diseño web profesional para empresas de Sevilla: turismo, aeronáutica, agroalimentario y servicios. Webs rápidas, optimizadas y sin permanencia.',
@@ -175,7 +178,7 @@ Si quieres vender directamente o automatizar el contacto comercial, podemos suma
       { q: '¿Sirve para empresas industriales y aeronáuticas B2B?', a: 'Sí. Para el tejido de Aerópolis y la industria auxiliar diseñamos webs que transmiten rigor técnico, con catálogo, certificaciones y fichas claras para captar clientes profesionales.' },
       { q: '¿Optimizáis para el turismo y la hostelería?', a: 'Sí. Trabajamos reserva directa y SEO local para que un hotel o restaurante del centro de Sevilla aparezca cuando alguien busca dónde dormir o comer en la ciudad.' },
       { q: '¿Cuánto tardáis?', a: 'La mayoría de webs en 24-48h una vez tenemos tus contenidos. Para proyectos grandes fijamos un calendario.' },
-      { q: '¿Hay permanencia?', a: 'No hay permanencia. El plan incluye 800 € de creación más 60 €/mes de hosting y mantenimiento. IVA no incluido.' },
+      { q: '¿Hay permanencia?', a: 'Sin permanencia. Cuéntanos tu proyecto por WhatsApp y acordamos las funciones, el mantenimiento y el presupuesto antes de empezar.' },
     ],
     bodyMarkdown: `## Sevilla: dos economías, una misma necesidad
 
@@ -202,7 +205,7 @@ El aceite y los productos de la campiña sevillana se venden por origen y calida
 - Enfoque B2B (catálogo y fichas) o turístico (reserva) según tu negocio.
 - Adaptada al móvil.
 
-Mira planes y precios en [diseño web](/tienda/web) o cuéntanos tu caso sin compromiso.
+Mira servicios y propuestas en [diseño web](/tienda/web) o cuéntanos tu caso sin compromiso.
 
 ## La ventaja de trabajar en remoto
 
@@ -213,6 +216,7 @@ Si quieres vender online o automatizar reservas y consultas, podemos sumar una [
   {
     service: 'diseno-web',
     citySlug: 'malaga',
+    updatedAt: '2026-10-02',
     title: 'Diseño web en Málaga · 24-48h | Latech',
     description:
       'Diseño web profesional para empresas de Málaga: turismo, hostelería, startups del PTA e inmobiliario. Webs rápidas, multilingües y sin permanencia.',
@@ -231,7 +235,7 @@ Si quieres vender online o automatizar reservas y consultas, podemos sumar una [
       { q: '¿Podéis hacer webs multilingües para comprador extranjero?', a: 'Sí. En Málaga es clave. Preparamos webs en inglés, alemán y otros idiomas, bien estructuradas para SEO con hreflang, ideales para inmobiliarias y turismo.' },
       { q: '¿Sirve para una startup del Parque Tecnológico?', a: 'Sí. Diseñamos landings rápidas y medibles, pensadas para convertir tráfico de campañas e inversión en clientes reales.' },
       { q: '¿Cuánto tardáis?', a: 'La mayoría de webs en 24-48h una vez tenemos tus contenidos. Para proyectos con buscador de propiedades o varios idiomas, fijamos calendario.' },
-      { q: '¿Hay permanencia?', a: 'No hay permanencia. El plan incluye 800 € de creación más 60 €/mes de hosting y mantenimiento. IVA no incluido.' },
+      { q: '¿Hay permanencia?', a: 'Sin permanencia. Cuéntanos tu proyecto por WhatsApp y acordamos las funciones, el mantenimiento y el presupuesto antes de empezar.' },
     ],
     bodyMarkdown: `## Málaga: una ciudad que mira al mundo
 
@@ -258,7 +262,7 @@ Vender una propiedad a un comprador alemán o británico exige una web en su idi
 - Reserva directa, buscador de propiedades o landing de conversión según tu negocio.
 - Adaptada al móvil, donde está casi todo el tráfico turístico.
 
-Consulta planes y precios en [diseño web](/tienda/web) o cuéntanos tu caso sin compromiso.
+Conoce las opciones de [diseño web](/tienda/web) o cuéntanos tu caso sin compromiso.
 
 ## La ventaja de trabajar en remoto
 
@@ -269,6 +273,7 @@ Si quieres vender online o automatizar reservas y consultas en varios idiomas, p
   {
     service: 'diseno-web',
     citySlug: 'zaragoza',
+    updatedAt: '2026-10-02',
     title: 'Diseño web en Zaragoza · 24-48h | Latech',
     description:
       'Diseño web profesional para empresas de Zaragoza: logística, automoción, industria y agroalimentario. Webs rápidas, B2B y sin permanencia.',
@@ -287,7 +292,7 @@ Si quieres vender online o automatizar reservas y consultas en varios idiomas, p
       { q: '¿Sirve para una empresa industrial o logística B2B?', a: 'Sí. Es nuestro fuerte. Diseñamos webs que transmiten capacidad y solvencia, con catálogo, capacidades técnicas, certificaciones y formularios de presupuesto claros para captar clientes profesionales.' },
       { q: '¿La web posicionará en Google?', a: 'Sí. Trabajamos SEO técnico, velocidad y datos estructurados, orientados a las búsquedas de tu sector industrial o de servicios.' },
       { q: '¿Cuánto tardáis?', a: 'La mayoría de webs en 24-48h una vez tenemos tus contenidos. Para catálogos grandes fijamos calendario.' },
-      { q: '¿Hay permanencia?', a: 'No hay permanencia. El plan incluye 800 € de creación más 60 €/mes de hosting y mantenimiento. IVA no incluido.' },
+      { q: '¿Hay permanencia?', a: 'Sin permanencia. Cuéntanos tu proyecto por WhatsApp y acordamos las funciones, el mantenimiento y el presupuesto antes de empezar.' },
     ],
     bodyMarkdown: `## Zaragoza: web para el nudo logístico e industrial de España
 
@@ -314,7 +319,7 @@ Del taller del metal a la cooperativa agroalimentaria, todos necesitan que un cl
 - Catálogo, capacidades y fichas técnicas pensados para B2B.
 - Adaptada al móvil y a la tablet del comprador profesional.
 
-Consulta planes y precios en [diseño web](/tienda/web) o cuéntanos tu caso sin compromiso.
+Conoce las opciones de [diseño web](/tienda/web) o cuéntanos tu caso sin compromiso.
 
 ## La ventaja de trabajar en remoto
 
@@ -325,6 +330,7 @@ Si quieres vender online o automatizar la atención comercial, podemos sumar una
   {
     service: 'diseno-web',
     citySlug: 'murcia',
+    updatedAt: '2026-10-02',
     title: 'Diseño web en Murcia · 24-48h | Latech',
     description:
       'Diseño web profesional para empresas de Murcia: agroalimentario, exportación hortofrutícola, conservas e industria auxiliar. Webs rápidas y sin permanencia.',
@@ -343,7 +349,7 @@ Si quieres vender online o automatizar la atención comercial, podemos sumar una
       { q: '¿Sirve para una exportadora hortofrutícola?', a: 'Sí, es uno de nuestros casos típicos. Diseñamos webs multilingües que transmiten calidad, certificaciones y trazabilidad, con catálogo de producto y contacto claro para compradores europeos.' },
       { q: '¿Podéis hacer la web en inglés y otros idiomas?', a: 'Sí. Para exportación preparamos versiones en inglés, francés, alemán u otros, bien estructuradas para SEO con hreflang.' },
       { q: '¿Cuánto tardáis?', a: 'La mayoría de webs en 24-48h una vez tenemos tus contenidos. Para catálogos amplios fijamos calendario.' },
-      { q: '¿Hay permanencia?', a: 'No hay permanencia. El plan incluye 800 € de creación más 60 €/mes de hosting y mantenimiento. IVA no incluido.' },
+      { q: '¿Hay permanencia?', a: 'Sin permanencia. Cuéntanos tu proyecto por WhatsApp y acordamos las funciones, el mantenimiento y el presupuesto antes de empezar.' },
     ],
     bodyMarkdown: `## Murcia: web para la huerta de Europa
 
@@ -370,7 +376,7 @@ Riego, invernaderos, packaging y maquinaria son negocios B2B donde manda la fich
 - Catálogo de producto, certificaciones y trazabilidad bien presentados.
 - Adaptada al móvil y a la tablet del comprador profesional.
 
-Consulta planes y precios en [diseño web](/tienda/web) o cuéntanos tu caso sin compromiso.
+Conoce las opciones de [diseño web](/tienda/web) o cuéntanos tu caso sin compromiso.
 
 ## La ventaja de trabajar en remoto
 
@@ -381,11 +387,11 @@ Si quieres vender directamente o automatizar el contacto con compradores en vari
   {
     service: 'diseno-web',
     citySlug: 'bilbao',
-    title: 'Diseño web en Bilbao desde 800 € | Latech',
+    updatedAt: '2026-10-02',
+    title: 'Diseño web en Bilbao a medida | Latech',
     description:
-      'Web a medida para tu empresa en Bilbao: 800 € + 60 €/mes, IVA no incluido. Trabajo en remoto, SEO técnico y sin permanencia.',
+      'Web a medida para tu empresa en Bilbao. Trabajo en remoto, SEO técnico y sin permanencia. Cuéntanos tu proyecto por WhatsApp.',
     h1: 'Diseño web a medida para empresas de Bilbao',
-    updatedAt: '2026-09-29',
     intro:
       'Si buscas un diseñador web para tu empresa en Bilbao, empezamos por lo que necesita saber tu cliente: qué servicios prestas, qué capacidad tienes y cómo pedirte presupuesto. Construimos webs para presentar esa información con claridad. Somos un equipo de Puebla de la Calzada, Badajoz, y trabajamos con Bilbao y Bizkaia en remoto por videollamada.',
     sectores: [
@@ -397,16 +403,16 @@ Si quieres vender directamente o automatizar el contacto con compradores en vari
     ],
     faq: [
       { q: '¿Sois un estudio de diseño web con oficina en Bilbao?', a: 'Nuestra sede está en Puebla de la Calzada, Badajoz. Prestamos el servicio para Bilbao y Bizkaia en remoto, con reuniones por videollamada y revisión del proyecto contigo. Puedes conocer al equipo y ver nuestro portfolio antes de contratar.' },
-      { q: '¿Cuál es el precio de una página web?', a: 'El plan web parte de 800 € de creación y 60 €/mes de hosting y mantenimiento, IVA no incluido y sin permanencia. Un catálogo técnico, varios idiomas o integraciones pueden ampliar el alcance y se presupuestan antes de comenzar.' },
+      { q: '¿Cuál es el precio de una página web?', a: 'Preparamos una propuesta a medida por WhatsApp, sin permanencia y con el alcance acordado antes de empezar. Un catálogo técnico, varios idiomas o integraciones pueden ampliar el alcance y se presupuestan antes de comenzar.' },
       { q: '¿Podéis diseñar una web para una empresa industrial o B2B?', a: 'Sí. Organizamos los servicios, capacidades, fichas y vías de contacto a partir de la información de tu empresa. Los proyectos, resultados y certificaciones publicados deben ser reales y estar aprobados por ti. Si necesitas buscador, descargas o un catálogo amplio, lo detallamos en la propuesta.' },
       { q: '¿La web puede estar en euskera, castellano e inglés?', a: 'Sí. Definimos los idiomas y las páginas que necesita cada versión, y acordamos quién aporta y valida las traducciones. Preparamos navegación y etiquetas hreflang; el presupuesto recoge el alcance de ese trabajo.' },
       { q: '¿En cuánto tiempo se entrega y qué SEO incluye?', a: 'Para una web sencilla, la referencia es de 24-48 horas desde que están completos los materiales y acordado el alcance. Los proyectos más amplios tienen su propio calendario. Incluimos SEO técnico y una estructura comprensible para buscadores, sin prometer posiciones ni un volumen de contactos.' },
     ],
     bodyMarkdown: `## Cuánto cuesta una web para tu empresa en Bilbao
 
-El [plan web de Latech](/tienda/web) parte de **800 € de creación más 60 €/mes de hosting y mantenimiento, IVA no incluido y sin permanencia**. Una web corporativa y un catálogo con cientos de referencias requieren trabajos distintos: antes de contratar concretamos páginas, contenido, idiomas y funciones.
+El [diseño web de Latech](/tienda/web) empieza con una **propuesta a medida por WhatsApp**. Una web corporativa y un catálogo con cientos de referencias requieren trabajos distintos: antes de contratar concretamos páginas, contenido, idiomas y funciones.
 
-La [calculadora de presupuesto](/tienda/calculadora) permite consultar la creación, la cuota y los complementos por separado. Para una web técnica, también necesitamos conocer cómo están organizadas las fichas y si deben conectarse con alguna herramienta de la empresa.
+El [formulario de proyecto](/contacto#proyecto) prepara tu consulta para hablar con nosotros por WhatsApp. Para una web técnica, también necesitamos conocer cómo están organizadas las fichas y si deben conectarse con alguna herramienta de la empresa.
 
 ## Lo que necesita ver un comprador antes de pedir presupuesto
 
@@ -434,6 +440,7 @@ Compara esos ejemplos con tu necesidad: claridad de la oferta, orden del catálo
   {
     service: 'diseno-web',
     citySlug: 'alicante',
+    updatedAt: '2026-10-02',
     title: 'Diseño web en Alicante · 24-48h | Latech',
     description:
       'Diseño web profesional para empresas de Alicante: turismo, calzado, comercio e inmobiliario de costa. Webs rápidas, multilingües y sin permanencia.',
@@ -452,7 +459,7 @@ Compara esos ejemplos con tu necesidad: claridad de la oferta, orden del catálo
       { q: '¿Sirve para una marca de calzado o textil que exporta?', a: 'Sí. Diseñamos webs multilingües con catálogo de producto, fichas y contacto para distribuidores, pensadas para abrir mercado fuera de España.' },
       { q: '¿Hacéis webs multilingües para el inmobiliario de costa?', a: 'Sí. Para comprador extranjero preparamos versiones en inglés, alemán u otros idiomas con buscador de propiedades, bien estructuradas para SEO con hreflang.' },
       { q: '¿Cuánto tardáis?', a: 'La mayoría de webs en 24-48h una vez tenemos tus contenidos. Para catálogos o buscadores fijamos calendario.' },
-      { q: '¿Hay permanencia?', a: 'No hay permanencia. El plan incluye 800 € de creación más 60 €/mes de hosting y mantenimiento. IVA no incluido.' },
+      { q: '¿Hay permanencia?', a: 'Sin permanencia. Cuéntanos tu proyecto por WhatsApp y acordamos las funciones, el mantenimiento y el presupuesto antes de empezar.' },
     ],
     bodyMarkdown: `## Alicante: turismo de costa e industria exportadora
 
@@ -479,7 +486,7 @@ Vender a un comprador británico, belga o noruego exige una web en su idioma, co
 - Reserva directa, catálogo B2B o buscador de propiedades según tu negocio.
 - Adaptada al móvil.
 
-Consulta planes y precios en [diseño web](/tienda/web) o cuéntanos tu caso sin compromiso.
+Conoce las opciones de [diseño web](/tienda/web) o cuéntanos tu caso sin compromiso.
 
 ## La ventaja de trabajar en remoto
 
@@ -490,6 +497,7 @@ Si quieres vender online o automatizar reservas y consultas en varios idiomas, p
   {
     service: 'diseno-web',
     citySlug: 'cordoba',
+    updatedAt: '2026-10-02',
     title: 'Diseño web en Córdoba · 24-48h | Latech',
     description:
       'Diseño web profesional para empresas de Córdoba: joyería, agroalimentario, aceite y turismo patrimonial. Webs rápidas, cuidadas y sin permanencia.',
@@ -508,7 +516,7 @@ Si quieres vender online o automatizar reservas y consultas en varios idiomas, p
       { q: '¿Sirve para un taller de joyería o una marca artesana?', a: 'Sí. Cuidamos especialmente la fotografía y el diseño para que las piezas luzcan, con catálogo y venta online si quieres, sin sacrificar la velocidad de carga.' },
       { q: '¿Podéis hacer la web de una almazara o marca de aceite?', a: 'Sí. Diseñamos webs que cuentan origen, denominación y proceso, con tienda online si vendes directo y versión en inglés para exportar.' },
       { q: '¿Cuánto tardáis?', a: 'La mayoría de webs en 24-48h una vez tenemos tus contenidos. Para catálogos o tienda fijamos calendario.' },
-      { q: '¿Hay permanencia?', a: 'No hay permanencia. El plan incluye 800 € de creación más 60 €/mes de hosting y mantenimiento. IVA no incluido.' },
+      { q: '¿Hay permanencia?', a: 'Sin permanencia. Cuéntanos tu proyecto por WhatsApp y acordamos las funciones, el mantenimiento y el presupuesto antes de empezar.' },
     ],
     bodyMarkdown: `## Córdoba: web para una economía con sello artesano
 
@@ -535,7 +543,7 @@ Un alojamiento o restaurante del casco histórico vive de aparecer cuando alguie
 - Catálogo, tienda o reserva según tu negocio.
 - Adaptada al móvil.
 
-Consulta planes y precios en [diseño web](/tienda/web) o cuéntanos tu caso sin compromiso.
+Conoce las opciones de [diseño web](/tienda/web) o cuéntanos tu caso sin compromiso.
 
 ## La ventaja de trabajar en remoto
 
@@ -546,6 +554,7 @@ Si quieres vender tus piezas o tu aceite directamente, podemos sumar una [tienda
   {
     service: 'diseno-web',
     citySlug: 'valladolid',
+    updatedAt: '2026-10-02',
     title: 'Diseño web en Valladolid · 24-48h | Latech',
     description:
       'Diseño web profesional para empresas de Valladolid: automoción, agroalimentario, vino e industria. Webs rápidas, B2B y sin permanencia.',
@@ -564,7 +573,7 @@ Si quieres vender tus piezas o tu aceite directamente, podemos sumar una [tienda
       { q: '¿Sirve para un proveedor de automoción B2B?', a: 'Sí. Diseñamos webs que transmiten capacidad técnica y solvencia, con capacidades productivas, certificaciones y un contacto claro para captar clientes industriales.' },
       { q: '¿Podéis hacer la web de una bodega con enoturismo y venta?', a: 'Sí. Combinamos imagen de marca, reserva de visitas de enoturismo y tienda online o club de vino para vender directo dentro y fuera de España.' },
       { q: '¿Cuánto tardáis?', a: 'La mayoría de webs en 24-48h una vez tenemos tus contenidos. Para tienda o catálogos amplios fijamos calendario.' },
-      { q: '¿Hay permanencia?', a: 'No hay permanencia. El plan incluye 800 € de creación más 60 €/mes de hosting y mantenimiento. IVA no incluido.' },
+      { q: '¿Hay permanencia?', a: 'Sin permanencia. Cuéntanos tu proyecto por WhatsApp y acordamos las funciones, el mantenimiento y el presupuesto antes de empezar.' },
     ],
     bodyMarkdown: `## Valladolid: web para industria y marca de producto
 
@@ -591,7 +600,7 @@ Marcas y cooperativas de Castilla que necesitan contar origen y calidad para abr
 - Catálogo B2B, reserva de enoturismo o tienda online según tu negocio.
 - Adaptada al móvil.
 
-Consulta planes y precios en [diseño web](/tienda/web) o cuéntanos tu caso sin compromiso.
+Conoce las opciones de [diseño web](/tienda/web) o cuéntanos tu caso sin compromiso.
 
 ## La ventaja de trabajar en remoto
 
@@ -602,6 +611,7 @@ Si quieres vender tu vino o tu producto directamente o automatizar reservas y co
   {
     service: 'diseno-web',
     citySlug: 'vigo',
+    updatedAt: '2026-10-02',
     title: 'Diseño web en Vigo · 24-48h | Latech',
     description:
       'Diseño web profesional para empresas de Vigo: pesca, conserva, naval y automoción. Webs rápidas, B2B, multilingües y sin permanencia.',
@@ -620,7 +630,7 @@ Si quieres vender tu vino o tu producto directamente o automatizar reservas y co
       { q: '¿Sirve para una empresa pesquera o conservera exportadora?', a: 'Sí. Diseñamos webs multilingües que transmiten calidad, certificaciones y trazabilidad, con catálogo de producto y contacto claro para compradores internacionales.' },
       { q: '¿Podéis hacer la web en gallego, castellano e inglés?', a: 'Sí. Preparamos webs multilingües bien estructuradas para SEO con hreflang, habituales en empresas viguesas con mercado exterior.' },
       { q: '¿Cuánto tardáis?', a: 'La mayoría de webs en 24-48h una vez tenemos tus contenidos. Para catálogos técnicos fijamos calendario.' },
-      { q: '¿Hay permanencia?', a: 'No hay permanencia. El plan incluye 800 € de creación más 60 €/mes de hosting y mantenimiento. IVA no incluido.' },
+      { q: '¿Hay permanencia?', a: 'Sin permanencia. Cuéntanos tu proyecto por WhatsApp y acordamos las funciones, el mantenimiento y el presupuesto antes de empezar.' },
     ],
     bodyMarkdown: `## Vigo: web para la ciudad industrial de Galicia
 
@@ -647,7 +657,7 @@ Astilleros, ingeniería y proveedores de automoción se contratan por capacidad 
 - Catálogo, capacidades y trazabilidad bien estructurados.
 - Adaptada al móvil y a la tablet del comprador profesional.
 
-Consulta planes y precios en [diseño web](/tienda/web) o cuéntanos tu caso sin compromiso.
+Conoce las opciones de [diseño web](/tienda/web) o cuéntanos tu caso sin compromiso.
 
 ## La ventaja de trabajar en remoto
 
@@ -658,6 +668,7 @@ Si quieres vender tu producto del mar directamente o automatizar el contacto int
   {
     service: 'diseno-web',
     citySlug: 'granada',
+    updatedAt: '2026-10-02',
     title: 'Diseño web en Granada · 24-48h | Latech',
     description:
       'Diseño web profesional para empresas de Granada: turismo, universidad, tecnología y salud del PTS. Webs rápidas, multilingües y sin permanencia.',
@@ -676,7 +687,7 @@ Si quieres vender tu producto del mar directamente o automatizar el contacto int
       { q: '¿Hacéis webs multilingües para el turismo de la Alhambra?', a: 'Sí. Para un público tan internacional preparamos webs en inglés y otros idiomas, con reserva directa y bien estructuradas para SEO con hreflang.' },
       { q: '¿Sirve para una empresa del PTS o de salud?', a: 'Sí. Diseñamos webs serias y medibles, con la información técnica y de confianza que necesita un sector tan exigente como el sanitario y biotech.' },
       { q: '¿Cuánto tardáis?', a: 'La mayoría de webs en 24-48h una vez tenemos tus contenidos. Para proyectos con varios idiomas fijamos calendario.' },
-      { q: '¿Hay permanencia?', a: 'No hay permanencia. El plan incluye 800 € de creación más 60 €/mes de hosting y mantenimiento. IVA no incluido.' },
+      { q: '¿Hay permanencia?', a: 'Sin permanencia. Cuéntanos tu proyecto por WhatsApp y acordamos las funciones, el mantenimiento y el presupuesto antes de empezar.' },
     ],
     bodyMarkdown: `## Granada: turismo, universidad y conocimiento
 
@@ -703,7 +714,7 @@ Academias, centros de idiomas y servicios para estudiantes captan matrícula por
 - Reserva directa, formularios de inscripción o web técnica según tu negocio.
 - Adaptada al móvil.
 
-Consulta planes y precios en [diseño web](/tienda/web) o cuéntanos tu caso sin compromiso.
+Conoce las opciones de [diseño web](/tienda/web) o cuéntanos tu caso sin compromiso.
 
 ## La ventaja de trabajar en remoto
 
@@ -714,6 +725,7 @@ Si quieres vender online o automatizar reservas, matrículas y consultas, podemo
   {
     service: 'diseno-web',
     citySlug: 'a-coruna',
+    updatedAt: '2026-10-02',
     title: 'Diseño web en A Coruña · 24-48h | Latech',
     description:
       'Diseño web profesional para empresas de A Coruña: textil y moda, pesca, banca y comercio. Webs rápidas, cuidadas y sin permanencia.',
@@ -732,7 +744,7 @@ Si quieres vender online o automatizar reservas, matrículas y consultas, podemo
       { q: '¿Sirve para una marca de moda o un proveedor textil?', a: 'Sí. Cuidamos especialmente la imagen, la fotografía y el ritmo visual para que tu marca luzca, con catálogo o tienda online y sin sacrificar la velocidad de carga.' },
       { q: '¿Podéis hacer la web en gallego, castellano e inglés?', a: 'Sí. Preparamos webs multilingües bien estructuradas para SEO con hreflang, útiles si vendes o exportas fuera de Galicia.' },
       { q: '¿Cuánto tardáis?', a: 'La mayoría de webs en 24-48h una vez tenemos tus contenidos. Para tienda o catálogos amplios fijamos calendario.' },
-      { q: '¿Hay permanencia?', a: 'No hay permanencia. El plan incluye 800 € de creación más 60 €/mes de hosting y mantenimiento. IVA no incluido.' },
+      { q: '¿Hay permanencia?', a: 'Sin permanencia. Cuéntanos tu proyecto por WhatsApp y acordamos las funciones, el mantenimiento y el presupuesto antes de empezar.' },
     ],
     bodyMarkdown: `## A Coruña: web para una ciudad con cultura de marca
 
@@ -759,7 +771,7 @@ Despachos, consultoras y servicios financieros se contratan por confianza. Una w
 - Catálogo, tienda online o web de servicios según tu negocio.
 - Adaptada al móvil.
 
-Consulta planes y precios en [diseño web](/tienda/web) o cuéntanos tu caso sin compromiso.
+Conoce las opciones de [diseño web](/tienda/web) o cuéntanos tu caso sin compromiso.
 
 ## La ventaja de trabajar en remoto
 
@@ -770,11 +782,11 @@ Si quieres vender online o automatizar la atención al cliente, podemos sumar un
   {
     service: 'diseno-web',
     citySlug: 'badajoz',
-    title: 'Diseño web en Badajoz desde 800 € | Latech',
+    updatedAt: '2026-10-02',
+    title: 'Diseño web en Badajoz a medida | Latech',
     description:
-      'Diseño web en Badajoz: 800 € + 60 €/mes, IVA no incluido. Equipo en Puebla de la Calzada, con SEO técnico y sin permanencia.',
+      'Diseño web en Badajoz con un equipo de Extremadura, en Puebla de la Calzada. SEO técnico y propuesta a medida. Hablemos por WhatsApp.',
     h1: 'Diseño web en Badajoz con un equipo de Extremadura',
-    updatedAt: '2026-09-29',
     intro:
       'Latech tiene su sede en Calle Puente 3, Puebla de la Calzada. Diseñamos webs para negocios de Badajoz y su provincia: presentar servicios, mostrar un catálogo o facilitar una solicitud de presupuesto. Podemos trabajar por videollamada o acordar una reunión presencial. Antes de empezar concretamos lo que necesitas, los materiales y el precio.',
     sectores: [
@@ -786,7 +798,7 @@ Si quieres vender online o automatizar la atención al cliente, podemos sumar un
     ],
     faq: [
       { q: '¿Dónde está Latech? ¿Podemos reunirnos en persona?', a: 'Estamos en Calle Puente 3, 06490 Puebla de la Calzada, en la provincia de Badajoz. Podemos acordar una reunión presencial o trabajar por videollamada. La sede está en Puebla de la Calzada, no en Badajoz capital.' },
-      { q: '¿Cuánto cuesta una página web en Badajoz?', a: 'El plan web parte de 800 € de creación más 60 €/mes de hosting y mantenimiento, IVA no incluido y sin permanencia. Acordamos páginas, contenido y funciones antes de comenzar. La tienda online, los idiomas y otras opciones se desglosan según las necesidades del proyecto.' },
+      { q: '¿Cuánto cuesta una página web en Badajoz?', a: 'Preparamos una propuesta a medida por WhatsApp, sin permanencia y con el alcance acordado antes de empezar. Acordamos páginas, contenido y funciones antes de comenzar. La tienda online, los idiomas y otras opciones se desglosan según las necesidades del proyecto.' },
       { q: '¿Puedo ver proyectos vuestros de Extremadura?', a: 'Sí. En nuestro portfolio puedes consultar Zona Sport, comercio de Puebla de la Calzada, y Panelex, proyecto del sector de la construcción en Extremadura. Puedes abrir las webs y valorar su navegación, contenido y contacto antes de decidir.' },
       { q: '¿Podéis preparar una web en español y portugués?', a: 'Sí. Revisamos qué páginas necesitan ambos idiomas y quién aporta y valida las traducciones. Acordamos el alcance multilingüe en el presupuesto y preparamos navegación y etiquetas hreflang para relacionar las versiones.' },
       { q: '¿Cuánto tarda y qué necesitáis para empezar?', a: 'La referencia para una web sencilla es de 24-48 horas desde que tenemos el contenido completo y el alcance acordado. Necesitamos los textos, imágenes, logo y datos de contacto. Los catálogos amplios, idiomas e integraciones requieren un calendario específico.' },
@@ -794,9 +806,9 @@ Si quieres vender online o automatizar la atención al cliente, podemos sumar un
     ],
     bodyMarkdown: `## Precio de una web en Badajoz, con los conceptos separados
 
-La referencia del [plan web](/tienda/web) es **800 € de creación más 60 €/mes de hosting y mantenimiento, IVA no incluido y sin permanencia**. El presupuesto concreta las páginas, los materiales que hay que preparar y las funciones incluidas. Los cambios menores previstos en el plan y el trabajo adicional se distinguen antes de empezar.
+Para el [diseño web](/tienda/web) preparamos una **propuesta a medida**, con el alcance y los tiempos de tu proyecto. El presupuesto concreta las páginas, los materiales que hay que preparar y las funciones incluidas. Los cambios menores previstos en el plan y el trabajo adicional se distinguen antes de empezar.
 
-Si quieres vender online, añadir idiomas o conectar otras herramientas, consulta la [calculadora de presupuesto](/tienda/calculadora). Te permite ver los complementos y separar el pago inicial de la cuota mensual para revisar una propuesta con el mismo alcance.
+Si quieres vender online, añadir idiomas o conectar otras herramientas, cuéntanoslo en el [formulario de proyecto](/contacto#proyecto). Recibiremos tus ideas por WhatsApp y concretaremos contigo la propuesta.
 
 ## Nuestra sede está en Puebla de la Calzada
 
@@ -821,6 +833,7 @@ El SEO técnico forma parte de la base, pero no equivale a prometer posiciones. 
   {
     service: 'diseno-web',
     citySlug: 'merida',
+    updatedAt: '2026-10-02',
     title: 'Diseño web en Mérida · 24-48h | Latech',
     description:
       'Diseño y desarrollo web para empresas de Mérida: servicios y administración, turismo y patrimonio, hostelería y agroalimentario. Webs y apps rápidas, sin permanencia.',
@@ -840,17 +853,17 @@ El SEO técnico forma parte de la base, pero no equivale a prometer posiciones. 
       { q: '¿Sirve para un negocio de turismo o restauración de Mérida?', a: 'Sí. Diseñamos webs con reservas, carta digital y SEO local para que te encuentren los visitantes del Teatro Romano y del Festival de Mérida, y los vecinos de la ciudad.' },
       { q: '¿Podéis integrar reservas, pagos o citas online?', a: 'Sí. Integramos reservas, pagos con Stripe o Bizum, citas y formularios avanzados según lo que necesite tu negocio.' },
       { q: '¿Cuánto tardáis?', a: 'La mayoría de webs en 24-48h una vez tenemos tus contenidos. Para tienda online o desarrollo a medida fijamos calendario.' },
-      { q: '¿Hay permanencia?', a: 'No hay permanencia. El plan incluye 800 € de creación más 60 €/mes de hosting y mantenimiento. IVA no incluido.' },
+      { q: '¿Hay permanencia?', a: 'Sin permanencia. Cuéntanos tu proyecto por WhatsApp y acordamos las funciones, el mantenimiento y el presupuesto antes de empezar.' },
     ],
     bodyMarkdown: `## ¿Cuánto cuesta una página web en Mérida?
 
-Una web profesional para una empresa de Mérida cuesta **800 € de creación más 60 €/mes** con Latech, con hosting, SEO técnico y mantenimiento incluidos, sin permanencia y entregada en 24-48 h. Estamos a quince minutos, en Puebla de la Calzada, así que trabajas con un equipo cercano y sin intermediarios.
+Una web profesional para una empresa de Mérida empieza con una **propuesta adaptada al negocio**. Concretamos diseño, hosting, SEO técnico, mantenimiento y calendario antes de empezar. Estamos a quince minutos, en Puebla de la Calzada, así que trabajas con un equipo cercano y sin intermediarios.
 
 | Servicio | Precio | Entrega |
 | --- | --- | --- |
-| Página web | 800 € + 60 €/mes | 24-48 h |
-| Tienda online | 800 € + 80 €/mes | 48-72 h |
-| Agente de IA | Desde 150 €/mes | 3-5 días |
+| Página web | Propuesta a medida | Según alcance |
+| Tienda online | Propuesta a medida | Según catálogo |
+| Agente de IA | Propuesta a medida | Según integraciones |
 
 ## Mérida: la capital de Extremadura, a quince minutos de nosotros
 
@@ -877,7 +890,7 @@ Cuando un proyecto necesita más que una web, lo programamos: **desarrollo web a
 - Reservas, pagos (Stripe, Bizum), citas o catálogo según tu negocio.
 - Adaptada al móvil.
 
-Consulta planes y precios en [diseño web](/tienda/web) o cuéntanos tu proyecto sin compromiso.
+Conoce las opciones de [diseño web](/tienda/web) o cuéntanos tu proyecto sin compromiso.
 
 ## La ventaja de tenernos al lado y trabajar en remoto
 

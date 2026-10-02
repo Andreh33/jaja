@@ -75,7 +75,7 @@ export default function Navbar() {
               </Link>
             ))}
           </div>
-          <Link href="/tienda/calculadora" className={styles.projectLink}>
+          <Link href="/contacto#proyecto" className={styles.projectLink}>
             <span>Tu proyecto</span><ArrowUpRight size={15} aria-hidden="true" />
           </Link>
           <Dialog.Trigger
@@ -111,7 +111,7 @@ export default function Navbar() {
           </nav>
           <div className={styles.panelFooter}>
             <Link href="/login" className={styles.clientLink} onClick={close}>Área cliente <ArrowUpRight size={14} aria-hidden="true" /></Link>
-            <Link href="/tienda/calculadora" className={styles.panelCta} onClick={close}>Construir mi proyecto <ArrowUpRight size={17} aria-hidden="true" /></Link>
+            <Link href="/contacto#proyecto" className={styles.panelCta} onClick={close}>Construir mi proyecto <ArrowUpRight size={17} aria-hidden="true" /></Link>
           </div>
         </Dialog.Content>
       </Dialog.Portal>

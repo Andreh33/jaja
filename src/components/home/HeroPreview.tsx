@@ -150,7 +150,7 @@ export default function HeroPreview({ blueprint, expanded = false, active = true
         {page === 'services' && <>
           {intro('TU IDEA. BIEN HECHA.', 'Mucho más', 'que bonito.')}
           {services.map(([number,title,description,href,tags]) => <Link key={href} className={styles.service} href={href}><small>{number}</small><div><h4>{title}</h4><p>{description}</p><span>{tags}</span></div><ArrowUpRight size={16} /></Link>)}
-          <div className={styles.priceNote}><span>CREACIÓN DE TU WEB</span><strong>Desde 800 €</strong><p>Mantenimiento aparte · IVA no incluido.<br />Configura las opciones y revisa el total antes de decidir.</p><Link href="/tienda/calculadora">Configurar mi proyecto <ArrowUpRight size={14} /></Link></div>
+          <div className={styles.priceNote}><span>CREACIÓN DE TU WEB</span><strong>A tu medida.</strong><p>Elige web o tienda online.<br />Cuéntanos tu idea y seguimos por WhatsApp.</p><Link href="/contacto#proyecto">Configurar mi proyecto <ArrowUpRight size={14} /></Link></div>
         </>}
         {page === 'studio' && <>
           {intro('CUIDAMOS LO QUE OTROS DAN POR TERMINADO.', 'Cerca de ti.', 'Lejos de lo normal.')}
@@ -165,7 +165,7 @@ export default function HeroPreview({ blueprint, expanded = false, active = true
           <p className={styles.copy}>Una marca con personalidad empieza con una buena conversación. Cuéntanos qué quieres crear, para quién y qué debería sentirse al entrar.</p>
           {settings.name && <div className={styles.ideaReceipt}><small>LA IDEA QUE HAS EXPLORADO</small><strong>{settings.name}</strong><span>{settings.sector} · {directionLabels[settings.direction]}</span><button type="button" onClick={event => navigate('create', event.detail === 0)}>Seguir dándole forma ↗</button></div>}
           <a href={whatsappLink(studioBrief(settings))} className={styles.cta} target="_blank" rel="noopener noreferrer">Contaros mi idea <ArrowUpRight size={14} /></a>
-          <Link href="/tienda/calculadora" className={styles.textLink}>Prefiero calcular mi proyecto <ArrowUpRight size={13} /></Link>
+          <Link href="/contacto#proyecto" className={styles.textLink}>Prefiero contaros mi proyecto <ArrowUpRight size={13} /></Link>
           <Link href="/contacto" className={styles.textLink}>Ver todas las formas de contacto <ArrowUpRight size={13} /></Link>
           <div className={styles.contactNotes}><p><Check size={14} /> Conversación directa con el equipo.</p><p><Check size={14} /> Alcance y precio claros antes de empezar.</p><p><Check size={14} /> Una dirección propia para tu negocio.</p></div>
         </>}

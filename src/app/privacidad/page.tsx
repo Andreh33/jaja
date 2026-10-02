@@ -19,13 +19,19 @@ export default function PrivacidadPage() {
       <SignatureMarquee />
       <Navbar />
       <AuroraBackground intensity="subtle" />
-      <main id="main-content" tabIndex={-1} className="relative z-10 pt-28 pb-24 md:pt-44">
+      <main id="main-content" tabIndex={-1} className="public-interior relative z-10 pt-28 pb-24 md:pt-44">
         <div className="mx-auto max-w-5xl px-6">
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-white/40">Legal</p>
           <h1 className="mb-10 font-display text-3xl md:text-5xl lg:text-6xl" style={{ letterSpacing: '-0.04em', fontWeight: 800 }}>
             Política de privacidad
           </h1>
           <PDFViewer src="/documentos/Privacidad.pdf" title="Política de privacidad" />
+
+          <section className="mt-12 rounded-2xl glass p-6 md:p-10" aria-labelledby="consultas-title">
+            <h2 id="consultas-title" className="font-display text-2xl font-semibold md:text-3xl">Consultas de proyectos por WhatsApp</h2>
+            <p className="mt-5 text-sm leading-relaxed text-white/75 md:text-base">El formulario de proyectos prepara el mensaje en tu navegador. Al pulsar «Continuar por WhatsApp», el nombre, el negocio que hayas indicado y tu idea se incluyen en el enlace que abre WhatsApp. Podrás revisar el texto y decidir si lo envías a Latech. El formulario no envía esos campos a nuestra base de datos.</p>
+            <p className="mt-4 text-sm leading-relaxed text-white/75 md:text-base">Si nos envías el mensaje, usaremos la información para responder a tu consulta y concretar tu proyecto. WhatsApp presta el servicio de mensajería conforme a sus propias condiciones y política de privacidad.</p>
+          </section>
 
           {/* === Sección específica del portal de empleo === */}
           <section

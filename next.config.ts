@@ -14,6 +14,7 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      { source: '/tienda/calculadora', destination: '/contacto#proyecto', permanent: true },
       // www → apex con 308 permanente (el redirect por defecto de Vercel
       // para el dominio secundario es 307 y no consolida señales SEO).
       {

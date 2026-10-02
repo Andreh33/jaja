@@ -24,7 +24,7 @@ const cols = [
       { href: '/tienda/web', label: 'Página web' },
       { href: '/tienda/online', label: 'Tienda online' },
       { href: '/tienda/agente-ia', label: 'Agente de IA' },
-      { href: '/tienda/calculadora', label: 'Calculadora de presupuesto' },
+      { href: '/contacto#proyecto', label: 'Cuéntanos tu proyecto' },
     ],
   },
   {

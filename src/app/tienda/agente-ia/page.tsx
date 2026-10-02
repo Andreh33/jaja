@@ -14,7 +14,7 @@ import MagneticButton from '@/components/effects/MagneticButton';
 import Holographic from '@/components/effects/Holographic';
 import BeamBorder from '@/components/effects/BeamBorder';
 import AudioPlayer from '@/components/shared/AudioPlayer';
-import { whatsappLink, STRIPE_LINKS } from '@/lib/stripe-links';
+import { whatsappLink } from '@/lib/stripe-links';
 import Link from 'next/link';
 import JsonLd from '@/components/seo/JsonLd';
 import Breadcrumbs from '@/components/seo/Breadcrumbs';
@@ -22,11 +22,11 @@ import { serviceJsonLd, breadcrumbJsonLd } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: 'Agente de IA · atención al cliente y reservas 24/7',
-  description: 'Agentes de IA para empresas de toda España: asistente web desde 150 €/mes y atención telefónica desde 200 €/mes. Sin permanencia. IVA no incluido.',
+  description: 'Agentes de IA para empresas de toda España: atención web y telefónica. Cuéntanos qué necesitas y concretamos una propuesta contigo.',
   alternates: { canonical: '/tienda/agente-ia' },
   openGraph: {
     title: 'Agente de IA · recepcionista virtual 24/7 · Latech',
-    description: 'Agente web desde 150 €/mes y agente telefónico desde 200 €/mes. Atención y reservas para empresas de toda España. IVA no incluido.',
+    description: 'Atención web y telefónica para empresas de toda España. Agentes de IA y reservas con una propuesta adaptada a tu negocio.',
     url: '/tienda/agente-ia',
     siteName: 'Latech',
     locale: 'es_ES',
@@ -61,7 +61,7 @@ const COMPARATIVA = [
   { human: 'No recuerda a todos los clientes', ia: 'Recuerda a cada cliente' },
   { human: 'Sin informes automáticos', ia: 'Informes automáticos siempre' },
   { human: 'No disponible 24h ni festivos', ia: 'Disponible 24h, 365 días' },
-  { human: '1.200€-1.800€/mes', ia: 'Web: 150€/mes · Teléfono: 200€/mes' },
+  { human: '1.200€-1.800€/mes', ia: 'Propuesta según alcance' },
 ];
 
 const STEPS = [
@@ -87,9 +87,8 @@ export default function AgenteIaPage() {
         data={serviceJsonLd({
           name: 'Agente de IA para empresas',
           description:
-            'Asistente web desde 150 €/mes o agente telefónico desde 200 €/mes para atención y reservas. IVA no incluido. Alcance y configuración según propuesta.',
+            'Asistente web o agente telefónico para atención y reservas. Alcance y configuración según las necesidades del negocio.',
           path: '/tienda/agente-ia',
-          price: '150',
         })}
       />
       <JsonLd
@@ -103,7 +102,7 @@ export default function AgenteIaPage() {
       <Navbar />
       <AuroraBackground intensity="strong" />
       <MouseGlow strong />
-      <main id="main-content" tabIndex={-1} className="relative z-10">
+      <main id="main-content" tabIndex={-1} className="public-interior relative z-10">
         <section className="pt-44 pb-20">
           <div className="mx-auto max-w-7xl px-6">
             <Breadcrumbs
@@ -118,10 +117,10 @@ export default function AgenteIaPage() {
                 <Reveal>
                   <span
                     className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-semibold uppercase tracking-widest"
-                    style={{ background: 'rgba(16,185,129,0.12)', color: 'var(--accent-ia)', border: '1px solid rgba(16,185,129,0.3)' }}
+                    style={{ background: 'rgba(59,130,246,0.12)', color: 'var(--accent-ia)', border: '1px solid rgba(59,130,246,0.3)' }}
                   >
                     <span className="relative inline-flex h-2 w-2">
-                      <span className="absolute inset-0 rounded-full bg-emerald-400 animate-pulse-dot" />
+                      <span className="absolute inset-0 rounded-full bg-blue-400 animate-pulse-dot" />
                     </span>
                     Solución IA · 2026
                   </span>
@@ -134,18 +133,18 @@ export default function AgenteIaPage() {
                     y ayuda a tu equipo a centrarse en las conversaciones que necesitan una persona.
                   </p>
                   <ul className="mt-7 space-y-2 text-sm text-white/75">
-                    {['Disponible 24/7 · 365 días', 'Hasta 20 llamadas simultáneas', 'Memoria de clientes con RGPD', 'Integración web + WhatsApp', 'Web desde 150€/mes · Teléfono desde 200€/mes'].map((b) => (
+                    {['Disponible 24/7 · 365 días', 'Hasta 20 llamadas simultáneas', 'Memoria de clientes con RGPD', 'Integración web + WhatsApp', 'Configuración adaptada a tu negocio'].map((b) => (
                       <li key={b} className="flex items-center gap-2">
                         <span className="relative inline-flex h-2 w-2">
-                          <span className="absolute inset-0 rounded-full bg-emerald-400/60 animate-pulse-dot" />
-                          <span className="relative h-2 w-2 rounded-full bg-emerald-400" />
+                          <span className="absolute inset-0 rounded-full bg-blue-400/60 animate-pulse-dot" />
+                          <span className="relative h-2 w-2 rounded-full bg-blue-400" />
                         </span>
                         {b}
                       </li>
                     ))}
                   </ul>
                   <div className="mt-9 flex flex-wrap gap-4">
-                    <MagneticButton href="#demo" accent="green">
+                    <MagneticButton href="#demo" accent="blue">
                       <Headphones size={16} /> Escuchar demo
                     </MagneticButton>
                     <MagneticButton href={ctaWa} target="_blank" rel="noreferrer" variant="secondary">
@@ -161,14 +160,14 @@ export default function AgenteIaPage() {
                     <div
                       className="absolute inset-0"
                       style={{
-                        background: 'radial-gradient(circle at 30% 30%, rgba(16,185,129,0.35), transparent 60%), radial-gradient(circle at 70% 70%, rgba(59,130,246,0.4), transparent 60%)',
+                        background: 'radial-gradient(circle at 30% 30%, rgba(59,130,246,0.35), transparent 60%), radial-gradient(circle at 70% 70%, rgba(59,130,246,0.4), transparent 60%)',
                       }}
                     />
                     <svg viewBox="0 0 400 400" className="absolute inset-0 h-full w-full">
                       <defs>
                         <radialGradient id="phoneGlow" cx="50%" cy="50%" r="50%">
-                          <stop offset="0%" stopColor="rgba(16,185,129,0.6)" />
-                          <stop offset="100%" stopColor="rgba(16,185,129,0)" />
+                          <stop offset="0%" stopColor="rgba(59,130,246,0.6)" />
+                          <stop offset="100%" stopColor="rgba(59,130,246,0)" />
                         </radialGradient>
                       </defs>
                       <circle cx="200" cy="200" r="180" fill="url(#phoneGlow)" />
@@ -185,7 +184,7 @@ export default function AgenteIaPage() {
                             <line
                               key={i}
                               x1={x1} y1={y1} x2={x2} y2={y2}
-                              stroke="#10B981"
+                              stroke="var(--electric)"
                               strokeWidth="2"
                               strokeLinecap="round"
                               opacity={0.4 + Math.sin(i * 0.7) * 0.4}
@@ -197,13 +196,13 @@ export default function AgenteIaPage() {
                       </g>
                       <g transform="translate(170,140)">
                         <rect x="0" y="0" width="60" height="120" rx="14" fill="rgba(3,9,20,0.85)" stroke="rgba(255,255,255,0.15)" />
-                        <rect x="6" y="14" width="48" height="86" rx="6" fill="rgba(16,185,129,0.12)" />
+                        <rect x="6" y="14" width="48" height="86" rx="6" fill="rgba(59,130,246,0.12)" />
                         <circle cx="30" cy="110" r="3" fill="rgba(255,255,255,0.4)" />
                       </g>
                     </svg>
                     <div className="absolute bottom-6 left-6 right-6 flex items-center gap-3 rounded-2xl glass-strong px-4 py-3">
                       <div className="relative inline-flex h-2 w-2">
-                        <span className="absolute inset-0 rounded-full bg-emerald-400 animate-pulse-dot" />
+                        <span className="absolute inset-0 rounded-full bg-blue-400 animate-pulse-dot" />
                       </div>
                       <span className="text-xs text-white/80">Llamada en curso · 03:42</span>
                     </div>
@@ -241,11 +240,11 @@ export default function AgenteIaPage() {
               ))}
             </RevealGroup>
             <Reveal>
-              <div className="mt-10 rounded-2xl border-l-4 p-7" style={{ background: 'rgba(16,185,129,0.06)', borderColor: 'var(--accent-ia)' }}>
+              <div className="mt-10 rounded-2xl border-l-4 p-7" style={{ background: 'rgba(59,130,246,0.06)', borderColor: 'var(--accent-ia)' }}>
                 <p className="text-base text-white/85">
                   <span className="text-2xl">💡</span>{' '}
                   <span className="font-semibold">La solución existe.</span>{' '}
-                  Un asistente web parte de <span className="font-mono" style={{ color: 'var(--accent-ia)' }}>150€/mes</span>; la modalidad telefónica parte de 200€/mes. IVA no incluido.
+                  Estudiamos tus consultas, tus canales y el volumen de atención para preparar una solución a medida.
                 </p>
               </div>
             </Reveal>
@@ -299,13 +298,13 @@ export default function AgenteIaPage() {
                     <div className="h-full rounded-2xl glass p-7 transition-transform hover:-translate-y-1">
                       <div
                         className="mb-5 inline-flex h-11 w-11 items-center justify-center rounded-xl"
-                        style={{ background: 'rgba(16,185,129,0.12)', color: 'var(--accent-ia)', border: '1px solid rgba(16,185,129,0.3)' }}
+                        style={{ background: 'rgba(59,130,246,0.12)', color: 'var(--accent-ia)', border: '1px solid rgba(59,130,246,0.3)' }}
                       >
                         <Icon size={20} strokeWidth={1.6} />
                       </div>
                       <h3 className="font-display text-xl text-white">{f.title}</h3>
                       <p className="mt-2 text-sm leading-relaxed text-white/60">{f.desc}</p>
-                      <div className="mt-5 inline-flex rounded-full border px-3 py-1 text-[10px] font-mono uppercase tracking-wider" style={{ borderColor: 'rgba(16,185,129,0.3)', color: 'var(--accent-ia)', background: 'rgba(16,185,129,0.08)' }}>
+                      <div className="mt-5 inline-flex rounded-full border px-3 py-1 text-[10px] font-mono uppercase tracking-wider" style={{ borderColor: 'rgba(59,130,246,0.3)', color: 'var(--accent-ia)', background: 'rgba(59,130,246,0.08)' }}>
                         {f.badge}
                       </div>
                     </div>
@@ -331,7 +330,7 @@ export default function AgenteIaPage() {
               <div className="overflow-hidden rounded-3xl glass">
                 <div className="grid grid-cols-2 border-b text-xs uppercase tracking-wider text-white/40" style={{ borderColor: 'var(--border-subtle)' }}>
                   <div className="px-6 py-4">Recepcionista humano</div>
-                  <div className="px-6 py-4 text-right" style={{ background: 'rgba(16,185,129,0.05)', color: 'var(--accent-ia)' }}>Tu asistente de IA</div>
+                  <div className="px-6 py-4 text-right" style={{ background: 'rgba(59,130,246,0.05)', color: 'var(--accent-ia)' }}>Tu asistente de IA</div>
                 </div>
                 {COMPARATIVA.map((row, i) => (
                   <div key={i} className="grid grid-cols-2 border-b last:border-0" style={{ borderColor: 'var(--border-subtle)' }}>
@@ -339,7 +338,7 @@ export default function AgenteIaPage() {
                       <X size={16} className="shrink-0 text-red-400/70" />
                       <span className="line-through decoration-red-400/40">{row.human}</span>
                     </div>
-                    <div className="flex items-center justify-end gap-3 px-6 py-4 text-right text-sm text-white" style={{ background: 'rgba(16,185,129,0.05)' }}>
+                    <div className="flex items-center justify-end gap-3 px-6 py-4 text-right text-sm text-white" style={{ background: 'rgba(59,130,246,0.05)' }}>
                       <span>{row.ia}</span>
                       <Check size={16} className="shrink-0" style={{ color: 'var(--accent-ia)' }} />
                     </div>
@@ -389,7 +388,7 @@ export default function AgenteIaPage() {
                     <li key={o} className="flex items-start gap-3 text-sm text-white/85">
                       <span
                         className="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full"
-                        style={{ background: 'rgba(16,185,129,0.18)', color: 'var(--accent-ia)' }}
+                        style={{ background: 'rgba(59,130,246,0.18)', color: 'var(--accent-ia)' }}
                       >
                         <Check size={12} strokeWidth={3} />
                       </span>
@@ -457,17 +456,12 @@ export default function AgenteIaPage() {
                   <div className="mb-7 flex items-center justify-between">
                     <span
                       className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-semibold uppercase tracking-widest"
-                      style={{ background: 'rgba(16,185,129,0.15)', color: 'var(--accent-ia)', border: '1px solid rgba(16,185,129,0.4)' }}
+                      style={{ background: 'rgba(59,130,246,0.15)', color: 'var(--accent-ia)', border: '1px solid rgba(59,130,246,0.4)' }}
                     >
                       <Bot size={12} /> Agente IA · Modalidad web
                     </span>
                   </div>
-                  <div className="mb-2">
-                    <span className="text-base text-white/50">Desde</span>
-                    <span className="font-display ml-3 text-7xl font-bold leading-none text-white tabular-nums">150€</span>
-                    <span className="ml-2 text-base text-white/50">/mes</span>
-                  </div>
-                  <p className="mb-2 text-sm text-white/60">Modalidad telefónica: desde 200€/mes. IVA no incluido. Configuración y alcance: según propuesta.</p>
+<h2 className="mb-6 font-display text-4xl font-semibold">Hablemos de tu atención al cliente.</h2><p className="mb-6 text-sm text-white/60">Concretamos las funciones y la puesta en marcha contigo.</p>
                   <p className="mb-8 text-sm text-white/60">Sin permanencia · Sin instalación · Soporte español · RGPD</p>
 
                   <ul className="mb-10 space-y-3">
@@ -481,7 +475,7 @@ export default function AgenteIaPage() {
                       'Mejora continua semanal',
                     ].map((f, i) => (
                       <li key={i} className="flex items-start gap-3 text-sm leading-relaxed text-white/85">
-                        <span className="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full" style={{ background: 'rgba(16,185,129,0.18)', color: 'var(--accent-ia)' }}>
+                        <span className="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full" style={{ background: 'rgba(59,130,246,0.18)', color: 'var(--accent-ia)' }}>
                           <Check size={12} strokeWidth={3} />
                         </span>
                         {f}
@@ -490,10 +484,10 @@ export default function AgenteIaPage() {
                   </ul>
 
                   <MagneticButton
-                    href={STRIPE_LINKS.ia || ctaWa}
+                    href={ctaWa}
                     target="_blank"
                     rel="noreferrer"
-                    accent="green"
+                    accent="blue"
                     className="!py-4 !text-base"
                   >
                     Solicitar demo personalizada <ArrowRight size={18} />

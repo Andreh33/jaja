@@ -54,7 +54,7 @@ export default function Hero() {
           <h1 id="hero-title" className={styles.heading}><span className={styles.lead}>Diseño web.</span>{' '}Rompe{' '}<br /><motion.span style={{ color: warmColor }} className={styles.warm}>el molde<span className={styles.fullStop}>.</span></motion.span></h1>
           <p className={styles.description}>Tu negocio no nació para parecerse a los demás.<br className={styles.desktopBreak} /> Tu web tampoco. Diseño a medida, animaciones que<br className={styles.desktopBreak} /> sorprenden y una experiencia que deja huella.</p>
           <div className={styles.actions}>
-            <Link href="/tienda/calculadora" className={styles.primary}>Vamos a crear algo <ArrowUpRight size={19} /></Link>
+            <Link href="/contacto#proyecto" className={styles.primary}>Vamos a crear algo <ArrowUpRight size={19} /></Link>
             <a href={whatsappLink('Hola, quiero una web fuera de lo normal')} className="text-button" target="_blank" rel="noopener noreferrer">Hablemos <ArrowUpRight size={17} /></a>
           </div>
         </div>

@@ -8,7 +8,7 @@ import styles from '../layout/public-mobile.module.css';
 /** Focused flows already provide their own actions or fixed summary. */
 const HIDDEN_PREFIXES = [
   '/admin', '/dashboard', '/cursos', '/login', '/registro', '/recuperar', '/mando',
-  '/reset-password', '/lab', '/briefing', '/tienda/calculadora', '/checkout', '/pago', '/cuenta',
+  '/reset-password', '/lab', '/briefing', '/contacto', '/checkout', '/pago', '/cuenta',
 ];
 
 export default function MobileCtaBar() {

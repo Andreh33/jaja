@@ -7,7 +7,7 @@ export const contentType = 'image/png';
 export default function Image() {
   return brandedOgImage({
     title: 'Diseño web profesional para empresas',
-    subtitle: 'SEO técnico, mobile-first y entrega en 24-48h · 800€ + 60€/mes · sin permanencia',
+    subtitle: 'Diseño a medida · Trato directo · Hablemos de tu proyecto por WhatsApp',
     badge: 'Plan Web',
   });
 }

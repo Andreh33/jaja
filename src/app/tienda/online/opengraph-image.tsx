@@ -7,7 +7,7 @@ export const contentType = 'image/png';
 export default function Image() {
   return brandedOgImage({
     title: 'Tu tienda online lista para vender',
-    subtitle: 'Stripe, Bizum, SEO de productos y analítica · 800€ + 80€/mes · entrega en 48h',
+    subtitle: 'Diseño a medida · Trato directo · Hablemos de tu proyecto por WhatsApp',
     badge: 'Plan Tienda Online',
   });
 }

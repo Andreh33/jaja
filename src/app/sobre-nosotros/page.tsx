@@ -44,7 +44,7 @@ export default function SobreNosotrosPage() {
       <Navbar />
       <AuroraBackground />
       <MouseGlow />
-      <main id="main-content" tabIndex={-1} className="relative z-10">
+      <main id="main-content" tabIndex={-1} className="public-interior relative z-10">
         <section className="pt-32 pb-14 md:pt-44 md:pb-20">
           <div className="mx-auto max-w-4xl px-6 text-center">
             <Reveal>

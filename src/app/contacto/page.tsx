@@ -20,7 +20,8 @@ export const metadata: Metadata = {
   alternates: { canonical: '/contacto' },
 };
 
-export default function ContactoPage() {
+export default async function ContactoPage({ searchParams }: { searchParams: Promise<{ tipo?: string }> }) {
+  const { tipo } = await searchParams;
   return (
     <>
       {/* El schema del negocio (Organization+ProfessionalService) se emite
@@ -35,7 +36,7 @@ export default function ContactoPage() {
       <Navbar />
       <AuroraBackground />
       <MouseGlow />
-      <main id="main-content" tabIndex={-1} className="relative z-10">
+      <main id="main-content" tabIndex={-1} className="public-interior relative z-10">
         <section className="pt-32 pb-12 md:pt-44 md:pb-16">
           <div className="mx-auto max-w-7xl px-6 text-center">
             <Reveal>
@@ -44,22 +45,22 @@ export default function ContactoPage() {
                 <GradientText as="span">Hablemos</GradientText>.
               </h1>
               <p className="mx-auto mt-7 max-w-xl text-base text-white/65">
-                Cuéntanos qué necesitas. Te respondemos en menos de 24h con propuesta clara, tiempos reales y precio fijo.
+                Elige web o tienda online, cuéntanos tu idea y hablemos por WhatsApp de lo que necesita tu negocio.
               </p>
             </Reveal>
           </div>
         </section>
 
-        <section className="py-12">
+        <section id="proyecto" className="py-12">
           <div className="mx-auto grid max-w-7xl gap-10 px-6 md:grid-cols-2">
             <Reveal>
               <Holographic className="p-6 md:p-10" rounded="rounded-2xl md:rounded-3xl">
                 <h2 className="font-display text-2xl text-white" style={{ letterSpacing: '-0.03em', fontWeight: 700 }}>
-                  Envíanos un mensaje
+                  Tu proyecto empieza aquí
                 </h2>
-                <p className="mt-2 text-sm text-white/55">Respondemos siempre en menos de 24 horas hábiles.</p>
+                <p className="mt-2 text-sm text-white/55">Prepara tu consulta y revísala en WhatsApp antes de enviarla.</p>
                 <div className="mt-7">
-                  <ContactForm />
+                  <ContactForm initialType={tipo === 'tienda' ? 'tienda' : 'web'} />
                 </div>
               </Holographic>
             </Reveal>
@@ -153,9 +154,9 @@ export default function ContactoPage() {
             <div className="py-7" style={{ background: 'var(--grad-signature)' }}>
               <Marquee speed={45}>
                 {['BADAJOZ', 'PUEBLA DE LA CALZADA', 'EXTREMADURA', 'DISPONIBLES PARA NUEVOS PROYECTOS'].map((t, i) => (
-                  <span key={i} className="flex items-center gap-8 pl-8 font-bold tracking-[0.2em]" style={{ fontSize: 13, color: '#070510' }}>
+                  <span key={i} className="flex items-center gap-8 pl-8 font-bold tracking-[0.2em]" style={{ fontSize: 13, color: 'var(--ink)' }}>
                     {t}
-                    <span style={{ color: '#070510' }}>✦</span>
+                    <span style={{ color: 'var(--ink)' }}>✦</span>
                   </span>
                 ))}
               </Marquee>
