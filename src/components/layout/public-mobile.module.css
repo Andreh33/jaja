@@ -106,9 +106,3 @@
   .desktopLink:hover, .menuLink:hover, .menuLogin:hover { color: var(--brand-100); }
   .contactBar a:hover { background-color: rgba(59,130,246, 0.25); }
 }
-
-@media (prefers-reduced-motion: reduce) {
-  .menuPanel, .menuOverlay { animation: none !important; }
-  .menuTrigger, .menuClose, .menuCta, .contactBar a { transition: none; }
-  .menuTrigger:active, .menuClose:active, .menuCta:active, .contactBar a:active { transform: none; }
-}

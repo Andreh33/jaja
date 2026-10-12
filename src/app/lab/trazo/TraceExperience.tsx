@@ -2,7 +2,6 @@
 
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
-import { useReducedMotion } from 'framer-motion';
 import { ArrowLeft, ArrowUpRight, Download, Pause, Play, RotateCcw, Share2 } from 'lucide-react';
 import { createGameSession, PAUSE_LABELS, suspendGames, type GameSession, type PauseReason } from '@/components/home/playground/game-session';
 import { decodeTraceLevel, generateTraceLevel, MAX_TRACE_POINTS, TRACE_PRESETS, type TraceLevel, type TracePoint } from '@/lib/trace-game/level';
@@ -20,9 +19,8 @@ function TracePlayer({ level, onEdit, onComplete }: { level: TraceLevel; onEdit:
   const [state, setState] = useState<'ready' | 'playing' | 'won' | 'lost'>('ready');
   const [pauseReasons, setPauseReasons] = useState<PauseReason[]>([]);
   const [time, setTime] = useState(0);
-  const reduced = useReducedMotion();
-  const preferences = useRef({ reduced: !!reduced, onComplete });
-  useEffect(() => { preferences.current = { reduced: !!reduced, onComplete }; }, [reduced, onComplete]);
+  const preferences = useRef({ onComplete });
+  useEffect(() => { preferences.current = { onComplete }; }, [onComplete]);
 
   useEffect(() => {
     const element = surface.current!;
@@ -31,7 +29,7 @@ function TracePlayer({ level, onEdit, onComplete }: { level: TraceLevel; onEdit:
     let run = newTraceRun(level);
     let started = false;
     let width = 0, height = 0;
-    const draw = () => renderTrace(ctx, width, height, level, run, !started, preferences.current.reduced);
+    const draw = () => renderTrace(ctx, width, height, level, run, !started, false);
     const resize = () => {
       const rect = view.getBoundingClientRect();
       const dpr = Math.min(window.devicePixelRatio || 1, 2);

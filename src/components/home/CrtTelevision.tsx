@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useId, useRef, useState, type ReactNode, type PointerEvent } from 'react';
-import { motion, useMotionValue, useSpring, useTransform, useReducedMotion } from 'framer-motion';
+import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { FolderOpen, Home, Maximize2, Power } from 'lucide-react';
 import styles from './CrtTelevision.module.css';
 import { crtChannel, crtTones, type CrtChannel } from './crt-channel';
@@ -24,7 +24,6 @@ export default function CrtTelevision({ children, paused, channel = crtChannel('
   const root = useRef<HTMLDivElement>(null);
   const tuningTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const wearId = useId();
-  const reduce = useReducedMotion();
   const pointerX = useMotionValue(0);
   const pointerY = useMotionValue(0);
   const reflectionX = useSpring(pointerX, { stiffness: 90, damping: 22 });
@@ -32,13 +31,13 @@ export default function CrtTelevision({ children, paused, channel = crtChannel('
   const reflectionTransform = useTransform(() => `translate3d(${reflectionX.get()}px, ${reflectionY.get()}px, 0) rotate(-12deg)`);
 
   useEffect(() => {
-    const frame = requestAnimationFrame(() => setShowChannel(!keyboard && !reduce && !paused));
+    const frame = requestAnimationFrame(() => setShowChannel(!keyboard && !paused));
     const timer = setTimeout(() => setShowChannel(false), 1400);
     return () => { cancelAnimationFrame(frame); clearTimeout(timer); };
-  }, [channel.key, keyboard, reduce, paused]);
+  }, [channel.key, keyboard, paused]);
 
   function reflect(event: PointerEvent<HTMLDivElement>) {
-    if (reduce || paused || !visible || event.pointerType !== 'mouse' || !window.matchMedia('(min-width:768px) and (hover:hover) and (pointer:fine)').matches) return;
+    if (paused || !visible || event.pointerType !== 'mouse' || !window.matchMedia('(min-width:768px) and (hover:hover) and (pointer:fine)').matches) return;
     const bounds = event.currentTarget.getBoundingClientRect();
     pointerX.set(((event.clientX - bounds.left) / bounds.width - .5) * 32);
     pointerY.set(((event.clientY - bounds.top) / bounds.height - .5) * 20);

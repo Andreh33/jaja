@@ -24,5 +24,3 @@
   .foundation ul { justify-content: center; gap: 12px 22px; }
   .foundation li { font-size: 10px; }
 }
-
-@media (prefers-reduced-motion: reduce) { .track { transform: none !important; } }

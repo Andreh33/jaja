@@ -51,6 +51,5 @@
 .button:focus-visible,.link:focus-visible,.device :is(button,input,select):focus-visible { outline: 2px solid #a78bfa; outline-offset: 4px; }
 @media (hover:hover) and (pointer:fine) { .button:hover { background: rgba(59,130,246,.28); } .primary:hover { background: var(--brand-600); } }
 @media (max-width: 767px) { .page { padding: 7rem 1.25rem 4rem; } .cards { grid-template-columns: 1fr; gap: 16px; } .card h2 { margin-top: 22px; } .experiment { grid-template-columns: minmax(0,1fr); gap: 26px; margin-top: 32px; } .scene { position: static; } .lede { font-size: 15px; } .device { padding: 20px; } .device .promo { inset-inline: -20px; bottom: -20px; } .steps { gap: 12px; font-size: 10px; } }
-@media (prefers-reduced-motion:reduce) { .button { transition: none; } .button:active { transform: none; } }
 
 @media (hover:hover) and (pointer:fine) { .device button:hover { background: #49335c; } .device .promo:hover { background: #d5bd96; } .productList button:hover { background: #ece5f2; color: #31233e; } }

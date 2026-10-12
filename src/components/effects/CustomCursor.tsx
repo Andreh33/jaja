@@ -12,7 +12,7 @@ export default function CustomCursor() {
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
-    if (!matchMedia('(hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference)').matches) return;
+    if (!matchMedia('(hover: hover) and (pointer: fine)').matches) return;
     document.body.classList.add('has-custom-cursor');
 
     const onMove = (e: MouseEvent) => {

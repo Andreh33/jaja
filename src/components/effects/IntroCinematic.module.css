@@ -35,12 +35,3 @@
 @keyframes openRight{0%,60%{transform:translateX(0)}100%{transform:translateX(110%)}}
 @keyframes cut{0%,20%{opacity:0;transform:rotate(9deg) scaleY(.05)}70%{opacity:1;transform:rotate(9deg) scaleY(1)}100%{opacity:0;transform:rotate(9deg) scaleY(1)}}
 @media(max-width:767px){.emblem{gap:24px}.emblem>span{font-size:8px;letter-spacing:.27em}.coordinate{left:20px;top:26px;font-size:6px}.signature{display:none}.skip{right:20px;font-size:9px}.grid{background-size:56px 56px}}
-/* Explicit brand-opening exception requested by the owner; other motion stays reduced. */
-@media(prefers-reduced-motion:reduce){
-  .opening .curtain{animation-duration:var(--opening-duration)!important}
-  .opening .emblem{animation-duration:650ms!important}
-  .opening .halo{animation-duration:2200ms!important}
-  .opening .flare{animation-duration:1800ms!important}
-  .opening .cut{animation-duration:850ms!important}
-  .opening .logoShine::after{animation-duration:1500ms!important}
-}

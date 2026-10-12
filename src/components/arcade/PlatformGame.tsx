@@ -20,7 +20,6 @@ export default function PlatformGame({ remote, pairedSecond = false,pauseSignal=
   useEffect(() => {
     const element = canvas.current; const ctx = element?.getContext('2d'); if (!element || !ctx) return;
     let frame = 0; let disposed = false; let last = performance.now(); let accumulator = 0; let lastHud = 0; let heard=0; let introTimer: ReturnType<typeof setTimeout>;const probe=arcadeFrameProbe('platform');
-    const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
     const backdrops = [1,2,3,4].map(level => { const image = new Image(); image.src = `/arcade/platform-world${level === 1 ? '' : `-${level}`}.webp`; return image; });
     const sprites = new Image(); sprites.src = '/arcade/platform-sprites.webp';
     const mapping: Record<string, [number,number]> = { KeyA:[0,1],KeyD:[0,2],Space:[0,4],KeyW:[0,4],ShiftLeft:[0,8],KeyF:[0,16],ArrowLeft:[1,1],ArrowRight:[1,2],ArrowUp:[1,4],ShiftRight:[1,8],ArrowDown:[1,16] };
@@ -43,10 +42,10 @@ export default function PlatformGame({ remote, pairedSecond = false,pauseSignal=
         while(accumulator>=1/120) { stepPlatform(w,[keyboard.current[0]|consumeInput(remote.current[0],now),keyboard.current[1]|consumeInput(remote.current[1],now)],1/120); accumulator-=1/120; }
       } else accumulator=0;
       context.clearRect(0,0,PLATFORM_WIDTH,PLATFORM_HEIGHT);
-      const pan=reduced?0:w.camera*.025;
+      const pan=w.camera*.025;
       context.drawImage(backdrops[Math.min(3,w.level-1)],-pan%100-50,-25,1224,640);
       context.fillStyle='rgba(3,15,30,.09)'; context.fillRect(0,0,1024,576);
-      if(!reduced)for(let n=0;n<9;n++){const t=w.time*.3+n*2.1;context.save();context.translate((n*173+Math.sin(t)*40-w.camera*.13+2048)%1080,((w.time*18+n*71)%610)-20);context.rotate(t);context.fillStyle=n%3?'#d3da8677':'#e5ae6677';context.beginPath();context.ellipse(0,0,5,2,0,0,Math.PI*2);context.fill();context.restore();}
+      for(let n=0;n<9;n++){const t=w.time*.3+n*2.1;context.save();context.translate((n*173+Math.sin(t)*40-w.camera*.13+2048)%1080,((w.time*18+n*71)%610)-20);context.rotate(t);context.fillStyle=n%3?'#d3da8677':'#e5ae6677';context.beginPath();context.ellipse(0,0,5,2,0,0,Math.PI*2);context.fill();context.restore();}
       if(w.eventId<heard)heard=0;for(const event of w.events)if(event.id>heard){playArcadeSound(event.kind);heard=event.id;}
       context.save(); context.translate(-w.camera,0);
       for(const [i,p] of w.platforms.entries()) {
@@ -62,11 +61,11 @@ export default function PlatformGame({ remote, pairedSecond = false,pauseSignal=
           context.fillStyle=active?'#55eacb':'#ffc861';context.beginPath();context.moveTo(p.x+32,p.y-66);context.lineTo(p.x+65,p.y-55);context.lineTo(p.x+32,p.y-43);context.fill();
         }
       }
-      for(const coin of w.coins) if(!coin.taken&&coin.x>w.camera-40&&coin.x<w.camera+1060) sprite(5,coin.x-12,coin.y-14+(reduced?0:Math.sin(w.time*4+coin.x)*3),24,28);
+      for(const coin of w.coins) if(!coin.taken&&coin.x>w.camera-40&&coin.x<w.camera+1060) sprite(5,coin.x-12,coin.y-14+(Math.sin(w.time*4+coin.x)*3),24,28);
       for(const core of w.cores) if(!core.taken&&core.x>w.camera-40&&core.x<w.camera+1060) {
-        context.save();context.translate(core.x,core.y);context.rotate(reduced?Math.PI/4:w.time);context.shadowColor='#6ceaff';context.shadowBlur=18;context.fillStyle='#95f7ff';context.fillRect(-10,-10,20,20);context.strokeStyle='#ffffff';context.strokeRect(-6,-6,12,12);context.restore();
+        context.save();context.translate(core.x,core.y);context.rotate(w.time);context.shadowColor='#6ceaff';context.shadowBlur=18;context.fillStyle='#95f7ff';context.fillRect(-10,-10,20,20);context.strokeStyle='#ffffff';context.strokeRect(-6,-6,12,12);context.restore();
       }
-      for(const relic of w.relics) if(!relic.taken&&relic.x>w.camera-40&&relic.x<w.camera+1060){context.save();context.translate(relic.x,relic.y+(reduced?0:Math.sin(w.time*3)*5));context.rotate(Math.PI/4);context.shadowColor='#ffa6f2';context.shadowBlur=reduced?0:22;context.fillStyle='#ffbafa';context.fillRect(-11,-11,22,22);context.strokeStyle='#fff5ff';context.lineWidth=2;context.strokeRect(-6,-6,12,12);context.restore();}
+      for(const relic of w.relics) if(!relic.taken&&relic.x>w.camera-40&&relic.x<w.camera+1060){context.save();context.translate(relic.x,relic.y+(Math.sin(w.time*3)*5));context.rotate(Math.PI/4);context.shadowColor='#ffa6f2';context.shadowBlur=22;context.fillStyle='#ffbafa';context.fillRect(-11,-11,22,22);context.strokeStyle='#fff5ff';context.lineWidth=2;context.strokeRect(-6,-6,12,12);context.restore();}
       for(const enemy of w.enemies) if(!enemy.dead&&enemy.x>w.camera-60&&enemy.x<w.camera+1080) sprite(enemy.drone?4:3,enemy.x-6,enemy.y-8,50,44,enemy.direction>0);
       sprite(8,w.width-210,335,125,145);
       for(const [slot,p] of w.players.entries()) {
@@ -75,8 +74,8 @@ export default function PlatformGame({ remote, pairedSecond = false,pauseSignal=
         context.globalAlpha=p.invulnerable>0?.6+Math.sin(w.time*16)*.2:1;
         const index=!p.grounded?2:Math.abs(p.vx)>20&&Math.floor(w.time*10)%2?1:0;
         if(slot)context.filter='hue-rotate(155deg) saturate(1.25)';
-        if(p.dash>0&&!reduced)for(let n=3;n>0;n--){context.globalAlpha=.1+(3-n)*.07;sprite(2,p.x-8-p.facing*n*20,p.y-5,55,57,p.facing<0);}context.globalAlpha=p.invulnerable>0?.6+Math.sin(w.time*16)*.2:1;
-        const breath=!reduced&&p.grounded&&Math.abs(p.vx)<20?Math.sin(w.time*3+slot)*1.2:0;
+        if(p.dash>0)for(let n=3;n>0;n--){context.globalAlpha=.1+(3-n)*.07;sprite(2,p.x-8-p.facing*n*20,p.y-5,55,57,p.facing<0);}context.globalAlpha=p.invulnerable>0?.6+Math.sin(w.time*16)*.2:1;
+        const breath=p.grounded&&Math.abs(p.vx)<20?Math.sin(w.time*3+slot)*1.2:0;
         sprite(index,p.x-8,p.y-5-breath,55,57+breath,p.facing<0);context.filter='none';context.globalAlpha=1;
         if(w.players.length===2) {context.font='bold 12px monospace';context.textAlign='center';context.fillStyle=slot?'#ffcd79':'#b6ffff';context.fillText(`J${slot+1}`,p.x+19,p.y-15);}
       }

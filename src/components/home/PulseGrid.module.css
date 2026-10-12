@@ -5,4 +5,3 @@
 .field[data-running=true] .pulse{animation-play-state:running}
 @keyframes travel{from{stroke-dashoffset:100}to{stroke-dashoffset:0}}
 @media(max-width:767px){.grid{transform:translateX(-50%) scale(.7);transform-origin:top center}.pulse{stroke-width:2.2}}
-@media(prefers-reduced-motion:reduce){.pulse{animation:none;opacity:.18;stroke-dasharray:none;filter:none}}

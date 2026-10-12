@@ -14,7 +14,7 @@ import { channelNumber, tvProjects } from '@/lib/tv-channels';
 export const metadata: Metadata = {
   title: 'Proyectos: diseño y desarrollo a medida',
   description:
-    'Explora una selección de webs, tiendas y conceptos de Latech. Diseño y desarrollo para comercio, restauración, industria y servicios.',
+    'Explora una selección de webs y tiendas de Latech. Diseño y desarrollo para comercio, arquitectura, industria y servicios.',
   alternates: {
     canonical: '/proyectos',
   },
@@ -71,8 +71,7 @@ export default function ProyectosPage() {
               </h1>
               <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/65 md:text-lg">
                 Cada proyecto que hacemos lo cuidamos como si fuera nuestro. Explora esta selección
-                de trabajos y conceptos para conocer sus funciones y su dirección visual.
-                Las fichas de concepto se identifican expresamente.
+                de trabajos para conocer sus funciones y su dirección visual.
               </p>
             </Reveal>
           </div>
@@ -121,7 +120,6 @@ export default function ProyectosPage() {
                       >
                         {p.name}
                       </h2>
-                        {p.id === 'maison-noir' && <span className="mt-2 inline-flex rounded-full border border-purple-300/30 px-2.5 py-1 text-[11px] font-medium text-purple-200">Concepto de diseño</span>}
                       <p className="mt-1 font-mono text-[11px] text-white/40">{p.domain}</p>
                       {p.services && <p className="mt-3 text-[11px] leading-relaxed text-sky-200">{p.services.join(' · ')}</p>}
                       {p.services && tvProjects.some(project => project.id === p.id) && <p className="mt-2 font-mono text-[10px] text-white/55">CH {channelNumber(p.id)} · LATECH TV</p>}

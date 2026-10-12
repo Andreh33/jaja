@@ -13,7 +13,3 @@
   .row:hover > .arrow { color: #ffad73; transform: translate(4px, -4px); }
 }
 @media (max-width: 767px) { .row::after { left: -9px; } }
-@media (prefers-reduced-motion: reduce) {
-  .row::before, .row::after, .row > .arrow, .row > .number { transition: none; }
-  .row::before, .row::after, .row:hover > .arrow { transform: none; }
-}

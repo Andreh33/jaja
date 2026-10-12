@@ -576,13 +576,10 @@ body {
   animation: hero-beam 2s ease-in-out infinite;
   transform-origin: top;
 }
-@media (prefers-reduced-motion: reduce) {
-  .hero-enter, .hero-enter-lcp, .hero-beam { animation: none; opacity: 1; transform: none; }
-}
 
 /* Mobile has its own rhythm; the desktop composition stays intact. */
 .latech-demo-dialog, body.has-custom-cursor .latech-demo-dialog * { cursor: auto !important; }
-@media (max-width: 767px), (prefers-reduced-motion: reduce) {
+@media (max-width: 767px) {
   .xray-stage, .xray-controls { display: none !important; }
   .xray-list.sr-only { position: static; width: 100%; height: auto; padding: 0; margin-block: 1.5rem; overflow: visible; clip: auto; white-space: normal; }
 }
@@ -599,17 +596,4 @@ body {
 
 @media (hover: none), (pointer: coarse) {
   .cursor-dot, .cursor-ring, .spotlight, .spotlight-strong { display: none !important; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto !important; }
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-  .breathe-section, .compare-card { transform: none !important; }
-  .cursor-dot, .cursor-ring, .spotlight, .spotlight-strong { display: none !important; }
-  body.has-custom-cursor, body.has-custom-cursor * { cursor: auto !important; }
 }

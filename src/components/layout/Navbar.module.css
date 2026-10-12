@@ -207,9 +207,3 @@
   .clientLink { justify-content: center; }
   .panelCta { gap: 20px; }
 }
-
-@media (prefers-reduced-motion: reduce) {
-  .surface, .brand, .menuButton, .projectLink, .panel, .closeButton, .panelCta, .expandedLinks a > svg { transition: none; }
-  .panel, .panel[data-keyboard="false"] { transform: none; }
-  .panelCta:active, .closeButton:active, .expandedLinks a:hover > svg { transform: none; }
-}

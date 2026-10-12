@@ -13,7 +13,7 @@ const render = (project: number, active = true) => renderToStaticMarkup(createEl
 describe('Studio project browser', () => {
   it('uses only permitted destinations and safely handles invalid indices', () => {
     assert.equal(studioBrowserProject(0).hostname, 'monopatinmonkey.com');
-    assert.equal(studioBrowserProject(1).hostname, 'frenchtacos.vercel.app');
+    assert.equal(studioBrowserProject(1).hostname, 'panelexpanelsandwich.com');
     for (const index of [-1, 99, .5, Number.NaN]) assert.equal(studioBrowserProject(index).hostname, 'monopatinmonkey.com');
   });
   it('keeps known SAMEORIGIN projects out of the guide', () => {
@@ -32,11 +32,11 @@ describe('Studio project browser', () => {
   });
   it('keeps return, reload and enlargement controls explicitly labelled without external navigation', () => {
     const html = render(1);
-    for (const label of ['Volver a Latech Studio', 'Recargar el inicio de CLM French Tacos', 'Ampliar navegador de proyectos']) assert.ok(html.includes(label));
+    for (const label of ['Volver a Latech Studio', 'Recargar el inicio de Panelex', 'Ampliar navegador de proyectos']) assert.ok(html.includes(label));
     assert.ok(!html.includes('target="_blank"'));
   });
   it('restricts the frame shell to one exact project origin and disables popups/top navigation', async () => {
-    for (const [slug, origin] of [['monkey', 'https://monopatinmonkey.com'], ['french-tacos', 'https://frenchtacos.vercel.app']]) {
+    for (const [slug, origin] of [['monkey', 'https://monopatinmonkey.com'], ['panelex', 'https://panelexpanelsandwich.com']]) {
       const response = await GET(new Request('https://example.com/'), { params: Promise.resolve({ project: slug }) });
       assert.equal(response.status, 200);
       assert.ok(response.headers.get('Content-Security-Policy')?.includes(`frame-src ${origin};`));
@@ -48,13 +48,13 @@ describe('Studio project browser', () => {
     }
   });
   it('never accepts arbitrary frame URLs or bypasses a project framing restriction', async () => {
-    for (const [slug, status] of [['https://outside.example', 404], ['__proto__', 404], ['zona-sport', 404]] as const) {
+    for (const [slug, status] of [['https://outside.example', 404], ['__proto__', 404], ['zonasport', 404], ['french-tacos', 404], ['fulldip-sur', 404]] as const) {
       const response = await GET(new Request('https://example.com/'), { params: Promise.resolve({ project: slug }) });
       assert.equal(response.status, status);
     }
   });
-  it('opens each new project with an exact-origin frame and the existing sandbox', async () => {
-    for (const slug of ['fulldip-sur', 'granja-orea', 'f5-arquitectos', 'quality-homes', 'megias-frutas']) {
+  it('opens every retained project with an exact-origin frame and the existing sandbox', async () => {
+    for (const { slug } of tvProjects) {
       const index = tvProjects.findIndex(project => project.slug === slug);
       assert.ok(index >= 0, slug);
       const model = studioBrowserProject(index);
@@ -71,11 +71,10 @@ describe('Studio project browser', () => {
       assert.ok(!shell.includes('allow-top-navigation'), slug);
     }
   });
-  it('keeps the original channel numbers and appends all five new projects', () => {
+  it('renumbers retained channels consistently without leaving empty slots', () => {
     assert.equal(channelNumber('monkey'), '02');
-    assert.equal(channelNumber('el-refugio-de-a-cabana'), '12');
-    ['fulldip-sur', 'granja-orea', 'f5-arquitectos', 'quality-homes', 'megias-frutas'].forEach((slug, index) => {
-      assert.equal(channelNumber(slug), String(index + 13));
+    ['monkey', 'panelex', 'toldos-noa', 'granja-orea', 'f5-arquitectos', 'quality-homes', 'megias-frutas'].forEach((slug, index) => {
+      assert.equal(channelNumber(slug), String(index + 2).padStart(2, '0'));
     });
   });
   it('opens Frutas Megías live with the same origin and sandbox restrictions as existing channels', async () => {
@@ -85,7 +84,7 @@ describe('Studio project browser', () => {
     assert.ok(render(index).includes('src="/studio-browser/megias-frutas"'));
     const response = await GET(new Request('https://example.com/'), { params: Promise.resolve({ project: 'megias-frutas' }) });
     assert.equal(response.status, 200);
-    assert.ok(response.headers.get('Content-Security-Policy')?.includes('frame-src https://megias-fruta.vercel.app;'));
+    assert.ok(response.headers.get('Content-Security-Policy')?.includes('frame-src https://frutasmegias.com;'));
     const html = await response.text();
     assert.ok(html.includes('sandbox="allow-scripts allow-same-origin allow-forms"'));
     assert.ok(!html.includes('allow-top-navigation'));

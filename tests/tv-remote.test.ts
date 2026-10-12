@@ -60,7 +60,7 @@ describe('Temporary TV remote', () => {
     assert.equal(scroll.lastAction, 'scroll-down'); assert.equal(scroll.channel, command.channel);
   });
   it('rejects unlisted channels, arbitrary URLs and additional command properties', () => {
-    for (const channel of ['zonasport', 'maison-noir', 'https://evil.example', '__proto__']) assert.equal(remoteRequestSchema.safeParse({ action: 'command', id: crypto.randomUUID(), command: 'channel', channel }).success, false);
+    for (const channel of ['zonasport', 'maison-noir', 'french-tacos', 'fulldip-sur', 'https://evil.example', '__proto__']) assert.equal(remoteRequestSchema.safeParse({ action: 'command', id: crypto.randomUUID(), command: 'channel', channel }).success, false);
     assert.equal(remoteRequestSchema.safeParse({ action: 'command', id: crypto.randomUUID(), command: 'channel' }).success, false);
     assert.equal(remoteRequestSchema.safeParse({ action: 'create', channel: 'studio', expanded: false, url: 'https://evil.example' }).success, false);
   });
@@ -102,5 +102,12 @@ describe('Temporary TV remote', () => {
     assert.equal(tvDeviceInfo(headers, true).city, 'Madrid');
     assert.equal(measurementPath('/mando'), null);
   });
-  it('offers live projects and teletext while preserving existing exclusions', () => { assert.equal(tvProjects.length, 16); assert.equal(tvChannels.length, 18); assert.ok(tvChannels.some(channel=>channel.id==='teletext')); assert.equal(tvProjects[0].slug, 'monkey'); assert.ok(!tvProjects.some(project => project.id === 'zonasport')); });
+  it('offers retained projects and teletext while preserving framing exclusions', () => {
+    assert.equal(tvProjects.length, 7);
+    assert.equal(tvChannels.length, 9);
+    assert.ok(tvChannels.some(channel => channel.id === 'teletext'));
+    assert.ok(tvChannels.some(channel => channel.id === 'megias-frutas'));
+    assert.equal(tvProjects[0].slug, 'monkey');
+    assert.ok(!tvProjects.some(project => project.id === 'zonasport'));
+  });
 });

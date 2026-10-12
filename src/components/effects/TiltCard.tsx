@@ -1,6 +1,6 @@
 'use client';
 
-import { motion, useMotionValue, useSpring, useTransform, useReducedMotion } from 'framer-motion';
+import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { useRef, type ReactNode, type MouseEvent } from 'react';
 import { cn } from '@/lib/utils';
 
@@ -29,10 +29,9 @@ export default function TiltCard({
     [glareX, glareY],
     ([gx, gy]) => `radial-gradient(circle at ${gx} ${gy}, rgba(255,255,255,0.18), transparent 50%)`,
   );
-  const reduced = useReducedMotion();
 
   const onMove = (e: MouseEvent) => {
-    if (!ref.current || reduced || !window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+    if (!ref.current || !window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
     const rect = ref.current.getBoundingClientRect();
     mx.set((e.clientX - rect.left) / rect.width);
     my.set((e.clientY - rect.top) / rect.height);
@@ -49,8 +48,8 @@ export default function TiltCard({
       onMouseLeave={onLeave}
       className={cn('relative', className)}
       style={{
-        rotateX: reduced ? 0 : rotateX,
-        rotateY: reduced ? 0 : rotateY,
+        rotateX,
+        rotateY,
         transformStyle: 'preserve-3d',
         transformPerspective: 1200,
       }}

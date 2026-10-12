@@ -22,7 +22,7 @@ export function Marquee({
     const element = container.current;
     const strip = track.current;
     if (!element || !strip || !('IntersectionObserver' in window)) return;
-    const media = matchMedia('(min-width: 1024px) and (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference)');
+    const media = matchMedia('(min-width: 1024px) and (hover: hover) and (pointer: fine)');
     let visible = false;
     let focused = element.contains(document.activeElement);
     let hovered = false;

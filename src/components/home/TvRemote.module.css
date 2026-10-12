@@ -34,4 +34,3 @@
 .remoteShell button:focus-visible,.hostTools button:focus-visible,.dialog button:focus-visible{transition:none}
 .remoteShell button:focus-visible:active,.hostTools button:focus-visible:active,.dialog button:focus-visible:active{transform:none}
 @keyframes remote-dialog{from{opacity:0;transform:translate(-50%,-48%) scale(.97)}to{opacity:1;transform:translate(-50%,-50%) scale(1)}}
-@media(prefers-reduced-motion:reduce){.dialog,.overlay{animation:none}.remoteShell button,.hostTools button,.channelGrid>button{transition:none}.remoteShell button:not(:disabled):active,.dialog button:active,.hostTools button:active{transform:none}}

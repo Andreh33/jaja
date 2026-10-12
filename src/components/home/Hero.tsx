@@ -1,7 +1,7 @@
 'use client';
 
 import { useRef, useState, type PointerEvent } from 'react';
-import { motion, useMotionValue, useSpring, useTransform, useReducedMotion, useScroll } from 'framer-motion';
+import { motion, useMotionValue, useSpring, useTransform, useScroll } from 'framer-motion';
 import { ArrowDown, ArrowUpRight, Braces, Maximize2, Pause, Play, X } from 'lucide-react';
 import * as Dialog from '@radix-ui/react-dialog';
 import Link from 'next/link';
@@ -21,7 +21,6 @@ export default function Hero() {
   const ref = useRef<HTMLElement>(null);
   const previewRef = useRef<HeroPreviewHandle>(null);
   const televisionTrigger = useRef<HTMLButtonElement | null>(null);
-  const reduce = useReducedMotion();
   const [blueprint, setBlueprint] = useState(false);
   const [pulsePaused, setPulsePaused] = useState(false);
   const [arcadeOpen, setArcadeOpen] = useState(false);
@@ -36,7 +35,7 @@ export default function Hero() {
   const backgroundTransform = useTransform(scrollYProgress, [0, 1], ['translateY(0px)', 'translateY(110px)']);
   const warmColor = useTransform(scrollYProgress, [0, .45, 1], ['#ff9853', '#ffd0a1', '#9ed6ff']);
   function onPointerMove(event: PointerEvent<HTMLElement>) {
-    if (reduce || event.pointerType !== 'mouse' || !window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+    if (event.pointerType !== 'mouse' || !window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
     if ((event.target as HTMLElement).closest('[data-live-preview], [data-crt-controls]')) { pointerX.set(0); pointerY.set(0); return; }
     const bounds = event.currentTarget.getBoundingClientRect();
     pointerX.set(event.clientX - bounds.left - bounds.width / 2);

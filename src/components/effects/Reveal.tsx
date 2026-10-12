@@ -7,8 +7,7 @@ function useReveal(delay: number, stagger?: number) {
   const ref = useRef<HTMLDivElement>(null);
   useEffect(() => {
     const element = ref.current;
-    const preference = window.matchMedia('(prefers-reduced-motion: reduce)');
-    if (!element || preference.matches || !('IntersectionObserver' in window) || !element.animate) return;
+    if (!element || !('IntersectionObserver' in window) || !element.animate) return;
     const animations: Animation[] = [];
     let firstObservation = true;
     const observer = new IntersectionObserver(([entry]) => {
@@ -25,7 +24,6 @@ function useReveal(delay: number, stagger?: number) {
       }
       if (!entry.isIntersecting) return;
       observer.disconnect();
-      if (preference.matches) return;
       const targets = stagger === undefined
         ? [element]
         : Array.from(element.querySelectorAll<HTMLElement>('[data-reveal-item]'));
@@ -41,12 +39,9 @@ function useReveal(delay: number, stagger?: number) {
         }));
       });
     }, { threshold: 0, rootMargin: '0px 0px -24px 0px' });
-    const stop = () => { if (preference.matches) animations.forEach((animation) => animation.cancel()); };
-    preference.addEventListener('change', stop);
     observer.observe(element);
     return () => {
       observer.disconnect();
-      preference.removeEventListener('change', stop);
       animations.forEach((animation) => animation.cancel());
     };
   }, [delay, stagger]);

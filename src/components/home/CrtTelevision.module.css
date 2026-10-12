@@ -83,14 +83,5 @@
 @media(hover:hover) and (pointer:fine){
   .controls button:hover{color:#eff7ff}
 }
-@media(prefers-reduced-motion:reduce){
-  .sweep{animation:none;display:none}
-  .scanlines{animation:none}
-  .signal{display:none}
-  .power,.scanlines,.sweep{transition:none}
-  .halo,.halo i{transition:none}
-  .movingReflection{display:none}
-  .channelReadout{display:none!important}
-}
 @keyframes tubeSweep{to{transform:translateY(100%)}}
 @keyframes scanDrift{to{transform:translateY(3px)}}

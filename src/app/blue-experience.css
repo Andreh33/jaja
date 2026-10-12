@@ -164,10 +164,6 @@ button:disabled { cursor: not-allowed; }
   .price-statement { grid-template-columns: 1fr; gap: 35px; padding: 26px; }.price-display { font-size: 95px; }.price-statement h2 { font-size: 37px; }.blue-process { grid-template-columns: 1fr 1fr; gap: 30px 20px; }.process-step h3 { font-size: 20px; margin-top: 22px; }.process-step p { font-size: 11px; }
   .lab-tabs { gap: 6px; }.lab-tabs button { font-size: 11px; padding: 11px 14px; }.lab-frame-body { height: 450px; padding: 10px; }.lab-frame-header { font-size: 7px; padding: 13px; }.lab-controls { flex-direction: column; }.lab-controls > button { justify-content: center; }.blue-faq { grid-template-columns: 1fr; gap: 35px; }.blue-cta { padding-block: 85px; }.blue-cta h2 { font-size: clamp(47px,12vw,80px); }
 }
-@media (prefers-reduced-motion:reduce) {
-  *,*::before,*::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; }
-  .wordpress-battle { min-height: auto; }.battle-sticky { position: relative; top: 0; }.hero-copy,.orbital-scene,.selected-project,.project-image-inner,.plugin-card,.battle-core { transform: none !important; }.plugin-card { opacity:.65!important; }.orbital-scene { transform: rotate(-18deg) !important; }.hero-beam,.animate-pulse-dot { opacity: 1; }.blue-button:active { transform: none; }
-}
 
 /* One public identity, including the service and contact pages. */
 .project-statement{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(32px,6vw,90px);align-items:start;padding:clamp(24px,5vw,64px);border:1px solid var(--border-strong);border-radius:12px;background:linear-gradient(135deg,#0b203c,#071323 65%)}

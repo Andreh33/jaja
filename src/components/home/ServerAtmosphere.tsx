@@ -4,7 +4,7 @@ import { useEffect, useRef } from 'react';
 import { SERVER_POSTER, serverVideoSource } from './server-atmosphere';
 import styles from './ServerAtmosphere.module.css';
 
-/** A decorative, first-party film. Never gates navigation or downloads on reduced motion. */
+/** A decorative, first-party film. Manual pause and data saving remain in control. */
 export default function ServerAtmosphere({ paused }: { paused: boolean }) {
   const video = useRef<HTMLVideoElement>(null);
   const pauseRequested = useRef(paused);
@@ -12,21 +12,20 @@ export default function ServerAtmosphere({ paused }: { paused: boolean }) {
   useEffect(() => {
     const element = video.current;
     if (!element) return;
-    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
     const connection = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection;
     let inView = false;
     let disposed = false;
     let failed = false;
     const sync = () => {
-      const shouldPlay = inView && !document.hidden && !pauseRequested.current && !reduce.matches && !connection?.saveData && !failed;
+      const shouldPlay = inView && !document.hidden && !pauseRequested.current && !connection?.saveData && !failed;
       if (!shouldPlay) { element.pause(); return; }
       if (!element.getAttribute('src')) {
-        const source = serverVideoSource(window.innerWidth, connection?.saveData, reduce.matches);
+        const source = serverVideoSource(window.innerWidth, connection?.saveData);
         if (!source) return;
         element.src = source;
       }
       void element.play().then(() => {
-        if (disposed || !inView || document.hidden || pauseRequested.current || reduce.matches) element.pause();
+        if (disposed || !inView || document.hidden || pauseRequested.current) element.pause();
       }).catch(() => { /* Browser policy or network: keep the poster, never block the hero. */ });
     };
     const ready = () => { if (!disposed) element.dataset.ready = 'true'; };
@@ -37,14 +36,12 @@ export default function ServerAtmosphere({ paused }: { paused: boolean }) {
     element.addEventListener('error', fail);
     element.addEventListener('atmosphere-pause-change', sync);
     document.addEventListener('visibilitychange', sync);
-    reduce.addEventListener('change', sync);
     return () => {
       disposed = true; observer.disconnect(); element.pause();
       element.removeEventListener('playing', ready);
       element.removeEventListener('error', fail);
       element.removeEventListener('atmosphere-pause-change', sync);
       document.removeEventListener('visibilitychange', sync);
-      reduce.removeEventListener('change', sync);
       element.removeAttribute('src'); element.load();
     };
   }, []);

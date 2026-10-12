@@ -2,7 +2,6 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
-import { useReducedMotion } from 'framer-motion';
 import { createEscapeEngine } from './escape-engine';
 import { SKINS, SKIN_KEY, MODE_KEY, GAMEMODE_KEY, COINS_KEY, OWNED_KEY, NAME_KEY, readCoins, readOwned, type Skin } from './escape-model';
 import { type GameSession, type PauseReason, PAUSE_LABELS } from './game-session';
@@ -22,9 +21,8 @@ function EscapeExperience({ onClose }: { onClose: () => void }) {
   const startedRef = useRef(false);
   const [pauseReasons, setPauseReasons] = useState<PauseReason[]>([]);
   const [lowEffects, setLowEffects] = useState(false);
-  const prefersReduced = useReducedMotion();
   const reduceRef = useRef(false);
-  useEffect(() => { reduceRef.current = !!prefersReduced || lowEffects; }, [prefersReduced, lowEffects]);
+  useEffect(() => { reduceRef.current = lowEffects; }, [lowEffects]);
   const [checkpoint, setCheckpoint] = useState(0);
   const checkpointRef = useRef(0);
   const practiceRef = useRef(false);
@@ -163,7 +161,7 @@ function EscapeExperience({ onClose }: { onClose: () => void }) {
             <fieldset className={styles.escapeChoice}><legend>Dificultad</legend>
               {(['facil', 'normal'] as const).map((value) => <button type="button" key={value} aria-pressed={mode === value} onClick={() => chooseMode(value)}>{value === 'facil' ? 'Fácil · vida y escudo' : 'Normal · un intento'}</button>)}
             </fieldset>
-            <label className={styles.escapeEffects}><input type="checkbox" checked={lowEffects || !!prefersReduced} disabled={!!prefersReduced}
+            <label className={styles.escapeEffects}><input type="checkbox" checked={lowEffects}
               onChange={(event) => { setLowEffects(event.target.checked); gameStorage.setItem('latech-escape-low-effects', String(event.target.checked)); }} /> Efectos suaves · sin destellos ni sacudidas</label>
             <button type="button" className={styles.primaryButton} onClick={() => start()}><Play size={17} /> Jugar</button>
             {gameMode === 'campana' && checkpoint > 0 && <button type="button" className={styles.secondaryButton} onClick={() => start(true)}>Continuar acto {checkpoint + 1} · entrenamiento</button>}

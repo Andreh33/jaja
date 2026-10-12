@@ -1,18 +1,16 @@
 import { projects } from './projects';
 
-// Headers checked 2026-09-27. These sites explicitly disallow cross-origin frames.
-// Keep them in the public portfolio, never proxy around their framing policy.
-export const excludedTvProjects = ['zonasport', 'industrial-fighters', 'maison-noir'] as const;
-// Preserve existing channel numbers when the public portfolio is reordered.
-const order = ['monopatinmonkey', 'french-tacos', 'sear', 'panelex', 'the-boat-house',
-  'toldos-noa', 'autoselect-sevilla', 'pruden-hijos', 'meson-casa-andres',
-  'proyecto-1', 'el-refugio-de-a-cabana'];
+// Headers checked 2026-10-12. Zona Sport disallows cross-origin frames.
+// Keep it in the public portfolio, never proxy around its framing policy.
+export const excludedTvProjects = ['zonasport'] as const;
+// Preserve the relative order of retained channels when the portfolio is reordered.
+const order = ['monopatinmonkey', 'panelex', 'toldos-noa'];
 export const tvProjects = projects
   .filter(project => !(excludedTvProjects as readonly string[]).includes(project.id))
   .sort((a, b) => (order.includes(a.id) ? order.indexOf(a.id) : 99) - (order.includes(b.id) ? order.indexOf(b.id) : 99))
   .map(project => ({ ...project, slug: project.id === 'monopatinmonkey' ? 'monkey' : project.id,
     category: project.sector, detail: project.sector, caption: project.name,
-    color: project.id === 'french-tacos' ? '#f3a54c' : '#86caff' }));
+    color: '#86caff' }));
 
 export const tvChannels = [{ id: 'studio', name: 'Latech Studio', image: '/brand/latech-logo.webp', category: 'Tu imaginación es nuestro límite.' },
   {id:'teletext',name:'Latech Teletexto',image:'/equipo/fundadores/foto.jpeg',category:'Andrés y Luis. La historia detrás de Latech.'},

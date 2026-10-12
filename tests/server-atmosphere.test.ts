@@ -6,14 +6,13 @@ import { crtChannel } from '../src/components/home/crt-channel';
 import { studioPages } from '../src/components/home/studio-model';
 
 describe('Server atmosphere and CRT channel lighting', () => {
-  it('serves a device-appropriate film and never forces video on reduced motion or data saving', () => {
+  it('serves a device-appropriate film and never forces video on data saving', () => {
     assert.match(serverVideoSource(390)!, /mirrored-720/);
     assert.match(serverVideoSource(767)!, /mirrored-720/);
     assert.match(serverVideoSource(768)!, /mirrored-1080/);
     assert.match(serverVideoSource(1600)!, /mirrored-1080/);
     assert.match(serverVideoSource(3840)!, /mirrored-1080/);
     assert.equal(serverVideoSource(3840, true), null);
-    assert.equal(serverVideoSource(3840, false, true), null);
   });
 
   it('maps every Studio page and contained project to its own actual channel', () => {
@@ -28,7 +27,7 @@ describe('Server atmosphere and CRT channel lighting', () => {
     assert.equal(crtChannel('create', false, 0, 'orange').tone, 'amber');
     assert.equal(crtChannel('projects', true, 0).label, 'Monopatín Monkey');
     assert.equal(crtChannel('projects', true, 1).tone, 'green');
-    assert.equal(crtChannel('projects', true, 1).label, 'CLM French Tacos');
+    assert.equal(crtChannel('projects', true, 1).label, 'Panelex');
   });
 
   it('preserves the existing animated layers and exact requested film opacity', () => {

@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { useInView, useReducedMotion } from 'framer-motion';
+import { useInView } from 'framer-motion';
 import { ArrowDown, Move, RotateCcw, Zap } from 'lucide-react';
 import { createStudioBodies, stepStudioBodies, type StudioBody } from './studio-physics';
 import styles from './HeroPreview.module.css';
@@ -9,7 +9,6 @@ import styles from './HeroPreview.module.css';
 export default function StudioGravity({ active }: { active: boolean }) {
   const canvas = useRef<HTMLCanvasElement>(null);
   const visible = useInView(canvas);
-  const reduced = useReducedMotion();
   const [gravity, setGravity] = useState(false);
   const [paused, setPaused] = useState(false);
   const [message, setMessage] = useState('Arrastra las piezas. El escenario es tuyo.');
@@ -52,7 +51,7 @@ export default function StudioGravity({ active }: { active: boolean }) {
   }, []);
 
   useEffect(() => {
-    if (!active || !visible || reduced || paused) return;
+    if (!active || !visible || paused) return;
     let raf = 0, last = 0;
     function tick(now: number) {
       stepStudioBodies(bodies.current, size.current.width, size.current.height, last ? (now - last) / 1000 : 0, gravity, held.current);
@@ -61,7 +60,7 @@ export default function StudioGravity({ active }: { active: boolean }) {
     function visibility() { cancelAnimationFrame(raf); last = 0; if (!document.hidden) raf = requestAnimationFrame(tick); }
     visibility(); document.addEventListener('visibilitychange', visibility);
     return () => { cancelAnimationFrame(raf); document.removeEventListener('visibilitychange', visibility); };
-  }, [active, visible, reduced, paused, gravity]);
+  }, [active, visible, paused, gravity]);
 
   return <div className={styles.gravityModule}>
     <div className={styles.gravityTop}><span>LAB / 01</span><span>{gravity ? 'GRAVEDAD TERRESTRE' : 'GRAVEDAD CERO'}</span></div>
@@ -86,10 +85,10 @@ export default function StudioGravity({ active }: { active: boolean }) {
       onPointerUp={event => { held.current = -1; pointer.current = null; if (event.currentTarget.hasPointerCapture(event.pointerId)) event.currentTarget.releasePointerCapture(event.pointerId); }}
       onPointerCancel={() => { held.current = -1; pointer.current = null; }} />
     <div className={styles.labControls}>
-      <button type="button" onClick={() => { bodies.current.forEach((body, i) => { body.vx = (i % 2 ? 1 : -1) * 100; body.vy = -110 - i * 10; if (reduced || paused) { body.angle += .3; body.y = size.current.height * (.2 + (i % 3) * .25); } }); frame.current(); setMessage('Impulso aplicado.'); }}><Zap size={14} /> Impulso</button>
+      <button type="button" onClick={() => { bodies.current.forEach((body, i) => { body.vx = (i % 2 ? 1 : -1) * 100; body.vy = -110 - i * 10; if (paused) { body.angle += .3; body.y = size.current.height * (.2 + (i % 3) * .25); } }); frame.current(); setMessage('Impulso aplicado.'); }}><Zap size={14} /> Impulso</button>
       <button type="button" aria-pressed={gravity} onClick={() => { setGravity(value => !value); setMessage(gravity ? 'Gravedad cero.' : 'Gravedad activada.'); }}><ArrowDown size={14} /> Gravedad</button>
       <button type="button" onClick={() => { bodies.current = createStudioBodies(size.current.width, size.current.height); frame.current(); setMessage('Composición restaurada.'); }}><RotateCcw size={14} /> Recomponer</button>
-      <button type="button" aria-pressed={paused || !!reduced} disabled={!!reduced} onClick={() => setPaused(value => !value)}><Move size={14} />{reduced ? 'Movimiento reducido' : paused ? 'Reanudar' : 'Pausar'}</button>
+      <button type="button" aria-pressed={paused} onClick={() => setPaused(value => !value)}><Move size={14} />{paused ? 'Reanudar' : 'Pausar'}</button>
     </div>
     <p className={styles.note} role="status">{message}</p>
   </div>;

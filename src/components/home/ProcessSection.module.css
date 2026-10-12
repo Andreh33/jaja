@@ -33,8 +33,3 @@
   .step h3 { font-size: 24px; margin: 0 0 10px; }
   .step p { font-size: 12px; line-height: 1.8; }
 }
-
-@media (prefers-reduced-motion: reduce) {
-  .rail > span { transform: none !important; }
-  .marker > span { opacity: 1 !important; transition: none; }
-}

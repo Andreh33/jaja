@@ -5,7 +5,6 @@ import { createRunnerEngine } from './runner-engine';
 import { trackLabGameStart } from '@/lib/lab-analytics';
 import { newRunnerState } from './runner-model';
 import { Play, Pause, RotateCcw, Trophy, Coins } from 'lucide-react';
-import { useReducedMotion } from 'framer-motion';
 import { type GameSession, type PauseReason, PAUSE_LABELS } from './game-session';
 import { readGameNumber } from './game-storage';
 import styles from './games.module.css';
@@ -16,9 +15,7 @@ export default function StumbleRunner() {
   const sessionRef = useRef<GameSession | null>(null);
   const jumpRef = useRef<() => void>(() => {});
   const [pauseReasons, setPauseReasons] = useState<PauseReason[]>([]);
-  const reducedMotion = useReducedMotion();
   const reduceRef = useRef(false);
-  useEffect(() => { reduceRef.current = !!reducedMotion; }, [reducedMotion]);
   const [state, setState] = useState<'idle' | 'playing' | 'over'>('idle');
   const [score, setScore] = useState(0);
   const [coins, setCoins] = useState(0);

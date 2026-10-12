@@ -30,9 +30,9 @@ describe('Desktop CRT television surround', () => {
     assert.match(read('Hero.module.css'), /\.visual\{z-index:1\}/);
   });
 
-  it('pauses analog motion, respects reduced motion and gives keyboard immediate feedback', () => {
+  it('keeps full analog motion, manual pause and immediate keyboard feedback', () => {
     assert.match(css, /data-paused=true[^}]+animation-play-state:paused/);
-    assert.match(css, /@media\(prefers-reduced-motion:reduce\)\{\s*\.sweep\{animation:none;display:none\}/);
+    assert.doesNotMatch(css, /prefers-reduced-motion/);
     assert.match(css, /data-keyboard=true[^}]+transition:none/);
     assert.doesNotMatch(css, /transition:all|@keyframes[^}]+(?:width|height|top|left):/);
   });

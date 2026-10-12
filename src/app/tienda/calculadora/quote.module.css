@@ -37,5 +37,4 @@
   .mobileBar { display: flex; position: fixed; left: 12px; right: 12px; bottom: calc(12px + env(safe-area-inset-bottom, 0px)); z-index: 35; align-items: center; justify-content: space-between; gap: 12px; border: 1px solid rgba(197,234,255,.4); border-radius: 16px; padding: 12px 16px; background: #071323; color: white; box-shadow: 0 8px 30px rgba(0,0,0,.35); cursor: pointer; text-align: left; }
   .mobileBar:focus-visible { outline: 2px solid #c5eaff; outline-offset: 3px; }
 }
-@media (prefers-reduced-motion: reduce) { .option, .button { transition: none; } }
 @media print { .mobileBar { display: none; } }

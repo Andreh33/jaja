@@ -30,10 +30,11 @@ describe('First-visit brand opening', () => {
     assert.match(source, /event.target === event.currentTarget/);
   });
 
-  it('shows this one-time opening under reduced motion as explicitly requested', () => {
+  it('keeps the same one-time opening regardless of system motion preference', () => {
     assert.doesNotMatch(source, /prefers-reduced-motion/);
     assert.doesNotMatch(css, /\.opening\{display:none\}/);
-    assert.match(css, /\.opening \.curtain\{animation-duration:var\(--opening-duration\)!important\}/);
+    assert.doesNotMatch(css, /prefers-reduced-motion/);
+    assert.match(css, /\.curtain\{[^}]*animation-duration:var\(--opening-duration\)/);
   });
 
   it('uses resource completion, not a fictional progress timer', () => {

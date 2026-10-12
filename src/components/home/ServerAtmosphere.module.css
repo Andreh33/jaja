@@ -5,4 +5,3 @@
 .shade{position:absolute;inset:0;background:linear-gradient(90deg,#03091488,transparent 66%),linear-gradient(0deg,#030914,transparent 24% 88%,#03091444)}
 :global(html[data-brand-opening=loading]) .atmosphere{opacity:0;transition:none}
 @media(max-width:767px){.film{background-position:35% center}.video{object-position:35% center}.shade{background:linear-gradient(0deg,#030914,transparent 25% 80%,#03091455),linear-gradient(90deg,#03091444,transparent)}}
-@media(prefers-reduced-motion:reduce){.atmosphere,.video{transition:none}.video{display:none}}

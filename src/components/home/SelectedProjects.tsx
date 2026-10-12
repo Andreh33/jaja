@@ -23,7 +23,7 @@ export default function SelectedProjects() {
   const line = useTransform(scrollYProgress, [0, 1], ['scaleX(0)', 'scaleX(1)']);
 
   useEffect(() => {
-    const media = window.matchMedia('(min-width: 900px) and (min-height: 650px) and (prefers-reduced-motion: no-preference)');
+    const media = window.matchMedia('(min-width: 900px) and (min-height: 650px)');
     const sync = () => setEnhanced(media.matches);
     sync(); media.addEventListener('change', sync);
     return () => media.removeEventListener('change', sync);

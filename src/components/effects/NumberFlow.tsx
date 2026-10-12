@@ -1,7 +1,6 @@
 'use client';
 
 import NumberFlowCore from '@number-flow/react';
-import { useReducedMotion } from 'framer-motion';
 
 export default function NumberFlow({
   value,
@@ -16,12 +15,10 @@ export default function NumberFlow({
   duration?: number;
   className?: string;
 }) {
-  const reduce = useReducedMotion();
-
   return (
     <span className={className}>
       {prefix}
-      <NumberFlowCore value={value} animated={!reduce} transformTiming={{ duration: duration * 1000, easing: 'cubic-bezier(0.23,1,0.32,1)' }} />
+      <NumberFlowCore value={value} respectMotionPreference={false} transformTiming={{ duration: duration * 1000, easing: 'cubic-bezier(0.23,1,0.32,1)' }} />
       {suffix}
     </span>
   );

@@ -34,7 +34,7 @@ function unwatch(element: HTMLElement) {
   }
 }
 
-/** Mobile/reduced-motion keep the fully visible server layout without scroll subscriptions. */
+/** Mobile keeps the fully visible server layout without scroll subscriptions. */
 export function useDesktopScrollEffect(
   ref: RefObject<HTMLElement | null>,
   render: ScrollRender,
@@ -43,7 +43,7 @@ export function useDesktopScrollEffect(
   useEffect(() => {
     const element = ref.current;
     if (!element) return;
-    const media = matchMedia('(min-width: 1024px) and (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference)');
+    const media = matchMedia('(min-width: 1024px) and (hover: hover) and (pointer: fine)');
     let observer: IntersectionObserver | undefined;
     const configure = () => {
       observer?.disconnect();

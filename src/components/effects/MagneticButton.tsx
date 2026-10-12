@@ -1,6 +1,6 @@
 'use client';
 
-import { motion, useMotionTemplate, useMotionValue, useReducedMotion, useSpring } from 'framer-motion';
+import { motion, useMotionTemplate, useMotionValue, useSpring } from 'framer-motion';
 import { useEffect, useRef, type ReactNode, type MouseEvent } from 'react';
 import { cn } from '@/lib/utils';
 
@@ -32,7 +32,6 @@ export default function MagneticButton({
 }: Props) {
   const ref = useRef<HTMLButtonElement | HTMLAnchorElement>(null);
   const pointerAllowed = useRef(false);
-  const reduced = useReducedMotion();
   const x = useMotionValue(0);
   const y = useMotionValue(0);
   const sx = useSpring(x, { stiffness: 200, damping: 18 });
@@ -40,9 +39,9 @@ export default function MagneticButton({
   const transform = useMotionTemplate`translate3d(${sx}px, ${sy}px, 0)`;
 
   useEffect(() => {
-    const media = window.matchMedia('(hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference)');
+    const media = window.matchMedia('(hover: hover) and (pointer: fine)');
     const sync = () => {
-      pointerAllowed.current = media.matches && !reduced && !disabled;
+      pointerAllowed.current = media.matches && !disabled;
       if (!pointerAllowed.current) {
         x.jump(0);
         y.jump(0);
@@ -53,7 +52,7 @@ export default function MagneticButton({
     sync();
     media.addEventListener('change', sync);
     return () => media.removeEventListener('change', sync);
-  }, [disabled, reduced, sx, sy, x, y]);
+  }, [disabled, sx, sy, x, y]);
 
   const handleMove = (e: MouseEvent) => {
     if (!ref.current || !pointerAllowed.current || ref.current.matches(':focus-visible')) return;
@@ -70,7 +69,7 @@ export default function MagneticButton({
     y.set(0);
   };
 
-  const base = 'group relative inline-flex min-h-12 items-center justify-center gap-2 rounded-xl px-6 py-3.5 text-sm font-semibold tracking-wide transition-[transform,background-color,border-color,color] duration-150 ease-[var(--ease-out)] active:scale-[0.97] motion-reduce:active:scale-100 focus-visible:active:scale-100 disabled:opacity-50 disabled:active:scale-100';
+  const base = 'group relative inline-flex min-h-12 items-center justify-center gap-2 rounded-xl px-6 py-3.5 text-sm font-semibold tracking-wide transition-[transform,background-color,border-color,color] duration-150 ease-[var(--ease-out)] active:scale-[0.97] focus-visible:active:scale-100 disabled:opacity-50 disabled:active:scale-100';
   const styles = {
     primary: cn(base, 'border border-transparent'),
     secondary: cn(base, 'border text-white glass'),
@@ -88,7 +87,7 @@ export default function MagneticButton({
 
   const inner = (
     <motion.span
-      style={{ transform: reduced ? 'none' : transform }}
+      style={{ transform }}
       className="relative inline-flex h-full w-full items-center justify-center gap-2"
     >
       {children}

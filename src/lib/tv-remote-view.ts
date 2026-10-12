@@ -1,6 +1,6 @@
 /** The handset controls the expanded Studio, never the page behind its modal. */
 export function scrollRemoteView(direction: -1 | 1, expanded: boolean) {
-  const behavior = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth';
+  const behavior = 'smooth';
   if (!expanded) {
     window.scrollBy({ top: window.innerHeight * .72 * direction, behavior });
     return;

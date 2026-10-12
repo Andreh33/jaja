@@ -71,7 +71,5 @@
   .explanation { grid-template-columns: 1fr; gap: 24px; }
   .project { align-items: flex-start; flex-direction: column; }
 }
-@media (prefers-reduced-motion: no-preference) {
-  .primary, .secondary, .smallButton { transition: transform 160ms cubic-bezier(.23,1,.32,1), background-color 160ms ease-out; }
-  .primary:active, .secondary:active, .smallButton:active { transform: scale(.97); }
-}
+.primary, .secondary, .smallButton { transition: transform 160ms cubic-bezier(.23,1,.32,1), background-color 160ms ease-out; }
+.primary:active, .secondary:active, .smallButton:active { transform: scale(.97); }

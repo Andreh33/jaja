@@ -1,7 +1,6 @@
 'use client';
 
 import { useCallback, useEffect, useRef, useState, type PointerEvent, type MouseEvent, type KeyboardEvent } from 'react';
-import { useReducedMotion } from 'framer-motion';
 import { ArrowUpRight, MousePointer2, Pause, Play, RotateCcw, Search, Trophy, Zap } from 'lucide-react';
 import { createGameSession, PAUSE_LABELS, type GameSession, type PauseReason } from './game-session';
 import { gameStorage, readGameNumber } from './game-storage';
@@ -33,7 +32,6 @@ export default function RankRush() {
   const [pauseReasons, setPauseReasons] = useState<PauseReason[]>([]);
   const [best, setBest] = useState<Record<RankRushMode, number>>({ rush: 0, steady: 0 });
   const bestRef = useRef<Record<RankRushMode, number>>({ rush: 0, steady: 0 });
-  const reducedMotion = useReducedMotion();
 
   const advanceClock = useCallback((time: number) => {
     const delta = lastActiveFrame.current === null ? 0 : (time - lastActiveFrame.current) / 1000;
@@ -130,7 +128,7 @@ export default function RankRush() {
   const rate = rankRushRate(snapshot);
   const requiredRate = rankRushRequiredRate(snapshot);
   const timeLeft = Math.max(0, Math.ceil(RANK_RUSH_SECONDS - snapshot.elapsed));
-  const rowPosition = reducedMotion ? rank - 1 : 5 * (1 - snapshot.progress / 100);
+  const rowPosition = 5 * (1 - snapshot.progress / 100);
   const active = snapshot.status === 'playing' && !paused;
   const label = snapshot.status === 'idle' ? 'Empezar a subir' : snapshot.status === 'won' || snapshot.status === 'over' ? 'Otra partida' : paused ? 'Reanudar' : '¡Dale, sube!';
   const message = snapshot.status === 'won' ? `¡Número uno! Lo has conseguido en ${snapshot.elapsed.toFixed(1)} segundos.`

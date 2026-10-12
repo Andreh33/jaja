@@ -28,8 +28,7 @@ function Avatar({ name }: { name: string }) {
 export default function TestimonialsCarousel() {
   const list = useRef<HTMLDivElement>(null);
   const scroll = (direction: number) => {
-    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    list.current?.scrollBy({ left: direction * Math.min(420, window.innerWidth - 32), behavior: reduced ? 'instant' : 'smooth' });
+    list.current?.scrollBy({ left: direction * Math.min(420, window.innerWidth - 32), behavior: 'smooth' });
   };
   return (
     <section className="relative z-10 py-32">

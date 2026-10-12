@@ -18,7 +18,6 @@ export default function FightGame({remote,pauseSignal=0,onFinished,onRestart,dem
   useEffect(()=>{
     const element=canvas.current;const ctx=element?.getContext('2d');if(!element||!ctx)return;
     let disposed=false,frame=0,last=performance.now(),accumulator=0,lastHud=0,oldHealth=200,oldParries=0;const probe=arcadeFrameProbe('fight');
-    const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
     const stage=new Image();stage.src='/arcade/fight-stage.webp';const atlas=new Image();atlas.src='/arcade/fight-fighters.webp';
     const map:Record<string,[number,number]>={KeyA:[0,1],KeyD:[0,2],KeyW:[0,4],KeyF:[0,8],KeyG:[0,16],KeyH:[0,32],KeyR:[0,64],KeyQ:[0,128],ArrowLeft:[1,1],ArrowRight:[1,2],ArrowUp:[1,4],KeyJ:[1,8],KeyK:[1,16],KeyL:[1,32],KeyO:[1,64],KeyU:[1,128]};
     const down=(e:KeyboardEvent)=>{if(e.target instanceof HTMLElement&&e.target.closest('button,a,input,select,textarea'))return;const key=map[e.code];if(key){e.preventDefault();keys.current[key[0]]|=key[1];}if(e.code==='KeyP'&&!e.repeat)setPaused(p=>!p);};
@@ -28,27 +27,27 @@ export default function FightGame({remote,pauseSignal=0,onFinished,onRestart,dem
     function draw(now:number){
       if(disposed)return;probe(now);const elapsed=Math.min(.05,(now-last)/1000);last=now;const w=world.current;const c=ctx!;
       if(!pause.current&&!document.hidden){accumulator+=elapsed;while(accumulator>=1/120){const input:[number,number]=[keys.current[0]|consumeInput(remote.current[0],now),keys.current[1]|consumeInput(remote.current[1],now)];if(demo){input[0]=fightComputerInput(w,0);input[1]=fightComputerInput(w,1);}else if(trainingRef.current)input[1]=fightComputerInput(w,1);stepFight(w,input,1/120);accumulator-=1/120;}if(demo&&w.phase==='complete'&&w.time%3<.025)world.current=newFightWorld();}else accumulator=0;
-      c.clearRect(0,0,1024,576);c.save();if(!reduced)c.translate(Math.sin(w.time*133)*w.shake,Math.cos(w.time*117)*w.shake*.5);
+      c.clearRect(0,0,1024,576);c.save();c.translate(Math.sin(w.time*133)*w.shake,Math.cos(w.time*117)*w.shake*.5);
       c.drawImage(stage,0,0,1024,576);c.fillStyle='rgba(2,12,28,.15)';c.fillRect(0,0,1024,576);
       const health=w.fighters[0].health+w.fighters[1].health;if(health<oldHealth&&!demo)playArcadeSound('hit');oldHealth=health;
       if(w.parries>oldParries&&!demo)playArcadeSound('parry');oldParries=w.parries;
-      if(!reduced){c.strokeStyle='rgba(177,231,242,.15)';c.lineWidth=1;for(let n=0;n<24;n++){const x=(n*137+w.time*12)%1080,y=(n*79+w.time*200)%600;c.beginPath();c.moveTo(x,y);c.lineTo(x-3,y+11);c.stroke();}}
+      c.strokeStyle='rgba(177,231,242,.15)';c.lineWidth=1;for(let n=0;n<24;n++){const x=(n*137+w.time*12)%1080,y=(n*79+w.time*200)%600;c.beginPath();c.moveTo(x,y);c.lineTo(x-3,y+11);c.stroke();}
       for(const[slot,p]of w.fighters.entries()){
         c.fillStyle='rgba(0,5,12,.45)';c.beginPath();c.ellipse(p.x,FIGHT_FLOOR+4,66,10,0,0,Math.PI*2);c.fill();
         let pose=p.y<FIGHT_FLOOR-8?2:p.blocking?5:p.move==='punch'||p.move==='special'?3:p.move==='kick'?4:Math.abs(p.vx)>20&&Math.floor(w.time*8)%2?1:0;
         if(p.move==='hurt')pose=5;
         const[sx,sy,sw,sh]=CROPS[slot*6+pose];const scale=.57;const width=sw*scale,height=sh*scale;
-        const bob=p.move==='idle'&&p.y===FIGHT_FLOOR&&!reduced?Math.sin(w.time*4+slot)*1.5:0;
+        const bob=p.move==='idle'&&p.y===FIGHT_FLOOR?Math.sin(w.time*4+slot)*1.5:0;
         c.save();c.translate(p.x,p.y+bob);c.scale(p.facing,1);
         if(p.move==='hurt')c.filter='brightness(1.6)';
-        if(p.move==='special'&&!reduced){c.globalAlpha=.18;c.drawImage(atlas,sx,sy,sw,sh,-width/2-18,-height,width,height);c.globalAlpha=1;}
+        if(p.move==='special'){c.globalAlpha=.18;c.drawImage(atlas,sx,sy,sw,sh,-width/2-18,-height,width,height);c.globalAlpha=1;}
         const stretch=p.move==='punch'&&p.age<.1?1-p.age*.5:1;c.scale(stretch,1);
-        if(p.dash>0&&!reduced){for(let n=3;n>0;n--){c.globalAlpha=.1+(3-n)*.06;c.drawImage(atlas,sx,sy,sw,sh,-width/2-Math.sign(p.vx)*p.facing*n*18,-height,width,height);}c.globalAlpha=1;}
+        if(p.dash>0){for(let n=3;n>0;n--){c.globalAlpha=.1+(3-n)*.06;c.drawImage(atlas,sx,sy,sw,sh,-width/2-Math.sign(p.vx)*p.facing*n*18,-height,width,height);}c.globalAlpha=1;}
         c.drawImage(atlas,sx,sy,sw,sh,-width/2,-height,width,height);c.restore();
         if(p.blocking){c.strokeStyle=p.guardAge<=.13?'#fff4ac':'#a9e6ff88';c.lineWidth=p.guardAge<=.13?4:2;c.beginPath();c.ellipse(p.x+p.facing*20,p.y-90,40,70,0,-Math.PI/2,Math.PI/2,p.facing<0);c.stroke();}
         if(p.combo>=2){c.font='italic 900 30px sans-serif';c.textAlign=slot?'right':'left';c.fillStyle=slot?'#ffc277':'#8df5ff';c.strokeStyle='#061421';c.lineWidth=4;c.strokeText(`${p.combo} HITS`,slot?930:94,190);c.fillText(`${p.combo} HITS`,slot?930:94,190);}
       }
-      for(const p of w.projectiles){c.save();c.translate(p.x,p.y);c.scale(p.direction,1);c.shadowColor=p.owner?'#ff9345':'#28dfff';c.shadowBlur=reduced?0:25;const g=c.createLinearGradient(-60,0,20,0);g.addColorStop(0,'transparent');g.addColorStop(1,p.owner?'#ffb45e':'#8cffff');c.fillStyle=g;c.beginPath();c.ellipse(-15,0,43,21,0,0,Math.PI*2);c.fill();c.fillStyle='#fff9df';c.beginPath();c.ellipse(10,0,12,14,0,0,Math.PI*2);c.fill();c.restore();}
+      for(const p of w.projectiles){c.save();c.translate(p.x,p.y);c.scale(p.direction,1);c.shadowColor=p.owner?'#ff9345':'#28dfff';c.shadowBlur=25;const g=c.createLinearGradient(-60,0,20,0);g.addColorStop(0,'transparent');g.addColorStop(1,p.owner?'#ffb45e':'#8cffff');c.fillStyle=g;c.beginPath();c.ellipse(-15,0,43,21,0,0,Math.PI*2);c.fill();c.fillStyle='#fff9df';c.beginPath();c.ellipse(10,0,12,14,0,0,Math.PI*2);c.fill();c.restore();}
       for(const s of w.sparks){c.globalAlpha=s.life/.3;c.fillStyle=s.color;c.fillRect(s.x,s.y,5,3);}c.globalAlpha=1;c.restore();
       if(w.noticeTime>0&&w.phase==='playing'){c.textAlign='center';c.font='italic 900 24px sans-serif';c.fillStyle='#fff0bf';c.strokeStyle='#071322';c.lineWidth=5;c.globalAlpha=Math.min(1,w.noticeTime*4);c.strokeText(w.notice,512,165);c.fillText(w.notice,512,165);c.globalAlpha=1;}
       if(w.phase==='intro'||w.phase==='round'){

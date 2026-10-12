@@ -54,7 +54,7 @@ export default function TvRemoteHost({ studio }: { studio: StudioExperience }) {
             scrollRemoteView(result.lastAction === 'scroll-up' ? -1 : 1, result.expanded);
           } else if (result.lastAction.startsWith('visit-')) {
             requestAnimationFrame(() => requestAnimationFrame(() => {
-              const behavior = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth';
+              const behavior = 'smooth';
               const targets: Record<string, string> = { 'visit-home': 'hero-title', 'visit-projects': 'proyectos', 'visit-lab': 'laboratorio', 'visit-contact': 'remote-contact' };
               document.getElementById(targets[result.lastAction])?.scrollIntoView({ behavior, block: 'start' });
             }));
