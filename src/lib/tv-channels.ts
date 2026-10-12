@@ -1,8 +1,8 @@
 import { projects } from './projects';
 
-// Headers checked 2026-10-12. Zona Sport disallows cross-origin frames.
-// Keep it in the public portfolio, never proxy around its framing policy.
-export const excludedTvProjects = ['zonasport'] as const;
+// Headers checked 2026-10-12. These sites send X-Frame-Options: SAMEORIGIN.
+// Keep them in the public portfolio, never proxy around their framing policy.
+export const excludedTvProjects = ['zonasport', 'colegio-santo-tomas'] as const;
 // Preserve the relative order of retained channels when the portfolio is reordered.
 const order = ['monopatinmonkey', 'panelex', 'toldos-noa'];
 export const tvProjects = projects

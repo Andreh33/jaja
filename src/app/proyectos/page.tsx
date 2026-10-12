@@ -52,7 +52,7 @@ export default function ProyectosPage() {
 
         {/* === Header === */}
         <section className="relative px-6 pt-36 pb-12 md:px-10 md:pt-44 md:pb-16">
-          <div className="mx-auto max-w-5xl">
+          <div className="mx-auto max-w-5xl min-[1920px]:max-w-[1680px]">
             <Breadcrumbs
               items={[
                 { name: 'Inicio', path: '/' },
@@ -64,7 +64,7 @@ export default function ProyectosPage() {
                 Cómo trabajamos
               </p>
               <h1
-                className="font-display text-4xl text-white md:text-6xl"
+                className="font-display text-4xl text-white md:text-6xl min-[1920px]:text-7xl"
                 style={{ letterSpacing: '-0.04em', fontWeight: 800 }}
               >
                 Proyectos con identidad propia
@@ -79,8 +79,8 @@ export default function ProyectosPage() {
 
         {/* === Grid === */}
         <section className="relative px-6 pb-24 md:px-10 md:pb-32">
-          <div className="mx-auto max-w-7xl">
-            <RevealGroup className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mx-auto max-w-7xl min-[1920px]:max-w-[1680px]">
+            <RevealGroup className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 min-[1920px]:gap-8">
               {PROJECTS.map((p) => (
                 <RevealItem key={p.id}>
                   <a
@@ -135,7 +135,7 @@ export default function ProyectosPage() {
                         </span>
                       </div>
 
-                      <p className="mt-4 flex-1 text-sm leading-relaxed text-white/70">
+                      <p className="mt-4 flex-1 text-sm leading-relaxed text-white/70 min-[1920px]:text-base">
                         {p.description}
                       </p>
 

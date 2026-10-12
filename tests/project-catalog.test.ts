@@ -11,15 +11,27 @@ const removed = ['fulldip-sur', 'sear', 'the-boat-house', 'autoselect-sevilla',
   'french-tacos', 'el-refugio-de-a-cabana', 'maison-noir'];
 
 describe('Public project selection', () => {
-  it('keeps custom-domain projects plus the two explicitly requested exceptions', () => {
+  it('keeps custom-domain projects and the explicitly requested school and Zona Sport', () => {
     assert.deepEqual(projects.map(project => project.id), [
-      'granja-orea', 'f5-arquitectos', 'quality-homes', 'megias-frutas',
+      'colegio-santo-tomas', 'granja-orea', 'f5-arquitectos', 'quality-homes', 'megias-frutas',
       'zonasport', 'panelex', 'monopatinmonkey', 'toldos-noa',
     ]);
     assert.deepEqual(projects.filter(project => new URL(project.url).hostname.endsWith('.vercel.app'))
       .map(project => project.id).sort(), ['zonasport']);
     assert.equal(projects.find(project => project.id === 'megias-frutas')?.url, 'https://frutasmegias.com/');
     assert.equal(new Set(projects.map(project => project.id)).size, projects.length);
+  });
+
+  it('shows the school in the portfolio without opening a blocked TV frame', async () => {
+    const school = projects.find(project => project.id === 'colegio-santo-tomas');
+    assert.equal(school?.name, 'Colegio Santo Tomás');
+    assert.equal(school?.url, 'https://colegiosantotomas.es/');
+    assert.equal(isTvChannel('colegio-santo-tomas'), false);
+    assert.ok(!tvProjects.some(project => project.id === school?.id));
+    const response = await GET(new Request('https://example.com/'), {
+      params: Promise.resolve({ project: 'colegio-santo-tomas' }),
+    });
+    assert.equal(response.status, 404);
   });
 
   it('keeps three home highlights with valid catalog links and existing images', () => {

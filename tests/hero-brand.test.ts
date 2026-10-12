@@ -44,7 +44,20 @@ describe('Home brand and Studio sizing', () => {
     const hero = source('home/Hero.module.css');
     const preview = source('home/HeroPreview.module.css');
     assert.match(hero, /width:min\(1680px,calc\(100% - clamp\(128px,13vw,240px\)\)\)/);
-    assert.match(hero, /@media\(min-width:1101px\) and \(max-width:1700px\) and \(max-height:950px\)/);
+    assert.match(hero, /@media\(min-width:1101px\) and \(max-width:1800px\) and \(max-height:1050px\)/);
     assert.match(preview, /--studio-screen-height:clamp\(390px,calc\(100svh - 380px\),500px\)/);
+  });
+
+  it('reserves a height-aware QHD stage and a larger expanded screen without changing mobile', () => {
+    const hero = source('home/Hero.module.css');
+    const preview = source('home/HeroPreview.module.css');
+    const qhd = hero.slice(hero.indexOf('/* QHD stage:'));
+    assert.match(qhd, /@media\(min-width:1801px\) and \(min-height:1000px\)/);
+    assert.match(qhd, /min-height:100svh;padding-top:clamp\(156px,15svh,216px\)/);
+    assert.match(qhd, /width:min\(1280px,calc\(100vw - 120px\)\)/);
+    assert.match(preview, /--studio-screen-height:clamp\(400px,calc\(100svh - 720px\),600px\)/);
+    assert.match(preview, /--studio-screen-height:clamp\(300px,calc\(100svh - 620px\),420px\)/);
+    assert.match(preview, /data-expanded=true[^}]*--studio-screen-height:min\(1000px,calc\(100dvh - 240px\)\)/);
+    assert.doesNotMatch(qhd, /max-width:767px/);
   });
 });

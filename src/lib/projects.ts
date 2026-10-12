@@ -12,6 +12,18 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    id: 'colegio-santo-tomas',
+    name: 'Colegio Santo Tomás',
+    url: 'https://colegiosantotomas.es/',
+    domain: 'colegiosantotomas.es',
+    sector: 'Educación · de 0 a 18 años',
+    location: 'Ciudad Real',
+    description:
+      'Una web que acompaña a las familias desde el primer descubrimiento del colegio. Fotografía real, una identidad editorial cálida y recorridos por las etapas educativas muestran su proyecto de 0 a 18 años. Admisiones, noticias, agenda y documentos conviven con una galería privada para padres. Una experiencia pensada para acercar la vida del centro y hacer más fácil encontrar la información de cada día.',
+    image: '/proyectos/colegio-santo-tomas.webp',
+    services: ['Diseño y desarrollo', 'Información para familias', 'Galería privada'],
+  },
+  {
     id: 'granja-orea',
     name: 'Granja Orea · Orea Camp',
     url: 'https://www.oreacamp.com/',

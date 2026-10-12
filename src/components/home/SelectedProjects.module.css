@@ -17,4 +17,15 @@
 .shutters{position:absolute;inset:0;pointer-events:none;z-index:3}.upper,.lower{position:absolute;left:0;width:100%;height:50%;background:#030914;background-image:linear-gradient(#a0cfff0c 1px,transparent 1px),linear-gradient(90deg,#a0cfff0c 1px,transparent 1px);background-size:84px 84px;display:flex;justify-content:center;overflow:hidden}.upper{top:0;align-items:end;padding-bottom:0;border-bottom:1px solid #ff985355}.lower{bottom:0;align-items:start;padding-top:8px}.upper>span,.lower>span{font:750 clamp(90px,14.4vw,225px)/.95 var(--font-display);letter-spacing:-.065em;white-space:nowrap}.upper>span{color:transparent;-webkit-text-stroke:1px #b9ddff}.lower>span{color:#ff9853}.dot{color:#e8f5ff}.lower>small{position:absolute;top:65%;font:9px var(--font-mono);letter-spacing:.2em;color:#8caac6}
 @media(hover:hover) and (pointer:fine){.imageLink:hover img{transform:scale(1.025)}.imageLink:hover .visit{background:#ffb780}.controls button:hover{color:#fff}}
 .lower>span{font-size:clamp(80px,9.7vw,155px)}
+/* Match the large-screen hero stage without changing the horizontal scroll math. */
+@media(min-width:1920px) and (min-height:1000px){
+  .topline,.controls{width:min(1680px,74vw)}
+  .section[data-enhanced="true"] .topline h2{font-size:44px}
+  .section[data-enhanced="true"] .topline :global(.eyebrow),.caption :global(.eyebrow){font-size:11px}
+  .section[data-enhanced="true"] .caption h3{font-size:46px}
+  .caption>div:last-child>p{font-size:16px}
+  .caption>div:last-child>span,.browserBar,.controls button>span,.scrollLabel{font-size:11px}
+  .controls button,.visit{font-size:14px}
+  .browserBar{height:36px}
+}
 @media(max-width:899px){.section{padding-block:72px}.topline{width:calc(100% - 40px);display:block;margin-bottom:30px}.topline :global(.text-button){margin-top:20px;font-size:11px}.track{width:calc(100% - 40px);gap:34px}.caption{align-items:start;gap:14px}.caption>div:last-child{max-width:150px}.caption>div:last-child>p{font-size:10px;line-height:1.6}.caption>div:last-child>span{font-size:6px;line-height:1.6;margin-top:7px}.caption :global(.eyebrow){font-size:6px;letter-spacing:.07em}.caption h3{font-size:clamp(22px,5vw,35px);gap:10px}.browserBar{height:25px;font-size:6px;padding-inline:10px}.visit{position:relative;inset:auto;justify-content:space-between;border-radius:0;padding:12px 14px;font-size:10px}.imageLink{border-radius:8px}.image{aspect-ratio:1.65}.image img{object-fit:cover;object-position:top center}.topline h2{font-size:clamp(31px,6vw,48px)}}
