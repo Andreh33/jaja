@@ -1,8 +1,9 @@
-/** Coarse route names: never send dynamic path values or query strings as event data. */
+/** Public article slugs and coarse routes; never private values or query strings. */
 export function measurementPath(pathname: string): string | null {
   if (/^\/(admin|dashboard|cursos?|login|registro|recuperar|reset-password|checkout|pago|cuenta|mando)(\/|$)/.test(pathname)) return null;
   const fixed = ['/', '/blog', '/lab', '/briefing', '/contacto', '/proyectos', '/sobre-nosotros', '/tienda', '/tienda/web', '/tienda/online', '/tienda/agente-ia', '/tienda/calculadora', '/cobertura'];
   if (fixed.includes(pathname)) return pathname;
+  if (/^\/blog\/[a-z0-9]+(?:-[a-z0-9]+)*$/.test(pathname)) return pathname;
   if (pathname.startsWith('/blog/')) return '/blog/articulo';
   if (pathname.startsWith('/lab/')) return '/lab/experimento';
   if (/^\/(diseno-web|tienda-online|agente-ia)\//.test(pathname)) return '/cobertura/servicio';

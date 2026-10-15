@@ -204,9 +204,15 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                 Sin permanencia, en 24-48h.
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
+                <MagneticButton href="/tienda/web" variant="secondary">
+                  Creación de páginas web <ArrowRight size={14} />
+                </MagneticButton>
                 <MagneticButton href="/tienda">
                   Ver planes <ArrowRight size={14} />
                 </MagneticButton>
+                <Link href="/contacto" className="inline-flex items-center text-sm text-white/80 underline underline-offset-4">
+                  Contarnos tu proyecto
+                </Link>
                 <MagneticButton href={whatsappLink('Hola, leí vuestro blog y me gustaría hablar')} target="_blank" rel="noreferrer" variant="secondary">
                   <MessageCircle size={14} /> Hablar
                 </MagneticButton>

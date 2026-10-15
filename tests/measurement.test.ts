@@ -5,6 +5,7 @@ it('keeps private identifiers and arbitrary paths out of contact events', () => 
   assert.equal(measurementPath('/recuperar/private-token'), null);
   assert.equal(measurementPath('/admin/clientes/person@example.com'), null);
   assert.equal(measurementPath('/blog/arbitrary-person@example.com'), '/blog/articulo');
+  assert.equal(measurementPath('/blog/medir-resultados-despues-de-estrenar-web'), '/blog/medir-resultados-despues-de-estrenar-web');
   assert.equal(measurementPath('/lab/trazo'), '/lab/experimento');
   assert.equal(measurementPath('/tienda/calculadora'), '/tienda/calculadora');
 });
