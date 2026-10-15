@@ -1,9 +1,11 @@
 'use client';
 
 import { useId, useState } from 'react';
+import { track } from '@vercel/analytics';
 import { ArrowUpRight, Globe2, ShoppingBag } from 'lucide-react';
 import { whatsappLink } from '@/lib/stripe-links';
 import { projectInquiryMessage, type ProjectInquiry, type ProjectType } from '@/lib/project-inquiry';
+import { measurementPath } from '@/lib/measurement';
 import styles from './ProjectInquiryForm.module.css';
 
 export default function ProjectInquiryForm({ initialType = 'web' }: { initialType?: ProjectType }) {
@@ -20,6 +22,12 @@ export default function ProjectInquiryForm({ initialType = 'web' }: { initialTyp
       target?.setCustomValidity('Escribe al menos 2 caracteres en el nombre y 10 en la idea.'); target?.reportValidity(); return;
     }
     setPrepared(true);
+    // This opens WhatsApp; it does not confirm that a message was sent there.
+    const path = measurementPath(window.location.pathname);
+    if (path) {
+      try { track('contact_click', { channel: 'whatsapp', path, source: 'project_form' }); }
+      catch { /* Contact remains available when optional analytics is unavailable. */ }
+    }
     window.open(href, '_blank', 'noopener,noreferrer');
   }}>
     <fieldset className={styles.choices}><legend>¿Qué necesitas?</legend>
