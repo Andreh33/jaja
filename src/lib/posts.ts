@@ -3,6 +3,9 @@ import { posts } from '../../drizzle/schema';
 import { desc, eq } from 'drizzle-orm';
 import { findPublishedPostBySlug } from './post-queries';
 import { octoberArticles } from '../content/editorial-october-2026';
+import { campaignArticles } from '../content/seo-campaign-20261015';
+
+const versionedArticles = [...octoberArticles, ...campaignArticles];
 
 /**
  * Campos necesarios para listados y tarjetas (sin `content`).
@@ -35,7 +38,7 @@ export type PostSummary = {
 
 export async function getAllPosts() {
   const existing = await db.select().from(posts).where(eq(posts.published, true)).orderBy(desc(posts.publishedAt));
-  return [...existing, ...octoberArticles.filter(p => !existing.some(row => row.slug === p.slug))]
+  return [...existing, ...versionedArticles.filter(p => !existing.some(row => row.slug === p.slug))]
     .sort((a, b) => (b.publishedAt?.getTime() ?? 0) - (a.publishedAt?.getTime() ?? 0));
 }
 
@@ -45,7 +48,7 @@ export async function getPostSummaries(): Promise<PostSummary[]> {
     .from(posts)
     .where(eq(posts.published, true))
     .orderBy(desc(posts.publishedAt));
-  const additions: PostSummary[] = octoberArticles
+  const additions: PostSummary[] = versionedArticles
     .filter(p => !existing.some(row => row.slug === p.slug))
     .map(({ id, slug, title, excerpt, cover, category, author, publishedAt, readingMinutes }) =>
       ({ id, slug, title, excerpt, cover, category, author, publishedAt, readingMinutes }));
@@ -55,5 +58,5 @@ export async function getPostSummaries(): Promise<PostSummary[]> {
 
 export async function getPostBySlug(slug: string) {
   const existing = await findPublishedPostBySlug(db, slug);
-  return existing ?? octoberArticles.find(post => post.slug === slug) ?? null;
+  return existing ?? versionedArticles.find(post => post.slug === slug) ?? null;
 }
