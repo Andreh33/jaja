@@ -7,7 +7,7 @@ function useReveal(delay: number, stagger?: number) {
   const ref = useRef<HTMLDivElement>(null);
   useEffect(() => {
     const element = ref.current;
-    if (!element || !('IntersectionObserver' in window) || !element.animate) return;
+    if (!element || window.matchMedia('(max-width:767px)').matches || !('IntersectionObserver' in window) || !element.animate) return;
     const animations: Animation[] = [];
     let firstObservation = true;
     const observer = new IntersectionObserver(([entry]) => {

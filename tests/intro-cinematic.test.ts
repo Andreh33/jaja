@@ -11,8 +11,7 @@ describe('First-visit brand opening', () => {
     assert.match(source, /const PRELOAD_DEADLINE_MS = 4200;/);
     assert.match(source, /setTimeout\(dismiss, PRELOAD_DEADLINE_MS \+ OPENING_DURATION_MS \+ 300\)/);
     assert.match(source, /if \(!show\) return;/);
-    assert.match(source, /'--opening-duration': `\$\{OPENING_DURATION_MS\}ms`/);
-    assert.match(css, /animation-duration:var\(--opening-duration\)/);
+    assert.match(source, /OPENING_DURATION_MS - CAMERA_DURATION_MS/);
   });
 
   it('keeps the real logo and motto, with a logo-shaped shine instead of a replacement asset', () => {
@@ -27,14 +26,13 @@ describe('First-visit brand opening', () => {
     assert.match(source, /window.location.hash \|\| window.scrollY > 20/);
     assert.match(source, /sessionStorage.getItem\(SEEN_KEY\)/);
     assert.match(source, /<Dialog.Close className=\{styles.skip\}>Saltar entrada/);
-    assert.match(source, /event.target === event.currentTarget/);
   });
 
   it('keeps the same one-time opening regardless of system motion preference', () => {
     assert.doesNotMatch(source, /prefers-reduced-motion/);
     assert.doesNotMatch(css, /\.opening\{display:none\}/);
     assert.doesNotMatch(css, /prefers-reduced-motion/);
-    assert.match(css, /\.curtain\{[^}]*animation-duration:var\(--opening-duration\)/);
+    assert.doesNotMatch(css, /\.curtain\{/);
   });
 
   it('uses resource completion, not a fictional progress timer', () => {
@@ -57,8 +55,9 @@ describe('First-visit brand opening', () => {
     assert.doesNotMatch(source, /canplaythrough/);
   });
 
-  it('projects the desktop logo into the real television and preserves mobile curtains', () => {
-    assert.match(source, /desktop \? \['camera'\] : \['left', 'right'\]/);
+  it('projects the desktop logo into the real television and bypasses mobile startup', () => {
+    assert.match(source, /matchMedia\('\(max-width:767px\)'\)\.matches\) return;/);
+    assert.match(source, /ref=\{screen\} className=\{styles.cameraScreen\}/);
     assert.match(source, /\[data-crt-corner\]/);
     assert.match(source, /crtCameraFrames\(window\.innerWidth, window\.innerHeight, corners\)/);
     assert.match(source, /animations\.forEach\(animation => animation\.cancel\(\)\)/);

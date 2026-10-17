@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useEffect, useRef, useState, type CSSProperties } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import * as Dialog from '@radix-ui/react-dialog';
 import styles from './IntroCinematic.module.css';
@@ -12,10 +12,9 @@ const OPENING_DURATION_MS = 4000;
 const PRELOAD_DEADLINE_MS = 4200;
 const CAMERA_DURATION_MS = 1250;
 
-/** First-visit, real asset warm-up. Mobile keeps its curtains; desktop exits the CRT. */
+/** First-visit desktop opening with real asset warm-up. Mobile enters immediately. */
 export default function IntroCinematic() {
   const [show, setShow] = useState(false);
-  const [desktop, setDesktop] = useState(false);
   const [ready, setReady] = useState(false);
   const [resources, setResources] = useState({ done: 0, total: 0 });
   const screen = useRef<HTMLDivElement>(null);
@@ -23,13 +22,14 @@ export default function IntroCinematic() {
   const dismiss = useCallback(() => setShow(false), []);
 
   useEffect(() => {
+    if (window.matchMedia('(max-width:767px)').matches) return;
     if (window.location.hash || window.scrollY > 20) return;
     try {
       if (sessionStorage.getItem(SEEN_KEY)) return;
     } catch { return; }
     const frame = requestAnimationFrame(() => {
+      if (window.matchMedia('(max-width:767px)').matches) return;
       try { sessionStorage.setItem(SEEN_KEY, '1'); } catch { return; }
-      setDesktop(window.matchMedia('(min-width:768px)').matches);
       setShow(true);
     });
     return () => cancelAnimationFrame(frame);
@@ -46,7 +46,7 @@ export default function IntroCinematic() {
     const timers: ReturnType<typeof setTimeout>[] = [];
     const mediaCleanup: (() => void)[] = [];
     const urls = new Set(['/brand/latech-logo.webp', SERVER_POSTER]);
-    if (desktop) urls.add('/textures/crt-aged-plastic.webp');
+    urls.add('/textures/crt-aged-plastic.webp');
     document.querySelectorAll<HTMLImageElement>('main img').forEach(image => {
       const url = image.currentSrc || image.src;
       if (url && new URL(url, location.href).origin === location.origin) urls.add(url);
@@ -74,14 +74,13 @@ export default function IntroCinematic() {
     const initialResources = [...warmImages, fonts];
     if (warmVideo) initialResources.push(warmVideo.finally(settled));
     const deadline = new Promise<void>(resolve => { release = resolve; timers.push(setTimeout(resolve, PRELOAD_DEADLINE_MS)); });
-    const minimum = new Promise<void>(resolve => { timers.push(setTimeout(resolve, desktop ? OPENING_DURATION_MS - CAMERA_DURATION_MS : 0)); });
+    const minimum = new Promise<void>(resolve => { timers.push(setTimeout(resolve, OPENING_DURATION_MS - CAMERA_DURATION_MS)); });
 
     async function enter() {
       await Promise.all([Promise.race([Promise.allSettled(initialResources), deadline]), minimum]);
       if (!active) return;
       document.documentElement.dataset.brandOpening = 'revealing';
       setReady(true);
-      if (!desktop) return;
       const corners = [...document.querySelectorAll<HTMLElement>('[data-crt-corner]')].map(element => {
         const rect = element.getBoundingClientRect();
         return { x: rect.x, y: rect.y };
@@ -98,20 +97,19 @@ export default function IntroCinematic() {
     const onResize = () => { if (performance.now() - started > 80) dismiss(); };
     window.addEventListener('resize', onResize);
     return () => { active = false; delete document.documentElement.dataset.brandOpening; release?.(); mediaCleanup.forEach(cleanup => cleanup()); timers.forEach(clearTimeout); animations.forEach(animation => animation.cancel()); window.removeEventListener('resize', onResize); };
-  }, [show, desktop, dismiss]);
+  }, [show, dismiss]);
 
   return <Dialog.Root open={show} onOpenChange={(open) => { if (!open) dismiss(); }}>
     <Dialog.Portal>
-      <Dialog.Content className={styles.opening} data-desktop={desktop} data-ready={ready} style={{ '--opening-duration': `${OPENING_DURATION_MS}ms` } as CSSProperties} onCloseAutoFocus={(event) => {
+      <Dialog.Content className={styles.opening} data-desktop="true" data-ready={ready} onCloseAutoFocus={(event) => {
         event.preventDefault();
         document.getElementById('main-content')?.focus({ preventScroll: true });
       }}>
         <Dialog.Title className="sr-only">Latech. Tu imaginación es nuestro límite.</Dialog.Title>
         <Dialog.Description className="sr-only">Preparando las imágenes y fuentes del inicio. Una breve presentación de nuestra marca que puedes saltar o cerrar con Escape.</Dialog.Description>
         <div className={styles.stage} aria-hidden="true">
-          {desktop && <div ref={backdrop} className={styles.cameraBackdrop} />}
-          {(desktop ? ['camera'] : ['left', 'right']).map((side) => <div key={side} ref={side === 'camera' ? screen : undefined} className={side === 'camera' ? styles.cameraScreen : `${styles.curtain} ${styles[side]}`}
-            onAnimationEnd={side === 'right' ? (event) => { if (event.target === event.currentTarget) dismiss(); } : undefined}>
+          <div ref={backdrop} className={styles.cameraBackdrop} />
+          <div ref={screen} className={styles.cameraScreen}>
             <div className={styles.halo} />
             <div className={styles.grid} />
             <div className={styles.flare} />
@@ -125,11 +123,10 @@ export default function IntroCinematic() {
             </div>
             <span className={styles.coordinate}>DISEÑADO PARA DEJAR HUELLA.</span>
             <span className={styles.signature}>ESTUDIO DIGITAL / ESPAÑA</span>
-            {desktop && <><div className={styles.tubeLines} /><div className={styles.tubeBeam} /><div className={styles.tubeVignette} /></>}
-          </div>)}
-          {!desktop && <div className={styles.cut} />}
+            <div className={styles.tubeLines} /><div className={styles.tubeBeam} /><div className={styles.tubeVignette} />
+          </div>
         </div>
-        {desktop && <div className={styles.preload} role="status"><i aria-hidden="true" /><span>{ready ? 'ENTRANDO EN EL ESTUDIO' : 'PREPARANDO LA EXPERIENCIA'}</span>{!ready && resources.total > 0 && <span aria-hidden="true">{resources.done} / {resources.total}</span>}</div>}
+        <div className={styles.preload} role="status"><i aria-hidden="true" /><span>{ready ? 'ENTRANDO EN EL ESTUDIO' : 'PREPARANDO LA EXPERIENCIA'}</span>{!ready && resources.total > 0 && <span aria-hidden="true">{resources.done} / {resources.total}</span>}</div>
         <Dialog.Close className={styles.skip}>Saltar entrada <span aria-hidden>↗</span></Dialog.Close>
       </Dialog.Content>
     </Dialog.Portal>
