@@ -103,8 +103,8 @@ describe('Temporary TV remote', () => {
     assert.equal(measurementPath('/mando'), null);
   });
   it('offers retained projects and teletext while preserving framing exclusions', () => {
-    assert.equal(tvProjects.length, 7);
-    assert.equal(tvChannels.length, 9);
+    assert.equal(tvProjects.length, 8);
+    assert.equal(tvChannels.length, 10);
     assert.ok(tvChannels.some(channel => channel.id === 'teletext'));
     assert.ok(tvChannels.some(channel => channel.id === 'megias-frutas'));
     assert.equal(tvProjects[0].slug, 'monkey');

@@ -115,4 +115,40 @@ export const projects: Project[] = [
       'Web orientada a generar contactos cualificados directamente por WhatsApp. Cuatro líneas de servicio bien diferenciadas (hogar, negocios, reparaciones, a medida), reseñas reales que aportan confianza y CTAs siempre apuntando a solicitar presupuesto. Estructura simple y directa, pensada para que un visitante con una necesidad concreta —reparar un toldo, encargar uno nuevo— llegue al WhatsApp del equipo en menos de tres clics.',
     image: '/proyectos/toldos-noa.png',
   },
+  {
+    id: 'autoescuela-agora',
+    name: 'Autoescuela Ágora',
+    url: 'https://autoescuelaagora.com/',
+    domain: 'autoescuelaagora.com',
+    sector: 'Autoescuela y formación vial',
+    location: 'Montijo y Puebla de la Calzada (Badajoz)',
+    description:
+      'Una web que acompaña al alumno desde la primera consulta hasta su próximo carnet. Vídeo, una identidad visual propia y recorridos por los permisos presentan las dos sedes de Ágora. La inscripción, el contacto por WhatsApp, los accesos a tests AEOL y el área Mi Ágora acercan la formación al móvil, mientras las noticias y guías mantienen la información de la autoescuela al día.',
+    image: '/proyectos/autoescuela-agora.png',
+    services: ['Diseño y desarrollo', 'Inscripción y área de alumnos', 'Web instalable'],
+  },
+  {
+    id: 'precios-locos',
+    name: 'Precios Locos',
+    url: 'https://www.precioslocosmontijo.com/',
+    domain: 'precioslocosmontijo.com',
+    sector: 'Electrodomésticos y productos para el hogar',
+    location: 'Montijo (Badajoz)',
+    description:
+      'Una tienda con una personalidad que se reconoce desde el primer vistazo. Rojo, amarillo y una máquina de gancho de paquetes sorpresa dan carácter a una experiencia de compra que combina catálogo, buscador, favoritos y carrito. Las fichas de producto, las guías para el hogar y el contacto directo por WhatsApp conectan la tienda de Montijo con quienes buscan su próxima compra online.',
+    image: '/proyectos/precios-locos.png',
+    services: ['Diseño y desarrollo', 'Catálogo y carrito', 'Experiencia interactiva'],
+  },
+  {
+    id: 'los-leones-nuptiae',
+    name: 'Los Leones · Nuptiae',
+    url: 'https://losleones-nuptiae.com/',
+    domain: 'losleones-nuptiae.com',
+    sector: 'Moda masculina, ceremonia y sastrería',
+    location: 'Mérida (Badajoz)',
+    description:
+      'Dos identidades de moda reunidas en una misma experiencia digital. Una entrada visual permite elegir entre Los Leones y Nuptiae, con recorridos propios para moda masculina, ceremonia, alquiler y confección a medida. La fotografía sitúa ambas marcas en Mérida y las colecciones se acompañan de accesos a sus tiendas, manteniendo una atención personal también desde el móvil.',
+    image: '/proyectos/los-leones-nuptiae.png',
+    services: ['Diseño y desarrollo', 'Dos identidades de marca', 'Colecciones de moda'],
+  },
 ];

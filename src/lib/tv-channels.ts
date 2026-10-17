@@ -1,8 +1,8 @@
 import { projects } from './projects';
 
-// Headers checked 2026-10-12. These sites send X-Frame-Options: SAMEORIGIN.
+// Headers checked 2026-10-12 and 2026-10-17. These sites disallow external framing.
 // Keep them in the public portfolio, never proxy around their framing policy.
-export const excludedTvProjects = ['zonasport', 'colegio-santo-tomas'] as const;
+export const excludedTvProjects = ['zonasport', 'colegio-santo-tomas', 'autoescuela-agora', 'precios-locos'] as const;
 // Preserve the relative order of retained channels when the portfolio is reordered.
 const order = ['monopatinmonkey', 'panelex', 'toldos-noa'];
 export const tvProjects = projects
