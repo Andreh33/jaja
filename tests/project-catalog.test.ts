@@ -15,7 +15,7 @@ describe('Public project selection', () => {
     assert.deepEqual(projects.map(project => project.id), [
       'colegio-santo-tomas', 'granja-orea', 'f5-arquitectos', 'quality-homes', 'megias-frutas',
       'zonasport', 'panelex', 'monopatinmonkey', 'toldos-noa',
-      'autoescuela-agora', 'precios-locos', 'los-leones-nuptiae',
+      'autoescuela-agora', 'precios-locos', 'los-leones-nuptiae', 'my-special-hair',
     ]);
     assert.deepEqual(projects.filter(project => new URL(project.url).hostname.endsWith('.vercel.app'))
       .map(project => project.id).sort(), ['zonasport']);

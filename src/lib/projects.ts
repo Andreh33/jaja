@@ -151,4 +151,16 @@ export const projects: Project[] = [
     image: '/proyectos/los-leones-nuptiae.png',
     services: ['Diseño y desarrollo', 'Dos identidades de marca', 'Colecciones de moda'],
   },
+  {
+    id: 'my-special-hair',
+    name: 'MySpecialHair',
+    url: 'https://myspecialhair.com/',
+    domain: 'myspecialhair.com',
+    sector: 'Prótesis capilares y cuidado del cabello',
+    location: 'Atención online y centro colaborador en Badajoz',
+    description:
+      'Una web de marca para descubrir prótesis capilares y productos de cuidado con orientación personal. El catálogo, la guía de medidas y el estudio 3D ayudan a explorar opciones, mientras la cuenta de cliente, las citas y el acceso profesional ofrecen recorridos propios para cada visitante. Vídeo, una galería de resultados y una identidad visual cuidada conectan la presentación de la marca con el asesoramiento directo por WhatsApp.',
+    image: '/proyectos/my-special-hair.webp',
+    services: ['Diseño y desarrollo', 'Catálogo y área de clientes', 'Guía de medidas y estudio 3D'],
+  },
 ];
