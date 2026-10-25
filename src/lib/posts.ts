@@ -1,3 +1,4 @@
+import { spanishArticles } from './international';
 import { db } from './db';
 import { posts } from '../../drizzle/schema';
 import { desc, eq } from 'drizzle-orm';
@@ -5,7 +6,7 @@ import { findPublishedPostBySlug } from './post-queries';
 import { octoberArticles } from '../content/editorial-october-2026';
 import { campaignArticles } from '../content/seo-campaign-20261015';
 
-const versionedArticles = [...octoberArticles, ...campaignArticles];
+const versionedArticles = [...octoberArticles, ...campaignArticles, ...spanishArticles];
 
 /**
  * Campos necesarios para listados y tarjetas (sin `content`).

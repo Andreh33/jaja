@@ -1,0 +1,706 @@
+{
+  "code": "it",
+  "name": "Italiano",
+  "ogLocale": "it_IT",
+  "ui": {
+    "home": "Home",
+    "services": "Servizi",
+    "projects": "Progetti",
+    "about": "Chi siamo",
+    "contact": "Contatti",
+    "blog": "Guide",
+    "language": "Lingua",
+    "readMore": "Leggi la guida",
+    "backToBlog": "Torna alle guide",
+    "related": "Guide correlate",
+    "author": "Il team di Latech",
+    "whatsapp": "Scrivici su WhatsApp",
+    "skip": "Vai al contenuto",
+    "legal": "Note legali",
+    "privacy": "Privacy",
+    "terms": "Condizioni",
+    "remote": "Lavoriamo dalla Spagna, da remoto, con aziende di altri paesi.",
+    "phone": "Telefono",
+    "contactTitle": "Raccontaci di cosa ha bisogno la tua azienda",
+    "contactIntro": "Indica il paese, il servizio richiesto, il sito attuale e le tempistiche previste. Questo contesto ci aiuta a definire il prossimo passo.",
+    "whatsappMessage": "Buongiorno, vorrei richiedere un preventivo. Il mio paese è: . Il servizio che cerco è: . Il sito attuale è: . Le tempistiche previste sono: .",
+    "processTitle": "Un percorso con decisioni chiare",
+    "processSteps": [
+      "Esaminiamo attività, clienti e priorità del progetto.",
+      "Definiamo ambito, contenuti e criteri di verifica del lavoro.",
+      "Realizziamo la soluzione, proviamo i percorsi principali e prepariamo la consegna."
+    ],
+    "articlesIntro": "Guide pratiche per scegliere come migliorare sito, negozio online e processi aziendali.",
+    "serviceIntro": "Design, sviluppo e automazione in base agli obiettivi e alle risorse operative della tua azienda.",
+    "projectsIntro": "Una selezione di lavori e delle decisioni che hanno dato forma a ogni progetto.",
+    "aboutTitle": "Un team vicino al progetto, anche a distanza",
+    "aboutIntro": "Latech nasce dal lavoro di Andrés Rubio e Luis Grondona a Puebla de la Calzada, Badajoz, in Spagna.",
+    "aboutBody": [
+      "Aiutiamo le aziende a trasformare una necessità concreta in un sito, un negozio online o un processo digitale utilizzabile e gestibile. Partiamo dal funzionamento dell’attività e dal risultato che il progetto deve rendere possibile.",
+      "Lavoriamo da remoto dalla Spagna con aziende di altri paesi. Concordiamo consegne, responsabilità e momenti di verifica per dare alla collaborazione un quadro chiaro fin dall’inizio.",
+      "Uniamo progettazione web, commercio elettronico e automazioni con n8n e intelligenza artificiale. Definiamo l’ambito in base al contesto: una connessione semplice può essere più utile di strumenti aggiunti senza uno scopo preciso."
+    ],
+    "contactDetails": "Recapiti",
+    "moreServices": "Altri servizi",
+    "allArticles": "Tutte le guide"
+  },
+  "home": {
+    "title": "Siti web, ecommerce e automazione per aziende | Latech",
+    "description": "Siti web, ecommerce e automazioni con n8n e intelligenza artificiale. Dalla Spagna, lavoriamo da remoto con aziende che vogliono migliorare i processi.",
+    "heading": "Un sito che rende chiaro il prossimo passo",
+    "intro": "Progettiamo siti, realizziamo negozi online e colleghiamo processi per semplificare il percorso dei clienti e il lavoro del tuo team.",
+    "body": [
+      "Una presenza digitale utile parte da scelte concrete: cosa offri, a chi ti rivolgi e come può procedere una persona interessata. Traduciamo queste risposte in struttura, contenuti e funzionalità.",
+      "Da Puebla de la Calzada, Badajoz, lavoriamo da remoto con aziende di altri paesi. Definiamo insieme l’ambito del progetto e diamo priorità a ciò che serve alla tua attività."
+    ]
+  },
+  "services": [
+    {
+      "id": "web",
+      "title": "Siti web per aziende",
+      "description": "Progettiamo siti aziendali con contenuti chiari, navigazione mobile e percorsi di contatto utili. Collaboriamo da remoto dalla Spagna con la tua impresa.",
+      "intro": "Realizziamo siti che spiegano la tua offerta e aiutano una persona interessata a capire come procedere.",
+      "sections": [
+        {
+          "title": "Prima la struttura",
+          "paragraphs": [
+            "Organizziamo servizi, elementi di fiducia e percorsi di contatto secondo le domande dei clienti. Una navigazione comprensibile aiuta a trovare informazioni senza spiegazioni aggiuntive.",
+            "Definiamo quali pagine servono e quale domanda deve risolvere ciascuna. Evitiamo così sezioni ripetitive o contenuti che lasciano irrisolti i dubbi decisivi per una richiesta."
+          ]
+        },
+        {
+          "title": "Sviluppo e utilizzo da mobile",
+          "paragraphs": [
+            "Curiamo lettura, moduli e inviti all’azione sugli schermi piccoli. Verifichiamo immagini e interazioni per mantenere un’esperienza coerente tra i dispositivi.",
+            "L’ambito può comprendere basi tecniche SEO, gestione dei contenuti e integrazioni. Concordiamo questi elementi durante la pianificazione per collegare la consegna a esigenze verificabili."
+          ]
+        },
+        {
+          "title": "Consegna comprensibile",
+          "paragraphs": [
+            "Prepariamo il progetto affinché siano chiari la gestione dei contenuti e i servizi esterni coinvolti. Le responsabilità di manutenzione dipendono dalla soluzione concordata.",
+            "Prima della pubblicazione verifichiamo collegamenti, moduli e percorsi prioritari. I dati reali permettono poi di individuare miglioramenti, senza attribuire a un nuovo sito risultati commerciali garantiti."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "shop",
+      "title": "Negozi online con un percorso chiaro",
+      "description": "Realizziamo ecommerce con catalogo ordinato, acquisto da mobile e gestione coerente degli ordini. Definisci con Latech un progetto adatto alla tua azienda.",
+      "intro": "Il negozio deve aiutare a scegliere, acquistare e gestire gli ordini attraverso informazioni coerenti.",
+      "sections": [
+        {
+          "title": "Un catalogo che risponde",
+          "paragraphs": [
+            "Definiamo categorie, attributi e schede in base a come il cliente confronta i prodotti. Misure, disponibilità e varianti richiedono una presentazione che riduca gli errori prima del carrello.",
+            "Prepariamo contenuti che l’azienda possa aggiornare. Un catalogo ordinato facilita filtri, campagne e ampliamenti futuri senza dover ricostruire ogni volta la struttura."
+          ]
+        },
+        {
+          "title": "Acquisto e operatività collegati",
+          "paragraphs": [
+            "Verifichiamo il percorso dalla scheda alla conferma dell’ordine, prestando attenzione al mobile. Concordiamo le integrazioni necessarie per pagamenti, spedizioni e gestione.",
+            "Condizioni commerciali, imposte e politiche applicabili vanno definite dall’azienda con il supporto competente. Lo sviluppo traduce queste decisioni in un’esperienza comprensibile."
+          ]
+        },
+        {
+          "title": "Verifiche prima dell’apertura",
+          "paragraphs": [
+            "Proviamo situazioni comuni ed eccezioni: varianti esaurite, indirizzi incompleti, pagamenti interrotti e conferme. Anche quando qualcosa non funziona, il cliente deve capire come proseguire.",
+            "Documentiamo i sistemi coinvolti in un ordine e chi esamina i problemi. Acquisti, abbandoni e richieste aiutano a scegliere i miglioramenti quando il negozio riceve attività reale."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ai",
+      "title": "Automazioni con n8n e intelligenza artificiale",
+      "description": "Automatizza attività con n8n e intelligenza artificiale. Progettiamo flussi con controlli e responsabilità definiti secondo le esigenze della tua azienda.",
+      "intro": "Automatizziamo attività ripetitive quando esistono un processo chiaro, dati adeguati e un modo per verificare il risultato.",
+      "sections": [
+        {
+          "title": "Scegliere il processo",
+          "paragraphs": [
+            "Esaminiamo ingressi, decisioni e risultati prima di proporre strumenti. Una prima automazione funziona meglio su un’attività frequente con regole note ed eccezioni gestibili.",
+            "Possiamo studiare collegamenti tra moduli, CRM, posta e altre applicazioni compatibili. Definiamo quali dati passano, quando parte il flusso e quali casi richiedono intervento."
+          ]
+        },
+        {
+          "title": "IA con limiti espliciti",
+          "paragraphs": [
+            "L’intelligenza artificiale può aiutare a classificare richieste, estrarre informazioni o preparare bozze. Il livello di revisione deve essere proporzionato alle conseguenze di un risultato errato.",
+            "Una risposta probabilistica non deve diventare un’autorizzazione senza controlli. Permessi, dati inviati ai fornitori e azioni consentite fanno parte della progettazione del processo."
+          ]
+        },
+        {
+          "title": "Controllo e continuità",
+          "paragraphs": [
+            "Prepariamo gestione degli errori, registri e avvisi per rendere visibili i problemi. Definiamo anche come ripetere un’operazione evitando contatti, messaggi o ordini duplicati.",
+            "La consegna chiarisce credenziali, dipendenze e responsabilità di verifica. I cambiamenti negli strumenti esterni possono richiedere interventi: concordiamo come osservare e mantenere il flusso."
+          ]
+        }
+      ]
+    }
+  ],
+  "articles": [
+    {
+      "id": "website-leads",
+      "title": "Come ottenere richieste commerciali utili dal sito aziendale",
+      "slug": "sito-aziendale-richieste-commerciali",
+      "description": "Organizza il sito aziendale per ricevere richieste pertinenti. Rivedi offerta, fiducia, moduli e misurazione prima di investire per aumentare le visite.",
+      "intro": [
+        "Un sito può ricevere visite senza generare conversazioni commerciali interessanti. Prima di aumentare il traffico, occorre verificare se il visitatore comprende il servizio, riconosce una risposta al proprio problema e trova un modo semplice per procedere. Aggiungere pulsanti non risolve da solo un’offerta difficile da interpretare.",
+        "Per un’impresa che lavora a distanza, una richiesta con paese, esigenza e tempistiche può essere più utile di diversi messaggi generici. Definire quali informazioni servono al team commerciale permette di progettare il percorso e di valutarlo con criteri legati al lavoro reale, oltre che al numero di contatti."
+      ],
+      "sections": [
+        {
+          "title": "Definisci cosa rende pertinente una richiesta",
+          "paragraphs": [
+            "Chiedi a chi segue le vendite quali dati permettono di preparare una prima risposta. Per un produttore possono essere materiale, quantità e destinazione; per un consulente, problema e dimensione del team. Distingui i dati indispensabili da quelli che si possono raccogliere durante una conversazione. Un modulo troppo lungo può scoraggiare, mentre uno privo di contesto trasferisce il lavoro al commerciale. La definizione deve essere condivisa da chi promuove il servizio e da chi lo eroga."
+          ]
+        },
+        {
+          "title": "Spiega il servizio prima di chiedere un contatto",
+          "paragraphs": [
+            "La prima parte della pagina dovrebbe chiarire cosa offri, a chi serve e quale passo proponi. Successivamente approfondisci ambito, modalità di lavoro e condizioni di compatibilità. Un’impresa che realizza allestimenti può indicare quali spazi tratta e quali informazioni servono per valutare l’intervento. Formule generiche come soluzioni innovative costringono il visitatore a interpretare. Una descrizione concreta aiuta anche a capire quando il servizio non risponde alla necessità, evitando richieste difficili da gestire."
+          ]
+        },
+        {
+          "title": "Dai una funzione precisa a ogni pagina",
+          "paragraphs": [
+            "Una pagina di servizio risponde alle domande di acquisto, un progetto mostra decisioni e lavoro svolto, una guida chiarisce un dubbio precedente alla scelta. Collega questi contenuti secondo un percorso comprensibile. Chi cerca informazioni sui requisiti di un progetto può voler capire il processo prima di compilare un modulo. Il sito deve offrire quel passaggio intermedio, senza obbligare tutte le persone a seguire lo stesso percorso o a contattare subito il team."
+          ]
+        },
+        {
+          "title": "Costruisci fiducia con elementi verificabili",
+          "paragraphs": [
+            "Descrivi lavori autorizzati, vincoli affrontati e contributo effettivo del tuo team. Se non puoi pubblicare risultati numerici, spiega consegne e verifiche senza inventare benefici. Le testimonianze devono derivare da esperienze reali e rispettare le autorizzazioni necessarie. Nei progetti internazionali è utile indicare da dove lavori, come si coordinano le attività e chi partecipa. Questi elementi rispondono a dubbi operativi che una raccolta di aggettivi o loghi, da sola, lascia aperti."
+          ]
+        },
+        {
+          "title": "Rendi prevedibile il passo successivo",
+          "paragraphs": [
+            "Spiega cosa accade dopo l’invio di una richiesta e proponi canali compatibili con l’organizzazione aziendale. Un modulo può raccogliere una descrizione e un indirizzo email senza imporre immediatamente una telefonata. Se usi WhatsApp, prepara un testo iniziale pertinente e indica aspettative realistiche di attenzione. Prova campi, errori e conferma da un telefono reale. La richiesta deve restare leggibile anche con tastiera aperta, schermo piccolo o connessione meno veloce di quella utilizzata durante lo sviluppo."
+          ]
+        },
+        {
+          "title": "Misura qualità e quantità separatamente",
+          "paragraphs": [
+            "Registra gli eventi che rappresentano una vera intenzione e verifica che non si duplichino ricaricando una conferma. Quando è possibile e appropriato, collega la fonte della richiesta alla valutazione commerciale successiva. Una campagna può produrre molti messaggi non pertinenti, mentre una pagina poco visitata genera opportunità compatibili. Considera anche il lavoro necessario per rispondere. La misurazione è utile quando orienta una decisione, non quando accumula numeri senza un collegamento con la capacità dell’impresa."
+          ]
+        },
+        {
+          "title": "Verifica una modifica alla volta",
+          "paragraphs": [
+            "Se molti chiedono se operi nel loro paese, migliora la spiegazione della copertura. Se il modulo viene abbandonato quando richiede documenti preliminari, valuta se rinviare quella richiesta. Scrivi ipotesi, modifica e periodo di osservazione. Con poche visite, integra i dati con prove di utilizzo e domande raccolte dal commerciale. Una differenza limitata tra settimane può dipendere dalle persone arrivate; non dimostra automaticamente che il cambiamento abbia causato un miglioramento o un peggioramento."
+          ]
+        }
+      ],
+      "checklist": [
+        "Scrivi quali dati rendono pertinente una richiesta.",
+        "Verifica che ogni servizio indichi destinatari e ambito.",
+        "Prova il modulo completo da un telefono reale.",
+        "Collega le richieste alla loro valutazione commerciale.",
+        "Scegli una modifica osservabile prima di rifare il sito."
+      ],
+      "conclusion": "Un sito utile alle vendite unisce chiarezza, fiducia e un processo di risposta sostenibile. Parti dal servizio più importante, controlla tutto il percorso e usa i dubbi dei clienti per migliorarlo. L’obiettivo è facilitare conversazioni che il team possa comprendere e gestire."
+    },
+    {
+      "id": "website-budget",
+      "title": "Preventivo per un sito web: cosa confrontare prima di scegliere",
+      "slug": "preventivo-sito-web-aziendale",
+      "description": "Confronta preventivi web per ambito, contenuti, integrazioni e consegna. Una guida pratica per capire responsabilità, esclusioni e costi ricorrenti del sito.",
+      "intro": [
+        "Due preventivi possono parlare entrambi di progettazione e sviluppo, includendo però attività molto diverse. Un importo finale non chiarisce chi preparerà i testi, quali integrazioni saranno realizzate o come verrà verificata la consegna. Per confrontare le proposte serve una descrizione comprensibile del lavoro e delle responsabilità.",
+        "Un documento iniziale breve aiuta i fornitori a formulare ipotesi più precise. Non è necessario scegliere subito ogni tecnologia: descrivi attività, utenti, obiettivi e sistemi esistenti. Le risposte ricevute devono consentire di distinguere ciò che è incluso, ciò che dipende dall’azienda e ciò che richiederà una decisione successiva."
+      ],
+      "sections": [
+        {
+          "title": "Parti da obiettivi verificabili",
+          "paragraphs": [
+            "Trasforma desideriamo un sito moderno in necessità concrete: presentare servizi, ricevere richieste con contesto o permettere al personale di aggiornare progetti. Ordina queste necessità per importanza e separa i requisiti del primo rilascio dalle possibili evoluzioni. Se tutto è indispensabile, ogni scelta diventa difficile da negoziare. Un obiettivo chiaro permette anche di scartare funzioni costose che non migliorano il percorso del cliente e di stabilire come il lavoro sarà accettato alla consegna."
+          ]
+        },
+        {
+          "title": "Conta modelli e contenuti, non solo pagine",
+          "paragraphs": [
+            "Dieci schede costruite sullo stesso modello possono richiedere meno lavoro di un configuratore personalizzato. Identifica tipologie di pagina, quantità iniziali, lingue e relazioni tra contenuti. Chiarisci chi scrive, traduce, carica e controlla ciascun elemento. Se il catalogo è distribuito tra fogli e documenti, prepararlo richiede un’attività specifica. Il preventivo dovrebbe rendere visibile questo lavoro, anziché presumere che tutto il materiale arriverà già ordinato e pronto per la pubblicazione finale."
+          ]
+        },
+        {
+          "title": "Descrivi le integrazioni attraverso casi reali",
+          "paragraphs": [
+            "La frase collegamento al CRM non specifica cosa succederà. Indica quale modulo crea il contatto, quali campi vengono trasferiti e come si gestiscono i duplicati. Una connessione che invia dati una volta è diversa da una sincronizzazione che aggiorna modifiche e recupera errori. Verifica disponibilità di documentazione e accessi al sistema esterno. Chiedi che la proposta distingua sviluppo, configurazione e dipendenze, comprese le condizioni che potrebbero cambiare la stima durante il lavoro."
+          ]
+        },
+        {
+          "title": "Concorda revisioni e approvazioni",
+          "paragraphs": [
+            "Definisci chi raccoglie i commenti e chi approva struttura, grafica e funzionalità. Indica quali revisioni rientrano nell’ambito e come si valutano nuove richieste. Quando diverse persone inviano indicazioni attraverso canali separati, possono nascere decisioni incompatibili e rilavorazioni. Un referente che consolida i commenti aiuta a mantenere il progetto coerente senza escludere gli altri partecipanti. Il processo deve essere comprensibile prima di iniziare, perché influenza sia il tempo necessario sia l’impegno richiesto all’azienda."
+          ]
+        },
+        {
+          "title": "Controlla pubblicazione e consegna",
+          "paragraphs": [
+            "Chiedi se dominio, hosting, configurazione, migrazione e formazione sono inclusi oppure separati. Verifica quali account, file e istruzioni riceverai e quali licenze appartengono a servizi esterni. Un sito approvato in anteprima richiede ancora un piano di pubblicazione sul dominio definitivo. Questo piano dovrebbe comprendere verifiche di moduli, collegamenti e percorsi prioritari. Chiarisci inoltre chi aggiorna eventuali impostazioni esterne e chi controlla che la ricezione delle richieste funzioni dopo il passaggio online."
+          ]
+        },
+        {
+          "title": "Distingui investimento iniziale e gestione",
+          "paragraphs": [
+            "Elenca servizi ricorrenti e soggetti che li sottoscriveranno. Alcuni strumenti hanno costi legati a utenti, utilizzo o volume: conoscere il modello è più utile che assumere una spesa immutabile. Separa manutenzione tecnica, aggiornamento dei contenuti e sviluppo di nuove funzioni. Chiarisci come si segnala un problema e quale copertura è stata concordata. Una formula generica di assistenza non dovrebbe lasciare ambigue disponibilità, responsabilità o attività che richiedono una valutazione e un accordo specifici."
+          ]
+        },
+        {
+          "title": "Usa una matrice prima della decisione",
+          "paragraphs": [
+            "Crea colonne per ambito, materiali, integrazioni, revisioni, consegna, spese ricorrenti ed esclusioni. Segna ogni elemento come incluso, da chiarire o esterno al progetto. Valuta poi la compatibilità con gli obiettivi e la precisione delle spiegazioni. Una proposta più dettagliata può rendere visibili attività che un’altra omette. Risolvi le ambiguità importanti prima di scegliere: il confronto diventa utile quando puoi descrivere cosa riceverai e quali risorse interne dovrai mettere a disposizione del lavoro."
+          ]
+        }
+      ],
+      "checklist": [
+        "Prepara obiettivi ordinati ed esempi delle funzioni richieste.",
+        "Assegna testi, immagini, traduzioni e accessi a un responsabile.",
+        "Chiedi una descrizione concreta di ogni integrazione.",
+        "Confronta consegna, licenze e spese ricorrenti.",
+        "Chiarisci esclusioni e criteri di accettazione prima di iniziare."
+      ],
+      "conclusion": "Un preventivo utile rende leggibili lavoro, responsabilità e dipendenze. Quando puoi spiegare cosa sarà consegnato e cosa servirà per gestirlo, hai una base più solida per scegliere il fornitore e organizzare il contributo della tua azienda al progetto."
+    },
+    {
+      "id": "local-seo",
+      "title": "SEO locale per aziende con una copertura territoriale reale",
+      "slug": "seo-locale-copertura-territoriale",
+      "description": "Imposta la SEO locale con dati reali, pagine utili e richieste misurabili. Distingui sede fisica, area di intervento e servizi erogati da remoto ai clienti.",
+      "intro": [
+        "La SEO locale collega una ricerca a un’attività che può soddisfare un’esigenza in un territorio. Non richiede di inventare indirizzi o ripetere nomi di città. Le informazioni devono descrivere il funzionamento dell’impresa e permettere a una persona di capire se il servizio è disponibile nella situazione concreta.",
+        "Un negozio aperto al pubblico, un’impresa che raggiunge il cliente e un team che lavora da remoto hanno esigenze diverse. Definire questa differenza prima di creare profili e pagine territoriali riduce i messaggi ambigui. Aiuta anche a concentrare il lavoro sulle ricerche che possono generare richieste compatibili con l’attività."
+      ],
+      "sections": [
+        {
+          "title": "Separa sede e area servita",
+          "paragraphs": [
+            "Avere una sede in una località e accettare progetti da altri paesi sono informazioni compatibili ma differenti. Indica il luogo reale e descrivi come eroghi il servizio. Se sono previsti spostamenti, chiarisci territori e condizioni. Per un lavoro remoto spiega la collaborazione a distanza, evitando di suggerire uffici locali inesistenti. Il cliente deve poter valutare la compatibilità senza contattarti solo per scoprire informazioni fondamentali che il sito avrebbe potuto fornire direttamente."
+          ]
+        },
+        {
+          "title": "Verifica i requisiti del profilo",
+          "paragraphs": [
+            "Google Business Profile stabilisce condizioni relative al tipo di attività e al contatto con i clienti. Consulta le sue indicazioni prima di creare o modificare una scheda, soprattutto se operi esclusivamente online. Non ogni impresa digitale è idonea. Quando esiste un profilo legittimo, mantieni categorie pertinenti, orari reali e dati coerenti. Scegliere una categoria solo perché viene cercata spesso può attrarre persone che richiedono un servizio diverso da quello effettivamente offerto dalla tua azienda."
+          ]
+        },
+        {
+          "title": "Pubblica pagine territoriali con uno scopo",
+          "paragraphs": [
+            "Una pagina dedicata a una zona dovrebbe contenere informazioni specifiche: modalità di intervento, vincoli operativi o esempi verificabili. Sostituire soltanto il nome della città produce contenuti ripetitivi e poco utili. Se non esiste una differenza concreta, può bastare una pagina di servizio con copertura ben spiegata. Decidi la struttura secondo le domande delle persone. Un elenco di comuni non sostituisce una risposta su come, dove e a quali condizioni il lavoro può essere svolto."
+          ]
+        },
+        {
+          "title": "Mantieni coerenti i dati aziendali",
+          "paragraphs": [
+            "Controlla nome commerciale, numero telefonico, indirizzo pubblicato e canali di contatto sul sito e sui profili pertinenti. Quando un dato cambia, aggiorna le fonti importanti anziché lasciare versioni contrastanti. Le indicazioni per raggiungere la sede hanno senso se ricevi effettivamente pubblico. Per servizi a distanza sono più pertinenti modalità di coordinamento e requisiti del progetto. La coerenza permette alle persone di riconoscere l’attività e riduce messaggi inviati al numero o alla sede sbagliati."
+          ]
+        },
+        {
+          "title": "Cura recensioni e domande reali",
+          "paragraphs": [
+            "Richiedi opinioni su esperienze autentiche con un processo semplice, senza condizionare il contenuto. Rispondi con rispetto e non rivelare dati privati per spiegare un problema. Le recensioni non sono uno spazio da riempire artificialmente con località e servizi. Raccogli anche le domande ricorrenti delle persone: se molti chiedono se è necessario un incontro in sede, chiarisci il punto nella pagina pertinente. Il miglioramento del contenuto può risolvere un dubbio prima che diventi una richiesta improduttiva."
+          ]
+        },
+        {
+          "title": "Collega visibilità e richieste gestibili",
+          "paragraphs": [
+            "Search Console aiuta a osservare query e pagine, tenendo presenti i limiti dei dati disponibili. Integra queste informazioni con la zona dichiarata nei contatti e con la valutazione commerciale. Una visita da una città desiderata non equivale automaticamente a un’opportunità. Verifica se arrivano richieste che puoi soddisfare e se il contenuto spiega le condizioni del servizio. Considera anche il tempo impiegato per correggere aspettative errate: può indicare una descrizione territoriale troppo vaga o troppo ampia."
+          ]
+        },
+        {
+          "title": "Amplia solo quando esiste una proposta",
+          "paragraphs": [
+            "Prima di aggiungere altre pagine geografiche, controlla se quelle esistenti offrono informazioni distinte e generano conversazioni pertinenti. Può essere più utile approfondire un servizio o chiarire l’area di intervento. Google Search Central invita a creare contenuti per le persone: applica questo criterio per valutare la necessità di ogni nuova pagina. Una struttura contenuta e precisa può orientare il cliente meglio di molte versioni quasi identiche che l’impresa fatica poi a mantenere aggiornate."
+          ]
+        }
+      ],
+      "checklist": [
+        "Definisci se ricevi clienti, ti sposti o lavori da remoto.",
+        "Controlla i requisiti di Google Business Profile.",
+        "Pubblica sedi e modalità di servizio verificabili.",
+        "Aggiorna dati aziendali e canali in modo coerente.",
+        "Valuta richieste pertinenti oltre a visite e posizioni."
+      ],
+      "conclusion": "La SEO locale deve rappresentare l’attività reale. Copertura precisa, dati coerenti e contenuti utili aiutano a ottenere conversazioni compatibili. Espandi la presenza territoriale quando puoi spiegare una proposta concreta e mantenere aggiornate le informazioni che consentono al cliente di valutarla."
+    },
+    {
+      "id": "international-seo",
+      "title": "Preparare un sito per trovare clienti in altri paesi",
+      "slug": "seo-internazionale-aziende",
+      "description": "Pianifica la SEO internazionale con mercati chiari, contenuti adattati e versioni coerenti. Valuta la domanda prima di tradurre e ampliare il tuo sito.",
+      "intro": [
+        "Pubblicare un sito in un’altra lingua non dimostra che esista una domanda commerciale sostenibile. Prima della traduzione, occorre capire chi potrebbe acquistare, quale problema vuole risolvere e come erogare il servizio dalla propria sede. La SEO internazionale parte da queste scelte e continua con contenuti e segnali tecnici coerenti.",
+        "Per un’impresa spagnola che lavora da remoto, dichiarare origine e modalità di collaborazione può essere più utile che apparire locale in ogni mercato. La versione internazionale deve rispondere a domande su ambito, coordinamento e percorso commerciale, senza attribuire all’azienda sedi o capacità che non possiede."
+      ],
+      "sections": [
+        {
+          "title": "Scegli mercati con segnali concreti",
+          "paragraphs": [
+            "Esamina richieste ricevute, esperienze commerciali e ricerche collegate alla specializzazione. Confronta questi segnali con la possibilità effettiva di seguire i progetti e con le differenze del processo di acquisto. Una lingua può coprire più paesi con aspettative diverse. Seleziona un primo mercato o un gruppo coerente e definisci quali evidenze giustificherebbero l’espansione. Tradurre molte versioni insieme moltiplica gli aggiornamenti necessari prima di capire se l’offerta risponde davvero a una domanda pertinente e raggiungibile."
+          ]
+        },
+        {
+          "title": "Studia il linguaggio delle decisioni",
+          "paragraphs": [
+            "Non limitarti a tradurre letteralmente le parole chiave. Cerca espressioni abituali, domande e criteri con cui i clienti confrontano i fornitori. Un’impresa può cercare un risultato operativo, un’altra il nome tecnico del servizio. Organizza le pagine secondo l’intenzione. La ricerca deve chiarire anche quali informazioni mancano: documentazione, modalità remota e responsabilità possono contare più di uno slogan. Usa esempi comprensibili nel mercato senza trasformarli in esperienze o risultati che l’azienda non può dimostrare."
+          ]
+        },
+        {
+          "title": "Scegli una struttura gestibile",
+          "paragraphs": [
+            "Sottocartelle, sottodomini e domini separati richiedono decisioni legate a risorse, manutenzione e obiettivi. Nessuna struttura rende utile da sola un contenuto insufficiente. Google Search Central documenta la gestione dei siti multilingue e multiregionali: usa queste indicazioni per preparare un’architettura coerente. Conserva URL stabili e una tabella delle corrispondenze. Devi sapere quali pagine rappresentano la stessa intenzione nelle diverse lingue e quali contenuti hanno invece una funzione specifica senza una versione equivalente da collegare."
+          ]
+        },
+        {
+          "title": "Allinea hreflang e canonical",
+          "paragraphs": [
+            "Le annotazioni hreflang aiutano a indicare versioni alternative quando sono implementate correttamente. I gruppi devono collegare pagine equivalenti con riferimenti coerenti, comprendendo le versioni stesse. Controlla codici di lingua o regione, indicizzabilità e canonical insieme. Una traduzione non dovrebbe dichiarare automaticamente come canonica una pagina in un’altra lingua. Le configurazioni devono descrivere ciò che è pubblicato e accessibile. Inserire versioni pianificate ma inesistenti crea segnali incoerenti e rende più difficile la verifica delle relazioni tra pagine."
+          ]
+        },
+        {
+          "title": "Adatta il percorso commerciale",
+          "paragraphs": [
+            "Rivedi esempi, formati e termini senza inventare condizioni che non puoi rispettare. Indica la sede reale, il servizio incluso e come concordare il passo successivo. Aspetti fiscali, contrattuali e relativi ai dati richiedono una verifica competente secondo il contesto: il sito deve riflettere decisioni approvate dall’azienda. Controlla anche prefissi telefonici, moduli e conferme. Una pagina tradotta può conservare istruzioni della versione iniziale che confondono il cliente, soprattutto quando chiedono informazioni pertinenti soltanto a un altro paese."
+          ]
+        },
+        {
+          "title": "Lascia scegliere la lingua",
+          "paragraphs": [
+            "Offri un selettore riconoscibile e collega la pagina equivalente quando esiste. Non forzare il cambio in base alla sola posizione apparente: una persona può viaggiare, usare una rete aziendale o preferire un’altra lingua. Verifica che gli indirizzi siano accessibili direttamente e che i collegamenti interni mantengano un percorso coerente. Il passaggio deve funzionare anche da una guida o da un servizio specifico, evitando di inviare sempre alla home e perdere il contesto della ricerca iniziale."
+          ]
+        },
+        {
+          "title": "Misura e assegna gli aggiornamenti",
+          "paragraphs": [
+            "Se i dati sono sufficienti, osserva ricerche, pagine e richieste per versione e paese. Distingui visibilità da opportunità che puoi gestire. Quando cambia il servizio, assegna a qualcuno l’aggiornamento di tutte le versioni interessate: una traduzione dimenticata può mantenere promesse superate. Se arrivano dubbi ricorrenti da un mercato, rivedi il contenuto pertinente. L’espansione è sostenibile quando le informazioni continuano a descrivere l’offerta attuale anche dopo la prima pubblicazione, senza dipendere dalla memoria dei singoli collaboratori."
+          ]
+        }
+      ],
+      "checklist": [
+        "Scegli mercati coerenti con domanda e capacità operative.",
+        "Associa ogni pagina a un’intenzione di ricerca.",
+        "Verifica insieme hreflang, canonical e indicizzabilità.",
+        "Prova selettore, moduli e messaggi di conferma.",
+        "Assegna la manutenzione di tutte le versioni pubblicate."
+      ],
+      "conclusion": "Una strategia internazionale richiede accordo tra mercato, contenuti e tecnologia. Parti da una versione che puoi mantenere, spiega con precisione il lavoro a distanza e valuta se le richieste ottenute giustificano ulteriori investimenti. La traduzione diventa utile quando sostiene una proposta commerciale praticabile."
+    },
+    {
+      "id": "mobile-performance",
+      "title": "Prestazioni mobile: cosa controllare prima di rifare il sito",
+      "slug": "prestazioni-mobile-sito-aziendale",
+      "description": "Scopri cosa rallenta il sito su mobile e scegli gli interventi utili. Unisci dati reali, prove tecniche e verifica dei percorsi importanti per i clienti.",
+      "intro": [
+        "Un sito lento da telefono può rendere difficile leggere un’offerta, confrontare prodotti o inviare una richiesta. Rifarlo senza individuare le cause può conservare gli stessi problemi: immagini eccessive, script non necessari e integrazioni che ostacolano le interazioni. Conviene iniziare dalle operazioni che contano per l’azienda e osservare cosa impedisce di completarle.",
+        "I punteggi delle analisi automatiche aiutano a individuare problemi, ma richiedono contesto. Una simulazione non rappresenta tutti i dispositivi e tutte le reti dei clienti. Combina misure di laboratorio con dati di utilizzo reale quando disponibili e verifica che gli interventi rendano effettivamente più semplici i percorsi prioritari."
+      ],
+      "sections": [
+        {
+          "title": "Seleziona percorsi rappresentativi",
+          "paragraphs": [
+            "Prova un servizio importante, una pagina raggiunta dalle ricerche e il modulo o il percorso di acquisto. Usa un telefono reale oltre agli strumenti automatici. Annota quando compare il contenuto principale, se gli elementi si spostano e se i controlli rispondono. Una home veloce non compensa una scheda difficile da utilizzare. Collega ogni osservazione a un compito concreto: confrontare una variante, aprire il menu o inviare una richiesta. In questo modo eviti di ottimizzare solo le schermate più facili da misurare."
+          ]
+        },
+        {
+          "title": "Interpreta correttamente le metriche",
+          "paragraphs": [
+            "web.dev spiega come le Core Web Vitals descrivono caricamento, risposta e stabilità visiva attraverso LCP, INP e CLS. Individua l’elemento o l’interazione che causa il problema in ogni modello di pagina. I dati sul campo possono includere un periodo precedente alla modifica e non sono sempre disponibili per URL poco visitati. Se utilizzi soltanto test di laboratorio, registra condizioni e dispositivo simulato. Confrontare prove eseguite in condizioni differenti può suggerire variazioni che non dipendono realmente dal sito."
+          ]
+        },
+        {
+          "title": "Controlla immagini e contenuto iniziale",
+          "paragraphs": [
+            "Verifica dimensioni, formati e quantità di dati scaricati. Un’immagine enorme mostrata in una scheda piccola consuma risorse senza offrire un vantaggio proporzionato. Riserva spazio per immagini e componenti in modo che il contenuto non salti durante il caricamento. La parte visibile all’apertura richiede attenzione diversa dai materiali molto più in basso. Non applicare indiscriminatamente il caricamento differito alla risorsa che deve apparire subito, soprattutto quando rappresenta l’elemento principale misurato durante la fase iniziale della visita."
+          ]
+        },
+        {
+          "title": "Fai inventario degli script esterni",
+          "paragraphs": [
+            "Analitica, chat, mappe, pixel e componenti aggiunti devono avere uno scopo attuale e un responsabile. Alcuni strumenti rallentano le interazioni anche dopo che la pagina sembra caricata. Valuta se possono attivarsi quando servono o se esiste un’alternativa più leggera. Le decisioni devono restare coerenti con la configurazione di privacy applicabile: la velocità non giustifica l’attivazione di servizi senza i controlli concordati. Coinvolgi chi usa i dati prima di eliminare strumenti che potrebbero sostenere attività commerciali importanti."
+          ]
+        },
+        {
+          "title": "Verifica stabilità e interazione",
+          "paragraphs": [
+            "Un pulsante spostato dall’arrivo di un’immagine può causare tocchi sbagliati. Un menu pesante può rispondere tardi anche quando il testo è visibile. Prova filtri, varianti, finestre e validazione dei moduli. Riduci il lavoro non necessario del browser e prepara spazio per contenuti dinamici. Mantieni testi leggibili e controlli comodi: nascondere informazioni o rendere piccoli i bersagli può ridurre il peso della pagina ma peggiorare il compito del cliente. Valuta prestazioni e utilizzo nello stesso percorso."
+          ]
+        },
+        {
+          "title": "Ordina gli interventi per impatto",
+          "paragraphs": [
+            "Considera pagine coinvolte, importanza commerciale e costo della correzione. Sistemare un’immagine presente in molte schede può essere più utile di un dettaglio isolato. Distingui le parti controllate dal tuo team da quelle dipendenti da fornitori. Se un servizio esterno è necessario, cerca come limitarne l’impatto. Conserva una misura iniziale e documenta la modifica: potrai spiegare cosa è migliorato e cosa rimane aperto senza attribuire tutte le differenze osservate a un solo valore sintetico."
+          ]
+        },
+        {
+          "title": "Proteggi i risultati durante gli aggiornamenti",
+          "paragraphs": [
+            "Nuove immagini, campagne e strumenti possono peggiorare nuovamente il sito. Stabilisci indicazioni per pubblicare file e controllare componenti. Ripeti le prove quando cambia un modello di pagina o viene aggiunta un’integrazione rilevante. Osserva anche il completamento delle attività e i problemi segnalati su specifici dispositivi. Un intervento tecnico conserva valore se il processo editoriale evita di reintrodurre le stesse cause. Chi aggiorna il sito deve sapere quali scelte possono influire sull’esperienza dei clienti da telefono."
+          ]
+        }
+      ],
+      "checklist": [
+        "Prova pagine che rappresentano compiti commerciali reali.",
+        "Distingui dati sul campo e prove di laboratorio.",
+        "Controlla immagini, script e spostamenti dei contenuti.",
+        "Verifica moduli e controlli su un telefono reale.",
+        "Documenta regole di pubblicazione e momenti di revisione."
+      ],
+      "conclusion": "Migliorare il mobile significa individuare ostacoli, correggerne le cause e riprovare compiti concreti. Usa le metriche per stabilire priorità e mantieni le funzionalità necessarie. Il risultato dura quando prestazioni e aggiornamenti dei contenuti vengono gestiti come parti dello stesso lavoro."
+    },
+    {
+      "id": "online-store",
+      "title": "Pianificare un ecommerce prima di iniziare lo sviluppo",
+      "slug": "pianificare-ecommerce-catalogo-ordini",
+      "description": "Prepara catalogo, pagamenti, spedizioni e gestione prima di realizzare l’ecommerce. Definisci un primo ambito sostenibile e prova anche le eccezioni operative.",
+      "intro": [
+        "Un ecommerce collega la scelta del cliente a disponibilità, pagamento, preparazione, spedizione e attività successive. La grafica è soltanto una parte del sistema. Se le regole non sono chiare, il negozio può raccogliere ordini difficili da gestire oppure lasciare dubbi che impediscono di acquistare.",
+        "Prima delle funzionalità, descrivi come vendi oggi e cosa cambierà con il canale digitale. Questo lavoro rende visibili responsabilità e dipendenze. Un primo catalogo delimitato permette di verificare il processo con attenzione, mentre inserire tutte le idee subito può aumentare i casi da provare senza chiarire quali siano davvero necessari."
+      ],
+      "sections": [
+        {
+          "title": "Organizza il catalogo secondo la scelta",
+          "paragraphs": [
+            "Definisci categorie in base a come i clienti cercano e confrontano. Distingui attributi come materiale e compatibilità dalle varianti che modificano prezzo o disponibilità. Prepara una scheda completa prima di importare molti prodotti: se lascia dubbi, il problema si ripeterà nel catalogo. Per ricambi tecnici, ad esempio, la compatibilità è decisiva e non può essere sostituita da una buona immagine. Controlla che la struttura permetta di pubblicare queste informazioni in modo coerente e di mantenerle nel tempo."
+          ]
+        },
+        {
+          "title": "Assegna una fonte a ogni dato",
+          "paragraphs": [
+            "Stabilisci quale sistema decide prezzo, disponibilità e descrizione. Se più strumenti possono modificare lo stesso valore, definisci priorità e frequenza di aggiornamento. Chiarisci cosa accade quando una sincronizzazione fallisce o manca un dato. Una matrice delle responsabilità evita promozioni che il magazzino non riesce a gestire. Includi fotografie e documenti: l’affidabilità non riguarda soltanto la prima importazione. Serve un processo che mantenga corrette le schede quando cambiano fornitori, confezioni o condizioni di vendita."
+          ]
+        },
+        {
+          "title": "Spiega disponibilità e consegna",
+          "paragraphs": [
+            "Indica territori serviti, limitazioni e condizioni di preparazione secondo il funzionamento reale dell’attività. Mostra le informazioni decisive prima che la persona completi tutto il modulo. Non trasformare stime in impegni che non puoi rispettare. Quando una combinazione di prodotti richiede una gestione particolare, definisci il comportamento previsto. Regole commerciali e fiscali devono essere verificate con professionisti competenti: lo sviluppo implementa decisioni confermate dall’impresa, evitando supposizioni nascoste nei calcoli o nelle condizioni mostrate durante l’acquisto."
+          ]
+        },
+        {
+          "title": "Progetta pagamenti ed eccezioni",
+          "paragraphs": [
+            "Verifica il percorso da mobile e contempla pagamenti rifiutati, interrotti o in attesa. La conferma nel browser e l’aggiornamento del fornitore non arrivano necessariamente insieme. Stabilisci quale sistema conferma l’ordine e quando partono le comunicazioni. Evita duplicati se il cliente tocca più volte un comando o torna da un’altra schermata. Gli stati interni devono permettere di distinguere un ordine pagato da uno da controllare, senza obbligare chi prepara i pacchi a interpretare messaggi tecnici incompleti."
+          ]
+        },
+        {
+          "title": "Collega l’ordine alla preparazione",
+          "paragraphs": [
+            "Descrivi cosa succede dall’ingresso dell’ordine alla consegna al trasportatore. Indica chi esamina i problemi, dove si aggiorna lo stato e come si comunica un cambiamento al cliente. Se utilizzi un gestionale, prova casi rappresentativi con dati di test adeguati. Una connessione deve gestire anche errori e tentativi successivi, non soltanto il caso corretto. Un passaggio manuale può essere ragionevole all’inizio, purché sia assegnato e documentato, invece di essere una dipendenza invisibile affidata alla memoria del personale."
+          ]
+        },
+        {
+          "title": "Prepara prove prima dell’apertura",
+          "paragraphs": [
+            "Inserisci prodotti esauriti, varianti, codici promozionali, indirizzi incompleti e carrelli misti nei casi di prova. Controlla importi, messaggi e conferme per ciascuna situazione. Anche annullamenti e resi richiedono contenuti approvati dall’impresa e un percorso operativo chiaro. Conserva evidenze e risolvi i problemi che impediscono incasso o gestione corretta. Una sola transazione semplice non dimostra che il negozio sia pronto: le prove devono rappresentare le regole scelte e le eccezioni prevedibili del catalogo effettivamente pubblicato."
+          ]
+        },
+        {
+          "title": "Usa i dati per scegliere le evoluzioni",
+          "paragraphs": [
+            "Distingui visite alle schede, aggiunte al carrello, avvii del pagamento e ordini confermati. Verifica che la misurazione segua gli stati reali senza contare più volte lo stesso acquisto. Collega abbandoni a dubbi frequenti ed errori osservati. Se molte persone chiedono misure, migliora le schede prima di aggiungere funzioni. Considera la capacità operativa insieme ai risultati commerciali: ampliare il catalogo senza un processo affidabile può aumentare i problemi più velocemente delle vendite che il team riesce a gestire."
+          ]
+        }
+      ],
+      "checklist": [
+        "Valida una scheda completa prima dell’importazione.",
+        "Assegna fonte e responsabile ai dati del catalogo.",
+        "Conferma territori, restrizioni e regole commerciali.",
+        "Prova pagamenti interrotti e stati in attesa.",
+        "Documenta preparazione e gestione delle eccezioni."
+      ],
+      "conclusion": "Pianificare un ecommerce significa accordarsi su come si compra e come si esegue l’ordine. Catalogo affidabile, regole esplicite e prove rappresentative permettono un primo rilascio gestibile. I dati di utilizzo e l’esperienza operativa indicano poi quali miglioramenti meritano il prossimo investimento."
+    },
+    {
+      "id": "whatsapp-conversion",
+      "title": "WhatsApp sul sito: trasformare un clic in una richiesta utile",
+      "slug": "whatsapp-sito-richieste-clienti",
+      "description": "Integra WhatsApp nel sito con messaggi pertinenti, aspettative chiare e gestione delle richieste. Misura conversazioni utili oltre ai clic sul pulsante.",
+      "intro": [
+        "Un pulsante WhatsApp può facilitare il contatto se il canale è compatibile con il modo di lavorare dell’azienda. Il clic, però, non dimostra che sia stato inviato un messaggio né che esista un’opportunità commerciale. Per renderlo utile occorre progettare informazioni iniziali e gestione della conversazione.",
+        "Considera l’esperienza da telefono e da computer, inclusi i casi in cui l’applicazione non è disponibile. Offri anche un altro canale. Una persona dovrebbe poter scegliere come chiedere informazioni senza essere obbligata a condividere un numero telefonico per chiarire qualsiasi dubbio sul servizio o sul progetto che vorrebbe avviare."
+      ],
+      "sections": [
+        {
+          "title": "Scegli il momento del contatto",
+          "paragraphs": [
+            "Inserisci WhatsApp vicino a decisioni che possono richiedere una conversazione, come la valutazione di un progetto o la richiesta di un preventivo. Ripetere un pulsante sopra ogni elemento non rende necessariamente il percorso migliore. Controlla che eventuali comandi fissi non coprano moduli e informazioni sugli schermi piccoli. Per servizi complessi, spiega quali dati aiutano a valutare l’esigenza. Mantieni un’alternativa via modulo o email per chi preferisce preparare una richiesta più articolata o usare un canale diverso."
+          ]
+        },
+        {
+          "title": "Prepara un testo iniziale pertinente",
+          "paragraphs": [
+            "Il messaggio può chiedere paese, servizio, sito attuale e tempistiche quando queste informazioni servono alla valutazione. Mantienilo facile da modificare: deve suggerire una struttura, senza diventare un lungo questionario da compilare in chat. Un’impresa di allestimenti può chiedere tipologia di spazio e zona; un consulente può raccogliere problema e dimensione del team. Adatta il testo alla pagina di origine. Un messaggio generico identico per ogni servizio trasferisce al cliente il lavoro di capire quali dettagli siano importanti."
+          ]
+        },
+        {
+          "title": "Rendi realistiche le aspettative",
+          "paragraphs": [
+            "Descrivi una modalità di attenzione che il team possa sostenere, evitando di suggerire disponibilità permanente se non esiste. Se occorre esaminare documenti prima di rispondere nel merito, chiarisci il passaggio. Una conferma automatica di ricezione deve essere riconoscibile e non confusa con una valutazione personale. Quando collabori con altri paesi, considera le differenze di fuso orario nel processo. La persona deve capire come proseguirà la richiesta senza interpretare il pulsante come una promessa implicita di risposta immediata o assistenza continua."
+          ]
+        },
+        {
+          "title": "Organizza chi legge e chi risponde",
+          "paragraphs": [
+            "Assegna nuovi messaggi, raccolta delle necessità e passaggi ad altre persone. Un numero condiviso senza responsabilità chiare può accumulare conversazioni aperte anche se l’integrazione funziona. Usa stati semplici per nuove richieste, informazioni mancanti e seguiti concordati. Definisci quali dati conservare e dove, evitando copie fuori controllo. Il processo deve restare comprensibile durante assenze o cambi di ruolo. Un registro appropriato permette di continuare una conversazione senza chiedere nuovamente al cliente informazioni già ricevute dal collega."
+          ]
+        },
+        {
+          "title": "Distingui intenzione e risultato",
+          "paragraphs": [
+            "Puoi registrare il clic come interazione, ma non chiamarlo automaticamente vendita o contatto ricevuto. Per capire il risultato, collega quando possibile e appropriato le conversazioni alla fonte e alla valutazione commerciale. Considera la qualità oltre al volume. Un pulsante più evidente può aumentare tocchi accidentali o richieste non pertinenti. Se i messaggi non contengono contesto, rivedi spiegazione del servizio e testo iniziale. Il numero di clic diventa significativo solo se interpretato insieme al lavoro e alle conversazioni effettivamente generati."
+          ]
+        },
+        {
+          "title": "Verifica il collegamento completo",
+          "paragraphs": [
+            "Controlla numero e prefisso internazionale, poi apri il percorso da dispositivi diversi. Verifica che caratteri e testo precompilato siano interpretati correttamente e che il cliente possa modificare il messaggio. Osserva il comportamento del browser quando l’app non è disponibile e rendi visibile un’alternativa. Se introduci misurazione, mantienila coerente con le scelte di privacy applicabili. Prova dalla pagina del servizio fino al contatto, anziché limitarti all’apertura isolata del collegamento sul computer di chi ha realizzato il sito."
+          ]
+        },
+        {
+          "title": "Automatizza senza creare vicoli ciechi",
+          "paragraphs": [
+            "Se il volume giustifica un’automazione, delimita i compiti e prepara il passaggio al team nei casi non previsti. Classificare richieste o raccogliere dati iniziali può essere utile; il sistema non deve inventare condizioni, disponibilità o preventivi. Evita risposte ripetitive che impediscano di spiegare un problema diverso. Verifica le condizioni degli strumenti utilizzati e le autorizzazioni necessarie prima di adottare messaggi automatizzati. Una procedura deve prevedere anche errori e sospensione temporanea, senza lasciare le persone in una conversazione priva di uscita."
+          ]
+        }
+      ],
+      "checklist": [
+        "Posiziona il contatto dove risponde a una necessità.",
+        "Prepara un messaggio iniziale breve e pertinente.",
+        "Assegna responsabilità e aspettative realistiche di attenzione.",
+        "Separa clic, conversazioni e opportunità commerciali.",
+        "Prova telefono e computer offrendo un canale alternativo."
+      ],
+      "conclusion": "WhatsApp può ridurre gli ostacoli se ha uno scopo e una gestione chiari. Progetta il contesto prima del clic, facilita le informazioni utili e misura le conversazioni che il team riesce a seguire. La qualità della richiesta conta quanto la facilità di avviarla."
+    },
+    {
+      "id": "ai-automation",
+      "title": "Come scegliere la prima automazione con n8n e IA",
+      "slug": "prima-automazione-n8n-intelligenza-artificiale",
+      "description": "Scegli un processo da automatizzare con n8n e IA in base a frequenza, regole e rischio. Prepara controlli, revisione e prove prima di ampliare il progetto.",
+      "intro": [
+        "La prima automazione non dovrebbe dipendere dall’effetto di una dimostrazione. È preferibile scegliere un’attività frequente, con dati riconoscibili e un risultato verificabile. n8n permette di collegare strumenti e coordinare passaggi; l’intelligenza artificiale può aiutare nella classificazione o nell’estrazione quando la variabilità del lavoro lo richiede.",
+        "L’obiettivo è ridurre attività ripetitive mantenendo il controllo delle eccezioni. Prima dello sviluppo descrivi il processo attuale, le decisioni prese dalle persone e le conseguenze degli errori. Questa analisi permette di capire quando bastano regole esplicite e quando un modello di IA può offrire un contributo utile e controllabile."
+      ],
+      "sections": [
+        {
+          "title": "Osserva il lavoro prima degli strumenti",
+          "paragraphs": [
+            "Raccogli esempi delle attività ripetute durante un periodo rappresentativo e considera anche correzioni e controlli. Un candidato può essere trasferire richieste da un modulo al CRM e assegnarle secondo il servizio. Registra frequenza, variabilità e persone coinvolte senza trasformare ipotesi in risparmi promessi. Un processo raro può non compensare sviluppo e manutenzione. Dai priorità a un problema riconosciuto da chi esegue il lavoro, con abbastanza ripetizioni da permettere prove e una valutazione basata su casi effettivi."
+          ]
+        },
+        {
+          "title": "Definisci ingressi e risultati",
+          "paragraphs": [
+            "Indica origine dei dati, campi necessari e sistema che riceverà il risultato. Scrivi cosa accade se manca un indirizzo email o la richiesta non rientra nei servizi previsti. Queste regole costituiscono il contratto del flusso. Ogni connessione deve avere uno scopo e un referente per lo strumento coinvolto. Se non riesci a descrivere il risultato corretto di un caso comune, la definizione non è ancora sufficiente. Automatizzare quel dubbio lo renderebbe più rapido, senza renderlo più gestibile."
+          ]
+        },
+        {
+          "title": "Usa IA quando serve flessibilità",
+          "paragraphs": [
+            "Interpretare testo libero può richiedere più flessibilità di una selezione già strutturata. Definisci comunque categorie consentite e verifica il formato prima di usare la risposta. I messaggi in ingresso sono dati non affidabili: eventuali istruzioni contenute nel testo non devono diventare autorizzazioni ad agire. Limita strumenti e permessi disponibili al modello. Per operazioni sensibili o con conseguenze rilevanti, conserva un controllo umano proporzionato al rischio, invece di assumere che una risposta ben formulata sia necessariamente corretta."
+          ]
+        },
+        {
+          "title": "Riduci dati e autorizzazioni",
+          "paragraphs": [
+            "Invia a ogni servizio soltanto le informazioni necessarie alla sua funzione. Controlla dove sono conservate le credenziali, chi le modifica e quali fornitori elaborano i dati. Aspetti di privacy e contrattuali richiedono una verifica competente secondo il contesto. Non concedere accesso completo a tutti i sistemi solo per rendere più semplice la configurazione. Separare prove e produzione e limitare i permessi riduce le conseguenze di un errore. Aiuta anche a capire quali azioni sono possibili e chi può autorizzarne l’ampliamento."
+          ]
+        },
+        {
+          "title": "Prepara recupero ed errori",
+          "paragraphs": [
+            "Un’API può non rispondere, una credenziale scadere e un fornitore limitare l’utilizzo. Definisci quali errori consentono un nuovo tentativo, quando avvisare una persona e dove conservare una registrazione utile. Usa identificatori per evitare contatti o messaggi duplicati durante la ripetizione di un’esecuzione. Il caso corretto rappresenta soltanto una parte del sistema. Il recupero deve consentire di proseguire senza perdere dati e senza ripetere azioni già completate, soprattutto quando più applicazioni aggiornano informazioni in momenti differenti."
+          ]
+        },
+        {
+          "title": "Prova una raccolta di casi rappresentativi",
+          "paragraphs": [
+            "Includi richieste comuni, campi mancanti, ingressi inattesi ed eccezioni conosciute. Nei passaggi con IA prova risposte fuori formato e classificazioni ambigue. Confronta i risultati con criteri scritti prima del test, evitando una valutazione basata soltanto sull’impressione. Se l’impatto lo consiglia, comincia con esecuzioni supervisionate o proposte da approvare. Conserva i problemi come esempi da riutilizzare nelle verifiche successive. Una modifica a un flusso o a un modello non dovrebbe ripristinare un errore già identificato e corretto."
+          ]
+        },
+        {
+          "title": "Valuta utilità e manutenzione",
+          "paragraphs": [
+            "Confronta lavoro evitato, tempo di revisione, problemi e consumo dei servizi. Un’automazione che riduce la copia manuale ma richiede molte correzioni può aver bisogno di un ambito diverso. Assegna controllo degli avvisi e aggiornamento quando cambiano regole o strumenti esterni. Documenta dipendenze e un ritorno temporaneo al processo manuale. Amplia il flusso quando esistono evidenze di funzionamento affidabile e una responsabilità esplicita per mantenerlo. Il valore dipende dalla continuità operativa, non soltanto dal successo della prima esecuzione dimostrativa."
+          ]
+        }
+      ],
+      "checklist": [
+        "Scegli un’attività frequente con risultato verificabile.",
+        "Documenta regole ed eccezioni prima delle connessioni.",
+        "Limita dati, credenziali e azioni disponibili all’IA.",
+        "Prova errori, duplicati e risultati fuori formato.",
+        "Assegna supervisione e confronta utilità e manutenzione."
+      ],
+      "conclusion": "Una prima automazione utile risolve un problema delimitato e rende visibili i propri limiti. Definisci il processo, usa IA dove aggiunge valore e prepara controlli e recupero. Questa base permette di decidere con evidenze quali passaggi ampliare e quali mantenere sotto revisione personale."
+    },
+    {
+      "id": "website-migration",
+      "title": "Migrare un sito mantenendo il controllo di URL e contenuti",
+      "slug": "migrazione-sito-url-contenuti-seo",
+      "description": "Organizza la migrazione del sito con inventario degli URL, reindirizzamenti e prove. Verifica i percorsi importanti prima e dopo la pubblicazione online.",
+      "intro": [
+        "Migrare un sito può significare cambiare piattaforma, dominio, struttura o grafica. Ogni intervento ha conseguenze diverse per persone e motori di ricerca. Il rischio aumenta se si pubblica senza sapere quali indirizzi esistono, quali portano visite e cosa deve succedere a ciascuno nella nuova versione.",
+        "La pianificazione non elimina tutte le variazioni di visibilità, ma permette di evitare errori prevedibili e riconoscere problemi. Servono inventario, decisioni editoriali, controlli tecnici e osservazione successiva. Il lavoro inizia prima dello sviluppo e continua quando il sito definitivo è già accessibile e riceve richieste o ordini dai clienti."
+      ],
+      "sections": [
+        {
+          "title": "Definisci cosa cambia",
+          "paragraphs": [
+            "Documenta piattaforma, dominio, struttura e funzioni coinvolte. Identifica moduli, integrazioni, documenti e pagine che sostengono vendite o assistenza. Modificare molti elementi insieme può rendere difficile capire la causa di un problema: separa le fasi quando è possibile. Assegna responsabilità editoriali, tecniche e commerciali. La pubblicazione non dovrebbe dipendere dalla memoria di una sola persona. Un elenco condiviso delle dipendenze rende visibili gli elementi meno evidenti, come conferme inviate da servizi esterni o file collegati da campagne ancora attive."
+          ]
+        },
+        {
+          "title": "Costruisci l’inventario degli indirizzi",
+          "paragraphs": [
+            "Combina scansione del sito, sitemap, analitica e Search Console, utilizzando anche i registri disponibili quando pertinenti. Includi documenti e pagine non presenti nel menu. Segna gli URL che ricevono visite, collegamenti o richieste utili. Una pagina non collegata dalla navigazione può comunque avere una funzione commerciale. L’inventario collega ogni indirizzo a una decisione esplicita e aiuta a evitare eliminazioni involontarie. Conserva anche il contesto necessario per riconoscere il contenuto quando il vecchio sito non sarà più disponibile pubblicamente."
+          ]
+        },
+        {
+          "title": "Prepara una mappa dei destinatari",
+          "paragraphs": [
+            "Per ogni URL decidi se resta, cambia, confluisce in un altro contenuto o viene eliminato. Quando esiste un sostituto equivalente, configura un reindirizzamento permanente verso la destinazione pertinente. Mandare tutti alla home non risponde alla necessità di chi cerca una scheda specifica. Riduci catene e verifica accessibilità e indicizzabilità delle destinazioni quando previsto. Google Search Central offre indicazioni sui cambi di URL e sui trasferimenti: consulta quelle pertinenti al tipo di migrazione, senza applicare automaticamente procedure pensate per situazioni differenti."
+          ]
+        },
+        {
+          "title": "Conserva il significato delle pagine",
+          "paragraphs": [
+            "Un nuovo layout può nascondere informazioni che spiegavano il servizio o rispondevano a una ricerca. Confronta titoli, intestazioni, contenuto principale ed elementi di fiducia nelle pagine prioritarie. Migliorare i testi è possibile, ma deve essere una scelta motivata. Se cambi contemporaneamente intenzione e indirizzo, sarà più difficile interpretare una variazione successiva. Nei siti multilingue controlla anche equivalenze e traduzioni: un contenuto spostato può influire sui collegamenti tra versioni e lasciare percorsi diversi da quelli previsti nella struttura iniziale."
+          ]
+        },
+        {
+          "title": "Verifica l’ambiente prima del rilascio",
+          "paragraphs": [
+            "Prova menu, ricerca interna, moduli, pagamenti se presenti e collegamenti esterni con dati appropriati. Controlla canonical, direttive di indicizzazione, sitemap e link interni. Un blocco utilizzato nello sviluppo deve essere rimosso dal sito definitivo, mentre l’ambiente di prova conserva la protezione necessaria. Verifica i reindirizzamenti prioritari e un campione rappresentativo degli altri. L’approvazione grafica non sostituisce questi controlli: una pagina può apparire corretta e restare irraggiungibile dai percorsi di ricerca o non inviare correttamente le richieste."
+          ]
+        },
+        {
+          "title": "Pianifica pubblicazione e recupero",
+          "paragraphs": [
+            "Definisci sequenza, responsabile delle decisioni e condizioni che imporrebbero una sospensione o un ritorno alla versione precedente. Prepara copie verificate di dati e configurazioni secondo la piattaforma. Controlla subito il dominio reale, compresi moduli ed eventi importanti. Se durante il passaggio arrivano ordini o nuovi contenuti, stabilisci come preservarli. Un ripristino improvvisato può sovrascrivere informazioni non presenti nella copia precedente. Il piano deve considerare queste differenze, non limitarsi alla possibilità tecnica di ricaricare i file del vecchio sito."
+          ]
+        },
+        {
+          "title": "Osserva dopo la pubblicazione",
+          "paragraphs": [
+            "Rivedi errori, reindirizzamenti, indicizzazione e comportamento delle pagine importanti. Confronta periodi considerando campagne e stagionalità: una variazione isolata non dimostra da sola una causa. Mantieni disponibile la mappa degli indirizzi per esaminare problemi segnalati successivamente. Le indicazioni di Google Search Central aiutano a interpretare segnali di scansione e trasferimento. Assegna ogni problema e adatta la durata del controllo a dimensioni e attività del sito. La migrazione continua finché il team ha verificato i percorsi previsti e gestito le anomalie emerse."
+          ]
+        }
+      ],
+      "checklist": [
+        "Documenta dominio, piattaforma e struttura coinvolti.",
+        "Raccogli gli URL da più fonti informative.",
+        "Assegna una decisione a ciascun indirizzo precedente.",
+        "Prova indicizzazione, reindirizzamenti e percorsi commerciali.",
+        "Definisci recupero e monitoraggio con responsabilità precise."
+      ],
+      "conclusion": "Una migrazione controllata collega contenuti, tecnologia e operatività. Inventario e mappa degli URL rendono esplicite le decisioni; prove e osservazione aiutano a rilevare problemi. Prima di pubblicare, assicurati che il team sappia cosa verificare e come intervenire quando un percorso non funziona come previsto."
+    }
+  ]
+}

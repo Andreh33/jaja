@@ -28,7 +28,7 @@ describe('business mystery scenarios', () => {
       assert.equal(episode.checklist.length, 3);
       assert.ok(episode.article.startsWith('/blog/'));
       assert.ok(articles.includes(`slug: '${episode.article.slice('/blog/'.length)}'`), 'related article exists');
-      assert.ok(readFileSync(`src/app${episode.service}/page.tsx`, 'utf8').length > 0, 'related service exists');
+      assert.ok(readFileSync(`src/app/(es)${episode.service}/page.tsx`, 'utf8').length > 0, 'related service exists');
     }
     assert.equal(getMystery('../admin'), undefined);
   });

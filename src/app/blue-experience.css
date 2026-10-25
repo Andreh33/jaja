@@ -1,9 +1,9 @@
 /* Latech — Blue Matter. Shared public-site composition and motion tokens. */
 :root {
-  --ink: #030914;
-  --electric: #3985ff;
+  --ink: #06101f;
+  --electric: #5599ff;
   --ice: #b9e7ff;
-  --surface: #091727;
+  --surface: #0e2038;
   --signal: #ff9853;
   --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
   --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
@@ -16,7 +16,7 @@
   --accent-calc-glow: rgba(185,231,255,.2);
   --border-subtle: rgba(147,197,253,.12);
   --border-strong: rgba(147,197,253,.24);
-  --grad-signature: linear-gradient(115deg, #2563eb, #559dff 55%, #b9e7ff);
+  --grad-signature: linear-gradient(115deg, #3478ed, #70afff 55%, #b9e7ff);
   --grad-radial: radial-gradient(ellipse at top, rgba(59,130,246,.13), transparent 65%);
 }
 html { scroll-padding-top: 100px; overflow-x: clip; }
@@ -171,3 +171,12 @@ button:disabled { cursor: not-allowed; }
 .public-interior{background:radial-gradient(ellipse at 10% 0%,#10274c66,transparent 45%)}.public-interior .glass{background:rgba(7,19,35,.8);border-color:var(--border-subtle)}.public-interior .holographic{background:var(--bg-elevated);border:1px solid var(--border-strong)}.public-interior .holographic::before,.public-interior .holographic::after{display:none}.public-interior h1,.public-interior h2{letter-spacing:-.045em}.public-interior :is(a,button):focus-visible{outline-color:var(--ice)}
 .service-inquiry{scroll-margin-top:115px}.service-inquiry h2{font:700 clamp(28px,3.5vw,44px)/1.1 var(--font-display);margin-bottom:16px}.service-inquiry>p{color:var(--text-secondary);font-size:14px;line-height:1.8;margin-bottom:28px}
 @media(max-width:850px){.project-statement{grid-template-columns:1fr;gap:32px}.project-statement>div>p:not(.eyebrow){max-width:100%}}
+
+/* Crawlable language navigation, shared with translated commercial pages. */
+.language-menu { position: relative; flex-shrink: 0; font-size: 12px; pointer-events: auto; }
+.language-menu summary { cursor: pointer; min-width: 38px; min-height: 44px; display: flex; align-items: center; justify-content: center; color: var(--ice); list-style: none; }
+.language-menu summary::-webkit-details-marker { display: none; }
+.language-menu .language-switcher { position: absolute; top: 48px; right: 0; min-width: 155px; padding: 12px; border: 1px solid var(--border-strong); border-radius: 10px; background: var(--surface); display: flex; flex-direction: column; z-index: 80; box-shadow: 0 12px 30px #0005; }
+.language-switcher { display: flex; flex-wrap: wrap; gap: 4px 20px; }
+.language-switcher a { display: inline-flex; min-height: 38px; align-items: center; font-size: 13px; color: var(--brand-200); }
+.language-switcher a:hover, .language-switcher a[aria-current] { color: var(--ice); text-decoration: underline; text-underline-offset: 5px; }

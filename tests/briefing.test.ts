@@ -81,12 +81,12 @@ describe('voluntary defensive briefing storage', () => {
     assert.equal(readBriefing(blocked), null); assert.equal(saveBriefing(blocked, EMPTY_BRIEFING), false); assert.equal(clearBriefing(blocked), false);
   });
   it('keeps private answers out of analytics and does not submit anything in the background', () => {
-    const client = readFileSync('src/app/briefing/BriefingClient.tsx', 'utf8');
+    const client = readFileSync('src/app/(es)/briefing/BriefingClient.tsx', 'utf8');
     assert.doesNotMatch(client, /\bfetch\s*\(|XMLHttpRequest|sendBeacon|\/api\//);
     const events = [...client.matchAll(/track\('[^']+',\s*\{([^}]*)\}/g)].map(match => match[1].trim());
     assert.ok(events.length >= 4);
     for (const payload of events) assert.ok(['project: state.project', 'decision: decision.id'].includes(payload), payload);
     assert.match(client, /useState\(false\)/);
-    assert.match(readFileSync('src/app/briefing/briefing.module.css', 'utf8'), /@media print/);
+    assert.match(readFileSync('src/app/(es)/briefing/briefing.module.css', 'utf8'), /@media print/);
   });
 });

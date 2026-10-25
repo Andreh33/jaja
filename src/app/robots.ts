@@ -5,6 +5,6 @@ export default function robots(): MetadataRoute.Robots {
     rules: [
       { userAgent: '*', allow: '/', disallow: ['/admin', '/dashboard', '/api', '/mando'] },
     ],
-    sitemap: 'https://serviciosonlineweb.com/sitemap.xml',
+    sitemap: ['https://serviciosonlineweb.com/sitemap.xml', 'https://serviciosonlineweb.com/sitemap-international.xml'],
   };
 }

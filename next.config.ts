@@ -2,8 +2,9 @@ import type { NextConfig } from 'next';
 import path from 'path';
 
 const nextConfig: NextConfig = {
+  experimental: { globalNotFound: true },
   // Build QA without replacing the assets of an already running local server.
-  ...(process.env.LATECH_ISOLATED_QA === '1' ? { distDir: '.next-qa', experimental: { cpus: 1 } } : {}),
+  ...(process.env.LATECH_ISOLATED_QA === '1' ? { distDir: '.next-qa', experimental: { globalNotFound: true, cpus: 1 } } : {}),
   turbopack: {
     root: path.join(__dirname),
   },

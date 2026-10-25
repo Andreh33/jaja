@@ -1,0 +1,715 @@
+{
+  "code": "en",
+  "name": "English",
+  "ogLocale": "en_GB",
+  "ui": {
+    "home": "Home",
+    "services": "Services",
+    "projects": "Projects",
+    "about": "About us",
+    "contact": "Contact",
+    "blog": "Insights",
+    "language": "Language",
+    "readMore": "Read the article",
+    "backToBlog": "Back to insights",
+    "related": "Related articles",
+    "author": "Latech editorial team",
+    "whatsapp": "Talk to us on WhatsApp",
+    "skip": "Skip to content",
+    "legal": "Legal notice",
+    "privacy": "Privacy policy",
+    "terms": "Terms of use",
+    "remote": "Based in Spain, working remotely on projects for businesses in other countries.",
+    "phone": "Telephone",
+    "contactTitle": "Tell us what your business needs",
+    "contactIntro": "Share your goals, current website and main constraints. We can use that context to discuss a suitable scope for your project. Email info@latech.es or contact us on WhatsApp at +34 684 739 091.",
+    "whatsappMessage": "Hello Latech, I would like a quote. My country is: . The service I need is: . My current website is: . My preferred timing is: .",
+    "processTitle": "A clear process from brief to launch",
+    "processSteps": [
+      "Define the business objective, audience, scope and content.",
+      "Build and review the design, functionality and integrations.",
+      "Test the agreed journeys, prepare launch and document ongoing work."
+    ],
+    "articlesIntro": "Practical guides to websites, ecommerce and automation, with decisions you can apply to your own business.",
+    "serviceIntro": "Digital services organised around your customers, your internal processes and a maintainable technical foundation.",
+    "projectsIntro": "Explore real Latech projects and the existing project materials that explain their design and functionality.",
+    "aboutTitle": "A small team with a practical approach",
+    "aboutIntro": "Latech was founded by Andrés Rubio and Luis Grondona in Puebla de la Calzada, Badajoz, Spain.",
+    "aboutBody": [
+      "We work on web design, ecommerce and AI automation with n8n. Each project starts with a business problem and a defined set of priorities.",
+      "Our base is in Spain and we also work remotely on projects for businesses in other countries. The scope, responsibilities and communication arrangements are agreed for each project.",
+      "We favour clear customer journeys, useful content and tools that can be maintained. Our project pages use real work and available materials to explain what was built."
+    ],
+    "contactDetails": "Contact details",
+    "moreServices": "Explore our services",
+    "allArticles": "All articles"
+  },
+  "home": {
+    "title": "Web design, ecommerce and AI automation | Latech",
+    "description": "Build a clearer business website, a practical online shop or connected workflows with Latech, a Spain-based team working remotely on international projects.",
+    "heading": "Digital projects that make everyday business easier",
+    "intro": "Websites that explain your offer, shops that support buying decisions and automations that connect the work behind them.",
+    "body": [
+      "Latech brings web design, ecommerce and n8n AI automation together around a concrete objective. We start with the people using the system: what they need to understand, what they want to do and where the current process creates friction.",
+      "Founded by Andrés Rubio and Luis Grondona in Puebla de la Calzada, Badajoz, Spain, we work remotely on projects for businesses in other countries. Tell us your market, current tools and priorities so we can discuss an appropriate scope."
+    ]
+  },
+  "services": [
+    {
+      "id": "web",
+      "title": "Business website design",
+      "description": "Give your business a clear website with useful content, accessible navigation and contact journeys tailored to the people you want to reach online.",
+      "intro": "A business website should answer the questions that come before a useful enquiry.",
+      "sections": [
+        {
+          "title": "Clarify the offer",
+          "paragraphs": [
+            "We structure pages around your services, customers and buying decisions. The initial brief identifies what visitors need to understand and which actions matter to your business.",
+            "Content, navigation and calls to action should work together. A visitor comparing suppliers needs a clear scope, relevant evidence and a practical next step."
+          ]
+        },
+        {
+          "title": "Design for real use",
+          "paragraphs": [
+            "We consider mobile layouts, readable typography, keyboard navigation and straightforward forms as part of the design. Visual choices should support understanding and make important information easy to find.",
+            "The agreed scope can include service pages, project material and technical SEO foundations. We define those deliverables before building so priorities stay visible."
+          ]
+        },
+        {
+          "title": "Prepare the handover",
+          "paragraphs": [
+            "Before launch, we review the agreed customer journeys and the content that supports them. Redirects, contact details and measurement requirements belong in the launch plan.",
+            "We document relevant editing and maintenance responsibilities. A useful website needs someone to own its content and keep business information accurate after publication."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "shop",
+      "title": "Ecommerce websites",
+      "description": "Plan an online shop around clear product information, practical checkout journeys and the operational work that follows each customer order.",
+      "intro": "An online shop joins product discovery, payment and fulfilment into one customer experience.",
+      "sections": [
+        {
+          "title": "Make products easier to compare",
+          "paragraphs": [
+            "We organise categories, product information and navigation around how customers choose. Product variants, images and delivery information should help buyers understand what they are ordering.",
+            "The catalogue structure must also fit the way your team maintains stock and product data. We define those needs before choosing features."
+          ]
+        },
+        {
+          "title": "Connect buying and operations",
+          "paragraphs": [
+            "Checkout decisions affect payment, shipping and order administration. We map the necessary integrations and identify who handles each step when an order arrives.",
+            "Exceptions matter too: unavailable products, failed payments and incomplete addresses require understandable messages and a clear internal process."
+          ]
+        },
+        {
+          "title": "Launch with a working process",
+          "paragraphs": [
+            "Testing covers representative products, devices and order journeys within the agreed scope. Your team should know how to update products and handle common order situations.",
+            "We can discuss connections with existing business tools where appropriate. The aim is a shop your team can operate, with responsibilities and constraints made explicit."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ai",
+      "title": "AI automation with n8n",
+      "description": "Connect business tools with n8n workflows and carefully scoped AI tasks, with validation, human review and practical handling of operational exceptions.",
+      "intro": "Automation starts with understanding the process, the data and the decisions that need human judgment.",
+      "sections": [
+        {
+          "title": "Map a repeatable workflow",
+          "paragraphs": [
+            "We identify the trigger, inputs, business rules and expected output. Typical candidates include organising incoming enquiries, preparing internal summaries and moving approved data between tools.",
+            "A useful brief describes the current manual process and its exceptions. That makes it possible to decide whether rules, an AI step or a simpler integration is appropriate."
+          ]
+        },
+        {
+          "title": "Set boundaries for AI",
+          "paragraphs": [
+            "AI can help classify or draft information, but its output needs checks suited to the task. Sensitive decisions and external actions may require human approval.",
+            "We consider data access, validation and the minimum information needed by each integration. The design should match the tools and permissions your business can actually provide."
+          ]
+        },
+        {
+          "title": "Make failures visible",
+          "paragraphs": [
+            "A workflow needs a clear owner, useful logs and a recovery path when a connected system fails. Repeated events should not silently create duplicate records.",
+            "We define test cases and document the agreed workflow. You can then assess reliability and adjust the process as your business requirements change."
+          ]
+        }
+      ]
+    }
+  ],
+  "articles": [
+    {
+      "id": "website-leads",
+      "title": "How to turn your business website into better enquiries",
+      "slug": "business-website-better-enquiries",
+      "description": "Improve your website enquiry journey with clearer service pages, useful proof, focused forms and a practical way to measure the quality of incoming leads.",
+      "intro": [
+        "A website can attract visitors without helping them decide whether to contact you. The problem often sits between the offer and the next step: visitors cannot see who the service suits, what it includes or what information they should send.",
+        "For a service business, the aim is a relevant conversation. Start by defining what makes an enquiry useful, then design the pages and contact options around that definition. This gives content, design and measurement a shared purpose."
+      ],
+      "sections": [
+        {
+          "title": "Define a useful enquiry",
+          "paragraphs": [
+            "Write down the characteristics your team needs to assess a request: service required, location, project stage and the main problem. Avoid collecting details simply because a form can hold them. A maintenance company might need the equipment type and service area; a consultant might need the business objective and decision context. Compare recent enquiries with this list and identify where information is missing. Your website can explain those requirements before someone opens the form."
+          ]
+        },
+        {
+          "title": "Give each service a decision page",
+          "paragraphs": [
+            "A service page should explain the problem addressed, the work involved and the situations in which the service is appropriate. Include boundaries as well as benefits. Someone seeking a small update should understand whether the offer covers that work. Use headings that answer real questions and place practical detail near the relevant action. A page covering several unrelated services makes comparison harder and gives you less control over the message each visitor sees."
+          ]
+        },
+        {
+          "title": "Use evidence that answers doubts",
+          "paragraphs": [
+            "Choose real project material that supports the specific service being discussed. Explain the initial requirement, the solution and any observable functionality without inventing commercial outcomes. A screenshot alone rarely explains why a design decision matters. Add context about navigation, a booking step or a product selection process. If you cannot share a client project, a clearly labelled demonstration can explain an approach, but it must never be presented as commissioned work."
+          ]
+        },
+        {
+          "title": "Make the next step predictable",
+          "paragraphs": [
+            "Place a relevant call to action after the information needed to take it. Tell visitors what they can send and what the conversation concerns. A short form can ask for contact details, service and a brief description; optional fields can capture a website or preferred timing. Keep validation understandable and preserve entered information when an error occurs. On mobile, check that labels remain visible and the submit button is reachable without awkward interactions."
+          ]
+        },
+        {
+          "title": "Treat contact channels as one process",
+          "paragraphs": [
+            "Forms, email and WhatsApp should feed a process someone owns. Decide how your team records the source, qualifies a request and avoids duplicate follow-up. A WhatsApp link can include a brief suggested message, but the visitor should be able to edit it. Do not promise immediate availability unless you can deliver it. Check every channel using a real device and confirm that the destination address or telephone number is correct."
+          ]
+        },
+        {
+          "title": "Measure quality alongside actions",
+          "paragraphs": [
+            "A button click is evidence of an action, not proof of a qualified lead. Define events for meaningful steps and compare them with the requests your team receives. Record broad reasons for unsuitable enquiries, such as wrong service or unsupported location. Review those patterns before changing the entire layout. If requests repeatedly ask the same basic question, answer it earlier on the service page and assess whether subsequent conversations become more useful."
+          ]
+        },
+        {
+          "title": "Run a simple page review",
+          "paragraphs": [
+            "Ask a colleague who does not sell the service to read the page and describe who it suits, what the work involves and how to request it. Let them use a phone without coaching. Note the questions they cannot answer and the point at which they hesitate. Then repeat the exercise with the form confirmation and the message received by your team. This exposes gaps between persuasive page copy and the practical information needed to handle the enquiry.",
+            "Keep a note of changes made after the review. If enquiry quality improves, preserve the information that helped; if it does not, inspect the incoming request and the source page together before making another change."
+          ]
+        }
+      ],
+      "checklist": [
+        "Define what makes an enquiry relevant.",
+        "Give each main service a clear page.",
+        "Show real evidence with useful context.",
+        "Test forms and WhatsApp on mobile.",
+        "Review enquiry quality with your team."
+      ],
+      "conclusion": "Start with the service that generates the most important conversations. Clarify its scope, answer the common doubts and test the complete contact journey. Latech can help connect those decisions through website design, content structure and practical contact flows."
+    },
+    {
+      "id": "website-budget",
+      "title": "How to prepare a useful brief for a website quote",
+      "slug": "website-quote-project-brief",
+      "description": "Prepare a website brief that helps compare proposals: define business goals, pages, content, integrations, ownership and the work required after launch.",
+      "intro": [
+        "A useful website quote depends on a useful description of the work. A request for a modern site leaves important questions open, from the number of page types to who prepares the content and how enquiries reach your team.",
+        "You do not need to specify every technical detail before speaking to a provider. You do need enough context to distinguish essential requirements from preferences and to compare proposals on the same basis. A structured brief makes that conversation much more productive."
+      ],
+      "sections": [
+        {
+          "title": "Start with the business change",
+          "paragraphs": [
+            "Describe what needs to improve in business terms. Perhaps customers cannot understand your service range, staff repeatedly answer delivery questions or an old contact form loses useful context. Explain the current situation and the desired behaviour. Include your primary audience and market, because a catalogue for trade buyers differs from a public information site. Avoid selecting a technical solution before describing the problem; the brief should leave room for a simpler approach."
+          ]
+        },
+        {
+          "title": "List page types and content responsibilities",
+          "paragraphs": [
+            "Separate unique layouts from repeated content. Ten articles using one template do not represent the same design work as ten distinct interactive pages. List services, project pages, product categories and languages, then identify who supplies text, images and approvals. Existing content may require rewriting or migration. Note whether you have permission to use each asset. Missing material can affect delivery just as much as development, so make content ownership explicit."
+          ]
+        },
+        {
+          "title": "Describe functionality with user journeys",
+          "paragraphs": [
+            "Replace vague feature names with a short scenario. For example: a visitor selects a service, sends a request with an attachment and receives a confirmation while the team sees the request in its existing system. State which steps are essential and which could wait. For integrations, name the current tools and available access. Mention unusual cases such as large files or multiple recipients so they can be discussed before work starts."
+          ]
+        },
+        {
+          "title": "Include the existing technical situation",
+          "paragraphs": [
+            "Share the current website, domain arrangements and hosting context without sending passwords in the initial brief. Explain whether addresses must remain available, whether email depends on the domain and whether other systems use the site. If analytics or search data exist, they may help identify important pages. A redesign often includes redirect planning and content preservation; treating it as a completely empty site can hide necessary work from the quote."
+          ]
+        },
+        {
+          "title": "Compare deliverables and assumptions",
+          "paragraphs": [
+            "Read proposals for their included work, dependencies and exclusions. Ask how revisions, content entry, accessibility considerations, technical SEO and testing are handled. Establish what happens when requirements change after approval. A comparison table can list each deliverable and its owner without reducing every decision to a headline price. Check what you receive at handover, which third-party services require separate accounts and who owns the resulting assets and access."
+          ]
+        },
+        {
+          "title": "Plan what happens after launch",
+          "paragraphs": [
+            "A website continues to need content updates, software maintenance and operational attention. Clarify who checks forms, renews services and responds when an integration fails. Describe any editing tasks your team expects to perform independently. The launch plan should include approval, checks and a way to report problems. If you have a preferred date, explain the business reason and any fixed dependency so the provider can assess feasibility rather than assume a guarantee."
+          ]
+        },
+        {
+          "title": "Prepare a comparison worksheet",
+          "paragraphs": [
+            "Create one row for each requirement and columns for included work, supplied material, responsible person and open questions. Add an example where wording could be ambiguous: product import might mean a one-time upload or a continuing synchronisation. Ask providers to clarify the same scenario. This simple worksheet makes differences visible and gives the eventual project a starting point for acceptance checks. Update it when scope changes so the approved version remains a useful reference.",
+            "Attach examples of websites only with an explanation of the feature you find useful. A reference may illustrate navigation, reading order or product comparison without implying that its entire design must be reproduced."
+          ]
+        }
+      ],
+      "checklist": [
+        "State the business problem and audience.",
+        "List page types and required languages.",
+        "Assign content and approval responsibilities.",
+        "Describe integrations through concrete scenarios.",
+        "Compare launch and maintenance scope."
+      ],
+      "conclusion": "A clear brief reduces ambiguity before it becomes rework. Share the facts you know, mark open decisions and separate essentials from future ideas. Latech can use that information to discuss an appropriate scope for a website, shop or connected workflow."
+    },
+    {
+      "id": "local-seo",
+      "title": "Local SEO for a business with a real service area",
+      "slug": "local-seo-real-service-area",
+      "description": "Build a useful local search presence with accurate business information, focused service pages, genuine project evidence and a plan for maintaining details.",
+      "intro": [
+        "Local search works best when your website describes where and how your business actually operates. A business serving customers remotely has different location needs from a shop that welcomes visitors at a public address.",
+        "Start with the real operating model. Then make the website and relevant business listings consistent with it. Publishing many pages with place names cannot replace clear services, trustworthy information and a useful explanation of the area you can serve."
+      ],
+      "sections": [
+        {
+          "title": "Describe the actual operating model",
+          "paragraphs": [
+            "Write a short internal statement covering your base, service area and whether customers visit your premises. This prevents marketing copy from implying offices that do not exist. A company based in one town may serve a wider region, while a remote provider can work across borders without a local office. Use precise wording on contact and service pages. If some work requires travel, explain how that affects availability rather than presenting every place as an established location."
+          ]
+        },
+        {
+          "title": "Keep public business details consistent",
+          "paragraphs": [
+            "Check the business name, telephone number, website and contact details wherever you control them. Old numbers and incomplete hours create avoidable uncertainty. If you use a Google Business Profile, consult Google’s eligibility and representation guidelines before choosing address or service-area settings. Do not create an address simply to appear in a city. Record who owns each listing and how changes are approved, so future updates do not depend on forgotten accounts."
+          ]
+        },
+        {
+          "title": "Build pages around real local needs",
+          "paragraphs": [
+            "A location page needs a purpose beyond repeating a town name. Explain the relevant services, how the work is delivered and any genuine local requirements. A repair business could describe supported equipment and practical collection arrangements. A remote agency can explain its base and remote project process. If you lack distinct information for a separate town page, a clear regional service page may be more useful than several nearly identical pages."
+          ]
+        },
+        {
+          "title": "Show context through actual work",
+          "paragraphs": [
+            "Real projects can help visitors understand your experience and approach. Describe the requirement and delivered functionality using material you are allowed to share. Avoid claiming a local client or commercial result that you cannot substantiate. Where appropriate, connect the project to the relevant service page. Useful captions and explanatory text make images more informative, especially when a visitor is comparing providers and cannot infer the scope from a visual alone."
+          ]
+        },
+        {
+          "title": "Support discovery with a sound website",
+          "paragraphs": [
+            "Make important services reachable through ordinary navigation and use descriptive titles and headings. Google Search Central recommends helpful content and links that allow pages to be discovered. Keep contact details easy to locate and make telephone links usable on mobile. Structured data, where appropriate, should describe real visible information. It cannot turn an ineligible business location into a legitimate office, and it should never contain invented reviews or misleading opening details."
+          ]
+        },
+        {
+          "title": "Review requests and maintain accuracy",
+          "paragraphs": [
+            "Use available search and website data to understand which local queries lead to relevant visits. Combine that with the actual enquiries received. A page attracting requests outside your service area may need clearer boundaries rather than more keywords. Revisit public details when your operating model changes, and remove obsolete claims. Treat local visibility as ongoing information maintenance: useful pages, accurate listings and a consistent description of what the business can genuinely deliver."
+          ]
+        },
+        {
+          "title": "Audit one local journey",
+          "paragraphs": [
+            "Search your own business information and follow a representative route from a listing to the relevant service and contact page. Note mismatched names, out-of-date service descriptions and missing explanations of the area covered. Then ask whether someone outside your immediate town could tell if the offer applies to them. Correct those specific gaps first. A consistent journey gives potential customers more practical confidence than adding a location phrase to every heading.",
+            "When updating an address or number, check the footer, contact page, downloadable documents and structured data as well as public listings. These overlooked copies can continue distributing obsolete details after the main page has changed."
+          ]
+        }
+      ],
+      "checklist": [
+        "Write down your real base and service area.",
+        "Check contact details across controlled listings.",
+        "Avoid invented offices and duplicate town pages.",
+        "Connect service pages with genuine project context.",
+        "Review local enquiries and update information."
+      ],
+      "conclusion": "Local SEO begins with an accurate business description and a website that helps people decide. Latech is based in Puebla de la Calzada, Badajoz, Spain, and works remotely on projects; that real context should guide its location content."
+    },
+    {
+      "id": "international-seo",
+      "title": "How to plan a multilingual website for international SEO",
+      "slug": "multilingual-website-international-seo",
+      "description": "Plan a multilingual website with useful market content, clear language URLs, reciprocal hreflang and practical checks for navigation, contact and maintenance.",
+      "intro": [
+        "A multilingual website needs more than translated headings. Visitors should understand the offer, find the right language and complete a useful action without falling back into another language halfway through the journey.",
+        "Before adding markets, decide which audiences you can realistically serve and what content they need. International SEO then becomes a way to describe those pages clearly to search engines while keeping the customer experience coherent and maintainable."
+      ],
+      "sections": [
+        {
+          "title": "Choose markets and service boundaries",
+          "paragraphs": [
+            "Define the countries or audiences you want to reach and the services available to them. Consider currency, delivery constraints, contact arrangements and the information needed before quoting. A remote service provider should state its actual base and explain remote working without inventing local offices. Language and country are separate decisions: an English page can help visitors in several countries, while a market-specific page needs genuinely different content to justify its existence."
+          ]
+        },
+        {
+          "title": "Design a stable URL structure",
+          "paragraphs": [
+            "Give each language version a distinct, crawlable address and keep the pattern predictable. A language directory can make ownership and navigation straightforward, but the right structure also depends on the existing website. Map important pages before launch so translations have clear equivalents. Do not rely only on cookies or a language selector that changes text at one address. Search engines and visitors need a dependable way to reach and share each version."
+          ]
+        },
+        {
+          "title": "Localise the full commercial journey",
+          "paragraphs": [
+            "Translate service explanations, forms, navigation, error messages and contact prompts as a connected experience. Adapt examples and wording so they feel natural to the reader. Confirm telephone formatting and clarify the country where the business is based. Do not claim support or operational capacity that has not been agreed. When a translation is unavailable, make the destination clear instead of silently sending visitors to a page they may not understand."
+          ]
+        },
+        {
+          "title": "Connect language alternatives correctly",
+          "paragraphs": [
+            "Google Search Central describes hreflang as a way to identify alternative language or regional versions. Each relevant page should reference itself and its equivalents, and those relationships should be reciprocal. Use the correct language and optional region codes rather than guessing from a country name. Keep canonical decisions consistent with the purpose of each page. A translated page normally needs to remain indexable if you want it to appear as its own search result."
+          ]
+        },
+        {
+          "title": "Write useful content for each audience",
+          "paragraphs": [
+            "A translation can preserve meaning while still adapting terminology, questions and examples. For commercial pages, explain scope, responsibilities and the next step in language a buyer would use. For editorial content, ensure the article teaches something substantial rather than merely swapping place names. Avoid creating numerous country pages from one generic paragraph. Where the offer is identical, a strong language version can be clearer and easier to maintain than unsupported regional variations."
+          ]
+        },
+        {
+          "title": "Test and maintain the language system",
+          "paragraphs": [
+            "Check equivalent page links, titles, descriptions, hreflang, canonical addresses and contact journeys on representative pages. Include missing translations and moved pages in the test plan. After publication, monitor indexing and search queries by language where data is available. Assign responsibility for keeping versions aligned when services change. A multilingual site becomes unreliable if only the original language receives updates while other pages continue advertising outdated functionality or contact instructions."
+          ]
+        },
+        {
+          "title": "Check one page pair manually",
+          "paragraphs": [
+            "Choose a service and open both language versions side by side. Switch languages from each page and confirm you remain on the equivalent service. Submit a test enquiry using the translated form, then examine the confirmation and internal notification. Check that the requested country and service remain understandable to the team. This small exercise tests the commercial system behind the translation and often reveals missing labels or routing assumptions that a text-only review would miss.",
+            "Keep untranslated drafts out of ordinary language navigation until they are ready. A visible language choice should lead to usable content, and each published translation should have an identified owner for later corrections."
+          ]
+        }
+      ],
+      "checklist": [
+        "Define audiences and realistic service coverage.",
+        "Map distinct URLs for language versions.",
+        "Localise navigation, forms and contact prompts.",
+        "Verify reciprocal language alternative links.",
+        "Assign ownership for future language updates."
+      ],
+      "conclusion": "Start with a manageable language set and a complete customer journey. Latech can help structure multilingual websites around clear services, maintainable content and an honest description of remote work from Spain."
+    },
+    {
+      "id": "mobile-performance",
+      "title": "Mobile website performance: what to improve first",
+      "slug": "mobile-website-performance-priorities",
+      "description": "Prioritise mobile website performance by reviewing real journeys, images, JavaScript, layout stability and field data before choosing technical improvements.",
+      "intro": [
+        "A mobile page can look attractive in a design preview and still be difficult to use on an ordinary connection. Large images, delayed interactions and moving layouts can interrupt the task a visitor came to complete.",
+        "The right starting point is the customer journey, not a score in isolation. Identify the pages and actions that matter, measure them in context and fix the causes that make those actions slow or unreliable."
+      ],
+      "sections": [
+        {
+          "title": "Choose representative journeys",
+          "paragraphs": [
+            "List the mobile tasks that support the business: reading a service, comparing a product, opening contact details or completing a form. Include the page visitors enter and the steps that follow. Test on a real phone when possible, using ordinary network conditions as well as controlled tools. Record visible problems before changing code. A slow hero image and an unresponsive checkout button may require very different investigations, even when both appear on a performance report."
+          ]
+        },
+        {
+          "title": "Understand what the measurements describe",
+          "paragraphs": [
+            "web.dev explains Core Web Vitals through loading, responsiveness and visual stability, using Largest Contentful Paint, Interaction to Next Paint and Cumulative Layout Shift. Field data reflects real visits, while laboratory tests help reproduce and investigate issues. A new or low-traffic page may not have sufficient field data. Avoid treating one synthetic run as a definitive business result. Compare similar conditions and use the measurements to locate causes rather than chase a perfect score."
+          ]
+        },
+        {
+          "title": "Reduce unnecessary image cost",
+          "paragraphs": [
+            "Check whether images are delivered at dimensions appropriate to the visible layout. A small card rarely needs the same source size as a large project image. Use suitable formats and responsive image delivery where supported, and give images dimensions so space can be reserved. Prioritise the image likely to become the main visible content rather than delaying it indiscriminately. Review sliders and decorative backgrounds: removing an unnecessary image can be more effective than compressing it repeatedly."
+          ]
+        },
+        {
+          "title": "Investigate scripts and third-party tools",
+          "paragraphs": [
+            "Identify which scripts are essential to the initial task and which can wait. Chat widgets, embedded media, tracking tools and animation libraries can add work before a visitor interacts. Remove unused functionality and avoid loading the same dependency through several integrations. For necessary scripts, assess execution cost as well as download size. A smaller transfer can still block interaction if it creates extensive processing. Test forms and menus after changes so performance work does not break functionality."
+          ]
+        },
+        {
+          "title": "Keep the interface stable and usable",
+          "paragraphs": [
+            "Reserve space for images, embeds and components that load later. Check whether fonts or banners move important controls while the user is trying to tap. Keep labels readable and ensure navigation works without precise gestures. Loading placeholders should communicate progress without trapping the task. Review validation and error states under slower conditions: a user who taps submit twice because feedback is absent can create an operational problem as well as a frustrating experience."
+          ]
+        },
+        {
+          "title": "Verify improvements where they matter",
+          "paragraphs": [
+            "Repeat representative tests after each meaningful change and compare the same page state. Check both speed and successful completion of the customer journey. Field measurements may take time to reflect a deployment because they aggregate real visits. Maintain a record of the main changes and remaining constraints. If a third-party payment or booking system limits performance, distinguish what you control and discuss the practical trade-offs before replacing a system that the business depends on."
+          ]
+        },
+        {
+          "title": "Use a focused issue record",
+          "paragraphs": [
+            "For each performance issue, record the page, device, network condition, user action and observed symptom. Add the measurement or screenshot that supports the finding, then assign an owner and a proposed check after correction. This avoids vague requests to make the whole site faster. It also helps separate a problem that affects every page from one caused by a particular image, form component or external integration, making the next technical decision more targeted.",
+            "Prioritise issues by the task disrupted and how broadly they occur. A reproducible delay that blocks submitting a request deserves attention even when a visually prominent page achieves a more attractive laboratory score."
+          ]
+        }
+      ],
+      "checklist": [
+        "Test the main mobile customer journeys.",
+        "Separate field evidence from lab diagnostics.",
+        "Right-size images and reserve layout space.",
+        "Review scripts that delay interaction.",
+        "Retest functionality after performance changes."
+      ],
+      "conclusion": "Performance work should make the website easier to use in real conditions. Focus first on the pages and interactions that affect contact or purchasing, then validate that each technical change improves the complete journey."
+    },
+    {
+      "id": "online-store",
+      "title": "What to prepare before building an online shop",
+      "slug": "prepare-online-shop-catalogue-checkout",
+      "description": "Prepare your online shop with a usable catalogue, clear product data, delivery rules, payment journeys and an operational plan for orders and exceptions.",
+      "intro": [
+        "An online shop is a sales channel and an operating process. The pages customers see depend on catalogue data, stock decisions, delivery arrangements and the people who handle orders after payment.",
+        "Preparing those foundations before development makes the build easier to scope and the shop easier to operate. A small, coherent catalogue with reliable information is usually a better starting point than a large catalogue that leaves basic buying questions unanswered."
+      ],
+      "sections": [
+        {
+          "title": "Define the first selling scenario",
+          "paragraphs": [
+            "Describe your initial customers, destinations and products. Specify whether the shop serves consumers, businesses or both, and identify any requirements that change the buying journey. A trade buyer may need a quote before ordering, while a standard retail product may suit direct checkout. Choose a manageable first scope and list expansion ideas separately. This helps the team avoid building complex rules for markets or product types that are not yet ready to launch."
+          ]
+        },
+        {
+          "title": "Create consistent product information",
+          "paragraphs": [
+            "Prepare a product spreadsheet or source system with stable identifiers, names, descriptions, images and relevant attributes. Separate product-level information from variant data such as size or finish. Explain what is included, what must be selected and any compatibility constraints. Customers should not need to infer dimensions from a photograph. Agree who owns this information and how updates reach the website, especially when stock and product details are maintained in another tool."
+          ]
+        },
+        {
+          "title": "Plan categories around customer decisions",
+          "paragraphs": [
+            "Group products according to how people search and compare, rather than copying an internal warehouse structure. Choose filters that depend on consistent attributes and help visitors narrow real choices. A filter that returns unpredictable results can be worse than a simpler category page. Check that product names and variant labels remain understandable in search results, basket summaries and order emails. The catalogue should stay coherent when viewed outside the original product page."
+          ]
+        },
+        {
+          "title": "Make delivery and total cost understandable",
+          "paragraphs": [
+            "Identify supported destinations, delivery methods and the rules needed to calculate an order. Explain relevant charges and constraints before the final purchase step. Avoid presenting a delivery estimate as a guaranteed outcome unless your operation supports it. Requirements concerning taxes, consumer information and policies need appropriate professional review for your markets. The technical brief should record those dependencies without assuming that installing a shop platform resolves the business or legal decisions automatically."
+          ]
+        },
+        {
+          "title": "Test payment and order exceptions",
+          "paragraphs": [
+            "Prepare representative checkout scenarios, including unavailable stock, failed payment and invalid addresses. Confirm what the customer sees and what the team receives in each case. A payment attempt should not be confused with a confirmed order. Check notification recipients and the handling of repeated events so the same transaction is not processed twice. Use the payment provider’s supported testing tools and keep test data separate from real customer records during preparation."
+          ]
+        },
+        {
+          "title": "Assign the work after purchase",
+          "paragraphs": [
+            "Map who checks orders, updates fulfilment, responds to questions and handles cancellation or return requests. Make sure the website status reflects the process the team can deliver. Document routine product editing and the recovery steps for integration failures. Before opening the shop, place representative test orders from discovery through internal handling. A successful checkout screen is only one part of readiness; staff need the information and access required to complete the customer promise."
+          ]
+        },
+        {
+          "title": "Walk through a catalogue edge case",
+          "paragraphs": [
+            "Choose a product with several variants and follow it from category to order notification. Change the selected option, check the price and stock information, then inspect the basket description. Ask a team member to fulfil the test order using only the received details. If they need to reopen the storefront to identify the variant, improve the order data before launch. This exercise connects customer-facing clarity with the information required to pick and dispatch correctly.",
+            "For imported catalogues, review a sample after transfer rather than relying only on the import status. Check accents, image associations, variant identifiers and units so a technically completed upload does not hide inaccurate product information."
+          ]
+        }
+      ],
+      "checklist": [
+        "Choose the first products and destinations.",
+        "Prepare consistent product and variant data.",
+        "Clarify delivery rules and buying information.",
+        "Test failed and repeated payment scenarios.",
+        "Assign order handling and catalogue ownership."
+      ],
+      "conclusion": "The strongest ecommerce brief connects the storefront with daily operations. Latech can help plan and build that connection, from catalogue structure and checkout to the integrations your team needs for maintaining products and handling orders."
+    },
+    {
+      "id": "whatsapp-conversion",
+      "title": "Use WhatsApp on your website without losing enquiry context",
+      "slug": "website-whatsapp-enquiry-context",
+      "description": "Make website WhatsApp enquiries more useful with contextual messages, clear contact choices, mobile testing and a simple process for qualifying requests.",
+      "intro": [
+        "A WhatsApp button can make contact easier, especially for visitors using a phone. It can also produce a stream of messages that say only hello, leaving your team to reconstruct which page the person visited and what they need.",
+        "The goal is to reduce effort while preserving useful context. Treat WhatsApp as one part of the enquiry journey, with a clear message, a responsible person and an alternative for visitors who prefer another channel."
+      ],
+      "sections": [
+        {
+          "title": "Match the button to the page",
+          "paragraphs": [
+            "Place the contact action where the visitor has enough information to ask a useful question. A service page can invite a project enquiry; a product page may invite a question about compatibility or availability. Use labels that explain the purpose rather than a generic icon alone. Keep floating controls from covering content, forms or mobile navigation. A contact option should support the page’s main task, not repeatedly interrupt visitors before they understand the offer."
+          ]
+        },
+        {
+          "title": "Suggest a message that helps both sides",
+          "paragraphs": [
+            "A prefilled message can include the service and an invitation to describe the need. For a project quote, suggest country, current website and preferred timing where relevant. Keep the wording short enough to edit comfortably. Do not include sensitive information or personal details that have not been supplied for that purpose. The message should start the conversation rather than act as a compulsory questionnaire, particularly when a visitor only wants to clarify one requirement."
+          ]
+        },
+        {
+          "title": "Explain the communication arrangement",
+          "paragraphs": [
+            "Describe the purpose of the channel and any availability information your business can keep accurate. Avoid promising instant replies simply because a messaging app feels immediate. If several people handle requests, agree who reviews new messages and how a conversation becomes an assigned enquiry. A clear internal process matters more than adding the button to every page. Make sure the number belongs to the intended business account and remains under the organisation’s control."
+          ]
+        },
+        {
+          "title": "Keep alternative contact routes visible",
+          "paragraphs": [
+            "Some visitors do not use WhatsApp or prefer not to move a business conversation into a messaging app. Offer email or a suitable contact form alongside it. Each route should ask for a similar level of useful context without forcing identical behaviour. Check accessibility labels for icon buttons and make contact details understandable without depending on colour. On desktop, test what happens when the link opens a web interface or asks the user to choose an application."
+          ]
+        },
+        {
+          "title": "Measure the action honestly",
+          "paragraphs": [
+            "A WhatsApp link click indicates intent to open a conversation; it does not prove a message was sent or that a qualified enquiry arrived. Record the click as a distinct event if your measurement setup supports it appropriately. Compare those events with actual incoming conversations using a simple qualification process. Avoid collecting message contents unnecessarily. If many people click but few useful requests arrive, examine the page promise and suggested message before assuming the button design is responsible."
+          ]
+        },
+        {
+          "title": "Review recurring questions and handoffs",
+          "paragraphs": [
+            "Group common questions into themes such as service scope, product fit or project preparation. Answer repeated basic questions on the relevant pages so future conversations can start further ahead. Decide how to move important project details into the system your team uses, with suitable permissions and handling. If you automate any handoff, preserve human review where needed and test duplicate messages. Keep the conversation history usable without making a single person’s phone the only record."
+          ]
+        },
+        {
+          "title": "Review a small conversation sample",
+          "paragraphs": [
+            "Take a manageable set of recent enquiries and note the originating service, first useful question and information your team had to request again. Use broad categories rather than copying personal message contents into a separate report. If the website repeatedly leaves out the same preparation detail, improve that page or its suggested message. Repeat the review after the change to see whether conversations contain enough context to move forward without adding unnecessary friction.",
+            "If the business number changes, update the generated link and its visible label together. Test the final destination instead of assuming that editing the displayed text also changed the underlying contact address."
+          ]
+        }
+      ],
+      "checklist": [
+        "Use page-specific contact wording.",
+        "Provide a short editable starting message.",
+        "Test the destination on mobile and desktop.",
+        "Keep email or a form available.",
+        "Separate button clicks from qualified conversations."
+      ],
+      "conclusion": "WhatsApp works best when the page prepares the conversation and the team can act on it. Latech can help design those contact journeys and discuss carefully scoped integrations where a manual handoff creates avoidable work."
+    },
+    {
+      "id": "ai-automation",
+      "title": "How to choose your first n8n AI automation",
+      "slug": "first-n8n-ai-automation-workflow",
+      "description": "Choose a practical first n8n AI workflow by mapping a repeatable task, checking data quality and defining validation, human review and failure recovery.",
+      "intro": [
+        "The best first automation is usually a process your team already understands. It has a repeatable trigger, clear inputs and a result someone can recognise as correct. Adding AI before those details are clear makes uncertainty harder to manage.",
+        "With n8n, integrations and rules can connect the steps, while an AI component can handle a bounded task such as classification or drafting. The design still needs validation, an owner and a plan for exceptions."
+      ],
+      "sections": [
+        {
+          "title": "Choose a bounded process",
+          "paragraphs": [
+            "Look for repetitive work that moves information between tools or prepares material for review. For example, an incoming project request could be categorised and summarised before a person assigns it. Record how the task is performed today, including manual decisions and unusual cases. Avoid starting with a process that has no stable owner or accepted outcome. If staff disagree about the business rule, resolve that disagreement before encoding it in a workflow."
+          ]
+        },
+        {
+          "title": "Separate rules from judgment",
+          "paragraphs": [
+            "Some steps need no AI: checking required fields, looking up an identifier or routing a known category can use explicit rules. Reserve AI for work where flexible interpretation is useful and errors can be contained. Define an expected output format and how it will be checked. For a classification task, specify allowed categories and a fallback route. An unfamiliar request should reach a human rather than be forced into an inaccurate category merely to keep the automation moving."
+          ]
+        },
+        {
+          "title": "Check data and permissions",
+          "paragraphs": [
+            "List the systems involved, the information each step needs and the access your organisation can provide. Use the minimum necessary data and avoid copying entire records when a small subset is sufficient. Review how credentials are managed and who can modify the workflow. Before sending information to an AI service, confirm the applicable account settings and data arrangements. These operational decisions belong in the design, not in an improvised fix after the first live run."
+          ]
+        },
+        {
+          "title": "Define human approval points",
+          "paragraphs": [
+            "Decide which outputs can remain internal and which actions need review. A draft reply may be useful, while sending it automatically can create a different level of consequence. Show reviewers the original information alongside the proposed result so they can assess it. Make approval and rejection explicit states. A timeout should not silently become approval. If the workflow touches important customer or financial decisions, narrow the automated step and keep an appropriate person responsible."
+          ]
+        },
+        {
+          "title": "Design for repeated events and failures",
+          "paragraphs": [
+            "Connected services can time out, reject input or send an event more than once. Use stable identifiers and record enough state to recognise repeated work. Define retry behaviour carefully so a recovery attempt does not create duplicate records or messages. Log useful diagnostic information without exposing unnecessary sensitive content. Make failures visible to the owner and describe how to resume or correct a run. Reliability depends on these paths as much as on the successful demonstration."
+          ]
+        },
+        {
+          "title": "Run a controlled pilot",
+          "paragraphs": [
+            "Test representative examples, including incomplete requests, ambiguous text and unavailable services. Compare outputs with the team’s accepted decisions and review where correction is needed. Begin with limited scope and observe real operation before expanding permissions or volume. Measure practical effects such as review effort, error types and successful completion, without assuming that every automated step saves time. Keep a simple change log so staff can understand why a workflow behaves differently after an update."
+          ]
+        },
+        {
+          "title": "Write an acceptance example",
+          "paragraphs": [
+            "Before building, describe one normal input and the precise result your team expects. Add an incomplete input and a repeated event, then state whether each should be rejected, queued for review or recognised as already processed. Keep the expected outcome independent of the AI model’s wording. Reviewers can then judge whether the workflow fulfilled its business purpose even when a summary is phrased differently, and later changes can be checked against meaningful examples.",
+            "Give the workflow a descriptive name and a short operating note explaining its trigger and owner. A colleague should be able to identify its purpose and escalation route without opening every step of the implementation."
+          ]
+        }
+      ],
+      "checklist": [
+        "Select one repeatable process with an owner.",
+        "Use explicit rules wherever they are sufficient.",
+        "Limit data access and validate AI outputs.",
+        "Define approval and failure recovery paths.",
+        "Pilot with ordinary and difficult examples."
+      ],
+      "conclusion": "A useful automation removes repetitive work while keeping responsibility visible. Latech can help scope n8n workflows and AI tasks around your existing tools, clear business rules and practical control over exceptions."
+    },
+    {
+      "id": "website-migration",
+      "title": "Website migration: a practical plan for protecting useful pages",
+      "slug": "website-migration-content-redirect-plan",
+      "description": "Prepare a website migration with a page inventory, URL mapping, redirect checks, contact testing and post-launch monitoring of useful search journeys.",
+      "intro": [
+        "A website migration can change design, platform, domain or URL structure. Each change affects existing pages and the routes people use to reach them. A successful launch therefore needs a content and continuity plan alongside the new build.",
+        "Prepare that plan before old pages disappear. The aim is to preserve useful information and send visitors to the most relevant destination, while checking that forms, integrations and measurement still work after the move."
+      ],
+      "sections": [
+        {
+          "title": "Inventory what exists",
+          "paragraphs": [
+            "Collect existing URLs from the website, available sitemaps and relevant search or analytics tools. Identify pages that attract useful visits, enquiries or external links, while recognising that traffic alone does not define value. Include downloadable resources, images used elsewhere and important campaign landing pages. Mark who owns each content area and whether it should remain, change or be retired. An inventory prevents the project from discovering essential pages only after users report that they are missing."
+          ]
+        },
+        {
+          "title": "Map every important destination",
+          "paragraphs": [
+            "Create a mapping between old URLs and their planned destinations. Preserve a useful address when there is no good reason to change it. If several pages are combined, choose a destination that genuinely answers the original need. Redirecting every removed URL to the homepage can confuse users and fails to preserve context. Where no replacement exists, decide deliberately how the site should handle removal. Keep the mapping understandable to content and technical reviewers alike."
+          ]
+        },
+        {
+          "title": "Review content and indexing settings",
+          "paragraphs": [
+            "Compare key titles, headings, body content and internal links before and after the change. A visual redesign can accidentally remove information that helped visitors make decisions. Check canonical addresses, language alternatives and which pages should be indexable. Staging environments need appropriate controls, but those controls must be reviewed for production. Google Search Central’s site move guidance provides a useful reference for planning redirects and monitoring the transition when addresses change."
+          ]
+        },
+        {
+          "title": "Test technical and commercial journeys",
+          "paragraphs": [
+            "Verify redirects with their actual response behaviour and destination, avoiding unnecessary chains. Check navigation, internal search, forms, telephone links and checkout or booking steps where relevant. Confirm that emails reach the intended recipients and that integrations use the correct production endpoints. Test representative devices and consent-dependent behaviour. A page returning successfully is not sufficient evidence that the business journey works; complete the actions a real visitor would take and inspect what the team receives."
+          ]
+        },
+        {
+          "title": "Prepare launch responsibilities and recovery",
+          "paragraphs": [
+            "Agree who changes domain or hosting settings, who approves the final content and who watches for problems. Record the dependencies, including email services associated with the domain. Back up relevant data and document a recovery approach suited to the migration. Avoid changing unrelated systems at the same time unless required, because that can make diagnosis harder. Keep the URL mapping and test results available to everyone responsible for launch decisions."
+          ]
+        },
+        {
+          "title": "Monitor and correct after launch",
+          "paragraphs": [
+            "Check important pages, redirects, incoming enquiries and available search reporting after publication. Some changes in crawling or search visibility may occur, so investigate evidence rather than assuming either success or failure from one day of data. Look for broken internal links, unexpected exclusions and requests reaching the wrong destination. Update the sitemap and retain necessary redirects. Record issues with an owner and a clear priority so post-launch attention focuses first on disrupted user journeys."
+          ]
+        },
+        {
+          "title": "Keep a short migration register",
+          "paragraphs": [
+            "For each important page, record its old address, new address, content decision, redirect outcome and owner. Add a final column for the contact or buying action associated with it. This turns a technical URL list into an operational checklist. Review the highest-value journeys before launch and mark evidence of the completed checks. When a problem appears afterwards, the register helps identify the intended behaviour and the person who can resolve it.",
+            "Preserve the original URL mapping after launch rather than overwriting it with a clean list of new addresses. The old-to-new relationship remains useful when investigating external links, unexpected requests and later content changes."
+          ]
+        }
+      ],
+      "checklist": [
+        "Inventory useful pages and connected resources.",
+        "Map old URLs to relevant destinations.",
+        "Review production indexing and language settings.",
+        "Test complete contact or purchase journeys.",
+        "Assign launch monitoring and recovery ownership."
+      ],
+      "conclusion": "A migration is easier to manage when content, URLs and business operations share one plan. Latech can help prepare that plan and build the new website around tested journeys and a maintainable structure."
+    }
+  ]
+}

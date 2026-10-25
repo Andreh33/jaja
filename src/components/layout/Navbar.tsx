@@ -7,6 +7,7 @@ import { useEffect, useRef, useState } from 'react';
 import * as Dialog from '@radix-ui/react-dialog';
 import { ArrowUpRight, X } from 'lucide-react';
 import styles from './Navbar.module.css';
+import LanguageSwitcher from '@/components/shared/LanguageSwitcher';
 
 const NAV = [
   { href: '/', label: 'Inicio' },
@@ -78,6 +79,7 @@ export default function Navbar() {
           <Link href="/contacto#proyecto" className={styles.projectLink}>
             <span>Tu proyecto</span><ArrowUpRight size={15} aria-hidden="true" />
           </Link>
+          <details className="language-menu"><summary aria-label="Seleccionar idioma">ES</summary><LanguageSwitcher /></details>
           <Dialog.Trigger
             className={styles.menuButton}
             aria-label="Abrir menú de navegación"

@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Logo from './Logo';
 import { Mail, Phone, MapPin, MessageCircle } from 'lucide-react';
 import { whatsappLink } from '@/lib/stripe-links';
+import LanguageSwitcher from '@/components/shared/LanguageSwitcher';
 
 /** Ciudades destacadas: refuerzan el descubrimiento de las landing locales
  *  desde todas las páginas (Google apenas las encuentra desde el hub solo). */
@@ -126,6 +127,7 @@ export default function Footer() {
           </p>
         </div>
 
+        <div className="mt-8 border-t pt-6"><LanguageSwitcher /></div>
         <div className="mt-8 flex flex-col items-start justify-between gap-3 border-t pt-6 text-xs text-white/60 md:flex-row md:items-center" style={{ borderColor: 'var(--border-subtle)' }}>
           <p>© {new Date().getFullYear()} Latech · Hecho en Badajoz con cariño.</p>
           <p className="font-mono">Menos plantillas. Más Latech.</p>

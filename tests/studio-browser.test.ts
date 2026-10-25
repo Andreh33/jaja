@@ -5,7 +5,7 @@ import { renderToStaticMarkup } from 'react-dom/server';
 import StudioBrowser from '../src/components/home/StudioBrowser';
 import { studioBrowserProject } from '../src/components/home/studio-browser-model';
 import { channelNumber, tvProjects } from '../src/lib/tv-channels';
-import { GET } from '../src/app/studio-browser/[project]/route';
+import { GET } from '../src/app/(es)/studio-browser/[project]/route';
 
 const callbacks = { onClose() {}, onProject() {}, onExpand() {} };
 const render = (project: number, active = true) => renderToStaticMarkup(createElement(StudioBrowser, { project, active, expanded: false, ...callbacks }));

@@ -1,0 +1,715 @@
+{
+  "code": "fr",
+  "name": "Français",
+  "ogLocale": "fr_FR",
+  "ui": {
+    "home": "Accueil",
+    "services": "Services",
+    "projects": "Réalisations",
+    "about": "À propos",
+    "contact": "Contact",
+    "blog": "Conseils",
+    "language": "Langue",
+    "readMore": "Lire l’article",
+    "backToBlog": "Retour aux conseils",
+    "related": "Articles associés",
+    "author": "Équipe éditoriale Latech",
+    "whatsapp": "Échanger sur WhatsApp",
+    "skip": "Aller au contenu",
+    "legal": "Mentions légales",
+    "privacy": "Politique de confidentialité",
+    "terms": "Conditions d’utilisation",
+    "remote": "Une équipe basée en Espagne, qui réalise à distance des projets pour des entreprises d’autres pays.",
+    "phone": "Téléphone",
+    "contactTitle": "Parlons des besoins de votre entreprise",
+    "contactIntro": "Présentez votre objectif, votre site actuel et vos principales contraintes. Ces éléments nous aideront à discuter du périmètre adapté à votre projet. Écrivez à info@latech.es ou contactez-nous sur WhatsApp au +34 684 739 091.",
+    "whatsappMessage": "Bonjour Latech, je souhaite demander un devis. Mon pays : . Le service recherché : . Mon site actuel : . Le calendrier souhaité : .",
+    "processTitle": "Un déroulement clair, du cadrage au lancement",
+    "processSteps": [
+      "Définir l’objectif commercial, le public, le périmètre et les contenus.",
+      "Concevoir et examiner le design, les fonctionnalités et les intégrations.",
+      "Tester les parcours convenus, préparer le lancement et documenter la suite."
+    ],
+    "articlesIntro": "Des guides pratiques sur les sites web, la vente en ligne et l’automatisation pour éclairer vos décisions.",
+    "serviceIntro": "Des services numériques pensés pour vos clients, vos processus internes et une base technique facile à maintenir.",
+    "projectsIntro": "Découvrez de véritables réalisations Latech à travers les éléments disponibles qui présentent leur conception et leurs fonctionnalités.",
+    "aboutTitle": "Une petite équipe, une approche concrète",
+    "aboutIntro": "Latech a été fondée par Andrés Rubio et Luis Grondona à Puebla de la Calzada, dans la province de Badajoz, en Espagne.",
+    "aboutBody": [
+      "Nous travaillons sur la conception web, le commerce en ligne et l’automatisation avec l’IA et n8n. Chaque projet part d’un problème métier et de priorités définies.",
+      "Notre équipe est basée en Espagne et réalise aussi à distance des projets pour des entreprises d’autres pays. Le périmètre, les responsabilités et les modalités de communication sont précisés pour chaque mission.",
+      "Nous privilégions des parcours lisibles, des contenus utiles et des outils maintenables. Nos pages de réalisations s’appuient sur des projets réels et sur les éléments disponibles pour expliquer le travail effectué."
+    ],
+    "contactDetails": "Coordonnées",
+    "moreServices": "Découvrir nos services",
+    "allArticles": "Tous les articles"
+  },
+  "home": {
+    "title": "Création web, e-commerce et automatisation IA | Latech",
+    "description": "Confiez votre site, votre boutique en ligne ou vos automatisations à Latech, une équipe basée en Espagne qui réalise des projets internationaux à distance.",
+    "heading": "Des projets numériques utiles au quotidien",
+    "intro": "Un site qui explique votre offre, une boutique qui facilite l’achat et des automatisations qui relient vos outils métier.",
+    "body": [
+      "Latech réunit conception web, commerce en ligne et automatisation IA avec n8n autour d’un objectif concret. Nous partons des utilisateurs : ce qu’ils doivent comprendre, ce qu’ils veulent accomplir et les obstacles qui compliquent le parcours actuel.",
+      "Fondée par Andrés Rubio et Luis Grondona à Puebla de la Calzada, Badajoz, en Espagne, notre équipe travaille aussi à distance pour des entreprises d’autres pays. Présentez votre marché, vos outils et vos priorités pour définir un périmètre pertinent."
+    ]
+  },
+  "services": [
+    {
+      "id": "web",
+      "title": "Création de sites professionnels",
+      "description": "Présentez votre entreprise avec un site clair, des contenus utiles et des parcours de contact adaptés aux visiteurs que vous souhaitez toucher en ligne.",
+      "intro": "Un site professionnel doit répondre aux questions qui précèdent une prise de contact utile.",
+      "sections": [
+        {
+          "title": "Clarifier votre offre",
+          "paragraphs": [
+            "Nous organisons les pages selon vos services, vos clients et leurs critères de choix. Le cadrage précise ce que les visiteurs doivent comprendre et les actions importantes pour votre entreprise.",
+            "Contenus, navigation et appels à l’action doivent fonctionner ensemble. Une personne qui compare des prestataires a besoin d’un périmètre clair, de preuves pertinentes et d’une prochaine étape simple."
+          ]
+        },
+        {
+          "title": "Concevoir pour les usages réels",
+          "paragraphs": [
+            "Nous intégrons les écrans mobiles, la lisibilité, la navigation au clavier et la simplicité des formulaires à la réflexion graphique. Les choix visuels doivent faciliter la compréhension.",
+            "Le périmètre convenu peut inclure des pages de services, des réalisations et les bases du référencement technique. Ces livrables sont définis avant la réalisation."
+          ]
+        },
+        {
+          "title": "Préparer la transmission",
+          "paragraphs": [
+            "Avant le lancement, nous vérifions les parcours convenus et leurs contenus. Les redirections, les coordonnées et les besoins de mesure font partie de la préparation.",
+            "Nous précisons les responsabilités liées aux modifications et à la maintenance. Après publication, une personne doit rester responsable de l’exactitude des informations de l’entreprise."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "shop",
+      "title": "Création de boutiques en ligne",
+      "description": "Construisez une boutique autour de fiches produits claires, d’un achat compréhensible et des opérations nécessaires au traitement des commandes clients.",
+      "intro": "Une boutique relie la découverte du produit, le paiement et le traitement de la commande.",
+      "sections": [
+        {
+          "title": "Faciliter le choix des produits",
+          "paragraphs": [
+            "Nous organisons les catégories, les informations et la navigation selon la manière dont vos clients choisissent. Variantes, images et livraison doivent expliquer précisément ce qui sera commandé.",
+            "La structure du catalogue doit aussi correspondre à la gestion de vos stocks et de vos données. Ces besoins sont précisés avant le choix des fonctionnalités."
+          ]
+        },
+        {
+          "title": "Relier achat et organisation",
+          "paragraphs": [
+            "Les choix du tunnel d’achat touchent les paiements, les expéditions et le suivi des commandes. Nous identifions les intégrations nécessaires et la personne responsable de chaque étape.",
+            "Les exceptions comptent aussi : rupture de stock, paiement refusé ou adresse incomplète demandent des messages compréhensibles et une procédure interne."
+          ]
+        },
+        {
+          "title": "Lancer un fonctionnement maîtrisé",
+          "paragraphs": [
+            "Les tests couvrent des produits, appareils et commandes représentatifs du périmètre convenu. Votre équipe doit savoir modifier les fiches et traiter les situations courantes.",
+            "Nous pouvons étudier des connexions avec vos outils existants. L’objectif est une boutique exploitable au quotidien, avec des responsabilités et des contraintes explicites."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ai",
+      "title": "Automatisation IA avec n8n",
+      "description": "Reliez vos outils métier avec des workflows n8n et des tâches IA encadrées, en prévoyant validation, contrôle humain et traitement des exceptions.",
+      "intro": "Automatiser commence par comprendre le processus, les données et les décisions qui demandent un jugement humain.",
+      "sections": [
+        {
+          "title": "Décrire un processus répétable",
+          "paragraphs": [
+            "Nous identifions le déclencheur, les données d’entrée, les règles et le résultat attendu. Le tri des demandes, les synthèses internes ou le transfert de données validées sont des pistes possibles.",
+            "Un cadrage utile décrit le travail manuel actuel et ses exceptions. Il permet de choisir entre règles explicites, étape IA et simple intégration."
+          ]
+        },
+        {
+          "title": "Encadrer le rôle de l’IA",
+          "paragraphs": [
+            "L’IA peut classer ou préparer du texte, mais ses résultats nécessitent des vérifications adaptées. Certaines décisions sensibles et actions externes demandent une validation humaine.",
+            "Nous examinons les accès, les contrôles et les données minimales nécessaires aux intégrations. La solution doit correspondre aux outils et autorisations dont dispose votre entreprise."
+          ]
+        },
+        {
+          "title": "Rendre les erreurs visibles",
+          "paragraphs": [
+            "Un workflow demande un responsable, des journaux utiles et une procédure de reprise si un service connecté échoue. Un événement répété ne doit pas créer silencieusement des doublons.",
+            "Nous définissons les cas de test et documentons le fonctionnement convenu. Vous pouvez ensuite suivre sa fiabilité et l’adapter à l’évolution de vos besoins."
+          ]
+        }
+      ]
+    }
+  ],
+  "articles": [
+    {
+      "id": "website-leads",
+      "title": "Transformer les visites de votre site en demandes pertinentes",
+      "slug": "site-web-demandes-clients-pertinentes",
+      "description": "Améliorez les demandes reçues sur votre site grâce à des services bien expliqués, des preuves concrètes et un parcours de contact simple à utiliser.",
+      "intro": [
+        "Un site peut recevoir des visites sans aider les personnes à prendre contact. Souvent, il manque une information décisive : à qui s’adresse le service, ce que comprend la prestation ou ce qu’il faut transmettre pour obtenir une première réponse utile.",
+        "Pour une entreprise de services, le véritable objectif est une conversation pertinente. Définissez les caractéristiques d’une demande exploitable, puis organisez les pages et les moyens de contact autour de cette définition. Le contenu et le design auront ainsi une direction commune."
+      ],
+      "sections": [
+        {
+          "title": "Définir une demande exploitable",
+          "paragraphs": [
+            "Notez les éléments dont votre équipe a besoin pour comprendre une demande : service recherché, pays ou zone concernée, état du projet et problème principal. Évitez les champs ajoutés simplement parce que le formulaire permet de les afficher. Une entreprise de maintenance cherchera le type d’équipement ; un consultant aura besoin du contexte métier. Examinez les demandes récentes pour repérer les informations manquantes. Votre site peut préparer leur transmission avant même l’ouverture du formulaire."
+          ]
+        },
+        {
+          "title": "Donner à chaque service une page de décision",
+          "paragraphs": [
+            "Une page de service doit expliquer le problème traité, le travail réalisé et les situations auxquelles la prestation correspond. Précisez aussi les limites. Une personne qui cherche une petite modification doit comprendre si votre offre répond à ce besoin. Utilisez des titres qui reprennent de vraies questions et placez les détails pratiques près de l’action correspondante. Une page réunissant plusieurs services sans rapport rend la comparaison plus difficile et affaiblit le message adressé à chaque public."
+          ]
+        },
+        {
+          "title": "Présenter des preuves utiles",
+          "paragraphs": [
+            "Choisissez des réalisations réelles qui éclairent la prestation concernée. Expliquez le besoin initial, la solution et les fonctionnalités observables, sans inventer de résultat commercial. Une capture d’écran ne permet pas toujours de comprendre l’intérêt d’une décision graphique. Ajoutez du contexte sur la navigation, la réservation ou la sélection d’un produit. Si vous utilisez une démonstration, présentez-la clairement comme telle. Elle peut montrer une méthode, mais ne doit pas être confondue avec une commande client."
+          ]
+        },
+        {
+          "title": "Rendre la prochaine étape compréhensible",
+          "paragraphs": [
+            "Placez un appel à l’action après les informations nécessaires pour agir. Indiquez ce que la personne peut envoyer et le sujet de l’échange. Un formulaire court peut demander les coordonnées, le service et une description ; le site actuel et le calendrier peuvent rester facultatifs. Expliquez les erreurs et conservez les données déjà saisies. Sur téléphone, vérifiez que les libellés restent visibles, que le clavier convient aux champs et que la validation ne demande pas de manipulation compliquée."
+          ]
+        },
+        {
+          "title": "Organiser les différents canaux",
+          "paragraphs": [
+            "Formulaire, courrier électronique et WhatsApp doivent aboutir à un processus dont une personne est responsable. Décidez comment enregistrer l’origine, qualifier la demande et éviter plusieurs relances sur le même sujet. Un lien WhatsApp peut proposer un message de départ modifiable. Il ne justifie pas une promesse de réponse immédiate. Testez chaque canal depuis un appareil réel et vérifiez le destinataire. Une adresse incorrecte suffit à rendre inutile un parcours pourtant bien conçu."
+          ]
+        },
+        {
+          "title": "Mesurer la qualité des échanges",
+          "paragraphs": [
+            "Un clic sur un bouton confirme une action, pas la réception d’une demande qualifiée. Définissez les étapes significatives et comparez-les aux conversations réellement reçues. Classez simplement les motifs de demandes inadaptées : mauvais service, zone non couverte ou projet hors périmètre. Examinez ces tendances avant de refaire toute la page. Si une question élémentaire revient constamment, répondez-y plus tôt dans le contenu puis observez si les échanges suivants deviennent plus précis et plus faciles à traiter."
+          ]
+        },
+        {
+          "title": "Faire relire une page sans explication",
+          "paragraphs": [
+            "Demandez à une personne extérieure à la vente de décrire, après lecture, le public concerné, le travail inclus et la façon de demander un devis. Laissez-la utiliser son téléphone sans la guider. Les hésitations révèlent souvent une information manquante plus utile à corriger qu’un simple détail graphique.",
+            "Consignez les modifications après cette relecture. Comparez ensuite les demandes reçues avec la page d’origine pour comprendre ce qui améliore réellement le contexte transmis à votre équipe."
+          ]
+        }
+      ],
+      "checklist": [
+        "Définir les critères d’une demande pertinente.",
+        "Créer une page claire par service important.",
+        "Contextualiser des preuves et réalisations réelles.",
+        "Tester les formulaires et WhatsApp sur mobile.",
+        "Examiner la qualité des demandes avec l’équipe."
+      ],
+      "conclusion": "Commencez par le service qui génère vos échanges les plus importants. Clarifiez son périmètre, répondez aux hésitations courantes et testez le contact complet. Latech peut relier ces décisions à travers la conception du site, la structure des contenus et les parcours de demande."
+    },
+    {
+      "id": "website-budget",
+      "title": "Préparer un cahier des charges utile pour un devis de site",
+      "slug": "preparer-devis-site-cahier-des-charges",
+      "description": "Préparez votre demande de devis web : objectifs, pages, contenus, intégrations et responsabilités pour comparer des propositions sur une base cohérente.",
+      "intro": [
+        "Un devis de site dépend de la façon dont le travail est décrit. Demander un site moderne laisse de nombreuses questions ouvertes : nombre de modèles de pages, préparation des textes, gestion des langues ou transmission des demandes à votre équipe.",
+        "Il n’est pas nécessaire de tout décider techniquement avant de consulter un prestataire. En revanche, des informations concrètes permettent de distinguer les besoins essentiels des préférences et de comparer des propositions qui couvrent réellement le même périmètre."
+      ],
+      "sections": [
+        {
+          "title": "Décrire le changement attendu",
+          "paragraphs": [
+            "Présentez ce qui doit évoluer dans votre activité. Les visiteurs comprennent-ils mal vos services ? Votre équipe répond-elle toujours aux mêmes questions de livraison ? Le formulaire actuel transmet-il trop peu de contexte ? Décrivez la situation présente et le comportement souhaité. Précisez le public et le marché, car un catalogue destiné à des professionnels ne répond pas aux mêmes besoins qu’un site d’information. Gardez la solution technique ouverte tant que le problème n’est pas suffisamment clair."
+          ]
+        },
+        {
+          "title": "Recenser les pages et les contenus",
+          "paragraphs": [
+            "Distinguez les mises en page particulières des contenus répétés. Plusieurs articles utilisant le même modèle ne représentent pas le même travail que plusieurs interfaces différentes. Listez services, réalisations, catégories et langues, puis indiquez qui prépare les textes, les images et les validations. Les contenus existants peuvent nécessiter une réécriture ou une migration. Vérifiez les droits d’utilisation des visuels. Une photographie manquante ou une validation tardive peut bloquer le projet aussi sûrement qu’une difficulté technique."
+          ]
+        },
+        {
+          "title": "Exprimer les fonctions sous forme de parcours",
+          "paragraphs": [
+            "Remplacez une liste de fonctionnalités vagues par des scénarios courts. Par exemple : un visiteur choisit une prestation, joint un document et reçoit une confirmation pendant que l’équipe retrouve la demande dans son outil. Précisez les étapes indispensables et celles qui peuvent attendre. Pour une intégration, nommez les logiciels existants et les accès disponibles. Signalez les situations particulières, comme les fichiers volumineux ou les destinataires multiples, afin de les examiner avant la réalisation."
+          ]
+        },
+        {
+          "title": "Présenter la situation technique actuelle",
+          "paragraphs": [
+            "Communiquez l’adresse du site, le contexte du domaine et de l’hébergement sans transmettre de mots de passe dans le premier document. Expliquez si certaines adresses doivent rester accessibles, si les emails utilisent ce domaine et si des outils dépendent du site. Les données de fréquentation ou de recherche peuvent aider à identifier les pages importantes. Une refonte comprend souvent des redirections et une reprise de contenus ; les oublier masque une partie du travail à chiffrer."
+          ]
+        },
+        {
+          "title": "Comparer les livrables et les hypothèses",
+          "paragraphs": [
+            "Lisez chaque proposition en recherchant le travail inclus, les dépendances et les exclusions. Vérifiez la gestion des retours, de la saisie des contenus, de l’accessibilité, du référencement technique et des tests. Demandez comment sont traitées les évolutions après validation du périmètre. Un tableau peut rapprocher chaque livrable de son responsable. Contrôlez aussi les accès transmis, les abonnements tiers éventuels et la propriété des éléments produits. Le montant seul ne permet pas de comprendre ces différences."
+          ]
+        },
+        {
+          "title": "Prévoir la vie du site après publication",
+          "paragraphs": [
+            "Un site demande des mises à jour, de la maintenance et une attention opérationnelle. Précisez qui vérifie les formulaires, renouvelle les services et intervient lorsqu’une connexion échoue. Décrivez les modifications que votre équipe souhaite effectuer seule. Le lancement doit comprendre une validation, des contrôles et un moyen de signaler les anomalies. Si vous avez une date souhaitée, expliquez sa raison et les contraintes associées pour permettre une évaluation réaliste, sans transformer cette préférence en garantie implicite."
+          ]
+        },
+        {
+          "title": "Créer un tableau de comparaison",
+          "paragraphs": [
+            "Pour chaque besoin, notez le livrable, le contenu fourni, le responsable et la question ouverte. Précisez par exemple si un import de produits désigne une reprise unique ou une synchronisation permanente. Faites clarifier le même cas par les prestataires consultés pour comparer des réponses portant réellement sur la même opération.",
+            "Accompagnez les sites de référence d’une explication précise : navigation, lisibilité ou comparaison des produits. Un exemple utile ne signifie pas que son design entier doit être reproduit."
+          ]
+        }
+      ],
+      "checklist": [
+        "Présenter l’objectif commercial et le public.",
+        "Lister les modèles de pages et les langues.",
+        "Attribuer les contenus et les validations.",
+        "Décrire les intégrations par des scénarios.",
+        "Comparer le lancement et la maintenance inclus."
+      ],
+      "conclusion": "Un cadrage clair limite les ambiguïtés avant qu’elles ne deviennent des reprises. Présentez les faits connus, marquez les décisions ouvertes et séparez les besoins indispensables des idées futures. Latech peut s’appuyer sur ces éléments pour discuter d’un périmètre adapté à votre projet."
+    },
+    {
+      "id": "local-seo",
+      "title": "Référencement local : décrire une zone d’intervention réelle",
+      "slug": "referencement-local-zone-intervention",
+      "description": "Développez une présence locale cohérente avec des coordonnées exactes, des pages de services utiles et des réalisations qui reflètent votre activité réelle.",
+      "intro": [
+        "Le référencement local repose sur une description fidèle de votre activité. Une entreprise qui reçoit du public dans un magasin n’a pas les mêmes besoins qu’un prestataire travaillant à distance ou intervenant chez ses clients.",
+        "Commencez par votre fonctionnement réel, puis alignez votre site et les fiches que vous gérez. Multiplier les pages portant des noms de villes ne remplace ni une offre compréhensible ni une explication honnête des lieux et des publics que vous pouvez servir."
+      ],
+      "sections": [
+        {
+          "title": "Préciser votre fonctionnement",
+          "paragraphs": [
+            "Rédigez une courte description interne de votre implantation, de votre zone d’intervention et de la possibilité de recevoir des visiteurs. Ce repère évite que les textes commerciaux suggèrent des bureaux inexistants. Une entreprise située dans une commune peut intervenir dans une région plus large ; un prestataire à distance peut travailler dans plusieurs pays. Utilisez des formulations précises sur les pages de contact et de services. Si certaines prestations exigent un déplacement, expliquez cette condition concrète."
+          ]
+        },
+        {
+          "title": "Maintenir des coordonnées cohérentes",
+          "paragraphs": [
+            "Vérifiez le nom commercial, le numéro, le site et les coordonnées partout où vous pouvez les modifier. Un ancien téléphone ou des horaires incomplets créent une incertitude inutile. Si vous utilisez une fiche Google Business Profile, consultez les règles d’éligibilité et de représentation de Google avant de choisir les paramètres d’adresse ou de zone desservie. N’inventez pas d’implantation pour apparaître dans une ville. Identifiez le responsable et les accès de chaque fiche."
+          ]
+        },
+        {
+          "title": "Créer des pages locales qui répondent à un besoin",
+          "paragraphs": [
+            "Une page géographique doit avoir une utilité au-delà de la répétition du nom de la commune. Expliquez les services disponibles, leur mode de réalisation et les éventuelles particularités réelles. Un réparateur peut préciser les équipements acceptés et l’organisation de la collecte. Une agence à distance peut expliquer sa base et ses échanges de projet. Sans information distincte pour une ville, une page régionale claire peut être plus utile que plusieurs variantes presque identiques."
+          ]
+        },
+        {
+          "title": "Expliquer des réalisations authentiques",
+          "paragraphs": [
+            "Les projets réels aident à comprendre votre expérience et votre approche. Décrivez le besoin et les fonctionnalités livrées avec des éléments que vous êtes autorisé à partager. Ne supposez pas qu’une image démontre à elle seule le périmètre réalisé. Une légende peut expliquer la navigation ou une étape de commande. Évitez d’inventer une relation client locale ou un résultat commercial. Reliez les réalisations aux services correspondants pour aider la personne à approfondir son choix."
+          ]
+        },
+        {
+          "title": "Faciliter la découverte des informations",
+          "paragraphs": [
+            "Rendez les services importants accessibles par une navigation normale et utilisez des titres descriptifs. Google Search Central recommande des contenus utiles et des liens permettant de découvrir les pages. Les coordonnées doivent être faciles à trouver, avec des liens téléphoniques utilisables sur mobile. Les données structurées éventuelles doivent correspondre aux informations réelles et visibles. Elles ne rendent pas légitime une implantation fictive et ne doivent jamais contenir d’avis inventés ou d’horaires trompeurs."
+          ]
+        },
+        {
+          "title": "Examiner les demandes et actualiser le site",
+          "paragraphs": [
+            "Utilisez les données disponibles pour comprendre les recherches locales qui amènent des visites pertinentes, puis rapprochez-les des demandes reçues. Si une page attire surtout des projets hors zone, clarifiez ses limites plutôt que d’ajouter des mots-clés. Mettez à jour les détails publics lorsque votre fonctionnement évolue et retirez les anciennes affirmations. La visibilité locale se construit aussi par cet entretien : des pages utiles, des fiches exactes et une description cohérente de ce que votre entreprise réalise."
+          ]
+        },
+        {
+          "title": "Contrôler un parcours local complet",
+          "paragraphs": [
+            "Suivez une fiche publique jusqu’à la prestation puis au contact. Relevez les différences de nom, les anciennes informations et les zones mal expliquées. Demandez ensuite à une personne d’une commune voisine si elle comprend que le service lui est accessible. Corrigez d’abord les ambiguïtés concrètes ainsi identifiées.",
+            "Lors d’un changement de coordonnées, contrôlez aussi le pied de page, les documents téléchargeables et les données structurées. Ces copies oubliées peuvent continuer à diffuser des informations obsolètes."
+          ]
+        }
+      ],
+      "checklist": [
+        "Décrire votre implantation et votre zone réelles.",
+        "Vérifier les coordonnées des fiches contrôlées.",
+        "Éviter les bureaux fictifs et pages dupliquées.",
+        "Relier services et réalisations authentiques.",
+        "Actualiser les informations selon les demandes."
+      ],
+      "conclusion": "Le référencement local commence par une activité bien décrite et un site qui facilite la décision. Latech est basée à Puebla de la Calzada, Badajoz, en Espagne, et réalise des projets à distance : ce contexte réel guide ses contenus géographiques."
+    },
+    {
+      "id": "international-seo",
+      "title": "Préparer un site multilingue pour le référencement international",
+      "slug": "site-multilingue-referencement-international",
+      "description": "Préparez votre site multilingue avec des contenus adaptés, des URL distinctes et des contrôles hreflang pour garder un parcours de contact cohérent.",
+      "intro": [
+        "Un site multilingue demande davantage que des titres traduits. Le visiteur doit comprendre l’offre, trouver sa langue et accomplir son action sans revenir involontairement dans une autre version au milieu du parcours.",
+        "Avant de multiplier les marchés, choisissez les publics que vous pouvez réellement servir et les informations nécessaires à leur décision. Le référencement international permet ensuite de décrire ces versions aux moteurs tout en conservant une expérience lisible et des contenus faciles à entretenir."
+      ],
+      "sections": [
+        {
+          "title": "Choisir les publics et les limites commerciales",
+          "paragraphs": [
+            "Définissez les pays ou les publics visés et les prestations réellement disponibles. Examinez les destinations de livraison, la monnaie éventuelle, les modalités de contact et les informations nécessaires à un devis. Un prestataire à distance doit indiquer sa base réelle sans inventer de bureaux locaux. Langue et pays sont deux décisions différentes : une page française peut servir plusieurs pays, tandis qu’une version propre à un marché demande des différences concrètes qui justifient sa création."
+          ]
+        },
+        {
+          "title": "Construire une structure d’adresses stable",
+          "paragraphs": [
+            "Attribuez à chaque version linguistique une adresse distincte et accessible aux moteurs. Des répertoires de langue peuvent simplifier l’organisation, mais le choix dépend aussi du site existant. Préparez une correspondance entre les pages importantes avant le lancement. Ne comptez pas uniquement sur un cookie ou sur un sélecteur qui change les textes à la même adresse. Visiteurs et moteurs doivent pouvoir atteindre, enregistrer et partager chaque version de manière fiable, y compris sans préférence linguistique déjà enregistrée."
+          ]
+        },
+        {
+          "title": "Adapter tout le parcours commercial",
+          "paragraphs": [
+            "Traduisez ensemble les services, les formulaires, la navigation, les erreurs et les invitations à prendre contact. Adaptez les exemples et les termes à un usage naturel. Vérifiez le format du numéro et indiquez le pays où se trouve l’entreprise. Ne promettez pas une capacité opérationnelle ou un accompagnement linguistique qui n’a pas été convenu. Lorsqu’une traduction manque, rendez la destination compréhensible plutôt que de renvoyer silencieusement vers une page que le visiteur ne maîtrise pas."
+          ]
+        },
+        {
+          "title": "Relier correctement les versions linguistiques",
+          "paragraphs": [
+            "Google Search Central présente hreflang comme un moyen d’identifier les variantes linguistiques ou régionales d’une page. Chaque page concernée doit mentionner sa propre version et ses équivalents, avec des relations réciproques. Utilisez les codes de langue et, si nécessaire, de région appropriés. Gardez les décisions de canonicalisation cohérentes avec l’objectif des pages. Une traduction destinée à apparaître dans les résultats doit généralement rester indexable et posséder sa propre adresse canonique pertinente, plutôt que disparaître au profit de l’original."
+          ]
+        },
+        {
+          "title": "Produire des informations utiles pour chaque public",
+          "paragraphs": [
+            "Une traduction peut conserver le sens tout en adaptant le vocabulaire et les questions traitées. Sur une page commerciale, expliquez le périmètre, les responsabilités et la prochaine étape dans les termes qu’un acheteur utiliserait. Pour les articles, vérifiez que le texte apporte des conseils applicables. Évitez les pages par pays qui se contentent de modifier un lieu dans un paragraphe générique. Lorsque l’offre reste identique, une version linguistique solide peut être plus claire que des variantes régionales artificielles."
+          ]
+        },
+        {
+          "title": "Tester et entretenir le système multilingue",
+          "paragraphs": [
+            "Contrôlez les liens entre pages équivalentes, les titres, les descriptions, hreflang, les adresses canoniques et les parcours de contact. Ajoutez au plan de test les traductions manquantes et les pages déplacées. Après publication, examinez l’indexation et les recherches par langue lorsque les données sont disponibles. Attribuez la mise à jour des versions lors d’une évolution de l’offre. Si seule la langue d’origine reçoit les corrections, les autres pages risquent de continuer à décrire des fonctionnalités ou coordonnées devenues inexactes."
+          ]
+        },
+        {
+          "title": "Vérifier deux pages équivalentes",
+          "paragraphs": [
+            "Ouvrez le même service dans deux langues, changez de version puis envoyez une demande de test. Examinez la confirmation et le message reçu en interne. Le service demandé et le pays doivent rester compréhensibles. Cet exercice révèle des libellés manquants et des erreurs d’orientation que la seule relecture des textes ne montre pas.",
+            "Ne rendez pas un brouillon incomplet accessible par le sélecteur de langue. Une version publiée doit être utilisable et disposer d’un responsable capable de suivre ses corrections."
+          ]
+        }
+      ],
+      "checklist": [
+        "Définir les publics et services accessibles.",
+        "Prévoir des adresses distinctes par langue.",
+        "Traduire navigation, formulaires et contact.",
+        "Vérifier les liens hreflang réciproques.",
+        "Attribuer les futures mises à jour linguistiques."
+      ],
+      "conclusion": "Commencez par un ensemble de langues maîtrisable et un parcours complet. Latech peut structurer un site multilingue autour de services clairs, de contenus maintenables et d’une présentation exacte de son travail à distance depuis l’Espagne."
+    },
+    {
+      "id": "mobile-performance",
+      "title": "Performance mobile : quelles améliorations traiter en premier ?",
+      "slug": "performance-mobile-priorites-site-web",
+      "description": "Améliorez les performances mobiles en examinant parcours réels, images, scripts et stabilité visuelle avant de choisir les corrections techniques utiles.",
+      "intro": [
+        "Une page agréable sur une maquette peut devenir difficile à utiliser avec un téléphone et une connexion ordinaire. Images lourdes, interactions tardives et éléments qui se déplacent interrompent parfois l’action que le visiteur voulait accomplir.",
+        "Commencez par le parcours client plutôt que par une note isolée. Identifiez les pages et les actions importantes, mesurez leur fonctionnement dans un contexte représentatif et corrigez les causes qui ralentissent ou rendent incertaine la tâche attendue."
+      ],
+      "sections": [
+        {
+          "title": "Choisir des parcours représentatifs",
+          "paragraphs": [
+            "Listez les tâches mobiles utiles à l’activité : lire une prestation, comparer un produit, trouver les coordonnées ou transmettre un formulaire. Incluez la page d’entrée et les étapes suivantes. Testez sur un téléphone réel lorsque cela est possible, avec des conditions de réseau ordinaires et des outils contrôlés. Notez les symptômes visibles avant de modifier le code. Une grande image lente et un bouton de paiement qui ne réagit pas peuvent nécessiter deux investigations très différentes."
+          ]
+        },
+        {
+          "title": "Comprendre ce que mesurent les indicateurs",
+          "paragraphs": [
+            "web.dev explique les Core Web Vitals à travers le chargement, la réactivité et la stabilité visuelle, mesurés par Largest Contentful Paint, Interaction to Next Paint et Cumulative Layout Shift. Les données de terrain reflètent les visites réelles ; les tests de laboratoire aident à reproduire un problème. Une page récente peut manquer de données suffisantes. Ne transformez pas un test unique en conclusion commerciale. Comparez des conditions similaires et utilisez les indicateurs pour trouver des causes concrètes."
+          ]
+        },
+        {
+          "title": "Réduire le poids inutile des images",
+          "paragraphs": [
+            "Vérifiez que les dimensions livrées correspondent à la place visible dans la page. Une petite carte n’a généralement pas besoin du fichier utilisé pour une grande illustration. Employez des formats adaptés et des images responsives lorsque la solution le permet. Réservez leur espace avec des dimensions connues. L’image principale visible doit recevoir une priorité appropriée plutôt qu’un chargement différé systématique. Examinez aussi les carrousels et fonds décoratifs : supprimer un visuel superflu peut être plus utile que le compresser plusieurs fois."
+          ]
+        },
+        {
+          "title": "Examiner les scripts et services tiers",
+          "paragraphs": [
+            "Identifiez les scripts nécessaires à la première action et ceux qui peuvent attendre. Messageries, vidéos intégrées, mesure d’audience et animations peuvent demander du travail avant toute interaction. Retirez les fonctions inutilisées et évitez les dépendances chargées plusieurs fois par des intégrations différentes. Pour les scripts nécessaires, examinez le coût d’exécution autant que le transfert. Un fichier plus petit peut encore bloquer les interactions s’il déclenche beaucoup de calculs. Retestez les menus et formulaires après chaque modification."
+          ]
+        },
+        {
+          "title": "Stabiliser une interface facile à utiliser",
+          "paragraphs": [
+            "Réservez de la place pour les images, les intégrations et les composants chargés plus tard. Vérifiez si les polices ou bandeaux déplacent un contrôle au moment où la personne le touche. Gardez les libellés lisibles et la navigation utilisable sans geste précis. Les états de chargement doivent informer sans enfermer l’utilisateur. Contrôlez la validation du formulaire sur une connexion lente : l’absence de retour peut pousser à plusieurs envois et créer des doublons à traiter par votre équipe."
+          ]
+        },
+        {
+          "title": "Vérifier le bénéfice sur la tâche complète",
+          "paragraphs": [
+            "Répétez les tests représentatifs après une modification significative, avec le même état de page. Contrôlez la rapidité et l’aboutissement de l’action. Les mesures de terrain agrègent des visites et ne reflètent pas nécessairement immédiatement un déploiement. Gardez une trace des changements et des limites restantes. Si un système de paiement ou de réservation externe impose une contrainte, distinguez ce que vous pouvez modifier et les conséquences d’un remplacement avant de bouleverser un outil essentiel à l’exploitation."
+          ]
+        },
+        {
+          "title": "Documenter chaque anomalie",
+          "paragraphs": [
+            "Notez pour chaque problème la page, l’appareil, la connexion, l’action et le symptôme observé. Ajoutez un élément de mesure et le contrôle prévu après correction. Ce relevé permet de distinguer une lenteur générale d’un défaut limité à une image ou une intégration, puis de confier une intervention précise à la bonne personne.",
+            "Classez les anomalies selon la tâche empêchée et leur fréquence. Une lenteur qui bloque une demande peut mériter davantage d’attention qu’un meilleur résultat purement visuel dans un outil."
+          ]
+        }
+      ],
+      "checklist": [
+        "Tester les principaux parcours sur mobile.",
+        "Distinguer données réelles et diagnostic contrôlé.",
+        "Adapter les images et réserver leur espace.",
+        "Examiner les scripts qui retardent l’interaction.",
+        "Retester les fonctions après les corrections."
+      ],
+      "conclusion": "Le travail de performance doit rendre le site plus simple à utiliser dans des conditions réelles. Traitez d’abord les pages et interactions liées au contact ou à l’achat, puis vérifiez que chaque correction améliore le parcours complet."
+    },
+    {
+      "id": "online-store",
+      "title": "Que préparer avant de créer une boutique en ligne ?",
+      "slug": "preparer-boutique-en-ligne-catalogue-commandes",
+      "description": "Préparez votre boutique en ligne avec un catalogue cohérent, des règles de livraison claires et un processus pour les paiements, commandes et exceptions.",
+      "intro": [
+        "Une boutique en ligne est à la fois un canal de vente et une organisation quotidienne. Les pages visibles dépendent des données produits, des décisions de stock, de la livraison et des personnes qui traitent les commandes après le paiement.",
+        "Préparer ces bases avant le développement facilite le cadrage et l’exploitation. Un catalogue limité mais cohérent, avec des informations fiables, constitue souvent un meilleur départ qu’un grand catalogue laissant les questions essentielles sans réponse."
+      ],
+      "sections": [
+        {
+          "title": "Définir le premier scénario de vente",
+          "paragraphs": [
+            "Décrivez les premiers clients, les destinations et les produits concernés. Précisez si vous vendez à des particuliers, à des professionnels ou aux deux, puis identifiez les différences de parcours. Un acheteur professionnel peut avoir besoin d’un devis, alors qu’un article standard se prête à un achat direct. Choisissez un premier périmètre maîtrisable et séparez les idées d’extension. Vous éviterez ainsi de concevoir des règles complexes pour des marchés ou catégories qui ne sont pas prêts à être ouverts."
+          ]
+        },
+        {
+          "title": "Préparer des données produits cohérentes",
+          "paragraphs": [
+            "Créez un tableau ou une source de données avec identifiants stables, noms, descriptions, images et caractéristiques utiles. Distinguez les informations du produit de celles des variantes, comme la taille ou la finition. Expliquez ce qui est inclus, ce qui doit être choisi et les contraintes de compatibilité. Le client ne devrait pas déduire les dimensions d’une photographie. Désignez la personne responsable des données et leur méthode de mise à jour, notamment lorsque le stock dépend d’un autre outil."
+          ]
+        },
+        {
+          "title": "Organiser les catégories selon le choix du client",
+          "paragraphs": [
+            "Regroupez les articles selon la façon dont les visiteurs cherchent et comparent, plutôt que de reproduire l’organisation de l’entrepôt. Choisissez des filtres fondés sur des attributs cohérents et utiles à une vraie décision. Des filtres imprévisibles peuvent compliquer davantage la recherche qu’une catégorie simple. Vérifiez aussi les noms et variantes dans le panier, les résultats de recherche et les emails. Les informations doivent rester compréhensibles lorsqu’elles sont séparées de la fiche d’origine."
+          ]
+        },
+        {
+          "title": "Rendre livraison et coût total compréhensibles",
+          "paragraphs": [
+            "Identifiez les destinations, les modes de livraison et les règles nécessaires au calcul d’une commande. Expliquez les frais et les limites avant la dernière étape d’achat. Une estimation de livraison ne doit pas devenir une garantie sans fondement opérationnel. Les questions fiscales, les informations destinées aux consommateurs et les politiques commerciales nécessitent un examen professionnel adapté aux marchés concernés. Le cadrage technique doit identifier ces dépendances sans supposer qu’une plateforme résout automatiquement les décisions métier ou juridiques."
+          ]
+        },
+        {
+          "title": "Tester les paiements et les exceptions",
+          "paragraphs": [
+            "Préparez des scénarios représentatifs : produit indisponible, paiement refusé, adresse invalide ou événement reçu plusieurs fois. Vérifiez ce que voit le client et ce que reçoit l’équipe. Une tentative de paiement ne doit pas être traitée comme une commande confirmée. Contrôlez les destinataires des notifications et la prévention des traitements en double. Utilisez les moyens de test prévus par le prestataire de paiement et séparez les données de préparation des véritables dossiers clients pendant les essais."
+          ]
+        },
+        {
+          "title": "Attribuer le travail après l’achat",
+          "paragraphs": [
+            "Décrivez qui vérifie les commandes, actualise leur état, répond aux questions et traite les demandes d’annulation ou de retour. Les statuts affichés doivent correspondre au fonctionnement que votre équipe peut assurer. Documentez les modifications de produits et les reprises après une panne d’intégration. Avant l’ouverture, parcourez des commandes de test jusqu’au traitement interne. Un écran de confirmation ne suffit pas : les personnes responsables doivent disposer des informations et des accès nécessaires pour poursuivre le service promis."
+          ]
+        },
+        {
+          "title": "Suivre un produit à variantes",
+          "paragraphs": [
+            "Sélectionnez une variante et parcourez la fiche, le panier puis la notification de commande. Demandez à un collègue de préparer cette commande avec les seules informations reçues. S’il doit rouvrir la boutique pour identifier la bonne option, améliorez les données transmises avant l’ouverture au public.",
+            "Après un import, vérifiez un échantillon de fiches : accents, images, unités et identifiants de variantes. Un transfert terminé techniquement peut encore contenir des informations difficiles à exploiter."
+          ]
+        }
+      ],
+      "checklist": [
+        "Choisir les produits et destinations de départ.",
+        "Préparer produits, variantes et identifiants.",
+        "Clarifier livraison et informations d’achat.",
+        "Tester refus et répétitions de paiement.",
+        "Attribuer commandes et entretien du catalogue."
+      ],
+      "conclusion": "Un bon cadrage e-commerce relie la boutique aux opérations quotidiennes. Latech peut vous aider à préparer et construire ce lien, de la structure du catalogue au paiement, puis aux intégrations utiles à la gestion des produits et des commandes."
+    },
+    {
+      "id": "whatsapp-conversion",
+      "title": "Utiliser WhatsApp sur votre site en conservant le contexte",
+      "slug": "whatsapp-site-demandes-clients-contexte",
+      "description": "Facilitez les demandes WhatsApp depuis votre site avec des messages adaptés, des choix de contact clairs et un suivi simple des conversations utiles.",
+      "intro": [
+        "Un bouton WhatsApp peut simplifier le contact, surtout sur téléphone. Il peut aussi produire une suite de messages limités à bonjour, obligeant votre équipe à retrouver la page consultée et le besoin de la personne.",
+        "L’objectif est de réduire l’effort tout en conservant un contexte utile. Intégrez WhatsApp au parcours de demande avec une invitation claire, un responsable et une solution pour les visiteurs qui préfèrent utiliser un autre canal."
+      ],
+      "sections": [
+        {
+          "title": "Adapter le bouton à la page",
+          "paragraphs": [
+            "Placez l’action lorsque la personne dispose d’assez d’informations pour poser une question utile. Une page de service peut inviter à présenter un projet ; une fiche produit peut proposer une question de compatibilité. Utilisez un libellé explicite plutôt qu’une icône isolée. Vérifiez qu’un bouton flottant ne masque ni le contenu ni la navigation mobile. Le contact doit accompagner la tâche principale, sans interrompre plusieurs fois la lecture avant que le visiteur ait compris ce qui est proposé."
+          ]
+        },
+        {
+          "title": "Suggérer un message facile à modifier",
+          "paragraphs": [
+            "Un message prérempli peut reprendre le service et inviter à décrire le besoin. Pour une demande de devis, vous pouvez suggérer le pays, le site actuel et le calendrier souhaité. Gardez le texte suffisamment court pour être modifié sur téléphone. N’y ajoutez pas de données sensibles ou personnelles sans raison adaptée. Cette aide doit démarrer l’échange plutôt que devenir un questionnaire obligatoire, notamment lorsqu’une personne cherche seulement à vérifier une condition avant d’aller plus loin."
+          ]
+        },
+        {
+          "title": "Définir l’organisation des réponses",
+          "paragraphs": [
+            "Présentez l’usage du canal et les informations de disponibilité que votre entreprise peut maintenir à jour. Une messagerie ne justifie pas une promesse de réponse instantanée. Si plusieurs personnes interviennent, précisez qui consulte les nouveaux messages et comment une conversation est attribuée. Ce fonctionnement interne compte davantage que la présence du bouton sur chaque page. Vérifiez que le numéro appartient au compte professionnel prévu et que l’entreprise peut en conserver le contrôle lors d’un changement d’équipe."
+          ]
+        },
+        {
+          "title": "Conserver d’autres moyens de contact",
+          "paragraphs": [
+            "Certains visiteurs n’utilisent pas WhatsApp ou ne souhaitent pas y déplacer un échange commercial. Proposez aussi un email ou un formulaire pertinent. Les canaux peuvent recueillir un contexte comparable sans imposer exactement la même interaction. Vérifiez les noms accessibles des boutons à icône et la lisibilité des coordonnées sans dépendre de la couleur. Sur ordinateur, testez l’ouverture de l’interface web ou le choix d’application, puis contrôlez que le bon destinataire et le message attendu sont conservés."
+          ]
+        },
+        {
+          "title": "Mesurer ce que le clic indique réellement",
+          "paragraphs": [
+            "Un clic sur un lien WhatsApp signale une intention d’ouvrir une conversation. Il ne prouve ni l’envoi du message ni la réception d’une demande qualifiée. Enregistrez cette action séparément si votre dispositif de mesure le permet de manière appropriée, puis comparez-la aux échanges effectivement reçus. Évitez de recueillir inutilement leur contenu. Si les clics sont nombreux mais les demandes pertinentes rares, examinez la promesse de la page et le message suggéré avant de modifier seulement l’apparence du bouton."
+          ]
+        },
+        {
+          "title": "Améliorer les questions et les transmissions",
+          "paragraphs": [
+            "Classez les questions fréquentes par thème : périmètre, compatibilité, préparation du projet ou modalités pratiques. Répondez aux questions élémentaires sur les pages concernées afin que les futurs échanges démarrent avec davantage de précision. Définissez comment transférer les informations importantes vers l’outil de travail, avec les autorisations adaptées. Si vous automatisez ce passage, conservez le contrôle humain nécessaire et testez les doublons. L’historique utile ne doit pas dépendre uniquement du téléphone d’une seule personne."
+          ]
+        },
+        {
+          "title": "Examiner quelques échanges récents",
+          "paragraphs": [
+            "Relevez le service d’origine, la première question utile et les informations demandées une seconde fois, sans recopier inutilement les messages personnels. Si le même détail manque régulièrement, améliorez la page ou le texte proposé. Vérifiez ensuite si les conversations deviennent plus faciles à traiter sans alourdir le premier contact.",
+            "Si le numéro professionnel change, modifiez le lien et son libellé visible, puis testez le destinataire. Changer le texte affiché ne corrige pas forcément l’adresse utilisée."
+          ]
+        }
+      ],
+      "checklist": [
+        "Rédiger une invitation adaptée à chaque page.",
+        "Proposer un message court et modifiable.",
+        "Tester le destinataire sur mobile et ordinateur.",
+        "Garder un email ou un formulaire disponible.",
+        "Distinguer clics et conversations qualifiées."
+      ],
+      "conclusion": "WhatsApp est plus utile lorsque la page prépare l’échange et que l’équipe peut agir sur la demande. Latech peut concevoir ces parcours de contact et étudier des intégrations ciblées lorsque la transmission manuelle crée un travail répétitif évitable."
+    },
+    {
+      "id": "ai-automation",
+      "title": "Choisir une première automatisation IA avec n8n",
+      "slug": "premiere-automatisation-ia-n8n",
+      "description": "Choisissez un premier workflow IA avec n8n en cadrant une tâche répétable, les données utiles, les contrôles humains et la reprise après une erreur.",
+      "intro": [
+        "La meilleure première automatisation part généralement d’un processus que votre équipe comprend déjà. Il possède un déclencheur répétable, des données d’entrée identifiables et un résultat dont quelqu’un peut vérifier la qualité. Ajouter de l’IA avant de clarifier ces éléments rend les incertitudes plus difficiles à maîtriser.",
+        "Avec n8n, intégrations et règles relient les étapes, tandis qu’une composante IA peut prendre en charge une tâche limitée comme un classement ou un brouillon. Le fonctionnement demande toujours une validation, un responsable et une gestion des exceptions."
+      ],
+      "sections": [
+        {
+          "title": "Choisir un processus délimité",
+          "paragraphs": [
+            "Cherchez une opération répétitive qui déplace des informations entre outils ou prépare un document pour examen. Par exemple, une demande de projet peut être résumée et classée avant son attribution par une personne. Décrivez le traitement actuel, les décisions manuelles et les cas inhabituels. Évitez un processus sans responsable stable ou résultat accepté. Si les membres de l’équipe ne partagent pas la même règle métier, résolvez ce désaccord avant de l’inscrire dans le workflow."
+          ]
+        },
+        {
+          "title": "Séparer les règles du jugement",
+          "paragraphs": [
+            "Certaines étapes n’ont pas besoin d’IA : vérifier un champ obligatoire, retrouver un identifiant ou orienter une catégorie connue peut suivre une règle explicite. Réservez l’IA aux tâches où une interprétation souple apporte une utilité et où une erreur peut être contenue. Définissez le format attendu et les contrôles associés. Pour un classement, précisez les catégories autorisées et une voie de repli. Une demande inconnue doit atteindre un humain plutôt qu’être forcée dans une catégorie incorrecte."
+          ]
+        },
+        {
+          "title": "Vérifier les données et les accès",
+          "paragraphs": [
+            "Listez les systèmes, les données nécessaires à chaque étape et les autorisations disponibles. Utilisez le minimum utile plutôt que de recopier un dossier entier lorsqu’un extrait suffit. Examinez la gestion des identifiants et les personnes capables de modifier le workflow. Avant de transmettre des informations à un service d’IA, vérifiez les paramètres du compte et les modalités applicables aux données. Ces décisions opérationnelles font partie de la conception et ne doivent pas attendre la première exécution réelle."
+          ]
+        },
+        {
+          "title": "Définir les validations humaines",
+          "paragraphs": [
+            "Distinguez les résultats qui restent internes des actions qui nécessitent un examen. Préparer un brouillon peut être utile, alors que l’envoyer automatiquement engage davantage l’entreprise. Montrez au responsable les informations d’origine et la proposition pour faciliter la vérification. La validation et le refus doivent être des états explicites. Un délai dépassé ne doit pas devenir une approbation silencieuse. Si des décisions clients ou financières importantes sont concernées, limitez l’étape automatique et maintenez une responsabilité humaine appropriée."
+          ]
+        },
+        {
+          "title": "Prévoir répétitions et erreurs",
+          "paragraphs": [
+            "Un service connecté peut devenir indisponible, refuser une entrée ou transmettre deux fois un événement. Utilisez des identifiants stables et conservez assez d’état pour reconnaître un traitement déjà effectué. Définissez les tentatives de reprise afin de ne pas créer de doublons ou de messages supplémentaires. Les journaux doivent aider au diagnostic sans exposer inutilement des données sensibles. Rendez les erreurs visibles et documentez la reprise d’une exécution. Ces chemins contribuent autant à la fiabilité que la démonstration réussie du cas normal."
+          ]
+        },
+        {
+          "title": "Conduire un pilote limité",
+          "paragraphs": [
+            "Testez des exemples ordinaires et difficiles : demande incomplète, formulation ambiguë, outil indisponible ou données inattendues. Comparez les résultats aux décisions acceptées par l’équipe et examinez les corrections nécessaires. Observez un périmètre limité avant d’augmenter les accès ou le volume. Mesurez l’effort de vérification, les types d’erreurs et l’aboutissement des traitements sans supposer que toute étape automatique fait gagner du temps. Gardez un historique simple pour comprendre les changements de comportement après une modification."
+          ]
+        },
+        {
+          "title": "Écrire des exemples d’acceptation",
+          "paragraphs": [
+            "Décrivez une entrée normale, une entrée incomplète et un événement répété, puis le résultat attendu pour chacun. Indiquez quand rejeter, transmettre à un humain ou reconnaître un traitement déjà réalisé. Ces exemples permettent d’évaluer le résultat métier même si la formulation exacte produite par l’IA change.",
+            "Nommez clairement le workflow et documentez son déclencheur ainsi que son responsable. Un collègue doit pouvoir identifier sa fonction et savoir qui contacter sans examiner toutes les étapes."
+          ]
+        }
+      ],
+      "checklist": [
+        "Choisir une tâche répétable et son responsable.",
+        "Préférer les règles quand elles suffisent.",
+        "Limiter les accès et contrôler les résultats IA.",
+        "Prévoir validation et reprise après erreur.",
+        "Tester des situations courantes et difficiles."
+      ],
+      "conclusion": "Une automatisation utile réduit les opérations répétitives tout en gardant les responsabilités visibles. Latech peut cadrer des workflows n8n et des tâches IA autour de vos outils, de règles métier explicites et d’un contrôle pratique des exceptions."
+    },
+    {
+      "id": "website-migration",
+      "title": "Migration de site : préparer les contenus et les redirections",
+      "slug": "migration-site-contenus-redirections",
+      "description": "Préparez votre migration de site avec un inventaire, un plan de redirections et des tests de contact pour préserver les parcours utiles après lancement.",
+      "intro": [
+        "Une migration peut changer le design, la plateforme, le domaine ou la structure des adresses. Chaque modification touche les pages existantes et les chemins utilisés pour les atteindre. Le lancement demande donc un plan de continuité autant qu’une nouvelle réalisation graphique.",
+        "Préparez ce plan avant la disparition des anciennes pages. L’objectif est de conserver les informations utiles, d’orienter chaque visiteur vers une destination pertinente et de vérifier que les formulaires, les intégrations et la mesure continuent à fonctionner après le changement."
+      ],
+      "sections": [
+        {
+          "title": "Inventorier les éléments existants",
+          "paragraphs": [
+            "Recensez les adresses à partir du site, des sitemaps disponibles et des outils de recherche ou de fréquentation pertinents. Repérez les pages qui apportent des visites utiles, des demandes ou des liens externes, sans réduire leur valeur au seul trafic. Incluez les documents téléchargeables, les images utilisées ailleurs et les pages de campagne importantes. Attribuez un responsable à chaque groupe de contenus et choisissez de le conserver, le modifier ou le retirer. Cet inventaire évite de découvrir une page essentielle après une plainte."
+          ]
+        },
+        {
+          "title": "Associer chaque adresse importante à sa destination",
+          "paragraphs": [
+            "Créez une correspondance entre anciennes adresses et destinations prévues. Conservez une URL utile si rien ne justifie son changement. Lorsque plusieurs pages sont réunies, choisissez une destination qui répond réellement au besoin initial. Rediriger toutes les suppressions vers l’accueil fait perdre le contexte et peut dérouter les visiteurs. Sans remplacement pertinent, décidez volontairement du traitement de la suppression. Le tableau de correspondance doit rester compréhensible par les personnes responsables des contenus comme par celles qui réalisent les contrôles techniques."
+          ]
+        },
+        {
+          "title": "Examiner les contenus et l’indexation",
+          "paragraphs": [
+            "Comparez titres, intertitres, textes et liens internes avant et après la modification. Une refonte visuelle peut retirer accidentellement une information qui aidait à choisir. Vérifiez les adresses canoniques, les versions linguistiques et les pages qui doivent être indexables. Les protections de l’environnement de préparation doivent être réexaminées pour la production. Les recommandations de Google Search Central sur les changements de site constituent une référence utile pour organiser les redirections et surveiller une transition lorsque les adresses évoluent."
+          ]
+        },
+        {
+          "title": "Tester les parcours techniques et commerciaux",
+          "paragraphs": [
+            "Contrôlez le comportement réel des redirections et leur destination, en limitant les chaînes inutiles. Vérifiez navigation, recherche interne, formulaires, liens téléphoniques et étapes de paiement ou de réservation concernées. Assurez-vous que les emails arrivent aux bons destinataires et que les intégrations utilisent les connexions de production prévues. Testez des appareils représentatifs et les comportements liés aux choix de consentement. Une page accessible ne prouve pas que le parcours fonctionne : effectuez l’action complète et examinez ce que reçoit votre équipe."
+          ]
+        },
+        {
+          "title": "Préparer les responsabilités du lancement",
+          "paragraphs": [
+            "Décidez qui modifie le domaine ou l’hébergement, qui valide les contenus et qui observe les anomalies. Notez les dépendances, y compris les services email associés au domaine. Sauvegardez les données nécessaires et documentez une méthode de reprise adaptée à la migration. Évitez les modifications simultanées de systèmes sans rapport lorsqu’elles ne sont pas indispensables, car elles compliquent le diagnostic. Gardez le plan d’adresses et les résultats des tests accessibles aux personnes qui prennent les décisions de lancement."
+          ]
+        },
+        {
+          "title": "Surveiller et corriger après publication",
+          "paragraphs": [
+            "Contrôlez les pages importantes, les redirections, les demandes reçues et les données de recherche disponibles après la publication. L’exploration et la visibilité peuvent évoluer : examinez des éléments concrets plutôt qu’une seule journée de résultats. Recherchez les liens internes cassés, les exclusions inattendues et les demandes mal orientées. Actualisez le sitemap et conservez les redirections nécessaires. Attribuez aux anomalies un responsable et une priorité pour concentrer l’attention d’abord sur les parcours qui empêchent réellement les visiteurs d’agir."
+          ]
+        },
+        {
+          "title": "Garder un registre de migration",
+          "paragraphs": [
+            "Pour chaque page importante, notez ancienne adresse, destination, décision de contenu, contrôle de redirection et responsable. Ajoutez l’action commerciale associée. Ce registre transforme une liste technique en contrôle opérationnel et aide à retrouver rapidement le comportement attendu lorsqu’une anomalie apparaît après le lancement.",
+            "Conservez la correspondance originale entre anciennes et nouvelles URL. Elle restera utile pour analyser des liens externes, comprendre des demandes inattendues et préparer les prochains changements de contenu."
+          ]
+        }
+      ],
+      "checklist": [
+        "Inventorier les pages et ressources utiles.",
+        "Associer les anciennes URL à des destinations pertinentes.",
+        "Contrôler indexation et versions linguistiques.",
+        "Tester les parcours complets de contact ou d’achat.",
+        "Attribuer surveillance et reprise du lancement."
+      ],
+      "conclusion": "Une migration devient plus simple à piloter lorsque contenus, adresses et fonctionnement métier partagent le même plan. Latech peut préparer cette continuité et construire le nouveau site autour de parcours vérifiés et d’une structure maintenable."
+    }
+  ]
+}

@@ -1,0 +1,652 @@
+{
+  "code": "de",
+  "name": "Deutsch",
+  "ogLocale": "de_DE",
+  "ui": {
+    "home": "Startseite",
+    "services": "Leistungen",
+    "projects": "Projekte",
+    "about": "Über uns",
+    "contact": "Kontakt",
+    "blog": "Ratgeber",
+    "language": "Sprache",
+    "readMore": "Artikel lesen",
+    "backToBlog": "Zurück zum Ratgeber",
+    "related": "Passende Artikel",
+    "author": "Latech-Redaktion",
+    "whatsapp": "Über WhatsApp anfragen",
+    "skip": "Zum Inhalt springen",
+    "legal": "Rechtliche Hinweise",
+    "privacy": "Datenschutz",
+    "terms": "Nutzungsbedingungen",
+    "remote": "Wir haben unseren Sitz in Spanien und arbeiten auch mit Unternehmen im Ausland remote zusammen.",
+    "phone": "Telefon",
+    "contactTitle": "Erzählen Sie uns von Ihrem Vorhaben",
+    "contactIntro": "Beschreiben Sie Ihr Unternehmen, Ihr Ziel und die Aufgabe, die Sie zuerst lösen möchten.",
+    "whatsappMessage": "Hallo, ich möchte ein Angebot anfragen. Mein Land: __. Gewünschte Leistung: __. Aktuelle Website: __. Mein gewünschter Zeitrahmen: __.",
+    "processTitle": "So arbeiten wir",
+    "processSteps": [
+      "Wir klären Ziele, Zielgruppe und Umfang des Projekts.",
+      "Wir strukturieren Inhalte und entwickeln die passende Lösung.",
+      "Wir prüfen die Funktionen und planen Veröffentlichung und nächste Schritte."
+    ],
+    "articlesIntro": "Praktische Ratgeber zu Websites, Onlineshops, Suchmaschinen und Automatisierung für Unternehmen.",
+    "serviceIntro": "Gestaltung und Entwicklung, die sich an den konkreten Aufgaben Ihres Unternehmens orientieren.",
+    "projectsIntro": "Lernen Sie unsere Arbeit und die Aufgaben hinter den einzelnen Projekten kennen.",
+    "aboutTitle": "Ein Team mit Blick für Ihr Unternehmen",
+    "aboutIntro": "Latech wurde von Andrés Rubio und Luis Grondona in Puebla de la Calzada, Badajoz, Spanien gegründet.",
+    "aboutBody": [
+      "Wir entwickeln Websites, Onlineshops und Automatisierungen mit n8n und künstlicher Intelligenz für verständliche digitale Abläufe.",
+      "Zuerst betrachten wir Ihr Angebot, Ihre Kunden und wiederkehrende Aufgaben. Daraus ergeben sich die Anforderungen an die technische Lösung.",
+      "Wir arbeiten von Spanien aus remote mit Unternehmen zusammen. Umfang, Zusammenarbeit und benötigte Informationen stimmen wir für jedes Projekt ab."
+    ],
+    "contactDetails": "Kontaktdaten",
+    "moreServices": "Weitere Leistungen",
+    "allArticles": "Alle Artikel"
+  },
+  "home": {
+    "title": "Webdesign und Automatisierung für Unternehmen | Latech",
+    "description": "Websites, Onlineshops und Automatisierungen mit n8n und KI für Unternehmen. Latech arbeitet von Spanien aus remote und richtet sich nach Ihren Aufgaben.",
+    "heading": "Eine Website, die Ihr Unternehmen weiterbringt",
+    "intro": "Wir entwickeln Websites, Onlineshops und Automatisierungen, die Ihr Angebot verständlich machen und Ihre täglichen Abläufe unterstützen.",
+    "body": [
+      "Ein gutes digitales Projekt beginnt mit klaren Fragen: Was bieten Sie an, wen möchten Sie erreichen und welchen nächsten Schritt sollen Besucher gehen? Daraus entwickeln wir Struktur, Inhalte und Technik.",
+      "Andrés Rubio und Luis Grondona arbeiten bei Latech von Puebla de la Calzada in Badajoz aus. Wir begleiten Unternehmen remote bei ihrem digitalen Auftritt und bei der Vereinfachung wiederkehrender Aufgaben."
+    ]
+  },
+  "services": [
+    {
+      "id": "web",
+      "title": "Webdesign und Website-Entwicklung",
+      "description": "Unternehmenswebsites mit verständlichen Inhalten, klarer Navigation und guter Nutzbarkeit. Wir planen Seiten, die passende Anfragen erleichtern.",
+      "intro": "Ihre Website soll das Angebot erklären und Besuchern einen nachvollziehbaren nächsten Schritt zeigen.",
+      "sections": [
+        {
+          "title": "Eine Struktur für die Fragen Ihrer Kunden",
+          "paragraphs": [
+            "Wir gliedern Inhalte nach Leistungen, Zielgruppen und den Fragen, die vor einer Anfrage entstehen.",
+            "Ein Handwerksbetrieb braucht beispielsweise unterschiedliche Erklärungen für Wartung, Neuinstallation und größere Umbauten."
+          ]
+        },
+        {
+          "title": "Auch auf dem Smartphone gut nutzbar",
+          "paragraphs": [
+            "Wir entwickeln Oberflächen mit lesbaren Texten, verständlichen Formularen und gut erreichbaren Bedienelementen.",
+            "Dabei berücksichtigen wir Bilder, Ladeverhalten und die Orientierung auf kleinen Bildschirmen."
+          ]
+        },
+        {
+          "title": "Eine Grundlage für weitere Verbesserungen",
+          "paragraphs": [
+            "Seitentitel, Adressen und Inhalte erhalten eine klare Aufgabe innerhalb der Website.",
+            "Wir vereinbaren die Prüfungen zur Veröffentlichung und schaffen eine Grundlage für spätere Inhalte und die Auswertung von Anfragen."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "shop",
+      "title": "Entwicklung von Onlineshops",
+      "description": "Onlineshops mit geordnetem Sortiment, hilfreichen Produktseiten und verständlichem Kaufablauf. Wir stimmen Zahlung, Versand und Verwaltung mit Ihnen ab.",
+      "intro": "Ein Onlineshop verbindet die Kaufentscheidung Ihrer Kunden mit der Bearbeitung jeder Bestellung im Unternehmen.",
+      "sections": [
+        {
+          "title": "Ein Sortiment, in dem Kunden sich zurechtfinden",
+          "paragraphs": [
+            "Kategorien, Eigenschaften und Filter richten wir danach aus, wie Menschen nach Ihren Produkten suchen.",
+            "Produktseiten sollen Maße, Materialien, Kompatibilität und andere entscheidende Informationen verständlich darstellen."
+          ]
+        },
+        {
+          "title": "Ein nachvollziehbarer Weg zum Kauf",
+          "paragraphs": [
+            "Wir strukturieren Warenkorb und Bestellablauf so, dass Kosten, Liefermöglichkeiten und notwendige Angaben erkennbar sind.",
+            "Wir prüfen vereinbarte Abläufe einschließlich Formularfehlern, Zahlungsproblemen und Bestellbestätigung."
+          ]
+        },
+        {
+          "title": "Die Bearbeitung von Anfang an mitdenken",
+          "paragraphs": [
+            "Wir betrachten, wie Bestand, Zahlungen und Benachrichtigungen mit Ihren vorhandenen Werkzeugen zusammenarbeiten.",
+            "Für jede Verbindung braucht es klare Regeln und eine zuständige Person für Sonderfälle."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ai",
+      "title": "Automatisierung mit n8n und KI",
+      "description": "Automatisierungen mit n8n und KI verbinden Werkzeuge und vereinfachen wiederkehrende Aufgaben, mit menschlicher Prüfung und klaren Regeln für Fehlerfälle.",
+      "intro": "Wir suchen wiederkehrende Aufgaben und entwickeln Abläufe, die Ihrem Team Arbeit abnehmen und Entscheidungen nachvollziehbar halten.",
+      "sections": [
+        {
+          "title": "Mit dem Arbeitsablauf beginnen",
+          "paragraphs": [
+            "Wir klären, wo Daten entstehen, wer sie prüft und welche Schritte danach folgen. So unterscheiden wir feste Regeln von menschlichen Entscheidungen.",
+            "Ein erster Ablauf kann Anfragen ordnen, einen CRM-Eintrag vorbereiten und die zuständige Person benachrichtigen."
+          ]
+        },
+        {
+          "title": "Werkzeuge gezielt verbinden",
+          "paragraphs": [
+            "Mit n8n koordinieren wir Systeme. KI kann dort ergänzen, wo beispielsweise Texte eingeordnet oder Entwürfe vorbereitet werden.",
+            "Wir legen fest, welche Daten und Berechtigungen nötig sind und an welchen Stellen eine Freigabe erforderlich ist."
+          ]
+        },
+        {
+          "title": "Fehler und Sonderfälle sichtbar machen",
+          "paragraphs": [
+            "Ein Ablauf braucht Protokolle, Hinweise auf Fehler und eine Möglichkeit zur Wiederholung ohne doppelte Aktionen.",
+            "Wir dokumentieren das erwartete Verhalten und die Fälle, die an das Team zurückgegeben werden."
+          ]
+        }
+      ]
+    }
+  ],
+  "articles": [
+    {
+      "id": "website-leads",
+      "title": "Wie Ihre Website passende Kundenanfragen erleichtert",
+      "slug": "website-passende-kundenanfragen",
+      "description": "Gestalten Sie Ihre Unternehmenswebsite so, dass Besucher Leistungen verstehen, Vertrauen aufbauen und eine passende Anfrage mit hilfreichen Angaben stellen.",
+      "intro": [
+        "Viele Unternehmen wünschen sich mehr Anfragen über ihre Website. Doch eine höhere Zahl allein löst das Problem nicht. Wenn Interessenten regelmäßig Leistungen anfragen, die Sie nicht anbieten, oder wichtige Angaben fehlen, steigt zunächst der Aufwand. Eine gute Website unterstützt deshalb die passende Anfrage und bereitet das anschließende Gespräch vor.",
+        "Nehmen wir einen Betrieb für Büroeinrichtung: Ein Unternehmen plant mehrere Arbeitsplätze, ein anderer Besucher sucht lediglich einen einzelnen gebrauchten Stuhl. Beide können dieselbe Seite erreichen. Die Inhalte sollten früh zeigen, welche Projekte der Betrieb betreut und welche Informationen für eine erste Einschätzung hilfreich sind."
+      ],
+      "sections": [
+        {
+          "title": "Eine passende Anfrage konkret beschreiben",
+          "paragraphs": [
+            "Legen Sie gemeinsam mit dem Vertrieb fest, welche Anfragen zum Angebot passen. Hilfreiche Kriterien sind Leistungsart, Einsatzbereich, Projektumfang und die Voraussetzungen für eine Zusammenarbeit. Schreiben Sie auch auf, welche Angaben beim ersten Gespräch häufig nachgefragt werden. Bei einer Büroplanung können Raumgröße und Nutzungsart wichtig sein, bei einer Beratung eher Ausgangslage und gewünschtes Ergebnis. Daraus entsteht die Grundlage für Inhalte und Kontaktwege. Vermeiden Sie Kriterien, die Besucher noch gar nicht beantworten können. Für einen Erstkontakt muss beispielsweise nicht bereits ein vollständiges technisches Lastenheft vorliegen."
+          ]
+        },
+        {
+          "title": "Das Angebot im ersten Bildschirm verständlich machen",
+          "paragraphs": [
+            "Die Einleitung einer Leistungsseite sollte erklären, was Sie tun und wem das hilft. Allgemeine Aussagen über Innovation oder Qualität geben kaum Orientierung. Eine konkrete Beschreibung wie Planung und Einrichtung von Arbeitsplätzen für kleine Unternehmen ermöglicht eine bessere Einordnung. Ergänzen Sie den tatsächlichen Tätigkeitsbereich und eine verständliche Handlungsmöglichkeit. Besucher sollen das Angebot auch ohne Video oder Bildfolge erkennen können. Prüfen Sie dafür die Seite auf einem Smartphone: Bleibt die entscheidende Aussage sichtbar, oder verdrängen große Bilder und lange Überschriften die Information unter mehrere Bildschirmhöhen?"
+          ]
+        },
+        {
+          "title": "Leistungen nach unterschiedlichen Entscheidungen gliedern",
+          "paragraphs": [
+            "Trennen Sie Angebote, wenn Besucher dafür andere Fragen beantworten müssen. Die Neueinrichtung eines Büros braucht andere Erläuterungen als die Ergänzung vorhandener Möbel. Eine eigene Seite kann Ablauf, benötigte Angaben und typische Einschränkungen passend darstellen. Jede Seite benötigt jedoch einen eigenständigen Nutzen. Mehrere fast identische Texte mit ausgetauschten Ortsnamen helfen wenig und erhöhen den Pflegeaufwand. Nutzen Sie die Sprache aus echten Kundengesprächen und erläutern Sie notwendige Fachbegriffe. Eine klare Gliederung erleichtert außerdem, aus Ratgeberartikeln gezielt auf das passende Angebot zu verweisen."
+          ]
+        },
+        {
+          "title": "Vertrauen durch nachvollziehbare Beispiele aufbauen",
+          "paragraphs": [
+            "Zeigen Sie, wie Sie Aufgaben angehen. Eine Projektbeschreibung kann Ausgangslage, Anforderungen, Entscheidungen und umgesetzte Leistungen erklären. Dafür sind keine erfundenen Kennzahlen nötig. Wenn Sie Ergebnisse nennen, müssen sie belastbar und zur Veröffentlichung freigegeben sein. Eigene Fotos, konkrete Leistungsbeschreibungen und ein verständlicher Ablauf beantworten oft mehr Fragen als allgemeine Qualitätsversprechen. Wählen Sie Beispiele nach den Unsicherheiten Ihrer Zielgruppe aus. Wer einen kleinen Raum ausstatten möchte, interessiert sich möglicherweise stärker für den Umgang mit begrenzter Fläche als für eine umfangreiche Liste technischer Werkzeuge."
+          ]
+        },
+        {
+          "title": "Den Kontakt leicht machen und sinnvoll vorbereiten",
+          "paragraphs": [
+            "Ein Formular sollte nur Angaben verlangen, die für den nächsten Schritt gebraucht werden. Name, Kontaktmöglichkeit und eine kurze Beschreibung reichen häufig zum Einstieg. Erklären Sie bei zusätzlichen Feldern, welche Information gemeint ist. Fehlermeldungen gehören an die betreffende Stelle und sollen eine Korrektur ermöglichen. Ein alternativer Kontakt über WhatsApp kann sinnvoll sein, wenn das Team ihn tatsächlich betreut. Nach dem Absenden braucht es eine klare Bestätigung und eine realistische Erklärung des weiteren Ablaufs. Versprechen Sie keine sofortige Antwort, wenn dafür keine verlässliche organisatorische Grundlage besteht."
+          ]
+        },
+        {
+          "title": "Qualität der Kontakte mit dem Team auswerten",
+          "paragraphs": [
+            "Verbinden Sie Webanalyse und Vertriebsalltag. Untersuchen Sie, welche Seiten zu vollständigen, passenden Anfragen führen und welche Missverständnisse auftreten. Ein Klick auf den Kontaktknopf ist noch kein abgeschickte Anfrage und erst recht kein Auftrag. Fragen Sie regelmäßig nach fehlenden Informationen und wiederkehrenden Rückfragen. Bei wenigen Besuchern sind einzelne Schwankungen schwer zu bewerten; ergänzen Sie Zahlen deshalb durch Gespräche und kurze Nutzungstests. Lassen Sie eine unbeteiligte Person ein Angebot finden und eine Anfrage vorbereiten. So werden Verständnisprobleme sichtbar, die eine reine Klickstatistik nicht erklärt."
+          ]
+        }
+      ],
+      "checklist": [
+        "Beschreiben Sie, welche Anfragen tatsächlich zu Ihren Leistungen passen.",
+        "Prüfen Sie Angebot und nächsten Schritt auf dem Smartphone.",
+        "Geben Sie jeder Leistungsseite eine klar erkennbare eigene Aufgabe.",
+        "Testen Sie Formular, Fehlermeldungen und Bestätigung mit realistischen Angaben.",
+        "Besprechen Sie Anfragequalität und wiederkehrende Missverständnisse mit dem Vertrieb."
+      ],
+      "conclusion": "Passende Anfragen entstehen durch verständliche Inhalte, glaubwürdige Beispiele und einen einfachen nächsten Schritt. Beginnen Sie mit den Fragen, die vor einem Kontakt offenbleiben. Wenn Website und Vertriebsablauf zusammenpassen, können Interessenten ihr Vorhaben besser beschreiben und Ihr Team kann gezielter darauf eingehen."
+    },
+    {
+      "id": "website-budget",
+      "title": "Ein Website-Angebot sinnvoll vorbereiten und vergleichen",
+      "slug": "website-angebot-vorbereiten-vergleichen",
+      "description": "Bereiten Sie Ihr Website-Projekt mit klaren Zielen, Inhalten und Zuständigkeiten vor und vergleichen Sie Angebote anhand des tatsächlichen Leistungsumfangs.",
+      "intro": [
+        "Ein Website-Angebot lässt sich nur sinnvoll beurteilen, wenn klar ist, welche Arbeit darin enthalten ist. Zwei Vorschläge können ähnlich aussehen und dennoch unterschiedliche Annahmen enthalten: etwa zur Texterstellung, zu Schnittstellen oder zur Übernahme vorhandener Inhalte. Der Endbetrag allein erklärt diese Unterschiede nicht und hilft wenig bei offenen Zuständigkeiten.",
+        "Sie müssen vor einer Anfrage keine technische Architektur ausarbeiten. Wichtiger ist eine nachvollziehbare Beschreibung Ihres Unternehmens und der Aufgabe. Ein kurzes Briefing mit Prioritäten, Beispielen und vorhandenem Material schafft eine Grundlage, auf der Sie mit einem Dienstleister konkrete Entscheidungen treffen können."
+      ],
+      "sections": [
+        {
+          "title": "Mit dem geschäftlichen Anlass beginnen",
+          "paragraphs": [
+            "Beschreiben Sie, warum das Projekt jetzt notwendig ist. Soll ein neues Angebot erklärt werden, gehen viele unpassende Anfragen ein oder lässt sich die bestehende Website intern kaum bearbeiten? Formulieren Sie daraus überprüfbare Aufgaben. Ein Interessent soll etwa eine Leistung finden, deren Umfang verstehen und die benötigten Angaben senden können. Das ist hilfreicher als der Wunsch nach einer modernen Website. Benennen Sie auch bewusste Grenzen. Ein Betrieb, der individuell kalkuliert, braucht möglicherweise einen verständlichen Produktkatalog und noch keinen vollständigen Shop mit automatischer Bestellung."
+          ]
+        },
+        {
+          "title": "Seiten und Inhaltstypen auseinanderhalten",
+          "paragraphs": [
+            "Erstellen Sie eine erste Übersicht aus Startseite, Leistungen, Unternehmen, Kontakt und gegebenenfalls Ratgeber oder Projekten. Notieren Sie daneben die Inhaltstypen. Zehn Projektseiten können auf einer gemeinsamen Vorlage beruhen, während eine einzige Produktsuche zusätzliche Logik benötigt. Geben Sie Mengen, Sprachen und vorhandene Dateien an. Werden Filter, Downloads oder geschützte Bereiche benötigt, gehören diese ausdrücklich in das Briefing. So vermeiden Sie, dass die Angabe von zehn Seiten völlig unterschiedliche Vorstellungen verdeckt. Die Liste darf vorläufig sein, solange Unsicherheiten und gewünschte Prioritäten erkennbar bleiben."
+          ]
+        },
+        {
+          "title": "Material und redaktionelle Verantwortung klären",
+          "paragraphs": [
+            "Sammeln Sie Texte, Bilder, Logos und Produktinformationen und prüfen Sie deren Verwendbarkeit. Eine alte Broschüre ist eine Informationsquelle, aber nicht automatisch fertiger Website-Inhalt. Leistungen müssen möglicherweise aktualisiert, Bilder neu ausgewählt und Texte umstrukturiert werden. Legen Sie fest, wer schreibt, fachlich prüft und freigibt. Wenn mehrere Personen beteiligt sind, bestimmen Sie einen Ansprechpartner für gebündelte Rückmeldungen. Fehlende Inhalte beeinflussen Gestaltung und Umsetzung. Diese Arbeit sollte deshalb im Angebot sichtbar werden, statt erst kurz vor der Veröffentlichung als unerwartete Aufgabe aufzutauchen."
+          ]
+        },
+        {
+          "title": "Schnittstellen anhand eines Vorgangs erklären",
+          "paragraphs": [
+            "Schreiben Sie nicht nur CRM-Anbindung, sondern schildern Sie den gewünschten Ablauf. Nach einer Anfrage soll beispielsweise ein Datensatz entstehen, eine Datei zugeordnet und die zuständige Person benachrichtigt werden. Welche Software verwenden Sie? Welche Zugänge und Dokumentationen sind vorhanden? Was passiert bei einem doppelten Kontakt oder einem unvollständigen Datensatz? Unterscheiden Sie notwendige Funktionen von späteren Verbesserungen. Ein konkreter Beispielvorgang ermöglicht eine bessere Einschätzung als eine lange Liste von Werkzeugnamen. Er zeigt auch, welche Schritte weiterhin manuell bleiben und wer die Ausnahmen bearbeiten muss."
+          ]
+        },
+        {
+          "title": "Abhängigkeiten und Abnahmekriterien benennen",
+          "paragraphs": [
+            "Notieren Sie, wer Zugriff auf Domain, Hosting, bestehende Website und verbundene Systeme hat. Bei einer Ablösung gehören wichtige alte Adressen und Inhalte dazu, die erhalten bleiben sollen. Vereinbaren Sie nachvollziehbare Prüfpunkte: Eine Anfrage kommt beim richtigen Empfänger an, Seiten sind mobil nutzbar und vereinbarte Weiterleitungen funktionieren. Nennen Sie einen gewünschten Veröffentlichungstermin zusammen mit dessen Anlass. Ob er umsetzbar ist, hängt auch von Material und Freigaben ab. Ein Kalender ohne diese Abhängigkeiten vermittelt Genauigkeit, obwohl wesentliche Voraussetzungen noch ungeklärt sind."
+          ]
+        },
+        {
+          "title": "Angebote mit denselben Fragen gegenüberstellen",
+          "paragraphs": [
+            "Vergleichen Sie Leistungsumfang, Voraussetzungen und spätere Betreuung. Sind Textarbeit und Inhaltsübernahme enthalten? Wie werden zusätzliche Wünsche behandelt? Welche Bearbeitungszugänge erhält Ihr Unternehmen? Welche externen Dienste benötigen einen eigenen Vertrag? Klären Sie außerdem, was nach der Veröffentlichung geprüft und wer bei Problemen angesprochen wird. Eine kleine Vergleichstabelle hilft, Unterschiede sichtbar zu machen, ohne jedes technische Detail selbst bewerten zu müssen. Achten Sie darauf, ob der Anbieter Ihr Problem verstanden hat und Entscheidungen begründen kann. Eine bestimmte Technologie allein sagt noch wenig über die Eignung des Angebots aus."
+          ]
+        }
+      ],
+      "checklist": [
+        "Beschreiben Sie Anlass, Zielgruppe und wichtigste Aufgabe der neuen Website.",
+        "Erstellen Sie eine Übersicht aus Seiten, Inhaltstypen und Funktionen.",
+        "Benennen Sie Verantwortliche für Material, Zugänge und Freigaben.",
+        "Erklären Sie Schnittstellen mit konkreten Eingaben, Ergebnissen und Fehlerfällen.",
+        "Vergleichen Sie Leistungsumfang und Betreuung anhand derselben Fragen."
+      ],
+      "conclusion": "Ein gutes Briefing macht den Umfang besprechbar und zeigt offene Entscheidungen. Dadurch können Sie Angebote anhand der tatsächlich vorgesehenen Arbeit vergleichen. Beginnen Sie mit den geschäftlichen Aufgaben und ergänzen Sie Inhalte, Zuständigkeiten und Prüfkriterien. Technische Entscheidungen lassen sich anschließend auf einer deutlich besseren Grundlage treffen."
+    },
+    {
+      "id": "local-seo",
+      "title": "Lokale Sichtbarkeit mit verlässlichen Unternehmensangaben",
+      "slug": "lokale-sichtbarkeit-unternehmensangaben",
+      "description": "Verbessern Sie lokale Orientierung mit korrekten Kontaktdaten, hilfreichen Leistungsseiten und echten Standortangaben statt austauschbarer Ortstexte.",
+      "intro": [
+        "Bei einer lokalen Suche geht es oft um praktische Fragen: Ist der Betrieb für mein Vorhaben zuständig, arbeitet er in meiner Region und wie erreiche ich ihn? Eine Website sollte diese Fragen schnell beantworten. Widersprüchliche Kontaktdaten oder unklare Einsatzgebiete erschweren die Entscheidung, selbst wenn ein Unternehmen in Suchergebnissen auftaucht.",
+        "Dabei sind Sitz, Einzugsgebiet und digitale Zusammenarbeit unterschiedliche Dinge. Ein Unternehmen kann von einem echten Standort aus Kunden in anderen Regionen betreuen. Daraus entstehen keine zusätzlichen Niederlassungen. Gute lokale Inhalte erklären die tatsächliche Arbeitsweise und geben Besuchern eine verlässliche Orientierung für ihre Anfrage."
+      ],
+      "sections": [
+        {
+          "title": "Standort und Arbeitsweise sauber unterscheiden",
+          "paragraphs": [
+            "Erfassen Sie zunächst die reale Anschrift und den Ablauf der Leistungserbringung. Eine Werkstatt empfängt Kunden vor Ort, ein Montagebetrieb fährt zu Baustellen und ein digitales Studio kann remote zusammenarbeiten. Beschreiben Sie diese Unterschiede ausdrücklich. Wenn Anfahrten oder Besuche nur unter bestimmten Voraussetzungen möglich sind, gehört das in die Information. Ein Ortsname im Text sollte eine tatsächliche Beziehung zum Angebot erklären. Verwenden Sie keine fremde Adresse, nur um Nähe zu vermitteln. Besucher müssen erkennen können, ob sie einen Standort aufsuchen oder zunächst ein Gespräch vereinbaren sollen."
+          ]
+        },
+        {
+          "title": "Unternehmensdaten in den eigenen Kanälen prüfen",
+          "paragraphs": [
+            "Kontrollieren Sie Name, Telefonnummer, Anschrift und gegebenenfalls Öffnungszeiten auf Website und verwalteten Profilen. Alte Angaben können zu vergeblichen Anrufen oder falschen Anfahrten führen. Dokumentieren Sie, wer die Zugänge besitzt und Änderungen vornimmt. Falls ein Google Unternehmensprofil genutzt werden soll, prüfen Sie zunächst die offiziellen Voraussetzungen für das konkrete Geschäftsmodell. Nicht jedes remote tätige Unternehmen erfüllt dieselben Bedingungen wie ein Ladengeschäft. Die Beschreibung muss zur tatsächlichen Tätigkeit passen. Planen Sie bei Umzügen oder Änderungen einen festen Aktualisierungsschritt für alle betroffenen Kanäle ein."
+          ]
+        },
+        {
+          "title": "Regionale Seiten nur mit eigener Information anlegen",
+          "paragraphs": [
+            "Eine Seite für eine Region ist sinnvoll, wenn sie zusätzliche Fragen beantwortet. Ein Betrieb kann tatsächliche Einsatzbedingungen, passende Leistungen und freigegebene Projektbeispiele erläutern. Das bloße Austauschen eines Ortsnamens in ansonsten gleichen Absätzen schafft dagegen kaum Orientierung. Überlegen Sie, welche Information ein Besucher aus dieser Region wirklich benötigt und ob Sie diese dauerhaft pflegen können. Für remote erbrachte Leistungen ist eine klare überregionale Leistungsseite häufig geeigneter als viele Ortsvarianten. Die Struktur sollte aus dem Angebot entstehen und nicht aus einer möglichst langen Liste geografischer Suchbegriffe."
+          ]
+        },
+        {
+          "title": "Fragen vor einer Beauftragung beantworten",
+          "paragraphs": [
+            "Sammeln Sie typische Rückfragen aus Telefonaten und E-Mails. Ein Reparaturbetrieb kann erklären, welche Geräteangaben und Fotos eine erste Einschätzung ermöglichen. Ein Planungsbüro kann beschreiben, welche Unterlagen vor einem Gespräch hilfreich sind. Solche Inhalte verbinden die Suche mit einer konkreten Aufgabe. Schreiben Sie klare Überschriften und verständliche Antworten, statt den Ortsnamen in jedem Satz zu wiederholen. Geben Sie keine pauschalen Zusagen, die vom Einzelfall abhängen. Hilfreich ist beispielsweise die Erklärung eines Ablaufs, ohne eine bestimmte Verfügbarkeit oder ein Ergebnis für jedes Vorhaben zu versprechen."
+          ]
+        },
+        {
+          "title": "Bewertungen und Beispiele mit Kontext verwenden",
+          "paragraphs": [
+            "Echte Kundenbewertungen können Interessenten helfen, Erfahrungen einzuordnen. Bitten Sie angemessen um Rückmeldungen und machen Sie die Anfrage nicht von einer positiven Meinung abhängig. Antworten sollten sachlich bleiben und keine vertraulichen Angaben offenlegen. Auf der Website können eigene Projektbeispiele zeigen, wie ein Auftrag bearbeitet wurde. Erklären Sie Ausgangslage, Umfang und Entscheidungen, soweit eine Veröffentlichung erlaubt ist. Behaupten Sie keine Wirkungen, die nicht belegt sind. Ein nachvollziehbares Beispiel zur Arbeit in einem beengten Gebäude ist oft informativer als eine unbegründete Aussage über Marktführerschaft."
+          ]
+        },
+        {
+          "title": "Anfragen und Aktualität gemeinsam beobachten",
+          "paragraphs": [
+            "Prüfen Sie nicht nur Besucherzahlen, sondern auch die Herkunft und Eignung eingehender Anfragen. Wenn viele Menschen Leistungen außerhalb Ihres Tätigkeitsbereichs erwarten, sind möglicherweise Einsatzgebiet oder Angebot unklar beschrieben. Trennen Sie Klicks auf Telefonnummern, Nachrichten und tatsächlich eingegangene Kontakte, soweit Ihre Werkzeuge das sinnvoll ermöglichen. Planen Sie regelmäßige Kontrollen der wichtigsten Daten, besonders nach betrieblichen Änderungen. Für technische Fragen zur Darstellung und Auffindbarkeit können Sie Google Search Central als Ausgangspunkt nutzen. Entscheidend bleibt, dass ein Interessent mit den veröffentlichten Angaben eine richtige praktische Entscheidung treffen kann."
+          ]
+        }
+      ],
+      "checklist": [
+        "Prüfen Sie tatsächlichen Standort, Kontaktwege und Art der Leistungserbringung.",
+        "Erklären Sie Einsatzgebiet und Voraussetzungen für Besuche oder Zusammenarbeit.",
+        "Halten Sie Anschrift, Telefonnummer und verwaltete Profile aktuell.",
+        "Erstellen Sie regionale Seiten nur mit zusätzlicher eigenständiger Information.",
+        "Vergleichen Sie eingehende Anfragen mit dem beschriebenen Tätigkeitsbereich."
+      ],
+      "conclusion": "Lokale Sichtbarkeit wird nützlich, wenn Menschen das Unternehmen richtig einordnen können. Korrekte Angaben und konkrete Leistungsinformationen schaffen dafür die Grundlage. Beginnen Sie mit Ihrem tatsächlichen Standort und Arbeitsablauf. Ergänzen Sie regionale Inhalte dort, wo sie echte Fragen beantworten und dauerhaft gepflegt werden können."
+    },
+    {
+      "id": "international-seo",
+      "title": "Mehrsprachige Websites für internationale Kunden planen",
+      "slug": "mehrsprachige-websites-internationale-kunden",
+      "description": "Planen Sie Sprachversionen, Seitenadressen und internationale Inhalte so, dass Besucher Ihr Angebot verstehen und die Zusammenarbeit richtig einordnen können.",
+      "intro": [
+        "Eine mehrsprachige Website erweitert nicht nur den Textbestand. Sie verändert Navigation, Pflege und die Erwartungen potenzieller Kunden. Bevor ein Unternehmen weitere Sprachen veröffentlicht, sollte es deshalb klären, welche Märkte es erreichen möchte, welche Leistungen dort sinnvoll sind und wie die spätere Zusammenarbeit tatsächlich organisiert wird.",
+        "Ein Studio mit Sitz in Spanien kann beispielsweise remote für Unternehmen im deutschsprachigen Raum arbeiten. Die deutsche Website sollte diesen Ablauf verständlich erklären, ohne eine deutsche Niederlassung oder eine Betreuung in jeder Sprache zu behaupten. Internationale Suchmaschinenoptimierung verbindet deshalb technische Struktur mit wahrheitsgemäßer und nützlicher Kommunikation."
+      ],
+      "sections": [
+        {
+          "title": "Sprachversionen aus der Nachfrage ableiten",
+          "paragraphs": [
+            "Beginnen Sie mit vorhandenen Anfragen, Kundengesprächen und den Leistungen, die Sie überregional erbringen können. Eine Sprache entspricht nicht automatisch einem einzigen Land. Beschreiben Sie für jede Version die Zielgruppe, das Angebot und den gewünschten nächsten Schritt. Prüfen Sie auch, ob die internen Abläufe zur erwarteten Nachfrage passen. Wenn Bestellungen nur in bestimmte Länder versendet werden, muss das vor der Kaufentscheidung deutlich sein. Bei Dienstleistungen können Arbeitsweise, benötigte Unterlagen und Abstimmung wichtiger sein. Eine übersetzte Seite ersetzt diese organisatorischen Entscheidungen nicht und sollte keine falschen Erwartungen wecken."
+          ]
+        },
+        {
+          "title": "Eine langfristig verständliche URL-Struktur wählen",
+          "paragraphs": [
+            "Jede Sprachversion braucht eine eigene erreichbare Seitenadresse. Sprachverzeichnisse auf einer gemeinsamen Domain können eine mögliche Lösung sein; andere Strukturen bringen andere Anforderungen an Verwaltung und Pflege mit. Entscheiden Sie anhand des bestehenden Projekts und der verfügbaren Ressourcen. Dokumentieren Sie, welche Seiten einander entsprechen und wie neue Inhalte ergänzt werden. Eine rein visuelle Umschaltung ohne eigene URLs erschwert das gezielte Verlinken. Prüfen Sie außerdem, ob Besucher eine bestimmte Sprachseite direkt aufrufen können, ohne zuerst eine Auswahl durchlaufen oder eine automatische Umleitung rückgängig machen zu müssen."
+          ]
+        },
+        {
+          "title": "Inhalte an die Entscheidungssituation anpassen",
+          "paragraphs": [
+            "Eine gute Übertragung berücksichtigt Begriffe, Beispiele und übliche Fragen der Zielgruppe. Ein Fachausdruck kann in einem anderen Markt missverständlich sein, obwohl die wörtliche Übersetzung korrekt ist. Erklären Sie bei grenzüberschreitenden Leistungen den tatsächlichen Unternehmenssitz und den Ablauf der Zusammenarbeit. Übernehmen Sie keine lokalen Referenzen, wenn sie für die neue Zielgruppe etwas anderes suggerieren. Auch Maßeinheiten, Produktdetails und Kontaktangaben brauchen eine Prüfung. Namen, Qualifikationen und Standorte bleiben wahrheitsgemäß. Das Ziel ist ein verständliches Angebot, das Besucher ohne zusätzliche Vermutungen auf ihre eigene Situation beziehen können."
+          ]
+        },
+        {
+          "title": "Äquivalente Seiten technisch konsistent verbinden",
+          "paragraphs": [
+            "Wenn entsprechende Inhalte in mehreren Sprachen existieren, können passende Sprachverweise Suchmaschinen bei der Zuordnung unterstützen. Prüfen Sie die verwendeten Sprachcodes, vollständigen Adressen und gegenseitigen Verweise anhand der Dokumentation von Google Search Central. Verweisen Sie auf die tatsächliche Entsprechung und nicht pauschal auf sämtliche Startseiten. Auch Canonicals müssen zur vorgesehenen Indexierung passen; sie sollen eine eigenständige Sprachversion nicht versehentlich zugunsten einer anderen ausschließen. Betrachten Sie diese Elemente zusammen mit Weiterleitungen und internen Links. Ein einzelnes korrektes Attribut behebt keine widersprüchliche Gesamtstruktur oder nicht erreichbare Seiten."
+          ]
+        },
+        {
+          "title": "Den Sprachwechsel unter Kontrolle der Besucher lassen",
+          "paragraphs": [
+            "Beschriften Sie die Sprachauswahl mit verständlichen Sprachnamen. Flaggen allein sind ungeeignet, wenn eine Sprache in mehreren Ländern gesprochen wird. Beim Wechsel sollte möglichst dieselbe Leistung oder derselbe Artikel in der anderen Version erscheinen. Ist keine Entsprechung vorhanden, erklären Sie den angebotenen Weg. Automatische Hinweise anhand einer Browsereinstellung können nützlich sein, sollten aber den Zugriff auf andere Versionen nicht verhindern. Testen Sie auch Kontaktformulare, Bestätigungen und Fehlermeldungen. Eine übersetzte Startseite wirkt unvollständig, wenn der nächste Schritt ohne Hinweis in eine andere Sprache oder einen unpassenden Markt wechselt."
+          ]
+        },
+        {
+          "title": "Redaktionelle Pflege und Auswertung aufteilen",
+          "paragraphs": [
+            "Führen Sie eine Übersicht aus Originalseite, Sprachversionen und letztem fachlichem Prüfstand. Wenn sich eine Leistung ändert, müssen alle betroffenen Versionen geprüft werden. Bestimmen Sie dafür eine zuständige Person und einen handhabbaren Freigabeprozess. Analysieren Sie Anfragen nach Sprache, Markt und Leistung, ohne Besucherzahlen mit kaufbereiter Nachfrage gleichzusetzen. Werden Inhalte von der falschen Zielgruppe aufgerufen, überprüfen Sie Navigation und Formulierungen. Wenn die Pflege zu aufwendig wird, konzentrieren Sie sich zunächst auf wesentliche Seiten. Eine kleinere verlässliche Sprachversion ist für Besucher hilfreicher als ein umfangreicher, aber widersprüchlicher Bestand."
+          ]
+        }
+      ],
+      "checklist": [
+        "Ordnen Sie jeder Sprachversion Zielgruppe, Angebot und nächsten Schritt zu.",
+        "Sorgen Sie für direkt erreichbare URLs und dokumentierte Seitenentsprechungen.",
+        "Prüfen Sie Begriffe, Beispiele und die Darstellung Ihres tatsächlichen Unternehmenssitzes.",
+        "Validieren Sie Sprachverweise, Canonicals und den Wechsel zwischen entsprechenden Seiten.",
+        "Planen Sie Aktualisierung und Auswertung für jede veröffentlichte Version."
+      ],
+      "conclusion": "Internationale Websites brauchen eine klare Verbindung zwischen Inhalt und Betrieb. Technische Signale helfen bei der Zuordnung, während verständliche Seiten die Zusammenarbeit erklären. Beginnen Sie mit Märkten, die Sie tatsächlich betreuen können, und halten Sie die veröffentlichten Sprachversionen inhaltlich und organisatorisch auf demselben Stand."
+    },
+    {
+      "id": "mobile-performance",
+      "title": "Eine Unternehmenswebsite auf dem Smartphone schneller machen",
+      "slug": "unternehmenswebsite-smartphone-schneller-machen",
+      "description": "Verbessern Sie mobile Ladezeiten und Bedienbarkeit mit passenden Bildern, weniger unnötigen Skripten und Tests der wichtigsten Aufgaben auf Ihrer Website.",
+      "intro": [
+        "Im Büro wirkt eine Website oft unproblematisch: großer Bildschirm, leistungsfähiger Rechner und stabile Verbindung. Unterwegs können dieselben Seiten langsam reagieren oder schwer bedienbar sein. Besucher bemerken nicht die technische Ursache, sondern das Ergebnis: Ein Bild bleibt leer, ein Knopf springt weg oder eine Eingabe wird erst verzögert angenommen.",
+        "Deshalb sollte mobile Optimierung mit einer Aufgabe beginnen. Kann jemand eine Leistung lesen und eine Anfrage absenden? Lässt sich eine Produktvariante wählen und in den Warenkorb legen? Messwerte helfen bei der Diagnose, müssen aber mit diesen praktischen Abläufen verbunden werden, damit die richtigen Verbesserungen Vorrang bekommen."
+      ],
+      "sections": [
+        {
+          "title": "Repräsentative Seiten unter vergleichbaren Bedingungen prüfen",
+          "paragraphs": [
+            "Wählen Sie unterschiedliche Seitentypen statt nur der Startseite: eine Leistungsseite, einen Artikel, ein Formular und gegebenenfalls eine Produktseite. Vergleichen Sie kontrollierte Tests mit Nutzungsdaten aus realen Aufrufen, soweit solche Daten vorhanden sind. Ein einzelner Lauf kann durch Netzwerk und Gerät beeinflusst sein. Notieren Sie deshalb Testbedingungen und beobachtete Probleme. PageSpeed Insights kann Hinweise geben, ersetzt aber keinen Nutzungstest. Wenn eine Seite eine gute Bewertung erhält, das Formular jedoch zeitweise blockiert, bleibt die Aufgabe für den Besucher beeinträchtigt und muss gesondert untersucht werden."
+          ]
+        },
+        {
+          "title": "Bilder für ihren tatsächlichen Einsatz vorbereiten",
+          "paragraphs": [
+            "Große Bilddateien sind bei Unternehmensseiten und Portfolios häufig vermeidbarer Ballast. Stellen Sie passende Abmessungen und Varianten für verschiedene Bildschirmgrößen bereit. Ein kleines Vorschaubild braucht nicht dieselbe Datei wie eine groß dargestellte Projektaufnahme. Prüfen Sie Komprimierung und Format anhand des Motivs: Produktdetails und Beschriftungen müssen erkennbar bleiben. Wichtige Bilder im sichtbaren Anfangsbereich benötigen eine andere Behandlung als weit unten liegende Inhalte. Reservieren Sie außerdem Platz über geeignete Abmessungen. So verschieben nachgeladene Bilder nicht die Texte und Schaltflächen, die jemand gerade verwenden möchte."
+          ]
+        },
+        {
+          "title": "Externe Werkzeuge nach Nutzen und Aufwand bewerten",
+          "paragraphs": [
+            "Karten, Chats, Analysewerkzeuge und eingebettete Medien können zusätzliche Dateien und Rechenarbeit auslösen. Erstellen Sie ein Verzeichnis und fragen Sie bei jedem Eintrag nach seiner Aufgabe. Wird eine Karte erst nach einem Klick benötigt, muss möglicherweise nicht sofort die vollständige Einbettung laden. Entfernen Sie doppelte oder veraltete Einbindungen. Beachten Sie neben der Dateigröße auch die Ausführung im Browser. Mehrere kleine Skripte können auf einem einfachen Smartphone zusammen spürbare Verzögerungen verursachen. Jede neue Integration sollte deshalb nicht nur fachlich, sondern auch im wichtigsten mobilen Ablauf geprüft werden."
+          ]
+        },
+        {
+          "title": "Ungewollte Verschiebungen der Oberfläche verhindern",
+          "paragraphs": [
+            "Eine Seite kann schnell erscheinen und trotzdem unruhig bleiben. Wenn Schriftarten, Bilder oder Hinweise nachträglich Platz beanspruchen, verschieben sich bereits sichtbare Elemente. Ein Besucher trifft dann möglicherweise den falschen Knopf. Reservieren Sie Flächen für bekannte Komponenten und prüfen Sie, wie sich ein Schriftwechsel auf Zeilen und Höhen auswirkt. Testen Sie nicht nur den ersten Bildschirm, sondern auch Menüs, Fehlermeldungen und nachgeladene Produkte. Inhalte, die erst nach einer Interaktion erscheinen, brauchen ebenfalls einen nachvollziehbaren Platz. Stabilität unterstützt die Orientierung und verhindert, dass Menschen eine Eingabe versehentlich wiederholen."
+          ]
+        },
+        {
+          "title": "Interaktionen auf einem echten Gerät durchgehen",
+          "paragraphs": [
+            "Öffnen Sie Menüs, bedienen Sie Filter und füllen Sie Formulare auf einem Smartphone aus. Prüfen Sie, ob die gewählten Felder passende Tastaturen anbieten und Eingaben verständlich validiert werden. Berührbare Elemente brauchen erkennbare Beschriftungen und ausreichend Abstand. Wenn eine Aktion Zeit benötigt, sollte der Zustand sichtbar werden, ohne doppelte Übermittlungen zu begünstigen. Blockieren Sie die Oberfläche nicht unnötig während Hintergrundarbeit. Ein technisch schneller Seitenaufbau nützt wenig, wenn Besucher eine Auswahl nicht treffen oder Fehlermeldungen nicht verstehen können. Gute mobile Leistung umfasst deshalb auch verlässliche Rückmeldungen und Bedienbarkeit."
+          ]
+        },
+        {
+          "title": "Nach Wirkung priorisieren und Veränderungen nachprüfen",
+          "paragraphs": [
+            "Ordnen Sie Probleme danach, wie häufig und wie stark sie wichtige Aufgaben beeinträchtigen. Ein schweres Hauptbild oder ein blockiertes Formular kann dringlicher sein als ein kleiner Unterschied in einer Gesamtbewertung. Prüfen Sie jede Änderung unter vergleichbaren Bedingungen und wiederholen Sie den kompletten Ablauf. Halten Sie einfache Regeln für neue Bilder und externe Werkzeuge fest. Für die Erklärung von Leistungsmetriken und Optimierungsverfahren bietet web.dev hilfreiche Grundlagen. Übertragen Sie diese jedoch auf Ihre konkrete Website. Neue Kampagnen, Katalogeinträge oder Integrationen können bereits erreichte Verbesserungen wieder abschwächen."
+          ]
+        }
+      ],
+      "checklist": [
+        "Testen Sie mehrere Seitentypen und die wichtigsten mobilen Aufgaben.",
+        "Dokumentieren Sie Gerät, Verbindung und konkrete Verzögerungen während der Prüfung.",
+        "Liefern Sie Bilder passend aus und reservieren Sie ihren Platz.",
+        "Überprüfen Sie externe Skripte auf Zweck, Dopplungen und Ausführungsaufwand.",
+        "Wiederholen Sie nach Änderungen den gesamten Kontakt- oder Kaufablauf."
+      ],
+      "conclusion": "Mobile Geschwindigkeit wird dann wertvoll, wenn Menschen ihre Aufgabe zuverlässig erledigen können. Verbinden Sie Messwerte mit der tatsächlichen Bedienung und beheben Sie zuerst die wichtigsten Hindernisse. Klare Regeln für Bilder und zusätzliche Werkzeuge helfen Ihrem Team, diese Qualität bei späteren Erweiterungen zu erhalten."
+    },
+    {
+      "id": "online-store",
+      "title": "Was vor dem Aufbau eines Onlineshops geklärt sein sollte",
+      "slug": "onlineshop-vorbereitung-sortiment-ablaeufe",
+      "description": "Bereiten Sie Sortiment, Produktdaten, Bestand, Zahlung und Versand für Ihren Onlineshop vor und testen Sie den vollständigen Ablauf einer Bestellung.",
+      "intro": [
+        "Ein Onlineshop beginnt mit Entscheidungen über Produkte und Abläufe, lange bevor die ersten Seiten gestaltet werden. Kunden benötigen verlässliche Angaben für ihre Auswahl. Das Unternehmen muss wissen, wie Bestand, Zahlung und Bearbeitung zusammenhängen und wer einen Sonderfall übernimmt. Die Oberfläche kann diese Entscheidungen verständlich darstellen, aber nicht ersetzen.",
+        "Nehmen wir einen Anbieter von Wohnaccessoires: Ein schönes Produktbild beantwortet noch nicht, ob die Leuchte zur vorhandenen Fassung passt oder welche Maße das Regal hat. Fehlen solche Informationen, entstehen Rückfragen oder unpassende Käufe. Eine gute Vorbereitung verbindet deshalb Produktdarstellung und tägliche Arbeit im Unternehmen."
+      ],
+      "sections": [
+        {
+          "title": "Das Sortiment aus Sicht der Käufer ordnen",
+          "paragraphs": [
+            "Entwickeln Sie Kategorien anhand der Fragen Ihrer Kunden. Interne Lagergruppen sind nicht immer für die Suche geeignet. Unterscheiden Sie Produkttypen von Eigenschaften wie Farbe, Größe oder Material. Diese können als Filter dienen, wenn die Daten vollständig und konsistent vorliegen. Legen Sie Regeln für Produktnamen, Artikelnummern und Varianten fest. Bei einem Kleidungsstück müssen etwa Größe und Farbe mit dem jeweiligen Bestand zusammenpassen. Eine nachvollziehbare Ordnung erleichtert nicht nur den Einkauf, sondern auch Importe und spätere Aktualisierungen. Testen Sie die Begriffe mit Personen, die Ihre internen Bezeichnungen nicht kennen."
+          ]
+        },
+        {
+          "title": "Produktdaten für eine informierte Auswahl vervollständigen",
+          "paragraphs": [
+            "Erstellen Sie je Produktfamilie eine Liste notwendiger Informationen. Bei Möbeln können Maße, Verpackung und Montage wichtig sein; bei technischen Teilen die Kompatibilität. Sammeln Sie geeignete Bilder, überprüfte Eigenschaften und konkrete Beschreibungen. Allgemeine Herstellertexte allein beantworten nicht immer die Fragen Ihrer Zielgruppe. Achten Sie darauf, Unterschiede zwischen ähnlichen Produkten sichtbar zu machen. Noch ungeklärte Eigenschaften sollten vor Veröffentlichung bestätigt werden. Platzieren Sie entscheidende Angaben dort, wo die Auswahl getroffen wird. Ein Detail in einer schwer auffindbaren Datei hilft wenig, wenn es erst nach dem Kauf entdeckt wird."
+          ]
+        },
+        {
+          "title": "Eine verbindliche Bestandsquelle bestimmen",
+          "paragraphs": [
+            "Klären Sie, welches System die Verfügbarkeit vorgibt: Warenwirtschaft, Ladengeschäft oder ein gesonderter Bestand für den Onlineverkauf. Definieren Sie, wann eine Einheit reserviert oder abgezogen wird und was bei einem Abbruch geschieht. Bei mehreren verbundenen Systemen muss feststehen, wie verspätete oder doppelte Aktualisierungen behandelt werden. Benennen Sie eine zuständige Person für Abweichungen. Ein Shop darf nicht nur einen scheinbar exakten Wert anzeigen, dessen Herkunft niemand erklären kann. Beginnen Sie mit einer organisatorisch tragfähigen Lösung und ergänzen Sie weitere Automatisierung, wenn Regeln und Daten ausreichend verlässlich sind."
+          ]
+        },
+        {
+          "title": "Versand und Kosten früh verständlich darstellen",
+          "paragraphs": [
+            "Definieren Sie Liefergebiete, Versandarten und die Faktoren, die Kosten oder Ablauf verändern. Sperrige, zerbrechliche oder individuell angefertigte Produkte können andere Schritte benötigen als Standardware. Käufer sollen relevante Informationen erhalten, bevor sie die Bestellung abschließen. Trennen Sie Vorbereitung und Transport, wenn deren Dauer unterschiedlich beeinflusst wird. Vermeiden Sie absolute Zusagen, die von Dritten oder vom Einzelfall abhängen. Prüfen Sie typische Adressen und Warenkörbe mit mehreren Produktarten. Die zuständigen Fachpersonen müssen die anwendbaren Bedingungen prüfen; im Projekt geht es darum, die vereinbarten Angaben korrekt und an den passenden Stellen darzustellen."
+          ]
+        },
+        {
+          "title": "Zahlungsabläufe einschließlich Fehlerfällen testen",
+          "paragraphs": [
+            "Eine Bestellung kann trotz unterbrochener Rückkehr zur Website bezahlt sein. Deshalb darf ihr Zustand nicht nur von der sichtbaren Bestätigungsseite abhängen. Testen Sie mit den vorgesehenen Testmöglichkeiten des Zahlungsdienstes erfolgreiche, ausstehende und abgelehnte Vorgänge. Prüfen Sie auch einen Abbruch und einen erneuten Versuch. Welche Nachricht erhält der Kunde, welche das Team? Kann dabei eine doppelte Bestellung entstehen? Ein verständlicher Fehlerhinweis sollte den nächsten Schritt erklären, ohne sensible technische Details zu zeigen. Interne Statusangaben müssen so eindeutig sein, dass die Bearbeitung nicht auf Vermutungen angewiesen ist."
+          ]
+        },
+        {
+          "title": "Eine vollständige Testbestellung intern bearbeiten",
+          "paragraphs": [
+            "Gehen Sie vor der Veröffentlichung den gesamten Weg durch: Produktsuche, Variantenwahl, Zahlung, Erfassung, Vorbereitung und Kommunikation. Testen Sie gegebenenfalls auch eine Stornierung. Nutzen Sie ein Smartphone und lassen Sie die spätere Bearbeitung durch das tatsächliche Team durchführen. Definieren Sie Bearbeitungsrechte für Bilder, Texte und Bestand. Erfassen Sie nach dem Start wiederkehrende Kundenfragen und Probleme. Ein kleiner Shop benötigt nicht sofort jede denkbare Erweiterung. Vorrang haben nachvollziehbare Produktinformationen und ein bearbeitbarer Auftrag. Weitere Filter oder Schnittstellen sollten anhand echter Anforderungen ergänzt werden, statt die erste Version unnötig zu erschweren."
+          ]
+        }
+      ],
+      "checklist": [
+        "Ordnen Sie Kategorien, Eigenschaften und Varianten nach nachvollziehbaren Regeln.",
+        "Vervollständigen Sie Produktinformationen, die eine richtige Auswahl ermöglichen.",
+        "Bestimmen Sie Bestandsquelle, Reservierungslogik und Zuständigkeit für Abweichungen.",
+        "Testen Sie Liefergebiete, Kosten und unterschiedliche Zustände einer Zahlung.",
+        "Bearbeiten Sie eine Testbestellung vollständig mit dem zuständigen Team."
+      ],
+      "conclusion": "Ein tragfähiger Onlineshop verbindet klare Produktdaten mit verlässlichen Abläufen. Wenn Auswahl, Bestand, Zahlung und Bearbeitung zusammenpassen, lassen sich Probleme früh erkennen und Erweiterungen gezielt planen. Beginnen Sie mit einem Umfang, den Ihre Organisation zuverlässig pflegen und im Alltag tatsächlich bearbeiten kann."
+    },
+    {
+      "id": "whatsapp-conversion",
+      "title": "WhatsApp auf der Website für bessere Erstgespräche nutzen",
+      "slug": "whatsapp-website-bessere-erstgespraeche",
+      "description": "Nutzen Sie WhatsApp auf Ihrer Website mit passenden Nachrichtenvorlagen, klaren Erwartungen und geordnetem Nachfassen für hilfreiche Kundengespräche.",
+      "intro": [
+        "Ein WhatsApp-Knopf kann den ersten Kontakt erleichtern. Er verbessert aber nicht automatisch die Qualität einer Anfrage. Wenn jede Unterhaltung ohne Zusammenhang beginnt und das Team immer dieselben Grundlagen erfragen muss, wird aus dem zusätzlichen Kanal schnell eine weitere Unterbrechung. Die Website sollte deshalb auch den Einstieg in das Gespräch vorbereiten.",
+        "Für eine remote angebotene Website-Leistung können Land, gewünschter Dienst, bestehende Website und grober Zeitrahmen hilfreiche Angaben sein. Bei einer Montagearbeit sind Einsatzort und Art des Vorhabens wichtiger. Entscheidend ist, wenige passende Informationen vorzuschlagen, ohne den unkomplizierten Kontakt durch eine lange Pflichtliste zu erschweren."
+      ],
+      "sections": [
+        {
+          "title": "Den Kanal an einer sinnvollen Stelle anbieten",
+          "paragraphs": [
+            "Überlegen Sie, auf welchen Seiten ein Gespräch tatsächlich der nächste Schritt ist. Eine Leistungsseite kann direkt zur Besprechung eines Vorhabens einladen. Bei einem erklärenden Artikel ist zunächst ein Verweis auf das passende Angebot möglicherweise hilfreicher. Der Kontaktknopf sollte den Inhalt unterstützen und ihn nicht ständig verdecken. Legen Sie auch fest, ob WhatsApp für neue Anfragen, laufende Projekte oder beide Situationen vorgesehen ist. Daraus ergeben sich Beschriftung und interne Zuständigkeit. Besucher sollen erkennen, worüber sie schreiben können, statt eine unbestimmte Einladung ohne Bezug zur gerade gelesenen Seite zu erhalten."
+          ]
+        },
+        {
+          "title": "Eine bearbeitbare Nachricht mit Kontext vorbereiten",
+          "paragraphs": [
+            "Eine vorgeschlagene Nachricht kann die gewünschte Leistung und einige offene Angaben enthalten. Wer einen Onlineshop plant, könnte beispielsweise Land, ungefähren Sortimentsumfang und vorhandenes Material ergänzen. Lassen Sie die Nachricht vor dem Versand frei bearbeiten. Fragen Sie keine vertraulichen Informationen ab, die für das erste Gespräch nicht gebraucht werden. Der Text soll Orientierung geben und darf unterschiedliche Vorhaben nicht in ein starres Schema zwingen. Wichtig ist außerdem, dass ein Vorschlag noch keine gesendete Nachricht darstellt. Erst die Person entscheidet, ob sie den Text übernimmt und den Kontakt tatsächlich aufnimmt."
+          ]
+        },
+        {
+          "title": "Erreichbarkeit ohne unrealistische Erwartungen erklären",
+          "paragraphs": [
+            "Beschreiben Sie den Kanal so, wie das Unternehmen ihn betreuen kann. Wenn feste Zeiten gelten, müssen sie aktuell sein. Gibt es keine durchgehende Besetzung, sollte der Auftritt keine sofortige Antwort rund um die Uhr suggerieren. Gerade kleine Teams müssen Gespräche mit Projektarbeit verbinden. Eine angemessene Eingangsbestätigung kann hilfreich sein, ersetzt aber keine tatsächliche Bearbeitung. Versprechen Sie nur Abläufe, für die es eine organisatorische Grundlage gibt. Eine klare Erwartung erleichtert Interessenten die Wahl zwischen Nachricht und anderem Kontaktweg und verhindert Missverständnisse bei einer vorübergehend ausbleibenden Antwort."
+          ]
+        },
+        {
+          "title": "Link und Bedienung auf mehreren Geräten prüfen",
+          "paragraphs": [
+            "Testen Sie die Telefonnummer einschließlich internationaler Vorwahl, die vorbereitete Nachricht und das Öffnen des vorgesehenen Kontakts. Berücksichtigen Sie Smartphone, Desktop und den Fall, dass die Anwendung nicht installiert ist. Je nach Umgebung kann eine Browserversion oder ein zusätzlicher Schritt erscheinen. Die Schaltfläche braucht eine verständliche Beschriftung und ausreichenden Kontrast. Wenn sie am Bildschirmrand feststeht, darf sie Formulare, Hinweise oder Kaufknöpfe nicht verdecken. Prüfen Sie auch die Nutzung mit Vergrößerung und Tastatur. Eine zusätzliche Kontaktmöglichkeit ist nur dann hilfreich, wenn sie andere Aufgaben nicht behindert."
+          ]
+        },
+        {
+          "title": "Verantwortung und nächsten Schritt intern festhalten",
+          "paragraphs": [
+            "Bestimmen Sie, wer eine neue Unterhaltung übernimmt und wo der Bearbeitungsstand sichtbar bleibt. Sonst antworten mehrere Personen gleichzeitig oder niemand fühlt sich zuständig. Einfache Zustände wie neue Anfrage, Angaben fehlen und Gespräch vereinbart können genügen. Halten Sie den nächsten Schritt und einen Verantwortlichen fest. Übertragen Sie dabei nur notwendige Angaben in weitere Systeme und achten Sie auf passende Zugriffsrechte. Bei einer Übergabe sollte die zuständige Person den vorhandenen Kontext kennen. Interessenten müssen ihr Vorhaben nicht erneut vollständig schildern, nur weil intern eine andere Person die Bearbeitung übernimmt."
+          ]
+        },
+        {
+          "title": "Gesprächsqualität statt nur Öffnungen bewerten",
+          "paragraphs": [
+            "Ein Klick auf den WhatsApp-Knopf zeigt Interesse am Kontaktweg. Er belegt weder den Versand einer Nachricht noch eine geeignete Geschäftsanfrage. Vergleichen Sie die erfassten Website-Ereignisse mit tatsächlich eingegangenen Gesprächen, soweit Ihre Werkzeuge und Datenschutzpraxis dies sinnvoll erlauben. Fragen Sie das Team, welche Angaben häufig fehlen und welche Seiten zu verständlichen Anfragen führen. Viele unpassende Nachrichten können auf eine unklare Leistungsbeschreibung hinweisen. Ändern Sie deshalb nicht automatisch nur die Größe des Knopfs. Manchmal hilft eine präzisere Erklärung des Angebots mehr als eine zusätzliche Aufforderung zur Kontaktaufnahme."
+          ]
+        }
+      ],
+      "checklist": [
+        "Wählen Sie Seiten, auf denen ein Gespräch ein sinnvoller nächster Schritt ist.",
+        "Schlagen Sie wenige Angaben vor, die das Erstgespräch tatsächlich vorbereiten.",
+        "Beschreiben Sie die Betreuung des Kanals entsprechend Ihrer realen Organisation.",
+        "Testen Sie Telefonnummer, Nachricht und Bedienung auf mehreren Geräten.",
+        "Erfassen Sie Verantwortliche, nächste Schritte und wiederkehrende Verständnisprobleme."
+      ],
+      "conclusion": "WhatsApp wird hilfreich, wenn der Kontaktweg zur Website und zur Arbeitsweise des Teams passt. Kontext, realistische Erwartungen und geordnetes Nachfassen verbessern die Grundlage für ein Gespräch. Bewerten Sie den Kanal deshalb anhand verständlicher, passender Anfragen und nicht allein anhand der Zahl geöffneter Verbindungen."
+    },
+    {
+      "id": "ai-automation",
+      "title": "Welche Abläufe sich für n8n und KI eignen",
+      "slug": "ablaeufe-n8n-ki-automatisieren",
+      "description": "Wählen Sie sinnvolle Aufgaben für n8n und KI aus und planen Sie Daten, Berechtigungen, menschliche Freigaben sowie den Umgang mit Fehlern und Wiederholungen.",
+      "intro": [
+        "Automatisierung hilft vor allem bei Aufgaben, deren Ablauf das Unternehmen verstanden hat. Werden Werkzeuge verbunden, bevor Regeln und Zuständigkeiten geklärt sind, lassen sich Fehler ebenfalls schneller weitergeben. Ein sinnvoller Einstieg beginnt deshalb mit der täglichen Arbeit und erst danach mit der Wahl einzelner Systeme oder eines KI-Modells.",
+        "Ein Beispiel ist die Bearbeitung von Website-Anfragen: Angaben werden geprüft, ein Eintrag vorbereitet und die zuständige Person informiert. KI kann freie Texte einordnen oder einen internen Entwurf erstellen. Ob eine verbindliche Zusage verschickt wird, kann weiterhin eine menschliche Entscheidung bleiben. Diese Grenze sollte von Anfang an feststehen."
+      ],
+      "sections": [
+        {
+          "title": "Den bestehenden Vorgang vollständig aufzeichnen",
+          "paragraphs": [
+            "Beobachten Sie mehrere echte Fälle und notieren Sie Eingang, Daten, Entscheidungen, Aktionen und gewünschtes Ergebnis. Fragen Sie nach Ausnahmen, die im Alltag selbstverständlich erscheinen. Was passiert, wenn eine Angabe fehlt oder ein Kunde denselben Vorgang erneut sendet? Welche Entscheidung trifft eine bestimmte Person anhand ihrer Erfahrung? Schreiben Sie diese Regeln auf, statt sie stillschweigend vorauszusetzen. Ein Prozessbild muss auch die Übergaben zwischen Mitarbeitern zeigen. Wenn bereits der manuelle Ablauf widersprüchlich ist, sollte er zuerst geklärt werden. Sonst automatisiert das Projekt eine Unklarheit, deren Folgen anschließend schwerer zu erkennen sind."
+          ]
+        },
+        {
+          "title": "Mit einer begrenzten und überprüfbaren Aufgabe starten",
+          "paragraphs": [
+            "Wählen Sie einen wiederkehrenden Vorgang mit verständlicher Eingabe und kontrollierbarem Ergebnis. Ein interner Entwurf oder das Übertragen bestätigter Felder lässt sich meist leichter prüfen als eine eigenständige verbindliche Kommunikation. Definieren Sie, was die erste Version leisten soll und was außerhalb ihres Umfangs bleibt. Vergleichen Sie die Bearbeitung mit dem bisherigen Vorgehen, ohne Einsparungen im Voraus als sicher anzunehmen. Ein kleiner Einstieg liefert Informationen über Datenqualität und Ausnahmefälle. Er sollte eine konkrete Belastung reduzieren und nicht möglichst viele Anwendungen verbinden, nur weil entsprechende Anschlüsse verfügbar sind."
+          ]
+        },
+        {
+          "title": "Feste Regeln von KI-Interpretation unterscheiden",
+          "paragraphs": [
+            "Bekannte Bedingungen gehören in ausdrückliche Prüfungen. Wenn eine Pflichtangabe fehlt, muss dafür kein Sprachmodell raten. KI kann ergänzen, wenn unstrukturierte Texte zusammengefasst oder eingeordnet werden sollen. Legen Sie erlaubte Kategorien, Ausgabeformat und den Umgang mit unklaren Fällen fest. Eine überzeugend formulierte Antwort ist noch kein korrektes Ergebnis. Geben Sie dem Ablauf eine Möglichkeit, keine sichere Zuordnung vorzunehmen. Eingehende Texte müssen außerdem als Daten behandelt werden. Darin enthaltene Anweisungen dürfen nicht die Regeln verändern oder zusätzliche Aktionen auslösen, für die der Prozess nicht vorgesehen ist."
+          ]
+        },
+        {
+          "title": "Datenzugriff und Handlungsspielraum begrenzen",
+          "paragraphs": [
+            "Prüfen Sie für jeden Schritt, welche Informationen wirklich benötigt werden. Ein Dienst zur Zusammenfassung muss möglicherweise nicht sämtliche Anhänge oder die vollständige Kundenakte erhalten. Verwenden Sie angemessene, möglichst getrennte Berechtigungen und dokumentieren Sie die angeschlossenen Systeme. Ein Ablauf zum Vorbereiten eines Eintrags braucht nicht automatisch Rechte zum Löschen anderer Datensätze. Beziehen Sie die zuständigen internen Personen ein, wenn vertrauliche oder besonders schützenswerte Angaben betroffen sind. Diese Entscheidungen beeinflussen die Architektur. Erst nachträglich zu entdecken, dass Daten eine bestimmte Umgebung nicht verlassen sollen, kann umfangreiche Änderungen am geplanten Ablauf erfordern."
+          ]
+        },
+        {
+          "title": "Fehler, Wiederholungen und Freigaben vorsehen",
+          "paragraphs": [
+            "Eine Verbindung kann abbrechen, nachdem ein Datensatz erstellt wurde, aber bevor das System Erfolg meldet. Bei einer vollständigen Wiederholung drohen doppelte Einträge oder Nachrichten. Planen Sie geeignete Kennungen und Zustandsprüfungen für solche Fälle. Unterscheiden Sie wiederholbare technische Fehler von Situationen, die eine Person beurteilen muss. Eine Freigabe sollte die vorgeschlagene Aktion und relevante Daten verständlich zeigen sowie Korrektur und Ablehnung ermöglichen. Hinweise ohne Verantwortlichen gehen leicht unter. Jeder Ausnahmefall braucht deshalb einen klaren Empfänger und einen nachvollziehbaren nächsten Schritt, ebenso wie der reguläre Ablauf."
+          ]
+        },
+        {
+          "title": "Mit unterschiedlichen Fällen testen und weiter beobachten",
+          "paragraphs": [
+            "Prüfen Sie vollständige, unvollständige, doppelte und unerwartete Eingaben, bevor echte Außenaktionen erlaubt werden. Vergleichen Sie KI-Ausgaben mit menschlichen Bewertungen und erfassen Sie Fehler nach Art. Testen Sie zusätzlich geänderte Felder und vorübergehend nicht verfügbare Systeme. Nach dem Start zählen tatsächlicher Prüfaufwand, Fehler und Nutzen im Alltag. Benennen Sie eine Person für Wartung und dokumentieren Sie, wie der Ablauf angehalten werden kann. Änderungen an einer verbundenen Anwendung können Nacharbeit erfordern. Eine Automatisierung bleibt nur verlässlich, wenn das Unternehmen ihr Verhalten verstehen, kontrollieren und bei Bedarf gezielt korrigieren kann."
+          ]
+        }
+      ],
+      "checklist": [
+        "Erfassen Sie Eingang, Regeln, Verantwortliche und Ausnahmen des manuellen Vorgangs.",
+        "Wählen Sie eine kleine erste Aufgabe mit überprüfbarem Ergebnis.",
+        "Trennen Sie feste Bedingungen von interpretierenden Aufgaben für die KI.",
+        "Begrenzen Sie Datenzugriff und Berechtigungen auf den erforderlichen Umfang.",
+        "Testen Sie Wiederholungen, Ausfälle und menschliche Freigaben vor echten Aktionen."
+      ],
+      "conclusion": "n8n und KI können wiederkehrende Arbeit vereinfachen, wenn Regeln und Grenzen nachvollziehbar sind. Beginnen Sie mit einem begrenzten Vorgang, kontrollieren Sie das Ergebnis und planen Sie Ausnahmen genauso sorgfältig wie den normalen Weg. Der Nutzen zeigt sich in der tatsächlichen Arbeit des Teams und sollte dort überprüft werden."
+    },
+    {
+      "id": "website-migration",
+      "title": "Einen Website-Wechsel mit Inhaltsinventar und Prüfplan vorbereiten",
+      "slug": "website-wechsel-inhaltsinventar-pruefplan",
+      "description": "Planen Sie Ihren Website-Wechsel mit einem URL-Inventar, passenden Weiterleitungen und Funktionstests, damit Inhalte und Kontaktwege erhalten bleiben.",
+      "intro": [
+        "Ein Website-Wechsel betrifft mehr als Gestaltung und Technik. Alte Adressen können in Suchergebnissen, Dokumenten oder Nachrichten stehen. Formulare und verbundene Werkzeuge hängen möglicherweise von Einstellungen ab, die auf der sichtbaren Seite nicht zu erkennen sind. Ohne Bestandsaufnahme verschwinden bei einer Überarbeitung leicht Inhalte oder funktionierende Kontaktwege.",
+        "Eine Migration kann keine unveränderten Besucherzahlen garantieren. Sie lässt sich aber so vorbereiten, dass vermeidbare Fehler früh entdeckt und Probleme nach der Veröffentlichung gezielt untersucht werden. Dafür braucht es eine Übersicht des alten Bestands, eindeutige Entscheidungen über neue Ziele und einen Plan für die wichtigsten Prüfungen."
+      ],
+      "sections": [
+        {
+          "title": "Den vorhandenen Bestand vor Änderungen erfassen",
+          "paragraphs": [
+            "Sammeln Sie die bestehenden Seitenadressen und ergänzen Sie Informationen zu Inhalten, Kontakten und bekannten externen Verweisen. Berücksichtigen Sie auch Kampagnenseiten und ältere Dokumente, die im Menü nicht mehr auftauchen. Erfassen Sie Bilder, Formulare, Seitentitel und relevante Beschreibungen. Notieren Sie die Zugänge zu Domain, Hosting und angeschlossenen Werkzeugen. Sichern Sie den Ausgangszustand auf geeignete Weise und klären Sie, was sich daraus wiederherstellen lässt. Das Inventar muss nicht kompliziert sein. Es soll jedoch zeigen, welche Bestandteile existieren, welche wichtig sind und wer über ihre weitere Verwendung entscheiden kann."
+          ]
+        },
+        {
+          "title": "Für jede alte Adresse ein sinnvolles Ziel bestimmen",
+          "paragraphs": [
+            "Ordnen Sie jeder Seite eine Entscheidung zu: erhalten, überarbeiten, mit einem anderen Inhalt zusammenführen oder entfernen. Wenn es eine fachlich passende Nachfolgeseite gibt, tragen Sie deren Adresse ein. Eine pauschale Weiterleitung sämtlicher alten URLs zur Startseite lässt Besucher häufig ohne gesuchte Information zurück. Für Inhalte ohne Ersatz ist eine hilfreiche Fehlerseite mit Orientierung sinnvoller als ein irreführendes Ziel. Halten Sie diese Entscheidungen in einer Zuordnungstabelle fest. Sie dient anschließend als Grundlage für Umsetzung und Kontrolle. Prüfen Sie besonders Seiten, die weiterhin in Angeboten oder Kundenunterlagen genannt werden."
+          ]
+        },
+        {
+          "title": "Weiterleitungen und interne Verweise gemeinsam planen",
+          "paragraphs": [
+            "Richten Sie für geänderte Adressen geeignete dauerhafte Weiterleitungen ein und prüfen Sie deren konkrete Ziele. Vermeiden Sie nach Möglichkeit lange Ketten über mehrere Zwischenadressen. Aktualisieren Sie außerdem Links im neuen Inhalt, damit die normale Navigation direkt zur richtigen Seite führt. Dazu gehören Menüs, Fußzeilen, Artikel und kontrollierbare Dokumente. Bei mehrsprachigen Websites müssen auch die Entsprechungen zwischen Sprachversionen erhalten bleiben. Überprüfen Sie Canonicals und Sprachverweise zusammen mit der neuen Struktur. Ein funktionierender Einzelredirect reicht nicht aus, wenn andere Signale weiterhin auf widersprüchliche Ziele verweisen."
+          ]
+        },
+        {
+          "title": "Die neue Version vor der Veröffentlichung prüfen",
+          "paragraphs": [
+            "Nutzen Sie eine geeignete Vorschauumgebung und sorgen Sie dafür, dass sie nicht unbeabsichtigt als öffentliche Version behandelt wird. Prüfen Sie Texte, Bilder, Formulare und mobile Bedienung anhand konkreter Aufgaben. Lassen Sie auch spätere Redakteure eine typische Inhaltsänderung durchführen. Dokumentieren Sie vorübergehende Einstellungen, die eine Indexierung im Test verhindern, und deren geplante Entfernung. Eine optisch fertige Website kann für Suchmaschinen weiterhin gesperrt sein, wenn solche Einstellungen übernommen werden. Legen Sie deshalb vor der Veröffentlichung klare Prüfkriterien und Verantwortliche fest, statt nur den sichtbaren Eindruck freizugeben."
+          ]
+        },
+        {
+          "title": "Die Umstellung mit erreichbaren Verantwortlichen koordinieren",
+          "paragraphs": [
+            "Wählen Sie einen Zeitpunkt, zu dem notwendige Ansprechpartner die Veröffentlichung begleiten können. Prüfen Sie Domain, Zertifikat und betroffene Einstellungen. Wenn Änderungen auch E-Mail-Konfigurationen berühren, müssen diese Abhängigkeiten berücksichtigt werden. Kontrollieren Sie nach der Umstellung alte und neue Adressen, den Eingang von Formularen und die vorgesehenen Messwerkzeuge. Überprüfen Sie Sitemap und passende Einstellungen in der Google Search Console, soweit sie zum Projekt gehören. Google Search Central bietet technische Hinweise für solche Umzüge. Ein Wiederherstellungsplan sollte erklären, unter welchen Bedingungen er eingesetzt wird und welche Folgen dabei zu beachten sind."
+          ]
+        },
+        {
+          "title": "Nach der Veröffentlichung mit Vergleichsdaten beobachten",
+          "paragraphs": [
+            "Vergleichen Sie den neuen Zustand mit Inventar und vorherigen Daten. Achten Sie auf nicht erreichbare Seiten, falsche Ziele, ausbleibende Anfragen und auffällige Indexierungsprobleme. Berücksichtigen Sie bei Besucherzahlen auch saisonale Nachfrage und gleichzeitig veränderte Kampagnen. Aus einem einzelnen Tag lässt sich selten eine belastbare Ursache ableiten. Priorisieren Sie Fehler, die wichtige Aufgaben verhindern oder zentrale Seiten betreffen. Dokumentieren Sie Korrekturen in der Zuordnungstabelle. Für diese Nachkontrolle braucht es eine feste Zuständigkeit, damit Probleme nicht zufällig durch einen Kunden entdeckt werden und technische Veränderungen mit nachvollziehbarem Kontext untersucht werden können."
+          ]
+        }
+      ],
+      "checklist": [
+        "Erfassen Sie vorhandene URLs, Inhalte, Funktionen und notwendige Zugänge.",
+        "Dokumentieren Sie für jede alte Seite eine Entscheidung und gegebenenfalls ihr Ziel.",
+        "Prüfen Sie Weiterleitungen, interne Links und mehrsprachige Seitenbeziehungen gemeinsam.",
+        "Testen Sie Kontaktwege, mobile Aufgaben und Einstellungen zur Indexierung.",
+        "Benennen Sie Verantwortliche für Veröffentlichung, Wiederherstellung und anschließende Kontrolle."
+      ],
+      "conclusion": "Ein geplanter Website-Wechsel macht Entscheidungen und Prüfungen nachvollziehbar. Das Inventar schützt den Überblick, die Zuordnungstabelle lenkt alte Adressen und Funktionstests prüfen die wesentlichen Aufgaben. Mit einer festen Nachkontrolle lassen sich Probleme erkennen und bearbeiten, bevor fehlende Inhalte oder unterbrochene Kontaktwege lange unbemerkt bleiben."
+    }
+  ]
+}

@@ -1,8 +1,8 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import { getLanding, landingsFor } from "../src/content/local";
-import { metadata as terminos } from "../src/app/terminos/page";
-import { metadata as privacidad } from "../src/app/privacidad/page";
+import { metadata as terminos } from "../src/app/(es)/terminos/page";
+import { metadata as privacidad } from "../src/app/(es)/privacidad/page";
 
 const expected = {
   barcelona: "Diseño web en Barcelona a medida | Latech",

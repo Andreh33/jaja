@@ -1,6 +1,7 @@
+import { internationalSitemap, equivalents, dictionaries, type PageKey } from '@/lib/international';
 import type { MetadataRoute } from 'next';
 import { MYSTERIES } from '@/lib/lab-mysteries';
-import { experiments } from './lab/_lib/experiments';
+import { experiments } from './(es)/lab/_lib/experiments';
 import { inArray } from 'drizzle-orm';
 import { getAllPosts } from '@/lib/posts';
 import { editorialUpdate } from '@/lib/editorial-dates';
@@ -100,5 +101,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/lab/misterios', ...MYSTERIES.map((episode) => `/lab/misterios/${episode.slug}`),
     '/lab/trazo', '/briefing',
   ].map((path) => ({ url: `${base}${path}`, lastModified: RELEASE_UPDATE, changeFrequency: 'monthly' as const, priority: .6 }));
-  return [...fixedEntries, ...landingEntries, ...categoryEntries, ...postEntries, ...offerEntries, ...labEntries];
+  const spanishKeys: Record<string, PageKey> = { '': 'home', '/tienda': 'services', '/tienda/web': 'web', '/tienda/online': 'shop', '/tienda/agente-ia': 'ai', '/sobre-nosotros': 'about', '/proyectos': 'projects', '/contacto': 'contact', '/blog': 'blog' };
+  for (const entry of fixedEntries) {
+    const key = spanishKeys[entry.url.slice(base.length)];
+    if (key) { entry.alternates = { languages: equivalents(key) }; entry.lastModified = '2026-10-25T12:00:00Z'; }
+  }
+  for (const entry of postEntries) {
+    const article = dictionaries.es.articles.find(a => entry.url.endsWith('/blog/' + a.slug));
+    if (article) entry.alternates = { languages: equivalents('article', article.id) };
+  }
+  return [...internationalSitemap(), ...fixedEntries, ...landingEntries, ...categoryEntries, ...postEntries, ...offerEntries, ...labEntries];
 }

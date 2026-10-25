@@ -17,7 +17,7 @@ function filesIn(path: string): string[] {
 
 describe('Public full-motion experience', () => {
   it('does not automatically disable public effects from the system motion preference', () => {
-    const files = ['components/home', 'components/effects', 'components/arcade', 'components/layout', 'app/lab']
+    const files = ['components/home', 'components/effects', 'components/arcade', 'components/layout', 'app/(es)/lab']
       .flatMap(path => filesIn(join(root, path)));
     files.push(join(root, 'app/globals.css'), join(root, 'app/blue-experience.css'), join(root, 'lib/tv-remote-view.ts'));
     for (const file of files) {

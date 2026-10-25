@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
 import { QUOTE_CATALOG, QUOTE_WHATSAPP_NUMBER } from '../src/lib/quotes/catalog';
-import { INITIAL_STATE, TOTAL_STEPS, STORAGE_KEY, LEGACY_STORAGE_KEY, buildCart, buildWhatsAppMessage, buildWhatsAppUrl, sanitizeState, serializeState, deserializeState, loadFromStorage, saveToStorage, clearStorage, isStepValid, reducer, type QuoteStorage, type WizardState } from '../src/app/tienda/calculadora/_lib/state';
+import { INITIAL_STATE, TOTAL_STEPS, STORAGE_KEY, LEGACY_STORAGE_KEY, buildCart, buildWhatsAppMessage, buildWhatsAppUrl, sanitizeState, serializeState, deserializeState, loadFromStorage, saveToStorage, clearStorage, isStepValid, reducer, type QuoteStorage, type WizardState } from '../src/app/(es)/tienda/calculadora/_lib/state';
 
 function state(patch: Partial<WizardState> = {}): WizardState { return sanitizeState({ ...INITIAL_STATE, ...patch }); }
 class MemoryStorage implements QuoteStorage {
@@ -97,7 +97,7 @@ describe('defensive selection storage', () => {
 
 describe('calculator boundaries', () => {
   it('contains no checkout/auth request or password input in its user flow', () => {
-    const root = join(process.cwd(), 'src/app/tienda/calculadora');
+    const root = join(process.cwd(), 'src/app/(es)/tienda/calculadora');
     const readTree = (path: string): string => readdirSync(path, { withFileTypes: true }).map(entry => entry.isDirectory() ? readTree(join(path, entry.name)) : entry.name.endsWith('.tsx') ? readFileSync(join(path, entry.name), 'utf8') : '').join('\n');
     const source = readTree(root);
     assert.doesNotMatch(source, /fetch\s*\(|\/api\/(?:auth|checkout)|type=["']password["']|buy\.stripe\.com/);

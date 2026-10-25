@@ -4,7 +4,7 @@ import { existsSync } from 'node:fs';
 import { projects } from '../src/lib/projects';
 import { tvProjects, isTvChannel } from '../src/lib/tv-channels';
 import { featuredProjects } from '../src/components/home/featured-projects';
-import { GET } from '../src/app/studio-browser/[project]/route';
+import { GET } from '../src/app/(es)/studio-browser/[project]/route';
 
 const removed = ['fulldip-sur', 'sear', 'the-boat-house', 'autoselect-sevilla',
   'pruden-hijos', 'meson-casa-andres', 'industrial-fighters', 'proyecto-1',

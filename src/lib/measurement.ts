@@ -1,5 +1,8 @@
+import { knownInternationalPath, isLocale, pagePath } from './international-routes';
 /** Public article slugs and coarse routes; never private values or query strings. */
 export function measurementPath(pathname: string): string | null {
+  if (/^\/(en|fr|de|pt|it)\/(admin|dashboard|api|login|checkout)(\/|$)/.test(pathname)) return null;
+  if (knownInternationalPath(pathname)) return pathname;
   if (/^\/(admin|dashboard|cursos?|login|registro|recuperar|reset-password|checkout|pago|cuenta|mando)(\/|$)/.test(pathname)) return null;
   const fixed = ['/', '/blog', '/lab', '/briefing', '/contacto', '/proyectos', '/sobre-nosotros', '/tienda', '/tienda/web', '/tienda/online', '/tienda/agente-ia', '/tienda/calculadora', '/cobertura'];
   if (fixed.includes(pathname)) return pathname;
@@ -23,6 +26,8 @@ export function commercialDestination(href: string, origin: string): string | nu
   try {
     const url = new URL(href, origin);
     if (url.origin !== origin) return null;
+    const locale = url.pathname.split('/')[1];
+    if (isLocale(locale) && locale !== 'es' && (['services', 'web', 'shop', 'ai', 'contact'] as const).some(key => pagePath(locale, key) === url.pathname)) return url.pathname;
     return ['/tienda', '/tienda/web', '/tienda/online', '/tienda/agente-ia', '/tienda/calculadora', '/contacto', '/briefing'].includes(url.pathname) ? url.pathname : null;
   } catch { return null; }
 }
@@ -36,7 +41,7 @@ export function sanitizeMeasurementUrl(value: string): string | null {
     if (!coarse || url.pathname.startsWith('/api/')) return null;
     url.search = '';
     url.hash = '';
-    const publicSlug = /^\/(blog|lab|diseno-web|tienda-online|agente-ia|empleo)(\/[a-z0-9-]+){0,2}$/.test(url.pathname);
+    const publicSlug = knownInternationalPath(url.pathname) || /^\/(blog|lab|diseno-web|tienda-online|agente-ia|empleo)(\/[a-z0-9-]+){0,2}$/.test(url.pathname);
     if (!publicSlug && !['/', '/privacidad', '/terminos', '/empleo'].includes(url.pathname) && coarse !== url.pathname) url.pathname = '/otra-pagina-publica';
     return url.toString();
   } catch { return null; }

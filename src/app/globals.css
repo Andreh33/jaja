@@ -3,8 +3,8 @@
 /* === LATECH DESIGN SYSTEM === */
 :root {
   /* Core */
-  --bg-base: #030914;
-  --bg-elevated: #071323;
+  --bg-base: #06101f;
+  --bg-elevated: #0b1a30;
   --bg-glass: rgba(10,25,45, 0.55);
   --bg-glass-strong: rgba(10,29,52, 0.75);
 
@@ -13,8 +13,8 @@
   --brand-100: #dbeafe;
   --brand-200: #bfdbfe;
   --brand-300: #93c5fd;
-  --brand-400: #3b82f6;
-  --brand-500: #2563eb;
+  --brand-400: #5599ff;
+  --brand-500: #3478ed;
   --brand-600: #1d4ed8;
   --brand-700: #1e40af;
   --brand-glow: rgba(59,130,246, 0.45);

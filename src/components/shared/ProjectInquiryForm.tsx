@@ -1,4 +1,5 @@
 'use client';
+import Link from 'next/link';
 
 import { useId, useState } from 'react';
 import { track } from '@vercel/analytics';
@@ -42,7 +43,7 @@ export default function ProjectInquiryForm({ initialType = 'web' }: { initialTyp
     </div>
     <label htmlFor={`${id}-idea`}>Cuéntanos tu idea<textarea id={`${id}-idea`} required minLength={10} maxLength={1800} rows={4} placeholder="A qué te dedicas, qué quieres conseguir y si ya tienes una web…" value={form.message} onChange={event => { event.target.setCustomValidity(''); update('message', event.target.value); }} /></label>
     <button type="submit" className="blue-button">Continuar por WhatsApp <ArrowUpRight size={18} aria-hidden="true" /></button>
-    <p className={styles.note}>Se abrirá WhatsApp con todos los detalles. Podrás revisar el mensaje antes de enviarlo. <a href="/privacidad">Privacidad</a>.</p>
+    <p className={styles.note}>Se abrirá WhatsApp con todos los detalles. Podrás revisar el mensaje antes de enviarlo. <Link href="/privacidad">Privacidad</Link>.</p>
     {prepared && <p className={styles.receipt} role="status">Tu mensaje está preparado. <a href={href} target="_blank" rel="noopener noreferrer">Abrir WhatsApp</a> si no se ha abierto. El envío lo confirmas allí.</p>}
   </form>;
 }

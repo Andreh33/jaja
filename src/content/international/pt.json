@@ -1,0 +1,652 @@
+{
+  "code": "pt",
+  "name": "Português",
+  "ogLocale": "pt_PT",
+  "ui": {
+    "home": "Início",
+    "services": "Serviços",
+    "projects": "Projetos",
+    "about": "Sobre nós",
+    "contact": "Contacto",
+    "blog": "Artigos",
+    "language": "Idioma",
+    "readMore": "Ler artigo",
+    "backToBlog": "Voltar aos artigos",
+    "related": "Artigos relacionados",
+    "author": "Equipa editorial da Latech",
+    "whatsapp": "Falar por WhatsApp",
+    "skip": "Saltar para o conteúdo",
+    "legal": "Informação legal",
+    "privacy": "Privacidade",
+    "terms": "Condições de utilização",
+    "remote": "Com sede em Espanha, trabalhamos remotamente com empresas de outros países.",
+    "phone": "Telefone",
+    "contactTitle": "Vamos falar do seu projeto",
+    "contactIntro": "Conte-nos o que pretende melhorar, como funciona o seu negócio e o que precisa de resolver primeiro.",
+    "whatsappMessage": "Olá, gostaria de pedir um orçamento. O meu país é: __. O serviço de que preciso é: __. O meu site atual é: __. O prazo que tenho em mente é: __.",
+    "processTitle": "Como trabalhamos",
+    "processSteps": [
+      "Definimos objetivos, público e âmbito do projeto.",
+      "Organizamos o conteúdo e desenvolvemos uma solução adequada ao negócio.",
+      "Validamos o funcionamento e planeamos a publicação e os próximos passos."
+    ],
+    "articlesIntro": "Guias práticos para tomar decisões sobre sites, lojas online, posicionamento e automatização.",
+    "serviceIntro": "Design e desenvolvimento orientados para as necessidades reais da sua empresa.",
+    "projectsIntro": "Conheça exemplos do nosso trabalho e os problemas que cada projeto procura resolver.",
+    "aboutTitle": "Uma equipa próxima do seu negócio",
+    "aboutIntro": "A Latech é um estúdio criado por Andrés Rubio e Luis Grondona em Puebla de la Calzada, Badajoz, Espanha.",
+    "aboutBody": [
+      "Desenvolvemos sites, comércio eletrónico e automatizações com n8n e inteligência artificial para ajudar empresas a trabalhar com mais clareza.",
+      "Começamos por perceber a sua atividade, os seus clientes e as tarefas que consomem tempo. A tecnologia deve responder a essas necessidades concretas.",
+      "Trabalhamos remotamente a partir de Espanha. Em cada projeto definimos o âmbito, a forma de colaboração e as informações necessárias para avançar."
+    ],
+    "contactDetails": "Contactos",
+    "moreServices": "Outros serviços",
+    "allArticles": "Todos os artigos"
+  },
+  "home": {
+    "title": "Design de sites e automatização para empresas | Latech",
+    "description": "Sites, lojas online e automatizações com n8n e IA para empresas. A Latech trabalha remotamente a partir de Espanha com foco nas necessidades do seu negócio.",
+    "heading": "Um site que ajuda o seu negócio a avançar",
+    "intro": "Criamos sites, lojas online e automatizações que tornam a sua proposta mais clara e facilitam o trabalho da sua equipa.",
+    "body": [
+      "Um bom projeto digital começa por compreender o que vende, a quem se dirige e que ações espera dos visitantes. Transformamos essas respostas em estrutura, conteúdo e desenvolvimento.",
+      "Na Latech, Andrés Rubio e Luis Grondona trabalham a partir de Puebla de la Calzada, em Badajoz. Colaboramos remotamente com empresas que precisam de uma presença digital coerente e de processos mais simples."
+    ]
+  },
+  "services": [
+    {
+      "id": "web",
+      "title": "Design e desenvolvimento de sites",
+      "description": "Sites empresariais com conteúdo claro, navegação simples e atenção ao desempenho. Estruturamos cada página para facilitar contactos úteis e informados.",
+      "intro": "Um site deve explicar o seu serviço e ajudar o visitante a dar o passo seguinte com confiança.",
+      "sections": [
+        {
+          "title": "Estrutura que responde às perguntas certas",
+          "paragraphs": [
+            "Organizamos as páginas de acordo com os serviços, os públicos e as dúvidas que aparecem antes de um pedido de contacto.",
+            "Uma empresa de manutenção pode precisar de separar assistência, instalação e contratos recorrentes. A estrutura deve refletir essas diferenças."
+          ]
+        },
+        {
+          "title": "Experiência adaptada a telemóveis",
+          "paragraphs": [
+            "Desenvolvemos interfaces que continuam legíveis e fáceis de utilizar em ecrãs pequenos, com formulários adequados e chamadas para ação visíveis.",
+            "Analisamos o peso das imagens, o comportamento dos elementos e os pontos em que o visitante pode perder orientação."
+          ]
+        },
+        {
+          "title": "Uma base para continuar a melhorar",
+          "paragraphs": [
+            "Planeamos títulos, endereços e conteúdo para que cada página tenha uma função clara dentro do site.",
+            "A publicação inclui as verificações acordadas e uma base que permita acrescentar conteúdo e avaliar os contactos recebidos."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "shop",
+      "title": "Criação de lojas online",
+      "description": "Lojas online com catálogo organizado, fichas de produto claras e compra simples. Planeamos pagamentos, entregas e gestão de encomendas com a sua equipa.",
+      "intro": "Uma loja online liga a experiência de compra à forma como a sua empresa prepara e acompanha cada encomenda.",
+      "sections": [
+        {
+          "title": "Catálogo fácil de explorar",
+          "paragraphs": [
+            "Definimos categorias, atributos e filtros de acordo com a forma como os clientes procuram os produtos.",
+            "As fichas devem apresentar medidas, materiais, compatibilidade e outras informações que evitem dúvidas antes da compra."
+          ]
+        },
+        {
+          "title": "Compra com informação suficiente",
+          "paragraphs": [
+            "Organizamos o carrinho e a finalização da compra para que custos, opções de entrega e dados necessários sejam compreensíveis.",
+            "Testamos os percursos acordados, incluindo erros de pagamento, campos de formulário e confirmação da encomenda."
+          ]
+        },
+        {
+          "title": "Operação pensada desde o início",
+          "paragraphs": [
+            "Mapeamos como o stock, os pagamentos e as notificações se relacionam com as ferramentas que já utiliza.",
+            "Uma integração só faz sentido quando existe um responsável pelo processo e uma forma de tratar exceções."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ai",
+      "title": "Automatização com n8n e inteligência artificial",
+      "description": "Automatizações com n8n e IA para ligar ferramentas e reduzir tarefas repetitivas, com validação humana e tratamento claro das exceções no seu processo.",
+      "intro": "Identificamos tarefas repetitivas e criamos fluxos que ajudam a equipa a concentrar-se no trabalho que exige atenção.",
+      "sections": [
+        {
+          "title": "Começar pelo processo",
+          "paragraphs": [
+            "Observamos como chegam os dados, quem os verifica e o que acontece a seguir. Assim distinguimos regras estáveis de decisões que exigem intervenção humana.",
+            "Um primeiro fluxo pode organizar pedidos de contacto, preparar um registo no CRM e avisar o responsável."
+          ]
+        },
+        {
+          "title": "Ligar ferramentas com critério",
+          "paragraphs": [
+            "Utilizamos n8n para coordenar sistemas e, quando adequado, IA para tarefas como classificação ou preparação de rascunhos.",
+            "Definimos os dados necessários, as permissões e os pontos em que alguém deve aprovar o resultado."
+          ]
+        },
+        {
+          "title": "Acompanhar falhas e exceções",
+          "paragraphs": [
+            "Um fluxo precisa de registos, alertas e um procedimento para repetir uma execução sem duplicar ações.",
+            "Documentamos o comportamento previsto e as situações que devem voltar para a equipa, em vez de ficar sem resposta."
+          ]
+        }
+      ]
+    }
+  ],
+  "articles": [
+    {
+      "id": "website-leads",
+      "title": "Como transformar visitas ao site em contactos úteis",
+      "slug": "transformar-visitas-site-contactos",
+      "description": "Aprenda a estruturar um site empresarial para gerar contactos úteis: proposta clara, páginas de serviço, provas relevantes e formulários fáceis de utilizar.",
+      "intro": [
+        "Um site pode receber visitas e continuar a trazer poucos contactos. O problema nem sempre está no volume de tráfego: muitas vezes, o visitante não percebe se a empresa resolve o seu caso, em que zona trabalha ou qual é o próximo passo. Antes de investir em divulgação, vale a pena analisar esse percurso.",
+        "Imagine uma empresa de instalação de cozinhas que recebe pedidos sem medidas, localização ou indicação do tipo de obra. A melhoria não consiste apenas em aumentar o número de formulários enviados. O objetivo é ajudar a pessoa certa a explicar uma necessidade que a equipa consiga avaliar e acompanhar."
+      ],
+      "sections": [
+        {
+          "title": "Definir o que significa um bom contacto",
+          "paragraphs": [
+            "Comece por descrever os pedidos que consegue servir. Registe o tipo de cliente, a localização, a dimensão habitual do trabalho e as informações necessárias para uma primeira conversa. Uma consultora pode valorizar o setor e o desafio; um instalador pode precisar de fotografias e de saber se existe obra em curso. Escolha uma ação principal por página, como pedir uma avaliação inicial. Evite medir todos os cliques como oportunidades equivalentes, porque abrir o menu não demonstra a mesma intenção que descrever um projeto."
+          ]
+        },
+        {
+          "title": "Apresentar a proposta antes dos pormenores",
+          "paragraphs": [
+            "Na primeira área visível, explique o que faz, para quem e com que âmbito. Uma frase como soluções inovadoras para o futuro ocupa espaço sem ajudar a decidir. Já uma apresentação de instalação de cozinhas por medida, com acompanhamento desde o desenho até à montagem, permite reconhecer o serviço. Acrescente informação verdadeira sobre a zona atendida e uma chamada para ação específica. O visitante deve compreender o essencial sem ter de interpretar um vídeo, um carrossel ou uma lista extensa de qualidades abstratas."
+          ]
+        },
+        {
+          "title": "Criar páginas que correspondam a necessidades distintas",
+          "paragraphs": [
+            "Quando os serviços têm públicos ou processos diferentes, uma única página pode diluir a informação. Separe, por exemplo, remodelação integral e substituição de mobiliário se cada caso exige explicações próprias. Em cada página, apresente o problema, o que está incluído, o processo e as condições que alteram o âmbito. Use palavras que os clientes empregam nas conversas comerciais. A separação deve permitir conteúdo útil; criar várias páginas quase iguais apenas para trocar uma localidade torna a experiência menos esclarecedora e dificulta a manutenção."
+          ]
+        },
+        {
+          "title": "Mostrar provas que ajudam a avaliar o serviço",
+          "paragraphs": [
+            "Escolha exemplos que demonstrem a forma de trabalhar. Um projeto pode explicar o pedido inicial, as limitações e as decisões tomadas, sem inventar resultados ou divulgar dados confidenciais. Fotografias próprias e descrições concretas ajudam mais do que afirmações genéricas sobre qualidade. Se tiver autorização para publicar um testemunho, inclua contexto suficiente para o tornar compreensível. A prova deve responder a uma dúvida real, como a experiência com espaços pequenos ou a coordenação de várias tarefas, e não funcionar como mera decoração."
+          ]
+        },
+        {
+          "title": "Pedir apenas a informação útil para começar",
+          "paragraphs": [
+            "O formulário deve equilibrar facilidade de preenchimento e utilidade comercial. Nome, contacto e uma descrição do pedido podem bastar para iniciar a conversa; campos adicionais precisam de uma razão clara. Explique o que a pessoa deve escrever e apresente mensagens de erro junto dos campos correspondentes. Ofereça alternativas adequadas, como WhatsApp, sem tornar o ecrã confuso. Depois do envio, confirme que o pedido foi recebido e explique o próximo passo de forma realista, sem prometer um prazo de resposta que a operação não consegue assegurar."
+          ]
+        },
+        {
+          "title": "Avaliar o percurso com dados e conversas",
+          "paragraphs": [
+            "Ligue a análise do site ao trabalho comercial. Observe em que páginas começam os pedidos, quais chegam completos e quantos correspondem aos serviços prestados. Pergunte à equipa que dúvidas se repetem e onde falta informação. Um formulário com menos envios pode ser melhor se evita pedidos incompatíveis e prepara conversas úteis. Faça uma alteração de cada vez quando quiser compreender o efeito. Com pouco tráfego, complemente os números com testes de utilização: peça a alguém que encontre um serviço e explique como pediria ajuda."
+          ]
+        }
+      ],
+      "checklist": [
+        "Defina os critérios de um contacto relevante para a sua equipa.",
+        "Explique serviço, público e âmbito logo no início da página.",
+        "Associe cada página a uma ação principal compreensível.",
+        "Teste o formulário e as mensagens de confirmação num telemóvel.",
+        "Compare os pedidos recebidos com as dúvidas registadas pela equipa."
+      ],
+      "conclusion": "Gerar contactos úteis depende da relação entre conteúdo, experiência e acompanhamento. Comece pelas dúvidas que impedem o visitante de avançar e pelas informações que a equipa precisa para responder. Uma estrutura clara permite melhorar essa relação sem depender de promessas exageradas ou de acrescentar mais elementos ao ecrã."
+    },
+    {
+      "id": "website-budget",
+      "title": "Como preparar um pedido de orçamento para um site",
+      "slug": "preparar-orcamento-site",
+      "description": "Prepare um pedido de orçamento para um site com objetivos, páginas, conteúdo e integrações definidos, para comparar propostas e responsabilidades com clareza.",
+      "intro": [
+        "Pedir um orçamento para um site torna-se difícil quando cada proposta parte de pressupostos diferentes. Uma pode incluir redação e migração de conteúdo; outra pode considerar apenas a montagem de páginas. Comparar apenas o total deixa de fora decisões que afetam o trabalho, a publicação e a utilização futura.",
+        "Não precisa de chegar com uma solução técnica escolhida. Precisa de explicar o negócio, o problema atual e o resultado pretendido. Um documento curto, com exemplos concretos e prioridades, ajuda quem desenvolve o site a identificar o âmbito e a apresentar uma proposta que possa ser discutida."
+      ],
+      "sections": [
+        {
+          "title": "Traduzir objetivos comerciais em necessidades do site",
+          "paragraphs": [
+            "Comece pelo motivo do projeto. A empresa vai apresentar um novo serviço, deixar de depender de recomendações ou reduzir pedidos mal enquadrados? Escolha objetivos observáveis, como permitir que um cliente encontre a ficha de um serviço e envie as informações iniciais. Evite definir sucesso apenas como ter um site moderno. Diga também o que o projeto não precisa de resolver agora. Uma empresa que trabalha por orçamento pode necessitar de um catálogo informativo antes de justificar um processo completo de compra online."
+          ]
+        },
+        {
+          "title": "Inventariar páginas e tipos de conteúdo",
+          "paragraphs": [
+            "Faça uma lista inicial de páginas e agrupe-as por tipo. Uma página institucional, uma ficha de serviço e um artigo exigem estruturas diferentes, mas vinte fichas semelhantes podem partilhar um modelo. Indique quantos conteúdos existem, em que formato estão e quem os irá rever. Inclua idiomas e versões regionais se fizerem parte do âmbito. Um inventário evita que a expressão site com dez páginas esconda necessidades distintas, como pesquisa interna, filtros, documentos para descarregar ou uma área reservada para clientes."
+          ]
+        },
+        {
+          "title": "Clarificar quem fornece textos e imagens",
+          "paragraphs": [
+            "Identifique o material disponível e a sua qualidade. Ter um folheto antigo não equivale a ter conteúdo preparado para o site. Pode ser necessário reorganizar informação, confirmar serviços e obter fotografias com autorização de utilização. Defina quem redige, quem aprova e quantas pessoas participam na revisão. Se a equipa do cliente não tiver disponibilidade para escrever, essa necessidade deve aparecer no pedido. O conteúdo condiciona a estrutura e o ritmo do projeto, pelo que deixá-lo indefinido costuma transferir decisões importantes para demasiado tarde."
+          ]
+        },
+        {
+          "title": "Descrever integrações através de situações reais",
+          "paragraphs": [
+            "Em vez de pedir ligação ao sistema, descreva o que deve acontecer. Quando alguém envia um pedido, precisa de criar uma oportunidade no CRM, anexar fotografias e avisar um comercial? Que ferramenta utiliza e que acessos estão disponíveis? Distinga o comportamento indispensável de uma melhoria futura. Para cada integração, indique os dados envolvidos e quem trata os erros. Um pequeno exemplo de entrada e resultado esperado ajuda a avaliar a viabilidade com mais precisão do que uma lista de nomes de aplicações."
+          ]
+        },
+        {
+          "title": "Identificar dependências e critérios de entrega",
+          "paragraphs": [
+            "Registe o domínio, o alojamento, o acesso ao site atual e as ferramentas que terão de continuar a funcionar. Num projeto de substituição, inclua endereços que devem ser preservados e conteúdos que não podem desaparecer. Combine critérios verificáveis: formulário entregue ao destinatário correto, páginas legíveis em telemóvel, acesso de edição preparado e redirecionamentos acordados testados. Se existir uma data desejada, explique o motivo e as dependências. A disponibilidade de conteúdo e aprovações deve ser considerada antes de assumir qualquer calendário."
+          ]
+        },
+        {
+          "title": "Comparar propostas pelo âmbito e pela continuidade",
+          "paragraphs": [
+            "Construa uma pequena tabela com as mesmas perguntas para todas as propostas. Está incluída a preparação do conteúdo? Como se tratam alterações ao âmbito? Que acesso recebe a empresa? Que apoio está previsto depois da publicação? Identifique serviços externos que possam exigir contratação própria e tarefas que ficam a cargo da sua equipa. Uma proposta detalhada não elimina todas as dúvidas, mas permite esclarecê-las antes de começar. Avalie também a compreensão do negócio e a capacidade de explicar escolhas, sem reduzir a decisão a tecnologia ou aparência."
+          ]
+        }
+      ],
+      "checklist": [
+        "Escreva o problema comercial e a ação principal esperada no site.",
+        "Liste páginas, modelos de conteúdo e idiomas realmente necessários.",
+        "Identifique responsáveis por textos, imagens, acessos e aprovações.",
+        "Descreva integrações com exemplos de entrada, resultado e exceção.",
+        "Compare âmbito, critérios de entrega e acompanhamento das propostas."
+      ],
+      "conclusion": "Um bom pedido de orçamento torna as decisões visíveis. Com objetivos, conteúdo e responsabilidades definidos, consegue discutir alternativas e ajustar prioridades de forma informada. A conversa passa a centrar-se no que o site precisa de fazer e no trabalho necessário para o colocar a funcionar."
+    },
+    {
+      "id": "local-seo",
+      "title": "SEO local para empresas com uma presença real",
+      "slug": "seo-local-empresas-presenca-real",
+      "description": "Organize o SEO local com informação coerente, páginas úteis e sinais reais da sua atividade, sem criar moradas fictícias ou repetir conteúdo entre cidades.",
+      "intro": [
+        "Quem procura um serviço numa determinada zona costuma precisar de respostas práticas: a empresa atende aquela localidade, presta o serviço pretendido e permite um contacto simples? O SEO local começa por tornar essas respostas claras e coerentes, tanto no site como nos perfis empresariais que a empresa utiliza.",
+        "Uma presença local não exige inventar instalações em cada cidade. Exige descrever corretamente onde está a empresa e onde consegue prestar serviços. Para um negócio remoto, é especialmente importante distinguir a sede real dos mercados com os quais trabalha, evitando informação que crie expectativas erradas."
+      ],
+      "sections": [
+        {
+          "title": "Separar localização física e área de serviço",
+          "paragraphs": [
+            "Liste a morada real, os contactos e a forma como presta o serviço. Uma oficina recebe clientes num espaço físico; uma empresa de manutenção desloca-se; um estúdio digital pode colaborar remotamente. Estas diferenças devem aparecer no conteúdo. Não apresente uma cidade como sede apenas porque pretende conseguir clientes nessa região. Se indicar áreas de serviço, explique eventuais condições de deslocação ou trabalho à distância. A informação deve ser suficientemente concreta para que uma pessoa saiba se faz sentido contactar a empresa antes de preencher um formulário."
+          ]
+        },
+        {
+          "title": "Manter os dados empresariais coerentes",
+          "paragraphs": [
+            "Revise nome, telefone, morada e horários nos canais que controla. Inconsistências simples podem levar um cliente a deslocar-se ao sítio errado ou a pensar que a empresa deixou de funcionar. Se utilizar um Perfil de Empresa no Google, consulte os critérios oficiais de elegibilidade e configuração antes de o criar ou alterar. Nem todos os modelos de negócio são elegíveis da mesma forma. Registe quem tem acesso aos perfis e estabeleça um procedimento para atualizar dados quando houver mudanças na atividade."
+          ]
+        },
+        {
+          "title": "Criar páginas locais apenas quando acrescentam valor",
+          "paragraphs": [
+            "Uma página sobre uma zona deve explicar algo que não aparece numa versão genérica. Pode apresentar uma área de cobertura real, um tipo de intervenção frequente ou um projeto autorizado daquela região. Se apenas trocar o nome da cidade no título e repetir os parágrafos, o visitante continua sem informação nova. Para uma empresa que trabalha remotamente, uma página de serviço bem explicada pode ser mais útil do que dezenas de páginas locais. Decida com base nas perguntas dos clientes e na capacidade de manter o conteúdo."
+          ]
+        },
+        {
+          "title": "Responder a dúvidas com intenção de contratação",
+          "paragraphs": [
+            "Recolha as questões que surgem antes de uma visita, uma marcação ou um orçamento. Um serviço de reparação pode explicar que fotografias ajudam a identificar o equipamento e como preparar a primeira conversa. Uma empresa de consultoria pode explicar que documentos permitem enquadrar um pedido, sem solicitar informação confidencial antes de ser necessária. Use títulos claros e respostas específicas. O objetivo é tornar o serviço compreensível, não repetir uma localidade em cada frase. A linguagem natural permite abordar o contexto sem prejudicar a leitura ou esconder a informação importante."
+          ]
+        },
+        {
+          "title": "Tratar avaliações e exemplos como informação útil",
+          "paragraphs": [
+            "Peça avaliações de forma adequada a clientes reais e evite condicionar o pedido a uma opinião positiva. Quando responder, preserve a privacidade e concentre-se no serviço prestado. No site, escolha exemplos que ajudem a perceber o trabalho: o pedido inicial, as limitações e a abordagem adotada. Não atribua ao projeto resultados que não consegue demonstrar. Uma fotografia de uma intervenção, com autorização e contexto, pode responder melhor a uma dúvida do que um conjunto de afirmações vagas sobre experiência ou liderança no mercado."
+          ]
+        },
+        {
+          "title": "Medir contactos e rever a informação periodicamente",
+          "paragraphs": [
+            "Acompanhe os pedidos que chegam através das páginas locais e dos perfis disponíveis. Separe chamadas, mensagens e formulários, sem presumir que todas as interações correspondem a novos clientes. Pergunte em que zona se encontra o pedido e se o serviço pode ser realizado. Se chegam muitos contactos de locais não atendidos, reveja a clareza da cobertura. Estabeleça uma revisão regular dos dados e páginas, sobretudo após alterações de horários, equipa ou serviços. Para dúvidas técnicas de pesquisa, utilize a documentação do Google Search Central como referência."
+          ]
+        }
+      ],
+      "checklist": [
+        "Confirme a morada real e a forma como atende os clientes.",
+        "Distinga a sede das áreas onde consegue prestar serviços.",
+        "Revise telefone, horários e acessos aos perfis empresariais.",
+        "Publique páginas locais apenas com informação própria e verificável.",
+        "Avalie se os contactos recebidos correspondem à cobertura anunciada."
+      ],
+      "conclusion": "O SEO local deve facilitar decisões reais. Quando a informação é correta, os serviços estão bem descritos e as áreas de cobertura são compreensíveis, o visitante consegue avaliar a adequação do negócio. Essa base também evita que a manutenção se transforme numa coleção de páginas e perfis difíceis de atualizar."
+    },
+    {
+      "id": "international-seo",
+      "title": "Como planear um site para vários idiomas e mercados",
+      "slug": "planear-site-varios-idiomas-mercados",
+      "description": "Planeie um site internacional com idiomas, URLs e conteúdo adequados a cada mercado, preservando uma navegação clara e informação empresarial verdadeira.",
+      "intro": [
+        "Publicar um segundo idioma muda mais do que os textos de um site. Altera a navegação, a organização dos endereços, a manutenção e as expectativas de quem chega. Antes de traduzir tudo, convém perceber em que mercados existe uma necessidade concreta e como a empresa vai atender esses contactos.",
+        "Uma empresa sediada em Espanha pode prestar serviços remotamente a clientes portugueses sem ter escritório em Portugal. O site deve explicar essa realidade de forma simples. A adaptação ao mercado serve para reduzir dúvidas, e não para sugerir uma presença física ou uma capacidade operacional que não existe."
+      ],
+      "sections": [
+        {
+          "title": "Escolher mercados com uma hipótese comercial clara",
+          "paragraphs": [
+            "Comece por dados que a empresa já conhece: origem dos pedidos, idiomas utilizados nas conversas e serviços que consegue prestar à distância. Defina quem será o público de cada versão e que ação espera dessa pessoa. Uma página em português europeu pode ser suficiente para testar a apresentação de um serviço, enquanto um catálogo extenso exige mais trabalho. Identifique também limitações de atendimento e operação. Ter conteúdo traduzido não significa que todas as etapas comerciais possam decorrer nesse idioma ou que o serviço esteja disponível em qualquer país."
+          ]
+        },
+        {
+          "title": "Definir uma estrutura de endereços sustentável",
+          "paragraphs": [
+            "Escolha uma organização consistente para as versões linguísticas, como diretórios por idioma num mesmo domínio. Considere a estrutura existente, a manutenção e a capacidade da equipa antes de dividir o projeto por vários domínios. Cada versão deve ter um endereço próprio e ligações claras para as alternativas. Evite depender apenas de uma mudança de texto que não altera o URL. Documente a relação entre páginas equivalentes para que futuras alterações de títulos, serviços ou conteúdos não deixem versões desligadas ou difíceis de encontrar."
+          ]
+        },
+        {
+          "title": "Adaptar o conteúdo às decisões do visitante",
+          "paragraphs": [
+            "Traduza a intenção e o contexto, além das palavras. Revise termos comerciais, exemplos, unidades e informações de contacto. Um visitante precisa de compreender de onde a empresa trabalha, como decorre a colaboração e que dados deve enviar. Mantenha nomes, moradas e qualificações verdadeiros. Não copie referências locais de um mercado para outro sem avaliar se fazem sentido. Uma página portuguesa que fala de entrega presencial numa cidade espanhola pode criar confusão se não explicar se essa condição também se aplica ao pedido do visitante."
+          ]
+        },
+        {
+          "title": "Relacionar versões com sinais técnicos coerentes",
+          "paragraphs": [
+            "Páginas equivalentes em idiomas diferentes devem ter relações técnicas consistentes, incluindo as anotações de idioma apropriadas quando aplicáveis. Verifique os códigos, os endereços completos e as referências recíprocas segundo a documentação do Google Search Central. Não aponte todas as alternativas para a página inicial se existem correspondências específicas. A canonical deve refletir a versão que pretende indexar, sem eliminar por engano as traduções. Estes elementos exigem revisão conjunta: uma anotação isolada não compensa conteúdo inacessível, redirecionamentos errados ou páginas sem ligações internas."
+          ]
+        },
+        {
+          "title": "Dar controlo de navegação à pessoa",
+          "paragraphs": [
+            "Disponibilize um seletor de idioma visível e mantenha, quando possível, a pessoa na página equivalente. Use o nome do idioma de forma reconhecível e não dependa apenas de bandeiras, porque um país não representa todas as pessoas que falam uma língua. Evite redirecionamentos forçados que impeçam a consulta de outra versão. Se sugerir um idioma com base nas preferências do navegador, permita rejeitar a sugestão. Teste o percurso completo: artigo, serviço, formulário e confirmação devem manter uma experiência compreensível."
+          ]
+        },
+        {
+          "title": "Organizar revisão editorial e análise por mercado",
+          "paragraphs": [
+            "Defina um responsável por atualizar cada versão quando mudam serviços, contactos ou processos. Um inventário com página original, equivalentes e estado de revisão ajuda a evitar conteúdo desatualizado. Analise separadamente os pedidos recebidos de cada mercado e a sua adequação, sem confundir visitas com procura comercial. Observe também páginas que recebem tráfego no idioma errado. Se a equipa não consegue manter todas as versões, priorize as páginas essenciais e expanda de forma gradual. A qualidade da manutenção pesa mais do que a quantidade inicial de traduções."
+          ]
+        }
+      ],
+      "checklist": [
+        "Defina o público e o âmbito real de cada versão linguística.",
+        "Escolha URLs próprios e uma estrutura que consiga manter.",
+        "Adapte exemplos, contactos e expectativas de colaboração.",
+        "Valide relações de idioma, canonicals e ligações entre equivalentes.",
+        "Atribua responsáveis e acompanhe pedidos por mercado e serviço."
+      ],
+      "conclusion": "Um site internacional funciona melhor quando conteúdo e operação dizem a mesma coisa. A estrutura técnica ajuda os motores de pesquisa a relacionar páginas, mas a decisão do visitante depende da clareza do serviço. Comece pelos mercados que consegue atender e mantenha cada versão útil ao longo do tempo."
+    },
+    {
+      "id": "mobile-performance",
+      "title": "Melhorar o desempenho de um site no telemóvel",
+      "slug": "melhorar-desempenho-site-telemovel",
+      "description": "Identifique o que torna um site lento no telemóvel e priorize melhorias em imagens, conteúdo e interação com base na experiência real dos visitantes.",
+      "intro": [
+        "Um site pode parecer rápido no computador do escritório e ser difícil de utilizar num telemóvel com uma ligação variável. O visitante sente o atraso quando o conteúdo demora a aparecer, um botão não reage ou a página se desloca no momento em que tenta tocar. Essas situações prejudicam tarefas concretas.",
+        "A melhoria do desempenho começa por observar o percurso principal. Numa empresa de serviços, pode ser abrir uma página, consultar o âmbito e enviar um pedido. Numa loja, pode envolver escolher uma variante e chegar ao carrinho. As prioridades devem proteger essas ações e a legibilidade do conteúdo."
+      ],
+      "sections": [
+        {
+          "title": "Medir a página e o problema certos",
+          "paragraphs": [
+            "Selecione páginas representativas: início, serviço, artigo e formulário, por exemplo. Compare dados de utilização real, quando disponíveis, com testes controlados em laboratório. Uma única medição não descreve todas as redes e dispositivos. Ferramentas como o PageSpeed Insights ajudam a identificar sintomas, mas a pontuação não substitui a observação da tarefa. Registe o que demora, em que condições e qual o efeito para o visitante. Se o formulário não responde durante alguns segundos, esse problema merece atenção mesmo que outras páginas obtenham melhores resultados."
+          ]
+        },
+        {
+          "title": "Reduzir o peso das imagens sem perder utilidade",
+          "paragraphs": [
+            "Imagens grandes são frequentes em portefólios e catálogos. Prepare dimensões adequadas ao espaço em que serão apresentadas e forneça alternativas adaptadas a ecrãs diferentes. Evite enviar uma fotografia enorme para mostrar uma pequena miniatura. Use formatos e compressão apropriados, verificando se texto, materiais e detalhes continuam legíveis. A imagem principal pode precisar de uma estratégia de carregamento diferente das imagens muito abaixo da área visível. Defina largura e altura para reservar espaço e impedir que o conteúdo salte quando as imagens aparecem."
+          ]
+        },
+        {
+          "title": "Examinar scripts e funcionalidades externas",
+          "paragraphs": [
+            "Mapas, chats, ferramentas de análise e elementos de redes sociais podem acrescentar trabalho ao navegador. Faça um inventário e pergunte que função comercial cumpre cada recurso. Um mapa pode ser carregado depois de uma ação do visitante se não for necessário para compreender a página. Remova duplicações e componentes que já não são utilizados. Avalie o custo antes de acrescentar outra ferramenta. Mesmo um ficheiro relativamente pequeno pode exigir processamento e atrasar interações num dispositivo modesto, sobretudo quando vários recursos competem ao mesmo tempo."
+          ]
+        },
+        {
+          "title": "Evitar alterações inesperadas do layout",
+          "paragraphs": [
+            "Reserve espaço para imagens, vídeos, avisos e componentes que surgem depois do primeiro carregamento. Um botão que muda de posição pode provocar um toque incorreto e obrigar a repetir a tarefa. Observe também o efeito das fontes: a troca de tipo de letra pode alterar linhas, alturas e posição dos elementos. Teste menus, mensagens de validação e carregamento de produtos. A estabilidade não depende apenas da primeira área do site. Uma página que começa bem pode tornar-se difícil de utilizar quando recebe conteúdo adicional ou apresenta um aviso tardio."
+          ]
+        },
+        {
+          "title": "Tornar as interações leves e compreensíveis",
+          "paragraphs": [
+            "Experimente o menu, os filtros e os formulários num telemóvel real. Verifique se o toque produz uma resposta visível, se os campos abrem o teclado adequado e se as mensagens de erro ajudam a corrigir o problema. Evite bloquear a interface durante operações que podem decorrer de forma assíncrona. Quando existe espera, indique o estado sem permitir envios repetidos por engano. A dimensão dos controlos e o espaço entre eles também afetam a tarefa. Um site rápido continua a precisar de botões legíveis e fáceis de selecionar."
+          ]
+        },
+        {
+          "title": "Priorizar alterações e prevenir regressões",
+          "paragraphs": [
+            "Ordene os problemas pelo impacto no percurso e pela frequência com que aparecem. Corrigir uma imagem principal pesada ou um formulário bloqueado pode ser mais útil do que perseguir pequenas diferenças de pontuação. Depois de cada alteração, repita o mesmo teste e confirme que o conteúdo e as funcionalidades continuam corretos. Documente limites práticos para novas imagens e componentes. Consulte o web.dev para compreender métricas e técnicas, mas adapte a decisão ao site. O desempenho precisa de acompanhamento quando se acrescentam campanhas, produtos ou ferramentas externas."
+          ]
+        }
+      ],
+      "checklist": [
+        "Teste páginas representativas num telemóvel e numa ligação variável.",
+        "Compare observação da tarefa, dados reais e medições controladas.",
+        "Ajuste imagens ao tamanho de apresentação e reserve espaço no layout.",
+        "Reveja o custo de scripts, integrações e componentes externos.",
+        "Repita o percurso principal depois de cada melhoria publicada."
+      ],
+      "conclusion": "Melhorar o desempenho significa remover obstáculos à utilização. Escolha primeiro os problemas que impedem ler, escolher ou contactar e confirme os resultados em condições semelhantes. Com regras simples para imagens e novas funcionalidades, a equipa consegue preservar os ganhos à medida que o site evolui."
+    },
+    {
+      "id": "online-store",
+      "title": "O que preparar antes de criar uma loja online",
+      "slug": "preparar-criacao-loja-online",
+      "description": "Prepare catálogo, stock, pagamentos e entregas antes de criar uma loja online, com fichas de produto úteis e processos claros para acompanhar cada encomenda.",
+      "intro": [
+        "A criação de uma loja online começa muito antes do desenho das páginas. Para vender com clareza, a empresa precisa de saber que produtos apresenta, como confirma disponibilidade, de que forma recebe pagamentos e quem trata uma encomenda que não segue o percurso habitual. O site torna essas decisões visíveis.",
+        "Pense numa pequena marca de iluminação. Uma fotografia apelativa não chega se faltarem medidas, tipo de casquilho ou informação sobre montagem. A pessoa pode abandonar a compra ou fazer uma escolha inadequada. Preparar o catálogo e a operação ajuda a reduzir estas dúvidas antes de desenvolver funcionalidades adicionais."
+      ],
+      "sections": [
+        {
+          "title": "Organizar o catálogo como o cliente procura",
+          "paragraphs": [
+            "Agrupe produtos segundo critérios úteis para a decisão, como utilização, dimensão ou compatibilidade. A estrutura interna do armazém nem sempre corresponde à forma como uma pessoa procura. Distinga categorias de atributos: cor e tamanho podem ser filtros, enquanto tipos de produto justificam grupos próprios. Defina convenções para nomes e referências. Se o catálogo tiver variantes, esclareça que combinações existem e como se relacionam com o stock. Esta organização torna a navegação mais coerente e facilita importações, atualizações e futuras integrações com outras ferramentas."
+          ]
+        },
+        {
+          "title": "Preparar fichas que permitem escolher",
+          "paragraphs": [
+            "Reúna descrições específicas, fotografias próprias ou autorizadas e características verificadas. Para cada família de produtos, identifique as dúvidas que podem impedir uma compra correta. Uma peça de mobiliário pode precisar de medidas da embalagem e montagem; um acessório técnico, de compatibilidade. Evite copiar uma descrição curta para todos os artigos quando existem diferenças relevantes. Mostre os detalhes junto da decisão de compra, com linguagem compreensível. Se uma informação ainda não foi confirmada, resolva essa lacuna antes de publicar uma afirmação que possa induzir o cliente em erro."
+          ]
+        },
+        {
+          "title": "Definir stock e tratamento de encomendas",
+          "paragraphs": [
+            "Determine qual é a fonte de disponibilidade: loja física, folha de cálculo, sistema de gestão ou stock reservado para o canal online. Defina quando uma unidade é descontada e como se tratam cancelamentos. Se houver sincronização entre sistemas, pense no que acontece quando uma ligação falha ou chega a mesma atualização duas vezes. A equipa deve saber quem prepara, verifica e confirma a encomenda. Comece por um processo que consiga cumprir e acompanhar, em vez de assumir uma automatização completa sem regras claras para as exceções."
+          ]
+        },
+        {
+          "title": "Explicar entrega e custos antes da decisão final",
+          "paragraphs": [
+            "Organize zonas de entrega, métodos disponíveis e informação que altera o custo. Produtos frágeis, volumosos ou preparados por encomenda podem exigir condições diferentes. Apresente informação suficiente antes do fim da compra para evitar surpresas. Distinga uma estimativa de preparação da previsão de transporte e não transforme dependências externas numa promessa absoluta. Teste exemplos reais de moradas e combinações de produtos. As condições comerciais e as obrigações aplicáveis devem ser revistas pelos responsáveis adequados, enquanto o desenvolvimento assegura que a informação acordada aparece nos pontos certos."
+          ]
+        },
+        {
+          "title": "Testar pagamentos e situações de erro",
+          "paragraphs": [
+            "A compra não termina quando se abre a página de pagamento. Verifique confirmações, estados pendentes, recusas e interrupções de ligação. Uma pessoa pode regressar ao site depois de pagar, ou fechar a janela antes desse regresso. A encomenda não deve depender apenas do ecrã que o visitante vê. Utilize os ambientes de teste das ferramentas escolhidas e valide o percurso com a equipa. Confirme também os destinatários das notificações e as informações nelas incluídas. Um erro compreensível permite tentar outra opção sem criar encomendas duplicadas."
+          ]
+        },
+        {
+          "title": "Publicar com uma operação capaz de acompanhar",
+          "paragraphs": [
+            "Antes de abrir a loja, faça uma encomenda de teste completa: escolha, pagamento, registo, preparação, comunicação e eventual cancelamento. Inclua um dispositivo móvel e produtos com variantes. Defina quem pode alterar descrições, disponibilidade e imagens. Acompanhe perguntas de clientes e problemas de compra para orientar melhorias posteriores. Nem todas as funcionalidades têm de existir no primeiro lançamento; filtros avançados ou integrações adicionais podem esperar se o catálogo inicial é pequeno. O essencial é que cada produto possa ser escolhido com informação e cada encomenda tenha um responsável."
+          ]
+        }
+      ],
+      "checklist": [
+        "Prepare categorias, atributos e referências com regras consistentes.",
+        "Complete as características que influenciam a escolha de cada produto.",
+        "Defina a fonte de stock e o responsável pelas exceções.",
+        "Teste custos, zonas de entrega e estados de pagamento.",
+        "Simule uma encomenda desde a escolha até ao acompanhamento interno."
+      ],
+      "conclusion": "Uma loja online sustentável liga o catálogo ao trabalho diário da equipa. A preparação permite desenvolver uma experiência de compra coerente e identificar cedo as decisões em falta. Quando produtos, pagamentos e entregas seguem regras claras, fica mais fácil acrescentar funcionalidades sem desorganizar a operação."
+    },
+    {
+      "id": "whatsapp-conversion",
+      "title": "Como usar o WhatsApp para receber pedidos mais claros",
+      "slug": "whatsapp-pedidos-mais-claros",
+      "description": "Integre o WhatsApp no seu site com mensagens úteis, contexto do serviço e acompanhamento organizado, para facilitar pedidos e conversas comerciais mais claras.",
+      "intro": [
+        "Um botão de WhatsApp facilita o primeiro contacto, mas não resolve sozinho a qualidade das conversas. Se todos os pedidos começam com olá e a equipa precisa de perguntar sempre a mesma coisa, o canal pode aumentar interrupções sem ajudar a compreender o projeto. O conteúdo do site deve preparar essa conversa.",
+        "Para uma empresa que trabalha remotamente, pode ser útil pedir país, serviço, site atual e calendário pretendido. Num serviço de instalação, localização e tipo de trabalho podem ser mais relevantes. A mensagem inicial deve dar uma orientação simples, sem transformar a abertura do WhatsApp num formulário excessivo."
+      ],
+      "sections": [
+        {
+          "title": "Escolher os momentos em que o canal ajuda",
+          "paragraphs": [
+            "Identifique as páginas em que uma conversa é um próximo passo natural. Uma página de serviço pode encaminhar para um pedido de avaliação; um artigo pode beneficiar primeiro de uma ligação para o serviço correspondente. Não coloque chamadas para conversar em cada bloco se isso interrompe a leitura. O visitante deve conseguir consultar informação sem ser pressionado por janelas ou elementos que tapam o conteúdo. Defina também se o canal serve novos pedidos, acompanhamento de clientes ou ambos, para orientar a equipa e o texto apresentado."
+          ]
+        },
+        {
+          "title": "Preparar uma mensagem inicial com contexto",
+          "paragraphs": [
+            "Use uma mensagem editável que indique de onde surge o pedido e sugira as informações essenciais. Por exemplo, uma pessoa interessada numa loja online pode indicar o país, o número aproximado de produtos e se já existe catálogo. Evite pedir dados confidenciais ou documentos desnecessários na primeira mensagem. O texto deve poder ser revisto antes do envio. Uma ligação contextual reduz perguntas repetidas, mas não substitui a leitura atenta do caso. Deixe espaço para o visitante descrever aquilo que não cabe nas categorias previstas."
+          ]
+        },
+        {
+          "title": "Explicar expectativas de atendimento de forma realista",
+          "paragraphs": [
+            "Esclareça quem utiliza o canal e em que contexto a empresa acompanha mensagens. Se houver horários definidos, apresente-os corretamente; se não houver um compromisso de resposta imediata, não sugira disponibilidade permanente. Uma equipa pequena precisa de conciliar conversas com produção e reuniões. Prefira uma confirmação clara sobre a receção do pedido quando apropriado, sem prometer um prazo que depende da carga de trabalho. A transparência ajuda o visitante a escolher o canal adequado e evita que uma ausência temporária pareça uma falha do serviço."
+          ]
+        },
+        {
+          "title": "Testar o acesso em telemóvel e computador",
+          "paragraphs": [
+            "Verifique o número com indicativo internacional, o texto pré-preenchido e o comportamento da ligação nos dispositivos mais utilizados. Teste também o caso em que a aplicação não está instalada e a utilização através do navegador. Um botão deve ter uma etiqueta compreensível, bom contraste e espaço suficiente para ser selecionado. Se ficar fixo no ecrã, confirme que não cobre campos do formulário, avisos ou botões de compra. Uma chamada para ação adicional só ajuda quando continua a permitir utilizar o resto da página com facilidade."
+          ]
+        },
+        {
+          "title": "Organizar o seguimento dentro da equipa",
+          "paragraphs": [
+            "Defina quem assume cada pedido e onde fica registado o próximo passo. Sem essa regra, duas pessoas podem responder à mesma conversa ou uma oportunidade pode ficar esquecida. Use categorias simples, como novo pedido, informação em falta e proposta em preparação, se fizerem sentido para a operação. Evite copiar indiscriminadamente todo o conteúdo da conversa para outras ferramentas. Registe apenas o que é necessário e controle os acessos. Quando um pedido passa a outra pessoa, o contexto deve acompanhar a passagem sem obrigar o cliente a começar novamente."
+          ]
+        },
+        {
+          "title": "Medir mais do que cliques no botão",
+          "paragraphs": [
+            "Um clique mostra intenção de abrir o canal, mas não confirma que a mensagem foi enviada ou que existe uma oportunidade adequada. Compare os eventos do site com os pedidos efetivamente recebidos, dentro das possibilidades das ferramentas e das práticas de privacidade adotadas. Pergunte que informação faltava e quais as páginas que originaram conversas úteis. Se há muitos cliques e poucas mensagens, teste o texto e o percurso. Se há muitas mensagens inadequadas, reveja a descrição do serviço antes de acrescentar mais chamadas para ação."
+          ]
+        }
+      ],
+      "checklist": [
+        "Escolha páginas e situações em que uma conversa facilita a decisão.",
+        "Sugira apenas os dados necessários para compreender o pedido inicial.",
+        "Indique expectativas de atendimento que a equipa consegue cumprir.",
+        "Teste a ligação, o indicativo e a mensagem em vários dispositivos.",
+        "Registe responsável, próximo passo e qualidade dos pedidos recebidos."
+      ],
+      "conclusion": "O WhatsApp deve aproximar o visitante da informação de que precisa e ajudar a equipa a compreender o pedido. Uma mensagem contextual, um acesso funcional e um seguimento simples tornam o canal mais útil. O resultado deve ser avaliado pela qualidade das conversas, além do número de aberturas."
+    },
+    {
+      "id": "ai-automation",
+      "title": "Escolher processos para automatizar com n8n e IA",
+      "slug": "escolher-processos-automatizar-n8n-ia",
+      "description": "Escolha processos adequados para automatizar com n8n e IA, definindo regras, dados, validação humana e tratamento de falhas antes de ligar os seus sistemas.",
+      "intro": [
+        "A automatização é mais útil quando começa por uma tarefa bem compreendida. Ligar várias ferramentas sem definir o processo pode apenas acelerar erros e tornar as exceções menos visíveis. Antes de escolher um fluxo ou um modelo de IA, identifique o que a equipa faz, porquê e que informação utiliza.",
+        "Um exemplo simples é a organização de pedidos recebidos pelo site. O sistema pode recolher campos, verificar dados obrigatórios, preparar um registo e avisar a pessoa responsável. A IA pode ajudar a classificar texto livre, mas a atribuição de compromissos comerciais pode continuar dependente de aprovação humana."
+      ],
+      "sections": [
+        {
+          "title": "Mapear o processo antes de desenhar o fluxo",
+          "paragraphs": [
+            "Observe vários casos reais, incluindo os que causaram dificuldades. Escreva o ponto de entrada, os dados recebidos, as decisões, as ações e o resultado esperado. Identifique quem é responsável em cada etapa. Uma tarefa que parece simples pode envolver regras que só existem na memória de uma pessoa. Se os critérios mudam de caso para caso, estabilize primeiro o processo. O mapa deve mostrar também o que acontece quando falta uma informação, quando há um duplicado ou quando o cliente altera o pedido a meio."
+          ]
+        },
+        {
+          "title": "Escolher uma primeira automatização limitada",
+          "paragraphs": [
+            "Procure tarefas repetitivas com entradas claras e resultados fáceis de verificar. Preparar um resumo interno ou copiar campos confirmados pode ser um bom ponto de partida. Evite começar por decisões difíceis de reverter, como aprovar condições comerciais ou enviar mensagens sensíveis sem revisão. Defina uma unidade pequena de trabalho e uma forma de comparar o funcionamento manual com o automático. A primeira versão deve permitir aprender sobre os dados e os erros. O objetivo não é ligar o maior número de ferramentas, mas retirar uma dificuldade concreta da operação."
+          ]
+        },
+        {
+          "title": "Distinguir regras determinísticas e interpretação com IA",
+          "paragraphs": [
+            "Use regras explícitas quando conhece os critérios: um campo obrigatório em falta deve seguir um caminho previsível. Reserve a IA para tarefas em que a interpretação de texto ou a preparação de um rascunho acrescenta valor. Defina categorias permitidas, formato de saída e exemplos difíceis. Não trate uma resposta plausível como prova de correção. Uma classificação pode precisar de uma opção sem correspondência e de revisão. Se o texto recebido contiver instruções, o fluxo deve tratá-las como dados do cliente e impedir que alterem as regras da automatização."
+          ]
+        },
+        {
+          "title": "Limitar dados, acessos e ações disponíveis",
+          "paragraphs": [
+            "Cada ferramenta deve receber apenas a informação necessária para a tarefa. Reveja que dados saem do sistema original e quem tem autorização para os consultar. Utilize credenciais específicas quando possível e evite dar a um fluxo permissões mais amplas do que precisa. Num resumo de pedidos, pode não ser necessário enviar anexos completos para um serviço externo. Documente as decisões e envolva os responsáveis internos quando existirem dados sensíveis. Estas escolhas fazem parte do desenho do processo, porque alterar permissões depois pode obrigar a rever toda a integração."
+          ]
+        },
+        {
+          "title": "Preparar falhas, repetições e aprovação humana",
+          "paragraphs": [
+            "Uma ligação pode falhar depois de criar um registo e antes de confirmar o sucesso. Se repetir tudo sem controlo, pode criar duplicados ou enviar duas mensagens. Use identificadores e verificações adequados à ação, mantendo um registo do estado. Defina que erros permitem nova tentativa e quais exigem intervenção. As aprovações humanas devem mostrar os dados relevantes, a ação proposta e uma forma de rejeitar ou corrigir. Um alerta genérico sem responsável tende a ficar esquecido. A exceção precisa de um destino tão claro como o percurso normal."
+          ]
+        },
+        {
+          "title": "Validar com amostras e acompanhar a operação",
+          "paragraphs": [
+            "Teste casos completos, incompletos, repetidos e inesperados antes de permitir ações reais. Compare classificações e resumos com uma revisão humana, registando erros por tipo. Verifique também alterações nos sistemas ligados: um campo renomeado pode interromper o fluxo. Depois de publicar, acompanhe falhas, tempo de revisão e trabalho efetivamente poupado, sem assumir ganhos antecipados. Atribua manutenção a uma pessoa e documente como pausar o processo. Uma automatização que pode ser compreendida e desligada é mais fácil de melhorar do que um conjunto de passos sem contexto."
+          ]
+        }
+      ],
+      "checklist": [
+        "Descreva entradas, decisões, responsáveis e exceções do processo atual.",
+        "Escolha uma tarefa limitada com resultados fáceis de verificar.",
+        "Separe regras explícitas de tarefas que beneficiam de interpretação.",
+        "Limite dados e permissões ao necessário para cada ação.",
+        "Teste duplicados, falhas e aprovações antes de permitir ações reais."
+      ],
+      "conclusion": "n8n e IA podem reduzir trabalho repetitivo quando o processo tem regras compreensíveis e supervisão adequada. Comece por uma tarefa pequena, valide com casos reais e dê um destino às exceções. O valor aparece na operação diária, quando a equipa consegue confiar no fluxo e corrigir o que sai do previsto."
+    },
+    {
+      "id": "website-migration",
+      "title": "Como mudar de site sem perder informação importante",
+      "slug": "mudar-site-preservar-informacao",
+      "description": "Planeie a migração de um site com inventário de páginas, redirecionamentos e testes, para preservar conteúdo útil e reduzir problemas durante a publicação.",
+      "intro": [
+        "A mudança de site envolve mais do que substituir o desenho. Endereços antigos podem estar ligados em motores de pesquisa, documentos, campanhas e mensagens de clientes. Formulários, imagens e ferramentas de análise podem depender de configurações que não são visíveis no ecrã. Uma migração precisa de inventário e de verificações.",
+        "Não é possível garantir que todas as métricas ficam iguais durante uma mudança. É possível, porém, reduzir erros evitáveis e preparar uma resposta rápida quando aparece um problema. O objetivo é preservar a informação útil, encaminhar corretamente as pessoas e confirmar que as funções essenciais continuam operacionais."
+      ],
+      "sections": [
+        {
+          "title": "Recolher o estado atual antes de alterar",
+          "paragraphs": [
+            "Faça uma lista dos endereços existentes e identifique páginas com visitas, contactos ou ligações externas relevantes. Reúna títulos, descrições, imagens, documentos e formulários. Inclua páginas pouco visíveis no menu, como páginas de campanhas ou conteúdos antigos ainda utilizados. Registe os acessos ao domínio, alojamento e ferramentas ligadas ao site. Guarde uma cópia adequada antes da intervenção e confirme o que permite recuperar. Um inventário não precisa de ser complexo, mas deve mostrar o que existe, o que será mantido e quem decide sobre cada conteúdo."
+          ]
+        },
+        {
+          "title": "Decidir o destino de cada página",
+          "paragraphs": [
+            "Associe cada endereço antigo a uma decisão: manter, atualizar, juntar com outro conteúdo ou remover. Quando existir substituição relevante, escolha a página nova que responde à mesma necessidade. Evite enviar todos os endereços antigos para a página inicial, porque isso pode deixar o visitante sem o conteúdo procurado. Se não existir alternativa adequada, uma página de erro útil deve ajudar a continuar a navegação. Documente as decisões num mapa de migração. Essa tabela será a referência para implementar redirecionamentos e verificar o resultado depois da publicação."
+          ]
+        },
+        {
+          "title": "Preparar redirecionamentos e ligações internas",
+          "paragraphs": [
+            "Implemente os redirecionamentos permanentes adequados às mudanças de endereço e teste exemplos de cada tipo. Procure evitar cadeias em que um URL passa por vários destinos antes de chegar à página final. Atualize também as ligações internas: o novo site não deve depender de redirecionamentos para navegar entre as suas próprias páginas. Reveja referências em menus, rodapés, artigos e documentos controlados pela empresa. Se o site tiver vários idiomas, preserve as correspondências entre versões. Uma migração internacional exige conferir também as relações técnicas de idioma e as canonicals."
+          ]
+        },
+        {
+          "title": "Validar o ambiente antes de publicar",
+          "paragraphs": [
+            "Teste o novo site num ambiente preparado para revisão e verifique que não será confundido com a versão pública. Confirme textos, imagens, títulos, formulários e comportamentos móveis. A equipa deve testar as tarefas que realmente utiliza, como editar uma página ou receber um pedido. Verifique quais os bloqueios temporários de indexação presentes no ambiente de desenvolvimento e como serão removidos na publicação. Uma página visualmente correta pode continuar inacessível aos motores de pesquisa se transportar configurações de teste. Defina critérios de aprovação antes da troca do site."
+          ]
+        },
+        {
+          "title": "Coordenar publicação e primeiras verificações",
+          "paragraphs": [
+            "Escolha um momento em que os responsáveis estejam disponíveis para verificar o resultado e tratar incidentes. Confirme domínio, certificados, endereços de contacto e configurações relacionadas, incluindo dependências do correio eletrónico se forem afetadas. Depois da troca, teste páginas antigas, novas, formulários e ferramentas de medição. Atualize o sitemap e reveja a propriedade correspondente no Google Search Console quando aplicável. Utilize a documentação do Google Search Central para orientar verificações técnicas. Um plano de reversão deve indicar em que circunstâncias se utiliza e quais os efeitos que precisa de considerar."
+          ]
+        },
+        {
+          "title": "Acompanhar problemas com uma linha de base",
+          "paragraphs": [
+            "Compare o funcionamento novo com o inventário e com os dados anteriores, tendo em conta campanhas, sazonalidade e outras mudanças. Observe erros de páginas, destinos incorretos, pedidos que deixam de chegar e diferenças relevantes de indexação. Não tire conclusões apenas de um dia de tráfego. Dê prioridade a falhas que impedem tarefas ou afetam páginas importantes. Registe correções para manter o mapa atualizado. A migração só fica bem acompanhada quando alguém assume esta revisão e consegue distinguir um erro técnico de uma alteração normal na procura."
+          ]
+        }
+      ],
+      "checklist": [
+        "Inventarie URLs, conteúdo, acessos e funções antes da mudança.",
+        "Associe cada endereço antigo a um destino ou decisão documentada.",
+        "Teste redirecionamentos e atualize ligações dentro do novo site.",
+        "Verifique formulários, dispositivos móveis e configurações de indexação.",
+        "Defina responsáveis pela publicação, recuperação e acompanhamento posterior."
+      ],
+      "conclusion": "Uma migração preparada transforma uma mudança extensa numa sequência verificável de decisões. O inventário protege o conteúdo, o mapa orienta os endereços e os testes confirmam as tarefas essenciais. O acompanhamento posterior permite corrigir falhas com contexto, em vez de descobrir demasiado tarde que faltava uma página ou um contacto."
+    }
+  ]
+}
