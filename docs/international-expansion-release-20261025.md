@@ -1,6 +1,6 @@
 # International expansion release ledger — 25 October 2026
 
-This document records the release scope and verification evidence. Publication and search-engine submission are authorized, but remain the release orchestrator's responsibility. A pending step below is not a publication or indexing claim.
+This document records the release scope and verification evidence. Publication, production verification and search-engine submissions are complete. Search-engine processing and indexing remain asynchronous; submission receipts do not prove indexing.
 
 ## Scope
 
@@ -38,20 +38,32 @@ The focused final command below passed 14 tests with zero failures. It covers ro
 npx tsx --require ./tests/register-assets.cjs --test tests/international-seo.test.ts tests/international-ui.test.ts
 ```
 
-Detailed independent content evidence: `H:/Proyectos/seo-20261012/evidence/latech-expansion-20261025/content-independent-audit.json` and `.md`. The final production build and complete local/production HTTP audits remain separate release requirements.
+Detailed independent content evidence: `H:/Proyectos/seo-20261012/evidence/latech-expansion-20261025/content-independent-audit.json` and `.md`. The final production build and both local/production HTTP audits are complete, as recorded below.
 
 Additional release evidence inspected: `local-audit.json` records 364 checked local URLs and zero failures; `.superpowers/expansion-nonfixture-tests.log` records 299 passed, zero failed; `.superpowers/expansion-final-design-detector.json` contains `[]`. Root reports the final full suite as 319 tests, 304 passed and 15 known Windows EPERM fixture-cleanup failures; the log contains those cleanup errors. Root also reports lint exit 0 and build exit 0 with 574 static pages. The final build was repeated successfully after the definitive content freeze. These broader commands were run by the release orchestrator, not independently rerun by this reviewer.
 
-## Remaining release evidence
+## Completed release evidence
 
 - [Complete] Frozen final build and lint both exited 0; final nonfixture suite passed 299/299; focused post-freeze contracts passed 14/14.
 - [Complete] Final content/SEO contracts, typecheck, lint, full test suite and production build; baseline Windows cleanup failures recorded separately.
 - [Complete] Final local audit covered all 364 release URLs, canonical/hreflang/HTML language metadata, both sitemaps and representative unknown-route 404s with zero failures.
 - [Complete] Visual review across locales and representative mobile/desktop widths; no mobile overflow in recorded checks.
-- Publish the verified revision and run the full production audit against https://serviciosonlineweb.com.
-- Record publication revision/deployment URL, production audit path and search submission receipt paths in the evidence folder `H:/Proyectos/seo-20261012/evidence/latech-expansion-20261025`.
+- [Complete] Published code revision `d315ff17b9f8bad87c9d417ea1ebbd922bf08432` to GitHub main and verified production at https://serviciosonlineweb.com.
+- [Complete] Publication, production audit and search submission evidence recorded in `H:/Proyectos/seo-20261012/evidence/latech-expansion-20261025`.
 - The expansion IndexNow script requires a clean production audit and creates a distinct receipt before sending. An accepted submission receipt is evidence of submission only; it does not prove indexing.
 
-Publication receipt: pending. Production audit: pending. Search submission receipts: pending.
+Publication, production audit and search submission receipts: complete. Search-engine processing/indexing is pending externally, not unfinished release work.
 
-Final frozen-release evidence inspected: `.superpowers/expansion-build-final.log` (build exit 0, confirmed by root), `.superpowers/expansion-lint-final.log` (lint exit 0, confirmed by root), `.superpowers/expansion-nonfixture-tests-final.log` (299 passed, zero failed) and `local-audit-final.json` (364 URLs, failures []). Content, build, local HTTP and visual checks are complete. Only root publication, production verification and search submission receipts remain pending.
+Final frozen-release evidence inspected: `.superpowers/expansion-build-final.log` (build exit 0, confirmed by root), `.superpowers/expansion-lint-final.log` (lint exit 0, confirmed by root), `.superpowers/expansion-nonfixture-tests-final.log` (299 passed, zero failed) and `local-audit-final.json` (364 URLs, failures []). Content, build, local HTTP and visual checks are complete. Publication, production verification and search submissions are complete, with receipts below.
+
+## Cierre de publicación — 26 de octubre de 2026
+
+Publicado el código `d315ff17b9f8bad87c9d417ea1ebbd922bf08432` en main de GitHub. Vercel confirmó READY en producción para `dpl_2tfvHC9U5LpBPXeJPbP458h2ETY4`: https://latech-qhxwzzkph-latech767-8157s-projects.vercel.app, con alias https://serviciosonlineweb.com verificado. Captura publicada: `production-us-desktop.png`.
+
+La auditoría de producción `production-audit.json` comprobó las 364 URLs sin fallos. IndexNow aceptó las 364 URLs con HTTP 200; recibo: `indexnow-expansion-receipt.json`.
+
+Google recibió de nuevo ambos sitemaps el 26 de octubre: `google-international-submitted.png/.txt` y `google-main-submitted.png/.txt`. La vista final `google-final-sitemaps.png/.txt` muestra el internacional Correcto, 364 URLs descubiertas y última lectura del 26 de octubre. El principal figura Correcto pero conserva 186 URLs de la lectura anterior del 21 de octubre; el XML servido por HTTP contiene 533 URLs y su recuento en consola espera actualización.
+
+Bing aceptó el reenvío de ambos sitemaps y los muestra Processing: `bing-international-processing.png/.txt` y `bing-main-processing.png/.txt`. Los recuentos visibles 108/186 siguen siendo anteriores. No se han solicitado indexaciones manuales de URLs ni se ha usado CAPTCHA en esta entrega.
+
+El trabajo autorizado de publicación y envío está completo. Los estados de procesamiento y la indexación dependen de los buscadores; ninguno de estos recibos demuestra que todas las URLs estén indexadas. No se ha creado ninguna programación.
