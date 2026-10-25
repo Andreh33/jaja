@@ -21,7 +21,7 @@ Robots declara ambos. El azul base pasa de #030914 a #06101f; el acento eléctri
 - Auditoría HTTP de las 108 URLs: cero fallos de estado, idioma, canonical, hreflang, WhatsApp, H1 y sitemap; rutas desconocidas responden 404.
 - Revisión visual de francés en escritorio/móvil, artículo alemán largo y navegación española en móvil. Corregidos la columna y los eventos del selector; cambio efectivo de español a francés comprobado.
 - Revisión independiente de contenido y código. Detector visual: cero avisos en las nuevas superficies; avisos de estilos anteriores conservados por identidad y alcance.
-- Suite completa: 294/309 correctas; 15 fallos en tres fixtures previos de SQLite por `EPERM` al limpiar directorios temporales en Windows. Reproducidos también con el runtime Node incluido; esos fixtures no se modifican en esta entrega. Las pruebas ajenas a esos tres archivos se ejecutan por separado para aislar la limitación del entorno.
+- Suite completa: 294/309 correctas; 15 fallos en tres fixtures previos de SQLite por `EPERM` al limpiar directorios temporales en Windows. Reproducidos también con el runtime Node incluido; esos fixtures no se modifican en esta entrega. Las pruebas ajenas a esos tres archivos pasan por separado: 289/289.
 
 ## Buscadores
 La solicitud del usuario autoriza publicación y envío a Google, Bing y otros buscadores disponibles. Se enviarán las URLs públicas verificadas y los sitemaps, conservando los recibos en `.local` y en la evidencia del proyecto. Recibido/enviado no significa indexado: cada buscador decide el rastreo y la inclusión. No se repetirá automáticamente una solicitud que ya tenga recibo.
@@ -29,4 +29,12 @@ La solicitud del usuario autoriza publicación y envío a Google, Bing y otros b
 Referencia técnica: [Google Search Central: versiones localizadas](https://developers.google.com/search/docs/specialty/international/localized-versions), [sitios multilingües](https://developers.google.com/search/docs/specialty/international/managing-multi-regional-sites), [IndexNow](https://www.indexnow.org/documentation).
 
 ## Estado final
-Pendiente de registrar despliegue y respuestas de los buscadores tras la verificación pública.
+Código publicado en GitHub main: `f69d58f50cf47a4a74d3aee437804fc555b5f174`. Vercel `dpl_GfSXtHKZCbhhKhaX27wmu96ZGtk5`, proyecto `latech`, producción READY, dominio `serviciosonlineweb.com`. Auditoría posterior al despliegue: 108/108 URLs correctas, ambas rutas de sitemap y robots responden 200; las áreas privadas siguen devolviendo redirección de autenticación 307.
+
+- **Google Search Console:** sitemap internacional enviado y leído el 25/10/2026; estado **Correcto**, **108 páginas descubiertas**. Inspección de `/en`: «Descubierta: actualmente sin indexar» y referencia al nuevo sitemap. La solicitud manual adicional de indexación falló con «Se ha producido un problema al enviar la solicitud de indexación» y «No se ha podido establecer conexión con el servicio reCAPTCHA». No se repite ni se afirma que la URL esté indexada.
+- **Bing Webmaster Tools:** sitemap internacional enviado el 25/10/2026 y listado como **Processing**. Esto confirma recepción, no indexación.
+- **IndexNow:** lote de las **108 URLs** aceptado con **HTTP 200** el 25/10/2026 a las 19:46:41 de Madrid. No se vuelve a enviar el mismo lote. Según su [documentación oficial](https://www.indexnow.org/faq), la notificación se comparte con los buscadores participantes, incluidos Bing, Amazon, Naver, Seznam.cz, Yandex y Yep; no hay confirmación individual de indexación en cada uno.
+
+Evidencias locales, sin credenciales: `H:/Proyectos/seo-20261012/evidence/latech-international-20261025/`: `production-audit.json`, `indexnow-receipt.json`, capturas y estados de Google/Bing, error de solicitud manual y captura de la versión francesa publicada. La hora del recibo en JSON está en UTC; aquí se usa Europe/Madrid.
+
+El contenido está publicado y comunicado a los buscadores. La indexación efectiva queda pendiente de sus sistemas de rastreo e inclusión.
