@@ -22,7 +22,7 @@
     "remote": "Une équipe basée en Espagne, qui réalise à distance des projets pour des entreprises d’autres pays.",
     "phone": "Téléphone",
     "contactTitle": "Parlons des besoins de votre entreprise",
-    "contactIntro": "Présentez votre objectif, votre site actuel et vos principales contraintes. Ces éléments nous aideront à discuter du périmètre adapté à votre projet. Écrivez à info@latech.es ou contactez-nous sur WhatsApp au +34 684 739 091.",
+    "contactIntro": "Présentez votre site actuel, le service recherché et vos objectifs. Contactez Latech sur WhatsApp au +34684739091 pour discuter du périmètre de votre projet.",
     "whatsappMessage": "Bonjour Latech, je souhaite demander un devis. Mon pays : . Le service recherché : . Mon site actuel : . Le calendrier souhaité : .",
     "processTitle": "Un déroulement clair, du cadrage au lancement",
     "processSteps": [
@@ -30,35 +30,47 @@
       "Concevoir et examiner le design, les fonctionnalités et les intégrations.",
       "Tester les parcours convenus, préparer le lancement et documenter la suite."
     ],
-    "articlesIntro": "Des guides pratiques sur les sites web, la vente en ligne et l’automatisation pour éclairer vos décisions.",
-    "serviceIntro": "Des services numériques pensés pour vos clients, vos processus internes et une base technique facile à maintenir.",
+    "articlesIntro": "Des guides pratiques sur le SEO, les sites professionnels et les demandes clients pour éclairer vos décisions.",
+    "serviceIntro": "Création web, SEO et e-commerce selon vos clients, votre offre et les opérations nécessaires après une demande.",
     "projectsIntro": "Découvrez de véritables réalisations Latech à travers les éléments disponibles qui présentent leur conception et leurs fonctionnalités.",
     "aboutTitle": "Une petite équipe, une approche concrète",
     "aboutIntro": "Latech a été fondée par Andrés Rubio et Luis Grondona à Puebla de la Calzada, dans la province de Badajoz, en Espagne.",
     "aboutBody": [
-      "Nous travaillons sur la conception web, le commerce en ligne et l’automatisation avec l’IA et n8n. Chaque projet part d’un problème métier et de priorités définies.",
+      "Nous travaillons sur la création de sites professionnels, le SEO et le commerce en ligne à partir des questions des clients. Chaque projet commence par une offre réelle, un public identifié et des priorités définies.",
       "Notre équipe est basée en Espagne et réalise aussi à distance des projets pour des entreprises d’autres pays. Le périmètre, les responsabilités et les modalités de communication sont précisés pour chaque mission.",
-      "Nous privilégions des parcours lisibles, des contenus utiles et des outils maintenables. Nos pages de réalisations s’appuient sur des projets réels et sur les éléments disponibles pour expliquer le travail effectué."
+      "Nous privilégions des parcours compréhensibles, des contenus utiles et une base technique maintenable. Nous étudions également des intégrations n8n et des tâches IA lorsqu'un processus défini et une supervision adaptée les justifient."
     ],
     "contactDetails": "Coordonnées",
     "moreServices": "Découvrir nos services",
-    "allArticles": "Tous les articles"
+    "allArticles": "Tous les articles",
+    "brandClaim": "En design et en SEO, personne ne nous bat.",
+    "seoTitle": "Du SEO pour des visites et demandes pertinentes",
+    "seoIntro": "Nous relions les questions des clients à des pages claires, un accès technique adapté et une évaluation utile des demandes.",
+    "seoBullets": [
+      "Relier les recherches aux services proposés",
+      "Organiser les pages et les liens internes",
+      "Vérifier l'accès technique et l'usage mobile",
+      "Évaluer les clics avec la qualité des demandes"
+    ],
+    "faqTitle": "Questions sur votre projet",
+    "serviceCta": "Parler de ce service",
+    "projectCountLabel": "projets"
   },
   "home": {
-    "title": "Création web, e-commerce et automatisation IA | Latech",
-    "description": "Confiez votre site, votre boutique en ligne ou vos automatisations à Latech, une équipe basée en Espagne qui réalise des projets internationaux à distance.",
-    "heading": "Des projets numériques utiles au quotidien",
-    "intro": "Un site qui explique votre offre, une boutique qui facilite l’achat et des automatisations qui relient vos outils métier.",
+    "title": "Création de sites web et SEO pour entreprises | Latech",
+    "description": "Création de sites web, SEO et boutiques pour des demandes pertinentes. Latech travaille à distance depuis l'Espagne sur des projets internationaux.",
+    "heading": "Création de sites web, SEO et e-commerce pour vos demandes clients",
+    "intro": "Une offre compréhensible, des pages qui répondent aux recherches et un parcours de contact clair pour engager une conversation utile avec votre entreprise.",
     "body": [
-      "Latech réunit conception web, commerce en ligne et automatisation IA avec n8n autour d’un objectif concret. Nous partons des utilisateurs : ce qu’ils doivent comprendre, ce qu’ils veulent accomplir et les obstacles qui compliquent le parcours actuel.",
-      "Fondée par Andrés Rubio et Luis Grondona à Puebla de la Calzada, Badajoz, en Espagne, notre équipe travaille aussi à distance pour des entreprises d’autres pays. Présentez votre marché, vos outils et vos priorités pour définir un périmètre pertinent."
+      "Un site professionnel doit expliquer votre offre, son public et les informations nécessaires avant de prendre contact. Nous réunissons création web, contenus utiles et bases techniques du SEO autour de ce parcours. Le périmètre dépend de votre marché, du site existant et du traitement réel des demandes.",
+      "Andrés Rubio et Luis Grondona ont fondé Latech à Puebla de la Calzada, Badajoz, en Espagne. Depuis cette base, nous travaillons également à distance avec des entreprises d'autres pays. Les livrables, les responsabilités éditoriales et les modalités de validation sont définis pour chaque projet."
     ]
   },
   "services": [
     {
       "id": "web",
-      "title": "Création de sites professionnels",
-      "description": "Présentez votre entreprise avec un site clair, des contenus utiles et des parcours de contact adaptés aux visiteurs que vous souhaitez toucher en ligne.",
+      "title": "Création de sites web et SEO",
+      "description": "Création de sites professionnels avec pages de services claires, usage mobile et bases SEO. Définissez un périmètre adapté aux demandes clients avec Latech.",
       "intro": "Un site professionnel doit répondre aux questions qui précèdent une prise de contact utile.",
       "sections": [
         {
@@ -87,7 +99,7 @@
     {
       "id": "shop",
       "title": "Création de boutiques en ligne",
-      "description": "Construisez une boutique autour de fiches produits claires, d’un achat compréhensible et des opérations nécessaires au traitement des commandes clients.",
+      "description": "Créez une boutique avec des produits compréhensibles, des catégories claires et un achat pratique. Latech relie le parcours client à la gestion des commandes.",
       "intro": "Une boutique relie la découverte du produit, le paiement et le traitement de la commande.",
       "sections": [
         {
@@ -116,7 +128,7 @@
     {
       "id": "ai",
       "title": "Automatisation IA avec n8n",
-      "description": "Reliez vos outils métier avec des workflows n8n et des tâches IA encadrées, en prévoyant validation, contrôle humain et traitement des exceptions.",
+      "description": "Connectez vos outils avec n8n et des tâches IA encadrées. Latech définit les contrôles, la validation humaine et la gestion des erreurs selon votre processus.",
       "intro": "Automatiser commence par comprendre le processus, les données et les décisions qui demandent un jugement humain.",
       "sections": [
         {
@@ -710,6 +722,754 @@
         "Attribuer surveillance et reprise du lancement."
       ],
       "conclusion": "Une migration devient plus simple à piloter lorsque contenus, adresses et fonctionnement métier partagent le même plan. Latech peut préparer cette continuité et construire le nouveau site autour de parcours vérifiés et d’une structure maintenable."
+    },
+    {
+      "id": "seo-audit",
+      "title": "Transformer un rapport d'audit SEO en tâches prioritaires",
+      "slug": "audit-seo-taches-prioritaires-entreprise",
+      "description": "Transformer un rapport d'audit SEO en tâches prioritaires. Des étapes pratiques pour comprendre les clics et préparer des demandes clients utiles.",
+      "intro": [
+        "Un audit SEO aide à déterminer ce qui empêche de trouver, comprendre ou utiliser les pages importantes. Le nombre d'alertes ne distingue pas une offre bloquée par erreur d'une archive volontairement exclue.",
+        "Prenons une entreprise de maintenance fictive avec des liens anciens et des descriptions identiques. Réparer le parcours vers un service et réécrire les descriptions exigent des preuves différentes, puis un ordre adapté aux besoins réellement touchés."
+      ],
+      "sections": [
+        {
+          "title": "Commencer par les pages commerciales importantes",
+          "paragraphs": [
+            "Choisissez les services et catégories qui accompagnent une décision réelle. Vérifiez leur accès, leur contenu et la prise de contact. Un blocage involontaire du service principal mérite généralement une attention plus rapide qu'une imperfection mineure dans une archive rarement consultée.",
+            "Suivez le lien de maintenance depuis l'accueil jusqu'à sa destination finale. S'il aboutit à une offre supprimée, identifiez ce parcours commercial interrompu. Une erreur similaire dans une ancienne actualité peut avoir une priorité différente, même lorsque le logiciel attribue exactement la même catégorie technique aux deux défauts."
+          ]
+        },
+        {
+          "title": "Demander une preuve reproductible",
+          "paragraphs": [
+            "Chaque problème doit comporter une adresse, une observation précise et une méthode de vérification. Un outil détecte des signaux sans connaître toutes les exceptions du métier. Examinez quelques exemples manuellement avant de modifier des centaines de pages et distinguez une erreur d'une restriction justifiée.",
+            "Devant une alerte de titres identiques, ouvrez deux adresses et comparez les titres publiés. Deux prestations distinctes doivent être reconnaissables ; des variantes de tri peuvent plutôt nécessiter une version préférée cohérente. Le constat du logiciel décrit une ressemblance, mais ne suffit pas pour choisir la correction adaptée au cas rencontré."
+          ]
+        },
+        {
+          "title": "Séparer gravité, portée et effort",
+          "paragraphs": [
+            "Une instruction noindex accidentelle n'a pas les mêmes conséquences qu'une description imprécise. Notez les pages concernées, l'effet probable et le travail nécessaire. Lorsque la cause reste incertaine, créez une tâche d'investigation plutôt que de présenter une supposition comme une consigne d'exécution.",
+            "Évaluez aussi la portée par modèle de page. Un lien de contact absent du modèle des services touche plusieurs offres, tandis qu'une faute isolée reste locale. Examinez plusieurs exemples avant d'affirmer qu'une modification du modèle corrigera toutes les adresses regroupées dans le rapport sous le même intitulé d'alerte."
+          ]
+        },
+        {
+          "title": "Relier technique et contenu",
+          "paragraphs": [
+            "Une page accessible peut présenter la mauvaise offre ou attirer des demandes inadaptées. Examinez la question traitée et l'action proposée. Ne transformez pas chaque difficulté commerciale en problème de rapidité : certaines améliorations concernent les mots, le catalogue ou les limites de la prestation.",
+            "Une page de réparation peut être indexable tout en décrivant seulement le remplacement. Les contrôles techniques passent, mais la promesse est confuse. Comparez activités, titre et exclusions avant d'ajouter des mots clés ou de demander une intervention sur la rapidité pour résoudre un problème qui relève d'abord de l'explication commerciale."
+          ]
+        },
+        {
+          "title": "Rédiger une tâche exécutable",
+          "paragraphs": [
+            "Précisez responsable, adresse concernée, modification attendue et contrôle final. Remplacez améliorer le référencement par une action vérifiable, par exemple retirer une restriction involontaire puis examiner la réponse publiée. Identifiez les dépendances et les éléments nécessaires avant qu'une autre personne poursuive son intervention.",
+            "Une tâche exploitable peut demander de remplacer l'ancien lien du pied de page par l'adresse actuelle de maintenance, puis de vérifier sa destination. Si cette page n'existe pas, produire une réponse utile est un préalable. Modifier seulement le lien ne résout pas l'absence du contenu que le visiteur attend à son arrivée."
+          ]
+        },
+        {
+          "title": "Fermer la boucle après publication",
+          "paragraphs": [
+            "Vérifiez la correction sur le site et notez la date. Analysez ensuite les données pertinentes sans attribuer toute variation de trafic à cette intervention. Conservez également les alertes écartées et leur justification, afin qu'un autre intervenant ne relance pas inutilement le même travail.",
+            "Après une correction de canonical, vérifiez l'élément publié et les liens internes qui favoriseraient encore l'ancienne variante. Les rapports d'indexation peuvent évoluer plus tard. Séparez la validation de l'implémentation de l'observation de la version retenue par le moteur : ces deux étapes n'apportent pas la même preuve et ne suivent pas le même calendrier."
+          ]
+        }
+      ],
+      "checklist": [
+        "Suivez un lien commercial jusqu'à sa destination finale.",
+        "Confirmez chaque défaut sur des adresses réellement touchées.",
+        "Distinguez une erreur de modèle d'un incident isolé.",
+        "Précisez correction et critère de validation.",
+        "Séparez implémentation vérifiée et observation ultérieure en recherche."
+      ],
+      "conclusion": "Classez les obstacles démontrés sur les pages utiles et précisez leur correction. L'audit devient concret lorsqu'il améliore l'accès et la compréhension avec des critères vérifiables."
+    },
+    {
+      "id": "search-intent",
+      "title": "Associer l'intention de recherche à la bonne page",
+      "slug": "intention-recherche-choix-page-destination",
+      "description": "Associer l'intention de recherche à la bonne page. Découvrez des étapes concrètes pour relier les recherches, les contenus et des demandes pertinentes.",
+      "intro": [
+        "L'intention de recherche correspond à la tâche poursuivie : comprendre, comparer ou choisir un prestataire. Un vocabulaire commun peut masquer des décisions différentes, qui ne nécessitent donc pas toutes la même page.",
+        "Imaginons une personne qui recherche le bruit d'une pompe à chaleur, son entretien et un installateur. Cet exemple fictif réunit un produit, mais appelle une explication, une délimitation de service et une évaluation du fournisseur."
+      ],
+      "sections": [
+        {
+          "title": "Lire le besoin complet",
+          "paragraphs": [
+            "Ne classez pas une recherche à partir d'un mot isolé. Considérez sa formulation et la décision exprimée. Le fonctionnement d'une prestation, les facteurs de coût et la recherche d'un prestataire nécessitent des réponses différentes, même si un terme général revient dans les trois requêtes.",
+            "Une question sur le bruit nocturne demande des causes possibles, les signes normaux et les situations nécessitant un contrôle. Un formulaire immédiat laisse cette question sans réponse. Un guide peut présenter une évaluation professionnelle après avoir expliqué le problème, sans transformer toute recherche d'information en invitation précipitée à demander un devis."
+          ]
+        },
+        {
+          "title": "Regrouper les décisions similaires",
+          "paragraphs": [
+            "Réunissez les variantes qui attendent une réponse équivalente. Un simple changement dans l'ordre des mots ne justifie pas une nouvelle page. Un groupe partage une destination lorsque les personnes ont une difficulté comparable et ont besoin de la même explication pour poursuivre.",
+            "Regroupez fréquence d'entretien et quand faire réviser une pompe à chaleur si les deux nécessitent la même explication. Séparez le coût d'installation lorsqu'il dépend d'autres facteurs et mène à une autre offre. Une réponse complète doit satisfaire le groupe sans changer brusquement de sujet pour intégrer artificiellement un terme supplémentaire."
+          ]
+        },
+        {
+          "title": "Choisir le bon format",
+          "paragraphs": [
+            "Un guide enseigne, une page de service présente la collaboration et une catégorie aide à comparer les produits. Ne dissimulez pas l'offre dans un article interminable et ne remplacez pas une réponse informative par un formulaire. Le format doit permettre d'accomplir la tâche attendue.",
+            "Observez les formats présents pour des requêtes représentatives, en sachant que les résultats varient. Si les comparatifs dominent, une courte présentation commerciale risque d'omettre les critères attendus. Expliquez les critères utiles pour votre offre au lieu de copier les formulations d'autres sites ou de considérer leur classement comme une consigne éditoriale absolue."
+          ]
+        },
+        {
+          "title": "Définir une destination principale",
+          "paragraphs": [
+            "Associez une page centrale à chaque besoin commercial et notez les contenus qui l'accompagnent. Comparez les pages déjà présentes avant d'en créer une autre. Cette organisation aide à choisir où développer la réponse et où placer les liens, sans disperser les informations essentielles.",
+            "Attribuez les demandes d'entretien à la page du service et les intervalles à un guide complémentaire. Celui-ci peut renvoyer vers l'offre au moment pertinent. Créer une nouvelle page commerciale pour contrôle annuel et une autre pour révision annuelle peut fragmenter une réponse unique sans permettre au lecteur de choisir entre deux prestations réellement différentes."
+          ]
+        },
+        {
+          "title": "Examiner les requêtes observées",
+          "paragraphs": [
+            "Utilisez les recherches disponibles et leurs destinations pour confronter la première carte à la réalité. Une page peut apparaître sur des questions plus larges que prévu. Vérifiez si elle aide ces visiteurs ou les conduit vers une conversation fondée sur une mauvaise compréhension de l'offre.",
+            "Lorsqu'une page d'installation apparaît pour des recherches de réparation, repérez le passage susceptible de suggérer cette disponibilité. Une phrase sur la remise en état des équipements anciens peut créer le malentendu. Clarifier cette limite est parfois préférable à étendre le texte vers une prestation que l'entreprise ne propose pas réellement à ses clients."
+          ]
+        },
+        {
+          "title": "Valider avec l'équipe qui répond",
+          "paragraphs": [
+            "Demandez ce que les personnes attendaient et quelle information leur manquait. Des demandes régulièrement hors périmètre peuvent signaler une promesse trop large. Clarifiez le texte avant d'ajouter des pages : l'intention reste une hypothèse de travail à confronter à l'usage et aux conversations.",
+            "Distinguez les questions de préparation des demandes hors périmètre. La personne demandant quelles photographies envoyer a besoin d'une prochaine étape claire ; celle qui attend un dépannage urgent a peut-être mal compris l'offre. Ces observations appellent des corrections différentes, même si les deux conversations ont commencé sur la même destination de recherche."
+          ]
+        }
+      ],
+      "checklist": [
+        "Identifiez la tâche derrière les requêtes représentatives.",
+        "Regroupez les variantes nécessitant la même réponse complète.",
+        "Choisissez guide, comparaison ou service selon la décision.",
+        "Attribuez une destination principale à chaque besoin commercial.",
+        "Confrontez les requêtes inattendues aux limites réelles de l'offre."
+      ],
+      "conclusion": "Reliez chaque décision à une réponse complète, puis confrontez cette répartition aux requêtes et aux échanges. Une nouvelle page se justifie par une tâche distincte qui mérite son propre développement."
+    },
+    {
+      "id": "service-pages",
+      "title": "Ce qu'une page de service doit expliquer avant le contact",
+      "slug": "page-service-perimetre-avant-contact",
+      "description": "Ce qu'une page de service doit expliquer avant le contact. Des étapes pratiques pour comprendre les clics et préparer des demandes clients utiles.",
+      "intro": [
+        "Une page de service doit permettre de reconnaître si une prestation répond à un problème concret. Elle combine une promesse compréhensible, un périmètre explicite, des preuves pertinentes et un contact adapté à l'évaluation proposée.",
+        "Prenons un prestataire fictif de maintenance des bâtiments. Avant d'envoyer des photos ou de demander une visite, le lecteur doit distinguer une inspection programmée d'une réparation urgente et comprendre ce que l'équipe pourra examiner."
+      ],
+      "sections": [
+        {
+          "title": "Distinguer les solutions voisines",
+          "paragraphs": [
+            "Décrivez le problème traité et les situations dans lesquelles une autre solution convient mieux. Les visiteurs ne connaissent pas forcément vos catégories internes. Expliquer entretien, réparation et remplacement avec des mots courants aide à reconnaître la bonne prestation sans devoir contacter l'entreprise pour comprendre son vocabulaire.",
+            "Expliquez la différence pratique : l'inspection repère l'usure et prépare l'entretien, tandis que la réparation traite un défaut identifié. Si les interventions urgentes ne sont pas proposées, précisez-le près de la définition. Le terme général maintenance ne doit pas suggérer une disponibilité immédiate que l'équipe ne peut assurer après réception du message."
+          ]
+        },
+        {
+          "title": "Décrire le travail possible",
+          "paragraphs": [
+            "Présentez les activités habituelles et les informations nécessaires pour examiner une demande. Distinguez ce qui dépend d'une première évaluation, sans inventer de prix ni de délais fixes. Des limites claires réduisent les malentendus et préparent une conversation centrée sur la situation réelle du client.",
+            "Indiquez ce qu'une photographie permet d'apprécier et ce qui exige une visite. Elle peut montrer une dégradation visible sans révéler sa cause cachée. Demander la localisation, l'élément concerné et les symptômes prépare un échange utile sans laisser croire que tout dossier peut recevoir un diagnostic complet ou un prix ferme à distance."
+          ]
+        },
+        {
+          "title": "Organiser la lecture",
+          "paragraphs": [
+            "Présentez le service et son public, puis le périmètre, la méthode, les exemples et le contact. Les intertitres doivent garder leur sens lors d'un parcours rapide sur téléphone. Un long historique de l'entreprise peut retarder la réponse qui a motivé l'arrivée sur cette page.",
+            "Organisez la lecture pour répondre d'abord à la question du bon service, puis expliquer son déroulement. Sur téléphone, périmètre et contact doivent rester faciles à repérer. Un schéma apporte quelque chose lorsque ses libellés décrivent de vraies étapes, comme évaluation, proposition et programmation convenue, plutôt que des mots simplement décoratifs et génériques."
+          ]
+        },
+        {
+          "title": "Choisir des preuves pertinentes",
+          "paragraphs": [
+            "Utilisez des matériaux réels répondant au doute précis : une photographie expliquée, un document ou un détail de projet. Indiquez la contribution de votre équipe. Des logos sans contexte donnent moins d'éléments pour évaluer la prestation qu'une décision concrète accompagnée de ses contraintes.",
+            "Une photographie d'inspection devient une preuve lorsque sa légende identifie le problème visible et le travail effectué. N'en déduisez pas des économies ou des performances non documentées. Un schéma clairement présenté comme illustratif peut expliquer une méthode lorsqu'aucun document de projet réel ne permet de la montrer avec le contexte nécessaire à sa compréhension."
+          ]
+        },
+        {
+          "title": "Relier sans disperser la décision",
+          "paragraphs": [
+            "Proposez un guide pour approfondir une question et une autre prestation lorsque le besoin ne correspond pas. Rédigez des liens qui décrivent leur destination. La page doit rester compréhensible seule, sans obliger à ouvrir plusieurs onglets pour savoir ce que couvre la collaboration.",
+            "Placez un lien vers les causes possibles d'humidité lorsque cette question se pose, et vers le remplacement lorsque réparer serait inadapté. Répéter tous les services entre les paragraphes disperse la décision. Chaque lien devrait annoncer la question traitée à destination et expliquer pourquoi elle complète utilement le service actuellement examiné par le lecteur."
+          ]
+        },
+        {
+          "title": "Demander le contexte utile",
+          "paragraphs": [
+            "Après les réponses essentielles, expliquez quelles informations envoyer par WhatsApp ou formulaire. Limitez les questions à ce qui facilite l'examen de la demande. Si l'équipe répète toujours la même précision, ajoutez cette réponse au bon endroit et vérifiez ensuite la compréhension des visiteurs.",
+            "Le contact peut demander le type de bâtiment, sa localisation et une courte description du défaut. Expliquez que ces éléments servent à évaluer la demande, sans confirmer disponibilité ni devis. Vérifiez que le message proposé nomme la bonne prestation et reste modifiable lorsque la situation ne correspond pas exactement à l'exemple présenté."
+          ]
+        }
+      ],
+      "checklist": [
+        "Expliquez les différences avec les prestations alternatives.",
+        "Précisez ce qu'une photographie permet réellement d'évaluer.",
+        "Gardez périmètre, processus et contact faciles à repérer.",
+        "Identifiez ce que démontre chaque exemple de travail réel.",
+        "Testez un message spécifique et modifiable sur téléphone."
+      ],
+      "conclusion": "Rendez le travail et ses limites compréhensibles avant le contact. Choisissez des preuves et des questions qui préparent une conversation utile sur la situation réelle du prospect."
+    },
+    {
+      "id": "seo-titles-clicks",
+      "title": "Évaluer les titres SEO sans mal interpréter le taux de clics",
+      "slug": "titres-seo-tests-requetes-comparables",
+      "description": "Évaluer les titres SEO sans mal interpréter le taux de clics. Des étapes pratiques pour comprendre les clics et préparer des demandes clients utiles.",
+      "intro": [
+        "Un titre de recherche aide à juger si un résultat répond à un besoin. Son amélioration commence par le contenu réel et des données comparables, sans supposer qu'une formulation plus insistante produira automatiquement des demandes pertinentes.",
+        "Imaginez une baisse du taux de clics alors que les impressions augmentent. Dans ce scénario fictif, une visibilité plus large à des positions inférieures peut expliquer le mouvement alors que le titre et l'offre n'ont pas changé."
+      ],
+      "sections": [
+        {
+          "title": "Décrire précisément la destination",
+          "paragraphs": [
+            "Nommez clairement le service, le produit ou la question principale. Ajoutez un élément distinctif réel lorsqu'il aide à reconnaître l'offre. Le titre ne doit pas promettre une information absente ni accumuler des expressions commerciales qui rendent toutes les pages voisines pratiquement indifférenciables.",
+            "Pour une page d'entretien de chaudière, nommer la prestation et sa couverture réelle renseigne mieux qu'une formule vague sur le confort. Ajoutez une distinction seulement si le contenu la justifie. Évitez les urgences lorsque les interventions sont programmées, car le clic commencerait par une attente que la page ne peut satisfaire ensuite."
+          ]
+        },
+        {
+          "title": "Vérifier la cohérence de la promesse",
+          "paragraphs": [
+            "Comparez le titre technique, le titre visible et le contenu. Ils peuvent varier dans leur formulation mais doivent annoncer le même sujet. Chercher uniquement le clic risque de décevoir si la page présente ensuite autre chose ou introduit une restriction inattendue sur la prestation.",
+            "Contrôlez le title publié et le titre visible après une modification du modèle. Un en-tête précis ne compense pas des titres techniques tous intitulés Services. Il n'est pas davantage nécessaire de répéter intégralement le title dans chaque sous-titre : les éléments ont des rôles distincts, mais doivent désigner la même offre avec cohérence."
+          ]
+        },
+        {
+          "title": "Rédiger une description utile",
+          "paragraphs": [
+            "Résumez ce que la personne trouvera et la suite possible. Google peut choisir un autre extrait : la description n'est donc pas une publicité dont l'affichage serait garanti. Évitez les supériorités invérifiables et choisissez des mots compréhensibles sans connaissance préalable du fonctionnement interne de l'entreprise.",
+            "La description peut présenter l'évaluation, les travaux inclus et les informations à préparer. Sans grille tarifaire sur la page, n'annoncez pas des prix pour obtenir des clics. Le moteur peut sélectionner un autre passage, ce qui rend la clarté du corps de page aussi utile que le soin apporté à la description proposée."
+          ]
+        },
+        {
+          "title": "Segmenter avant de comparer",
+          "paragraphs": [
+            "Examinez la même page et des groupes de recherches similaires lorsque les données le permettent. Séparez marque et questions générales. Une modification de leur proportion peut déplacer le taux de clics moyen sans que le nouveau titre l'explique ; appareil et période comptent également dans l'interprétation.",
+            "Comparez les requêtes de marque entre elles et les recherches générales avec des besoins similaires. Examinez positions et appareils avec impressions et clics. L'arrivée de nouvelles requêtes larges peut diminuer le taux global ; une cohorte comparable et stable constitue une meilleure base pour interpréter un éventuel changement lié au titre de la page étudiée."
+          ]
+        },
+        {
+          "title": "Limiter le test",
+          "paragraphs": [
+            "Modifiez un petit ensemble et notez ancien texte, nouveau texte, date et motif. Vérifiez la publication effective du titre. Évitez de refaire simultanément toute la structure si vous voulez apprendre quelque chose sur cette intervention précise à partir des éléments disponibles.",
+            "Testez une révision limitée sur une page établie en conservant l'ancien texte. Vous pourrez restaurer un nom de service supprimé par erreur. Vérifiez si le résultat public a intégré la modification avant d'associer un mouvement précoce des clics à des mots que les internautes n'ont peut-être pas encore vus dans leur recherche."
+          ]
+        },
+        {
+          "title": "Observer la suite du clic",
+          "paragraphs": [
+            "Un meilleur taux de clics ne signifie pas nécessairement de meilleures demandes. Vérifiez la réponse à l'attente et le sujet des conversations. Attendez des observations comparables suffisantes, reconnaissez l'incertitude et conservez une clarification utile sans prétendre démontrer un gain commercial que les données n'établissent pas.",
+            "Examinez globalement les sujets des demandes reçues. Des visites supplémentaires pour une assistance urgente gratuite peuvent convenir moins bien à un entretien programmé payant. Le titre utile crée une attente juste ; la pertinence des conversations et la clarté de la destination complètent le pourcentage du rapport, sans permettre d'attribuer chaque demande à cette seule modification."
+          ]
+        }
+      ],
+      "checklist": [
+        "Vérifiez que le titre nomme la prestation réelle.",
+        "Comparez title, en-tête et offre publiée.",
+        "Évitez les prix absents ou les urgences indisponibles.",
+        "Comparez des groupes, positions et appareils similaires.",
+        "Conservez la révision et examinez la pertinence des demandes."
+      ],
+      "conclusion": "Évaluez les titres avec des groupes comparables et une promesse fidèle au contenu. Une formulation plus claire reste utile lorsque les données ne prouvent pas un effet causal sur les ventes."
+    },
+    {
+      "id": "search-console-leads",
+      "title": "Lire les clics Search Console avec les demandes clients",
+      "slug": "search-console-clics-demandes-clients",
+      "description": "Lire les clics Search Console avec les demandes clients. Des étapes pratiques pour comprendre les clics et préparer des demandes clients utiles.",
+      "intro": [
+        "Search Console décrit la visibilité et les clics de recherche ; il ne confirme pas la réception d'une demande adaptée. Relier ces observations nécessite de distinguer visite, action de contact et message effectivement reçu.",
+        "Considérons une page fictive de maintenance avec davantage de clics, mais moins de demandes pertinentes. De nouvelles questions informatives, un lien incorrect ou une promesse trop large exigent chacun une vérification différente avant de choisir une correction."
+      ],
+      "sections": [
+        {
+          "title": "Nommer chaque étape",
+          "paragraphs": [
+            "Distinguez impression, clic dans la recherche, visite, clic de contact et message reçu. Des systèmes différents observent des étapes différentes. Un tableau qui les appelle toutes prospects peut suggérer des opportunités commerciales alors qu'il n'existe qu'un premier signal d'intérêt ou une tentative de contact.",
+            "Ouvrir WhatsApp est une action de contact ; envoyer un message constitue une autre étape dans un autre système. Le visiteur peut fermer l'application sans écrire. Une demande reçue doit encore être qualifiée, donc compter toutes les pressions sur le bouton comme des opportunités commerciales dépasse ce que le site permet réellement d'observer."
+          ]
+        },
+        {
+          "title": "Choisir pages et requêtes pertinentes",
+          "paragraphs": [
+            "Filtrez les services prioritaires et examinez les recherches disponibles. Regroupez marque, information et recherche de prestataire. Le détail n'est pas toujours complet : une ligne absente ne démontre pas un manque d'intérêt et ne permet pas de retrouver l'identité d'une personne derrière une requête.",
+            "Filtrez une destination importante et distinguez les questions pratiques des recherches de fournisseur. Toutes les requêtes ne sont pas affichées et les agrégations peuvent varier selon la vue. Utilisez les lignes pour repérer des tendances, sans forcer leur somme à expliquer tous les clics ni inventer les recherches individuelles absentes du rapport disponible."
+          ]
+        },
+        {
+          "title": "Comparer avec du contexte",
+          "paragraphs": [
+            "Tenez compte de la durée, des saisons et des publications récentes. Une semaine exceptionnelle ne se compare pas sans explication à un mois calme. Notez les campagnes et changements d'offre susceptibles de modifier les conversations, même si leur influence ne peut être isolée précisément.",
+            "Comparez des périodes de même durée avec une répartition similaire des jours. Pour une maintenance saisonnière, ajoutez une référence pertinente de la même saison. Si horaires ou prestations ont changé, intégrez cette différence : la pertinence des demandes peut évoluer indépendamment d'une progression ou d'une baisse de la visibilité dans les résultats de recherche."
+          ]
+        },
+        {
+          "title": "Parcourir la page d'arrivée",
+          "paragraphs": [
+            "Ouvrez les destinations recevant des clics adaptés et allez jusqu'à WhatsApp ou au formulaire. Un lien cassé ou une explication incomplète peut freiner la demande. Search Console ne révèle pas seule l'information qui manque après l'arrivée ; complétez avec une vérification concrète du parcours.",
+            "Suivez le lien de contact sur l'appareil couramment utilisé et vérifiez numéro et service mentionné dans le message suggéré. Une destination erronée après le clic ne se diagnostique pas avec les impressions. Si un formulaire existe, assurez-vous aussi qu'un envoi réussi affiche une confirmation compréhensible plutôt que de laisser le visiteur dans l'incertitude."
+          ]
+        },
+        {
+          "title": "Évaluer les messages selon un critère commun",
+          "paragraphs": [
+            "Dans le fonctionnement habituel, classez l'adéquation avec la prestation, la zone et la capacité. Gardez uniquement les informations nécessaires. Il n'est pas indispensable de relier une recherche à une identité pour constater qu'une page crée des attentes auxquelles l'entreprise ne peut répondre.",
+            "Utilisez des catégories comme prestation adaptée, zone non couverte ou demande d'un autre produit. Elles éclairent les tendances sans rattacher les requêtes à des personnes identifiables. La répétition d'une zone non couverte peut justifier une couverture mieux expliquée près de l'offre avant de chercher à augmenter indifféremment le trafic de toutes les pages commerciales."
+          ]
+        },
+        {
+          "title": "Choisir une amélioration vérifiable",
+          "paragraphs": [
+            "Réunissez les observations dans une tâche : préciser le périmètre, réparer le contact ou répondre à une question récurrente. Vérifiez l'exécution puis les demandes. Présentez séparément clics, actions de contact et conversations qualifiées pour distinguer ce qui est mesuré, déduit ou impossible à établir.",
+            "Si un guide attire des lecteurs informatifs et que le service explique mal le travail, améliorez le lien contextuel et sa destination. Examinez séparément l'utilisation du lien et les sujets des messages. Search Console ne démontre pas qu'une phrase précise a provoqué une demande individuelle, même si les tendances observées semblent compatibles avec cette hypothèse."
+          ]
+        }
+      ],
+      "checklist": [
+        "Distinguez clic, action de contact et message reçu.",
+        "Filtrez les pages utiles et les objectifs des requêtes.",
+        "Comparez des périodes équivalentes avec leur contexte saisonnier.",
+        "Vérifiez contact et confirmation du formulaire envoyé.",
+        "Classez la pertinence sans reconstruire les recherches individuelles."
+      ],
+      "conclusion": "Présentez visibilité, actions de contact et demandes reçues comme des observations distinctes. Leurs relations permettent d'enquêter sur les obstacles en respectant les limites de chaque source utilisée."
+    },
+    {
+      "id": "technical-indexing",
+      "title": "Une page commerciale absente de la recherche : vérifier dans le bon ordre",
+      "slug": "indexation-page-commerciale-verifications",
+      "description": "Une page commerciale absente de la recherche : vérifier dans le bon ordre. Vérifiez contenu, technique et contact pour des demandes pertinentes.",
+      "intro": [
+        "Le diagnostic d'indexation suit un ordre : réponse publique, accès à l'exploration, instructions d'indexation, canonical, découverte et contenu traité. Modifier plusieurs contrôles simultanément peut masquer la cause réelle et compliquer la validation de la correction.",
+        "Imaginons une page de service visible dans le navigateur, mais absente des recherches. Cet exemple fictif montre seulement qu'une personne peut la charger, sans prouver qu'un robot accède à une version indexable et préférée."
+      ],
+      "sections": [
+        {
+          "title": "Vérifier l'adresse et la réponse",
+          "paragraphs": [
+            "Ouvrez l'URL finale et examinez réponse HTTP, redirections et contenu visible. Une page d'erreur peut répondre avec un statut de réussite sans présenter la prestation. Avant de réécrire les mots clés, confirmez qu'une page utile existe bien à l'adresse destinée à la publication.",
+            "Demandez l'adresse finale après redirections et examinez sa réponse réelle. Une page inexistante ne devrait pas afficher un message d'erreur avec un statut de succès. Vérifiez si une connexion, une couche de consentement ou une règle serveur remplace le service pour les visiteurs anonymes : une réponse réussie ne garantit pas à elle seule un contenu exploitable."
+          ]
+        },
+        {
+          "title": "Distinguer exploration et indexation",
+          "paragraphs": [
+            "Robots.txt régit l'exploration ; noindex concerne l'indexation lorsque l'instruction peut être lue. Ces mécanismes diffèrent. Bloquer l'accès ne garantit pas un retrait des résultats, et associer des restrictions sans les comprendre peut empêcher le traitement de l'instruction que vous souhaitez réellement communiquer.",
+            "Un robot doit lire noindex pour traiter cette instruction. Une restriction robots.txt peut empêcher cette lecture et ne constitue pas à elle seule une méthode fiable de retrait. Pour une page destinée à apparaître, examinez métadonnées et en-têtes afin de détecter un noindex accidentel, même lorsque l'accès à l'exploration est par ailleurs autorisé."
+          ]
+        },
+        {
+          "title": "Examiner la version canonique",
+          "paragraphs": [
+            "Vérifiez que le canonical désigne une adresse pertinente et accessible. Une référence accidentelle à l'accueil ou à une autre variante peut contredire la publication d'une prestation indépendante. Examinez aussi les signaux de duplication et gardez des liens internes, un sitemap et une adresse préférée cohérents.",
+            "La canonical indique une version préférée équivalente, sans fusionner des services différents. Contrôlez que sa cible fonctionne et représente la même offre. Si les liens internes privilégient une variante tandis que sitemap et canonical en désignent une autre, corrigez cette contradiction plutôt que d'ajouter des adresses concurrentes censées toutes être préférées."
+          ]
+        },
+        {
+          "title": "Contrôler la découverte",
+          "paragraphs": [
+            "Cherchez des liens internes compréhensibles depuis les pages liées au sujet. Le sitemap peut aider à découvrir des adresses, mais ne remplace pas la navigation. Ne laissez pas un formulaire de recherche interne comme seul accès et vérifiez la destination finale des anciennes redirections.",
+            "Ouvrez une catégorie voisine et suivez un lien ordinaire jusqu'au service. Une adresse accessible uniquement après une recherche interne peut être mal reliée au site. Le sitemap doit proposer les destinations prévues pour l'indexation, en évitant variantes redirigées, manquantes ou exclues volontairement ; il aide à découvrir les pages sans remplacer une navigation utile."
+          ]
+        },
+        {
+          "title": "Inspecter le contenu traité",
+          "paragraphs": [
+            "Sur un site utilisant beaucoup de JavaScript, assurez-vous que textes et liens importants deviennent disponibles. Le code initial ne décrit pas toujours le résultat traité. Utilisez les outils d'inspection disponibles pour comparer l'accès réel au besoin de l'entreprise, au-delà du simple affichage d'une animation.",
+            "Comparez les textes et liens traités avec les informations attendues. Si la description dépend d'une requête JavaScript en échec, une interface agréable peut masquer l'absence de contenu principal. Concentrez l'inspection sur offre, titres et navigation, plutôt que de vérifier seulement qu'une animation s'affiche ou que du code a effectivement été exécuté dans le navigateur."
+          ]
+        },
+        {
+          "title": "Corriger puis observer",
+          "paragraphs": [
+            "Traitez la cause démontrée et demandez une nouvelle vérification lorsque l'outil le permet. Observez ensuite l'évolution sans promettre une inclusion immédiate. L'éligibilité technique ne garantit pas l'indexation : utilité, différence d'information et relation avec les pages existantes similaires doivent également être examinées.",
+            "Après suppression d'un noindex accidentel, vérifiez réponse publique et signaux canonical avant une nouvelle inspection. Les rapports peuvent évoluer avec retard. Si les obstacles techniques disparaissent mais que l'exclusion persiste, examinez doublons et utilité : soumettre plusieurs fois la même adresse inchangée n'apporte pas la valeur éventuellement manquante et ne garantit pas sa sélection ultérieure."
+          ]
+        }
+      ],
+      "checklist": [
+        "Contrôlez la réponse publique finale après redirections.",
+        "Examinez séparément exploration autorisée et instructions noindex.",
+        "Vérifiez canonical et cohérence des versions préférées.",
+        "Suivez les liens ordinaires et examinez le sitemap.",
+        "Inspectez le contenu traité avant une nouvelle vérification."
+      ],
+      "conclusion": "Corrigez l'obstacle démontré en distinguant accès, instructions d'indexation et version préférée. L'éligibilité technique permet l'examen d'une page, sans promettre son inclusion immédiate dans les résultats du moteur."
+    },
+    {
+      "id": "content-clusters",
+      "title": "Répartir les questions entre une page de service et ses guides",
+      "slug": "cluster-contenus-page-service-guides",
+      "description": "Répartir les questions entre une page de service et ses guides. Des étapes pratiques pour comprendre les clics et préparer des demandes clients utiles.",
+      "intro": [
+        "Un groupe de contenus relie une page de service complète à des guides qui répondent à des questions complémentaires. Sa valeur vient de fonctions distinctes et de liens contextuels, plutôt que d'un nombre imposé de publications proches.",
+        "Prenons une entreprise fictive qui installe des pompes à chaleur. Compatibilité, préparation et entretien sont liés, mais comparer les technologies ne demande pas la même réponse que préparer une visite d'évaluation ou solliciter une installation."
+      ],
+      "sections": [
+        {
+          "title": "Partir d'une décision commerciale",
+          "paragraphs": [
+            "Choisissez une offre existante et listez les questions avant et après l'achat. Un sujet populaire éloigné du service peut attirer des lecteurs sans suite utile. Expliquez pourquoi chaque question appartient au groupe, à quel public elle s'adresse et quelle décision elle soutient.",
+            "Partez de la décision d'installation et des obstacles concrets : place disponible ou compatibilité avec le chauffage existant. Un article général sur les appareils domestiques peut partager le thème de l'énergie sans aider à évaluer cette prestation. La proximité du vocabulaire ne suffit donc pas à justifier son inclusion dans le même parcours commercial."
+          ]
+        },
+        {
+          "title": "Donner un rôle à chaque contenu",
+          "paragraphs": [
+            "Séparez les décisions différentes et réunissez les variantes qui nécessitent la même réponse. Ne fixez pas un nombre arbitraire d'articles pour déclarer le groupe complet. Chaque pièce apporte une fonction distincte : comparaison, préparation, usage ou détail difficile à intégrer à la présentation commerciale.",
+            "Confiez la comparaison des systèmes à un guide, la préparation de visite à un autre et l'engagement à la page du service. Si deux projets de texte expliquent la même préparation, rassemblez leurs réponses avant de publier deux destinations dont le lecteur ne pourra pas distinguer facilement le rôle et la contribution respective."
+          ]
+        },
+        {
+          "title": "Garder une page centrale complète",
+          "paragraphs": [
+            "La page de service doit expliquer offre, destinataires et contact sans dépendre de plusieurs articles. Les guides approfondissent au lieu de remplacer les informations essentielles. Si tout le groupe doit être lu pour comprendre ce qui est vendu, la répartition des rôles complique probablement la décision.",
+            "Conservez périmètre, couverture, processus et contact sur la page d'installation. Le guide peut développer les photographies ou mesures utiles, mais une arrivée directe doit permettre de comprendre l'offre sans lecture préalable. Le contenu complémentaire approfondit une réponse complète ; il ne devrait pas transformer les conditions essentielles en un parcours dispersé entre plusieurs adresses."
+          ]
+        },
+        {
+          "title": "Lier quand apparaît une question",
+          "paragraphs": [
+            "Placez un lien là où le texte fait naître un besoin d'approfondissement. Décrivez la destination avec des mots précis. Le retour vers la prestation convient lorsque le lecteur reconnaît un besoin d'aide pour réaliser le travail, plutôt que dans une interruption commerciale sans rapport avec l'explication.",
+            "Placez le lien de préparation après avoir expliqué ce que demande l'évaluation. Depuis le guide, revenez vers le service lorsque l'aide professionnelle devient pertinente. Un libellé comme préparer la visite d'installation annonce la destination ; répéter en savoir plus pour des liens différents rend le choix moins clair et réduit l'intérêt de cette navigation contextuelle."
+          ]
+        },
+        {
+          "title": "Repérer les réponses répétées",
+          "paragraphs": [
+            "Comparez intention principale, contenu et recherches disponibles des pièces voisines. Deux guides presque équivalents peuvent être réunis en conservant les détails utiles. Plusieurs pages présentes pour une recherche ne prouvent pas seules un problème : vérifiez leur rôle avant de retirer un contenu ou modifier son adresse.",
+            "Comparez les guides par la décision qu'ils soutiennent, au-delà des mots partagés. Facteurs de coût et comparaison des systèmes peuvent coexister en mentionnant tous deux des prix. Deux guides de coût répétant les mêmes facteurs pourraient être réunis, en conservant l'explication complète et en orientant les liens établis vers la destination choisie."
+          ]
+        },
+        {
+          "title": "Attribuer la responsabilité du groupe",
+          "paragraphs": [
+            "Examinez liens cassés, explications anciennes et questions nouvelles à un rythme adapté au métier. Chaque ajout doit avoir une fonction explicite. Évaluez la page de service et les sujets des demandes en plus des visites de chaque guide, pour garder le programme éditorial relié aux clients.",
+            "Examinez l'ensemble comme un parcours : passe-t-on de l'incertitude au bon service sans tourner entre introductions redondantes ? Lors d'un changement d'offre, actualisez liens et limites. Un ancien guide ne devrait pas recommander une prestation abandonnée simplement parce qu'il continue à générer des visites et présente encore un bon résultat individuel dans le rapport de trafic."
+          ]
+        }
+      ],
+      "checklist": [
+        "Attribuez une décision distincte à chaque guide.",
+        "Conservez un service complet sans lectures préalables obligatoires.",
+        "Placez les liens lorsque la question suivante apparaît.",
+        "Comparez les réponses proches avant de fusionner des adresses.",
+        "Retirez les recommandations de prestations devenues indisponibles."
+      ],
+      "conclusion": "Organisez des réponses complémentaires et des liens justifiés. Chaque guide doit remplir une fonction distincte, tandis que la destination commerciale reste assez complète pour permettre une décision sans lecture obligatoire des autres pages."
+    },
+    {
+      "id": "image-seo",
+      "title": "Vérifier les images des pages trouvées sur des recherches commerciales",
+      "slug": "seo-images-pages-produits-services",
+      "description": "Vérifier les images des pages trouvées sur des recherches commerciales. Reliez recherches, informations et demandes clients avec des contrôles pratiques.",
+      "intro": [
+        "Le SEO des images associe information visuelle utile, alternatives accessibles et livraison adaptée. Ni le nom du fichier ni une liste de mots clés ne compensent une photographie peu explicative ou trop lourde pour l'ouverture sur téléphone.",
+        "Imaginons une page produit fictive montrant un détail d'installation. Le client doit examiner une fixation, tandis qu'un mobile devrait recevoir une première vue proportionnée plutôt que le fichier original complet provenant de l'appareil photo."
+      ],
+      "sections": [
+        {
+          "title": "Choisir des images explicatives",
+          "paragraphs": [
+            "Montrez le détail qui aide à comparer, comprendre ou préparer une décision. Une photographie décorative crée une ambiance mais ne démontre pas les caractéristiques d'un produit ou le travail réalisé. Reliez chaque choix à la question du visiteur à cet endroit, plutôt qu'au simple remplissage de la mise en page.",
+            "Choisissez un gros plan de la fixation lorsque le texte explique les dégagements nécessaires. Une pièce aménagée peut être séduisante sans montrer ce détail. Gardez une vue générale lorsque l'échelle compte et identifiez la configuration photographiée, pour ne pas laisser entendre que toutes les variantes du produit ont exactement la même apparence une fois installées."
+          ]
+        },
+        {
+          "title": "Décrire la fonction dans l'alternative",
+          "paragraphs": [
+            "Le texte alternatif d'une image informative exprime son sens dans le contexte, sans liste de mots clés. Un décor peut nécessiter une alternative vide pour être ignoré par les technologies d'assistance. Le même fichier peut jouer des rôles différents selon la page : examinez donc son usage.",
+            "Une alternative comme support mural laissant un dégagement sous l'appareil transmet une caractéristique utile lorsque telle est sa fonction. N'ajoutez pas systématiquement image de ou une suite de termes commerciaux. Si l'image liée constitue l'unique commande de contact, son alternative doit plutôt expliquer cette action ou la destination, selon son rôle dans la page."
+          ]
+        },
+        {
+          "title": "Fournir une explication proche",
+          "paragraphs": [
+            "Placez l'image près du passage concerné et ajoutez une légende lorsqu'elle apporte quelque chose. Un nom de fichier descriptif aide à identifier le document sans remplacer le contenu. Expliquez le détail technique aux personnes qui connaissent peu le sujet au lieu de supposer la photographie évidente.",
+            "Une légende peut identifier la configuration et développer une observation trop longue pour une alternative concise. Conservez aussi les mesures essentielles dans un texte voisin ou un tableau accessible, plutôt que seulement dans les pixels. Un petit écran ne devrait pas imposer de déchiffrer des étiquettes minuscules pour obtenir les informations nécessaires à une décision."
+          ]
+        },
+        {
+          "title": "Équilibrer poids et détails",
+          "paragraphs": [
+            "Choisissez dimensions et compression sans effacer les informations nécessaires à la décision. Envisagez des variantes adaptées à l'espace disponible que le navigateur peut sélectionner. Une photo de produit destinée à être agrandie demande un arbitrage différent d'une petite illustration dans une liste de contenus.",
+            "Proposez des variantes adaptées aux largeurs d'affichage et laissez le navigateur sélectionner une ressource appropriée. Comparez WebP, AVIF ou un autre format selon le poids et la qualité réels : aucun n'est toujours meilleur. Examinez textes, contours et couleurs après compression, surtout quand ces détails distinguent des finitions ou des caractéristiques importantes pour l'achat."
+          ]
+        },
+        {
+          "title": "Éviter les mouvements au chargement",
+          "paragraphs": [
+            "Réservez l'espace pour que textes et boutons ne sautent pas lorsque l'image apparaît. Vérifiez le mobile. Ne retardez pas automatiquement l'image essentielle du premier écran ; les fichiers plus bas peuvent parfois attendre. Testez l'expérience visible plutôt que d'appliquer un attribut comme une règle universelle.",
+            "Déclarez les dimensions ou un rapport stable afin de réserver l'espace avant le chargement. Contrôlez que le recadrage mobile conserve le détail principal. Évitez de différer automatiquement l'image majeure d'ouverture si cela retarde le contenu visible essentiel ; des photos plus basses peuvent attendre lorsque cette décision correspond à la séquence réelle de consultation de la page."
+          ]
+        },
+        {
+          "title": "Vérifier accès et destination",
+          "paragraphs": [
+            "Confirmez l'accès aux fichiers après une migration et examinez les données de recherche d'images si elles sont pertinentes. Un clic d'image ne vaut pas une vente. La destination doit apporter le contexte commercial et les informations encore nécessaires pour décider de la suite.",
+            "Après modification du traitement des images, ouvrez un fichier livré et confirmez qu'il renvoie une image accessible, pas une erreur ou une connexion. Vérifiez aussi la destination depuis la recherche d'images : elle doit identifier le produit et apporter contexte, limites de disponibilité et prochaine étape utile pour quelqu'un qui découvre l'offre à travers cette photographie."
+          ]
+        }
+      ],
+      "checklist": [
+        "Choisissez un détail visuel qui explique la question voisine.",
+        "Adaptez l'alternative à la fonction de chaque image.",
+        "Rendez aussi les mesures essentielles disponibles en texte accessible.",
+        "Comparez dimensions adaptées, compression et détail utile.",
+        "Réservez l'espace et vérifiez l'image d'ouverture sur mobile."
+      ],
+      "conclusion": "Choisissez les visuels pour ce qu'ils expliquent et contrôlez ensemble alternatives, dimensions et affichage mobile. Les informations essentielles doivent rester accessibles aux personnes qui ne voient pas les images ou utilisent une autre forme de consultation."
+    },
+    {
+      "id": "conversion-landing",
+      "title": "Une page organique de service qui prépare le contact WhatsApp",
+      "slug": "page-organique-service-contact-whatsapp",
+      "description": "Une page organique de service qui prépare le contact WhatsApp. Des étapes pratiques pour comprendre les clics et préparer des demandes clients utiles.",
+      "intro": [
+        "Une page d'arrivée organique relie la question recherchée à une offre claire, des preuves pertinentes et une prochaine étape pratique. Un bouton visible ne résout pas à lui seul l'incertitude sur l'adéquation du service au besoin.",
+        "Prenons un visiteur fictif recherchant une maintenance programmée de bâtiment. Il doit reconnaître la prestation, comprendre le périmètre de l'inspection et savoir comment demander une évaluation avant qu'une invitation à contacter l'entreprise soit réellement utile pour sa décision."
+      ],
+      "sections": [
+        {
+          "title": "Confirmer le motif d'arrivée",
+          "paragraphs": [
+            "Le premier bloc doit nommer service, public et besoin. Un slogan général ne permet pas de savoir si la page répond à une recherche précise. Évitez de demander un contact avant que la personne comprenne pourquoi l'offre pourrait convenir et comment elle se distingue des solutions voisines.",
+            "Accordez l'ouverture à la maintenance programmée plutôt qu'à une formule générale sur la transformation des bâtiments. Si certains types de propriétés seulement sont couverts, dites-le près de la promesse. Le visiteur ne devrait pas découvrir cette exclusion après avoir envoyé un message détaillé concernant un bâtiment que l'équipe ne peut ni examiner ni entretenir."
+          ]
+        },
+        {
+          "title": "Donner une réponse autonome",
+          "paragraphs": [
+            "Une page organique nécessite assez de contenu pour présenter périmètre et collaboration. Un écran publicitaire avec un seul bouton peut laisser des questions essentielles ouvertes. Écrivez pour une personne qui ne connaît pas encore l'entreprise et compare des prestataires, pas seulement pour quelqu'un déjà décidé.",
+            "Expliquez ce que couvre l'évaluation, sa suite et les situations relevant d'un autre service. Un volet repliable peut développer une question secondaire, sans masquer tout le périmètre. Une personne qui compare des prestataires doit pouvoir comprendre l'engagement sans communiquer d'abord ses coordonnées ou devoir ouvrir une conversation pour accéder aux conditions élémentaires de la prestation."
+          ]
+        },
+        {
+          "title": "Placer la preuve près du doute",
+          "paragraphs": [
+            "Utilisez des matériaux réels là où ils aident à évaluer un point précis. Expliquez le travail et ses limites. N'inventez pas de pourcentages de réussite et ne présentez pas une démonstration comme une commande client ; une décision clairement décrite peut déjà éclairer l'approche.",
+            "Placez un exemple d'inspection près de son explication en précisant ce qui a été examiné et pourquoi. Identifiez clairement un cas fictif. Une capture sans contexte ne démontre pas une méthode, et un avis sur un autre travail peut laisser entière la difficulté particulière qui empêche ce visiteur de passer à l'étape suivante."
+          ]
+        },
+        {
+          "title": "Préparer la conversation",
+          "paragraphs": [
+            "Indiquez quelles informations envoyer par WhatsApp et sur quoi porte la demande. Le message suggéré doit rester bref et modifiable. Sur téléphone, le bouton ne doit pas masquer les explications essentielles ou déplacer brusquement les éléments pendant la lecture et la comparaison du périmètre.",
+            "Le message WhatsApp peut suggérer localisation, type de bâtiment et principal problème. Précisez que l'envoi commence une discussion et ne confirme pas un rendez-vous. Testez l'ouverture sur mobile et vérifiez qu'un bouton fixe ne recouvre pas le périmètre du service, une information importante ou la commande d'envoi d'un formulaire situé ailleurs sur la même page."
+          ]
+        },
+        {
+          "title": "Mesurer des étapes séparées",
+          "paragraphs": [
+            "Distinguez clic de contact et message reçu, puis vérifiez si la conversation correspond au service. Une version avec moins de clics peut éliminer des attentes erronées et produire des échanges plus adaptés. Ne jugez pas toute la page sur une seule action intermédiaire.",
+            "Séparez arrivée, activation du contact, demande reçue et qualification. Une baisse des pressions après clarification des exclusions peut refléter moins d'attentes erronées. Examinez les sujets des échanges avant d'affirmer que cette précision nuit à la page ou qu'un bouton plus insistant est nécessaire pour retrouver un volume antérieur d'actions de contact sans regarder leur pertinence."
+          ]
+        },
+        {
+          "title": "Corriger les incertitudes récurrentes",
+          "paragraphs": [
+            "Demandez aux personnes qui répondent aux messages quels doutes subsistent après la visite. Ajoutez une réponse au point où naît l'incertitude puis testez de nouveau. L'objectif est une décision informée et une demande contextualisée, pas la multiplication des boutons sans amélioration de l'explication.",
+            "Si la question de l'urgence revient souvent, expliquez le caractère programmé près de l'ouverture et du contact. Si les doutes portent sur l'inspection, développez son périmètre. Ce sont des incertitudes différentes : multiplier les invitations à écrire sans apporter l'information manquante ne traite ni la cause du malentendu ni les questions concrètes qui restent à résoudre."
+          ]
+        }
+      ],
+      "checklist": [
+        "Accordez l'ouverture à la recherche et au service disponible.",
+        "Expliquez le périmètre avant de demander des coordonnées.",
+        "Placez une preuve pertinente et bien identifiée près du doute.",
+        "Testez WhatsApp sans masquer les informations essentielles.",
+        "Examinez les sujets reçus au-delà des actions intermédiaires."
+      ],
+      "conclusion": "Gardez une cohérence entre recherche, offre, preuve et action. Améliorez l'explication qui bloque une demande informée, puis vérifiez le parcours de contact et la pertinence des demandes effectivement reçues."
+    },
+    {
+      "id": "seo-content-maintenance",
+      "title": "Actualiser ou fusionner des contenus SEO avant de publier davantage",
+      "slug": "actualiser-fusionner-contenus-seo-decision",
+      "description": "Actualiser ou fusionner des contenus SEO avant de publier davantage. Reliez recherches, informations et demandes clients avec des contrôles pratiques.",
+      "intro": [
+        "Maintenir les contenus SEO consiste à choisir quelles réponses restent utiles, lesquelles doivent être corrigées et lesquelles gagneraient à être réunies. Changer une date sans traiter une information obsolète ne rend pas un guide actuel.",
+        "Imaginons une entreprise possédant deux guides d'entretien et une ancienne offre de réparation. Cet exemple fictif ne se résout pas par les visites seules : chaque adresse doit être évaluée selon sa fonction et son lien avec l'offre disponible."
+      ],
+      "sections": [
+        {
+          "title": "Inventorier questions et fonctions",
+          "paragraphs": [
+            "Rassemblez adresses, questions principales, rôles commerciaux et données disponibles. Distinguez la présentation de l'offre des réponses aux doutes préalables. Avant une nouvelle commande éditoriale, cet inventaire peut révéler qu'une réponse existe déjà mais demeure incomplète, difficile à trouver ou fondée sur une ancienne prestation.",
+            "Notez la question principale de chaque URL, ses liens significatifs et le service qu'elle accompagne. Un article peu visité peut répondre à une préparation nécessaire. Un ancien texte populaire peut créer des demandes pour une prestation abandonnée : le trafic seul ne permet donc pas de décider lequel conserve une utilité réelle pour le public et l'entreprise."
+          ]
+        },
+        {
+          "title": "Comparer les informations à la réalité",
+          "paragraphs": [
+            "Revoyez services, produits, exemples et contact. Modifier une date ne suffit pas à actualiser un contenu. Corrigez les conditions obsolètes et ajoutez des réponses réellement présentes dans les conversations, sans augmenter la longueur par des passages qui répètent la promesse initiale sans information supplémentaire.",
+            "Comparez produits acceptés, limites, préparation et liens avec le fonctionnement actuel. Si un guide demande de photographier une pièce devenue obsolète, remplacez l'instruction et précisez le besoin actuel. Conservez ce qui est exact au lieu de réécrire chaque paragraphe dans le seul but de donner une apparence récente à un contenu dont l'explication reste déjà valable."
+          ]
+        },
+        {
+          "title": "Étudier les chevauchements",
+          "paragraphs": [
+            "Comparez les pages qui semblent traiter le même besoin. Partager une requête ne démontre pas automatiquement une cannibalisation. Cherchez les réponses dupliquées ou la difficulté d'obtenir une explication complète. Deux contenus restent utiles lorsqu'ils accompagnent des tâches clairement distinctes, malgré un vocabulaire et certaines recherches communs.",
+            "Deux pages visibles pour fréquence d'entretien peuvent concerner des équipements distincts et coexister utilement. Si elles décrivent le même appareil, les mêmes intervalles et exceptions, examinez la possibilité d'une réponse complète unique. Des conditions d'usage différentes justifient des développements séparés ; changer l'ordre des mots de la question ne crée pas une nouvelle tâche à traiter."
+          ]
+        },
+        {
+          "title": "Choisir une action explicite",
+          "paragraphs": [
+            "Gardez les pages utiles avec un rôle propre, développez la meilleure réponse ou réunissez les textes équivalents. Préservez les détails précieux. Si une adresse disparaît, choisissez une alternative pertinente lorsqu'elle existe et actualisez les liens ; évitez de tout envoyer indistinctement vers l'accueil.",
+            "Actualisez lorsque la fonction demeure distincte mais que l'information a vieilli. Réunissez des détails complémentaires dans une réponse commune. Redirigez une URL retirée uniquement vers un remplacement pertinent et modifiez les liens internes. Sans alternative adaptée, une réponse de suppression correcte peut être plus honnête qu'un renvoi systématique vers l'accueil, qui ne répondrait plus à la question suivie."
+          ]
+        },
+        {
+          "title": "Documenter l'intervention",
+          "paragraphs": [
+            "Notez modification, motif et date. Coordonnez les personnes qui rédigent pour éviter des descriptions contradictoires d'une prestation. Conservez une référence de l'ancienne version dans le processus éditorial afin de comprendre les évolutions observées et corriger une erreur précise sans reconstruire tout l'historique.",
+            "Lors d'une fusion, préservez les détails utiles aux lecteurs des deux versions avant de retirer une adresse. Gardez la correspondance entre anciennes et nouvelles destinations pour contrôler navigation et références. Une redirection de la page moins forte sans transfert de son explication peut sembler simplifier la structure tout en faisant disparaître la réponse que certains visiteurs étaient venus consulter."
+          ]
+        },
+        {
+          "title": "Réexaminer après publication",
+          "paragraphs": [
+            "Contrôlez liens, indexabilité et contact, puis observez les questions reçues. Interprétez les données sur une période adaptée en tenant compte des autres changements. La prochaine révision doit répondre à un manque identifié plutôt qu'à l'envie de réécrire quelque chose dès qu'un indicateur de visites fluctue.",
+            "Après publication, vérifiez que liens, canonical et références au service expriment la même fonction. Observez les requêtes ultérieures en laissant le temps nécessaire à une nouvelle exploration. Une fluctuation temporaire ne suffit pas pour annuler une fusion ; un contenu perdu ou une redirection sans rapport constitue une raison plus directe et vérifiable de réparer le changement effectué."
+          ]
+        }
+      ],
+      "checklist": [
+        "Inventoriez la question et le rôle commercial de chaque URL.",
+        "Corrigez les instructions anciennes plutôt que les dates seules.",
+        "Distinguez doublons et tâches réellement différentes.",
+        "Préservez les détails utiles avant fusion et redirection.",
+        "Vérifiez liens internes et canonical après publication."
+      ],
+      "conclusion": "Choisissez actualisation, fusion, maintien ou retrait selon la réponse fournie par chaque adresse. Préservez les détails utiles et les parcours pour améliorer la clarté au lieu de simplement renouveler les dates affichées."
     }
-  ]
+  ],
+  "faq": [
+    {
+      "question": "Où l'équipe Latech est-elle installée ?",
+      "answer": "Andrés Rubio et Luis Grondona ont fondé Latech à Puebla de la Calzada, Badajoz, en Espagne. Nous travaillons aussi à distance pour des entreprises d'autres pays."
+    },
+    {
+      "question": "Pouvez-vous améliorer un site existant ?",
+      "answer": "Nous pouvons examiner ses contenus, sa structure, son accès technique et son parcours de contact afin de définir des améliorations adaptées à vos objectifs."
+    },
+    {
+      "question": "Que faut-il préparer pour une proposition ?",
+      "answer": "Indiquez votre site actuel, vos publics, vos services et les actions attendues. Précisez les outils utilisés et la personne qui peut préparer les contenus."
+    },
+    {
+      "question": "Garantissez-vous une position sur Google ?",
+      "answer": "Non. Nous travaillons sur les contenus, la technique et l'usage. Les positions et les résultats commerciaux dépendent aussi de facteurs extérieurs au projet."
+    }
+  ],
+  "pageSeo": {
+    "home": {
+      "title": "Création de sites web et SEO pour entreprises | Latech",
+      "description": "Création de sites web, SEO et boutiques pour des demandes pertinentes. Latech travaille à distance depuis l'Espagne sur des projets internationaux.",
+      "heading": "Création de sites web et SEO pour entreprises",
+      "intro": "Une offre compréhensible, des pages qui répondent aux recherches et un parcours de contact clair pour engager une conversation utile avec votre entreprise."
+    },
+    "services": {
+      "title": "Services de création web, SEO et e-commerce | Latech",
+      "description": "Découvrez les services web, SEO, e-commerce et n8n de Latech. Définissons les contenus, la technique et le contact selon votre offre et vos besoins réels.",
+      "heading": "Services de création web, SEO et e-commerce",
+      "intro": "Création web, SEO et e-commerce selon vos clients, votre offre et les opérations nécessaires après une demande."
+    },
+    "web": {
+      "title": "Création de sites professionnels avec bases SEO | Latech",
+      "description": "Création de sites professionnels avec pages de services claires, usage mobile et bases SEO. Définissez un périmètre adapté aux demandes clients avec Latech.",
+      "heading": "Création de sites professionnels avec bases SEO",
+      "intro": "Un site professionnel doit répondre aux questions qui précèdent une prise de contact utile."
+    },
+    "shop": {
+      "title": "Création de boutiques en ligne pour entreprises | Latech",
+      "description": "Créez une boutique avec des produits compréhensibles, des catégories claires et un achat pratique. Latech relie le parcours client à la gestion des commandes.",
+      "heading": "Création de boutiques en ligne pour entreprises",
+      "intro": "Une boutique relie la découverte du produit, le paiement et le traitement de la commande."
+    },
+    "ai": {
+      "title": "Intégrations n8n et tâches IA encadrées | Latech",
+      "description": "Connectez vos outils avec n8n et des tâches IA encadrées. Latech définit les contrôles, la validation humaine et la gestion des erreurs selon votre processus.",
+      "heading": "Intégrations n8n et tâches IA encadrées",
+      "intro": "Automatiser commence par comprendre le processus, les données et les décisions qui demandent un jugement humain."
+    },
+    "about": {
+      "title": "À propos de Latech : création web et SEO en Espagne | Latech",
+      "description": "Découvrez Andrés Rubio et Luis Grondona, fondateurs de Latech en Espagne. Notre approche du web et du SEO accompagne des projets internationaux à distance.",
+      "heading": "À propos de Latech : création web et SEO en Espagne",
+      "intro": "Latech a été fondée par Andrés Rubio et Luis Grondona à Puebla de la Calzada, dans la province de Badajoz, en Espagne."
+    },
+    "projects": {
+      "title": "Projets de sites web et boutiques en ligne | Latech",
+      "description": "Explorez des projets réels de Latech pour écoles, boutiques et entreprises de services. Découvrez leurs contenus, leur navigation et leurs fonctionnalités.",
+      "heading": "Projets de sites web et boutiques en ligne",
+      "intro": "Découvrez de véritables réalisations Latech à travers les éléments disponibles qui présentent leur conception et leurs fonctionnalités."
+    },
+    "contact": {
+      "title": "Contact pour votre site web, SEO ou boutique | Latech",
+      "description": "Contactez Latech sur WhatsApp pour votre site web, SEO ou boutique. Présentez votre situation, vos publics et vos objectifs pour définir le périmètre adapté.",
+      "heading": "Contact pour votre site web, SEO ou boutique",
+      "intro": "Présentez votre site actuel, le service recherché et vos objectifs. Contactez Latech sur WhatsApp au +34684739091 pour discuter du périmètre de votre projet."
+    },
+    "blog": {
+      "title": "Guides SEO et sites web pour entreprises | Latech",
+      "description": "Lisez des guides SEO sur les recherches clients, les pages commerciales et la technique. Évaluez les clics avec la pertinence des demandes pour votre activité.",
+      "heading": "Guides SEO et sites web pour entreprises",
+      "intro": "Des guides pratiques sur le SEO, les sites professionnels et les demandes clients pour éclairer vos décisions."
+    }
+  },
+  "projectCopy": {
+    "colegio-santo-tomas": {
+      "sector": "Éducation",
+      "summary": "Un site scolaire avec photographies réelles et parcours par étape éducative. Admissions, actualités, agenda et documents côtoient une galerie privée pour les parents, réunissant présentation de l'établissement et informations quotidiennes."
+    },
+    "granja-orea": {
+      "sector": "Ferme pédagogique et séjours",
+      "summary": "Un site avec vidéo et photographie pour présenter camps, visites scolaires et équitation. Il comprend WhatsApp, actualités administrables, application web installable, parcours mobile par QR et outils privés pour l'équipe."
+    },
+    "f5-arquitectos": {
+      "sector": "Architecture",
+      "summary": "Un portfolio d'architecture avec grandes images, catégories et fiches détaillées de projets. Une administration propre permet de mettre à jour réalisations et contenus, avec une navigation centrée sur le travail du studio."
+    },
+    "quality-homes": {
+      "sector": "Promotion immobilière",
+      "summary": "Un site immobilier avec photographies, vidéo, plans et disponibilités par logement. Les demandes rejoignent un CRM propre et la gestion de contenu permet de mettre à jour les informations des programmes résidentiels."
+    },
+    "megias-frutas": {
+      "sector": "Distribution de fruits et légumes",
+      "summary": "Un site professionnel avec photographies de produits et informations par secteur client. L'organisation mobile, les contenus éditoriaux et le contact direct présentent les activités de l'entreprise et son assortiment."
+    },
+    "zonasport": {
+      "sector": "Articles de sport",
+      "summary": "Un catalogue sportif en ligne organisé par catégories et marques, avec conseils et gestion interne des stocks. Les demandes et commandes WhatsApp s'accompagnent du retrait en magasin selon le fonctionnement présenté."
+    },
+    "panelex": {
+      "sector": "Matériaux de construction",
+      "summary": "Un site technique B2B de panneaux sandwich avec fiches produits, guides et calculateur. Les contenus aident constructeurs et installateurs à comparer les matériaux et préparer les informations nécessaires à une demande de devis."
+    },
+    "monopatinmonkey": {
+      "sector": "Mobilité électrique",
+      "summary": "Une boutique de trottinettes électriques avec descriptions détaillées des modèles et espace réparation. Le site explique les étapes de l'atelier et propose des parcours pour comparer les produits et demander un rendez-vous."
+    },
+    "toldos-noa": {
+      "sector": "Stores et installation",
+      "summary": "Un site de services avec parcours pour logements, entreprises, réparations et réalisations sur mesure. Avis et actions de contact conduisent vers WhatsApp pour expliquer un besoin et demander un devis."
+    },
+    "autoescuela-agora": {
+      "sector": "Formation à la conduite",
+      "summary": "Un site d'auto-école avec vidéo, informations par permis et présentation de deux établissements. Inscription, WhatsApp, accès aux tests AEOL et espace Mi Ágora relient l'offre aux ressources pratiques des élèves."
+    },
+    "precios-locos": {
+      "sector": "Électroménager et maison",
+      "summary": "Un site marchand avec catalogue, recherche, favoris et panier. Fiches produits, guides domestiques et WhatsApp accompagnent une identité visuelle reconnaissable et une machine à pince interactive présentant des colis surprises."
+    },
+    "los-leones-nuptiae": {
+      "sector": "Mode masculine et confection",
+      "summary": "Deux marques dans une expérience avec entrée visuelle et parcours pour mode masculine, cérémonie, location et confection sur mesure. Les photographies et collections s'accompagnent d'accès aux informations des magasins."
+    },
+    "my-special-hair": {
+      "sector": "Prothèses capillaires et soins",
+      "summary": "Un site de marque avec catalogue, guide des mesures et étude 3D. Compte client, rendez-vous et accès professionnel proposent des parcours distincts, tandis que vidéo, galerie et WhatsApp accompagnent le conseil personnalisé."
+    }
+  }
 }

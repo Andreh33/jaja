@@ -1,0 +1,1466 @@
+{
+  "code": "nl",
+  "name": "Nederlands",
+  "ogLocale": "nl_NL",
+  "ui": {
+    "home": "Home",
+    "services": "Diensten",
+    "projects": "Projecten",
+    "about": "Over ons",
+    "contact": "Contact",
+    "blog": "Inzichten",
+    "language": "Taal",
+    "readMore": "Lees het artikel",
+    "backToBlog": "Terug naar inzichten",
+    "related": "Gerelateerde artikelen",
+    "author": "Redactie Latech",
+    "whatsapp": "Bespreek je project via WhatsApp",
+    "skip": "Naar de inhoud",
+    "legal": "Juridische informatie",
+    "privacy": "Privacybeleid",
+    "terms": "Gebruiksvoorwaarden",
+    "remote": "Vanuit Spanje werken we op afstand aan internationale projecten.",
+    "phone": "Telefoon",
+    "whatsappMessage": "Hallo Latech, ik wil een voorstel bespreken. Mijn land: . Gewenste dienst: . Huidige website: . Doel: .",
+    "processTitle": "Van eerste vraag naar een werkende website",
+    "articlesIntro": "Praktische uitleg over SEO, zoekbezoeken en aanvragen voor je bedrijf.",
+    "serviceIntro": "Webdesign, SEO en e-commerce rond je klanten en je bedrijfsvoering.",
+    "projectsIntro": "Bekijk echte projecten en de beschikbare uitleg over ontwerp en functies.",
+    "aboutTitle": "Een klein team met een praktische aanpak",
+    "contactDetails": "Contactgegevens",
+    "moreServices": "Bekijk onze diensten",
+    "allArticles": "Alle artikelen",
+    "serviceCta": "Bespreek deze dienst",
+    "projectCountLabel": "projecten",
+    "seoTitle": "SEO voor relevante zoekbezoeken",
+    "seoIntro": "Verbind de vragen van klanten met duidelijke pagina's en meetbare contactacties.",
+    "seoBullets": [
+      "Zoekvragen koppelen aan je aanbod",
+      "Diensten en categorieën helder opbouwen",
+      "Technische toegang en mobiel gebruik controleren",
+      "Klikken en bruikbare aanvragen samen beoordelen"
+    ],
+    "faqTitle": "Veelgestelde vragen",
+    "brandClaim": "In design en SEO kan niemand aan ons tippen.",
+    "contactTitle": "Vertel ons wat je bedrijf nodig heeft",
+    "contactIntro": "Bespreek je website, doelgroep en commerciële doelen met Latech. Neem contact op via WhatsApp op +34684739091 en geef aan welke dienst je zoekt.",
+    "processSteps": [
+      "Doelgroep, zoekvragen, aanbod en projectomvang bepalen.",
+      "Ontwerp, inhoud en functionaliteit bouwen en samen beoordelen.",
+      "Klantreizen testen, publicatie voorbereiden en beheer documenteren."
+    ],
+    "aboutIntro": "Latech is opgericht door Andrés Rubio en Luis Grondona in Puebla de la Calzada, Badajoz, Spanje.",
+    "aboutBody": [
+      "We werken aan webdesign, webshops, SEO en zorgvuldig afgebakende AI-integraties met n8n. Elk project begint bij de informatie die klanten nodig hebben en het proces achter een aanvraag.",
+      "Onze basis ligt in Spanje. Voor internationale projecten werken we op afstand en spreken we vooraf af wie inhoud aanlevert, beslissingen neemt en het resultaat beheert.",
+      "We kiezen voor begrijpelijke pagina's, onderhoudbare techniek en controleerbare projectinformatie. Resultaten hangen ook af van concurrentie, aanbod en de uitvoering na publicatie."
+    ]
+  },
+  "home": {
+    "title": "Webdesign en SEO voor bedrijven | Latech",
+    "description": "Webdesign, SEO en webshops voor bedrijven die duidelijker gevonden willen worden. Latech werkt vanuit Spanje op afstand aan internationale projecten.",
+    "heading": "Webdesign, SEO en webshops voor meer relevante aanvragen",
+    "intro": "Een duidelijke website verbindt je aanbod met de vragen die klanten stellen. Wij helpen je met ontwerp, inhoud, techniek en een logische contactroute.",
+    "body": [
+      "Een sterke bedrijfswebsite maakt duidelijk wat je doet, voor wie je werkt en hoe een bezoeker een concrete aanvraag kan sturen. We brengen webdesign, zoekmachineoptimalisatie en e-commerce samen rond die beslissingen. Relevante zoekbezoeken en bruikbare gesprekken vormen het vertrekpunt voor de afgesproken werkzaamheden.",
+      "Andrés Rubio en Luis Grondona richtten Latech op in Puebla de la Calzada, Badajoz, Spanje. Vanuit deze basis werken we op afstand voor bedrijven in andere landen. De omvang, verantwoordelijkheden en communicatie leggen we per project vast."
+    ]
+  },
+  "services": [
+    {
+      "id": "web",
+      "title": "Webdesign en SEO",
+      "description": "Een bedrijfswebsite laten maken met duidelijke diensten, sterke mobiele pagina's en technische SEO. Bespreek de aanpak voor relevante aanvragen met Latech.",
+      "intro": "Je website moet klanten helpen begrijpen, vergelijken en contact opnemen.",
+      "sections": [
+        {
+          "title": "Aanbod en zoekvragen",
+          "paragraphs": [
+            "We ordenen diensten en pagina's rond de vragen van potentiële klanten. Samen bepalen we welke informatie nodig is voordat iemand een aanvraag kan beoordelen.",
+            "Duidelijke paginatitels, logische interne links en inhoud die het aanbod uitlegt vormen een praktische basis voor zoekmachines en bezoekers."
+          ]
+        },
+        {
+          "title": "Ontwerp voor echt gebruik",
+          "paragraphs": [
+            "Mobiele weergave, leesbare tekst en eenvoudige formulieren horen bij het ontwerp. We bekijken waar een bezoeker vastloopt en welke informatie op dat moment ontbreekt.",
+            "De afgesproken omvang kan dienstenpagina's, projectmateriaal en technische SEO bevatten. We bepalen vooraf welke onderdelen prioriteit hebben en wie de inhoud levert."
+          ]
+        },
+        {
+          "title": "Publicatie en beheer",
+          "paragraphs": [
+            "Voor de lancering testen we de afgesproken contactroutes en controleren we belangrijke adressen, redirects en meetpunten. Een nieuwe vormgeving mag bestaande waardevolle pagina's niet uit het oog verliezen.",
+            "We documenteren relevante beheertaken. Iemand moet na publicatie verantwoordelijk blijven voor actuele bedrijfsinformatie, inhoudelijke controle en opvolging van aanvragen."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "shop",
+      "title": "Webshops en e-commerce",
+      "description": "Een webshop laten maken met begrijpelijke producten, logische categorieën en een praktische betaalroute. Latech verbindt verkoop met dagelijks beheer.",
+      "intro": "Maak de stap van product zoeken naar bestellen begrijpelijk.",
+      "sections": [
+        {
+          "title": "Een vindbaar assortiment",
+          "paragraphs": [
+            "We structureren categorieën en productinformatie op basis van hoe klanten kiezen. Afmetingen, varianten en afbeeldingen moeten een aankoopbeslissing ondersteunen.",
+            "De indeling moet ook passen bij voorraadbeheer en productonderhoud. We bespreken welke gegevens beschikbaar zijn voordat we functies kiezen."
+          ]
+        },
+        {
+          "title": "Een werkende bestelroute",
+          "paragraphs": [
+            "Betaling, levering en orderverwerking vormen samen één klantreis. We brengen benodigde koppelingen en verantwoordelijken in kaart.",
+            "Ook uitzonderingen vragen aandacht: een mislukte betaling of ontbrekende variant heeft een begrijpelijke melding en een duidelijke vervolgstap nodig."
+          ]
+        },
+        {
+          "title": "Testen en onderhouden",
+          "paragraphs": [
+            "We testen representatieve producten en bestellingen binnen de afgesproken omvang. Je team moet producten kunnen aanpassen en veelvoorkomende situaties begrijpen.",
+            "SEO voor categorieën, productgegevens en bestaande adressen hoort bij de voorbereiding. Het doel is een winkel die je team ook na de lancering kan beheren."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ai",
+      "title": "AI-integraties met n8n",
+      "description": "Verbind bedrijfstools met n8n en afgebakende AI-taken. Latech helpt processen uitwerken met controles, menselijk toezicht en duidelijke foutafhandeling.",
+      "intro": "Een bruikbare integratie begint bij een duidelijk proces.",
+      "sections": [
+        {
+          "title": "Proces en gegevens",
+          "paragraphs": [
+            "We bepalen invoer, aanleiding, regels en verwacht resultaat. Het huidige handmatige proces laat zien waar een koppeling tijd of overdrachtsfouten kan beperken.",
+            "Uitzonderingen bepalen mede of vaste regels, een AI-stap of een eenvoudiger oplossing passend zijn. De beschikbare tools en rechten begrenzen de uitvoering."
+          ]
+        },
+        {
+          "title": "Controle op uitvoer",
+          "paragraphs": [
+            "AI kan informatie ordenen of een concept voorbereiden. De uitvoer vraagt controles die passen bij het gebruik, vooral voordat informatie extern wordt gedeeld.",
+            "We beperken toegang en gegevens tot wat de taak nodig heeft. Voor gevoelige besluiten en externe acties kan beoordeling door een medewerker onderdeel van het proces zijn."
+          ]
+        },
+        {
+          "title": "Beheer en herstel",
+          "paragraphs": [
+            "Een proces heeft een eigenaar, bruikbare logs en een herstelroute nodig wanneer een gekoppeld systeem uitvalt. Herhaalde gebeurtenissen mogen niet ongemerkt dubbele gegevens maken.",
+            "We leggen testgevallen en verantwoordelijkheden vast. Daarmee kun je betrouwbaarheid beoordelen en het proces aanpassen als je bedrijfsbehoeften veranderen."
+          ]
+        }
+      ]
+    }
+  ],
+  "articles": [
+    {
+      "id": "website-leads",
+      "title": "Meer aanvragen met je bedrijfswebsite",
+      "slug": "bedrijfswebsite-meer-aanvragen",
+      "description": "Meer aanvragen met je bedrijfswebsite. Ontdek hoe je zoekbezoekers helpt met duidelijke informatie, goede techniek en een werkende contactroute.",
+      "intro": [
+        "Wil je een bedrijfswebsite die relevante aanvragen oplevert? Begin bij een concrete beslissing van de klant en de informatie die je bedrijf daarvoor kan geven. Meer bezoekers zijn pas bruikbaar wanneer zij begrijpen wat je aanbiedt en hoe zij een passende volgende stap kunnen zetten. Deze gids helpt je gerichte keuzes maken met de gegevens en middelen die je al hebt.",
+        "Denk bijvoorbeeld aan een installatiebedrijf dat bezoekers wil helpen hun situatie te beschrijven. Dit is een denkbeeldige situatie om de aanpak uit te leggen, geen behaald klantresultaat. Werk de onderstaande controles op één belangrijke pagina uit voordat je dezelfde werkwijze over de hele website toepast. Zo blijven veranderingen en verantwoordelijkheden overzichtelijk."
+      ],
+      "sections": [
+        {
+          "title": "Bepaal welke aanvraag past",
+          "paragraphs": [
+            "Omschrijf welke opdrachten je bedrijf daadwerkelijk uitvoert en welke gegevens nodig zijn om een verzoek te beoordelen. Voor een installateur kunnen soort installatie, werkgebied en probleem belangrijker zijn dan een uitgebreid formulier met persoonlijke gegevens.",
+            "Maak hiervan een controleerbare notitie voordat je iets verandert. Schrijf op welke pagina je bekijkt, wat een bezoeker daar probeert te doen en welke informatie daarvoor ontbreekt. Vraag een collega die de pagina niet heeft gemaakt om dezelfde taak uit te voeren. Vergelijk diens uitleg met de bedoeling van je bedrijf en noteer het concrete verschil."
+          ]
+        },
+        {
+          "title": "Maak diensten concreet",
+          "paragraphs": [
+            "Geef elke belangrijke dienst een eigen uitleg over het probleem, de werkzaamheden en de afbakening. Een bezoeker moet kunnen herkennen of zijn situatie past voordat hij een afspraak of voorstel vraagt.",
+            "Gebruik een beperkt overzicht met de huidige situatie, de gewenste aanpassing en de reden. Laat de persoon die het aanbod kent controleren of alle beloften kloppen. Zo voorkom je dat een technisch nette wijziging inhoudelijk de verkeerde verwachting oproept. De informatie moet ook begrijpelijk blijven voor iemand die voor het eerst met je bedrijf kennismaakt."
+          ]
+        },
+        {
+          "title": "Onderbouw je aanbod",
+          "paragraphs": [
+            "Gebruik echte projectinformatie die een twijfel wegneemt. Beschrijf bijvoorbeeld waarom een bepaalde navigatie of productkeuze nodig was. Presenteer een demonstratie duidelijk als voorbeeld en schrijf er geen verzonnen klantresultaten bij.",
+            "Voer de controle uit op het gepubliceerde adres en op een telefoon. Volg de route vanaf binnenkomst tot de bedoelde vervolgstap, zonder ontbrekende context zelf aan te vullen. Noteer zowel een fout als een onduidelijke uitleg. Die twee vragen soms om verschillende oplossingen en om een andere medewerker die de aanpassing kan beoordelen."
+          ]
+        },
+        {
+          "title": "Verminder contactfrictie",
+          "paragraphs": [
+            "Zet een duidelijke actie na de informatie die een klant nodig heeft. Controleer formulierlabels, foutmeldingen en bevestiging op een telefoon. Laat bezoekers vooraf weten welke korte toelichting helpt bij het eerste gesprek.",
+            "Gebruik voor de eerste aanpassing een representatieve pagina. Bewaar de uitgangssituatie en laat de wijziging controleren voordat dezelfde aanpak breder wordt toegepast. Wat op één adres werkt, hoeft niet bij iedere dienst of productgroep passend te zijn. Kijk daarom ook naar uitzonderingen en naar de informatie die je team later zelfstandig moet kunnen onderhouden."
+          ]
+        },
+        {
+          "title": "Verbind kanalen met opvolging",
+          "paragraphs": [
+            "Wijs iemand aan die aanvragen via formulier en WhatsApp beoordeelt. Leg de bronpagina en het onderwerp vast zonder dezelfde persoon dubbel te behandelen. Een klik op de contactknop betekent nog niet dat een gesprek is begonnen.",
+            "Leg vast welke gebeurtenis je kunt meten en welke conclusie daar redelijkerwijs uit volgt. Beschikbare zoekgegevens en websitegegevens hebben een andere context dan de gesprekken die je team voert. Vergelijk ze op een passend niveau en houd rekening met ontbrekende informatie. Verander geen onzekere aanwijzing in een harde uitspraak over klanten, omzet of succes."
+          ]
+        },
+        {
+          "title": "Beoordeel de juiste uitkomst",
+          "paragraphs": [
+            "Bekijk naast zoekklikken ook waarom verzoeken wel of niet passen. Wanneer mensen steeds een dienst vragen die je niet aanbiedt, kan de tekst te breed zijn. Verhelder eerst het aanbod voordat je meer verkeer nastreeft.",
+            "Plan een hercontrole en wijs een eigenaar aan die de inhoud en uitvoering kent. Bekijk wat na de wijziging aantoonbaar beter werkt en wat nog uitleg vraagt. Als de gegevens beperkt zijn, vul de beoordeling aan met een praktische gebruikstest. Houd andere veranderingen in dezelfde periode bij zodat je uitkomsten later voorzichtig en eerlijk kunt interpreteren."
+          ]
+        }
+      ],
+      "checklist": [
+        "Kies een belangrijke pagina en noteer de huidige situatie.",
+        "Controleer of de inhoud aansluit bij een echte klantvraag.",
+        "Test de volledige route op een telefoon.",
+        "Noteer wijzigingen, verantwoordelijke en beschikbare meetpunten.",
+        "Beoordeel zoekklikken naast de geschiktheid van aanvragen."
+      ],
+      "conclusion": "Een werkbare aanpak voor een bedrijfswebsite die relevante aanvragen oplevert begint met duidelijke inhoud en een controleerbare vervolgstap. Kies de belangrijkste verbetering, test de uitvoering en bespreek de uitkomst met je team. Latech kan helpen de benodigde website, SEO-structuur en contactroute in samenhang uit te werken."
+    },
+    {
+      "id": "website-budget",
+      "title": "Een bruikbare briefing voor webdesign en SEO",
+      "slug": "offerte-website-seo-briefing",
+      "description": "Een bruikbare briefing voor webdesign en SEO. Ontdek hoe je zoekbezoekers helpt met duidelijke informatie, goede techniek en een werkende contactroute.",
+      "intro": [
+        "Wil je een offerte voor een website en SEO vergelijken? Begin bij een concrete beslissing van de klant en de informatie die je bedrijf daarvoor kan geven. Meer bezoekers zijn pas bruikbaar wanneer zij begrijpen wat je aanbiedt en hoe zij een passende volgende stap kunnen zetten. Deze gids helpt je gerichte keuzes maken met de gegevens en middelen die je al hebt.",
+        "Denk bijvoorbeeld aan een kleine adviespraktijk die een nieuwe dienstenwebsite voorbereidt. Dit is een denkbeeldige situatie om de aanpak uit te leggen, geen behaald klantresultaat. Werk de onderstaande controles op één belangrijke pagina uit voordat je dezelfde werkwijze over de hele website toepast. Zo blijven veranderingen en verantwoordelijkheden overzichtelijk."
+      ],
+      "sections": [
+        {
+          "title": "Begin bij het doel",
+          "paragraphs": [
+            "Beschrijf welke gesprekken of bestellingen de website moet ondersteunen. Een wens voor een moderne uitstraling zegt weinig over benodigde pagina's, inhoud of meetpunten. Geef voorbeelden van vragen die klanten nu telefonisch stellen.",
+            "Maak hiervan een controleerbare notitie voordat je iets verandert. Schrijf op welke pagina je bekijkt, wat een bezoeker daar probeert te doen en welke informatie daarvoor ontbreekt. Vraag een collega die de pagina niet heeft gemaakt om dezelfde taak uit te voeren. Vergelijk diens uitleg met de bedoeling van je bedrijf en noteer het concrete verschil."
+          ]
+        },
+        {
+          "title": "Inventariseer de inhoud",
+          "paragraphs": [
+            "Maak een lijst van bestaande pagina's, documenten en foto's. Noteer welke teksten behouden kunnen blijven en wie ontbrekende informatie aanlevert. Een aanbieder kan de inspanning beter inschatten wanneer inhoudelijke verantwoordelijkheid duidelijk is.",
+            "Gebruik een beperkt overzicht met de huidige situatie, de gewenste aanpassing en de reden. Laat de persoon die het aanbod kent controleren of alle beloften kloppen. Zo voorkom je dat een technisch nette wijziging inhoudelijk de verkeerde verwachting oproept. De informatie moet ook begrijpelijk blijven voor iemand die voor het eerst met je bedrijf kennismaakt."
+          ]
+        },
+        {
+          "title": "Beschrijf paginafamilies",
+          "paragraphs": [
+            "Een homepage, dienstenpagina en projectdetail vragen verschillende informatie. Benoem daarom paginatypen en varianten in plaats van alleen een totaal aantal adressen. Vermeld of een webshop, zoekfunctie of meerdere taalversies echt noodzakelijk zijn.",
+            "Voer de controle uit op het gepubliceerde adres en op een telefoon. Volg de route vanaf binnenkomst tot de bedoelde vervolgstap, zonder ontbrekende context zelf aan te vullen. Noteer zowel een fout als een onduidelijke uitleg. Die twee vragen soms om verschillende oplossingen en om een andere medewerker die de aanpassing kan beoordelen."
+          ]
+        },
+        {
+          "title": "Neem migratie mee",
+          "paragraphs": [
+            "Lever de huidige adressen en beschikbare zoekgegevens aan. Oude pagina's die relevante bezoeken krijgen verdienen een passende bestemming. Een offerte die alleen nieuw ontwerp noemt kan belangrijke overdracht van inhoud en redirects missen.",
+            "Gebruik voor de eerste aanpassing een representatieve pagina. Bewaar de uitgangssituatie en laat de wijziging controleren voordat dezelfde aanpak breder wordt toegepast. Wat op één adres werkt, hoeft niet bij iedere dienst of productgroep passend te zijn. Kijk daarom ook naar uitzonderingen en naar de informatie die je team later zelfstandig moet kunnen onderhouden."
+          ]
+        },
+        {
+          "title": "Vergelijk verantwoordelijkheden",
+          "paragraphs": [
+            "Controleer wie teksten schrijft, technische instellingen beheert en wijzigingen beoordeelt. Vraag welke tests en documentatie zijn inbegrepen. Vergelijk voorstellen op dezelfde werkzaamheden; een totaalbedrag zonder afbakening maakt een eerlijke vergelijking lastig.",
+            "Leg vast welke gebeurtenis je kunt meten en welke conclusie daar redelijkerwijs uit volgt. Beschikbare zoekgegevens en websitegegevens hebben een andere context dan de gesprekken die je team voert. Vergelijk ze op een passend niveau en houd rekening met ontbrekende informatie. Verander geen onzekere aanwijzing in een harde uitspraak over klanten, omzet of succes."
+          ]
+        },
+        {
+          "title": "Plan onderhoud",
+          "paragraphs": [
+            "Leg vast wie bedrijfsgegevens en diensten later bijwerkt. Vraag hoe je relevante informatie kunt aanpassen en welke afhankelijkheden bestaan. Reserveer ook ruimte voor inhoudelijke evaluatie nadat de eerste echte zoekbezoeken en aanvragen beschikbaar zijn.",
+            "Plan een hercontrole en wijs een eigenaar aan die de inhoud en uitvoering kent. Bekijk wat na de wijziging aantoonbaar beter werkt en wat nog uitleg vraagt. Als de gegevens beperkt zijn, vul de beoordeling aan met een praktische gebruikstest. Houd andere veranderingen in dezelfde periode bij zodat je uitkomsten later voorzichtig en eerlijk kunt interpreteren."
+          ]
+        }
+      ],
+      "checklist": [
+        "Kies een belangrijke pagina en noteer de huidige situatie.",
+        "Controleer of de inhoud aansluit bij een echte klantvraag.",
+        "Test de volledige route op een telefoon.",
+        "Noteer wijzigingen, verantwoordelijke en beschikbare meetpunten.",
+        "Beoordeel zoekklikken naast de geschiktheid van aanvragen."
+      ],
+      "conclusion": "Een werkbare aanpak voor een offerte voor een website en SEO vergelijken begint met duidelijke inhoud en een controleerbare vervolgstap. Kies de belangrijkste verbetering, test de uitvoering en bespreek de uitkomst met je team. Latech kan helpen de benodigde website, SEO-structuur en contactroute in samenhang uit te werken."
+    },
+    {
+      "id": "local-seo",
+      "title": "Lokale SEO zonder verzonnen vestigingen",
+      "slug": "lokale-seo-bedrijf-vindbaarheid",
+      "description": "Lokale SEO zonder verzonnen vestigingen. Ontdek hoe je zoekbezoekers helpt met duidelijke informatie, goede techniek en een werkende contactroute.",
+      "intro": [
+        "Wil je lokale zoekvragen koppelen aan je echte werkgebied? Begin bij een concrete beslissing van de klant en de informatie die je bedrijf daarvoor kan geven. Meer bezoekers zijn pas bruikbaar wanneer zij begrijpen wat je aanbiedt en hoe zij een passende volgende stap kunnen zetten. Deze gids helpt je gerichte keuzes maken met de gegevens en middelen die je al hebt.",
+        "Denk bijvoorbeeld aan een onderhoudsbedrijf dat daadwerkelijk in enkele omliggende gemeenten werkt. Dit is een denkbeeldige situatie om de aanpak uit te leggen, geen behaald klantresultaat. Werk de onderstaande controles op één belangrijke pagina uit voordat je dezelfde werkwijze over de hele website toepast. Zo blijven veranderingen en verantwoordelijkheden overzichtelijk."
+      ],
+      "sections": [
+        {
+          "title": "Breng het werkgebied in kaart",
+          "paragraphs": [
+            "Schrijf op waar je klanten kunt helpen en waar je fysiek gevestigd bent. Een werkgebied is niet automatisch een kantooradres. Maak alleen vestigingsinformatie voor plekken die werkelijk bestaan en door het bedrijf gebruikt worden.",
+            "Maak hiervan een controleerbare notitie voordat je iets verandert. Schrijf op welke pagina je bekijkt, wat een bezoeker daar probeert te doen en welke informatie daarvoor ontbreekt. Vraag een collega die de pagina niet heeft gemaakt om dezelfde taak uit te voeren. Vergelijk diens uitleg met de bedoeling van je bedrijf en noteer het concrete verschil."
+          ]
+        },
+        {
+          "title": "Leg plaatselijke relevantie uit",
+          "paragraphs": [
+            "Een lokale dienstenpagina moet meer bieden dan een plaatsnaam in de titel. Beschrijf bereikbaarheid, soorten werkzaamheden en praktische beperkingen die voor dat gebied gelden. Vermijd tientallen vrijwel identieke pagina's met verwisselde gemeentenaam.",
+            "Gebruik een beperkt overzicht met de huidige situatie, de gewenste aanpassing en de reden. Laat de persoon die het aanbod kent controleren of alle beloften kloppen. Zo voorkom je dat een technisch nette wijziging inhoudelijk de verkeerde verwachting oproept. De informatie moet ook begrijpelijk blijven voor iemand die voor het eerst met je bedrijf kennismaakt."
+          ]
+        },
+        {
+          "title": "Houd bedrijfsinformatie gelijk",
+          "paragraphs": [
+            "Controleer naam, adres waar relevant, telefoon en openingstijden op je eigen website en beheerde bedrijfsprofielen. Verschillen kunnen klanten verwarren. Werk seizoenswijzigingen en aangepaste dienstverlening op de plekken bij waar bezoekers die informatie verwachten.",
+            "Voer de controle uit op het gepubliceerde adres en op een telefoon. Volg de route vanaf binnenkomst tot de bedoelde vervolgstap, zonder ontbrekende context zelf aan te vullen. Noteer zowel een fout als een onduidelijke uitleg. Die twee vragen soms om verschillende oplossingen en om een andere medewerker die de aanpassing kan beoordelen."
+          ]
+        },
+        {
+          "title": "Gebruik echte bewijzen",
+          "paragraphs": [
+            "Toon beschikbaar projectmateriaal uit het gebied wanneer je dat mag delen. Vertel wat er uitgevoerd is zonder verzonnen reviews of resultaten. Vraag klanten om een eigen eerlijke beoordeling via een passend proces, zonder gewenste tekst voor te schrijven.",
+            "Gebruik voor de eerste aanpassing een representatieve pagina. Bewaar de uitgangssituatie en laat de wijziging controleren voordat dezelfde aanpak breder wordt toegepast. Wat op één adres werkt, hoeft niet bij iedere dienst of productgroep passend te zijn. Kijk daarom ook naar uitzonderingen en naar de informatie die je team later zelfstandig moet kunnen onderhouden."
+          ]
+        },
+        {
+          "title": "Controleer lokale zoekvragen",
+          "paragraphs": [
+            "Groepeer zoekopdrachten met plaatsnamen en lokale behoefte afzonderlijk van algemene informatievragen. Kijk welke pagina daarbij verschijnt. Een brede homepage kan onvoldoende uitleg geven wanneer iemand een specifieke dienst binnen een concreet gebied zoekt.",
+            "Leg vast welke gebeurtenis je kunt meten en welke conclusie daar redelijkerwijs uit volgt. Beschikbare zoekgegevens en websitegegevens hebben een andere context dan de gesprekken die je team voert. Vergelijk ze op een passend niveau en houd rekening met ontbrekende informatie. Verander geen onzekere aanwijzing in een harde uitspraak over klanten, omzet of succes."
+          ]
+        },
+        {
+          "title": "Meet bereik en geschiktheid",
+          "paragraphs": [
+            "Leg bij aanvragen vast of de locatie binnen je werkgebied valt. Meer lokale klikken zijn alleen nuttig wanneer het verzoek past bij je capaciteit en aanbod. Verduidelijk grenzen op de pagina wanneer verkeerde gebieden blijven terugkomen.",
+            "Plan een hercontrole en wijs een eigenaar aan die de inhoud en uitvoering kent. Bekijk wat na de wijziging aantoonbaar beter werkt en wat nog uitleg vraagt. Als de gegevens beperkt zijn, vul de beoordeling aan met een praktische gebruikstest. Houd andere veranderingen in dezelfde periode bij zodat je uitkomsten later voorzichtig en eerlijk kunt interpreteren."
+          ]
+        }
+      ],
+      "checklist": [
+        "Kies een belangrijke pagina en noteer de huidige situatie.",
+        "Controleer of de inhoud aansluit bij een echte klantvraag.",
+        "Test de volledige route op een telefoon.",
+        "Noteer wijzigingen, verantwoordelijke en beschikbare meetpunten.",
+        "Beoordeel zoekklikken naast de geschiktheid van aanvragen."
+      ],
+      "conclusion": "Een werkbare aanpak voor lokale zoekvragen koppelen aan je echte werkgebied begint met duidelijke inhoud en een controleerbare vervolgstap. Kies de belangrijkste verbetering, test de uitvoering en bespreek de uitkomst met je team. Latech kan helpen de benodigde website, SEO-structuur en contactroute in samenhang uit te werken."
+    },
+    {
+      "id": "international-seo",
+      "title": "Internationale SEO met duidelijke taalversies",
+      "slug": "internationale-seo-taalversies",
+      "description": "Internationale SEO met duidelijke taalversies. Leer welke controles helpen bij relevante bezoeken, betrouwbare informatie en passende klantgesprekken.",
+      "intro": [
+        "Wil je internationale SEO voor verschillende taalversies? Begin bij een concrete beslissing van de klant en de informatie die je bedrijf daarvoor kan geven. Meer bezoekers zijn pas bruikbaar wanneer zij begrijpen wat je aanbiedt en hoe zij een passende volgende stap kunnen zetten. Deze gids helpt je gerichte keuzes maken met de gegevens en middelen die je al hebt.",
+        "Denk bijvoorbeeld aan een Nederlandse leverancier die ook een tweede Europese markt onderzoekt. Dit is een denkbeeldige situatie om de aanpak uit te leggen, geen behaald klantresultaat. Werk de onderstaande controles op één belangrijke pagina uit voordat je dezelfde werkwijze over de hele website toepast. Zo blijven veranderingen en verantwoordelijkheden overzichtelijk."
+      ],
+      "sections": [
+        {
+          "title": "Kies een echte markt",
+          "paragraphs": [
+            "Een extra taal toevoegen is geen volledig marktplan. Onderzoek welke producten, leveringsvoorwaarden en contactmogelijkheden voor de doelgroep beschikbaar zijn. Begin met een markt waarvoor je aanbod en interne opvolging daadwerkelijk geschikt zijn.",
+            "Maak hiervan een controleerbare notitie voordat je iets verandert. Schrijf op welke pagina je bekijkt, wat een bezoeker daar probeert te doen en welke informatie daarvoor ontbreekt. Vraag een collega die de pagina niet heeft gemaakt om dezelfde taak uit te voeren. Vergelijk diens uitleg met de bedoeling van je bedrijf en noteer het concrete verschil."
+          ]
+        },
+        {
+          "title": "Onderzoek plaatselijke woorden",
+          "paragraphs": [
+            "Vertaal een zoekwoordenlijst niet letterlijk en neem dezelfde vraag niet automatisch over. Klanten kunnen een ander productbegrip of vergelijkingscriterium gebruiken. Controleer de betekenis van commerciële termen met iemand die de markt en het aanbod begrijpt.",
+            "Gebruik een beperkt overzicht met de huidige situatie, de gewenste aanpassing en de reden. Laat de persoon die het aanbod kent controleren of alle beloften kloppen. Zo voorkom je dat een technisch nette wijziging inhoudelijk de verkeerde verwachting oproept. De informatie moet ook begrijpelijk blijven voor iemand die voor het eerst met je bedrijf kennismaakt."
+          ]
+        },
+        {
+          "title": "Geef versies eigen adressen",
+          "paragraphs": [
+            "Gebruik bereikbare adressen voor elke gepubliceerde taalversie. Maak een taalwissel mogelijk die naar de overeenkomstige pagina gaat. Stuur bezoekers niet uitsluitend op vermoedelijke locatie automatisch naar inhoud waaruit zij niet kunnen ontsnappen.",
+            "Voer de controle uit op het gepubliceerde adres en op een telefoon. Volg de route vanaf binnenkomst tot de bedoelde vervolgstap, zonder ontbrekende context zelf aan te vullen. Noteer zowel een fout als een onduidelijke uitleg. Die twee vragen soms om verschillende oplossingen en om een andere medewerker die de aanpassing kan beoordelen."
+          ]
+        },
+        {
+          "title": "Controleer taalsignalen",
+          "paragraphs": [
+            "Koppel equivalente versies met correcte hreflang-verwijzingen wanneer dat passend is. Controleer wederkerigheid en bereikbaarheid. Een canonical verwijst normaal naar de gewenste versie van dezelfde inhoud; het is geen vervanging voor taalrelaties tussen verschillende vertalingen.",
+            "Gebruik voor de eerste aanpassing een representatieve pagina. Bewaar de uitgangssituatie en laat de wijziging controleren voordat dezelfde aanpak breder wordt toegepast. Wat op één adres werkt, hoeft niet bij iedere dienst of productgroep passend te zijn. Kijk daarom ook naar uitzonderingen en naar de informatie die je team later zelfstandig moet kunnen onderhouden."
+          ]
+        },
+        {
+          "title": "Lokaliseer beslisinformatie",
+          "paragraphs": [
+            "Pas voorbeelden, termen, eenheden en relevante leveringsinformatie aan waar dat nodig is. Beloof geen lokale vestiging of ondersteuning die niet bestaat. Leg eerlijk uit hoe internationaal contact en uitvoering vanuit de werkelijke basis plaatsvinden.",
+            "Leg vast welke gebeurtenis je kunt meten en welke conclusie daar redelijkerwijs uit volgt. Beschikbare zoekgegevens en websitegegevens hebben een andere context dan de gesprekken die je team voert. Vergelijk ze op een passend niveau en houd rekening met ontbrekende informatie. Verander geen onzekere aanwijzing in een harde uitspraak over klanten, omzet of succes."
+          ]
+        },
+        {
+          "title": "Vergelijk per markt",
+          "paragraphs": [
+            "Beoordeel zoekvragen, doelpagina's en aanvragen per taal en land waar gegevens beschikbaar zijn. Een vertaling kan wel klikken krijgen maar de verkeerde verwachting oproepen. Gebruik zulke signalen om inhoud te verbeteren voordat je extra markten opent.",
+            "Plan een hercontrole en wijs een eigenaar aan die de inhoud en uitvoering kent. Bekijk wat na de wijziging aantoonbaar beter werkt en wat nog uitleg vraagt. Als de gegevens beperkt zijn, vul de beoordeling aan met een praktische gebruikstest. Houd andere veranderingen in dezelfde periode bij zodat je uitkomsten later voorzichtig en eerlijk kunt interpreteren."
+          ]
+        }
+      ],
+      "checklist": [
+        "Kies een belangrijke pagina en noteer de huidige situatie.",
+        "Controleer of de inhoud aansluit bij een echte klantvraag.",
+        "Test de volledige route op een telefoon.",
+        "Noteer wijzigingen, verantwoordelijke en beschikbare meetpunten.",
+        "Beoordeel zoekklikken naast de geschiktheid van aanvragen."
+      ],
+      "conclusion": "Een werkbare aanpak voor internationale SEO voor verschillende taalversies begint met duidelijke inhoud en een controleerbare vervolgstap. Kies de belangrijkste verbetering, test de uitvoering en bespreek de uitkomst met je team. Latech kan helpen de benodigde website, SEO-structuur en contactroute in samenhang uit te werken."
+    },
+    {
+      "id": "mobile-performance",
+      "title": "Mobiele snelheid verbeteren waar klanten vastlopen",
+      "slug": "mobiele-snelheid-website-seo",
+      "description": "Mobiele snelheid verbeteren waar klanten vastlopen. Gebruik praktische controles voor zoekbezoeken, duidelijke informatie en bruikbare klantvragen.",
+      "intro": [
+        "Wil je mobiele prestaties voor zoekbezoek en contact verbeteren? Begin bij een concrete beslissing van de klant en de informatie die je bedrijf daarvoor kan geven. Meer bezoekers zijn pas bruikbaar wanneer zij begrijpen wat je aanbiedt en hoe zij een passende volgende stap kunnen zetten. Deze gids helpt je gerichte keuzes maken met de gegevens en middelen die je al hebt.",
+        "Denk bijvoorbeeld aan een dienstensite waarvan de contactknop op een telefoon laat zichtbaar wordt. Dit is een denkbeeldige situatie om de aanpak uit te leggen, geen behaald klantresultaat. Werk de onderstaande controles op één belangrijke pagina uit voordat je dezelfde werkwijze over de hele website toepast. Zo blijven veranderingen en verantwoordelijkheden overzichtelijk."
+      ],
+      "sections": [
+        {
+          "title": "Test een echte klantreis",
+          "paragraphs": [
+            "Open een dienstenpagina op een gewone telefoon en zoek het contactpunt. Let op verschuivende knoppen, trage afbeeldingen en vensters die de tekst bedekken. Een snelle homepage vertelt weinig over een zwaardere productpagina.",
+            "Maak hiervan een controleerbare notitie voordat je iets verandert. Schrijf op welke pagina je bekijkt, wat een bezoeker daar probeert te doen en welke informatie daarvoor ontbreekt. Vraag een collega die de pagina niet heeft gemaakt om dezelfde taak uit te voeren. Vergelijk diens uitleg met de bedoeling van je bedrijf en noteer het concrete verschil."
+          ]
+        },
+        {
+          "title": "Begrijp de meetwaarden",
+          "paragraphs": [
+            "Core Web Vitals beschrijven onder meer laadervaring, reactievermogen en visuele stabiliteit. Bekijk veldgegevens wanneer beschikbaar en gebruik laboratoriumtests om oorzaken te onderzoeken. Een enkel testresultaat is geen volledige weergave van alle echte bezoekers.",
+            "Gebruik een beperkt overzicht met de huidige situatie, de gewenste aanpassing en de reden. Laat de persoon die het aanbod kent controleren of alle beloften kloppen. Zo voorkom je dat een technisch nette wijziging inhoudelijk de verkeerde verwachting oproept. De informatie moet ook begrijpelijk blijven voor iemand die voor het eerst met je bedrijf kennismaakt."
+          ]
+        },
+        {
+          "title": "Beperk zware afbeeldingen",
+          "paragraphs": [
+            "Lever afbeeldingen in een passende afmeting en reserveer ruimte in de layout. Laat inhoud buiten het eerste scherm waar passend later laden. Een belangrijke openingsafbeelding blind uitstellen kan juist het zichtbare laden van de pagina vertragen.",
+            "Voer de controle uit op het gepubliceerde adres en op een telefoon. Volg de route vanaf binnenkomst tot de bedoelde vervolgstap, zonder ontbrekende context zelf aan te vullen. Noteer zowel een fout als een onduidelijke uitleg. Die twee vragen soms om verschillende oplossingen en om een andere medewerker die de aanpassing kan beoordelen."
+          ]
+        },
+        {
+          "title": "Onderzoek scripts",
+          "paragraphs": [
+            "Inventariseer externe widgets, tracking en functies die veel werk vragen. Bepaal welke werkelijk nodig zijn op de eerste weergave. Controleer na aanpassingen of formulieren, toestemming en contactopties nog correct reageren op aanraking en toetsenbord.",
+            "Gebruik voor de eerste aanpassing een representatieve pagina. Bewaar de uitgangssituatie en laat de wijziging controleren voordat dezelfde aanpak breder wordt toegepast. Wat op één adres werkt, hoeft niet bij iedere dienst of productgroep passend te zijn. Kijk daarom ook naar uitzonderingen en naar de informatie die je team later zelfstandig moet kunnen onderhouden."
+          ]
+        },
+        {
+          "title": "Houd informatie bereikbaar",
+          "paragraphs": [
+            "Leesbare tekst en duidelijke knoppen zijn minstens zo praktisch als een snellere meting. Controleer foutmeldingen en invoervelden bij zoomen. Zorg dat belangrijke contactinformatie niet alleen in een animatie of moeilijk te openen menu zit.",
+            "Leg vast welke gebeurtenis je kunt meten en welke conclusie daar redelijkerwijs uit volgt. Beschikbare zoekgegevens en websitegegevens hebben een andere context dan de gesprekken die je team voert. Vergelijk ze op een passend niveau en houd rekening met ontbrekende informatie. Verander geen onzekere aanwijzing in een harde uitspraak over klanten, omzet of succes."
+          ]
+        },
+        {
+          "title": "Verifieer de wijziging",
+          "paragraphs": [
+            "Test dezelfde pagina en vergelijkbare omstandigheden na de aanpassing. Kijk vervolgens naar beschikbare gebruiksgegevens over een passend tijdvak. Snellere prestaties ondersteunen gebruik, maar vormen op zichzelf geen garantie voor meer rankings of geschikte aanvragen.",
+            "Plan een hercontrole en wijs een eigenaar aan die de inhoud en uitvoering kent. Bekijk wat na de wijziging aantoonbaar beter werkt en wat nog uitleg vraagt. Als de gegevens beperkt zijn, vul de beoordeling aan met een praktische gebruikstest. Houd andere veranderingen in dezelfde periode bij zodat je uitkomsten later voorzichtig en eerlijk kunt interpreteren."
+          ]
+        }
+      ],
+      "checklist": [
+        "Kies een belangrijke pagina en noteer de huidige situatie.",
+        "Controleer of de inhoud aansluit bij een echte klantvraag.",
+        "Test de volledige route op een telefoon.",
+        "Noteer wijzigingen, verantwoordelijke en beschikbare meetpunten.",
+        "Beoordeel zoekklikken naast de geschiktheid van aanvragen."
+      ],
+      "conclusion": "Een werkbare aanpak voor mobiele prestaties voor zoekbezoek en contact verbeteren begint met duidelijke inhoud en een controleerbare vervolgstap. Kies de belangrijkste verbetering, test de uitvoering en bespreek de uitkomst met je team. Latech kan helpen de benodigde website, SEO-structuur en contactroute in samenhang uit te werken."
+    },
+    {
+      "id": "online-store",
+      "title": "Een webshop structureren voor organisch verkeer",
+      "slug": "webshop-structuur-organisch-verkeer",
+      "description": "Een webshop structureren voor organisch verkeer. Leer welke controles helpen bij relevante bezoeken, betrouwbare informatie en passende klantgesprekken.",
+      "intro": [
+        "Wil je producten en categorieën beter vindbaar maken? Begin bij een concrete beslissing van de klant en de informatie die je bedrijf daarvoor kan geven. Meer bezoekers zijn pas bruikbaar wanneer zij begrijpen wat je aanbiedt en hoe zij een passende volgende stap kunnen zetten. Deze gids helpt je gerichte keuzes maken met de gegevens en middelen die je al hebt.",
+        "Denk bijvoorbeeld aan een webwinkel die verschillende soorten bureaulampen verkoopt. Dit is een denkbeeldige situatie om de aanpak uit te leggen, geen behaald klantresultaat. Werk de onderstaande controles op één belangrijke pagina uit voordat je dezelfde werkwijze over de hele website toepast. Zo blijven veranderingen en verantwoordelijkheden overzichtelijk."
+      ],
+      "sections": [
+        {
+          "title": "Ontwerp categorieën voor keuze",
+          "paragraphs": [
+            "Groepeer producten volgens eigenschappen waar klanten echt op selecteren. Een categorie voor bureaulampen kan zinvol zijn, terwijl iedere kleurcombinatie als aparte indexeerbare categorie vooral duplicatie kan opleveren. Laat de vraag en het assortiment de indeling bepalen.",
+            "Maak hiervan een controleerbare notitie voordat je iets verandert. Schrijf op welke pagina je bekijkt, wat een bezoeker daar probeert te doen en welke informatie daarvoor ontbreekt. Vraag een collega die de pagina niet heeft gemaakt om dezelfde taak uit te voeren. Vergelijk diens uitleg met de bedoeling van je bedrijf en noteer het concrete verschil."
+          ]
+        },
+        {
+          "title": "Geef producten eigen informatie",
+          "paragraphs": [
+            "Beschrijf toepassing, afmetingen, varianten en beperkingen van het daadwerkelijke product. Een gekopieerde leverancierszin helpt weinig bij vergelijking. Voeg relevante foto's en uitleg toe die onzekerheid over gebruik en inhoud van de bestelling vermindert.",
+            "Gebruik een beperkt overzicht met de huidige situatie, de gewenste aanpassing en de reden. Laat de persoon die het aanbod kent controleren of alle beloften kloppen. Zo voorkom je dat een technisch nette wijziging inhoudelijk de verkeerde verwachting oproept. De informatie moet ook begrijpelijk blijven voor iemand die voor het eerst met je bedrijf kennismaakt."
+          ]
+        },
+        {
+          "title": "Beheer filteradressen",
+          "paragraphs": [
+            "Filters kunnen veel bijna gelijke adressen maken. Bepaal welke combinaties een blijvende zelfstandige zoekbehoefte beantwoorden en welke alleen navigatie ondersteunen. Controleer links, canonical-signalen en indexeerbaarheid samen voordat je filterpagina's massaal publiceert.",
+            "Voer de controle uit op het gepubliceerde adres en op een telefoon. Volg de route vanaf binnenkomst tot de bedoelde vervolgstap, zonder ontbrekende context zelf aan te vullen. Noteer zowel een fout als een onduidelijke uitleg. Die twee vragen soms om verschillende oplossingen en om een andere medewerker die de aanpassing kan beoordelen."
+          ]
+        },
+        {
+          "title": "Maak voorwaarden vindbaar",
+          "paragraphs": [
+            "Plaats beschikbare informatie over levering, retourproces en betaling op de plekken waar de klant beslist. Onverwachte beperkingen aan het einde van de betaalroute kunnen een goed zoekbezoek alsnog laten stranden. Houd teksten gelijk aan de echte operatie.",
+            "Gebruik voor de eerste aanpassing een representatieve pagina. Bewaar de uitgangssituatie en laat de wijziging controleren voordat dezelfde aanpak breder wordt toegepast. Wat op één adres werkt, hoeft niet bij iedere dienst of productgroep passend te zijn. Kijk daarom ook naar uitzonderingen en naar de informatie die je team later zelfstandig moet kunnen onderhouden."
+          ]
+        },
+        {
+          "title": "Verwerk voorraad zorgvuldig",
+          "paragraphs": [
+            "Beslis wat een bezoeker ziet bij tijdelijk ontbrekende voorraad en definitief vervallen producten. Een nuttig alternatief kan een oude pagina bruikbaar houden. Verwijder of redirect niet automatisch alles zonder naar zoekvraag en vervangbaarheid te kijken.",
+            "Leg vast welke gebeurtenis je kunt meten en welke conclusie daar redelijkerwijs uit volgt. Beschikbare zoekgegevens en websitegegevens hebben een andere context dan de gesprekken die je team voert. Vergelijk ze op een passend niveau en houd rekening met ontbrekende informatie. Verander geen onzekere aanwijzing in een harde uitspraak over klanten, omzet of succes."
+          ]
+        },
+        {
+          "title": "Meet per paginatype",
+          "paragraphs": [
+            "Vergelijk categoriebezoeken met productbezoeken en de acties daarna. Een informatieve categorie kan helpen ontdekken, terwijl een productpagina dichter bij bestellen ligt. Onderzoek verschillen per apparaat en leg wijzigingen vast zodat interpretatie later mogelijk blijft.",
+            "Plan een hercontrole en wijs een eigenaar aan die de inhoud en uitvoering kent. Bekijk wat na de wijziging aantoonbaar beter werkt en wat nog uitleg vraagt. Als de gegevens beperkt zijn, vul de beoordeling aan met een praktische gebruikstest. Houd andere veranderingen in dezelfde periode bij zodat je uitkomsten later voorzichtig en eerlijk kunt interpreteren."
+          ]
+        }
+      ],
+      "checklist": [
+        "Kies een belangrijke pagina en noteer de huidige situatie.",
+        "Controleer of de inhoud aansluit bij een echte klantvraag.",
+        "Test de volledige route op een telefoon.",
+        "Noteer wijzigingen, verantwoordelijke en beschikbare meetpunten.",
+        "Beoordeel zoekklikken naast de geschiktheid van aanvragen."
+      ],
+      "conclusion": "Een werkbare aanpak voor producten en categorieën beter vindbaar maken begint met duidelijke inhoud en een controleerbare vervolgstap. Kies de belangrijkste verbetering, test de uitvoering en bespreek de uitkomst met je team. Latech kan helpen de benodigde website, SEO-structuur en contactroute in samenhang uit te werken."
+    },
+    {
+      "id": "whatsapp-conversion",
+      "title": "Van zoekbezoek naar een WhatsApp-gesprek",
+      "slug": "whatsapp-zoekbezoek-aanvragen",
+      "description": "Van zoekbezoek naar een WhatsApp-gesprek. Ontdek hoe je zoekbezoekers helpt met duidelijke informatie, goede techniek en een werkende contactroute.",
+      "intro": [
+        "Wil je WhatsApp inzetten voor relevante aanvragen vanaf je website? Begin bij een concrete beslissing van de klant en de informatie die je bedrijf daarvoor kan geven. Meer bezoekers zijn pas bruikbaar wanneer zij begrijpen wat je aanbiedt en hoe zij een passende volgende stap kunnen zetten. Deze gids helpt je gerichte keuzes maken met de gegevens en middelen die je al hebt.",
+        "Denk bijvoorbeeld aan een zelfstandig adviseur die korte projectvragen via WhatsApp ontvangt. Dit is een denkbeeldige situatie om de aanpak uit te leggen, geen behaald klantresultaat. Werk de onderstaande controles op één belangrijke pagina uit voordat je dezelfde werkwijze over de hele website toepast. Zo blijven veranderingen en verantwoordelijkheden overzichtelijk."
+      ],
+      "sections": [
+        {
+          "title": "Plaats contact na uitleg",
+          "paragraphs": [
+            "Een WhatsApp-knop werkt beter wanneer een bezoeker eerst begrijpt wat je aanbiedt. Geef vlakbij de actie aan welke dienst en situatie besproken kunnen worden. Een zwevende knop hoeft niet op elke pagina dezelfde onduidelijke boodschap te hebben.",
+            "Maak hiervan een controleerbare notitie voordat je iets verandert. Schrijf op welke pagina je bekijkt, wat een bezoeker daar probeert te doen en welke informatie daarvoor ontbreekt. Vraag een collega die de pagina niet heeft gemaakt om dezelfde taak uit te voeren. Vergelijk diens uitleg met de bedoeling van je bedrijf en noteer het concrete verschil."
+          ]
+        },
+        {
+          "title": "Stel een bruikbaar bericht voor",
+          "paragraphs": [
+            "Een vooraf ingevulde tekst kan vragen naar gewenste dienst en huidige website. Houd deze kort en aanpasbaar. Voeg geen gevoelige gegevens of ingewikkelde technische codes toe aan de tekst die bezoekers met hun eigen account versturen.",
+            "Gebruik een beperkt overzicht met de huidige situatie, de gewenste aanpassing en de reden. Laat de persoon die het aanbod kent controleren of alle beloften kloppen. Zo voorkom je dat een technisch nette wijziging inhoudelijk de verkeerde verwachting oproept. De informatie moet ook begrijpelijk blijven voor iemand die voor het eerst met je bedrijf kennismaakt."
+          ]
+        },
+        {
+          "title": "Controleer de bestemming",
+          "paragraphs": [
+            "Test de contactlink op telefoon en computer. Controleer het volledige internationale nummer en de overgang naar de beschikbare WhatsApp-omgeving. Latech gebruikt voor contact +34684739091; publiceer alleen een nummer dat daadwerkelijk bij de organisatie hoort.",
+            "Voer de controle uit op het gepubliceerde adres en op een telefoon. Volg de route vanaf binnenkomst tot de bedoelde vervolgstap, zonder ontbrekende context zelf aan te vullen. Noteer zowel een fout als een onduidelijke uitleg. Die twee vragen soms om verschillende oplossingen en om een andere medewerker die de aanpassing kan beoordelen."
+          ]
+        },
+        {
+          "title": "Maak bereikbaarheid eerlijk",
+          "paragraphs": [
+            "Vertel hoe je team verzoeken beoordeelt zonder directe reactie te beloven als die niet gegarandeerd is. Bied genoeg informatie op de website voor bezoekers die nog niet willen schrijven. Contact mag geen vervanging worden voor een ontbrekende dienstenomschrijving.",
+            "Gebruik voor de eerste aanpassing een representatieve pagina. Bewaar de uitgangssituatie en laat de wijziging controleren voordat dezelfde aanpak breder wordt toegepast. Wat op één adres werkt, hoeft niet bij iedere dienst of productgroep passend te zijn. Kijk daarom ook naar uitzonderingen en naar de informatie die je team later zelfstandig moet kunnen onderhouden."
+          ]
+        },
+        {
+          "title": "Meet de klik apart",
+          "paragraphs": [
+            "Registreer een klik op de WhatsApp-link als contactintentie. Het versturen van een bericht vindt buiten je website plaats en is niet vanzelf zichtbaar. Beschrijf daarom in rapportages precies welke stap wel en niet is gemeten.",
+            "Leg vast welke gebeurtenis je kunt meten en welke conclusie daar redelijkerwijs uit volgt. Beschikbare zoekgegevens en websitegegevens hebben een andere context dan de gesprekken die je team voert. Vergelijk ze op een passend niveau en houd rekening met ontbrekende informatie. Verander geen onzekere aanwijzing in een harde uitspraak over klanten, omzet of succes."
+          ]
+        },
+        {
+          "title": "Leer van echte vragen",
+          "paragraphs": [
+            "Vergelijk ontvangen berichten met de pagina waarop de route begint wanneer die context beschikbaar is. Als dezelfde basisvraag terugkomt, werk de pagina bij. Beoordeel gespreksonderwerp en geschiktheid; een hoger aantal knopklikken vertelt niet het hele verhaal.",
+            "Plan een hercontrole en wijs een eigenaar aan die de inhoud en uitvoering kent. Bekijk wat na de wijziging aantoonbaar beter werkt en wat nog uitleg vraagt. Als de gegevens beperkt zijn, vul de beoordeling aan met een praktische gebruikstest. Houd andere veranderingen in dezelfde periode bij zodat je uitkomsten later voorzichtig en eerlijk kunt interpreteren."
+          ]
+        }
+      ],
+      "checklist": [
+        "Kies een belangrijke pagina en noteer de huidige situatie.",
+        "Controleer of de inhoud aansluit bij een echte klantvraag.",
+        "Test de volledige route op een telefoon.",
+        "Noteer wijzigingen, verantwoordelijke en beschikbare meetpunten.",
+        "Beoordeel zoekklikken naast de geschiktheid van aanvragen."
+      ],
+      "conclusion": "Een werkbare aanpak voor WhatsApp inzetten voor relevante aanvragen vanaf je website begint met duidelijke inhoud en een controleerbare vervolgstap. Kies de belangrijkste verbetering, test de uitvoering en bespreek de uitkomst met je team. Latech kan helpen de benodigde website, SEO-structuur en contactroute in samenhang uit te werken."
+    },
+    {
+      "id": "website-migration",
+      "title": "Een website migreren met behoud van zoekcontext",
+      "slug": "website-migratie-seo-adressen",
+      "description": "Een website migreren met behoud van zoekcontext. Leer welke controles helpen bij relevante bezoeken, betrouwbare informatie en passende klantgesprekken.",
+      "intro": [
+        "Wil je een websitevernieuwing met een zorgvuldig SEO-migratieplan? Begin bij een concrete beslissing van de klant en de informatie die je bedrijf daarvoor kan geven. Meer bezoekers zijn pas bruikbaar wanneer zij begrijpen wat je aanbiedt en hoe zij een passende volgende stap kunnen zetten. Deze gids helpt je gerichte keuzes maken met de gegevens en middelen die je al hebt.",
+        "Denk bijvoorbeeld aan een bedrijf dat oude dienstenpagina's naar een nieuwe structuur verplaatst. Dit is een denkbeeldige situatie om de aanpak uit te leggen, geen behaald klantresultaat. Werk de onderstaande controles op één belangrijke pagina uit voordat je dezelfde werkwijze over de hele website toepast. Zo blijven veranderingen en verantwoordelijkheden overzichtelijk."
+      ],
+      "sections": [
+        {
+          "title": "Bewaar de uitgangssituatie",
+          "paragraphs": [
+            "Exporteer bestaande adressen en beschikbare gegevens over klikken, interne links en waardevolle inhoud. Noteer ook documenten en afbeeldingen die bezoekers gebruiken. Een migratie is makkelijker te beoordelen wanneer je weet wat er vóór de wijziging aanwezig was.",
+            "Maak hiervan een controleerbare notitie voordat je iets verandert. Schrijf op welke pagina je bekijkt, wat een bezoeker daar probeert te doen en welke informatie daarvoor ontbreekt. Vraag een collega die de pagina niet heeft gemaakt om dezelfde taak uit te voeren. Vergelijk diens uitleg met de bedoeling van je bedrijf en noteer het concrete verschil."
+          ]
+        },
+        {
+          "title": "Maak een adresmapping",
+          "paragraphs": [
+            "Koppel elk belangrijk oud adres aan de meest passende nieuwe bestemming. Een specifieke dienst hoort meestal niet naar de algemene homepage als een equivalente nieuwe pagina bestaat. Noteer ontbrekende vervangers zodat die inhoudelijke keuze zichtbaar blijft.",
+            "Gebruik een beperkt overzicht met de huidige situatie, de gewenste aanpassing en de reden. Laat de persoon die het aanbod kent controleren of alle beloften kloppen. Zo voorkom je dat een technisch nette wijziging inhoudelijk de verkeerde verwachting oproept. De informatie moet ook begrijpelijk blijven voor iemand die voor het eerst met je bedrijf kennismaakt."
+          ]
+        },
+        {
+          "title": "Stel redirects gericht in",
+          "paragraphs": [
+            "Gebruik permanente redirects wanneer een pagina blijvend verhuist. Vermijd onnodige ketens en controleer de uiteindelijke bestemming. Een redirect lost geen inhoudsverschil op wanneer de nieuwe pagina een heel andere behoefte beantwoordt dan de oude.",
+            "Voer de controle uit op het gepubliceerde adres en op een telefoon. Volg de route vanaf binnenkomst tot de bedoelde vervolgstap, zonder ontbrekende context zelf aan te vullen. Noteer zowel een fout als een onduidelijke uitleg. Die twee vragen soms om verschillende oplossingen en om een andere medewerker die de aanpassing kan beoordelen."
+          ]
+        },
+        {
+          "title": "Controleer de nieuwe omgeving",
+          "paragraphs": [
+            "Bekijk canonicals, indexeerbaarheid, interne links en de sitemap op de definitieve omgeving. Test of tijdelijke blokkades van een ontwikkelomgeving zijn verwijderd waar publicatie bedoeld is. Behoud beveiliging voor onderdelen die juist privé moeten blijven.",
+            "Gebruik voor de eerste aanpassing een representatieve pagina. Bewaar de uitgangssituatie en laat de wijziging controleren voordat dezelfde aanpak breder wordt toegepast. Wat op één adres werkt, hoeft niet bij iedere dienst of productgroep passend te zijn. Kijk daarom ook naar uitzonderingen en naar de informatie die je team later zelfstandig moet kunnen onderhouden."
+          ]
+        },
+        {
+          "title": "Plan de publicatiecontrole",
+          "paragraphs": [
+            "Test representatieve oude adressen, belangrijke diensten en de contactroute direct na livegang. Controleer ook afbeeldingen en formulieren. Een fraaie nieuwe homepage is onvoldoende bewijs dat het volledige bestaande zoekverkeer een bruikbare bestemming heeft gekregen.",
+            "Leg vast welke gebeurtenis je kunt meten en welke conclusie daar redelijkerwijs uit volgt. Beschikbare zoekgegevens en websitegegevens hebben een andere context dan de gesprekken die je team voert. Vergelijk ze op een passend niveau en houd rekening met ontbrekende informatie. Verander geen onzekere aanwijzing in een harde uitspraak over klanten, omzet of succes."
+          ]
+        },
+        {
+          "title": "Volg verschillen rustig op",
+          "paragraphs": [
+            "Controleer fouten en veranderingen in beschikbare zoekgegevens over tijd. Schommelingen na een verhuizing kunnen optreden; herstel eerst aantoonbare verkeerde redirects of ontbrekende inhoud. Vermijd snelle grote herstructureringen zonder te begrijpen welk probleem werkelijk is ontstaan.",
+            "Plan een hercontrole en wijs een eigenaar aan die de inhoud en uitvoering kent. Bekijk wat na de wijziging aantoonbaar beter werkt en wat nog uitleg vraagt. Als de gegevens beperkt zijn, vul de beoordeling aan met een praktische gebruikstest. Houd andere veranderingen in dezelfde periode bij zodat je uitkomsten later voorzichtig en eerlijk kunt interpreteren."
+          ]
+        }
+      ],
+      "checklist": [
+        "Kies een belangrijke pagina en noteer de huidige situatie.",
+        "Controleer of de inhoud aansluit bij een echte klantvraag.",
+        "Test de volledige route op een telefoon.",
+        "Noteer wijzigingen, verantwoordelijke en beschikbare meetpunten.",
+        "Beoordeel zoekklikken naast de geschiktheid van aanvragen."
+      ],
+      "conclusion": "Een werkbare aanpak voor een websitevernieuwing met een zorgvuldig SEO-migratieplan begint met duidelijke inhoud en een controleerbare vervolgstap. Kies de belangrijkste verbetering, test de uitvoering en bespreek de uitkomst met je team. Latech kan helpen de benodigde website, SEO-structuur en contactroute in samenhang uit te werken."
+    },
+    {
+      "id": "seo-audit",
+      "title": "Een SEO-audit omzetten in werkbare prioriteiten",
+      "slug": "seo-audit-prioriteiten-bedrijf",
+      "description": "Een SEO-audit omzetten in werkbare prioriteiten. Leer welke controles helpen bij relevante bezoeken, betrouwbare informatie en passende klantgesprekken.",
+      "intro": [
+        "Een SEO-audit helpt vaststellen waarom belangrijke pagina's niet worden gevonden, begrepen of gebruikt. Het aantal waarschuwingen zegt weinig over de volgorde: een geblokkeerde dienst vraagt iets anders dan een bewust uitgesloten archief met oude berichten.",
+        "Stel je een onderhoudsbedrijf voor met oude navigatielinks en dubbele beschrijvingen. Dit denkbeeldige voorbeeld laat zien waarom eerst de kapotte route naar het aanbod moet worden onderzocht. Tekstuele verbeteringen vragen vervolgens een andere controle dan het herstellen van toegang."
+      ],
+      "sections": [
+        {
+          "title": "Begin bij belangrijke pagina's",
+          "paragraphs": [
+            "Verzamel diensten en categorieën die een concreet bedrijfsdoel ondersteunen. Controleer of bezoekers en zoekmachines deze kunnen bereiken. Een ontoegankelijke hoofdservice verdient vaak eerder aandacht dan een cosmetische melding op een nauwelijks gebruikte archiefpagina.",
+            "Volg de onderhoudslink vanaf de homepage tot het eindadres. Kom je bij een verdwenen aanbod uit, dan is een commerciële route onderbroken. Een vergelijkbare fout in een oud nieuwsbericht kan minder urgent zijn, ook wanneer de crawler beide problemen hetzelfde foutlabel geeft en samen in het rapport zet."
+          ]
+        },
+        {
+          "title": "Verzamel bewijs",
+          "paragraphs": [
+            "Noteer per probleem het betreffende adres, een reproduceerbare waarneming en de verwachte invloed op gebruik of ontdekking. Een toolmelding is een aanwijzing. Controleer handmatig voordat je een hele reeks pagina's laat aanpassen.",
+            "Open bij dubbele titels twee getroffen adressen en vergelijk de inhoud. Twee verschillende diensten moeten herkenbare titels krijgen; sorteervarianten kunnen juist een consistente voorkeursversie nodig hebben. De melding bewijst een overeenkomst maar bepaalt niet welke oplossing past. Controleer daarom of het werkelijk verschillende antwoorden of slechts URL-varianten betreft."
+          ]
+        },
+        {
+          "title": "Scheid blokkade van verbetering",
+          "paragraphs": [
+            "Een onbedoelde noindex op een belangrijke pagina verschilt van een titel die duidelijker kan. Beschrijf de concrete consequentie. Werk met prioriteiten die rekening houden met ernst, bereik, benodigde inspanning en de onzekerheid van je diagnose.",
+            "Beoordeel het bereik ook per sjabloon. Een ontbrekende contactlink in het dienstensjabloon raakt meerdere aanbiedingen, terwijl een losse typefout lokaal blijft. Bekijk verschillende voorbeelden voordat je concludeert dat één sjabloonwijziging de hele gemelde groep oplost. Een fout op één adres bewijst nog geen gezamenlijk technisch probleem voor alle andere pagina's."
+          ]
+        },
+        {
+          "title": "Koppel techniek aan inhoud",
+          "paragraphs": [
+            "Een bereikbare pagina kan alsnog de verkeerde vraag beantwoorden. Vergelijk titel, tekst en aanbod met de bedoeling van de zoekopdracht. Een audit hoort technische toegang en inhoudelijke relevantie samen te beoordelen, zonder elk probleem technisch te noemen.",
+            "Een bereikbare reparatiepagina kan uitsluitend over vervanging praten. De technische controle slaagt, maar de bezoeker krijgt de verkeerde verwachting. Vergelijk de beloofde dienst met werkzaamheden en uitsluitingen. Meer zoekwoorden of een snellere afbeelding herstellen dat inhoudelijke verschil niet; de uitleg over wat iemand daadwerkelijk kan laten uitvoeren moet eerst kloppen."
+          ]
+        },
+        {
+          "title": "Maak taken uitvoerbaar",
+          "paragraphs": [
+            "Schrijf een taak met eigenaar, gewenste verandering en controle achteraf. Vermijd opdrachten als verbeter SEO zonder adres of criterium. Als meerdere systemen betrokken zijn, beschrijf dan welke afhankelijkheid eerst moet worden opgelost en wie dat bevestigt.",
+            "Een concrete taak kan zijn: vervang de oude onderhoudslink in de voettekst door het actuele adres en controleer de eindbestemming. Bestaat de nieuwe pagina nog niet, dan is een bruikbaar antwoord publiceren een voorwaarde. Alleen de link wijzigen lost ontbrekende dienstinformatie aan het einde van de route niet op."
+          ]
+        },
+        {
+          "title": "Controleer het effect",
+          "paragraphs": [
+            "Verifieer de oplossing op de live pagina en documenteer de datum. Bekijk later passende meetgegevens, maar schrijf verandering niet automatisch aan één taak toe. Andere inhoudswijzigingen, vraagontwikkeling en concurrentie kunnen dezelfde periode beïnvloeden.",
+            "Controleer na een canonical-correctie het gepubliceerde element en interne links die nog naar de verlaten variant wijzen. Indexeringsrapporten kunnen later volgen. Leg vast of de implementatie klopt en bekijk afzonderlijk welke versie de zoekmachine kiest. Die twee controles beantwoorden verschillende vragen en hoeven niet gelijktijdig resultaat te geven."
+          ]
+        }
+      ],
+      "checklist": [
+        "Volg een belangrijke dienstlink tot de eindbestemming.",
+        "Bevestig een gemeld defect op werkelijk getroffen adressen.",
+        "Scheid een sjabloonfout van een los incident.",
+        "Beschrijf reparatie en concrete acceptatiecontrole.",
+        "Scheid correcte implementatie van latere zoekwaarnemingen."
+      ],
+      "conclusion": "Geef aangetoonde obstakels op nuttige pagina's voorrang en beschrijf de reparatie. De audit wordt bruikbaar door betere toegang en duidelijkheid, in plaats van alleen een lager aantal meldingen te produceren."
+    },
+    {
+      "id": "search-intent",
+      "title": "Zoekintentie vertalen naar de juiste pagina",
+      "slug": "zoekintentie-pagina-mapping",
+      "description": "Zoekintentie vertalen naar de juiste pagina. Ontdek hoe je zoekbezoekers helpt met duidelijke informatie, goede techniek en een werkende contactroute.",
+      "intro": [
+        "Zoekintentie is de taak achter een zoekvraag: iets begrijpen, mogelijkheden vergelijken of een leverancier kiezen. Gedeelde woorden kunnen verschillende beslissingen verbergen, waarvoor andere pagina's en soorten uitleg nodig zijn. Het juiste antwoord begint bij dat onderscheid.",
+        "Denk aan iemand die zoekt naar geluid van een warmtepomp, onderhoud en een installateur. Dit fictieve voorbeeld betreft één product, maar vraagt achtereenvolgens een verklaring, een afgebakende dienst en informatie om een aanbieder te beoordelen voor een mogelijke opdracht."
+      ],
+      "sections": [
+        {
+          "title": "Lees achter het woord",
+          "paragraphs": [
+            "Dezelfde term kan informatie, vergelijking of een leverancier aanduiden. Bekijk de volledige formulering en de zakelijke context. Een vraag over kosten vraagt bijvoorbeeld een andere uitleg dan een verzoek om een specifieke dienst uit te laten voeren.",
+            "Een vraag over nachtelijk gezoem heeft oorzaken, normale situaties en signalen voor een controle nodig. Alleen een afspraakknop laat die vraag open. Een gids kan professionele beoordeling noemen nadat de eerste twijfel is uitgelegd, zonder iedere informatieve zoekvraag meteen te behandelen als bereidheid om betaald onderhoud te bestellen."
+          ]
+        },
+        {
+          "title": "Groepeer verwante behoeften",
+          "paragraphs": [
+            "Zet zoekvragen met dezelfde onderliggende beslissing bij elkaar. Vermijd voor elke spelling of kleine woordvolgorde een aparte pagina. Eén complete pagina kan meerdere varianten beantwoorden zolang de inhoud voor dezelfde doelgroep en taak bedoeld blijft.",
+            "Onderhoudsfrequentie en wanneer een warmtepomp laten nakijken kunnen samen wanneer dezelfde intervallen en uitzonderingen het antwoord vormen. Installatiekosten horen apart als andere factoren en een andere dienst centraal staan. Toets of één complete uitleg beide behoeften dekt zonder geforceerde onderwerpswisseling. Een andere woordvolgorde is op zichzelf geen nieuwe klanttaak."
+          ]
+        },
+        {
+          "title": "Kies het paginatype",
+          "paragraphs": [
+            "Een uitlegartikel helpt bij begrip; een dienstenpagina beschrijft werk en contact; een categorie ondersteunt productkeuze. Controleer welke vorm de bezoeker nodig heeft. Een commercieel formulier boven een zuiver informatieve tekst lost een verkeerde inhoudskeuze niet op.",
+            "Bekijk welke soorten resultaten bij representatieve vragen verschijnen, met ruimte voor verschillen tussen zoekopdrachten en momenten. Overheersen vergelijkingen, dan mist een korte commerciële tekst mogelijk keuzecriteria. Werk criteria voor jouw aanbod uit in plaats van concurrenten na te schrijven of hun huidige resultaat als een vaste publicatieregel te beschouwen."
+          ]
+        },
+        {
+          "title": "Bepaal een hoofdbestemming",
+          "paragraphs": [
+            "Koppel iedere relevante behoefte aan een duidelijke hoofdroute in je site. Noteer ondersteunende artikelen en hun verwijzing naar de dienst. Zo voorkom je dat meerdere bijna gelijke pagina's elk een halve uitleg over hetzelfde aanbod geven.",
+            "Geef onderhoudsaanvragen een hoofdbestemming bij de dienst en leg intervallen uit in een ondersteunende gids. Link daar naar hulp wanneer uitvoering ter sprake komt. Een extra dienstpagina voor jaarlijkse controle naast jaarlijks onderhoud kan hetzelfde antwoord versnipperen, terwijl de bezoeker geen werkelijk verschil tussen de twee aangeboden werkzaamheden kan aanwijzen."
+          ]
+        },
+        {
+          "title": "Controleer echte zoekgegevens",
+          "paragraphs": [
+            "Gebruik beschikbare zoekvragen en doelpagina's om je eerste indeling te toetsen. Kijk ook naar onverwachte combinaties. Een pagina kan voor een bredere vraag verschijnen dan bedoeld; beoordeel of de bezoeker daar werkelijk geholpen wordt.",
+            "Verschijnt een installatiepagina bij reparatievragen, zoek dan de passage die reparatie suggereert. Een zin over oude systemen herstellen kan de oorzaak zijn. Maak die grens duidelijk voordat je de pagina uitbreidt met niet beschikbare werkzaamheden. Een onverwachte vertoning is een aanwijzing om te onderzoeken, geen bewijs van een ontbrekende dienst."
+          ]
+        },
+        {
+          "title": "Verbind intentie met opvolging",
+          "paragraphs": [
+            "Vraag je team welke verwachtingen mensen meenemen naar een gesprek. Veel verkeerde aanvragen kunnen wijzen op een te brede belofte. Pas tekst, afbakening of contactroute aan en beoordeel de nieuwe gesprekken voordat je extra pagina's publiceert.",
+            "Scheid voorbereidingsvragen van aanvragen buiten het aanbod. Wie vraagt welke foto's nodig zijn, mist een concrete volgende stap. Wie spoedhulp verwacht, heeft mogelijk de belofte verkeerd opgevat. Deze situaties vragen andere aanpassingen, ook als beide gesprekken vanaf dezelfde pagina beginnen en vergelijkbare woorden gebruiken voor hun probleem met het toestel."
+          ]
+        }
+      ],
+      "checklist": [
+        "Benoem de taak achter representatieve zoekvragen.",
+        "Groepeer varianten die hetzelfde complete antwoord nodig hebben.",
+        "Kies bewust tussen gids, vergelijking en dienst.",
+        "Geef iedere commerciële behoefte een hoofdbestemming.",
+        "Toets onverwachte zoekvragen aan de echte aanbodgrenzen."
+      ],
+      "conclusion": "Koppel iedere duidelijke beslissing aan een volledig antwoord en toets die verdeling aan zoekvragen en gesprekken. Een nieuwe pagina is gerechtvaardigd wanneer de taak een eigen uitleg verdient die elders ontbreekt."
+    },
+    {
+      "id": "service-pages",
+      "title": "Dienstenpagina's die vindbaarheid en aanvragen verbinden",
+      "slug": "dienstenpagina-seo-aanvragen",
+      "description": "Dienstenpagina's die vindbaarheid en aanvragen verbinden. Bekijk concrete stappen voor duidelijke inhoud, technische controle en relevante aanvragen.",
+      "intro": [
+        "Een dienstenpagina moet iemand laten herkennen of het werk bij het probleem past. Daarvoor zijn een begrijpelijke belofte, duidelijke grenzen, relevant bewijs en een contactroute nodig die aansluit op de beoordeling die werkelijk mogelijk is voor het bedrijf.",
+        "Neem een fictieve onderhoudsaanbieder voor gebouwen. Een bezoeker moet gepland onderzoek van een dringende reparatie kunnen onderscheiden voordat die foto's verstuurt of een bezoek vraagt. De pagina moet uitleggen wat het team met die informatie kan beoordelen en wat niet."
+      ],
+      "sections": [
+        {
+          "title": "Baken één dienst af",
+          "paragraphs": [
+            "Beschrijf welk probleem wordt opgelost en wanneer deze dienst passend is. Maak het verschil met verwante werkzaamheden duidelijk. Een bezoeker moet zonder intern vakjargon kunnen herkennen of hij onderhoud, reparatie of vervanging nodig heeft.",
+            "Maak het praktische onderscheid zichtbaar: inspectie brengt slijtage in kaart en bereidt onderhoud voor; reparatie behandelt een bekend defect. Bied je geen spoedbezoek, vermeld dat bij de definitie. Het brede woord onderhoud mag geen onmiddellijke beschikbaarheid suggereren die medewerkers na ontvangst van een bericht vervolgens moeten terugnemen of corrigeren."
+          ]
+        },
+        {
+          "title": "Beantwoord beslisvragen",
+          "paragraphs": [
+            "Leg uit wat de werkzaamheden kunnen omvatten, welke informatie vooraf nodig is en welke beperkingen gelden. Geef geen vaste kosten of termijnen die je niet kunt onderbouwen. Maak duidelijk welke onderdelen pas na beoordeling van de situatie vaststaan.",
+            "Leg uit wat een foto laat beoordelen en waarvoor toegang tot het gebouw nodig blijft. Zichtbare schade bewijst niet altijd de verborgen oorzaak. Locatie, getroffen onderdeel en symptomen helpen bij een eerste gesprek, zonder te suggereren dat elke situatie op afstand een definitieve diagnose of vaste prijs kan krijgen."
+          ]
+        },
+        {
+          "title": "Gebruik een logische opbouw",
+          "paragraphs": [
+            "Begin met dienst en doelgroep, werk daarna toe naar aanpak, bewijs en contact. Gebruik beschrijvende tussenkoppen die ook bij snel scannen betekenis houden. Vermijd lange algemene bedrijfsteksten voordat de eigenlijke dienst wordt uitgelegd.",
+            "Beantwoord eerst of dit de juiste dienst is en leg daarna de uitvoering uit. Op een telefoon moeten reikwijdte en contact snel terug te vinden zijn. Een schema helpt als de stappen echte activiteiten noemen, zoals beoordeling, voorstel en afgesproken planning, in plaats van abstracte termen die niets over de samenwerking vertellen."
+          ]
+        },
+        {
+          "title": "Maak bewijs relevant",
+          "paragraphs": [
+            "Kies projectmateriaal dat iets over deze specifieke dienst laat zien. Beschrijf de startsituatie en gemaakte keuze. Een algemeen logo of losse foto helpt minder dan een korte toelichting op de vraag die een vergelijkbare klant zou stellen.",
+            "Een inspectiefoto wordt bewijs door een bijschrift dat het probleem en uitgevoerde werk benoemt. Leid daar geen niet-onderbouwde besparingen uit af. Een duidelijk als illustratie aangeduid schema kan een methode uitleggen wanneer geschikt projectmateriaal ontbreekt. Vermijd dat de lezer een demonstratie voor een werkelijk uitgevoerde opdracht moet aanzien om de uitleg te begrijpen."
+          ]
+        },
+        {
+          "title": "Verbind naburige pagina's",
+          "paragraphs": [
+            "Verwijs naar passende verdieping of een verwante dienst wanneer de bezoeker een andere oplossing nodig heeft. Gebruik duidelijke linkteksten die de bestemming beschrijven. Plaats alleen links die een echte vervolgvraag ondersteunen, zonder iedere paragraaf vol verwijzingen te zetten.",
+            "Link naar oorzaken van vocht waar die vraag ontstaat en naar vervanging wanneer reparatie ongeschikt is. Alle diensten tussen iedere alinea herhalen verspreidt de aandacht. Benoem bij een link welk aanvullend antwoord de bestemming biedt. De gekozen dienst moet zelfstandig begrijpelijk blijven, zonder vijf extra pagina's nodig te maken voor de basisomvang."
+          ]
+        },
+        {
+          "title": "Toets de contactroute",
+          "paragraphs": [
+            "Vraag welke pagina bij een aanvraag is bekeken en wat nog onduidelijk bleef wanneer dat praktisch kan. Werk terugkerende twijfels inhoudelijk bij. Houd het formulier gericht op beoordeling van de dienst zodat contact geen tweede zoektocht naar basisinformatie wordt.",
+            "Vraag bij contact bijvoorbeeld gebouwtype, locatie en een korte defectbeschrijving. Leg uit dat dit beoordeling voorbereidt en nog geen afspraak of prijs bevestigt. Test of het voorgestelde bericht de juiste dienst noemt en bewerkbaar blijft. Niet iedere klant past precies in het voorbeeld of weet vooraf hoe het defect technisch heet."
+          ]
+        }
+      ],
+      "checklist": [
+        "Leg verschillen met alternatieve diensten uit.",
+        "Benoem wat foto's wel en niet laten beoordelen.",
+        "Houd omvang, proces en contact vindbaar.",
+        "Leg uit wat ieder echt projectvoorbeeld bewijst.",
+        "Test een specifiek en bewerkbaar contactbericht op mobiel."
+      ],
+      "conclusion": "Maak werkzaamheden en grenzen begrijpelijk voordat iemand contact opneemt. Selecteer bewijsmateriaal en contactvragen die het gesprek over de echte situatie ondersteunen, zodat bezoekers weten welke informatie voor beoordeling nodig is."
+    },
+    {
+      "id": "seo-titles-clicks",
+      "title": "SEO-titels verbeteren voor relevante klikken",
+      "slug": "seo-titels-relevante-klikken",
+      "description": "SEO-titels verbeteren voor relevante klikken. Ontdek hoe je zoekbezoekers helpt met duidelijke informatie, goede techniek en een werkende contactroute.",
+      "intro": [
+        "Een zoektitel helpt bepalen of een resultaat bij de behoefte past. Verbetering begint bij inhoud en vergelijkbare zoekgegevens, zonder te veronderstellen dat krachtiger taal automatisch meer geschikte aanvragen of verkoop oplevert. De belofte moet aansluiten op de bestemming.",
+        "Stel dat het klikpercentage daalt terwijl het aantal vertoningen stijgt. In dit denkbeeldige geval kan bredere zichtbaarheid op lagere posities de beweging verklaren, zelfs wanneer de titel en het aanbod zelf niet zijn aangepast. Vergelijk daarom eerst soortgelijke zoekvragen."
+      ],
+      "sections": [
+        {
+          "title": "Benoem het onderwerp vroeg",
+          "paragraphs": [
+            "Schrijf welke dienst, categorie of vraag de pagina daadwerkelijk behandelt. Voeg alleen een onderscheidend kenmerk toe dat ook in de inhoud terugkomt. Een algemene titel als welkom vertelt een zoekende klant weinig over de bestemming.",
+            "Noem bij ketelonderhoud de dienst en het echte werkgebied in plaats van een vage belofte over wooncomfort. Voeg alleen een onderscheid toe dat de pagina onderbouwt. Gebruik geen spoedformulering voor geplande afspraken: zo'n klik begint met een verwachting die de bestemming en medewerkers niet kunnen waarmaken tegenover de bezoeker."
+          ]
+        },
+        {
+          "title": "Maak pagina's onderscheidbaar",
+          "paragraphs": [
+            "Vergelijk titels van naburige diensten en artikelen. Wanneer ze allemaal hetzelfde zeggen, kan de bezoeker de verschillen moeilijk beoordelen. Gebruik het echte onderwerp als onderscheid, in plaats van overal dezelfde reeks commerciële woorden aan het merk toe te voegen.",
+            "Een pagina voor inspectie en een pagina voor reparatie moeten in de titel herkenbaar verschillen. Alleen de bedrijfsnaam achter hetzelfde algemene woord plaatsen maakt die keuze niet duidelijk. Controleer na een sjabloonwijziging meerdere diensten, zodat een standaardtitel niet onbedoeld specifieke namen overschrijft en relevante verschillen uit de zoekresultaten verdwijnen."
+          ]
+        },
+        {
+          "title": "Houd de belofte controleerbaar",
+          "paragraphs": [
+            "Een titel met gegarandeerd resultaat of de laagste prijs vraagt bewijs dat meestal niet beschikbaar is. Kies concrete uitleg over het aanbod. De zoekklik moet leiden naar inhoud die de gewekte verwachting daadwerkelijk vervult.",
+            "Vergelijk de gepubliceerde title met de zichtbare hoofdkop en werkzaamheden. De woorden hoeven niet identiek te zijn, maar moeten dezelfde dienst beschrijven. Een titel over prijzen past niet wanneer alleen een kennismakingsformulier aanwezig is. Maak de informatie beschikbaar of pas de belofte aan voordat je het effect van de formulering beoordeelt."
+          ]
+        },
+        {
+          "title": "Schrijf een nuttige beschrijving",
+          "paragraphs": [
+            "De metabeschrijving kan de inhoud en vervolgstap samenvatten, maar is geen verplicht getoonde zoektekst. Zoekmachines kunnen andere tekst kiezen. Gebruik een natuurlijke beschrijving die ook op zichzelf helpt, zonder losse herhalingen van hetzelfde zoekwoord.",
+            "Een beschrijving kan onderzoek, inbegrepen werkzaamheden en voorbereiding samenvatten. Adverteer geen prijslijst als die ontbreekt. Google kan een andere passage kiezen, dus heldere paginatekst blijft essentieel. Schrijf voor iemand buiten het bedrijf en gebruik geen interne productcode wanneer een gewone omschrijving beter uitlegt wat iemand na het klikken zal aantreffen op het adres."
+          ]
+        },
+        {
+          "title": "Vergelijk passende groepen",
+          "paragraphs": [
+            "Beoordeel CTR naast vertoningen, positie-indicaties, apparaat en soort zoekvraag. Een verandering in de mix van merkvragen en algemene vragen kan het gemiddelde verschuiven. Vergelijk daarom waar mogelijk dezelfde pagina en vergelijkbare zoekopdrachten.",
+            "Vergelijk merkvragen met merkvragen en algemene onderhoudsvragen met dezelfde behoeften. Bekijk positie en apparaten naast vertoningen en klikken. Nieuwe brede termen kunnen het totale klikpercentage verlagen. Een stabiele vergelijkbare groep geeft meer houvast dan een ongesegmenteerd gemiddelde bij de vraag of een titelwijziging samenvalt met beter passend zoekbezoek naar deze specifieke dienst."
+          ]
+        },
+        {
+          "title": "Leg wijzigingen vast",
+          "paragraphs": [
+            "Pas een beperkte groep titels aan en noteer datum en reden. Controleer of de technische titel op de gepubliceerde pagina klopt. Trek conclusies pas wanneer er voldoende vergelijkbare gegevens zijn en beoordeel ook wat bezoekers na de klik doen.",
+            "Bewaar de oude titel bij een beperkte wijziging en controleer wanneer het publieke resultaat de nieuwe woorden toont. Beoordeel ook ontvangen aanvragen. Extra klikken voor gratis spoedhulp passen niet vanzelf bij betaald gepland onderhoud. Een hoger percentage bewijst niet dat de titel de juiste verwachting schept of betere gesprekken oplevert voor het bedrijf."
+          ]
+        }
+      ],
+      "checklist": [
+        "Controleer of de titel de echte dienst noemt.",
+        "Vergelijk title, hoofdkop en daadwerkelijk aanbod.",
+        "Beloof geen ontbrekende prijzen of onbeschikbare spoedhulp.",
+        "Vergelijk soortgelijke zoekgroepen, posities en apparaten.",
+        "Bewaar de wijziging en beoordeel relevante aanvragen."
+      ],
+      "conclusion": "Beoordeel titels met vergelijkbare zoekgroepen en een belofte die de pagina waarmaakt. Duidelijkere informatie blijft nuttig wanneer de gegevens geen oorzakelijk commercieel effect kunnen aantonen of nog te beperkt zijn voor een betrouwbare vergelijking."
+    },
+    {
+      "id": "search-console-leads",
+      "title": "Search Console koppelen aan bruikbare aanvragen",
+      "slug": "search-console-klikken-aanvragen",
+      "description": "Search Console koppelen aan bruikbare aanvragen. Leer welke controles helpen bij relevante bezoeken, betrouwbare informatie en passende klantgesprekken.",
+      "intro": [
+        "Search Console beschrijft zichtbaarheid en zoekklikken, maar bevestigt geen ontvangen aanvraag. Om die gegevens met commercieel contact te verbinden moeten bezoek, contactactie en werkelijk ontvangen bericht afzonderlijk worden gedefinieerd. Anders verbergen totalen welke stap wel en niet is gemeten.",
+        "Denk aan een fictieve onderhoudspagina met meer klikken en minder passende berichten. Nieuwe informatievragen, een fout contactadres of een brede belofte vragen elk om een andere controle. Dezelfde daling in aanvragen kan dus verschillende oorzaken hebben die niet uit zoekcijfers alleen blijken."
+      ],
+      "sections": [
+        {
+          "title": "Definieer de meetstappen",
+          "paragraphs": [
+            "Maak onderscheid tussen vertoning, zoekklik, paginaweergave, contactactie en daadwerkelijk ontvangen aanvraag. Deze gebeurtenissen worden door verschillende systemen gemeten. Een overzicht dat ze gelijkstelt kan een commerciële verbetering suggereren die niet is aangetoond.",
+            "WhatsApp openen is een contactactie; versturen is een aparte stap in een ander systeem. De bezoeker kan de app sluiten zonder iets te verzenden. Ook een ontvangen bericht moet nog passen bij de dienst. Iedere knopdruk een gekwalificeerde aanvraag noemen gaat verder dan de website daadwerkelijk kan vaststellen met die waarneming."
+          ]
+        },
+        {
+          "title": "Bekijk pagina en zoekvraag",
+          "paragraphs": [
+            "Filter belangrijke dienstenpagina's en onderzoek welke beschikbare zoekvragen bezoekers brengen. Groepeer merknaam, informatievraag en commerciële behoefte. Niet alle gegevens zijn volledig zichtbaar; behandel ontbrekende details niet alsof er geen verkeer of interesse bestond.",
+            "Filter een belangrijke bestemmingspagina en onderscheid uitlegvragen van zoekvragen naar een aanbieder. Niet alle zoekvragen zijn zichtbaar en totalen kunnen per weergave anders zijn opgebouwd. Gebruik rijen om patronen te zien, zonder hun som passend te maken op ieder klikcijfer of ontbrekende individuele zoekgeschiedenissen erbij te verzinnen om het geheel te verklaren."
+          ]
+        },
+        {
+          "title": "Gebruik vergelijkbare perioden",
+          "paragraphs": [
+            "Vergelijk periodes met passende lengte en let op seizoenen en publicatiedata. Een drukke week tegenover een rustige maand geeft weinig houvast. Noteer ook campagnes of wijzigingen die de samenstelling van aanvragen kunnen veranderen.",
+            "Vergelijk perioden met dezelfde lengte en een vergelijkbare verdeling van weekdagen. Bij seizoensonderhoud kan een eerder seizoen context geven. Veranderde openingstijden of dienstgrenzen beïnvloeden mogelijk welke berichten binnenkomen, onafhankelijk van organische zichtbaarheid. Benoem dat voordat je een ontwikkeling volledig toeschrijft aan een recente wijziging van een zoekgerichte tekst op de website."
+          ]
+        },
+        {
+          "title": "Controleer de bestemmingspagina",
+          "paragraphs": [
+            "Open pagina's die veel relevante klikken krijgen en loop de contactroute door. Een ontbrekende uitleg of defect formulier kan het verschil tussen bezoek en gesprek verklaren. Zoekgegevens vertellen niet vanzelf waar een bezoeker op de pagina vastloopt.",
+            "Volg de contactlink op het gebruikelijke apparaat en controleer nummer en dienst in het voorgestelde bericht. Een verkeerde bestemming na de klik wordt niet zichtbaar in vertoningsgegevens. Test bij een formulier ook of verzending een duidelijke bevestiging oplevert; twijfel kan leiden tot dubbele berichten of het afbreken van de route voordat contact tot stand komt."
+          ]
+        },
+        {
+          "title": "Beoordeel aanvragen apart",
+          "paragraphs": [
+            "Houd binnen het bestaande bedrijfsproces bij of een verzoek bij de dienst, locatie en capaciteit past. Gebruik alleen noodzakelijke gegevens. Het gaat om een bruikbare kwalitatieve beoordeling, zonder iedere zoekvraag aan een individuele persoon te proberen koppelen.",
+            "Gebruik categorieën zoals passende dienst, niet bediende regio en ander product. Daarmee worden patronen bruikbaar zonder zoekvragen aan personen te koppelen. Herhaalde berichten uit een niet bediende regio kunnen aanleiding zijn om dekking duidelijker te maken. Meer verkeer voor alle pagina's nastreven lost die specifieke verkeerde verwachting bij de bestaande bezoekers niet vanzelf op."
+          ]
+        },
+        {
+          "title": "Kies één vervolgactie",
+          "paragraphs": [
+            "Combineer de signalen tot een concrete aanpassing: dienst verduidelijken, contactknop herstellen of een ontbrekende vraag beantwoorden. Controleer daarna techniek én gespreksonderwerpen. Een stijging in klikken blijft een ander resultaat dan een stijging in gekwalificeerde aanvragen.",
+            "Trekt een gids vooral informatiezoekers en legt de dienst het aanbod onvoldoende uit, verbeter dan de inhoudelijke verwijzing én de bestemming. Bekijk linkgebruik en gespreksonderwerpen afzonderlijk. Search Console bewijst niet dat één bepaalde zin een individuele aanvraag veroorzaakte, zelfs wanneer de ontwikkeling verenigbaar lijkt met die verklaring en de wijziging inhoudelijk zinvol was."
+          ]
+        }
+      ],
+      "checklist": [
+        "Definieer zoekklik, contactactie en ontvangen bericht apart.",
+        "Filter relevante pagina's en onderscheid zoekdoelen.",
+        "Vergelijk gelijke perioden met seizoenscontext.",
+        "Controleer contactbestemming en bevestiging van formulierverzending.",
+        "Classificeer geschiktheid zonder individuele zoekgeschiedenissen te reconstrueren."
+      ],
+      "conclusion": "Rapporteer zoekzichtbaarheid, contactacties en ontvangen passende berichten apart. Hun samenhang helpt obstakels onderzoeken zolang duidelijk blijft wat iedere bron kan waarnemen en welke conclusie daaruit redelijkerwijs volgt bij de beschikbare gegevens."
+    },
+    {
+      "id": "technical-indexing",
+      "title": "Crawlen en indexeren praktisch controleren",
+      "slug": "technische-seo-indexering-controleren",
+      "description": "Crawlen en indexeren praktisch controleren. Ontdek hoe je zoekbezoekers helpt met duidelijke informatie, goede techniek en een werkende contactroute.",
+      "intro": [
+        "Onderzoek indexering in een vaste volgorde: publieke respons, crawltoegang, indexeringsinstructies, canonical, ontdekking en verwerkte inhoud. Verschillende instellingen tegelijk aanpassen kan verhullen wat de pagina blokkeerde. De volgorde helpt een echte oorzaak te scheiden van een onschuldige melding of een gevolg.",
+        "Stel dat een dienstenpagina in de browser zichtbaar is maar niet in de zoekresultaten. Dit fictieve geval bewijst toegang voor een persoon, niet dat een crawler een indexeerbare voorkeursversie kan bereiken. Begin daarom bij de publieke respons voordat inhoudelijke wijzigingen worden overwogen."
+      ],
+      "sections": [
+        {
+          "title": "Controleer de echte status",
+          "paragraphs": [
+            "Open het definitieve adres en bekijk of een normale bezoeker de volledige inhoud kan zien. Controleer de HTTP-status en eventuele omleidingen. Een foutpagina met een successtatus kan technisch bereikbaar lijken terwijl de gewenste uitleg ontbreekt.",
+            "Vraag het eindadres na omleidingen op en controleer de respons. Een ontbrekende pagina hoort geen foutmelding met een successtatus te tonen. Bekijk ook of aanmelden, een toestemmingsscherm of een serverregel de dienst voor onbekende bezoekers vervangt. Een geslaagde aanvraag bewijst niet dat de bedoelde inhoud publiek bruikbaar aanwezig is op het adres."
+          ]
+        },
+        {
+          "title": "Onderscheid blokkades",
+          "paragraphs": [
+            "Robots.txt regelt crawlen, terwijl noindex invloed heeft op indexering wanneer die instructie kan worden gelezen. Het zijn verschillende middelen. Combineer ze niet gedachteloos en verwacht niet dat een geblokkeerde pagina daardoor vanzelf uit zoekresultaten verdwijnt.",
+            "Een crawler moet noindex kunnen lezen om de instructie te verwerken. Een robots.txt-blokkade kan dat verhinderen en is geen betrouwbare verwijderinstructie op zichzelf. Onderzoek bij een bedoelde openbare pagina HTML-metadata én responseheaders op onbedoelde noindex. Alleen crawltoegang toestaan herstelt indexeerbaarheid niet wanneer een andere instructie de opname nog altijd afwijst."
+          ]
+        },
+        {
+          "title": "Bekijk canonical-signalen",
+          "paragraphs": [
+            "Een canonical geeft een voorkeursversie aan bij vergelijkbare inhoud. Controleer dat deze naar een passende, bereikbare pagina wijst. Een onbedoelde verwijzing van alle diensten naar de homepage kan de interpretatie van zelfstandige pagina's verstoren.",
+            "Een canonical wijst een equivalente voorkeursversie aan en voegt geen verschillende diensten samen. Controleer of het doel werkt en dezelfde aanbieding vertegenwoordigt. Wijzen interne links naar de ene variant en canonical en sitemap naar een andere, herstel die tegenstelling. Meer adressen als voorkeur opgeven maakt de betekenis van die signalen niet duidelijker voor de zoekmachine."
+          ]
+        },
+        {
+          "title": "Maak interne ontdekking mogelijk",
+          "paragraphs": [
+            "Belangrijke pagina's horen via bruikbare interne links bereikbaar te zijn. Een sitemap kan ontdekking ondersteunen, maar vervangt geen heldere navigatie. Controleer ook of links werkelijk naar de definitieve adressen gaan in plaats van lange redirectketens.",
+            "Open een relevante categorie en volg een gewone link naar de dienst. Alleen vindbaar zijn via interne zoekopdrachten kan een zwakke verbinding met de site betekenen. Neem gewenste indexeerbare bestemmingen op in de sitemap en vermijd omgeleide, ontbrekende of uitgesloten varianten. Een sitemap helpt ontdekking maar vervangt geen begrijpelijke route vanaf verwante inhoudelijke pagina's."
+          ]
+        },
+        {
+          "title": "Inspecteer gerenderde inhoud",
+          "paragraphs": [
+            "Wanneer de site veel JavaScript gebruikt, controleer of de belangrijke tekst en links beschikbaar komen. Alleen een lege eerste codeweergave bekijken geeft onvoldoende zekerheid. Gebruik beschikbare inspectiegegevens om te zien wat zoekmachines daadwerkelijk kunnen verwerken.",
+            "Vergelijk verwerkte tekst en links met de informatie die de pagina moet geven. Laadt de dienstbeschrijving via een mislukte JavaScript-aanvraag, dan kan fraaie vormgeving ontbrekende inhoud verbergen. Richt inspectie op aanbod, koppen en navigatie. Alleen bevestigen dat een animatie verschijnt of dat JavaScript draait zegt weinig over de beschikbaarheid van het hoofdantwoord."
+          ]
+        },
+        {
+          "title": "Verifieer zonder garanties",
+          "paragraphs": [
+            "Vraag passende herbeoordeling aan waar tooling dat ondersteunt en controleer veranderingen later. Technische geschiktheid betekent niet dat elke pagina moet worden geïndexeerd. Beoordeel ook uniciteit, inhoudelijke waarde en de relatie met bestaande vergelijkbare pagina's.",
+            "Controleer na verwijdering van onbedoelde noindex opnieuw de publieke respons en canonical voordat je herinspectie aanvraagt. Rapporten kunnen later veranderen. Blijft uitsluiting bestaan zonder technische barrières, onderzoek doublures en nut. Hetzelfde ongewijzigde adres herhaaldelijk indienen voegt geen ontbrekende waarde toe en garandeert geen opname van die pagina in de zoekresultaten."
+          ]
+        }
+      ],
+      "checklist": [
+        "Controleer de publieke eindrespons na omleidingen.",
+        "Bekijk crawltoegang en noindex afzonderlijk.",
+        "Verifieer canonical en samenhangende voorkeursadressen.",
+        "Volg normale interne links en controleer sitemapbestemmingen.",
+        "Inspecteer verwerkte inhoud voordat je hercontrole aanvraagt."
+      ],
+      "conclusion": "Los de aangetoonde barrière op en houd crawltoegang, indexeringsinstructies en voorkeursselectie uit elkaar. Technische geschiktheid maakt beoordeling mogelijk, maar belooft geen onmiddellijke opname of vaste positie in de zoekresultaten."
+    },
+    {
+      "id": "content-clusters",
+      "title": "Contentclusters en interne links rond je aanbod",
+      "slug": "contentclusters-interne-links-seo",
+      "description": "Contentclusters en interne links rond je aanbod. Leer welke controles helpen bij relevante bezoeken, betrouwbare informatie en passende klantgesprekken.",
+      "intro": [
+        "Een contentcluster verbindt een volledige dienstenpagina met gidsen die andere ondersteunende vragen beantwoorden. De waarde zit in duidelijke functies en contextuele links, niet in een vooraf vastgesteld aantal artikelen over verwante woorden. Iedere bestemming moet een herkenbare eigen bijdrage leveren.",
+        "Neem een fictieve installateur van warmtepompen. Geschiktheid, voorbereiding en onderhoud hangen samen, maar systemen vergelijken vraagt een ander antwoord dan een bezoek voorbereiden of een installatie aanvragen. Dat verschil bepaalt welke pagina de hoofdverantwoordelijkheid voor elke uitleg krijgt binnen de structuur."
+      ],
+      "sections": [
+        {
+          "title": "Kies een centrale behoefte",
+          "paragraphs": [
+            "Begin bij een belangrijke dienst of categorie en noteer de vragen die voor en na de aankoop ontstaan. Het centrale onderwerp moet bij je werkelijke aanbod passen. Een breed populair onderwerp zonder zakelijke relatie levert weinig richting op.",
+            "Begin bij de installatiekeuze en twijfels zoals ruimte of bestaande verwarming. Een algemeen artikel over huishoudelijke apparaten deelt misschien het energiethema maar helpt niet bij deze opdracht. Overeenkomstige woorden zijn onvoldoende reden voor opname. Iedere gids moet een herkenbaar obstakel in de beoordeling of voorbereiding van de installatie helpen oplossen voor de lezer."
+          ]
+        },
+        {
+          "title": "Verdeel vragen zorgvuldig",
+          "paragraphs": [
+            "Geef verschillende beslissingen een eigen passende uitleg. Combineer vragen die grotendeels hetzelfde antwoord vragen. Een cluster wordt niet sterker door het aantal pagina's alleen; ieder onderdeel moet iets bruikbaars toevoegen dat elders nog ontbreekt.",
+            "Geef systeemvergelijking een gids, bezoekvoorbereiding een andere en de opdracht een dienstenpagina. Beschrijven twee concepten dezelfde voorbereiding, voeg hun antwoorden samen voordat bijna gelijke routes worden gepubliceerd. Het verschil moet begrijpelijk zijn vanuit de vraag die wordt opgelost, niet alleen vanuit de redactionele planning of een afwijkende titel van het artikel in het overzicht."
+          ]
+        },
+        {
+          "title": "Plan de hoofdpagina",
+          "paragraphs": [
+            "Maak de centrale dienstenpagina zelfstandig begrijpelijk. Ondersteunende artikelen mogen detail uitleggen, maar basisinformatie over aanbod en contact hoort niet verspreid te raken. Een bezoeker moet vanaf één duidelijke plek de commerciële afweging kunnen maken.",
+            "Houd omvang, werkgebied, proces en contact op de installatiepagina zelf. De voorbereidingsgids kan foto's en maten uitgebreider behandelen. Een rechtstreekse bezoeker moet het aanbod zonder voorafgaande lectuur begrijpen. Ondersteunende inhoud verdiept een compleet antwoord en hoort essentiële voorwaarden niet zo te verdelen dat iemand eerst verscheidene pagina's moet openen om de basis te ontdekken."
+          ]
+        },
+        {
+          "title": "Link waar context ontstaat",
+          "paragraphs": [
+            "Verwijs vanuit een artikel naar een verdieping wanneer de tekst daar een vervolgvraag oproept. Gebruik woorden die de bestemming beschrijven. Een link naar een dienst past waar de lezer kan herkennen dat uitvoering of advies nodig is.",
+            "Plaats de voorbereidingslink nadat je uitlegt wat de beoordeling vraagt. Verwijs vanuit de gids naar de dienst wanneer professionele hulp relevant wordt. Een tekst als installatiebezoek voorbereiden kondigt de bestemming aan. Overal lees meer herhalen verbergt welk aanvullend antwoord een link biedt en maakt een inhoudelijk samenhangend netwerk lastiger te gebruiken bij een concrete beslissing."
+          ]
+        },
+        {
+          "title": "Zoek inhoudelijke overlap",
+          "paragraphs": [
+            "Vergelijk titels, hoofdvragen en zoekgegevens van naburige artikelen. Wanneer twee teksten dezelfde taak uitvoeren, kan samenvoegen meer duidelijkheid geven. Behoud relevante details en regel oude adressen zorgvuldig als pagina's worden samengebracht.",
+            "Vergelijk gidsen op beslisfunctie, niet uitsluitend op trefwoorden. Kostenfactoren en systeemvergelijking kunnen naast elkaar bestaan hoewel beide prijzen noemen. Twee kostengidsen met dezelfde factoren zijn mogelijk beter samen te voegen. Bewaar de complete uitleg en stuur gevestigde links naar de gekozen bestemming, zodat de structuur eenvoudiger wordt zonder nuttige antwoorden uit eerder materiaal te verliezen."
+          ]
+        },
+        {
+          "title": "Beheer het geheel",
+          "paragraphs": [
+            "Wijs een verantwoordelijke aan die ontbrekende vragen, verouderde uitleg en kapotte verwijzingen beoordeelt. Voeg pas een nieuw artikel toe als het een herkenbare inhoudelijke rol heeft. Meet bereik en contactkwaliteit ook op het niveau van de centrale dienst.",
+            "Beoordeel de groep als route: bereikt iemand vanuit een twijfel de passende dienst zonder tussen herhaalde introducties rond te lopen? Werk bij veranderd aanbod ook verwijzingen en grenzen bij. Een oude gids mag geen verdwenen dienst aanbevelen omdat zijn verkeerscijfer hoog blijft; de route moet eindigen bij werk dat daadwerkelijk kan worden aangeboden aan de bezoeker."
+          ]
+        }
+      ],
+      "checklist": [
+        "Geef iedere gids een afzonderlijke klantbeslissing.",
+        "Houd de dienst volledig zonder verplichte extra lectuur.",
+        "Link waar de volgende inhoudelijke vraag ontstaat.",
+        "Vergelijk overlappende antwoorden vóór samenvoeging.",
+        "Verwijder aanbevelingen voor niet meer beschikbare diensten."
+      ],
+      "conclusion": "Bouw aanvullende antwoorden en doelgerichte links rond een duidelijke commerciële behoefte. Iedere gids krijgt een eigen taak, terwijl de dienst volledig genoeg blijft om zelfstandig een beslissing te ondersteunen zonder verplichte omweg door alle artikelen."
+    },
+    {
+      "id": "image-seo",
+      "title": "Afbeeldingen inzetten voor duidelijke zoekpagina's",
+      "slug": "afbeeldingen-seo-snelheid-toegankelijkheid",
+      "description": "Afbeeldingen inzetten voor duidelijke zoekpagina's. Gebruik praktische controles voor zoekbezoeken, duidelijke informatie en bruikbare klantvragen.",
+      "intro": [
+        "Afbeeldings-SEO combineert nuttige visuele informatie, toegankelijke alternatieven en passende levering. Een bestandsnaam of reeks zoekwoorden kan een onduidelijke foto of een zware openingsafbeelding op een telefoon niet compenseren. Het beeld moet eerst iets bijdragen aan wat de bezoeker probeert te begrijpen.",
+        "Stel je een fictieve productpagina met een montagefoto voor. De klant moet een bevestigingspunt bekijken, terwijl een mobiele bezoeker een proportioneel eerste bestand nodig heeft en niet automatisch het hele cameraorigineel. Detail en snelheid vragen hier om verschillende afmetingen voor verschillende gebruiksmomenten."
+      ],
+      "sections": [
+        {
+          "title": "Kies een informatieve afbeelding",
+          "paragraphs": [
+            "Een foto moet helpen bij een productkeuze of uitleg van werkzaamheden. Toon details die in de tekst worden besproken. Een decoratieve stockfoto kan sfeer geven, maar vervangt geen beeld van het aangeboden product of werkelijk uitgevoerde werk.",
+            "Kies een detailfoto van de bevestiging wanneer de tekst montageruimte bespreekt. Een mooi ingerichte kamer toont dat niet vanzelf. Behoud een overzicht waar schaal telt en benoem de uitvoering. Zo suggereer je niet dat iedere productvariant dezelfde maat of aansluiting heeft wanneer de afbeelding slechts één concrete configuratie laat zien aan de bezoeker."
+          ]
+        },
+        {
+          "title": "Schrijf passende alt-tekst",
+          "paragraphs": [
+            "Beschrijf de betekenis van een informatieve afbeelding binnen de pagina. Vermijd lange zoekwoordenreeksen. Decoratieve beelden hebben vaak een lege alternatieve tekst nodig zodat ondersteunende technologie ze kan overslaan; beoordeel de functie per afbeelding.",
+            "Een alternatief zoals wandbeugel met vrije ruimte onder het toestel geeft de relevante eigenschap weer als dat het doel is. Voeg niet automatisch afbeelding van of commerciële termen toe. Is een gelinkte afbeelding de enige contactknop, dan hoort het alternatief de actie of bestemming uit te leggen, passend bij die functie in deze specifieke pagina."
+          ]
+        },
+        {
+          "title": "Plaats uitleg in de context",
+          "paragraphs": [
+            "Zet relevante beelden bij de bijbehorende beschrijving en voeg waar nuttig een onderschrift toe. Een bestandsnaam alleen legt een technisch detail niet uit. De omliggende tekst helpt bezoekers en zoekmachines begrijpen wat het beeld laat zien.",
+            "Een bijschrift kan de uitvoering noemen en een detail uitgebreider uitleggen dan een beknopt alternatief. Zet essentiële maten ook in tekst of een toegankelijke tabel naast de foto. Alleen in pixels opgenomen waarden zijn op een kleine telefoon lastig leesbaar. De beslissing mag niet afhangen van piepkleine labels of de mogelijkheid een detailbeeld ver genoeg te vergroten."
+          ]
+        },
+        {
+          "title": "Lever passende bestanden",
+          "paragraphs": [
+            "Gebruik geschikte afmetingen en compressie zonder essentiële details onleesbaar te maken. Laat de browser waar mogelijk een passende variant kiezen. Een productdetail dat klanten moeten vergroten vraagt een andere afweging dan een kleine illustratie in een overzicht.",
+            "Lever varianten voor verwachte weergavebreedtes en laat de browser een geschikte kiezen. Vergelijk WebP, AVIF of een ander formaat op werkelijk gewicht en kwaliteit; geen formaat wint altijd. Controleer na compressie tekst, randen en kleuren. Die details kunnen bepalend zijn wanneer klanten afwerkingen of technische uitvoeringen vergelijken en op basis daarvan een bepaalde variant kiezen."
+          ]
+        },
+        {
+          "title": "Voorkom verspringende inhoud",
+          "paragraphs": [
+            "Reserveer ruimte voor afbeeldingen zodat tekst en contactknoppen tijdens laden niet onverwacht verschuiven. Controleer mobiel gedrag. Stel de belangrijkste zichtbare afbeelding niet automatisch uit, terwijl beelden verderop vaak wel later kunnen laden.",
+            "Geef afmetingen of een vaste verhouding op om voor het laden ruimte te reserveren. Controleer of de mobiele uitsnede het hoofdonderdeel behoudt. Stel een belangrijke openingsafbeelding niet automatisch uit wanneer daardoor het grootste zichtbare element later verschijnt. Foto's lager op de pagina kunnen wachten waar dat past bij de leesvolgorde en het werkelijke gebruik van die pagina."
+          ]
+        },
+        {
+          "title": "Controleer bereikbaarheid en effect",
+          "paragraphs": [
+            "Bekijk of afbeeldingen na een migratie nog werken en via bruikbare adressen bereikbaar zijn. Onderzoek beschikbare beeldzoekgegevens als die relevant zijn. Een beeldklik heeft pas commerciële betekenis wanneer de bestemmingspagina daarna voldoende product- of dienstinformatie biedt.",
+            "Open na een wijziging van beeldverwerking een geleverd bestand en controleer of het een toegankelijke afbeelding teruggeeft in plaats van een fout of aanmeldscherm. Bekijk ook de bestemming vanuit afbeeldingen zoeken. Die moet het product identificeren en context, beschikbaarheidsgrenzen en een nuttige vervolgstap geven aan iemand die het aanbod via de foto voor het eerst ontdekt."
+          ]
+        }
+      ],
+      "checklist": [
+        "Kies beeld dat de nabije vraag uitlegt.",
+        "Schrijf alternatieven volgens de functie van ieder beeld.",
+        "Geef essentiële maten ook als toegankelijke tekst.",
+        "Vergelijk responsieve afmetingen, compressie en nuttig detail.",
+        "Reserveer ruimte en controleer openingsbeelden op mobiel."
+      ],
+      "conclusion": "Kies beelden om wat ze uitleggen en controleer alternatieven, afmetingen en mobiele levering samen. Essentiële informatie moet ook beschikbaar blijven voor mensen die het beeld niet kunnen zien of op een andere manier raadplegen."
+    },
+    {
+      "id": "conversion-landing",
+      "title": "Een organische landingspagina met een duidelijke contactroute",
+      "slug": "organische-landingspagina-whatsapp",
+      "description": "Een organische landingspagina met een duidelijke contactroute. Praktische uitleg voor bedrijven die zoekklikken willen verbinden met passende aanvragen.",
+      "intro": [
+        "Een organische landingspagina verbindt de zoekvraag met een duidelijke aanbieding, passend bewijs en een praktische vervolgstap. Een opvallende knop lost geen onzekerheid op over de vraag of het werk aansluit op de situatie van de bezoeker. Eerst moet de inhoud dat verband leggen.",
+        "Denk aan een fictieve bezoeker die gepland gebouwonderhoud zoekt. Die wil de dienst herkennen, de inhoud van de inspectie begrijpen en weten hoe beoordeling kan worden gevraagd. Pas daarna krijgt een uitnodiging tot contact betekenis voor de verdere beslissing over het mogelijke onderhoudswerk."
+      ],
+      "sections": [
+        {
+          "title": "Sluit aan op de zoekvraag",
+          "paragraphs": [
+            "Laat de openingskop de dienst of beslissing benoemen waar de bezoeker voor komt. Een algemene slogan zonder uitleg laat te veel interpretatie over. Bevestig doelgroep en probleem voordat je om een bericht of afspraak vraagt.",
+            "Laat de opening gepland onderhoud benoemen in plaats van een algemene belofte over gebouwen verbeteren. Bedien je bepaalde gebouwtypen, vermeld dat bij het aanbod. De bezoeker hoort een uitsluiting niet te ontdekken na een uitgebreid bericht over een pand dat de onderneming helemaal niet kan onderzoeken of onderhouden binnen de beschreven dienst en dekking."
+          ]
+        },
+        {
+          "title": "Geef voldoende inhoud",
+          "paragraphs": [
+            "Een organische landingspagina heeft zelfstandige uitleg nodig over aanbod, aanpak en afbakening. Een advertentieachtige pagina met alleen een knop kan belangrijke vragen onbeantwoord laten. Schrijf voor iemand die je bedrijf nog niet kent en verschillende aanbieders vergelijkt.",
+            "Leg uit wat de beoordeling omvat, wat daarna gebeurt en wanneer een andere dienst nodig is. Een uitklapbaar antwoord kan een nevenvraag verdiepen, maar mag niet alle voorwaarden verbergen. Wie aanbieders vergelijkt moet het werk begrijpen zonder eerst gegevens af te staan of een gesprek te beginnen om de basis van het aanbod te ontdekken."
+          ]
+        },
+        {
+          "title": "Plaats bewijs bij twijfel",
+          "paragraphs": [
+            "Koppel echt projectmateriaal aan de vraag die het helpt beantwoorden. Beschrijf wat er gebouwd of geleverd is. Vermijd oncontroleerbare succespercentages; een helder uitgelegd voorbeeld kan al helpen begrijpen of de aanpak past.",
+            "Plaats een inspectievoorbeeld naast de uitleg en benoem wat werd onderzocht en waarom. Is het fictief, maak dat duidelijk. Een afbeelding zonder context bewijst geen methode en een aanbeveling over ander werk beantwoordt niet vanzelf de specifieke twijfel die deze bezoeker tegenhoudt. Selecteer bewijs op de concrete vraag op die plek in de leesroute."
+          ]
+        },
+        {
+          "title": "Maak WhatsApp voorspelbaar",
+          "paragraphs": [
+            "Leg uit welke informatie een bezoeker kan meesturen en waarover het gesprek gaat. Houd een voorgesteld bericht kort en bewerkbaar. Zorg dat de contactactie op een telefoon bereikbaar blijft zonder de belangrijkste tekst af te dekken.",
+            "Het WhatsApp-bericht kan locatie, gebouwtype en onderhoudsvraag suggereren. Leg uit dat versturen een gesprek begint en geen afspraak bevestigt. Test de opening op mobiel en controleer dat een vaste knop geen voorwaarden of verzendknop van een formulier bedekt. De contactmogelijkheid moet informatie ondersteunen, niet tijdens het lezen over gegevens heen vallen die voor de keuze nodig zijn."
+          ]
+        },
+        {
+          "title": "Meet verschillende stappen",
+          "paragraphs": [
+            "Registreer een contactklik apart van een ontvangen bericht. Bekijk ook of het gesprek de bedoelde dienst betreft. Een landingspagina met minder klikken kan bruikbaarder zijn als de inhoud vooraf verkeerde verwachtingen wegneemt.",
+            "Scheid aankomst, contactactivatie, ontvangen bericht en geschiktheid. Minder knopdrukken na duidelijkere uitsluitingen kunnen betekenen dat minder verkeerde verwachtingen ontstaan. Bekijk onderwerpen voordat je concludeert dat de uitleg de pagina schaadt. Een indringender knop herstelt geen misverstand en is geen vanzelfsprekende oplossing wanneer acties dalen maar het type aanvraag juist beter bij de dienst past."
+          ]
+        },
+        {
+          "title": "Verbeter met echte vragen",
+          "paragraphs": [
+            "Bespreek terugkerende onduidelijkheden met de mensen die verzoeken behandelen. Verwerk het antwoord op de pagina waar de twijfel ontstaat. Controleer na iedere wijziging opnieuw zowel de volledige klantreis als de inhoudelijke geschiktheid van nieuwe aanvragen.",
+            "Wordt spoedbezoek vaak gevraagd, leg dan het geplande karakter bij opening en contact uit. Gaan twijfels over inspectiewerkzaamheden, verbeter de omvangsbeschrijving. Dat zijn verschillende onzekerheden. Meer uitnodigingen zonder ontbrekende informatie behandelen geen van beide oorzaken, ook wanneer de knoppen op meer plekken zichtbaar worden en gemakkelijker aan te klikken zijn op de telefoon van een bezoeker."
+          ]
+        }
+      ],
+      "checklist": [
+        "Stem de opening af op zoekvraag en leverbare dienst.",
+        "Leg omvang uit voordat je gegevens of contact vraagt.",
+        "Plaats relevant en eerlijk aangeduid bewijs bij twijfel.",
+        "Test WhatsApp zonder essentiële inhoud te bedekken.",
+        "Beoordeel ontvangen onderwerpen naast tussenliggende contactacties."
+      ],
+      "conclusion": "Houd zoekvraag, aanbod, bewijs en actie in overeenstemming. Verbeter de uitleg die een geïnformeerde aanvraag belemmert en controleer zowel de contactroute als de relevantie van werkelijk ontvangen berichten over de aangeboden dienstverlening."
+    },
+    {
+      "id": "seo-content-maintenance",
+      "title": "SEO-inhoud bijwerken en overlap oplossen",
+      "slug": "seo-content-bijwerken-overlap",
+      "description": "SEO-inhoud bijwerken en overlap oplossen. Ontdek hoe je zoekbezoekers helpt met duidelijke informatie, goede techniek en een werkende contactroute.",
+      "intro": [
+        "SEO-inhoud onderhouden betekent kiezen welke antwoorden nuttig blijven, welke correctie nodig hebben en welke samengevoegd kunnen worden. Alleen een datum aanpassen maakt achterhaalde instructies niet actueel. De inhoud moet overeenkomen met wat de lezer nu moet weten, vergelijken of voorbereiden.",
+        "Neem een fictief bedrijf met twee onderhoudsgidsen en een oud reparatieaanbod. Bezoekcijfers bepalen niet of actualiseren, samenvoegen of verwijderen passend is. Onderzoek daarvoor de taak van ieder adres en de verbinding met huidige dienstverlening, zodat waardevolle details niet door een opruimactie verloren gaan."
+      ],
+      "sections": [
+        {
+          "title": "Maak een inhoudsinventaris",
+          "paragraphs": [
+            "Verzamel bestaande adressen, hoofdvragen, actualiteit en beschikbare zoekgegevens. Noteer welke pagina een commerciële rol heeft en welke uitleg ondersteunt. Een inventaris laat zien waar informatie verspreid raakt voordat je nieuwe artikelen gaat schrijven.",
+            "Noteer per URL de hoofdvraag, inkomende links en relatie met een beschikbare dienst. Een weinig bezocht artikel kan een noodzakelijke voorbereidingsvraag beantwoorden. Een populaire oude tekst kan aanvragen voor gestopt werk oproepen. Verkeer is daarom onvoldoende om de blijvende bruikbaarheid voor bezoekers en bedrijf vast te stellen en er een redactionele keuze op te baseren."
+          ]
+        },
+        {
+          "title": "Beoordeel inhoudelijke juistheid",
+          "paragraphs": [
+            "Controleer of diensten, productkenmerken en contactroutes nog kloppen. Een datum aanpassen zonder de uitleg te bekijken levert geen inhoudelijke vernieuwing op. Werk concrete ontbrekende antwoorden en verouderde voorbeelden bij waar bezoekers daar hinder van ondervinden.",
+            "Vergelijk producten, grenzen, voorbereiding en linkbestemmingen met het huidige werk. Vraagt een gids een foto van een verouderd onderdeel, vervang die instructie en leg de actuele behoefte uit. Behoud correcte passages in plaats van iedere alinea te herschrijven om nieuwheid te suggereren. Actualisering corrigeert wat iemand moet weten of doen, niet alleen het zichtbare publicatiemoment boven de tekst."
+          ]
+        },
+        {
+          "title": "Onderzoek mogelijke overlap",
+          "paragraphs": [
+            "Vergelijk pagina's die voor dezelfde zoekbehoefte zichtbaar worden. Meerdere resultaten zijn niet automatisch problematisch. Kijk of de inhoud hetzelfde doel heeft en of bezoekers moeite krijgen om de juiste dienst of complete uitleg te vinden.",
+            "Twee pagina's bij onderhoudsfrequentie kunnen verschillende apparaten behandelen en beide nuttig zijn. Beschrijven ze hetzelfde toestel, interval en uitzonderingen, bekijk of één uitleg volstaat. Verschillende gebruiksomstandigheden rechtvaardigen afzonderlijke antwoorden; een andere volgorde van vraagwoorden niet. Controleer de daadwerkelijke taken voordat gedeelde zichtbaarheid wordt bestempeld als schadelijke concurrentie tussen pagina's van dezelfde website en aanleiding voor verwijdering wordt."
+          ]
+        },
+        {
+          "title": "Kies behouden of samenvoegen",
+          "paragraphs": [
+            "Behoud zelfstandige pagina's als ze verschillende taken goed uitvoeren. Voeg sterke onderdelen samen wanneer pagina's grotendeels hetzelfde beantwoorden. Bepaal bij verwijderen een passende bestemming en werk interne verwijzingen bij zodat relevante informatie bereikbaar blijft.",
+            "Actualiseer wanneer de functie apart blijft maar informatie verouderd is. Voeg samen wanneer details in één antwoord thuishoren. Leid een verdwenen adres alleen door naar een relevant alternatief en wijzig interne links. Ontbreekt vervanging, dan kan een passende verwijderrespons eerlijker zijn dan de homepage, waar de specifieke vraag niet wordt beantwoord en het eerdere zoekdoel verloren gaat."
+          ]
+        },
+        {
+          "title": "Leg wijzigingen vast",
+          "paragraphs": [
+            "Noteer wat is aangepast, waarom en op welke datum. Houd belangrijke oude formuleringen beschikbaar voor vergelijking in je eigen beheerproces. Voorkom dat verschillende medewerkers tegelijkertijd tegenstrijdige teksten publiceren over dezelfde dienstverlening.",
+            "Bewaar bij samenvoeging nuttige details uit beide gidsen voordat een adres verdwijnt. Leg oude en nieuwe bestemmingen vast om navigatie te controleren. Alleen de zwakkere URL omleiden zonder uitleg over te nemen kan een nette structuur suggereren terwijl precies het antwoord verdwijnt waarvoor bezoekers de oorspronkelijke link volgden. Controleer dus inhoudsoverdracht naast de technische afhandeling van de omleiding."
+          ]
+        },
+        {
+          "title": "Plan een gerichte hercontrole",
+          "paragraphs": [
+            "Controleer na publicatie links, contactacties en beschikbare zoekgegevens. Beoordeel niet alleen bezoekaantallen maar ook de vragen die binnenkomen. Werk vervolgens het onderdeel bij waarvoor bewijs bestaat, in plaats van steeds de hele inhoud opnieuw te schrijven.",
+            "Controleer na publicatie of links, canonical en dienstverwijzingen dezelfde functie ondersteunen. Bekijk latere zoekvragen met tijd voor hernieuwd crawlen. Een tijdelijke schommeling rechtvaardigt geen omkering van de samenvoeging. Verloren informatie of een irrelevante omleiding biedt directer bewijs voor herstel dan een kortstondige verkeersbeweging die ook door andere omstandigheden in dezelfde periode kan zijn veroorzaakt buiten deze wijziging."
+          ]
+        }
+      ],
+      "checklist": [
+        "Inventariseer vraag en commerciële rol van ieder adres.",
+        "Corrigeer oude instructies in plaats van alleen datums.",
+        "Onderscheid dubbele antwoorden van verschillende taken.",
+        "Behoud nuttige details voordat je samenvoegt en omleidt.",
+        "Controleer interne links en canonical na publicatie."
+      ],
+      "conclusion": "Kies actualiseren, samenvoegen, behouden of verwijderen op basis van het antwoord van ieder adres. Behoud nuttige details en routes, zodat onderhoud duidelijkheid verbetert in plaats van alleen datums boven verder ongewijzigde pagina's te vernieuwen."
+    },
+    {
+      "id": "market-entry-seo",
+      "title": "Met SEO een nieuwe internationale markt voorbereiden",
+      "slug": "internationale-markt-intrede-seo",
+      "description": "Met SEO een nieuwe internationale markt voorbereiden. Gebruik praktische controles voor zoekbezoeken, duidelijke informatie en bruikbare klantvragen.",
+      "intro": [
+        "SEO voor marktintroductie begint bij uitvoerbaarheid: welke vragen en bestellingen uit het nieuwe land kan het bedrijf behandelen? Zoekinteresse helpt onderzoek, maar vervangt geen aanbod dat geleverd en ondersteund kan worden. De commerciële route moet ook buiten de bestaande markt geloofwaardig en uitvoerbaar blijven.",
+        "Neem een fictieve Nederlandstalige leverancier die installatie in een tweede land overweegt. Een productbeschrijving vertalen beantwoordt nog niet wie installeert, hoe contact verloopt en welke situaties buiten het werkgebied vallen. Die grenzen bepalen welke lokale pagina's als eerste een complete en eerlijke klantroute kunnen bieden."
+      ],
+      "sections": [
+        {
+          "title": "Toets het aanbod eerst",
+          "paragraphs": [
+            "Bepaal welke diensten of producten je in de nieuwe markt werkelijk kunt leveren. Leg operationele grenzen en contactmogelijkheden vast. Zoekinteresse is geen bewijs dat je bedrijf bestellingen of aanvragen uit dat land goed kan behandelen.",
+            "Beschrijf of alleen producten worden geleverd of ook installatie wordt aangeboden. Kan installatie in de nieuwe regio niet plaatsvinden, laat de pagina dat niet impliciet beloven. Maak onderscheid tussen online advies en aanwezigheid ter plaatse. Een vertaalde dienstnaam mag geen capaciteit suggereren die alleen in het bestaande werkgebied beschikbaar is voor klanten van het bedrijf."
+          ]
+        },
+        {
+          "title": "Onderzoek vragen en concurrentie",
+          "paragraphs": [
+            "Verzamel lokale termen en bekijk welk soort informatie aanbieders en zoekresultaten tonen. Gebruik dit als verkenning, zonder zoekvolumes of commerciële kansen te verzinnen. Noteer welke veronderstellingen nog met klanten of marktkenners moeten worden getoetst.",
+            "Onderzoek hoe mensen het product en werk lokaal benoemen. Een bekende Nederlandse vakterm kan elders een andere uitvoering suggereren. Bekijk zoekresultaten en bespreek voorbeelden met iemand die de markt kent. Noteer woordkeuzes en open vragen zonder zoekvolumes te verzinnen of zichtbare concurrenten automatisch als bewijs voor een aantrekkelijke marktkans te behandelen voordat het aanbod is getoetst."
+          ]
+        },
+        {
+          "title": "Kies een beperkte eerste scope",
+          "paragraphs": [
+            "Begin met een samenhangende groep diensten en bijbehorende beslisvragen. Een volledige vertaling van ieder oud artikel is niet vanzelf de beste start. Geef voorrang aan pagina's waarvoor aanbod, bewijs en opvolging daadwerkelijk beschikbaar zijn.",
+            "Begin met aanbod waarvoor levering, uitleg en opvolging beschikbaar zijn. Een productpagina met voorbereiding en contact kan nuttiger zijn dan tientallen vertaalde gidsen over niet leverbare diensten. Laat vragen over dekking niet verdwalen in algemene teksten. De eerste scope hoort een complete route te bieden voor klanten die daadwerkelijk geholpen kunnen worden met het bestaande beschikbare werk en assortiment."
+          ]
+        },
+        {
+          "title": "Plan taal en structuur",
+          "paragraphs": [
+            "Kies consistente adressen en maak taalwissels begrijpelijk. Regel waar passend taalrelaties tussen equivalente pagina's. Laat een inhoudelijk deskundige controleren of lokale woorden hetzelfde aanbod beschrijven; een woordelijk juiste vertaling kan alsnog een verkeerde verwachting scheppen.",
+            "Gebruik consistente taaladressen en link tussen equivalente versies wanneer die bestaan. Controleer wederzijdse taalverwijzingen en houd de canonical passend bij de versie, in plaats van alle vertalingen naar het Nederlands te verwijzen. Forceer geen automatische taalomleiding die verhindert dat de bezoeker een andere versie kiest of de gewenste informatie op een gedeelde link opent vanuit een ander land."
+          ]
+        },
+        {
+          "title": "Bereid contact en uitvoering voor",
+          "paragraphs": [
+            "Beschrijf eerlijk vanuit welke basis het bedrijf werkt en welke samenwerking op afstand mogelijk is. Verzin geen lokaal kantoor om een zoekvraag te bedienen. Spreek intern af wie nieuwe aanvragen leest en hoe vragen over levering worden beantwoord.",
+            "Vermeld eerlijk de vestigingsbasis en samenwerking op afstand. Een fictief lokaal kantoor lost geen bereikbaarheidsvraag op. Geef aan in welke taal de aanvraag wordt behandeld en wat nodig is om leverbaarheid te beoordelen. Zo weet de bezoeker wat de eerste reactie kan bevatten voordat een verzoek voor een plaatselijke afspraak wordt verstuurd die niet binnen het aanbod past."
+          ]
+        },
+        {
+          "title": "Stel beslismomenten vast",
+          "paragraphs": [
+            "Bepaal vooraf welke signalen je beoordeelt: relevante vertoningen, klikken op passende pagina's en inhoud van gesprekken. Vergelijk die met uitvoerbaarheid. Breid pas uit wanneer je voldoende begrijpt welke informatie ontbreekt en welke vraag je bedrijf kan bedienen.",
+            "Bekijk relevante vertoningen en pagina's naast de onderwerpen van ontvangen aanvragen. Interesse in installatie buiten dekking vraagt iets anders dan geschikte productvragen zonder duidelijk leveringsantwoord. Breid pas uit wanneer uitvoering en uitleg gereed zijn. Meer vertaalde pagina's publiceren lost geen operationele grens op die het bedrijf nog niet kan overbruggen voor de nieuwe klanten die daardoor contact opnemen."
+          ]
+        }
+      ],
+      "checklist": [
+        "Bevestig welke producten en werkzaamheden lokaal leverbaar zijn.",
+        "Toets lokale termen aan concrete klantverwachtingen.",
+        "Begin met een volledige route voor beschikbaar aanbod.",
+        "Controleer taalrelaties, canonical en vrije taalkeuze.",
+        "Vermeld de werkelijke vestigingsbasis en beoordeel passende aanvragen."
+      ],
+      "conclusion": "Kies een eerste marktbereik dat het bedrijf echt kan bedienen en vertaal ook beslisinformatie. Laat uitbreiding volgen op begrepen klantvragen, eerlijke dekking en een werkbare contactroute naar een leverbare dienst of beschikbaar product."
+    }
+  ],
+  "pageSeo": {
+    "home": {
+      "title": "Webdesign en SEO voor bedrijven | Latech",
+      "description": "Webdesign, SEO en webshops voor bedrijven die duidelijker gevonden willen worden. Latech werkt vanuit Spanje op afstand aan internationale projecten.",
+      "heading": "Webdesign en SEO voor bedrijven",
+      "intro": "Een duidelijke website verbindt je aanbod met de vragen die klanten stellen. Wij helpen je met ontwerp, inhoud, techniek en een logische contactroute."
+    },
+    "services": {
+      "title": "Webdesign, SEO en e-commerce diensten | Latech",
+      "description": "Ontdek webdesign, SEO, webshops en n8n-integraties van Latech. We bepalen samen de inhoud, techniek en contactroute die bij de doelen van je bedrijf passen.",
+      "heading": "Webdesign, SEO en e-commerce diensten",
+      "intro": "Een duidelijke website verbindt je aanbod met de vragen die klanten stellen. Wij helpen je met ontwerp, inhoud, techniek en een logische contactroute."
+    },
+    "web": {
+      "title": "Bedrijfswebsite laten maken met SEO | Latech",
+      "description": "Een bedrijfswebsite laten maken met duidelijke diensten, sterke mobiele pagina's en technische SEO. Bespreek de aanpak voor relevante aanvragen met Latech.",
+      "heading": "Bedrijfswebsite laten maken met SEO",
+      "intro": "Je website moet klanten helpen begrijpen, vergelijken en contact opnemen."
+    },
+    "shop": {
+      "title": "Webshop laten maken voor je assortiment | Latech",
+      "description": "Een webshop laten maken met begrijpelijke producten, logische categorieën en een praktische betaalroute. Latech verbindt verkoop met dagelijks beheer.",
+      "heading": "Webshop laten maken voor je assortiment",
+      "intro": "Maak de stap van product zoeken naar bestellen begrijpelijk."
+    },
+    "ai": {
+      "title": "AI-integraties en n8n voor bedrijven | Latech",
+      "description": "Verbind bedrijfstools met n8n en afgebakende AI-taken. Latech helpt processen uitwerken met controles, menselijk toezicht en duidelijke foutafhandeling.",
+      "heading": "AI-integraties en n8n voor bedrijven",
+      "intro": "Een bruikbare integratie begint bij een duidelijk proces."
+    },
+    "about": {
+      "title": "Over Latech: webdesign en SEO vanuit Spanje | Latech",
+      "description": "Ontmoet Andrés Rubio en Luis Grondona, oprichters van Latech in Spanje. Lees hoe we op afstand werken aan webdesign, SEO en internationale projecten.",
+      "heading": "Over Latech: webdesign en SEO vanuit Spanje",
+      "intro": "Een duidelijke website verbindt je aanbod met de vragen die klanten stellen. Wij helpen je met ontwerp, inhoud, techniek en een logische contactroute."
+    },
+    "projects": {
+      "title": "Projecten in webdesign en e-commerce | Latech",
+      "description": "Bekijk echte Latech-projecten in onderwijs, winkels en dienstverlening. Ontdek de inhoud, navigatie en functies achter verschillende bedrijfswebsites.",
+      "heading": "Projecten in webdesign en e-commerce",
+      "intro": "Een duidelijke website verbindt je aanbod met de vragen die klanten stellen. Wij helpen je met ontwerp, inhoud, techniek en een logische contactroute."
+    },
+    "contact": {
+      "title": "Contact over webdesign, SEO of een webshop | Latech",
+      "description": "Bespreek je website, SEO of webshop met Latech via WhatsApp. Geef je doelgroep, huidige situatie en doelen door voor een gesprek over een passend project.",
+      "heading": "Contact over webdesign, SEO of een webshop",
+      "intro": "Een duidelijke website verbindt je aanbod met de vragen die klanten stellen. Wij helpen je met ontwerp, inhoud, techniek en een logische contactroute."
+    },
+    "blog": {
+      "title": "Praktische SEO-gidsen voor bedrijven | Latech",
+      "description": "Lees praktische SEO-gidsen over zoekvragen, technische controles en dienstenpagina's. Leer zoekklikken verbinden met duidelijke informatie en aanvragen.",
+      "heading": "Praktische SEO-gidsen voor bedrijven",
+      "intro": "Een duidelijke website verbindt je aanbod met de vragen die klanten stellen. Wij helpen je met ontwerp, inhoud, techniek en een logische contactroute."
+    }
+  },
+  "faq": [
+    {
+      "question": "Waar is Latech gevestigd?",
+      "answer": "Latech is opgericht door Andrés Rubio en Luis Grondona in Puebla de la Calzada, Badajoz, Spanje. We werken ook op afstand aan internationale projecten."
+    },
+    {
+      "question": "Kunnen jullie een bestaande website verbeteren?",
+      "answer": "We kunnen de huidige inhoud, techniek en contactroute beoordelen. Daarna bepalen we welke aanpassingen passen bij je doelen en welke informatie daarvoor nodig is."
+    },
+    {
+      "question": "Wat hebben jullie nodig voor een voorstel?",
+      "answer": "Geef je huidige website, doelgroep, belangrijkste diensten en gewenste acties door. Vermeld ook bestaande systemen en wie inhoud kan aanleveren."
+    },
+    {
+      "question": "Garanderen jullie een positie in Google?",
+      "answer": "Nee. We werken aan inhoud, techniek en gebruiksvriendelijkheid die vindbaarheid ondersteunen. Posities en verkeer hangen ook af van factoren buiten een project."
+    }
+  ],
+  "projectCopy": {
+    "colegio-santo-tomas": {
+      "sector": "Onderwijs",
+      "summary": "Een schoolwebsite met echte fotografie en informatie per onderwijsfase. Toelating, nieuws, agenda en documenten staan naast een besloten fotogalerij voor ouders, zodat gezinnen de beschikbare schoolinformatie op één plek kunnen vinden."
+    },
+    "granja-orea": {
+      "sector": "Educatieve boerderij en kampen",
+      "summary": "Een website met video en fotografie voor kampen, schoolbezoeken en paardrijden. Het project bevat WhatsApp-contact, beheerbaar nieuws, een installeerbare webapp, een mobiele QR-route en privéhulpmiddelen voor het team."
+    },
+    "f5-arquitectos": {
+      "sector": "Architectuur",
+      "summary": "Een architectuurportfolio met grote afbeeldingen, categorieën en gedetailleerde projectpagina's. Een eigen beheeromgeving ondersteunt het bijwerken van projecten en inhoud, terwijl de vormgeving het werk van het bureau centraal stelt."
+    },
+    "quality-homes": {
+      "sector": "Woningontwikkeling",
+      "summary": "Een vastgoedwebsite met foto's, video, plattegronden en beschikbaarheid per woning. Vragen zijn gekoppeld aan een eigen CRM en de beheeromgeving maakt het mogelijk informatie over de woningprojecten bij te werken."
+    },
+    "megias-frutas": {
+      "sector": "Groothandel in groenten en fruit",
+      "summary": "Een bedrijfswebsite voor professionele afnemers met productfotografie en informatie per klantsector. De mobiele opbouw, redactionele inhoud en directe contactroute presenteren de activiteiten en producten van de groothandel."
+    },
+    "zonasport": {
+      "sector": "Sportartikelen",
+      "summary": "Een online sportcatalogus met categorieën, merken, adviesartikelen en intern voorraadbeheer. Klanten kunnen via WhatsApp vragen stellen of bestellen, met afhalen in de winkel als onderdeel van de beschreven dienstverlening."
+    },
+    "panelex": {
+      "sector": "Bouwmaterialen",
+      "summary": "Een technische B2B-website voor sandwichpanelen met productfiches, technische gidsen en een calculator. De inhoud helpt bouwbedrijven en installateurs materiaal vergelijken en informatie verzamelen voordat zij een offerte aanvragen."
+    },
+    "monopatinmonkey": {
+      "sector": "Elektrische mobiliteit",
+      "summary": "Een webshop voor elektrische steps met gedetailleerde modelinformatie en een afzonderlijke reparatiesectie. De website legt het werkplaatsproces stapsgewijs uit en ondersteunt het vergelijken van modellen en het aanvragen van een afspraak."
+    },
+    "toldos-noa": {
+      "sector": "Zonwering en installatie",
+      "summary": "Een dienstenwebsite met afzonderlijke routes voor woningen, bedrijven, reparaties en maatwerk. Reviews en duidelijke contactacties begeleiden bezoekers naar WhatsApp om hun situatie toe te lichten en een offerte te vragen."
+    },
+    "autoescuela-agora": {
+      "sector": "Rijschool",
+      "summary": "Een rijschoolwebsite met video, informatie per rijbewijs en uitleg over twee locaties. Inschrijving, WhatsApp, toegang tot AEOL-tests en het leerlinggedeelte Mi Ágora verbinden presentatie met praktische toegang tot lesinformatie."
+    },
+    "precios-locos": {
+      "sector": "Huishoudelijke apparaten",
+      "summary": "Een winkelwebsite met catalogus, zoeken, favorieten en winkelwagen. Productpagina's, huishoudelijke gidsen en WhatsApp-contact vormen de praktische onderdelen, naast een herkenbare visuele stijl en een interactieve grijpmachine met verrassingspakketten."
+    },
+    "los-leones-nuptiae": {
+      "sector": "Herenmode en maatwerk",
+      "summary": "Twee modemerken binnen één website, met een visuele keuze en afzonderlijke routes voor herenmode, ceremonie, verhuur en maatwerk. Collecties en fotografie zijn verbonden met informatie over de bijbehorende winkels."
+    },
+    "my-special-hair": {
+      "sector": "Haarwerken en haarverzorging",
+      "summary": "Een merkwebsite met catalogus, meetgids en 3D-studie voor haarwerken. Klantaccounts, afspraken en toegang voor professionals bieden verschillende routes; video, resultaatbeelden en WhatsApp verbinden de presentatie met persoonlijke begeleiding."
+    }
+  }
+}

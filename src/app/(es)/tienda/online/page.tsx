@@ -1,4 +1,4 @@
-import { equivalents } from '@/lib/international';
+import { equivalents, internationalMetadata } from '@/lib/international';
 import type { Metadata } from 'next';
 import { ShoppingBag, CreditCard, BarChart3, Package, ArrowRight, ShieldCheck, TrendingUp } from 'lucide-react';
 import AuroraBackground from '@/components/effects/AuroraBackground';
@@ -28,6 +28,7 @@ export const metadata: Metadata = {
     locale: 'es_ES',
     type: 'website',
   },
+  ...internationalMetadata('es', { key: 'shop' }),
 };
 
 const GUIDES = [

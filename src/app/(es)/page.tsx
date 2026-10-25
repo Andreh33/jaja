@@ -1,4 +1,4 @@
-import { equivalents } from '@/lib/international';
+import { equivalents, internationalMetadata } from '@/lib/international';
 import type { Metadata } from 'next';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
@@ -22,6 +22,7 @@ export const metadata: Metadata = {
   description:
     'Diseño web con carácter, tiendas online y asistentes de IA para empresas que quieren destacar. Proyectos a medida, trato directo y sin permanencia.',
   alternates: { canonical: '/', languages: equivalents('home'), },
+  ...internationalMetadata('es', { key: 'home' }),
 };
 
 export default function Home() {

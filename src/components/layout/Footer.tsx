@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Logo from './Logo';
-import { Mail, Phone, MapPin, MessageCircle } from 'lucide-react';
+import { Phone, MapPin, MessageCircle } from 'lucide-react';
 import { whatsappLink } from '@/lib/stripe-links';
 import LanguageSwitcher from '@/components/shared/LanguageSwitcher';
 
@@ -93,11 +93,6 @@ export default function Footer() {
               <li>
                 <a className="inline-flex items-center gap-2 hover:text-white" href="tel:+34684739091">
                   <Phone size={14} style={{ color: 'var(--brand-300)' }} /> +34 684 73 90 91
-                </a>
-              </li>
-              <li>
-                <a className="inline-flex items-center gap-2 hover:text-white" href="mailto:info@latech.es">
-                  <Mail size={14} style={{ color: 'var(--brand-300)' }} /> info@latech.es
                 </a>
               </li>
               {/* Redes sociales: restaurar los iconos cuando existan los

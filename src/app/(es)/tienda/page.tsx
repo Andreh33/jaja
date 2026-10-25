@@ -1,4 +1,4 @@
-import { equivalents } from '@/lib/international';
+import { equivalents, internationalMetadata } from '@/lib/international';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowUpRight, Globe2, ShoppingBag } from 'lucide-react';
@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   title: 'Páginas web y tiendas online a medida',
   description: 'Elige una página web o una tienda online. Cuéntanos tu idea y prepara tu consulta para hablar directamente con LATECH por WhatsApp.',
   alternates: { canonical: '/tienda', languages: equivalents('services'), },
+  ...internationalMetadata('es', { key: 'services' }),
 };
 export default function TiendaPage() {
   return <><Navbar /><main id="main-content" tabIndex={-1} className="public-interior relative">

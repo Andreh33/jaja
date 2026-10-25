@@ -3,7 +3,7 @@ import { Geist, Geist_Mono, Syne } from 'next/font/google';
 import { notFound } from 'next/navigation';
 import PublicAnalytics from '@/components/shared/PublicAnalytics';
 import ContactClickTracker from '@/components/shared/ContactClickTracker';
-import { dictionaries, isLocale, locales, SITE } from '@/lib/international';
+import { dictionaries, isLocale, locales, SITE, htmlLanguage } from '@/lib/international';
 import '../globals.css';
 import '../blue-experience.css';
 import './international.css';
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 export default async function InternationalLayout({ children, params }: { children: React.ReactNode; params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   if (!isLocale(locale) || locale === 'es') notFound();
-  return <html lang={locale} className={`${geist.variable} ${mono.variable} ${syne.variable}`}><body className="international-site">
+  return <html lang={htmlLanguage(locale)} className={`${geist.variable} ${mono.variable} ${syne.variable}`}><body className="international-site">
     <a href="#main-content" className="skip-link">{String(dictionaries[locale].ui.skip)}</a>
     {children}<ContactClickTracker /><PublicAnalytics />
   </body></html>;

@@ -1,6 +1,6 @@
-import { equivalents } from '@/lib/international';
+import { equivalents, internationalMetadata } from '@/lib/international';
 import type { Metadata } from 'next';
-import { MapPin, Phone, Mail, MessageCircle, Clock } from 'lucide-react';
+import { MapPin, Phone, MessageCircle, Clock } from 'lucide-react';
 import AuroraBackground from '@/components/effects/AuroraBackground';
 import MouseGlow from '@/components/effects/MouseGlow';
 import { SignatureMarquee, Marquee } from '@/components/effects/Marquee';
@@ -19,6 +19,7 @@ export const metadata: Metadata = {
   title: 'Contacto · Hablemos',
   description: 'Estamos en Calle Puente 3, Puebla de la Calzada · Badajoz. Llámanos, escríbenos o ven a vernos. Atendemos a toda España por videollamada.',
   alternates: { canonical: '/contacto', languages: equivalents('contact'), },
+  ...internationalMetadata('es', { key: 'contact' }),
 };
 
 export default async function ContactoPage({ searchParams }: { searchParams: Promise<{ tipo?: string }> }) {
@@ -90,19 +91,6 @@ export default async function ContactoPage({ searchParams }: { searchParams: Pro
                       <h3 className="font-display text-lg text-white">Teléfono</h3>
                       <p className="mt-1 text-sm text-white/60">Para charla directa o cosas urgentes.</p>
                       <p className="mt-2 font-mono text-sm text-white/85">+34 684 73 90 91</p>
-                    </div>
-                  </div>
-                </a>
-
-                <a href="mailto:info@latech.es" className="block rounded-2xl glass p-6 transition-colors duration-200 hover:border-white/25">
-                  <div className="flex items-start gap-4">
-                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl" style={{ background: 'rgba(103,196,255,0.15)', color: 'var(--accent-shop)', border: '1px solid rgba(103,196,255,0.3)' }}>
-                      <Mail size={20} strokeWidth={1.6} />
-                    </div>
-                    <div>
-                      <h3 className="font-display text-lg text-white">Email</h3>
-                      <p className="mt-1 text-sm text-white/60">Para enviar documentación, propuestas o reuniones.</p>
-                      <p className="mt-2 font-mono text-sm text-white/85">info@latech.es</p>
                     </div>
                   </div>
                 </a>

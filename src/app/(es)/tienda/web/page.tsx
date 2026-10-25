@@ -1,4 +1,4 @@
-import { equivalents } from '@/lib/international';
+import { equivalents, internationalMetadata } from '@/lib/international';
 import type { Metadata } from 'next';
 import { Globe, Zap, Shield, Smartphone, Search, Code2, ArrowRight } from 'lucide-react';
 import AuroraBackground from '@/components/effects/AuroraBackground';
@@ -29,6 +29,7 @@ export const metadata: Metadata = {
     locale: 'es_ES',
     type: 'website',
   },
+  ...internationalMetadata('es', { key: 'web' }),
 };
 
 const GUIDES = [

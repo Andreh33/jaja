@@ -22,7 +22,7 @@
     "remote": "Lavoriamo dalla Spagna, da remoto, con aziende di altri paesi.",
     "phone": "Telefono",
     "contactTitle": "Raccontaci di cosa ha bisogno la tua azienda",
-    "contactIntro": "Indica il paese, il servizio richiesto, il sito attuale e le tempistiche previste. Questo contesto ci aiuta a definire il prossimo passo.",
+    "contactIntro": "Descrivi la tua azienda, il sito attuale e i tuoi obiettivi. Scrivi a Latech su WhatsApp al +34684739091 per discutere l'ambito di un progetto adeguato.",
     "whatsappMessage": "Buongiorno, vorrei richiedere un preventivo. Il mio paese è: . Il servizio che cerco è: . Il sito attuale è: . Le tempistiche previste sono: .",
     "processTitle": "Un percorso con decisioni chiare",
     "processSteps": [
@@ -30,41 +30,51 @@
       "Definiamo ambito, contenuti e criteri di verifica del lavoro.",
       "Realizziamo la soluzione, proviamo i percorsi principali e prepariamo la consegna."
     ],
-    "articlesIntro": "Guide pratiche per scegliere come migliorare sito, negozio online e processi aziendali.",
-    "serviceIntro": "Design, sviluppo e automazione in base agli obiettivi e alle risorse operative della tua azienda.",
+    "articlesIntro": "Guide SEO pratiche su traffico organico, clic pertinenti e percorsi dal sito a richieste commerciali utili.",
+    "serviceIntro": "Web design, SEO ed ecommerce con priorità chiare per la tua azienda e i suoi clienti.",
     "projectsIntro": "Una selezione di lavori e delle decisioni che hanno dato forma a ogni progetto.",
     "aboutTitle": "Un team vicino al progetto, anche a distanza",
     "aboutIntro": "Latech nasce dal lavoro di Andrés Rubio e Luis Grondona a Puebla de la Calzada, Badajoz, in Spagna.",
     "aboutBody": [
-      "Aiutiamo le aziende a trasformare una necessità concreta in un sito, un negozio online o un processo digitale utilizzabile e gestibile. Partiamo dal funzionamento dell’attività e dal risultato che il progetto deve rendere possibile.",
+      "Progettiamo siti aziendali ed ecommerce con contenuti chiari e basi tecniche per la SEO. Valutiamo anche automazioni delimitate con n8n e intelligenza artificiale quando rispondono a un'esigenza concreta.",
       "Lavoriamo da remoto dalla Spagna con aziende di altri paesi. Concordiamo consegne, responsabilità e momenti di verifica per dare alla collaborazione un quadro chiaro fin dall’inizio.",
       "Uniamo progettazione web, commercio elettronico e automazioni con n8n e intelligenza artificiale. Definiamo l’ambito in base al contesto: una connessione semplice può essere più utile di strumenti aggiunti senza uno scopo preciso."
     ],
     "contactDetails": "Recapiti",
     "moreServices": "Altri servizi",
-    "allArticles": "Tutte le guide"
+    "allArticles": "Tutte le guide",
+    "brandClaim": "Nel design e nella SEO, nessuno ci batte.",
+    "seoTitle": "SEO a partire dalle domande dei tuoi clienti",
+    "seoIntro": "Uniamo accessibilità tecnica, pagine di servizio chiare e contenuti utili a un percorso di contatto coerente con la tua offerta.",
+    "seoBullets": [
+      "Intento di ricerca e struttura delle pagine",
+      "SEO tecnica e indicizzazione",
+      "Contenuti per servizi ed ecommerce",
+      "Analisi di clic e percorsi di contatto"
+    ],
+    "faqTitle": "Domande frequenti su Latech"
   },
   "home": {
-    "title": "Siti web, ecommerce e automazione per aziende | Latech",
-    "description": "Siti web, ecommerce e automazioni con n8n e intelligenza artificiale. Dalla Spagna, lavoriamo da remoto con aziende che vogliono migliorare i processi.",
-    "heading": "Un sito che rende chiaro il prossimo passo",
-    "intro": "Progettiamo siti, realizziamo negozi online e colleghiamo processi per semplificare il percorso dei clienti e il lavoro del tuo team.",
+    "title": "Web design e SEO per aziende | Latech",
+    "description": "Web design, SEO ed ecommerce per aziende che vogliono spiegare la propria offerta e ricevere richieste pertinenti. Latech lavora da remoto dalla Spagna.",
+    "heading": "Web design e SEO per aziende che cercano richieste commerciali pertinenti",
+    "intro": "Siti ed ecommerce che spiegano la tua offerta, aiutano il cliente a scegliere e rendono chiaro il prossimo passo.",
     "body": [
-      "Una presenza digitale utile parte da scelte concrete: cosa offri, a chi ti rivolgi e come può procedere una persona interessata. Traduciamo queste risposte in struttura, contenuti e funzionalità.",
-      "Da Puebla de la Calzada, Badajoz, lavoriamo da remoto con aziende di altri paesi. Definiamo insieme l’ambito del progetto e diamo priorità a ciò che serve alla tua attività."
+      "Un sito aziendale richiede una struttura comprensibile, pagine di servizio utili e basi tecniche per la ricerca organica. Progettiamo insieme questi elementi, partendo dalle domande che i clienti si pongono prima di contattare un fornitore.",
+      "Latech è stata fondata da Andrés Rubio e Luis Grondona a Puebla de la Calzada, Badajoz, in Spagna. Lavoriamo da remoto con aziende di mercati internazionali, concordando ambito, responsabilità e modalità di collaborazione per ciascun progetto."
     ]
   },
   "services": [
     {
       "id": "web",
-      "title": "Siti web per aziende",
-      "description": "Progettiamo siti aziendali con contenuti chiari, navigazione mobile e percorsi di contatto utili. Collaboriamo da remoto dalla Spagna con la tua impresa.",
+      "title": "Web design e SEO per aziende",
+      "description": "Progetta un sito aziendale con pagine di servizio chiare, percorsi mobili e basi SEO. Latech collega contenuti utili e richieste commerciali pertinenti.",
       "intro": "Realizziamo siti che spiegano la tua offerta e aiutano una persona interessata a capire come procedere.",
       "sections": [
         {
           "title": "Prima la struttura",
           "paragraphs": [
-            "Organizziamo servizi, elementi di fiducia e percorsi di contatto secondo le domande dei clienti. Una navigazione comprensibile aiuta a trovare informazioni senza spiegazioni aggiuntive.",
+            "Organizziamo i servizi secondo le domande dei clienti e l'intento di ricerca. Ogni pagina importante deve spiegare il problema affrontato, a chi si rivolge e quali informazioni sono utili per un primo contatto.",
             "Definiamo quali pagine servono e quale domanda deve risolvere ciascuna. Evitiamo così sezioni ripetitive o contenuti che lasciano irrisolti i dubbi decisivi per una richiesta."
           ]
         },
@@ -86,7 +96,7 @@
     },
     {
       "id": "shop",
-      "title": "Negozi online con un percorso chiaro",
+      "title": "Ecommerce e SEO per negozi online",
       "description": "Realizziamo ecommerce con catalogo ordinato, acquisto da mobile e gestione coerente degli ordini. Definisci con Latech un progetto adatto alla tua azienda.",
       "intro": "Il negozio deve aiutare a scegliere, acquistare e gestire gli ordini attraverso informazioni coerenti.",
       "sections": [
@@ -701,6 +711,694 @@
         "Definisci recupero e monitoraggio con responsabilità precise."
       ],
       "conclusion": "Una migrazione controllata collega contenuti, tecnologia e operatività. Inventario e mappa degli URL rendono esplicite le decisioni; prove e osservazione aiutano a rilevare problemi. Prima di pubblicare, assicurati che il team sappia cosa verificare e come intervenire quando un percorso non funziona come previsto."
+    },
+    {
+      "id": "seo-audit",
+      "title": "Audit SEO: scegliere gli interventi utili per il sito aziendale",
+      "slug": "audit-seo-priorita-sito-aziendale",
+      "description": "Organizza un audit SEO con pagine importanti, intento di ricerca e percorsi di contatto. Definisci interventi verificabili e priorità chiare per l'azienda.",
+      "intro": [
+        "Un audit SEO dovrebbe aiutare a decidere cosa fare prima. Un elenco di avvisi tecnici non spiega da solo quali problemi ostacolano una pagina importante o rendono poco comprensibile un servizio. Ogni osservazione deve avere un contesto e un intervento verificabile.",
+        "Pensa a un'azienda che propone manutenzione programmata e riparazioni occasionali. Le due offerte richiedono spiegazioni diverse. Se la stessa pagina le confonde, ridurre il peso delle immagini non risolve il problema principale. Analizza accesso tecnico, contenuto e contatto come parti della stessa esperienza, per individuare una priorità motivata."
+      ],
+      "sections": [
+        {
+          "title": "Definire le pagine e gli obiettivi dell'analisi",
+          "paragraphs": [
+            "Parti dai servizi più importanti e dalle richieste pertinenti per ciascuno. Annota a chi si rivolge ogni pagina e quali informazioni servono per valutare un contatto. Aggiungi esempi di guide, progetti e altri tipi di pagina. La priorità non dipende soltanto dal numero di errori. Un servizio principale irraggiungibile può contare più di numerosi problemi minori in un contenuto secondario. Il perimetro deve collegare ogni osservazione a una conseguenza concreta per il visitatore e per l'uso che l'azienda fa del sito."
+          ]
+        },
+        {
+          "title": "Controllare accesso e segnali di indicizzazione",
+          "paragraphs": [
+            "Verifica risposte del server, reindirizzamenti, istruzioni robots, noindex e indirizzi canonici sulle pagine selezionate. Usa i dati disponibili in Search Console per approfondire casi specifici. Non ogni URL escluso rappresenta un errore: una vecchia variante reindirizzata può essere gestita correttamente. Confronta lo stato osservato con l'intenzione. Registra indirizzo e prova, invece di riportare un avviso generico senza conferma. La documentazione rende il problema comprensibile e permette di controllare in seguito se la correzione ha modificato davvero la situazione prevista."
+          ]
+        },
+        {
+          "title": "Leggere il testo con una domanda del cliente",
+          "paragraphs": [
+            "Entra nella pagina con un bisogno concreto. È chiaro quale servizio viene offerto, cosa comprende e come proseguire? Per la manutenzione programmata possono servire responsabilità continuative, mentre una riparazione richiede prima il tipo di guasto. Più testo non corregge un'impostazione sbagliata. Identifica l'informazione mancante e la decisione che dovrebbe aiutare. Confronta titolo e introduzione con il resto del contenuto. Il risultato di ricerca non dovrebbe promettere una risposta diversa da quella che il visitatore trova dopo aver aperto la pagina."
+          ]
+        },
+        {
+          "title": "Esaminare collegamenti e sovrapposizioni",
+          "paragraphs": [
+            "Osserva quali guide e progetti rimandano al servizio e se il testo del collegamento descrive la destinazione. Un articolo pertinente può portare direttamente alla pagina utile, invece di inviare sempre alla home. Cerca anche contenuti con funzioni molto simili. Condividere termini non significa automaticamente danneggiarsi, ma ripetere la stessa spiegazione può frammentare il percorso. Confronta intento, domande e funzione prima di scegliere se migliorare, unire o distinguere le pagine. La decisione deve chiarire quale beneficio avrà il lettore, oltre a ridurre una voce nel rapporto."
+          ]
+        },
+        {
+          "title": "Scrivere attività che possano essere completate",
+          "paragraphs": [
+            "Un intervento prioritario indica URL, problema confermato, modifica proposta e controllo finale. Aggiungi responsabile e dipendenze. Migliorare la SEO è un obiettivo ampio; correggere un riferimento canonico errato è un'attività concreta. Valuta insieme possibile importanza, impegno e solidità della spiegazione. Una modifica estetica rapida non dovrebbe passare automaticamente davanti a un problema che impedisce l'accesso a un servizio centrale. Una lista breve con ragioni esplicite è spesso più utilizzabile di decine di osservazioni senza ordine, responsabile o criterio di verifica."
+          ]
+        },
+        {
+          "title": "Separare pubblicazione ed effetti successivi",
+          "paragraphs": [
+            "Dopo la modifica, conferma innanzitutto che sia pubblicata correttamente. Possono servire lettura, test dei collegamenti e controlli tecnici. Osserva poi domande, clic e percorsi pertinenti in un periodo con dati sufficienti. Una correzione non garantisce miglioramenti immediati di posizioni o richieste. Annota le incertezze rimaste e l'osservazione che dovrebbe motivare il prossimo passo. L'audit diventa così una base di lavoro aggiornabile, anziché un rapporto chiuso con previsioni più sicure di quanto consentano le prove disponibili e il contesto commerciale."
+          ]
+        }
+      ],
+      "checklist": [
+        "Scegli pagine legate a servizi importanti.",
+        "Conferma i problemi su URL specifici.",
+        "Confronta contenuti e domande dei clienti.",
+        "Definisci intervento, responsabile e controllo.",
+        "Verifica la pubblicazione prima degli effetti."
+      ],
+      "conclusion": "Un audit utile rende comprensibili le decisioni. Collegando osservazioni tecniche e contenuti a bisogni reali, l'azienda può concentrarsi su interventi motivati e verificare che cosa ogni modifica abbia effettivamente cambiato nel sito."
+    },
+    {
+      "id": "search-intent",
+      "title": "Intento di ricerca: quale pagina risponde al bisogno?",
+      "slug": "intento-ricerca-pagina-bisogno",
+      "description": "Riconosci l'intento di ricerca tra informazione, confronto e contatto. Analizza i risultati e distribuisci le domande in pagine con compiti e contenuti chiari.",
+      "intro": [
+        "Due ricerche con la stessa espressione possono indicare necessità diverse. Chi vuole capire come funziona un'ispezione termica può cercare una spiegazione; chi confronta fornitori deve valutare un'offerta concreta. Una pagina non dovrebbe presumere che tutti abbiano lo stesso obiettivo.",
+        "L'intento di ricerca è un'interpretazione ragionata del compito dietro una domanda. Conversazioni, risultati visibili e dati esistenti aiutano a costruirla. Usala per orientare i contenuti, senza trattarla come un'etichetta immutabile che sostituisce la lettura delle pagine o la verifica delle domande realmente ricevute."
+      ],
+      "sections": [
+        {
+          "title": "Raccogliere domande prima delle parole chiave",
+          "paragraphs": [
+            "Parti da colloqui commerciali, richieste arrivate e ricerche pertinenti visibili in Search Console. Conserva la domanda completa prima di ridurla a un termine breve. Per un'ispezione termica possono emergere preparazione, strumenti, relazione finale e scelta del professionista. Segna anche gli argomenti esterni all'offerta. L'azienda non deve pubblicare su ogni associazione possibile. Scegli i bisogni per cui ha competenze utili e una relazione credibile con il servizio. Questo criterio mantiene il lavoro focalizzato ed evita contenuti di cui nessuno sa spiegare la reale funzione."
+          ]
+        },
+        {
+          "title": "Osservare quali risposte vengono mostrate",
+          "paragraphs": [
+            "Guarda se i risultati presentano guide, pagine commerciali, categorie o confronti. Leggi diversi esempi e annota le informazioni centrali. I risultati suggeriscono aspettative, ma non sono un invito a copiare i concorrenti. Una ricerca può avere bisogni misti e cambiare nel tempo. Salva data e osservazioni. Se una pagina non svolge il compito previsto, questo riferimento aiuta a distinguere un problema di qualità da una differenza tra formato scelto e necessità del pubblico. Valuta il contesto complessivo, senza trasformare una singola schermata in una regola definitiva."
+          ]
+        },
+        {
+          "title": "Definire la decisione che il testo facilita",
+          "paragraphs": [
+            "Scrivi una frase su ciò che il lettore dovrebbe capire o scegliere dopo la pagina. Una guida può spiegare il processo e preparare domande. Una pagina di servizio deve anche chiarire ambito, adeguatezza e contatto. Un confronto richiede differenze pertinenti e limiti espliciti. Scegli il formato da questa funzione. Un contenuto chiamato guida completa, ma dedicato soprattutto alla presentazione aziendale, crea una distanza rispetto alla promessa. Serve rivedere struttura e spiegazione, non soltanto aggiungere un invito commerciale o ripetere più spesso l'espressione cercata."
+          ]
+        },
+        {
+          "title": "Distribuire i bisogni tra indirizzi esistenti",
+          "paragraphs": [
+            "Crea una mappa semplice con domande principali e pagine incaricate di rispondere. Formulazioni vicine possono spesso convivere nello stesso contenuto. Evita un articolo separato per ogni variante linguistica. Se una pagina commerciale è già adatta, una nuova sezione può colmare la lacuna. Una spiegazione più autonoma può giustificare una guida con un collegamento pertinente al servizio. La mappa dovrebbe rendere chiari i ruoli e favorire il miglioramento del materiale esistente, invece di generare nuovi indirizzi che ripetono le stesse informazioni senza un'utilità indipendente per il lettore."
+          ]
+        },
+        {
+          "title": "Adattare il prossimo passo alla preparazione del lettore",
+          "paragraphs": [
+            "Una persona ancora interessata al funzionamento può aver bisogno di una lista di preparazione prima di contattare. Inserisci rimandi quando rispondono a una domanda successiva naturale. Una guida può descrivere il materiale necessario e collegare la valutazione disponibile. Una pagina per confrontare fornitori può mostrare progetti reali e proporre un colloquio sull'ambito. Usa testi di collegamento che descrivono la destinazione. Non inviare tutti alla home indipendentemente dal problema appena risolto. Il percorso dovrebbe continuare il compito, senza costringere il visitatore a orientarsi di nuovo da capo."
+          ]
+        },
+        {
+          "title": "Confrontare il piano con l'uso osservato",
+          "paragraphs": [
+            "Dopo la pubblicazione, controlla quali domande danno visibilità alla pagina e confrontale con il suo ruolo previsto. Aggiungi i dubbi ricorrenti delle richieste ricevute. Se una pagina commerciale appare soprattutto per definizioni, può servire un diverso equilibrio o una guida complementare. Poche impressioni isolate non permettono conclusioni solide. Usa le osservazioni gradualmente e registra perché cambia la funzione. La pianificazione può così imparare dai dati senza perdere coerenza ogni volta che compare una nuova formulazione nel rapporto o una singola domanda insolita in una conversazione."
+          ]
+        }
+      ],
+      "checklist": [
+        "Raccogli domande prima di elenchi di termini.",
+        "Osserva i formati presenti nei risultati.",
+        "Definisci un compito principale per pagina.",
+        "Riunisci bisogni vicini in indirizzi chiari.",
+        "Confronta il piano con le richieste reali."
+      ],
+      "conclusion": "L'intento di ricerca aiuta ad assegnare una funzione a ogni contenuto. Quando formato, promessa e prossimo passo rispondono allo stesso bisogno, il sito diventa più utile e i clic organici possono essere valutati in un contesto più chiaro."
+    },
+    {
+      "id": "service-pages",
+      "title": "Pagine di servizio che preparano richieste commerciali utili",
+      "slug": "pagine-servizio-richieste-utili",
+      "description": "Crea pagine di servizio con ambito chiaro, processo spiegato ed esempi pertinenti. Collega intento di ricerca, contenuti e contatto per richieste più informate.",
+      "intro": [
+        "Una pagina di servizio deve permettere a chi non conosce l'azienda di valutare l'offerta. Il nome dell'attività e vantaggi generici raramente bastano. Il visitatore vuole capire se la sua situazione rientra nel servizio, cosa comprende il lavoro e quali informazioni aiutano nel primo contatto.",
+        "Un'impresa di documentazione tecnica può assistere produttori e responsabili della manutenzione. Le domande iniziali possono essere diverse. Una pagina curata descrive quindi un problema concreto e un percorso coerente, invece di limitarsi a elencare le competenze interne o gli strumenti utilizzati dal gruppo di lavoro."
+      ],
+      "sections": [
+        {
+          "title": "Definire pubblico e problema della pagina",
+          "paragraphs": [
+            "Scrivi chi dovrebbe trovare la pagina e quale esigenza affronta il servizio. Usa una denominazione comprensibile senza dipendere da nomi interni di reparti. La documentazione tecnica può riguardare, per esempio, istruzioni per un determinato tipo di apparecchiatura. Quando servizi diversi richiedono decisioni molto differenti, pagine autonome possono essere motivate. Ognuna deve però avere funzione e contenuti propri. Non moltiplicare le pagine soltanto per sfruttare varianti delle parole chiave. Il visitatore giusto deve riconoscere la propria situazione e comprendere il sostegno che l'azienda offre realmente."
+          ]
+        },
+        {
+          "title": "Spiegare ambito e contributi richiesti",
+          "paragraphs": [
+            "Presenta le componenti possibili del lavoro e ciò che richiede una definizione individuale. Indica il materiale che il cliente può fornire, come dati di prodotto, pubblico e necessità linguistiche. Non presumere condizioni uguali per tutti i progetti. Un confine chiaro aiuta anche chi cerca un servizio diverso. Il cliente non deve conoscere già la soluzione, ma dovrebbe capire con quale contesto può iniziare la conversazione. Distingui i dati per una prima valutazione dai dettagli che verranno stabiliti più avanti, quando l'oggetto del lavoro sarà stato chiarito."
+          ]
+        },
+        {
+          "title": "Mostrare il processo reale di collaborazione",
+          "paragraphs": [
+            "Una sequenza breve può collegare analisi iniziale, realizzazione e revisione. Spiega quali decisioni si prendono insieme e dove servono contributi del cliente. Se qualità e quantità del materiale influenzano la pianificazione, descrivi queste condizioni anziché promettere una scadenza universale. Illustra come vengono trattate le osservazioni. Il processo deve rappresentare il lavoro effettivo, senza suggerire risultati identici in situazioni differenti. Una spiegazione pratica permette al cliente di prepararsi e rende il primo colloquio più utile, perché alcune aspettative e responsabilità sono già comprensibili prima di parlare."
+          ]
+        },
+        {
+          "title": "Scegliere esempi che chiariscono un dubbio",
+          "paragraphs": [
+            "Un progetto deve avere un legame con il servizio descritto. Spiega bisogno e soluzione, come l'organizzazione di istruzioni complesse per diversi utenti. Separa funzionalità osservabili da effetti commerciali non misurati. Una raccomandazione generica può integrare il contenuto, ma non sostituisce la descrizione del lavoro. Quando un progetto comprende più servizi, il riferimento deve rendere visibile la parte pertinente. Il lettore ha bisogno di capire perché quell'esempio aiuta a valutare la propria situazione, anziché trovare soltanto una galleria senza relazione con la domanda che lo ha portato alla pagina."
+          ]
+        },
+        {
+          "title": "Creare collegamenti interni pertinenti",
+          "paragraphs": [
+            "Collega il servizio da guide, progetti e pagine di sintesi correlate. Un articolo sulla preparazione può spiegare la valutazione proposta come passo successivo. Usa testi descrittivi e indirizzi attuali. La pagina commerciale può a sua volta rimandare a un approfondimento quando risolve una domanda. Non fissare i collegamenti soltanto in base a una quantità desiderata. Una pagina tecnicamente accessibile può restare difficile da scoprire se i contenuti pertinenti rimandano sempre alla home e non spiegano il rapporto con l'offerta. La struttura dovrebbe riflettere l'importanza concreta del servizio."
+          ]
+        },
+        {
+          "title": "Chiedere informazioni adatte al primo contatto",
+          "paragraphs": [
+            "Indica cosa può inviare il visitatore: tipo di prodotto, documentazione esistente ed esigenza principale possono bastare. Inserisci l'invito dopo la spiegazione che lo rende sensato. Prova modulo ed eventuale collegamento WhatsApp sul telefono. Osserva poi ricerche e domande effettivamente ricevute. Molti clic non bastano se le persone continuano ad aspettarsi un'altra prestazione. La pagina deve cambiare quando cambia l'offerta. Un responsabile definito aiuta a mantenere ambito, dati e aspettative coerenti con il modo in cui l'azienda lavora, evitando che una vecchia promessa rimanga pubblicata per inerzia."
+          ]
+        }
+      ],
+      "checklist": [
+        "Definisci pubblico e problema per servizio.",
+        "Spiega ambito e materiale necessario.",
+        "Contestualizza progetti reali pertinenti.",
+        "Collega dalle guide correlate.",
+        "Adatta le domande al primo colloquio."
+      ],
+      "conclusion": "Una pagina di servizio utile rende l'offerta valutabile. Allineando spiegazione, esempi e contatto, l'azienda può capire meglio se i contenuti rispondono alle domande giuste e preparano richieste pertinenti, invece di creare aspettative difficili da soddisfare."
+    },
+    {
+      "id": "seo-titles-clicks",
+      "title": "Titoli SEO e clic: una promessa coerente con il contenuto",
+      "slug": "titoli-seo-clic-pertinenti",
+      "description": "Migliora i titoli SEO con intento chiaro, differenze reali e contenuto coerente. Analizza il tasso di clic con domande e pagine confrontabili, senza forzature.",
+      "intro": [
+        "Il titolo aiuta a decidere se aprire un risultato di ricerca. Deve spiegare argomento e pertinenza della pagina. Ottenere più clic non è automaticamente utile se il visitatore incontra un'offerta diversa da quella che si aspettava o non trova la risposta promessa.",
+        "Google può mostrare un collegamento del titolo diverso dall'elemento indicato nel sito. Rivedi perciò la relazione tra title, intestazione principale e contenuto. Parti da una promessa precisa: una guida deve annunciare la spiegazione presente, mentre una pagina commerciale deve rendere riconoscibile l'offerta e i suoi limiti reali."
+      ],
+      "sections": [
+        {
+          "title": "Leggere titolo e pagina insieme",
+          "paragraphs": [
+            "Confronta l'elemento title con intestazione e introduzione. Descrivono lo stesso compito? Un titolo su una verifica completa non corrisponde a un testo dedicato soltanto al colloquio iniziale. Correggi questa distanza prima di sperimentare formule più persuasive. Cerca anche pagine diverse con il medesimo titolo generico. Ogni indirizzo importante deve avere un nome proprio comprensibile. Aiuta il visitatore a distinguere risultati e rende più chiara anche la separazione interna tra contenuti collegati, senza dipendere da piccole variazioni artificiali delle parole per farli apparire differenti."
+          ]
+        },
+        {
+          "title": "Adattare la formulazione alla ricerca",
+          "paragraphs": [
+            "Una guida sull'illuminazione dei magazzini può annunciare criteri di scelta o confronto. Una pagina commerciale deve identificare l'offerta da valutare. Presenta il tema principale chiaramente senza una fila di espressioni equivalenti. Una località può essere utile se delimita davvero il servizio, ma non deve suggerire una sede inesistente. Leggi il titolo dalla prospettiva del cliente: cosa sarà possibile capire o fare dopo il clic? Questa aspettativa deve corrispondere al testo e al passo successivo disponibile. Non basta che la frase contenga una parola cercata se indica un bisogno diverso."
+          ]
+        },
+        {
+          "title": "Mettere in evidenza differenze verificabili",
+          "paragraphs": [
+            "Una lista di controllo o un confronto specifico può essere citato se esiste davvero nella pagina. Affermazioni sul fornitore più grande, economico o migliore richiedono prove e non vanno inventate. Il marchio può favorire riconoscibilità senza oscurare il tema. La presentazione varia per dispositivo e contesto: un numero fisso di caratteri non garantisce lo stesso aspetto. Colloca presto il significato essenziale. La formulazione rimane così comprensibile quando una parte non compare o quando il motore sceglie una rappresentazione diversa per una determinata domanda."
+          ]
+        },
+        {
+          "title": "Usare la descrizione per aggiungere contesto",
+          "paragraphs": [
+            "La metadescrizione può riassumere il contenuto, ma Google può scegliere un altro estratto collegato alla ricerca. Scrivi una spiegazione corretta anziché ripetere il titolo parola per parola. Per un servizio possono contare ambito e preparazione del contatto; per una guida le decisioni che aiuta a prendere. Non introdurre prezzi, tempi di risposta o garanzie senza fondamento. Coerenza tra titolo, descrizione e pagina crea un percorso prevedibile anche quando cambia il testo mostrato. L'informazione centrale deve restare vera in ciascuna possibile presentazione del risultato."
+          ]
+        },
+        {
+          "title": "Interpretare il tasso di clic nel contesto",
+          "paragraphs": [
+            "In Search Console filtra pagina e domande con intento simile. Il tasso di clic può cambiare per posizione, dispositivo e composizione delle ricerche. I termini con il marchio possono comportarsi diversamente dalle domande generiche di nuovi clienti. Una crescita del valore complessivo del sito non dimostra l'effetto di una singola modifica. Registra spiegazioni alternative e confronta insiemi equivalenti quando possibile. Pochi dati richiedono prudenza. Usa i numeri per verificare un'ipotesi, senza trasformare una breve variazione in una diagnosi definitiva sulla qualità della formulazione o sull'interesse commerciale dei visitatori."
+          ]
+        },
+        {
+          "title": "Documentare la modifica editoriale",
+          "paragraphs": [
+            "Conserva versione precedente, nuovo titolo, data e ragione della scelta. Inizia da un gruppo limitato di pagine. Controlla prima la pubblicazione corretta e osserva poi ricerche pertinenti in un periodo con informazioni sufficienti. Leggi la pagina come un cliente e considera dubbi ricorrenti nei contatti. Più clic servono soltanto se il contenuto è adeguato. La valutazione deve spiegare se il titolo crea un'aspettativa corretta, invece di concludersi con un conteggio superiore senza rapporto con l'offerta, il bisogno del lettore o la qualità delle richieste effettivamente ricevute."
+          ]
+        }
+      ],
+      "checklist": [
+        "Confronta titolo, intestazione e contenuto.",
+        "Adatta il testo al compito della ricerca.",
+        "Evidenzia soltanto differenze reali.",
+        "Analizza i clic per pagina e intento.",
+        "Salva versione, data e ipotesi."
+      ],
+      "conclusion": "Un buon titolo SEO chiarisce la pertinenza senza esagerare. Quando la promessa corrisponde alla pagina, l'utente sceglie con più informazioni e l'azienda può valutare i clic in rapporto a bisogni e contenuti effettivi."
+    },
+    {
+      "id": "search-console-leads",
+      "title": "Search Console: ricerche utili per migliorare le richieste",
+      "slug": "search-console-ricerche-richieste",
+      "description": "Usa Search Console per analizzare domande, ruoli delle pagine e risposte mancanti. Confronta clic e bisogni senza attribuire ricerche a singole persone.",
+      "intro": [
+        "Search Console mostra come il sito compare nei risultati di Google. Può aiutare a individuare domande, pagine di ingresso e relazioni poco chiare tra ricerca e contenuto. Non dimostra automaticamente quale singola ricerca abbia prodotto una richiesta commerciale concreta.",
+        "Per un'azienda di attrezzature da magazzino, dimensioni, progettazione e montaggio possono indicare fasi diverse. Usa i rapporti per comprendere questi compiti e leggere le pagine pertinenti. Aggiungi poi la valutazione delle conversazioni ricevute, invece di interpretare i dati di ricerca come un elenco di persone interessate identificabili."
+      ],
+      "sections": [
+        {
+          "title": "Partire da un'area delimitata",
+          "paragraphs": [
+            "Scegli un servizio e gli indirizzi collegati. Usa un periodo adatto alla stagionalità e alla quantità di dati. Annota se includi domande con il nome dell'azienda, perché hanno condizioni diverse dalle ricerche generiche. Anche un cambiamento di URL richiede contesto. Scrivi prima quali bisogni dovrebbe soddisfare la pagina. L'analisi indaga così una funzione precisa anziché scorrere un elenco di parole interessanti. La stessa delimitazione rende più sensato confrontare in seguito modifiche editoriali e osservazioni del rapporto, senza attribuire effetti a interventi che riguardano pagine o pubblici diversi."
+          ]
+        },
+        {
+          "title": "Raggruppare le domande secondo il compito",
+          "paragraphs": [
+            "Organizza le ricerche visibili in preparazione, confronto e scelta del fornitore, per esempio. Un dubbio sulla larghezza dei corridoi può essere informativo, mentre un sopralluogo è più vicino al servizio. Usa i gruppi per riconoscere spiegazioni necessarie senza copiare ogni espressione nei testi. Il rapporto non mostra tutte le singole ricerche. Righe visibili e totali possono quindi offrire livelli di dettaglio differenti. Evita conclusioni su persone specifiche e concentrati su schemi sufficientemente chiari da giustificare una lettura mirata dei contenuti o una verifica del ruolo della pagina."
+          ]
+        },
+        {
+          "title": "Controllare quali indirizzi vengono mostrati",
+          "paragraphs": [
+            "Osserva le pagine che ricevono impressioni e clic per i gruppi importanti. Una guida vecchia può rispondere meglio a un bisogno informativo rispetto alla pagina commerciale attuale. Non è necessariamente un problema. Confronta intento e testo prima di spostare o unire materiale. Forse basta una destinazione interna più chiara per chi desidera una valutazione individuale. In altri casi manca una spiegazione nella pagina del servizio. L'obiettivo è distribuire funzioni utili, non concentrare tutte le domande su un unico indirizzo commerciale senza considerare ciò che il lettore cerca davvero."
+          ]
+        },
+        {
+          "title": "Leggere gli indicatori insieme",
+          "paragraphs": [
+            "Più impressioni possono derivare da una visibilità più ampia senza un aumento equivalente di visite pertinenti. Il tasso di clic dipende anche da posizione e tipo di domanda. La posizione media è un dato aggregato, non una collocazione fissa visibile a tutti. Confronta dispositivi, pagine e intenzioni simili quando possibile. Registra ipotesi alternative prima di scegliere una modifica. Un intervallo breve con pochi clic difficilmente permette conclusioni solide sulla domanda di un servizio. I dati devono rendere più precise le domande, senza nascondere i limiti del campione o del confronto."
+          ]
+        },
+        {
+          "title": "Tradurre l'osservazione in un intervento",
+          "paragraphs": [
+            "Se diverse ricerche evidenziano dubbi sul sopralluogo, la pagina può ricevere una sezione su preparazione e processo. Un tema autonomo più ampio può motivare una guida. Descrivi informazione mancante, collocazione e collegamento interno necessario. Non pubblicare un articolo per ogni riga del rapporto. Potresti creare sovrapposizioni senza migliorare la risposta. Dai priorità ad attività di cui bisogno e soluzione sono spiegabili. Sarà poi possibile controllare se la nuova sezione affronta realmente la domanda e rende più coerente la funzione della pagina nella struttura del sito."
+          ]
+        },
+        {
+          "title": "Collegare le tendenze alle richieste ricevute",
+          "paragraphs": [
+            "L'azienda può riassumere argomenti ricorrenti nei messaggi senza cercare di identificare persone nei rapporti. Una classificazione interna per servizio, esigenza e pertinenza può bastare. Se molti nuovi contatti escono dall'offerta, forse il testo deve delimitarla meglio. Documenta le modifiche e osserva nel tempo il gruppo di pagine coinvolto. Mantieni visibili le incertezze. Non ogni contatto può essere attribuito a una domanda mostrata e un clic su WhatsApp non prova che un messaggio sia stato inviato o effettivamente ricevuto. La qualità della conversazione richiede un riscontro distinto."
+          ]
+        }
+      ],
+      "checklist": [
+        "Delimita servizio, pagine e periodo.",
+        "Raggruppa secondo il compito del lettore.",
+        "Verifica gli indirizzi effettivamente mostrati.",
+        "Interpreta impressioni e clic insieme.",
+        "Confronta con argomenti delle richieste reali."
+      ],
+      "conclusion": "Search Console aiuta a scegliere interventi editoriali più motivati. Con lettura delle pagine e conoscenza dei clienti offre indizi concreti, senza suggerire un tracciamento individuale o certezze che i rapporti disponibili non possono fornire."
+    },
+    {
+      "id": "technical-indexing",
+      "title": "Scansione e indicizzazione: verificare le pagine importanti",
+      "slug": "scansione-indicizzazione-pagine-importanti",
+      "description": "Analizza scansione e indicizzazione con codici di risposta, robots e indirizzi canonici. Controlla le pagine di servizio importanti e i collegamenti interni.",
+      "intro": [
+        "Una pagina pubblicata non è necessariamente indicizzata. Essere indicizzata non garantisce a sua volta visibilità per ogni ricerca desiderata. L'analisi tecnica dovrebbe partire dall'indirizzo preciso e dalla funzione che quel contenuto deve avere nel sito.",
+        "Un servizio può non comparire perché l'URL reindirizza, è bloccato, è difficile da scoprire o viene considerato una variante di un'altra pagina. Ogni situazione richiede verifiche diverse. Separa accesso, scoperta e indicizzazione, registrando i risultati prima di cambiare più istruzioni insieme e perdere la possibilità di comprendere la causa."
+      ],
+      "sections": [
+        {
+          "title": "Confermare indirizzo e risposta del server",
+          "paragraphs": [
+            "Apri l'URL concreto e verifica il codice di risposta. Una pagina può sembrare corretta visivamente e restituire comunque uno stato inappropriato. Segui i reindirizzamenti fino alla destinazione finale. Differenze tra protocollo, dominio e barra conclusiva possono contare quando esistono versioni senza segnali chiari. Stabilisci quale dovrebbe essere l'indirizzo principale. L'analisi deve riguardare la versione usata dai collegamenti interni importanti. Altrimenti rischi di correggere un vecchio caso particolare mentre la pagina che i visitatori utilizzano continua a inviare segnali incoerenti o a condurre verso una destinazione imprevista."
+          ]
+        },
+        {
+          "title": "Distinguere robots.txt e noindex",
+          "paragraphs": [
+            "Robots.txt controlla l'accesso per la scansione, mentre noindex indica l'esclusione dall'indice quando l'istruzione può essere letta. I due meccanismi non sono equivalenti. Se la scansione è bloccata, il motore potrebbe non riuscire a consultare il noindex presente nella pagina. Non usare quindi un divieto come soluzione universale per rimuovere indirizzi già noti. Definisci il risultato voluto ed esamina l'implementazione concreta. Istruzioni sovrapposte possono introdurre contraddizioni. La scelta tecnica deve considerare finalità e funzionamento insieme, invece di dipendere soltanto dall'opzione più semplice disponibile nel sistema di pubblicazione."
+          ]
+        },
+        {
+          "title": "Confrontare i segnali canonici",
+          "paragraphs": [
+            "Un indirizzo canonico indica la versione preferita tra contenuti simili. Controlla che non rimandi per errore a un vecchio dominio, ambiente di prova o altro idioma. Google può scegliere una versione diversa da quella dichiarata: confronta perciò l'ispezione URL con i segnali pubblicati. Collegamenti interni e sitemap dovrebbero sostenere lo stesso indirizzo. Quando le pagine sono molto simili, anche il rapporto editoriale richiede valutazione. Un elemento tecnico aggiuntivo non rende automaticamente chiari ruoli mal definiti e non corregge una struttura contraddittoria senza considerare il contenuto e la sua utilità."
+          ]
+        },
+        {
+          "title": "Seguire i percorsi interni alla pagina",
+          "paragraphs": [
+            "Naviga dalla home e da altre pagine pertinenti fino al servizio. Gli indirizzi importanti non dovrebbero dipendere da qualcuno che conosce già il collegamento diretto. Usa link normali, leggibili e descrittivi. Una sitemap può aiutare la scoperta, ma non garantisce indicizzazione né sostituisce una navigazione comprensibile. Osserva anche se l'informazione essenziale appare soltanto dopo un'interazione insolita. Verifica la pagina pubblicata, non solo l'anteprima amministrativa. Chi arriva direttamente dalla ricerca deve trovare una spiegazione utilizzabile senza dover riprodurre un percorso nascosto o attivare un controllo di cui non comprende la funzione."
+          ]
+        },
+        {
+          "title": "Leggere i rapporti come punti di indagine",
+          "paragraphs": [
+            "Un indirizzo escluso deve essere valutato secondo l'intenzione. Una vecchia pagina reindirizzata può non avere bisogno di indicizzazione autonoma. Un contenuto scansionato ma non indicizzato richiede invece esame di qualità, duplicazione e relazioni, non soltanto richieste ripetute senza diagnosi. Distingui la pubblicazione attuale dalle osservazioni precedenti del rapporto. Dai priorità ai servizi rilevanti senza trattare ogni combinazione di filtri come ugualmente importante. La categoria mostrata avvia l'analisi, ma non contiene da sola la spiegazione completa e non determina automaticamente quale modifica applicare a quella specifica situazione."
+          ]
+        },
+        {
+          "title": "Correggere la causa e controllare la pubblicazione",
+          "paragraphs": [
+            "Dopo l'intervento conferma risposta, istruzioni e collegamenti. Aggiorna la sitemap quando cambia l'insieme degli indirizzi. Una richiesta appropriata di nuova verifica può essere usata, ma non garantisce indicizzazione o scadenze. Segui l'evoluzione senza aggiungere regole sperimentali senza criterio. Se il comportamento resta inatteso, torna all'ipotesi iniziale e al ruolo del contenuto. Registra data, intervento e motivo. Questa memoria evita tentativi ripetuti e permette a un'altra persona di comprendere la scelta, anziché reintrodurre durante la manutenzione una contraddizione che era stata già individuata e risolta."
+          ]
+        }
+      ],
+      "checklist": [
+        "Verifica URL esatto e codice di risposta.",
+        "Separa blocco di scansione e noindex.",
+        "Allinea canonici e collegamenti interni.",
+        "Segui la scoperta della pagina nel sito.",
+        "Conferma la correzione prima di nuove richieste."
+      ],
+      "conclusion": "La SEO tecnica diventa più chiara quando accesso, scoperta e indicizzazione vengono esaminati separatamente. Osservazioni precise permettono interventi appropriati ed evitano nuove contraddizioni nelle pagine che l'azienda ha bisogno di presentare ai clienti."
+    },
+    {
+      "id": "content-clusters",
+      "title": "Gruppi di contenuti e collegamenti interni con ruoli chiari",
+      "slug": "gruppi-contenuti-collegamenti-interni",
+      "description": "Organizza gruppi di contenuti con ruoli chiari per guide e servizi. Pianifica i collegamenti secondo le domande dei clienti, senza ripetere gli articoli.",
+      "intro": [
+        "Un gruppo di contenuti collega pagine che insieme rendono un argomento più comprensibile. Non richiede un numero fisso di articoli o una formula di pubblicazione. Ogni pagina deve avere un compito autonomo e accompagnare il lettore quando nasce una domanda successiva pertinente.",
+        "Un'azienda di pavimenti industriali può collegare l'offerta a guide su supporto, utilizzo e manutenzione. Le guide rispondono a necessità indipendenti e indicano una valutazione quando serve. La struttura segue così decisioni reali, anziché raccogliere testi quasi uguali intorno alla medesima espressione."
+      ],
+      "sections": [
+        {
+          "title": "Partire da un'offerta e da conoscenze reali",
+          "paragraphs": [
+            "Scegli un ambito in cui l'azienda presta un servizio e possiede esperienza pertinente. Raccogli domande dei clienti, spiegazioni già pubblicate e osservazioni di ricerca. Per i pavimenti possono essere decisivi stato del supporto e impiego previsto. Segna cosa deve essere spiegato nella pagina commerciale e cosa necessita di approfondimento. Il gruppo non deve coprire tutto il settore. Deve organizzare bisogni su cui l'impresa può aiutare con credibilità e che sa mantenere corretti, evitando un insieme troppo ampio senza competenze disponibili o responsabilità editoriale riconoscibile."
+          ]
+        },
+        {
+          "title": "Assegnare un compito a ogni indirizzo",
+          "paragraphs": [
+            "La pagina di servizio presenta ambito, adeguatezza e contatto. Una guida sviluppa una domanda specifica senza ripetere tutta la spiegazione commerciale. Scrivi una funzione breve per ogni URL. Se due descrizioni sono quasi identiche, considera una pagina comune più utile. Una guida generale può essere un ingresso quando aiuta a scegliere gli approfondimenti, ma ha bisogno di spiegazioni proprie. Non dovrebbe diventare un semplice elenco vuoto di link. Ruoli chiari aiutano anche a decidere dove aggiungere una nuova domanda e quando un indirizzo aggiuntivo offre un beneficio autonomo al lettore."
+          ]
+        },
+        {
+          "title": "Collegare quando nasce il bisogno successivo",
+          "paragraphs": [
+            "Un paragrafo sulla preparazione del supporto può rimandare alla valutazione quando il lettore deve esaminare il proprio pavimento. Inserisci il link nel contesto che giustifica il passaggio. Il testo del collegamento dovrebbe descrivere la destinazione. Non tutte le pagine devono rimandare a tutte le altre. Troppi riferimenti possono interrompere la lettura e nascondere le priorità. Scegli le relazioni per utilità e controlla gli indirizzi attuali. Un collegamento interno efficace spiega perché la prossima informazione serve in quella decisione, invece di aumentare soltanto una quantità tecnica senza significato per il visitatore."
+          ]
+        },
+        {
+          "title": "Rivedere il materiale prima di pubblicare altro",
+          "paragraphs": [
+            "Confronta le guide attuali per obiettivo, spiegazione e ricerche visibili. Un articolo consolidato potrebbe aver bisogno di una sezione nuova e non di un concorrente. Annota lacune che non rientrano naturalmente nel compito esistente. Quando decidi di unire pagine, conserva informazioni pertinenti e pianifica gli indirizzi nello stesso momento. Aggiorna i collegamenti interni. Senza inventario, l'espansione può frammentare un tema prima chiaro e lasciare contenuti senza responsabili. La revisione permette di sviluppare l'area mantenendo una spiegazione coerente e un rapporto comprensibile con il servizio offerto dall'azienda."
+          ]
+        },
+        {
+          "title": "Organizzare la manutenzione dell'argomento",
+          "paragraphs": [
+            "Definisci chi segue ciascuna area e quali affermazioni richiedono controllo quando cambiano offerta o materiali. Una guida può continuare a ricevere visite pur contenendo informazioni superate. Anche riferimenti e immagini possono richiedere nuova verifica. Pianifica revisioni per importanza e variabilità, non soltanto per età del contenuto. Uno schema con pagina principale, approfondimenti e funzioni basta per iniziare. Aiuta a identificare quali pagine sono interessate da un'informazione nuova e quali testi vanno controllati insieme, così che le spiegazioni restino coerenti senza moltiplicare lavoro o dimenticare relazioni importanti."
+          ]
+        },
+        {
+          "title": "Confrontare ruoli previsti e uso osservato",
+          "paragraphs": [
+            "In Search Console osserva domande e clic per pagina. Una guida informativa può essere utile senza produrre un contatto diretto a ogni visita. La pagina commerciale deve invece spiegare un prossimo passo adeguato. Se più contenuti appaiono per la stessa domanda, indaga prima di considerarli concorrenti dannosi. Combina i dati con il percorso possibile del lettore e con le domande ricevute. Il valore del gruppo si trova nelle risposte autonome e nelle relazioni comprensibili, non soltanto nel numero di articoli pubblicati o di collegamenti creati tra loro per rispettare una formula."
+          ]
+        }
+      ],
+      "checklist": [
+        "Scegli un tema con esperienza effettiva.",
+        "Definisci un compito per indirizzo.",
+        "Collega dove nasce una domanda successiva.",
+        "Migliora le guide prima di espandere.",
+        "Assegna la responsabilità dei controlli."
+      ],
+      "conclusion": "Un insieme ben organizzato rende utilizzabile la conoscenza aziendale. Funzioni chiare e collegamenti motivati permettono di aggiungere informazioni mantenendo orientamento, capacità di manutenzione e rapporto con l'offerta concreta che l'impresa può fornire."
+    },
+    {
+      "id": "image-seo",
+      "title": "SEO delle immagini per servizi, progetti e negozi online",
+      "slug": "seo-immagini-servizi-ecommerce",
+      "description": "Migliora la SEO delle immagini con soggetti utili, testi alternativi e misure adatte. Controlla dettagli di prodotto, contesto e caricamento sul telefono.",
+      "intro": [
+        "Le immagini mostrano differenze che un testo breve può spiegare con difficoltà. Il cliente osserva materiali, proporzioni o collegamenti di un'apparecchiatura. La SEO delle immagini parte quindi da ciò che ciascun soggetto aggiunge alla decisione in quella pagina.",
+        "Un'azienda di arredi su misura può usare una vista d'insieme e un dettaglio per compiti diversi. Entrambi richiedono contesto e qualità sufficiente. Nome del file e testo alternativo fanno parte del lavoro, ma non sostituiscono un soggetto pertinente né la spiegazione che ne rende comprensibile l'importanza."
+      ],
+      "sections": [
+        {
+          "title": "Scegliere immagini con una funzione informativa",
+          "paragraphs": [
+            "Annota cosa deve aiutare a capire l'immagine centrale. Una fotografia di progetto può mostrare proporzioni, mentre un dettaglio chiarisce finitura o costruzione. Usa materiale corrispondente al prodotto reale o al lavoro eseguito. Una rappresentazione concettuale deve essere riconoscibile come tale quando potrebbe sembrare una referenza concreta. Colloca il soggetto vicino alla spiegazione pertinente. Una grande galleria senza contesto può lasciare il visitatore incerto su cosa osservare. La qualità visiva, da sola, non risponde a domande su adeguatezza, ambito o funzionamento della soluzione presentata nella pagina."
+          ]
+        },
+        {
+          "title": "Scrivere il testo alternativo secondo la funzione",
+          "paragraphs": [
+            "Il testo alternativo aiuta chi non vede l'immagine a comprendere contenuto o scopo rilevante. Descrivi l'essenziale in quel contesto senza elencare ogni dettaglio visibile. Per una fotografia di prodotto possono contare modello e prospettiva. Un'immagine puramente decorativa può avere testo alternativo vuoto. Se funziona come collegamento, la destinazione deve risultare chiara. Ripetere città e parole chiave non migliora la spiegazione. Una formulazione precisa sostiene l'uso con tecnologie assistive e porta il gruppo a trattare il soggetto in base alla sua utilità, non come uno spazio da riempire."
+          ]
+        },
+        {
+          "title": "Spiegare le figure tecniche nel testo normale",
+          "paragraphs": [
+            "Disegni quotati e diagrammi possono contenere dati che non entrano in una frase breve. Presenta le informazioni fondamentali nel contenuto o in una tabella adatta. Una didascalia può indicare l'aspetto significativo per il progetto. Controlla anche se i caratteri dentro l'immagine restano leggibili sul telefono. Dati decisivi non dovrebbero esistere soltanto come piccole annotazioni grafiche. L'immagine completa il criterio di scelta senza nasconderlo in un formato difficile da utilizzare. Le informazioni rimangono così disponibili su schermi diversi e per modalità di consultazione che non dipendono dalla sola visione del soggetto."
+          ]
+        },
+        {
+          "title": "Consegnare file adatti alla visualizzazione",
+          "paragraphs": [
+            "Fornisci dimensioni appropriate agli spazi e ai dispositivi in cui appare l'immagine. Formati e compressione efficienti possono ridurre il trasferimento se i dettagli necessari restano visibili. Una finitura può richiedere più qualità di una miniatura. Esamina il file effettivamente inviato dal sito, invece di fidarti soltanto di un'impostazione amministrativa. Un originale pesante incide anche quando viene mostrato piccolo. Indica proporzioni o dimensioni per riservare spazio e limitare spostamenti inattesi degli elementi. Questo aiuta la stabilità della pagina mentre le risorse arrivano con tempi diversi sulla connessione del visitatore."
+          ]
+        },
+        {
+          "title": "Dare priorità al soggetto importante iniziale",
+          "paragraphs": [
+            "L'immagine principale può influire sul Largest Contentful Paint. Non dovrebbe ricevere automaticamente lo stesso caricamento differito di una fotografia alla fine della galleria. Verifica quali risorse ritardano la presentazione importante e scegli priorità sulla pagina concreta. Prova il ritaglio sul telefono per non perdere caratteristiche del prodotto. Immagini successive possono avere un trattamento diverso. Rapidità e chiarezza vanno valutate insieme: un soggetto subito visibile che omette un dettaglio per compressione o taglio può ostacolare il confronto che il cliente sta cercando di fare, pur ottenendo un buon risultato tecnico."
+          ]
+        },
+        {
+          "title": "Mantenere immagini e contenuti insieme",
+          "paragraphs": [
+            "Con un nuovo design possono cambiare indirizzi, testi e posizioni. Controlla file mancanti e conserva spiegazioni pertinenti quando aggiorni catalogo o struttura. I dati sulla ricerca di immagini in Search Console possono aiutare con informazioni sufficienti, ma i clic richiedono il contesto della pagina di destinazione. Definisci chi verifica nuovi soggetti e metadati. Una routine editoriale per funzione, uso, diritti e dimensioni è più sostenibile di una correzione occasionale avviata dopo molti avvisi tecnici, quando il contesto originale di ciascuna fotografia può essere già difficile da ricostruire con precisione."
+          ]
+        }
+      ],
+      "checklist": [
+        "Definisci l'informazione trasmessa dal soggetto.",
+        "Scrivi alternative legate al contesto.",
+        "Spiega in testo i dati delle figure.",
+        "Verifica dimensioni consegnate e proporzioni.",
+        "Prova priorità e ritaglio sul telefono."
+      ],
+      "conclusion": "La SEO delle immagini unisce comprensione, accessibilità e distribuzione tecnica. Quando i soggetti rispondono a dubbi reali e hanno spiegazioni adeguate, sostengono la pagina senza renderla inutilmente pesante o difficile da utilizzare."
+    },
+    {
+      "id": "conversion-landing",
+      "title": "Pagine di ingresso organico per richieste commerciali pertinenti",
+      "slug": "pagine-ingresso-organico-richieste",
+      "description": "Pianifica pagine di ingresso organico con offerta chiara, esempi pertinenti e contatto adeguato. Rivedi i contenuti secondo domande e decisioni dei clienti.",
+      "intro": [
+        "Una pagina di ingresso deve funzionare per chi arriva direttamente da Google. La persona può non conoscere l'azienda né aver visitato la home. Ha bisogno di orientamento sufficiente per comprendere offerta, responsabilità e prossimo passo senza informazioni precedenti.",
+        "Un'impresa che adatta uffici può creare una pagina per organizzazioni che vogliono modificare spazi esistenti. Condizioni, ambito e documenti utili sono allora più rilevanti di una descrizione generale di tutte le attività edilizie. Organizza il contenuto seguendo quella decisione, invece di applicare una sequenza commerciale uguale a ogni servizio."
+      ],
+      "sections": [
+        {
+          "title": "Scegliere un compito commerciale autonomo",
+          "paragraphs": [
+            "Descrivi la situazione in cui la pagina aiuta e confrontala con i servizi già presentati. Un indirizzo nuovo richiede un valore proprio. Una questione limitata può essere risolta meglio in una sezione esistente che in un contenuto quasi identico. Una destinazione organica deve far parte della struttura normale del sito ed essere trovabile senza un collegamento speciale di campagna. Registra la funzione per valutare testo e osservazioni successive con lo stesso obiettivo. Così la pagina non cambia orientamento completamente ogni volta che compare una nuova espressione di ricerca."
+          ]
+        },
+        {
+          "title": "Rendere concreta la prima presentazione",
+          "paragraphs": [
+            "L'intestazione identifica servizio o problema. L'introduzione spiega pubblico e limiti importanti. Per l'adattamento di uffici può essere essenziale sapere se l'offerta include progettazione, realizzazione o soltanto alcune componenti. Non nascondere questi dati in una frase pubblicitaria astratta. Un'immagine pertinente può aiutare, ma il testo deve comunicare da solo la base. Sul telefono titolo, spiegazione e azione possibile devono formare una sequenza comprensibile. Elementi sovrapposti non dovrebbero coprire l'informazione che il visitatore ha appena scelto di aprire da un risultato di ricerca coerente con il proprio bisogno."
+          ]
+        },
+        {
+          "title": "Rispondere ai dubbi che rinviano la decisione",
+          "paragraphs": [
+            "Organizza sezioni su adeguatezza, ambito, contributi e vincoli pratici. Usa domande emerse in conversazioni reali. Un'azienda operativa può dover capire come si prepara una valutazione degli spazi. Promesse generiche sulla qualità aiutano meno di una spiegazione verificabile. Mantieni il testo entro l'offerta effettiva. Dove serve un esame individuale, indica il materiale utile anziché proporre una risposta certa per ogni situazione. Questo prepara aspettative più realistiche e rende il contatto successivo produttivo per entrambe le parti, perché condizioni essenziali sono già state presentate prima del colloquio."
+          ]
+        },
+        {
+          "title": "Collocare le prove vicino alla spiegazione",
+          "paragraphs": [
+            "Un progetto o una testimonianza dovrebbe chiarire un dubbio specifico. Posizionalo nel punto in cui aiuta a valutare l'offerta. Descrivi necessità e lavoro eseguito senza aggiungere risultati commerciali non misurati. Una fotografia non dimostra crescita delle vendite o miglioramento operativo. Se mancano referenze pubbliche, una dimostrazione identificata può spiegare il metodo. Il lettore deve distinguere un esempio di approccio da un progetto effettivamente svolto per un cliente. Entrambi possono essere utili, ma non hanno lo stesso valore come prova di esperienza in una situazione simile a quella considerata."
+          ]
+        },
+        {
+          "title": "Limitare il contatto ai dati necessari",
+          "paragraphs": [
+            "Chiedi contesto sufficiente a una prima valutazione. Per gli spazi possono bastare tipo di sede, esigenza e planimetrie esistenti. Spiega cosa si può chiarire dopo e rendi facoltativi gli allegati se non indispensabili. Un'alternativa WhatsApp richiede numero internazionale corretto e scopo comprensibile. Prova il modulo con errori e tastiera mobile aperta. Una conferma chiara indica il successo dell'azione. Descrivi solo un seguito sostenibile dai processi interni, senza introdurre un'aspettativa di risposta immediata o di preventivo definitivo che l'azienda non abbia realmente assunto e organizzato."
+          ]
+        },
+        {
+          "title": "Valutare ricerca e qualità della richiesta insieme",
+          "paragraphs": [
+            "Confronta domande, impressioni e clic con il compito previsto. Registra i clic di contatto separatamente senza considerarli messaggi ricevuti. Analizza poi argomenti ricorrenti nei contatti reali. Se i clienti si aspettano spesso un'altra prestazione, intestazione o ambito possono richiedere revisione. Conserva modifiche importanti con data e motivo. Un conteggio alto non valuta la pagina se crea aspettative sbagliate o conduce a un percorso che non funziona. La questione centrale è se la persona giusta riceve un sostegno concreto per la decisione successiva, non quanti pulsanti sono stati premuti."
+          ]
+        }
+      ],
+      "checklist": [
+        "Scegli un compito commerciale delimitato.",
+        "Spiega l'offerta nella prima schermata.",
+        "Usa domande provenienti da clienti reali.",
+        "Contestualizza le prove nel punto utile.",
+        "Valuta qualità oltre ai clic."
+      ],
+      "conclusion": "Una pagina organica collega scoperta e scelta comprensibile. Quando spiegazione, esempi e contatto rispondono allo stesso bisogno, l'azienda può migliorare il percorso e interpretare nuove osservazioni con un obiettivo concreto e riconoscibile."
+    },
+    {
+      "id": "seo-content-maintenance",
+      "title": "Aggiornare i contenuti SEO e risolvere le sovrapposizioni",
+      "slug": "aggiornare-contenuti-seo-sovrapposizioni",
+      "description": "Pianifica aggiornamenti con verifica dei fatti, dati di ricerca e ruoli chiari. Valuta sovrapposizioni e unioni senza eliminare informazioni ancora utili.",
+      "intro": [
+        "Un testo vecchio non è necessariamente scarso e una data nuova non rende una pagina invariata più utile. La manutenzione dovrebbe rispondere a cambiamenti effettivi nell'offerta, nelle conoscenze o nelle domande dei clienti. Il lavoro diventa così più semplice da motivare e ordinare.",
+        "In un sito che cresce, diversi articoli possono finire per svolgere quasi lo stesso compito. La situazione viene spesso chiamata cannibalizzazione, ma richiede analisi. Pagine che condividono un'espressione possono rispondere a necessità differenti. Decidi in base a contenuto, funzione e osservazioni concrete, non soltanto alle parole in comune."
+      ],
+      "sections": [
+        {
+          "title": "Registrare funzione e responsabilità",
+          "paragraphs": [
+            "Elenca pagine commerciali e guide importanti con obiettivo, responsabile e ultima revisione dei fatti. Indica quale offerta sostengono e il rapporto con altri contenuti. Dai priorità alle informazioni il cui errore può disorientare i clienti o a servizi che sono cambiati. Una pagina specializzata con poche visite può essere decisiva per un pubblico pertinente. Non ordinare quindi soltanto per traffico. L'inventario deve mostrare utilità commerciale, bisogno di aggiornamento e persona che può approvare una correzione, per evitare attività bloccate senza decisione o senza controllo di chi conosce davvero l'argomento."
+          ]
+        },
+        {
+          "title": "Indagare il cambiamento prima di riscrivere",
+          "paragraphs": [
+            "Confronta periodi e gruppi di domande adatti in Search Console. Considera stagionalità, cambiamenti di indirizzo e altre attività. Leggi se la pagina spiega ancora correttamente l'offerta. Meno clic possono dipendere da domanda, presentazione dei risultati o minore pertinenza del contenuto. Formula un'ipotesi prima dell'intervento editoriale. Se la causa è un'istruzione di indicizzazione errata o un link rimosso, aggiungere parole potrebbe non risolvere. Analizza accesso tecnico e funzione editoriale insieme, per evitare che una riscrittura passi accanto al problema che richiede davvero una correzione verificabile."
+          ]
+        },
+        {
+          "title": "Confrontare contenuti simili secondo il bisogno",
+          "paragraphs": [
+            "Leggi intestazioni, spiegazioni e prossimi passi fianco a fianco. Osserva quali ricerche attivano ogni pagina e se corrispondono a fasi differenti. Una guida di preparazione e un servizio possono usare legittimamente gli stessi termini. Due guide quasi identiche possono invece frammentare la risposta. Definisci il compito desiderato per ogni indirizzo. L'obiettivo è una struttura comprensibile, non assegnare ogni singola parola in esclusiva a un solo URL. Utilità autonoma e necessità del lettore sono una base migliore per migliorare, separare o unire le informazioni esistenti senza applicare automatismi."
+          ]
+        },
+        {
+          "title": "Scegliere l'intervento editoriale appropriato",
+          "paragraphs": [
+            "Una pagina utile può mantenere indirizzo e ricevere fatti corretti, esempi migliori o nuove risposte. Unendo contenuti, conserva le informazioni pertinenti in una destinazione coerente. Pianifica reindirizzamenti e aggiorna riferimenti interni insieme. Un testo senza funzione futura può eventualmente essere rimosso, ma considera collegamenti e aspettative precedenti. Non inviare automaticamente tutte le vecchie guide alla home. La destinazione dovrebbe avere un rapporto significativo con il tema originale. Altrimenti chi apre un riferimento precedente trova una presentazione generica senza una continuazione comprensibile della domanda che stava cercando di risolvere."
+          ]
+        },
+        {
+          "title": "Migliorare la risposta anziché soltanto la data",
+          "paragraphs": [
+            "Correggi dati superati e rafforza la sezione che non risponde bene. Un esempio vero può rendere più chiara la spiegazione. Elimina ripetizioni che nascondono il punto principale. Se cambia il focus, rivedi titolo, intestazione e invito al contatto. Le date dovrebbero riflettere modifiche reali in modo comprensibile. Un anno nuovo senza revisione non crea utilità. Registra fatti verificati e limiti che richiedono ancora una valutazione individuale, così la persona responsabile del controllo successivo può capire cosa è stato realmente fatto e quali questioni restano aperte prima di intervenire ancora."
+          ]
+        },
+        {
+          "title": "Controllare il gruppo dopo la pubblicazione",
+          "paragraphs": [
+            "Leggi il contenuto pubblicato e prova i collegamenti pertinenti. In un'unione verifica destinazioni precedenti e coerenza di sitemap e navigazione. Segui domande e clic dell'insieme interessato, anziché soltanto l'URL che non esiste più. Integra i numeri con dubbi dei clienti. Una spiegazione più precisa può essere valida senza aumentare subito le visite. Conserva data e motivo per distinguere un cambiamento intenzionale da un problema nuovo che richiede altra indagine. Questa memoria permette di rivalutare la decisione senza perdere il contesto originale o ripetere una soluzione già scartata per ragioni documentate."
+          ]
+        }
+      ],
+      "checklist": [
+        "Registra funzione e responsabile della pagina.",
+        "Verifica un'ipotesi prima di riscrivere.",
+        "Valuta sovrapposizioni secondo il bisogno.",
+        "Pianifica gli indirizzi in ogni unione.",
+        "Osserva il gruppo di pagine coinvolto."
+      ],
+      "conclusion": "La manutenzione conserva correttezza e struttura comprensibile. Migliorare la pagina giusta e preservare conoscenze utili permette di sviluppare il sito senza trasformare ogni nuova domanda in un altro articolo con un compito quasi identico."
     }
-  ]
+  ],
+  "pageSeo": {
+    "home": {
+      "title": "Web design e SEO per aziende | Latech",
+      "description": "Web design, SEO ed ecommerce per offerte comprensibili e richieste commerciali pertinenti. Latech lavora da remoto dalla Spagna su progetti internazionali.",
+      "heading": "Web design e SEO con percorsi di contatto chiari",
+      "intro": "Progetta un sito che spiega i servizi e aiuta i visitatori giusti a scegliere il prossimo passo."
+    },
+    "services": {
+      "title": "Web design, SEO ed ecommerce | Latech",
+      "description": "Scopri i servizi Latech di web design, SEO ed ecommerce. Pianifica contenuti chiari, pagine utili e percorsi di contatto coerenti con la tua attività.",
+      "heading": "Servizi per siti e visibilità organica",
+      "intro": "Colleghiamo struttura, design e basi tecniche alla tua offerta e alle domande dei clienti."
+    },
+    "web": {
+      "title": "Web design con SEO e pagine di servizio | Latech",
+      "description": "Pianifica web design con pagine di servizio chiare, utilizzo da mobile e SEO tecnica. Latech aiuta a collegare la ricerca a richieste commerciali pertinenti.",
+      "heading": "Siti aziendali con SEO e servizi comprensibili",
+      "intro": "Ogni pagina importante deve aiutare il cliente a capire l'offerta e a preparare una richiesta utile."
+    },
+    "shop": {
+      "title": "Ecommerce e SEO per negozi online | Latech",
+      "description": "Valuta un ecommerce con categorie chiare, informazioni di prodotto utili e percorsi di acquisto comprensibili. Latech progetta negozi online con basi SEO.",
+      "heading": "Ecommerce con scelte di prodotto comprensibili",
+      "intro": "Colleghiamo struttura del catalogo, informazioni e processi operativi successivi a ciascun ordine."
+    },
+    "ai": {
+      "title": "Automazioni con IA e n8n per aziende | Latech",
+      "description": "Esplora automazioni delimitate con n8n e IA. Latech pianifica accesso ai dati, validazione e revisione umana per processi concreti della tua azienda.",
+      "heading": "Automazioni delimitate con n8n e IA",
+      "intro": "Esaminiamo il processo reale, i dati necessari e le eccezioni prima di proporre un'integrazione."
+    },
+    "about": {
+      "title": "Chi è Latech: web design e SEO dalla Spagna",
+      "description": "Conosci Latech, fondata da Andrés Rubio e Luis Grondona a Badajoz, in Spagna. Lavoriamo da remoto a siti, SEO ed ecommerce per aziende di altri mercati.",
+      "heading": "Il team dietro Latech",
+      "intro": "La nostra base è a Puebla de la Calzada, Badajoz, in Spagna. Collaboriamo da remoto a progetti internazionali."
+    },
+    "projects": {
+      "title": "Progetti di web design ed ecommerce | Latech",
+      "description": "Esplora progetti reali Latech per siti ed ecommerce. I materiali disponibili descrivono struttura, scelte di design e funzionalità delle soluzioni realizzate.",
+      "heading": "Progetti web reali e funzionalità concrete",
+      "intro": "Le schede presentano lavoro effettivo attraverso i materiali disponibili di ciascun progetto."
+    },
+    "contact": {
+      "title": "Contatta Latech per web design e SEO",
+      "description": "Scrivi a Latech su WhatsApp per web design, SEO o ecommerce. Descrivi azienda, sito attuale e obiettivi per discutere un progetto e richieste pertinenti.",
+      "heading": "Parliamo del tuo sito, della SEO o dell'ecommerce",
+      "intro": "Scrivi al +34684739091 su WhatsApp indicando sito, servizio richiesto e obiettivo principale."
+    },
+    "blog": {
+      "title": "Guide SEO su traffico e richieste commerciali | Latech",
+      "description": "Leggi guide SEO su intento di ricerca, indicizzazione, contenuti e clic. Analizza il sito e organizza percorsi verso richieste commerciali pertinenti.",
+      "heading": "Guide SEO pratiche per aziende",
+      "intro": "Indicazioni su basi tecniche, contenuti utili e percorsi che aiutano il cliente a prendere contatto."
+    }
+  },
+  "faq": [
+    {
+      "question": "Dove si trova Latech?",
+      "answer": "Latech è stata fondata da Andrés Rubio e Luis Grondona a Puebla de la Calzada, Badajoz, in Spagna. Lavoriamo da remoto con aziende di mercati internazionali."
+    },
+    {
+      "question": "Possiamo pianificare insieme web design e SEO?",
+      "answer": "Sì. Possiamo discutere struttura, design, basi tecniche e contenuti come parti dello stesso progetto. L'ambito dipende dal sito, dagli obiettivi e dalle risorse disponibili."
+    },
+    {
+      "question": "Quali informazioni servono per discutere un progetto?",
+      "answer": "Indica attività, pubblico, sito attuale e priorità principale. Contenuti esistenti e dati pertinenti di Search Console possono aiutare a delimitare il lavoro."
+    },
+    {
+      "question": "Come posso contattare Latech?",
+      "answer": "Scrivi su WhatsApp al +34684739091. Paese, servizio richiesto e sito attuale offrono un punto di partenza utile alla conversazione."
+    }
+  ],
+  "projectCopy": {
+    "colegio-santo-tomas": {
+      "sector": "Istruzione da 0 a 18 anni",
+      "summary": "Un sito scolastico con fotografie reali e informazioni per le famiglie. Percorsi educativi, iscrizioni, notizie, calendario e documenti si affiancano a una galleria privata per i genitori."
+    },
+    "granja-orea": {
+      "sector": "Campi, visite scolastiche ed equitazione",
+      "summary": "Un sito editoriale per campi, visite scolastiche ed equitazione. Include contatto WhatsApp, notizie modificabili, applicazione web installabile, percorso tramite QR e strumenti privati per coordinare il gruppo."
+    },
+    "f5-arquitectos": {
+      "sector": "Architettura",
+      "summary": "Un portfolio di architettura con immagini ampie, categorie e schede dettagliate dei progetti. Un pannello di gestione dedicato permette di aggiornare lavori e altri contenuti dello studio."
+    },
+    "quality-homes": {
+      "sector": "Sviluppo immobiliare residenziale",
+      "summary": "Un sito immobiliare con fotografie, video, planimetrie e disponibilità per abitazione. Le richieste si collegano a un CRM dedicato e la gestione dei contenuti aggiorna le iniziative."
+    },
+    "megias-frutas": {
+      "sector": "Distribuzione all'ingrosso di frutta e verdura",
+      "summary": "Un sito aziendale con fotografie dei prodotti e informazioni per diversi clienti professionali. Contenuti editoriali, utilizzo mobile e orientamento locale completano la presentazione dell'attività e dell'assortimento."
+    },
+    "zonasport": {
+      "sector": "Negozio sportivo multimarca",
+      "summary": "Un catalogo online con categorie per pubblici, discipline e marchi diversi. Guide e gestione interna delle scorte si affiancano a richieste e ordini WhatsApp con ritiro in negozio."
+    },
+    "panelex": {
+      "sector": "Pannelli sandwich per edilizia",
+      "summary": "Un sito tecnico B2B con schede di prodotto, dati strutturati, guide e calcolatore. Presenta pannelli per coperture, facciate e refrigerazione per sostenere confronti e richieste di preventivo."
+    },
+    "monopatinmonkey": {
+      "sector": "Monopattini elettrici e riparazione",
+      "summary": "Un ecommerce con descrizioni dettagliate dei modelli e una sezione dedicata alle riparazioni. Il processo di assistenza viene spiegato per fasi per facilitare confronto e comprensione del servizio."
+    },
+    "toldos-noa": {
+      "sector": "Tende da sole su misura e installazione",
+      "summary": "Un sito di servizi con aree per abitazioni, imprese, riparazioni e soluzioni su misura. Recensioni reali e inviti chiari conducono a richieste di preventivo tramite WhatsApp."
+    },
+    "autoescuela-agora": {
+      "sector": "Autoscuola e formazione stradale",
+      "summary": "Un sito di autoscuola con video, informazioni sulle patenti e presentazione delle due sedi. Iscrizione, WhatsApp, test AEOL e area Mi Ágora accompagnano notizie e guide."
+    },
+    "precios-locos": {
+      "sector": "Elettrodomestici e prodotti per la casa",
+      "summary": "Un negozio con catalogo, ricerca, preferiti e carrello. Schede prodotto, guide per la casa e WhatsApp si combinano con una macchina a pinza interattiva per pacchi sorpresa."
+    },
+    "los-leones-nuptiae": {
+      "sector": "Moda maschile, cerimonia e sartoria",
+      "summary": "Due identità di moda riunite in un ingresso visivo. Percorsi dedicati presentano abbigliamento maschile, cerimonia, noleggio e confezione su misura, con collezioni, fotografie e accessi ai rispettivi negozi."
+    },
+    "my-special-hair": {
+      "sector": "Protesi capillari e cura dei capelli",
+      "summary": "Un sito di marca con catalogo, guida alle misure e studio 3D per esplorare alternative. Account cliente, appuntamenti, accesso professionale, video e galleria accompagnano la consulenza tramite WhatsApp."
+    }
+  }
 }

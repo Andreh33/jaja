@@ -7,7 +7,14 @@
       "fr": "site-web-demandes-clients-pertinentes",
       "de": "website-passende-kundenanfragen",
       "pt": "transformar-visitas-site-contactos",
-      "it": "sito-aziendale-richieste-commerciali"
+      "it": "sito-aziendale-richieste-commerciali",
+      "nl": "bedrijfswebsite-meer-aanvragen",
+      "pl": "strona-firmowa-wartosciowe-zapytania",
+      "sv": "foretagswebbplats-relevanta-forfragningar",
+      "da": "hjemmeside-relevante-kundehenvendelser",
+      "ro": "cum-planifici-un-site-de-firma-pentru-solicitari-relevante",
+      "us": "plan-a-small-business-website-that-supports-qualified-leads",
+      "latam": "como-planificar-un-sitio-web-que-genere-consultas-utiles"
     }
   },
   {
@@ -18,7 +25,14 @@
       "fr": "preparer-devis-site-cahier-des-charges",
       "de": "website-angebot-vorbereiten-vergleichen",
       "pt": "preparar-orcamento-site",
-      "it": "preventivo-sito-web-aziendale"
+      "it": "preventivo-sito-web-aziendale",
+      "nl": "offerte-website-seo-briefing",
+      "pl": "brief-wycena-strony-internetowej-seo",
+      "sv": "budget-webbplats-seo",
+      "da": "budget-hjemmeside-seo",
+      "ro": "ce-trebuie-sa-includa-o-oferta-pentru-realizarea-unui-site",
+      "us": "what-to-include-in-a-business-website-estimate",
+      "latam": "que-debe-incluir-una-cotizacion-de-diseno-web"
     }
   },
   {
@@ -29,7 +43,14 @@
       "fr": "referencement-local-zone-intervention",
       "de": "lokale-sichtbarkeit-unternehmensangaben",
       "pt": "seo-local-empresas-presenca-real",
-      "it": "seo-locale-copertura-territoriale"
+      "it": "seo-locale-copertura-territoriale",
+      "nl": "lokale-seo-bedrijf-vindbaarheid",
+      "pl": "lokalne-seo-rzeczywisty-obszar-dzialania",
+      "sv": "lokal-seo-verkliga-serviceomraden",
+      "da": "lokal-seo-serviceomraader",
+      "ro": "seo-local-pentru-o-firma-cu-zona-de-servicii-clara",
+      "us": "local-seo-for-a-us-service-business",
+      "latam": "seo-local-para-empresas-con-cobertura-real"
     }
   },
   {
@@ -40,7 +61,14 @@
       "fr": "site-multilingue-referencement-international",
       "de": "mehrsprachige-websites-internationale-kunden",
       "pt": "planear-site-varios-idiomas-mercados",
-      "it": "seo-internazionale-aziende"
+      "it": "seo-internazionale-aziende",
+      "nl": "internationale-seo-taalversies",
+      "pl": "miedzynarodowe-seo-wersje-jezykowe",
+      "sv": "internationell-seo-sprakversioner",
+      "da": "international-seo-sprogversioner",
+      "ro": "seo-international-pentru-un-site-in-mai-multe-limbi",
+      "us": "international-seo-when-a-us-business-expands-abroad",
+      "latam": "seo-internacional-para-vender-servicios-en-varios-paises"
     }
   },
   {
@@ -51,7 +79,14 @@
       "fr": "performance-mobile-priorites-site-web",
       "de": "unternehmenswebsite-smartphone-schneller-machen",
       "pt": "melhorar-desempenho-site-telemovel",
-      "it": "prestazioni-mobile-sito-aziendale"
+      "it": "prestazioni-mobile-sito-aziendale",
+      "nl": "mobiele-snelheid-website-seo",
+      "pl": "szybkosc-mobilna-strony-seo",
+      "sv": "mobil-prestanda-seo-kontakt",
+      "da": "mobil-hastighed-seo-kontakt",
+      "ro": "viteza-pe-mobil-prioritizeaza-paginile-unde-apar-obstacole",
+      "us": "improve-mobile-website-performance-where-customers-get-stuck",
+      "latam": "mejora-la-velocidad-movil-de-las-paginas-importantes"
     }
   },
   {
@@ -62,7 +97,14 @@
       "fr": "preparer-boutique-en-ligne-catalogue-commandes",
       "de": "onlineshop-vorbereitung-sortiment-ablaeufe",
       "pt": "preparar-criacao-loja-online",
-      "it": "pianificare-ecommerce-catalogo-ordini"
+      "it": "pianificare-ecommerce-catalogo-ordini",
+      "nl": "webshop-structuur-organisch-verkeer",
+      "pl": "struktura-sklepu-ruch-organiczny",
+      "sv": "seo-webbutik-kategorier-kopbeslut",
+      "da": "seo-webshop-kategorier-produktvalg",
+      "ro": "pregateste-catalogul-inainte-de-realizarea-magazinului-online",
+      "us": "prepare-your-product-catalog-before-building-an-online-store",
+      "latam": "prepara-el-catalogo-antes-de-desarrollar-tu-tienda-en-linea"
     }
   },
   {
@@ -73,7 +115,14 @@
       "fr": "whatsapp-site-demandes-clients-contexte",
       "de": "whatsapp-website-bessere-erstgespraeche",
       "pt": "whatsapp-pedidos-mais-claros",
-      "it": "whatsapp-sito-richieste-clienti"
+      "it": "whatsapp-sito-richieste-clienti",
+      "nl": "whatsapp-zoekbezoek-aanvragen",
+      "pl": "whatsapp-ruch-z-wyszukiwarki-zapytania",
+      "sv": "whatsapp-webbplats-seo-kontakt",
+      "da": "whatsapp-hjemmeside-soegebesoeg-kontakt",
+      "ro": "whatsapp-pe-site-de-la-clic-la-o-solicitare-cu-context",
+      "us": "use-whatsapp-to-support-useful-website-inquiries",
+      "latam": "whatsapp-en-tu-web-de-un-clic-a-una-consulta-con-contexto"
     }
   },
   {
@@ -95,7 +144,206 @@
       "fr": "migration-site-contenus-redirections",
       "de": "website-wechsel-inhaltsinventar-pruefplan",
       "pt": "mudar-site-preservar-informacao",
-      "it": "migrazione-sito-url-contenuti-seo"
+      "it": "migrazione-sito-url-contenuti-seo",
+      "nl": "website-migratie-seo-adressen",
+      "pl": "migracja-strony-adresy-seo",
+      "sv": "byta-webbplats-seo-adresser",
+      "da": "ny-hjemmeside-flytning-seo-adresser",
+      "ro": "cum-pregatesti-migrarea-unui-site-fara-trasee-rupte",
+      "us": "plan-a-website-migration-without-losing-useful-customer-journeys",
+      "latam": "como-migrar-un-sitio-web-conservando-rutas-y-consultas"
+    }
+  },
+  {
+    "id": "seo-audit",
+    "slugs": {
+      "es": "guia-seo-auditoria-tareas-priorizadas",
+      "en": "seo-audit-prioritised-business-work-list",
+      "fr": "audit-seo-taches-prioritaires-entreprise",
+      "de": "seo-analyse-aufgaben-priorisieren",
+      "pt": "auditoria-seo-prioridades-site",
+      "it": "audit-seo-priorita-sito-aziendale",
+      "nl": "seo-audit-prioriteiten-bedrijf",
+      "pl": "audyt-seo-priorytety-dla-firmy",
+      "sv": "seo-analys-prioritera-ratt-fel",
+      "da": "seo-analyse-konkrete-prioriteter",
+      "ro": "cum-prioritizezi-un-audit-seo-pentru-firma-ta",
+      "us": "prioritize-an-seo-audit-around-business-problems",
+      "latam": "como-priorizar-una-auditoria-seo-para-tu-empresa"
+    }
+  },
+  {
+    "id": "search-intent",
+    "slugs": {
+      "es": "guia-seo-mapa-intencion-paginas",
+      "en": "search-intent-customer-page-map",
+      "fr": "intention-recherche-choix-page-destination",
+      "de": "suchintention-passende-seite-kundenfrage",
+      "pt": "intencao-pesquisa-pagina-certa",
+      "it": "intento-ricerca-pagina-bisogno",
+      "nl": "zoekintentie-pagina-mapping",
+      "pl": "intencja-wyszukiwania-mapa-stron",
+      "sv": "sokintention-ratt-sida-kundfraga",
+      "da": "soegeintention-rigtig-side-kundens-opgave",
+      "ro": "asociaza-intentia-de-cautare-cu-paginile-site-ului",
+      "us": "map-search-intent-to-your-business-website-pages",
+      "latam": "relaciona-la-intencion-de-busqueda-con-las-paginas-de-tu-sitio"
+    }
+  },
+  {
+    "id": "service-pages",
+    "slugs": {
+      "es": "guia-seo-pagina-servicio-alcance-contacto",
+      "en": "service-page-scope-before-contact",
+      "fr": "page-service-perimetre-avant-contact",
+      "de": "leistungsseiten-organische-suche-anfragen",
+      "pt": "paginas-servico-contactos-uteis",
+      "it": "pagine-servizio-richieste-utili",
+      "nl": "dienstenpagina-seo-aanvragen",
+      "pl": "strony-uslug-seo-zapytania",
+      "sv": "tjanstesidor-sokning-forfragan",
+      "da": "ydelsessider-soegning-henvendelser",
+      "ro": "pagini-de-servicii-care-pregatesc-o-solicitare-de-oferta",
+      "us": "write-service-pages-that-help-customers-request-an-estimate",
+      "latam": "paginas-de-servicio-que-ayudan-a-solicitar-una-cotizacion"
+    }
+  },
+  {
+    "id": "seo-titles-clicks",
+    "slugs": {
+      "es": "guia-seo-titulos-ctr-consultas-comparables",
+      "en": "seo-title-tests-comparable-search-queries",
+      "fr": "titres-seo-tests-requetes-comparables",
+      "de": "seo-titel-klickrate-passende-erwartungen",
+      "pt": "titulos-seo-cliques-pertinentes",
+      "it": "titoli-seo-clic-pertinenti",
+      "nl": "seo-titels-relevante-klikken",
+      "pl": "tytuly-seo-trafne-klikniecia",
+      "sv": "seo-titlar-relevanta-klick",
+      "da": "seo-titler-relevante-klik",
+      "ro": "cum-imbunatatesti-titlurile-seo-fara-promisiuni-inselatoare",
+      "us": "improve-seo-titles-without-misleading-searchers",
+      "latam": "como-mejorar-titulos-seo-sin-promesas-enganosas"
+    }
+  },
+  {
+    "id": "search-console-leads",
+    "slugs": {
+      "es": "guia-seo-search-console-consultas-whatsapp",
+      "en": "search-console-clicks-enquiry-interpretation",
+      "fr": "search-console-clics-demandes-clients",
+      "de": "search-console-suchfragen-kundenanfragen",
+      "pt": "search-console-pesquisas-contactos",
+      "it": "search-console-ricerche-richieste",
+      "nl": "search-console-klikken-aanvragen",
+      "pl": "search-console-klikniecia-zapytania-klientow",
+      "sv": "search-console-sokfragor-kontakt",
+      "da": "search-console-soegespoergsmaal-henvendelser",
+      "ro": "leaga-datele-search-console-de-solicitarile-relevante",
+      "us": "connect-search-console-clicks-with-qualified-inquiries",
+      "latam": "relaciona-search-console-con-las-consultas-que-recibe-tu-negocio"
+    }
+  },
+  {
+    "id": "technical-indexing",
+    "slugs": {
+      "es": "guia-seo-indexacion-pagina-comercial",
+      "en": "service-page-indexing-troubleshooting-order",
+      "fr": "indexation-page-commerciale-verifications",
+      "de": "crawling-indexierung-leistungsseiten-pruefen",
+      "pt": "rastreio-indexacao-paginas-importantes",
+      "it": "scansione-indicizzazione-pagine-importanti",
+      "nl": "technische-seo-indexering-controleren",
+      "pl": "techniczne-seo-crawlowanie-indeksowanie",
+      "sv": "crawlning-indexering-seo-felsokning",
+      "da": "crawling-indeksering-seo-fejlsoegning",
+      "ro": "verifica-accesarea-si-indexarea-paginilor-importante",
+      "us": "check-crawling-and-indexing-for-important-business-pages",
+      "latam": "revisa-rastreo-e-indexacion-de-tus-paginas-importantes"
+    }
+  },
+  {
+    "id": "content-clusters",
+    "slugs": {
+      "es": "guia-seo-cluster-servicio-guias-enlaces",
+      "en": "service-page-supporting-guides-content-cluster",
+      "fr": "cluster-contenus-page-service-guides",
+      "de": "themencluster-interne-links-seitenrollen",
+      "pt": "grupos-conteudo-ligacoes-internas",
+      "it": "gruppi-contenuti-collegamenti-interni",
+      "nl": "contentclusters-interne-links-seo",
+      "pl": "klastry-tresci-linkowanie-wewnetrzne",
+      "sv": "amneskluster-interna-lankar-tjanster",
+      "da": "emneklynger-interne-links-ydelser",
+      "ro": "construieste-grupuri-de-continut-in-jurul-serviciilor",
+      "us": "build-content-clusters-that-connect-guides-with-services",
+      "latam": "crea-grupos-de-contenido-seo-alrededor-de-tus-servicios"
+    }
+  },
+  {
+    "id": "image-seo",
+    "slugs": {
+      "es": "guia-seo-imagenes-pagina-servicio-producto",
+      "en": "image-seo-product-service-page-checks",
+      "fr": "seo-images-pages-produits-services",
+      "de": "bilder-seo-leistungen-onlineshops",
+      "pt": "seo-imagens-servicos-lojas-online",
+      "it": "seo-immagini-servizi-ecommerce",
+      "nl": "afbeeldingen-seo-snelheid-toegankelijkheid",
+      "pl": "seo-obrazow-dostepnosc-szybkosc",
+      "sv": "bild-seo-tjanstesidor-webbutiker",
+      "da": "billed-seo-projekter-webshops",
+      "ro": "seo-pentru-imagini-in-site-uri-si-cataloage-de-produse",
+      "us": "image-seo-for-business-websites-and-product-catalogs",
+      "latam": "seo-de-imagenes-para-sitios-empresariales-y-catalogos"
+    }
+  },
+  {
+    "id": "conversion-landing",
+    "slugs": {
+      "es": "guia-seo-landing-organica-servicio-whatsapp",
+      "en": "organic-service-landing-page-whatsapp-enquiries",
+      "fr": "page-organique-service-contact-whatsapp",
+      "de": "organische-landingpages-kundenanfragen",
+      "pt": "paginas-entrada-pesquisa-organica-contactos",
+      "it": "pagine-ingresso-organico-richieste",
+      "nl": "organische-landingspagina-whatsapp",
+      "pl": "organiczna-strona-docelowa-whatsapp",
+      "sv": "landningssidor-organiska-forfragningar",
+      "da": "landingssider-organiske-henvendelser",
+      "ro": "planifica-o-pagina-de-destinatie-pentru-cautari-organice",
+      "us": "build-an-organic-landing-page-around-a-specific-service",
+      "latam": "disena-una-landing-organica-para-un-servicio-concreto"
+    }
+  },
+  {
+    "id": "seo-content-maintenance",
+    "slugs": {
+      "es": "guia-seo-actualizar-unir-contenidos",
+      "en": "refresh-merge-seo-content-decision",
+      "fr": "actualiser-fusionner-contenus-seo-decision",
+      "de": "seo-inhalte-aktualisieren-ueberschneidungen",
+      "pt": "atualizar-conteudo-seo-sobreposicao",
+      "it": "aggiornare-contenuti-seo-sovrapposizioni",
+      "nl": "seo-content-bijwerken-overlap",
+      "pl": "aktualizacja-tresci-seo-nakladanie-tematow",
+      "sv": "uppdatera-seo-innehall-overlappande-sidor",
+      "da": "opdater-seo-indhold-overlappende-sider",
+      "ro": "intretine-continutul-seo-si-rezolva-paginile-suprapuse",
+      "us": "maintain-seo-content-and-resolve-overlapping-pages",
+      "latam": "manten-contenido-seo-y-resuelve-paginas-que-se-solapan"
+    }
+  },
+  {
+    "id": "market-entry-seo",
+    "slugs": {
+      "nl": "internationale-markt-intrede-seo",
+      "pl": "wejscie-rynek-zagraniczny-plan-seo",
+      "sv": "seo-marknadsintrade-nordiska-foretag",
+      "da": "seo-markedsindtraeden-nordiske-virksomheder",
+      "ro": "planifica-seo-inainte-de-intrarea-pe-o-piata-noua",
+      "us": "seo-planning-before-entering-a-new-us-market",
+      "latam": "seo-para-entrar-en-un-nuevo-mercado-latinoamericano"
     }
   }
 ]

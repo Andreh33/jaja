@@ -22,7 +22,7 @@
     "remote": "Wir haben unseren Sitz in Spanien und arbeiten auch mit Unternehmen im Ausland remote zusammen.",
     "phone": "Telefon",
     "contactTitle": "Erzählen Sie uns von Ihrem Vorhaben",
-    "contactIntro": "Beschreiben Sie Ihr Unternehmen, Ihr Ziel und die Aufgabe, die Sie zuerst lösen möchten.",
+    "contactIntro": "Beschreiben Sie Ihr Unternehmen, Ihre Website und Ihr Ziel. Schreiben Sie Latech auf WhatsApp unter +34684739091, um ein passendes Projekt zu besprechen.",
     "whatsappMessage": "Hallo, ich möchte ein Angebot anfragen. Mein Land: __. Gewünschte Leistung: __. Aktuelle Website: __. Mein gewünschter Zeitrahmen: __.",
     "processTitle": "So arbeiten wir",
     "processSteps": [
@@ -30,41 +30,51 @@
       "Wir strukturieren Inhalte und entwickeln die passende Lösung.",
       "Wir prüfen die Funktionen und planen Veröffentlichung und nächste Schritte."
     ],
-    "articlesIntro": "Praktische Ratgeber zu Websites, Onlineshops, Suchmaschinen und Automatisierung für Unternehmen.",
-    "serviceIntro": "Gestaltung und Entwicklung, die sich an den konkreten Aufgaben Ihres Unternehmens orientieren.",
+    "articlesIntro": "Praktische SEO-Ratgeber zu organischer Sichtbarkeit, relevanten Klicks und dem Weg von der Website zur passenden Anfrage.",
+    "serviceIntro": "Webdesign, SEO und E-Commerce mit klaren Prioritäten für Ihr Unternehmen und Ihre Kunden.",
     "projectsIntro": "Lernen Sie unsere Arbeit und die Aufgaben hinter den einzelnen Projekten kennen.",
     "aboutTitle": "Ein Team mit Blick für Ihr Unternehmen",
     "aboutIntro": "Latech wurde von Andrés Rubio und Luis Grondona in Puebla de la Calzada, Badajoz, Spanien gegründet.",
     "aboutBody": [
-      "Wir entwickeln Websites, Onlineshops und Automatisierungen mit n8n und künstlicher Intelligenz für verständliche digitale Abläufe.",
+      "Wir entwickeln Unternehmenswebsites und Onlineshops mit verständlichen Inhalten und durchdachter SEO-Grundlage. Ergänzend planen wir klar abgegrenzte Automatisierungen mit n8n und KI.",
       "Zuerst betrachten wir Ihr Angebot, Ihre Kunden und wiederkehrende Aufgaben. Daraus ergeben sich die Anforderungen an die technische Lösung.",
       "Wir arbeiten von Spanien aus remote mit Unternehmen zusammen. Umfang, Zusammenarbeit und benötigte Informationen stimmen wir für jedes Projekt ab."
     ],
     "contactDetails": "Kontaktdaten",
     "moreServices": "Weitere Leistungen",
-    "allArticles": "Alle Artikel"
+    "allArticles": "Alle Artikel",
+    "brandClaim": "Bei Design und SEO schlägt uns niemand.",
+    "seoTitle": "SEO für verständliche Angebote und passende Anfragen",
+    "seoIntro": "Wir verbinden technische Zugänglichkeit, klare Leistungsseiten und hilfreiche Inhalte mit einem nachvollziehbaren Weg zur Kontaktaufnahme.",
+    "seoBullets": [
+      "Suchintention und Seitenstruktur",
+      "Technische SEO und Indexierung",
+      "Inhalte für Leistungen und Onlineshops",
+      "Klicks und Kontaktwege sinnvoll auswerten"
+    ],
+    "faqTitle": "Häufige Fragen zu Latech"
   },
   "home": {
-    "title": "Webdesign und Automatisierung für Unternehmen | Latech",
-    "description": "Websites, Onlineshops und Automatisierungen mit n8n und KI für Unternehmen. Latech arbeitet von Spanien aus remote und richtet sich nach Ihren Aufgaben.",
-    "heading": "Eine Website, die Ihr Unternehmen weiterbringt",
-    "intro": "Wir entwickeln Websites, Onlineshops und Automatisierungen, die Ihr Angebot verständlich machen und Ihre täglichen Abläufe unterstützen.",
+    "title": "Webdesign und SEO für Unternehmen | Latech",
+    "description": "Webdesign, SEO und E-Commerce für Unternehmen mit klaren Angeboten und passenden Kontaktwegen. Besprechen Sie Ihre Website mit Latech mit Sitz in Spanien.",
+    "heading": "Webdesign und SEO für Unternehmen, die passende Kundenanfragen erreichen möchten",
+    "intro": "Wir gestalten Websites und Onlineshops, die Ihr Angebot verständlich machen und Besuchern einen klaren Weg zur Kontaktaufnahme bieten.",
     "body": [
-      "Ein gutes digitales Projekt beginnt mit klaren Fragen: Was bieten Sie an, wen möchten Sie erreichen und welchen nächsten Schritt sollen Besucher gehen? Daraus entwickeln wir Struktur, Inhalte und Technik.",
-      "Andrés Rubio und Luis Grondona arbeiten bei Latech von Puebla de la Calzada in Badajoz aus. Wir begleiten Unternehmen remote bei ihrem digitalen Auftritt und bei der Vereinfachung wiederkehrender Aufgaben."
+      "Eine Unternehmenswebsite braucht eine nachvollziehbare Struktur, hilfreiche Leistungsbeschreibungen und technische Grundlagen für die organische Suche. Wir planen diese Teile zusammen und richten Inhalte und Kontaktwege an den Fragen Ihrer Kunden aus.",
+      "Latech wurde von Andrés Rubio und Luis Grondona in Puebla de la Calzada, Badajoz, Spanien gegründet. Wir arbeiten remote mit Unternehmen auf internationalen Märkten. Umfang, Zuständigkeiten und Zusammenarbeit werden für jedes Projekt abgestimmt."
     ]
   },
   "services": [
     {
       "id": "web",
-      "title": "Webdesign und Website-Entwicklung",
-      "description": "Unternehmenswebsites mit verständlichen Inhalten, klarer Navigation und guter Nutzbarkeit. Wir planen Seiten, die passende Anfragen erleichtern.",
+      "title": "Webdesign und SEO für Unternehmen",
+      "description": "Planen Sie eine Unternehmenswebsite mit klaren Leistungsseiten, mobiler Bedienung und technischer SEO. Latech verbindet Inhalte und passende Kontaktwege.",
       "intro": "Ihre Website soll das Angebot erklären und Besuchern einen nachvollziehbaren nächsten Schritt zeigen.",
       "sections": [
         {
           "title": "Eine Struktur für die Fragen Ihrer Kunden",
           "paragraphs": [
-            "Wir gliedern Inhalte nach Leistungen, Zielgruppen und den Fragen, die vor einer Anfrage entstehen.",
+            "Wir strukturieren Ihre Leistungen nach Kundenfragen und Suchintention. Jede wichtige Seite soll erklären, welches Problem das Angebot löst, für wen es passt und welche Angaben bei einer Anfrage helfen.",
             "Ein Handwerksbetrieb braucht beispielsweise unterschiedliche Erklärungen für Wartung, Neuinstallation und größere Umbauten."
           ]
         },
@@ -86,7 +96,7 @@
     },
     {
       "id": "shop",
-      "title": "Entwicklung von Onlineshops",
+      "title": "Onlineshops und SEO für E-Commerce",
       "description": "Onlineshops mit geordnetem Sortiment, hilfreichen Produktseiten und verständlichem Kaufablauf. Wir stimmen Zahlung, Versand und Verwaltung mit Ihnen ab.",
       "intro": "Ein Onlineshop verbindet die Kaufentscheidung Ihrer Kunden mit der Bearbeitung jeder Bestellung im Unternehmen.",
       "sections": [
@@ -647,6 +657,694 @@
         "Benennen Sie Verantwortliche für Veröffentlichung, Wiederherstellung und anschließende Kontrolle."
       ],
       "conclusion": "Ein geplanter Website-Wechsel macht Entscheidungen und Prüfungen nachvollziehbar. Das Inventar schützt den Überblick, die Zuordnungstabelle lenkt alte Adressen und Funktionstests prüfen die wesentlichen Aufgaben. Mit einer festen Nachkontrolle lassen sich Probleme erkennen und bearbeiten, bevor fehlende Inhalte oder unterbrochene Kontaktwege lange unbemerkt bleiben."
+    },
+    {
+      "id": "seo-audit",
+      "title": "SEO-Analyse: konkrete Aufgaben statt einer langen Fehlerliste",
+      "slug": "seo-analyse-aufgaben-priorisieren",
+      "description": "Planen Sie eine SEO-Analyse mit wichtigen Seiten, Suchintention und Kontaktwegen. Priorisieren Sie nachvollziehbare Maßnahmen und prüfen Sie deren Umsetzung.",
+      "intro": [
+        "Eine SEO-Analyse soll erklären, welche Probleme zuerst bearbeitet werden sollten. Ein technischer Bericht mit vielen Warnungen reicht dafür nicht aus. Jeder wichtige Befund braucht eine betroffene Seite, eine nachvollziehbare Bedeutung und einen überprüfbaren nächsten Schritt.",
+        "Bei einem Unternehmen für Gebäudewartung können Wartungsverträge und einzelne Reparaturen unterschiedliche Kundenfragen auslösen. Wenn beide Angebote auf einer unklaren Seite stehen, hilft eine kleinere Bilddatei allein nicht weiter. Prüfen Sie technische Voraussetzungen und Inhalt gemeinsam, damit aus Beobachtungen tatsächlich sinnvolle Aufgaben für die Website entstehen."
+      ],
+      "sections": [
+        {
+          "title": "Den Untersuchungsumfang an Leistungen ausrichten",
+          "paragraphs": [
+            "Wählen Sie zunächst die wichtigsten Leistungen und die zugehörigen Kontaktwege. Schreiben Sie auf, welche Kunden eine Seite erreichen soll und welche Angaben eine passende Anfrage enthält. Ergänzen Sie repräsentative Ratgeber, Projekte und weitere Seitentypen. Auch eine kleine Website braucht Prioritäten: Eine nicht erreichbare Hauptleistung hat eine andere Bedeutung als eine veraltete Randnotiz. Der Umfang sollte zeigen, welche Seiten für die tatsächlichen Aufgaben des Unternehmens wichtig sind. So lässt sich später begründen, warum ein Befund dringlich ist und ein anderer zunächst warten kann."
+          ]
+        },
+        {
+          "title": "Erreichbarkeit und Indexierung konkret prüfen",
+          "paragraphs": [
+            "Kontrollieren Sie Antwortcodes, Weiterleitungen, robots-Regeln, noindex und kanonische Verweise für die ausgewählten Adressen. Nutzen Sie die verfügbaren Angaben in der Search Console, um einen konkreten Fall zu untersuchen. Nicht jede ausgeschlossene Adresse ist ein Fehler. Eine alte Weiterleitung oder eine bewusst ausgeblendete Variante kann korrekt behandelt werden. Vergleichen Sie deshalb Beobachtung und Absicht. Dokumentieren Sie die genaue URL und den tatsächlich festgestellten Zustand, statt eine allgemeine Werkzeugmeldung ungeprüft in die Maßnahmenliste zu übernehmen. Dadurch bleibt der Befund später nachvollziehbar."
+          ]
+        },
+        {
+          "title": "Inhalte an der Kundenentscheidung messen",
+          "paragraphs": [
+            "Lesen Sie die Seite mit der gedachten Suchfrage im Blick. Wird deutlich, welches Problem die Leistung löst, was sie umfasst und wo ihre Grenzen liegen? Bei Wartungsverträgen sind laufende Zuständigkeiten relevant, bei einer einzelnen Reparatur eher die erste Problembeschreibung. Mehr Text behebt keine falsche Ausrichtung. Notieren Sie die konkrete Information, die fehlt, und erklären Sie, welche Entscheidung dadurch leichter wird. Prüfen Sie außerdem, ob Titel und Hauptüberschrift dasselbe Angebot beschreiben wie der eigentliche Text und die abschließende Kontaktaufforderung."
+          ]
+        },
+        {
+          "title": "Interne Verbindungen und Überschneidungen untersuchen",
+          "paragraphs": [
+            "Sehen Sie nach, welche Ratgeber und Projekte auf die Leistung verweisen. Ein sinnvoller Artikel sollte nicht ausschließlich zur Startseite führen, wenn eine konkrete Leistungsseite die nächste Frage beantwortet. Vergleichen Sie außerdem Seiten mit ähnlichen Aufgaben. Gemeinsame Begriffe sind noch kein Problem, nahezu identische Erklärungen können die Struktur jedoch unnötig aufteilen. Entscheiden Sie anhand von Inhalt, Suchfragen und Funktion, ob Seiten verbessert, zusammengeführt oder klarer voneinander getrennt werden sollten. Eine automatische Zusammenlegung allein wegen ähnlicher Wörter wäre dafür keine ausreichende Begründung."
+          ]
+        },
+        {
+          "title": "Aus dem Befund eine ausführbare Aufgabe machen",
+          "paragraphs": [
+            "Eine priorisierte Maßnahme nennt Adresse, Problem, vorgeschlagene Änderung und Prüfmethode. Ergänzen Sie Zuständigkeit und mögliche Abhängigkeiten. Die Aufforderung, SEO zu verbessern, lässt sich kaum abnehmen; ein falscher kanonischer Verweis kann dagegen konkret korrigiert und geprüft werden. Bewerten Sie mögliche Bedeutung, Arbeitsaufwand und Sicherheit der Erklärung zusammen. Kleine kosmetische Änderungen sollten nicht automatisch vor einem größeren Fehler stehen, der eine zentrale Seite betrifft. Eine kurze begründete Liste ist oft hilfreicher als zahlreiche ungewichtete Warnungen ohne Verantwortliche und nächsten Kontrollschritt."
+          ]
+        },
+        {
+          "title": "Umsetzung und spätere Wirkung auseinanderhalten",
+          "paragraphs": [
+            "Prüfen Sie zunächst, ob die Änderung korrekt veröffentlicht wurde. Dazu können das Lesen der Seite, Linktests und technische Kontrollen gehören. Beobachten Sie danach passende Suchfragen, Klicks und Kontaktwege über einen Zeitraum mit ausreichend Daten. Eine technische Korrektur garantiert weder sofortige Sichtbarkeit noch Anfragen. Halten Sie fest, welche Unsicherheiten bleiben und welche Beobachtung den nächsten Schritt auslösen soll. So wird die Analyse zu einem fortlaufend nutzbaren Arbeitsgrundlage statt zu einer einmaligen Präsentation mit Prognosen, die aus dem vorhandenen Material nicht sicher abgeleitet werden können."
+          ]
+        }
+      ],
+      "checklist": [
+        "Wichtige Leistungen und Seiten auswählen.",
+        "Technische Befunde an konkreten URLs prüfen.",
+        "Inhalte mit Kundenfragen vergleichen.",
+        "Maßnahme, Zuständigkeit und Kontrolle festhalten.",
+        "Veröffentlichung vor späterer Wirkung bewerten."
+      ],
+      "conclusion": "Eine brauchbare SEO-Analyse macht Entscheidungen verständlich. Wenn technische Beobachtungen und Inhaltsfragen mit echten Kundenaufgaben verbunden werden, kann das Unternehmen gezielt arbeiten und anschließend prüfen, was eine Maßnahme tatsächlich verändert hat."
+    },
+    {
+      "id": "search-intent",
+      "title": "Suchintention: welche Seite beantwortet die Kundenfrage?",
+      "slug": "suchintention-passende-seite-kundenfrage",
+      "description": "Ordnen Sie Suchfragen nach Information, Vergleich und Kontaktbedarf. Prüfen Sie Suchergebnisse und verteilen Sie Inhalte auf klare Seiten mit eigenen Aufgaben.",
+      "intro": [
+        "Zwei Suchfragen mit demselben Fachwort können unterschiedliche Aufgaben ausdrücken. Wer den Ablauf einer Energieberatung verstehen möchte, braucht nicht automatisch dieselben Informationen wie jemand, der einen Anbieter auswählen will. Eine Seite sollte deshalb wissen, welches Bedürfnis sie vorrangig beantwortet.",
+        "Suchintention ist eine begründete Einschätzung der Aufgabe hinter einer Suche. Kundenfragen, sichtbare Suchergebnisse und vorhandene Daten helfen bei dieser Einschätzung. Sie ist aber keine unveränderliche Kennzeichnung. Prüfen Sie regelmäßig, ob Format, Inhalt und nächster Schritt noch zu den tatsächlichen Erwartungen der Besucher passen."
+      ],
+      "sections": [
+        {
+          "title": "Kundenfragen vor Suchwortlisten sammeln",
+          "paragraphs": [
+            "Beginnen Sie mit Gesprächsnotizen, häufigen Formularfragen und relevanten Angaben aus der Search Console. Bewahren Sie die Bedeutung vollständiger Fragen, bevor sie zu kurzen Begriffen verdichtet werden. Bei einer Energieberatung können Vorbereitung, Ablauf und Auswahl eines Anbieters verschiedene Themen sein. Markieren Sie auch Fragen außerhalb des tatsächlichen Angebots. Das Unternehmen muss nicht jedes verwandte Thema beantworten. Wählen Sie Bereiche, in denen eigene Kenntnisse und eine klare Verbindung zur Leistung bestehen. Das erleichtert später die Entscheidung, welche Erklärung auf einer kommerziellen Seite sinnvoll ist."
+          ]
+        },
+        {
+          "title": "Suchergebnisse als Hinweise lesen",
+          "paragraphs": [
+            "Untersuchen Sie, ob für eine Frage vorwiegend Ratgeber, Leistungsseiten, Verzeichnisse oder Vergleiche erscheinen. Lesen Sie mehrere Ergebnisse und notieren Sie die wiederkehrenden Informationsbedürfnisse. Die Ergebnisse zeigen mögliche Erwartungen, sind aber keine Anweisung, Wettbewerber zu kopieren. Manche Fragen haben gemischte Absichten, und die Zusammensetzung kann sich ändern. Halten Sie Beobachtung und Datum fest. So lässt sich später besser unterscheiden, ob eine eigene Seite unzureichend erklärt oder ob ihr gewähltes Format nicht zur aktuellen Aufgabe passt, die Nutzer mit der Suchfrage verbinden."
+          ]
+        },
+        {
+          "title": "Die gewünschte Entscheidung in einem Satz beschreiben",
+          "paragraphs": [
+            "Schreiben Sie vor dem Entwurf auf, was ein Leser nach der Seite verstehen oder entscheiden können soll. Ein Ratgeber kann Grundlagen erklären und ein Gespräch vorbereiten. Eine Leistungsseite muss zusätzlich Umfang, Eignung und Kontakt erklären. Ein Vergleich braucht nachvollziehbare Unterschiede und klare Grenzen. Wählen Sie das Format nach dieser Aufgabe. Ein als umfassender Leitfaden betitelter Text, der hauptsächlich das Unternehmen vorstellt, erzeugt eine Lücke zwischen Erwartung und Inhalt. Diese Lücke lässt sich nicht allein durch zusätzliche Suchbegriffe oder eine auffällige Kontaktfläche schließen."
+          ]
+        },
+        {
+          "title": "Verwandte Fragen auf bestehende Adressen verteilen",
+          "paragraphs": [
+            "Erstellen Sie eine einfache Übersicht mit Hauptaufgabe und vorgesehener Seite. Mehrere ähnliche Formulierungen lassen sich häufig auf derselben Adresse beantworten. Für jede Wortvariante einen neuen Artikel anzulegen, kann unnötige Überschneidungen schaffen. Wenn eine Leistungsseite bereits passend ausgerichtet ist, genügt möglicherweise ein hilfreicher neuer Abschnitt. Ein eigenständiges Informationsbedürfnis kann dagegen einen Ratgeber rechtfertigen, der sinnvoll zur Leistung führt. Die Übersicht soll klare Rollen schaffen und dabei helfen, bestehende Inhalte weiterzuentwickeln, bevor neue Seiten ohne erkennbaren Mehrwert veröffentlicht werden."
+          ]
+        },
+        {
+          "title": "Den nächsten Schritt an die Lesesituation anpassen",
+          "paragraphs": [
+            "Wer zunächst den Arbeitsablauf verstehen will, braucht vielleicht eine Vorbereitungsliste, bevor ein Gespräch sinnvoll ist. Platzieren Sie Verweise dort, wo sie eine natürliche Folgefrage beantworten. Ein Ratgeber kann auf die Unterlagen verweisen, die für die angebotene Prüfung gebraucht werden. Eine Seite zum Anbietervergleich kann echte Projekte und eine passende Gesprächsmöglichkeit zeigen. Beschreiben Sie das Ziel im Linktext. Leiten Sie nicht alle Leser unabhängig vom Thema zurück zur Startseite. Der nächste Schritt sollte die gerade gelöste Aufgabe weiterführen, statt die Orientierung wieder von vorn beginnen zu lassen."
+          ]
+        },
+        {
+          "title": "Die geplante Absicht mit Beobachtungen abgleichen",
+          "paragraphs": [
+            "Prüfen Sie nach Veröffentlichung, für welche Fragen die Seite tatsächlich Impressionen und Klicks erhält. Vergleichen Sie das mit ihrer geplanten Rolle und mit wiederkehrenden Themen in echten Anfragen. Wenn eine Leistungsseite überwiegend für Definitionsfragen erscheint, kann eine andere Gewichtung oder ein ergänzender Ratgeber sinnvoll sein. Wenige Impressionen liefern noch keine sichere Diagnose. Nutzen Sie Beobachtungen schrittweise und dokumentieren Sie, warum eine Seitenrolle geändert wird. Dadurch bleibt die Inhaltsplanung nachvollziehbar und wird nicht bei jeder neuen sichtbaren Suchfrage ohne Bezug zum Gesamtangebot umgebaut."
+          ]
+        }
+      ],
+      "checklist": [
+        "Echte Kundenfragen zuerst sammeln.",
+        "Angezeigte Seitentypen untersuchen.",
+        "Eine Hauptaufgabe pro Seite formulieren.",
+        "Nahe Fragen auf klare Adressen verteilen.",
+        "Planung mit tatsächlichen Fragen abgleichen."
+      ],
+      "conclusion": "Suchintention hilft, Inhalte auf ein konkretes Bedürfnis auszurichten. Wenn Format, Versprechen und nächster Schritt zusammenpassen, wird die Website verständlicher und die Bedeutung organischer Besuche für passende Anfragen lässt sich sinnvoller beurteilen."
+    },
+    {
+      "id": "service-pages",
+      "title": "Leistungsseiten für organische Suche und passende Anfragen",
+      "slug": "leistungsseiten-organische-suche-anfragen",
+      "description": "Schreiben Sie Leistungsseiten mit klarem Umfang, hilfreichen Abläufen und echten Beispielen. Verbinden Sie Suchintention und Kontakt zu passenden Anfragen.",
+      "intro": [
+        "Eine Leistungsseite soll einem neuen Besucher helfen, das Angebot richtig einzuordnen. Ein Leistungsname und allgemeine Vorteile reichen dafür oft nicht aus. Kunden möchten wissen, ob ihre Situation passt, was die Zusammenarbeit umfasst und welche Angaben für den ersten Kontakt hilfreich sind.",
+        "Ein Anbieter technischer Dokumentation kann Produktentwicklung und Betrieb unterstützen. Beide Zielgruppen stellen vor einer Anfrage andere Fragen. Eine durchdachte Seite erklärt deshalb das konkrete Problem und seine Grenzen. Sie soll eine Entscheidung ermöglichen, statt nur die internen Fähigkeiten des Unternehmens aufzuzählen."
+      ],
+      "sections": [
+        {
+          "title": "Kunde und Problem deutlich benennen",
+          "paragraphs": [
+            "Beschreiben Sie in einem Satz, für wen die Seite gedacht ist und welches Problem die Leistung bearbeitet. Nutzen Sie einen verständlichen Namen statt einer internen Abteilungsbezeichnung. Technische Dokumentation könnte sich beispielsweise auf Benutzerunterlagen für eine bestimmte Produktgruppe beziehen. Wenn Aufgaben und Entscheidungsgrundlagen deutlich auseinanderliegen, können getrennte Seiten sinnvoll sein. Sie benötigen aber eigene Inhalte und erkennbare Rollen. Zusätzliche Seiten allein für ähnliche Suchwörter helfen wenig. Der passende Besucher sollte seine Situation erkennen können und verstehen, welche Art von Unterstützung das Unternehmen tatsächlich anbietet."
+          ]
+        },
+        {
+          "title": "Umfang und benötigtes Material erklären",
+          "paragraphs": [
+            "Beschreiben Sie mögliche Arbeitsschritte und Punkte, die individuell abgestimmt werden müssen. Nennen Sie Unterlagen, die der Kunde beitragen kann. Bei Dokumentation sind Produktinformationen, Zielgruppen und gewünschte Sprachversionen mögliche Ausgangspunkte. Behaupten Sie keine identischen Voraussetzungen für alle Projekte, wenn der Aufwand tatsächlich unterschiedlich ist. Eine nachvollziehbare Abgrenzung hilft auch Menschen, die eine andere Leistung suchen. Der Kunde muss die Lösung noch nicht kennen, sollte aber verstehen, mit welchem Kontext ein Gespräch beginnen kann und welche Angaben für eine erste Einschätzung noch nicht nötig sind."
+          ]
+        },
+        {
+          "title": "Den tatsächlichen Arbeitsablauf zeigen",
+          "paragraphs": [
+            "Eine kurze Darstellung kann Erstgespräch, Bearbeitung und fachliche Prüfung miteinander verbinden. Erklären Sie dabei, welche Entscheidungen gemeinsam getroffen werden und an welchen Stellen Kundenmaterial gebraucht wird. Wenn Umfang und Qualität der Unterlagen die Planung beeinflussen, ist diese Information hilfreicher als ein pauschales Zeitversprechen. Beschreiben Sie außerdem, wie Rückmeldungen bearbeitet werden. Der Ablauf sollte das echte Vorgehen verständlich machen und kein immer gleiches Ergebnis unter beliebigen Bedingungen suggerieren. So kann der Kunde die eigene Vorbereitung besser einschätzen und bereits im ersten Gespräch relevante Fragen stellen."
+          ]
+        },
+        {
+          "title": "Relevante Projekte nachvollziehbar einordnen",
+          "paragraphs": [
+            "Ein Projektbeispiel braucht eine Verbindung zur beschriebenen Leistung. Erklären Sie Ausgangsbedarf und umgesetzte Lösung, etwa die Strukturierung komplexer Anleitungen für verschiedene Benutzer. Unterscheiden Sie sichtbare Funktionen von wirtschaftlichen Wirkungen, die nicht belegt sind. Eine allgemeine Empfehlung kann ergänzen, ersetzt aber keine Erklärung des tatsächlichen Arbeitsumfangs. Wenn ein Projekt mehrere Leistungen enthielt, sollte der Verweis den passenden Teil erkennbar machen. Der Leser muss verstehen, weshalb dieses Material bei der Beurteilung seiner aktuellen Aufgabe hilft, statt lediglich eine weitere Bildergalerie ohne Zusammenhang zu sehen."
+          ]
+        },
+        {
+          "title": "Die Seite sinnvoll intern verknüpfen",
+          "paragraphs": [
+            "Verweisen Sie aus passenden Ratgebern, Projekten und Übersichtsseiten auf die Leistung. Ein Artikel über Vorbereitung kann beispielsweise die angebotene Prüfung als nächsten Schritt erklären. Verwenden Sie beschreibende Linktexte und führen Sie direkt zur aktuellen Adresse. Die Leistungsseite kann ihrerseits auf eine hilfreiche Vertiefung verweisen, wenn eine Frage mehr Raum braucht. Verlinken Sie nach Nutzen, nicht nach einem festen Mengenziel. Eine technisch indexierbare Seite bleibt schwer auffindbar, wenn alle internen Wege nur zur Startseite oder zu allgemeinen Übersichten führen und ihre Beziehung zum Angebot unklar bleibt."
+          ]
+        },
+        {
+          "title": "Die Kontaktaufnahme auf die Leistung abstimmen",
+          "paragraphs": [
+            "Nennen Sie die Informationen, die für den Einstieg helfen: Produkttyp, bestehende Unterlagen und Hauptanliegen können ausreichen. Platzieren Sie die Aufforderung nach der Erklärung, die den Kontakt sinnvoll macht. Testen Sie Formular und gegebenenfalls WhatsApp auf dem Smartphone. Prüfen Sie später Suchfragen und echte Anfragen gemeinsam. Viele Kontaktklicks sind kein hinreichender Erfolg, wenn Kunden regelmäßig eine andere Leistung erwarten. Aktualisieren Sie die Seite, wenn sich das Angebot ändert, und benennen Sie eine verantwortliche Person für Umfang, Angaben und die Erwartungen an den nächsten Schritt."
+          ]
+        }
+      ],
+      "checklist": [
+        "Kundenproblem pro Leistungsseite festlegen.",
+        "Umfang und Mitwirkung beschreiben.",
+        "Echte Beispiele mit Relevanz erklären.",
+        "Aus passenden Ratgebern direkt verlinken.",
+        "Kontaktangaben an die Aufgabe anpassen."
+      ],
+      "conclusion": "Eine gute Leistungsseite macht ein Angebot prüfbar. Wenn Erklärung, Belege und Kontaktweg zusammenpassen, kann das Unternehmen besser nachvollziehen, ob seine Inhalte die richtigen Fragen beantworten und passende Gespräche vorbereiten."
+    },
+    {
+      "id": "seo-titles-clicks",
+      "title": "SEO-Titel und Klickrate: ein Versprechen das zur Seite passt",
+      "slug": "seo-titel-klickrate-passende-erwartungen",
+      "description": "Verbessern Sie SEO-Titel mit klarer Suchintention, echten Unterschieden und passendem Inhalt. Prüfen Sie die Klickrate anhand vergleichbarer Seiten und Fragen.",
+      "intro": [
+        "Ein Seitentitel hilft Nutzern, ein Suchergebnis einzuordnen. Er sollte erklären, welches Thema die Seite behandelt und weshalb sie zur Frage passt. Mehr Klicks sind nicht automatisch nützlich, wenn Besucher anschließend ein anderes Angebot vorfinden als erwartet.",
+        "Google kann einen anderen Titellink anzeigen als den angegebenen Seitentitel. Prüfen Sie deshalb auch Hauptüberschrift und Inhalt. Beginnen Sie mit einem präzisen Versprechen, das die Seite erfüllt: Ein Ratgeber soll seine Erklärung erkennbar machen, eine Leistungsseite das tatsächliche Angebot und dessen sinnvolle Abgrenzung."
+      ],
+      "sections": [
+        {
+          "title": "Titel und Inhalt gemeinsam lesen",
+          "paragraphs": [
+            "Öffnen Sie die konkrete Seite und vergleichen Sie title-Element, Hauptüberschrift und Einleitung. Beziehen sich alle auf dieselbe Aufgabe? Ein Titel über eine vollständige Prüfung passt nicht, wenn nur ein Erstgespräch beschrieben wird. Korrigieren Sie diesen Unterschied, bevor stärkere Werbeformulierungen getestet werden. Prüfen Sie auch, ob verschiedene Seiten denselben allgemeinen Titel tragen. Jede zentrale Adresse braucht einen verständlichen eigenen Namen. Das erleichtert die Unterscheidung in Suchergebnissen und hilft intern dabei, die Aufgaben nah verwandter Inhalte auseinanderzuhalten, ohne sie künstlich mit Wortvarianten zu versehen."
+          ]
+        },
+        {
+          "title": "Die Formulierung an das Informationsbedürfnis anpassen",
+          "paragraphs": [
+            "Ein Ratgeber zur Auswahl von Lagerbeleuchtung kann Entscheidungskriterien oder einen Vergleich ankündigen. Eine Leistungsseite sollte stattdessen das prüfbare Angebot benennen. Lassen Sie das Hauptthema klar hervortreten und vermeiden Sie eine Reihe ähnlicher Suchwörter. Ein Ortsname ist sinnvoll, wenn er die tatsächliche Leistung abgrenzt, darf aber keine erfundene Niederlassung andeuten. Lesen Sie die Formulierung aus Kundensicht. Was sollte man nach dem Klick verstehen oder tun können? Diese Erwartung muss mit dem Seiteninhalt und der dort angebotenen nächsten Handlung übereinstimmen."
+          ]
+        },
+        {
+          "title": "Nur tatsächliche Unterschiede hervorheben",
+          "paragraphs": [
+            "Eine Checkliste, bestimmte Anwendung oder konkrete Gegenüberstellung kann im Titel stehen, wenn die Seite sie wirklich enthält. Unbelegte Aussagen über den größten, günstigsten oder besten Anbieter sind keine verlässliche Differenzierung. Der Markenname kann Orientierung geben, sollte das Thema aber nicht verdrängen. Die Darstellung hängt von Gerät und Situation ab; eine feste Zeichenzahl garantiert keine identische Anzeige. Platzieren Sie die wesentliche Bedeutung deshalb früh. So bleibt der Titel auch verständlich, wenn Teile nicht erscheinen oder Google für eine bestimmte Frage andere Elemente zur Darstellung heranzieht."
+          ]
+        },
+        {
+          "title": "Die Beschreibung als sinnvolle Ergänzung nutzen",
+          "paragraphs": [
+            "Eine Metabeschreibung kann den Inhalt zusammenfassen und bei der Auswahl helfen. Google kann jedoch auch einen anderen Ausschnitt passend zur Frage zeigen. Schreiben Sie deshalb eine korrekte Erläuterung statt einer wörtlichen Wiederholung des Titels. Bei einer Leistung können Umfang und Einstieg wichtig sein, bei einem Ratgeber die behandelten Entscheidungen. Fügen Sie keine Preise, Reaktionszeiten oder Garantien hinzu, die der Inhalt nicht belegt. Titel, Beschreibung und Seite sollten dieselbe Richtung haben, damit der Nutzer nach dem Klick eine nachvollziehbare Fortsetzung seiner Suche erlebt."
+          ]
+        },
+        {
+          "title": "Klickraten mit vergleichbarem Kontext auswerten",
+          "paragraphs": [
+            "Filtern Sie in der Search Console nach betroffener Seite und passenden Fragegruppen. Klickrate verändert sich auch durch Position, Gerät und Zusammensetzung der Suchfragen. Markensuchen können sich deutlich anders verhalten als allgemeine Leistungsfragen. Eine gestiegene Gesamtrate der Website beweist deshalb nicht, dass eine einzelne Titeländerung gewirkt hat. Notieren Sie andere plausible Ursachen und vergleichen Sie möglichst ähnliche Ausschnitte. Kleine Datenmengen brauchen besonders vorsichtige Interpretation. Verwenden Sie die Zahlen zur Überprüfung einer Hypothese, nicht als sichere Bewertung jeder kurzen Formulierungsänderung unabhängig von den Suchbedingungen."
+          ]
+        },
+        {
+          "title": "Änderung und Begründung dokumentieren",
+          "paragraphs": [
+            "Speichern Sie alten Titel, neue Fassung, Datum und das erwartete bessere Verständnis. Beginnen Sie mit einer überschaubaren Seitengruppe. Prüfen Sie zuerst die korrekte Veröffentlichung und beobachten Sie anschließend relevante Fragen über einen Zeitraum mit ausreichendem Material. Lesen Sie zugleich die Seite als Kunde und berücksichtigen Sie wiederkehrende Rückfragen. Zusätzliche Klicks helfen nur, wenn die Besucher passende Inhalte finden. Die Auswertung sollte deshalb nicht bei einer größeren Zahl enden, sondern erklären, ob die Formulierung die richtige Erwartung an Inhalt, Leistung und Kontakt geschaffen hat."
+          ]
+        }
+      ],
+      "checklist": [
+        "Titel mit Überschrift und Inhalt vergleichen.",
+        "Formulierung auf die Suchaufgabe abstimmen.",
+        "Nur vorhandene Unterschiede nennen.",
+        "Klickrate je Seite und Fragegruppe lesen.",
+        "Fassung, Datum und Hypothese sichern."
+      ],
+      "conclusion": "Gute SEO-Titel machen Relevanz ohne Übertreibung deutlich. Ein stimmiges Versprechen erleichtert die Auswahl und liefert eine sinnvollere Grundlage zur Beurteilung von Klicks als Formulierungen, die Aufmerksamkeit ohne passende Erwartungen erzeugen."
+    },
+    {
+      "id": "search-console-leads",
+      "title": "Search Console: Suchfragen und passende Anfragen verbinden",
+      "slug": "search-console-suchfragen-kundenanfragen",
+      "description": "Nutzen Sie die Search Console für Suchfragen, Seitenrollen und Inhaltslücken. Vergleichen Sie Klicks mit Kundenbedürfnissen, ohne einzelne Anfragen zuzuordnen.",
+      "intro": [
+        "Die Search Console zeigt, wie eine Website in Googles Suchergebnissen erscheint. Sie kann Hinweise auf Fragen, wichtige Einstiegsseiten und unpassende Zuordnungen liefern. Das Werkzeug weist aber nicht automatisch nach, welche einzelne Suche zu einer konkreten Kundenanfrage geführt hat.",
+        "Bei einem Anbieter von Lagereinrichtung können Maße, Planung und Montage unterschiedliche Bedürfnisse ausdrücken. Nutzen Sie die Berichte, um diese Aufgaben zu verstehen und die passenden Inhalte zu prüfen. Ergänzen Sie die Beobachtungen durch die eigene Beurteilung echter Gespräche, statt aus Suchdaten ein Verzeichnis einzelner Interessenten machen zu wollen."
+      ],
+      "sections": [
+        {
+          "title": "Mit einem klaren Leistungsbereich beginnen",
+          "paragraphs": [
+            "Wählen Sie eine Hauptleistung und ihre relevanten Adressen. Ein passender Zeitraum berücksichtigt Saison und die verfügbare Datenmenge. Halten Sie fest, ob Suchfragen mit Unternehmensnamen enthalten sind, weil diese andere Voraussetzungen haben als allgemeine Fragen neuer Kunden. Ein Adresswechsel gehört ebenfalls in den Kontext. Schreiben Sie vor der Auswertung auf, welche Bedürfnisse die Seite beantworten soll. Dadurch entsteht eine nachvollziehbare Untersuchung statt einer zufälligen Sammlung auffälliger Wörter. Die gleiche Abgrenzung erleichtert später die Entscheidung, welche Änderungen überhaupt mit der Beobachtung verglichen werden können."
+          ]
+        },
+        {
+          "title": "Suchfragen nach Aufgabe gruppieren",
+          "paragraphs": [
+            "Ordnen Sie sichtbare Fragen beispielsweise Vorbereitung, Vergleich und Anbieterauswahl zu. Bei Lagereinrichtung ist eine Frage nach Gangbreite möglicherweise reine Orientierung, während eine Besichtigung näher am Leistungsangebot liegt. Nutzen Sie die Gruppen, um Informationsbedarf zu erkennen, nicht um alle Formulierungen wortgleich in Texte einzubauen. Die Berichte zeigen außerdem nicht jede einzelne Suchfrage. Sichtbare Zeilen und Summen bilden deshalb nicht immer dasselbe Detailbild ab. Vermeiden Sie sichere Aussagen über einzelne Besucher und konzentrieren Sie sich auf Muster, die eine konkrete inhaltliche Prüfung sinnvoll machen."
+          ]
+        },
+        {
+          "title": "Die tatsächlich angezeigten Seiten kontrollieren",
+          "paragraphs": [
+            "Untersuchen Sie für wichtige Fragen, welche Adressen Impressionen und Klicks erhalten. Ein älterer Ratgeber kann ein Informationsbedürfnis besser beantworten als eine aktuelle Leistungsseite. Das allein ist kein Fehler. Prüfen Sie Suchintention und Inhalt, bevor Seiten zusammengeführt oder verschoben werden. Vielleicht genügt ein klarer Verweis zur Leistung, sobald der Leser eine individuelle Bewertung braucht. Vielleicht fehlt auf der Leistungsseite selbst eine notwendige Erklärung. Ziel ist eine sinnvolle Rollenverteilung, nicht die erzwungene Konzentration aller Suchfragen auf einer einzigen kommerziellen Adresse unabhängig vom jeweiligen Bedarf."
+          ]
+        },
+        {
+          "title": "Mehrere Kennzahlen zusammen lesen",
+          "paragraphs": [
+            "Mehr Impressionen können breitere Sichtbarkeit bedeuten, ohne entsprechend mehr passende Besuche zu schaffen. Klickrate hängt unter anderem von Position und Suchfrage ab. Die durchschnittliche Position ist ein zusammengefasstes Maß und keine feste Platzierung, die alle Menschen sehen. Vergleichen Sie nach Möglichkeit ähnliche Geräte, Seiten und Fragegruppen. Notieren Sie alternative Erklärungen, bevor eine Änderung beschlossen wird. Eine kurze Periode mit wenigen Klicks reicht selten aus, um Nachfrage oder Qualität eines Angebots sicher zu beurteilen. Daten sollen Fragen präzisieren, nicht fehlende Gewissheit durch eindeutige Formulierungen ersetzen."
+          ]
+        },
+        {
+          "title": "Aus dem Muster eine Inhaltsaufgabe ableiten",
+          "paragraphs": [
+            "Zeigen mehrere Fragen Bedarf an einer Erklärung des Besichtigungsablaufs, kann die Leistungsseite einen Abschnitt zur Vorbereitung erhalten. Eine umfangreiche eigenständige Frage kann einen Ratgeber rechtfertigen. Beschreiben Sie fehlende Information, geeignete Seite und sinnvolle interne Verbindung. Veröffentlichen Sie nicht automatisch für jede Berichtszeile einen neuen Artikel. Das kann Überschneidungen ohne zusätzlichen Nutzen erzeugen. Priorisieren Sie Aufgaben, deren Bedarf und geplante Lösung sich erklären lassen. So kann das Team später prüfen, ob der neue Abschnitt die gewünschte Frage tatsächlich beantwortet und die vorhandene Seitenstruktur verbessert."
+          ]
+        },
+        {
+          "title": "Suchbeobachtungen mit realen Gesprächen ergänzen",
+          "paragraphs": [
+            "Das Unternehmen kann wiederkehrende Themen eingehender Anfragen zusammenfassen, ohne Personen in den Suchberichten identifizieren zu wollen. Eine interne Übersicht nach Leistung, Bedarf und Eignung kann ausreichen. Wenn neue Kontakte überwiegend außerhalb des Angebots liegen, braucht dessen Abgrenzung möglicherweise eine klarere Formulierung. Dokumentieren Sie Änderungen und beobachten Sie die betreffende Seitengruppe über Zeit. Bewahren Sie Unsicherheiten in der Bewertung. Nicht jede neue Anfrage lässt sich einer sichtbaren Suchfrage zuschreiben, und ein Kontaktklick belegt noch keine tatsächlich versendete oder beim Unternehmen eingegangene Nachricht."
+          ]
+        }
+      ],
+      "checklist": [
+        "Leistung, Seiten und Zeitraum abgrenzen.",
+        "Fragen nach Kundenaufgabe gruppieren.",
+        "Angezeigte Adressen im Kontext prüfen.",
+        "Klicks und Impressionen gemeinsam lesen.",
+        "Mit echten Anfragethemen vergleichen."
+      ],
+      "conclusion": "Die Search Console ist ein Ausgangspunkt für bessere Inhaltsentscheidungen. Zusammen mit Kundenkenntnis und Seitenprüfung liefert sie Hinweise für konkrete Verbesserungen, ohne eine Nachverfolgung oder Sicherheit vorzutäuschen, die der Bericht nicht enthält."
+    },
+    {
+      "id": "technical-indexing",
+      "title": "Crawling und Indexierung wichtiger Leistungsseiten prüfen",
+      "slug": "crawling-indexierung-leistungsseiten-pruefen",
+      "description": "Prüfen Sie Crawling und Indexierung mit Statuscodes, robots-Regeln und kanonischen Adressen. Untersuchen Sie wichtige Leistungsseiten und ihre internen Links.",
+      "intro": [
+        "Eine veröffentlichte Seite ist nicht automatisch indexiert. Eine indexierte Seite erhält wiederum nicht zwangsläufig Sichtbarkeit für jede gewünschte Frage. Technische Prüfung beginnt deshalb mit der genauen Adresse und der Funktion, die diese Seite erfüllen soll.",
+        "Eine fehlende Leistung kann weitergeleitet, blockiert, schwer auffindbar oder als Variante einer anderen Seite eingeordnet sein. Diese Situationen brauchen unterschiedliche Maßnahmen. Untersuchen Sie Erreichbarkeit, Entdeckung und Indexierung nacheinander. Halten Sie Beobachtungen fest, damit nicht mehrere technische Regeln gleichzeitig auf Verdacht verändert werden und sich die Ursache anschließend noch schwerer erklären lässt."
+      ],
+      "sections": [
+        {
+          "title": "Die genaue Adresse und Serverantwort kontrollieren",
+          "paragraphs": [
+            "Öffnen Sie die betroffene URL und prüfen Sie den Statuscode. Eine sichtbar verständliche Seite kann trotzdem eine unpassende Antwort senden. Untersuchen Sie Weiterleitungen bis zur endgültigen Adresse. Unterschiede bei Protokoll, Hostname und abschließendem Schrägstrich können relevant sein, wenn mehrere Varianten ohne klare Zuordnung existieren. Legen Sie fest, welche Adresse die Hauptversion sein soll. Die technische Untersuchung muss dieselbe Version betreffen, auf die wichtige interne Links führen. Andernfalls wird möglicherweise ein alter Sonderfall korrigiert, während die tatsächlich verwendete Leistungsseite weiterhin widersprüchliche Signale erhält."
+          ]
+        },
+        {
+          "title": "Crawlsteuerung und noindex unterscheiden",
+          "paragraphs": [
+            "Robots.txt regelt den Zugriff zum Crawling, während noindex den Ausschluss aus dem Index anweist, sofern die Anweisung gelesen werden kann. Beide Mechanismen sind nicht austauschbar. Wenn Crawling blockiert ist, kann die Suchmaschine eine noindex-Angabe auf der Seite möglicherweise nicht sehen. Eine Blockierung ist deshalb kein allgemeines Verfahren zum Entfernen bereits bekannter URLs. Klären Sie das gewünschte Ergebnis und prüfen Sie die tatsächliche Implementierung. Mehrere überlagerte Regeln können neue Unklarheiten erzeugen. Die Auswahl sollte nach Zweck und Zusammenspiel erfolgen, nicht allein nach der Einfachheit einer Einstellung."
+          ]
+        },
+        {
+          "title": "Kanonische Verweise im Zusammenhang lesen",
+          "paragraphs": [
+            "Ein kanonischer Verweis kennzeichnet die bevorzugte Version ähnlicher Inhalte. Prüfen Sie, ob er versehentlich auf eine alte Domain, Testumgebung oder andere Sprachversion zeigt. Google kann eine andere kanonische Seite auswählen als die angegebene. Vergleichen Sie deshalb verfügbare Informationen der URL-Prüfung mit eigenen Signalen. Interne Links und Sitemap sollten dieselbe Adresse unterstützen. Bei sehr ähnlichen Seiten muss außerdem die inhaltliche Beziehung geklärt werden. Ein zusätzliches technisches Element macht unklare Seitenrollen nicht automatisch verständlich und repariert keine widersprüchliche Gesamtstruktur ohne weitere Prüfung."
+          ]
+        },
+        {
+          "title": "Die internen Wege zur Seite nachvollziehen",
+          "paragraphs": [
+            "Folgen Sie Links von Startseite und passenden Übersichtsseiten zur Leistung. Wichtige Adressen sollten nicht nur erreichbar sein, wenn jemand die URL bereits kennt. Nutzen Sie normale verständliche Links und sinnvolle Linktexte. Eine Sitemap kann die Entdeckung unterstützen, garantiert aber keine Indexierung und ersetzt keine klare Navigation. Prüfen Sie außerdem, ob wichtiger Inhalt erst nach einer ungewöhnlichen Interaktion erscheint. Entscheidend ist die veröffentlichte Seite, nicht die Vorschau im Verwaltungssystem. Die Kundenaufgabe sollte auch dann nachvollziehbar bleiben, wenn der Besucher über einen direkten Suchtreffer mitten in die Website gelangt."
+          ]
+        },
+        {
+          "title": "Berichtskategorien als Untersuchungshinweise nutzen",
+          "paragraphs": [
+            "Eine ausgeschlossene Adresse muss im Kontext ihrer Absicht gelesen werden. Eine alte weitergeleitete Seite braucht normalerweise keine eigenständige Indexierung. Bei einer gecrawlten, aber nicht indexierten Seite sind dagegen Inhalt, Ähnlichkeit und interne Verbindungen zu prüfen. Wiederholte Anträge allein erklären die Ursache nicht. Unterscheiden Sie den aktuellen Zustand von älteren Beobachtungen im Bericht. Priorisieren Sie geschäftlich wichtige Seiten, statt jede erzeugte Filterkombination gleich zu behandeln. Die Kategorie ist der Beginn einer Untersuchung und kein vollständiges Urteil darüber, welche Änderung für die konkrete Website sinnvoll ist."
+          ]
+        },
+        {
+          "title": "Die Ursache beheben und erneut verifizieren",
+          "paragraphs": [
+            "Kontrollieren Sie nach einer Korrektur Antwort, Anweisungen und Links erneut. Passen Sie die Sitemap an, wenn sich Adressen geändert haben. Eine geeignete Bitte um erneute Prüfung kann genutzt werden, garantiert aber weder Indexierung noch einen bestimmten Zeitpunkt. Beobachten Sie die Entwicklung, ohne viele weitere Regeln versuchsweise zu ändern. Bleibt das Ergebnis unerwartet, gehen Sie zur ursprünglichen Erklärung und zur Inhaltsrolle zurück. Eine Änderungsnotiz mit Datum, Maßnahme und Grund erleichtert die nächste Untersuchung und verhindert, dass ein bereits verstandenes Problem später unbeabsichtigt wieder eingeführt wird."
+          ]
+        }
+      ],
+      "checklist": [
+        "Genaue URL und Statuscode prüfen.",
+        "Crawlblockierung von noindex trennen.",
+        "Kanonische Signale und Links abstimmen.",
+        "Interne Entdeckung der Leistung untersuchen.",
+        "Korrektur vor erneuter Prüfung verifizieren."
+      ],
+      "conclusion": "Technische SEO wird verständlicher, wenn Zugang, Entdeckung und Indexierung getrennt geprüft werden. Konkrete Beobachtungen helfen bei passenden Korrekturen und vermeiden neue Widersprüche auf den Seiten, die das Unternehmen tatsächlich für Kunden braucht."
+    },
+    {
+      "id": "content-clusters",
+      "title": "Themencluster und interne Links mit klaren Seitenrollen",
+      "slug": "themencluster-interne-links-seitenrollen",
+      "description": "Planen Sie Themencluster mit klaren Aufgaben für Ratgeber und Leistungsseiten. Setzen Sie interne Links nach Kundenfragen statt nach einer festen Artikelzahl.",
+      "intro": [
+        "Ein Themencluster verbindet Seiten, die gemeinsam ein Gebiet verständlicher machen. Dafür braucht es keine feste Artikelzahl und kein mechanisches Veröffentlichungsmuster. Jede Seite sollte eine eigene Aufgabe haben und dort weiterführen, wo eine sinnvolle nächste Frage entsteht.",
+        "Ein Anbieter von Industrieböden kann eine Leistungsseite mit Ratgebern über Untergrund, Nutzung und Pflege ergänzen. Die Ratgeber beantworten eigenständige Bedürfnisse und führen bei Bedarf zur konkreten Prüfung. So folgt die Struktur echten Entscheidungen, statt lediglich viele ähnliche Texte um ein gemeinsames Fachwort zu sammeln."
+      ],
+      "sections": [
+        {
+          "title": "Mit echtem Angebot und Fachwissen beginnen",
+          "paragraphs": [
+            "Wählen Sie einen Bereich, in dem das Unternehmen etwas anbietet und verlässliche Kenntnisse besitzt. Sammeln Sie Kundenfragen, bestehende Erklärungen und relevante Suchbeobachtungen. Bei Industrieböden können Untergrund und Einsatzbedingungen wichtige Themen sein. Markieren Sie, was auf der Leistungsseite selbst beantwortet werden muss und was eine Vertiefung verdient. Das Cluster muss nicht das gesamte große Fachgebiet abdecken. Es soll eine übersichtliche Struktur für Aufgaben schaffen, bei denen das Unternehmen glaubwürdig helfen kann und deren Inhalte sich langfristig tatsächlich prüfen und aktuell halten lassen."
+          ]
+        },
+        {
+          "title": "Jeder Adresse eine eigene Aufgabe geben",
+          "paragraphs": [
+            "Die Leistungsseite erklärt Angebot, Umfang und Kontakt. Ein Ratgeber untersucht eine abgegrenzte Frage, ohne die gesamte Unternehmensdarstellung zu wiederholen. Formulieren Sie für jede Adresse eine kurze Aufgabe. Sind zwei Beschreibungen nahezu identisch, prüfen Sie eine gemeinsame bessere Seite. Ein übergeordneter Leitfaden kann als Einstieg dienen, wenn er die Auswahl zwischen Vertiefungen unterstützt. Er braucht dafür eigene hilfreiche Erklärungen und darf keine leere Linkliste bleiben. Klare Rollen erleichtern auch spätere Entscheidungen darüber, wo eine neue Kundenfrage ergänzt werden sollte und wann eine zusätzliche Adresse begründet ist."
+          ]
+        },
+        {
+          "title": "Im passenden Zusammenhang verlinken",
+          "paragraphs": [
+            "Ein Abschnitt über Untergrund kann zur angebotenen Vor-Ort-Prüfung führen, wenn der Leser seinen eigenen Boden beurteilen lassen möchte. Setzen Sie den Link dort, wo diese Folgeaufgabe entsteht. Der Linktext beschreibt, welche Information am Ziel wartet. Nicht jede Seite muss auf alle anderen im Cluster verweisen. Zu viele Verweise können den Gedankengang unterbrechen und Prioritäten verwischen. Wählen Sie Beziehungen nach Nutzen und prüfen Sie direkte aktuelle Ziele. Eine gute interne Verbindung erklärt, weshalb das nächste Stück Inhalt für genau diese Entscheidung relevant ist, statt nur technisch vorhanden zu sein."
+          ]
+        },
+        {
+          "title": "Vor einer Erweiterung bestehende Inhalte lesen",
+          "paragraphs": [
+            "Vergleichen Sie vorhandene Ratgeber nach Aufgabe, Erklärung und sichtbaren Suchfragen. Manchmal braucht ein etablierter Text einen zusätzlichen Abschnitt statt eines konkurrierenden neuen Artikels. Notieren Sie Lücken, die nicht sinnvoll in die bestehende Aufgabe passen. Werden Seiten zusammengeführt, müssen wichtige Informationen erhalten bleiben und Adressen mitgeplant werden. Aktualisieren Sie die internen Links. Ohne Inventar kann eine Erweiterung ein zuvor verständliches Thema unnötig zerlegen. Dann entstehen mehrere Seiten mit unklaren Zuständigkeiten, deren Inhalte später keiner zuverlässig voneinander abgrenzt oder bei Änderungen gemeinsam überprüft."
+          ]
+        },
+        {
+          "title": "Die Pflege des Themenbereichs organisieren",
+          "paragraphs": [
+            "Benennen Sie eine verantwortliche Person und markieren Sie Aussagen, die bei Angebots- oder Materialänderungen geprüft werden müssen. Ein Ratgeber kann trotz anhaltender Besuche sachlich veralten. Auch Projektmaterial kann eine neue Freigabe oder Ergänzung brauchen. Planen Sie Prüfungen nach Veränderlichkeit und Bedeutung der Information, nicht nur nach Alter. Eine einfache Übersicht aus Hauptseite, Vertiefungen und Aufgaben genügt oft zum Einstieg. Sie zeigt der Redaktion, welche Inhalte eine neue Tatsache betrifft und welche weiteren Seiten bei einer Anpassung mitkontrolliert werden sollten, damit die Erklärungen zusammenpassen."
+          ]
+        },
+        {
+          "title": "Die Aufgaben mit tatsächlicher Sichtbarkeit abgleichen",
+          "paragraphs": [
+            "Prüfen Sie Fragen und Klicks je Adresse in der Search Console. Ein Informationsratgeber kann hilfreich sein, ohne bei jedem Besuch einen direkten Kontakt auszulösen. Die Leistungsseite sollte dagegen einen passenden nächsten Schritt erklären. Wenn mehrere Seiten für dieselbe Frage erscheinen, untersuchen Sie die Situation, statt sie automatisch als schädliche Konkurrenz einzuordnen. Ergänzen Sie Daten durch die mögliche Leserreise und tatsächliche Kundenfragen. Der Wert des Clusters liegt in verständlichen Zusammenhängen und eigenständigen Antworten, nicht in der bloßen Anzahl veröffentlichter Artikel oder erzeugter interner Links."
+          ]
+        }
+      ],
+      "checklist": [
+        "Ein Gebiet mit echtem Fachwissen wählen.",
+        "Eine Hauptaufgabe pro Adresse definieren.",
+        "Bei natürlichen Folgefragen verlinken.",
+        "Bestehende Ratgeber vor Erweiterung verbessern.",
+        "Verantwortung für Faktenpflege festlegen."
+      ],
+      "conclusion": "Ein durchdachtes Themencluster macht Wissen leichter nutzbar. Mit klaren Seitenrollen und begründeten internen Links kann das Unternehmen Inhalte erweitern, ohne Orientierung, Pflegeaufwand und die Verbindung zum tatsächlichen Angebot aus dem Blick zu verlieren."
+    },
+    {
+      "id": "image-seo",
+      "title": "Bilder-SEO für Leistungen, Projekte und Onlineshops",
+      "slug": "bilder-seo-leistungen-onlineshops",
+      "description": "Verbessern Sie Bilder-SEO mit hilfreichen Motiven, passenden Alternativtexten und Bildgrößen. Prüfen Sie Produktdetails, Projektkontext und mobiles Laden.",
+      "intro": [
+        "Bilder können Unterschiede erklären, die in kurzen Texten schwer verständlich bleiben. Kunden sehen Material, Größenverhältnisse oder Anschlüsse eines Produkts. Bilder-SEO beginnt deshalb bei der Frage, was ein Motiv für die konkrete Entscheidung auf der Seite leistet.",
+        "Ein Anbieter maßgefertigter Einrichtung kann eine Übersicht und eine Detailaufnahme für verschiedene Aufgaben brauchen. Beide benötigen passenden Kontext und ausreichende Qualität. Dateiname und Alternativtext sind Teile der Arbeit. Sie ersetzen aber weder ein relevantes Motiv noch eine Erklärung, die dem Leser seine Bedeutung im Projekt oder Sortiment deutlich macht."
+      ],
+      "sections": [
+        {
+          "title": "Das Motiv nach seiner Informationsaufgabe wählen",
+          "paragraphs": [
+            "Schreiben Sie auf, welche Information das zentrale Bild vermitteln soll. Eine Projektansicht zeigt vielleicht Proportionen, ein Detail dagegen Verarbeitung oder Materialunterschiede. Nutzen Sie Aufnahmen, die dem tatsächlichen Produkt oder ausgeführten Auftrag entsprechen. Eine konzeptionelle Darstellung muss als solche erkennbar sein, wenn sie sonst für eine reale Referenz gehalten werden könnte. Platzieren Sie Bilder nahe der passenden Erklärung. Eine große Galerie ohne Zusammenhang lässt Besucher möglicherweise rätseln, worauf sie achten sollen. Technische Bildqualität allein beantwortet noch keine konkrete Frage über Eignung, Umfang oder sichtbare Funktion der gezeigten Lösung."
+          ]
+        },
+        {
+          "title": "Alternativtext nach Funktion formulieren",
+          "paragraphs": [
+            "Alternativtext soll Menschen, die das Bild nicht sehen, den relevanten Inhalt oder Zweck vermitteln. Beschreiben Sie deshalb das im Seitenkontext Wichtige statt jedes sichtbare Detail. Bei einer Produktaufnahme können Modell und Ansicht relevant sein. Rein dekorative Bilder können einen leeren Alternativtext haben. Ist das Bild ein Link, muss dessen Ziel verständlich werden. Ortsnamen und wiederholte Suchwörter machen die Beschreibung nicht nützlicher. Eine klare Formulierung unterstützt die Nutzung mit Hilfsmitteln und hilft dabei, das Bild nicht nur als Platzhalter, sondern entsprechend seiner tatsächlichen Aufgabe zu behandeln."
+          ]
+        },
+        {
+          "title": "Technische Abbildungen auch in Text erklären",
+          "paragraphs": [
+            "Maßzeichnungen und Diagramme können Informationen tragen, die sich nicht in wenigen Worten zusammenfassen lassen. Erläutern Sie wesentliche Werte im normalen Inhalt oder einer geeigneten Tabelle. Eine Bildunterschrift kann zeigen, was im Motiv für das Projekt wichtig ist. Prüfen Sie, ob eingebettete Schrift auf dem Smartphone lesbar bleibt. Entscheidende Produktdaten sollten nicht ausschließlich als winzige Beschriftung in einer Grafik verfügbar sein. Das Bild ergänzt den Entscheidungsgrund, statt ihn in einem schwer zugänglichen Format zu verstecken. So bleibt die Information auch bei anderen Anzeigegrößen und Nutzungsformen verständlich."
+          ]
+        },
+        {
+          "title": "Dateien passend zur Anzeige ausliefern",
+          "paragraphs": [
+            "Stellen Sie geeignete Bildabmessungen für die tatsächlich verwendeten Flächen und Geräte bereit. Komprimierung und passende Formate können Übertragung sparen, solange die benötigten Details erkennbar bleiben. Eine Materialaufnahme braucht möglicherweise mehr Qualität als ein kleines Vorschaubild. Prüfen Sie die tatsächlich gelieferte Datei und verlassen Sie sich nicht nur auf eine Systemeinstellung. Ein großes Original belastet eine Seite auch dann, wenn es klein dargestellt wird. Geben Sie Proportionen oder Abmessungen an, damit die Fläche vor dem Laden reserviert werden kann und Inhalte nicht unnötig springen."
+          ]
+        },
+        {
+          "title": "Das wichtigste Bild richtig priorisieren",
+          "paragraphs": [
+            "Das große Motiv im ersten sichtbaren Bereich kann den Largest Contentful Paint beeinflussen. Es sollte nicht automatisch genauso verzögert geladen werden wie spätere Galeriebilder. Untersuchen Sie, welche Ressourcen die wichtige Darstellung verzögern, und wählen Sie die Priorität nach der konkreten Seite. Kontrollieren Sie außerdem den mobilen Ausschnitt. Produktmerkmale dürfen nicht durch eine pauschale Beschneidung verschwinden. Spätere Bilder können häufig anders geladen werden. Geschwindigkeit und Informationsqualität gehören zusammen, denn ein schnell sichtbares, aber missverständliches Motiv hilft dem Kunden bei seinem eigentlichen Vergleich nur wenig."
+          ]
+        },
+        {
+          "title": "Bildinhalte mit der Website pflegen",
+          "paragraphs": [
+            "Bei einem Redesign können Adressen, Alternativtexte und Positionen geändert werden. Kontrollieren Sie fehlende Bilder und bewahren Sie relevante Erklärungen bei Katalogpflege und Migration. Angaben zur Bildsuche in der Search Console können Hinweise geben, sofern genügend Daten vorliegen. Interpretieren Sie Klicks nach der Aufgabe der Zielseite. Legen Sie fest, wer neue Motive und Metadaten prüft. Eine redaktionelle Routine für Motiv, Nutzbarkeit, Rechte und Größe ist nachhaltiger als eine gelegentliche große Korrektur, die erst nach vielen Werkzeugwarnungen beginnt und wichtige Zusammenhänge nicht mehr zuverlässig rekonstruieren kann."
+          ]
+        }
+      ],
+      "checklist": [
+        "Informationsaufgabe des Bildes festlegen.",
+        "Alternativtext nach Funktion schreiben.",
+        "Wichtige Diagrammwerte im Inhalt erläutern.",
+        "Gelieferte Größe und Proportionen prüfen.",
+        "Priorität und Ausschnitt mobil testen."
+      ],
+      "conclusion": "Bilder-SEO verbindet Verständnis, Zugänglichkeit und technische Auslieferung. Wenn Motive echte Fragen beantworten und von passenden Erklärungen begleitet werden, unterstützen sie die Seite, ohne sie unnötig schwer oder für bestimmte Nutzergruppen unverständlich zu machen."
+    },
+    {
+      "id": "conversion-landing",
+      "title": "Organische Landingpages mit klaren Wegen zur Anfrage",
+      "slug": "organische-landingpages-kundenanfragen",
+      "description": "Planen Sie organische Landingpages mit verständlichem Angebot, relevanten Belegen und passenden Kontaktwegen. Prüfen Sie die Inhalte anhand echter Kundenfragen.",
+      "intro": [
+        "Eine Landingpage muss auch für Menschen funktionieren, die direkt aus Google kommen. Sie kennen vielleicht weder Startseite noch Unternehmen. Die Seite braucht deshalb genügend Orientierung, damit Angebot, Zuständigkeit und nächster Schritt ohne Vorwissen verständlich werden.",
+        "Ein Anbieter für Büroanpassungen kann eine Seite für Unternehmen benötigen, die bestehende Räume verändern möchten. Für diese Besucher sind Voraussetzungen, Arbeitsumfang und benötigte Unterlagen wichtiger als eine allgemeine Darstellung aller Bauleistungen. Ordnen Sie die Inhalte nach dieser Entscheidung und nicht nach einer festen Verkaufsseitenvorlage."
+      ],
+      "sections": [
+        {
+          "title": "Eine eigenständige kommerzielle Aufgabe wählen",
+          "paragraphs": [
+            "Beschreiben Sie die Situation, bei der die Seite helfen soll, und vergleichen Sie sie mit vorhandenen Leistungsseiten. Eine neue Adresse braucht eigenen Nutzen. Bei einem begrenzten Zusatzthema kann ein Abschnitt auf einer bestehenden Seite klarer sein als eine nahezu identische Landingpage. Eine organische Einstiegsseite gehört außerdem in die normale Website-Struktur. Sie sollte ohne besonderen Kampagnenlink auffindbar sein. Halten Sie ihre Aufgabe fest, damit Inhalt und spätere Beobachtungen auf derselben Grundlage bewertet werden können und die Seite nicht bei jedem neuen Suchwort ihre Ausrichtung verliert."
+          ]
+        },
+        {
+          "title": "Den ersten sichtbaren Bereich konkret gestalten",
+          "paragraphs": [
+            "Die Hauptüberschrift benennt Leistung oder Problem. Die Einleitung erklärt Zielgruppe und wesentliche Grenzen. Bei Büroanpassungen kann entscheidend sein, ob Planung, Ausführung oder bestimmte Teilaufgaben angeboten werden. Verstecken Sie solche Angaben nicht hinter einer abstrakten Werbeaussage. Ein relevantes Bild kann die Orientierung unterstützen, aber der Text muss die Grundinformation selbst tragen. Auf dem Smartphone sollten Überschrift, kurze Erklärung und mögliche nächste Handlung zusammenpassen. Aufdringliche Überlagerungen dürfen die Information nicht verdecken, die der Besucher gerade bewusst über ein Suchergebnis ausgewählt hat."
+          ]
+        },
+        {
+          "title": "Fragen beantworten die die Entscheidung verzögern",
+          "paragraphs": [
+            "Ordnen Sie Abschnitte nach Eignung, Umfang, Mitwirkung und praktischen Einschränkungen. Nutzen Sie Fragen aus echten Gesprächen. Ein Unternehmen im laufenden Betrieb möchte möglicherweise verstehen, wie eine erste Raumbewertung vorbereitet wird. Allgemeine Qualitätsversprechen helfen weniger als eine nachvollziehbare Erklärung. Bleiben Sie beim tatsächlichen Angebot. Wo eine individuelle Prüfung nötig ist, erklären Sie das erforderliche Material statt eine sichere Antwort für alle Situationen zu geben. Das schafft passendere Erwartungen und macht die spätere Anfrage für beide Seiten hilfreicher, weil zentrale Voraussetzungen bereits verstanden werden konnten."
+          ]
+        },
+        {
+          "title": "Belege an der passenden Aussage zeigen",
+          "paragraphs": [
+            "Ein Projekt oder Zitat soll eine konkrete Unsicherheit reduzieren. Platzieren Sie es bei dem Abschnitt, in dem es die Bewertung unterstützt. Beschreiben Sie Ausgangsbedarf und umgesetzte Arbeit ohne ungemessene Geschäftsergebnisse hinzuzufügen. Eine Aufnahme allein belegt keinen höheren Umsatz oder effizienteren Betrieb. Fehlen freigegebene Referenzen, kann eine klar gekennzeichnete Demonstration die Methode erklären. Leser müssen zwischen einem Beispiel des Vorgehens und einem tatsächlich ausgeführten Kundenauftrag unterscheiden können. Beide Inhalte können nützlich sein, haben aber nicht dieselbe Beweiskraft für Erfahrung mit einer konkreten Aufgabenstellung."
+          ]
+        },
+        {
+          "title": "Den Kontakt auf benötigte Angaben begrenzen",
+          "paragraphs": [
+            "Fragen Sie nach dem Kontext, der eine erste Einschätzung ermöglicht. Bei Büroanpassungen können Raumtyp, Hauptbedarf und vorhandene Pläne ein Ausgangspunkt sein. Sagen Sie, was später geklärt werden kann, und machen Sie zusätzliches Material optional, wenn es zunächst nicht nötig ist. Eine WhatsApp-Alternative braucht korrektes internationales Nummernformat und einen klaren Zweck. Testen Sie Formulare mit Fehlern und geöffnetem Smartphone-Tastaturfeld. Eine verständliche Bestätigung zeigt den erfolgreichen Schritt. Beschreiben Sie anschließend nur ein Vorgehen, das die tatsächlichen internen Abläufe des Unternehmens zuverlässig unterstützen können."
+          ]
+        },
+        {
+          "title": "Suchrolle und Anfragequalität zusammen betrachten",
+          "paragraphs": [
+            "Prüfen Sie sichtbare Fragen, Impressionen und Klicks im Verhältnis zur geplanten Aufgabe. Erfassen Sie Kontaktklicks getrennt, ohne sie mit eingegangenen Anfragen gleichzusetzen. Untersuchen Sie danach wiederkehrende Themen echter Kontakte. Wenn Kunden regelmäßig eine andere Leistung erwarten, brauchen Überschrift oder Angebotsgrenzen eine Korrektur. Dokumentieren Sie größere Änderungen mit Datum und Grund. Hohe Klickzahlen reichen nicht zur Bewertung aus, wenn die Seite falsche Erwartungen schafft oder der Kontaktweg nicht funktioniert. Die Untersuchung sollte erklären, ob der richtige Besucher bei der tatsächlichen nächsten Entscheidung unterstützt wird."
+          ]
+        }
+      ],
+      "checklist": [
+        "Eine abgegrenzte kommerzielle Aufgabe wählen.",
+        "Angebot früh konkret erklären.",
+        "Fragen aus echten Gesprächen beantworten.",
+        "Belege im passenden Zusammenhang zeigen.",
+        "Anfragequalität zusätzlich zu Klicks prüfen."
+      ],
+      "conclusion": "Eine organische Landingpage verbindet Entdeckung mit einer nachvollziehbaren Entscheidung. Wenn Erklärung, Belege und Kontaktweg denselben Bedarf unterstützen, kann das Unternehmen den Kundenweg gezielt verbessern und die Bedeutung neuer Beobachtungen besser einordnen."
+    },
+    {
+      "id": "seo-content-maintenance",
+      "title": "SEO-Inhalte aktualisieren und Überschneidungen sinnvoll lösen",
+      "slug": "seo-inhalte-aktualisieren-ueberschneidungen",
+      "description": "Planen Sie Inhaltsaktualisierungen mit Faktenprüfung, Suchdaten und klaren Seitenrollen. Bewerten Sie Überschneidungen, bevor nützliche Inhalte entfernt werden.",
+      "intro": [
+        "Ein alter Text ist nicht automatisch schlecht und ein neues Datum macht eine unveränderte Seite nicht hilfreicher. Inhaltspflege sollte auf tatsächliche Änderungen im Angebot, Wissen oder Kundenbedarf reagieren. Dadurch lässt sich die Arbeit begründen und sinnvoll priorisieren.",
+        "Auf gewachsenen Websites können mehrere Ratgeber allmählich dieselbe Aufgabe übernehmen. Häufig wird das als Kannibalisierung bezeichnet. Die konkrete Situation muss jedoch geprüft werden: Zwei Seiten mit Sichtbarkeit für einen ähnlichen Begriff können unterschiedliche Bedürfnisse beantworten. Entscheiden Sie nach Inhalt, Rolle und tatsächlichen Beobachtungen statt allein nach übereinstimmenden Wörtern."
+      ],
+      "sections": [
+        {
+          "title": "Aufgabe und Verantwortung erfassen",
+          "paragraphs": [
+            "Notieren Sie wichtige Leistungsseiten und Ratgeber mit Hauptzweck, zuständiger Person und letzter fachlicher Prüfung. Halten Sie fest, welches Angebot die Seite unterstützt und wie sie mit anderen Inhalten verbunden ist. Priorisieren Sie Angaben, deren Fehler Kunden irreführen könnten, oder Angebote, die sich verändert haben. Eine wenig besuchte Spezialseite kann trotzdem für eine wichtige Kundengruppe entscheidend sein. Sortieren Sie deshalb nicht ausschließlich nach Traffic. Die Übersicht sollte geschäftliche Relevanz, Aktualisierungsbedarf und Zuständigkeit sichtbar machen, damit konkrete Aufgaben nicht ohne fachliche Freigabe oder verantwortliche Bearbeitung liegen bleiben."
+          ]
+        },
+        {
+          "title": "Die Veränderung vor dem Umschreiben untersuchen",
+          "paragraphs": [
+            "Vergleichen Sie passende Zeiträume und Fragegruppen in der Search Console. Berücksichtigen Sie Saison, Adresswechsel und andere Aktivitäten. Lesen Sie die Seite daraufhin, ob sie das Angebot noch korrekt beschreibt. Weniger Klicks können mit Nachfrage, Suchergebnissen oder mangelnder Relevanz zusammenhängen. Formulieren Sie eine Erklärung, bevor die Redaktion beginnt. Ist eine falsche Indexierungsanweisung oder ein entfernter interner Link die Ursache, behebt längerer Text das Problem möglicherweise nicht. Technische Zugänglichkeit und Inhaltsfunktion sollten gemeinsam geprüft werden, damit eine redaktionelle Änderung nicht an einem anderen Problem vorbeiarbeitet."
+          ]
+        },
+        {
+          "title": "Ähnliche Seiten nach ihrer Rolle vergleichen",
+          "paragraphs": [
+            "Lesen Sie Überschriften, Erklärungen und nächste Schritte nebeneinander. Prüfen Sie, für welche Fragen die Seiten erscheinen und ob sie unterschiedliche Phasen einer Entscheidung bedienen. Eine Vorbereitungsanleitung und eine Leistungsseite dürfen Fachbegriffe teilen. Zwei Ratgeber mit nahezu denselben Ratschlägen können dagegen unnötig aufteilen. Definieren Sie die gewünschte Aufgabe jeder Adresse. Ziel ist eine verständliche Struktur, nicht die exklusive Vergabe jedes einzelnen Wortes an genau eine URL. Eigenständiger Nutzen und Kundenbedürfnis liefern die bessere Grundlage für Entscheidungen über Trennung, Ergänzung oder Zusammenführung."
+          ]
+        },
+        {
+          "title": "Die passende redaktionelle Maßnahme wählen",
+          "paragraphs": [
+            "Eine hilfreiche Seite kann ihre Adresse behalten und korrigierte Fakten, bessere Beispiele oder neue Antworten erhalten. Werden zwei Seiten zusammengeführt, müssen wichtige Inhalte in einer verständlichen Zielseite erhalten bleiben. Planen Sie Weiterleitungen und aktualisieren Sie interne Verweise gleichzeitig. Eine Seite ohne weiteren Zweck kann gegebenenfalls entfernt werden, doch bestehende Links und Erwartungen gehören zur Bewertung. Schicken Sie nicht automatisch alle alten Ratgeber auf die Startseite. Eine Weiterleitung braucht einen sinnvollen Bezug zum bisherigen Inhalt, damit ein Nutzer nicht unvermittelt in einer allgemeinen Unternehmensdarstellung landet."
+          ]
+        },
+        {
+          "title": "Die Antwort statt nur des Datums verbessern",
+          "paragraphs": [
+            "Korrigieren Sie veraltete Angaben und stärken Sie den Abschnitt, der die Leserfrage bisher unzureichend beantwortet. Ein echtes Beispiel kann helfen, wenn es das Verständnis verbessert. Entfernen Sie Wiederholungen, die die Hauptaussage verdecken. Ändert sich der Schwerpunkt, müssen Titel, Überschrift und Kontaktaufforderung mitgeprüft werden. Datumsangaben sollten tatsächliche redaktionelle Änderungen verständlich widerspiegeln. Ein neues Jahr ohne fachliche Verbesserung erzeugt keinen zusätzlichen Nutzen. Dokumentieren Sie geprüfte Fakten und Grenzen, damit die nächste verantwortliche Person Umfang und verbleibende Unsicherheiten der Aktualisierung nachvollziehen kann."
+          ]
+        },
+        {
+          "title": "Die betroffene Seitengruppe nach Veröffentlichung prüfen",
+          "paragraphs": [
+            "Lesen Sie den veröffentlichten Inhalt und testen Sie wichtige Links. Bei einer Zusammenführung müssen alte Adressen zum passenden Ziel führen und Sitemap sowie Navigation die neue Struktur unterstützen. Beobachten Sie Fragen und Klicks für die betroffene Gruppe statt nur die gerade entfernte URL. Ergänzen Sie Zahlen durch Kundenfragen. Eine präzisere Erklärung kann sinnvoll sein, ohne sofort mehr Besuche zu erzeugen. Halten Sie Datum und Grund fest. Das erleichtert die Unterscheidung zwischen einer beabsichtigten Veränderung und einem neuen Problem, das eine erneute Untersuchung oder andere Art von Korrektur benötigt."
+          ]
+        }
+      ],
+      "checklist": [
+        "Aufgabe und Zuständigkeit dokumentieren.",
+        "Vor dem Umschreiben eine Erklärung prüfen.",
+        "Überschneidungen nach Kundenbedarf beurteilen.",
+        "Adressen bei Zusammenführung mitplanen.",
+        "Die gesamte betroffene Seitengruppe beobachten."
+      ],
+      "conclusion": "Inhaltspflege hält die Website fachlich korrekt und strukturell verständlich. Wenn die richtige Seite verbessert und vorhandenes Wissen bewahrt wird, muss nicht jede neue Frage zu einem weiteren Ratgeber mit beinahe identischer Aufgabe führen."
     }
-  ]
+  ],
+  "pageSeo": {
+    "home": {
+      "title": "Webdesign und SEO für Unternehmen | Latech",
+      "description": "Webdesign, SEO und E-Commerce für verständliche Angebote und passende Kundenanfragen. Latech arbeitet remote aus Spanien an internationalen Projekten.",
+      "heading": "Webdesign und SEO mit klaren Kontaktwegen",
+      "intro": "Besprechen Sie eine Website, die Leistungen verständlich erklärt und relevante Besucher bei ihrem nächsten Schritt unterstützt."
+    },
+    "services": {
+      "title": "Webdesign, SEO und Onlineshops | Latech",
+      "description": "Entdecken Sie Leistungen für Webdesign, SEO und E-Commerce. Planen Sie klare Inhalte, nutzbare Seiten und passende Kontaktwege für Ihr Unternehmen.",
+      "heading": "Leistungen für Websites und organische Sichtbarkeit",
+      "intro": "Wir stimmen Struktur, Gestaltung und technische Grundlagen auf Ihr Angebot und die Fragen Ihrer Kunden ab."
+    },
+    "web": {
+      "title": "Webdesign mit SEO und klaren Leistungsseiten | Latech",
+      "description": "Planen Sie Webdesign mit verständlichen Leistungsseiten, mobiler Bedienbarkeit und technischer SEO. Latech unterstützt den Weg von der Suche zur Anfrage.",
+      "heading": "Unternehmenswebsites mit SEO und klaren Leistungen",
+      "intro": "Jede zentrale Seite soll Kunden helfen, das Angebot einzuordnen und eine sinnvolle Anfrage vorzubereiten."
+    },
+    "shop": {
+      "title": "Onlineshop und SEO für E-Commerce | Latech",
+      "description": "Besprechen Sie einen Onlineshop mit verständlichen Kategorien, hilfreichen Produktdaten und nutzbaren Kaufwegen. Latech plant E-Commerce mit SEO-Grundlagen.",
+      "heading": "Onlineshops mit nachvollziehbarer Produktauswahl",
+      "intro": "Wir verbinden Katalogstruktur, Produktinformation und die praktischen Abläufe nach einer Bestellung."
+    },
+    "ai": {
+      "title": "KI-Automatisierung und n8n für Unternehmen | Latech",
+      "description": "Entdecken Sie klar abgegrenzte Automatisierung mit n8n und KI. Latech plant Datenzugriff, Validierung und menschliche Prüfung für passende Geschäftsabläufe.",
+      "heading": "Abgegrenzte Automatisierung mit n8n und KI",
+      "intro": "Wir prüfen den tatsächlichen Ablauf, benötigte Daten und Ausnahmen, bevor eine Integration geplant wird."
+    },
+    "about": {
+      "title": "Über Latech: Webdesign und SEO aus Spanien",
+      "description": "Lernen Sie Latech kennen, gegründet von Andrés Rubio und Luis Grondona in Badajoz, Spanien. Wir arbeiten remote an Webdesign, SEO und Onlineshops für Firmen.",
+      "heading": "Das Team hinter Latech",
+      "intro": "Unser Sitz liegt in Puebla de la Calzada, Badajoz, Spanien. Internationale Projekte bearbeiten wir remote."
+    },
+    "projects": {
+      "title": "Projekte für Webdesign und E-Commerce | Latech",
+      "description": "Entdecken Sie echte Latech-Projekte für Websites und E-Commerce. Verfügbare Projektmaterialien erklären Struktur, Gestaltungsentscheidungen und Funktionen.",
+      "heading": "Echte Webprojekte und ihre Funktionen",
+      "intro": "Die Projektseiten zeigen tatsächliche Arbeit und erklären vorhandene Funktionen anhand verfügbarer Materialien."
+    },
+    "contact": {
+      "title": "Latech zu Webdesign und SEO kontaktieren",
+      "description": "Kontaktieren Sie Latech über WhatsApp zu Webdesign, SEO oder E-Commerce. Beschreiben Sie Ihr Unternehmen, Ihre Website und die Ziele für passende Anfragen.",
+      "heading": "Besprechen Sie Website, SEO oder Onlineshop",
+      "intro": "Schreiben Sie auf WhatsApp unter +34684739091 und nennen Sie Ihre Website, die gewünschte Leistung und das wichtigste Ziel."
+    },
+    "blog": {
+      "title": "SEO-Ratgeber zu Sichtbarkeit und Kundenanfragen | Latech",
+      "description": "Lesen Sie SEO-Ratgeber zu Suchintention, Indexierung, Inhalten und Klicks. Prüfen Sie Ihre Website und gestalten Sie klare Wege zu passenden Kundenanfragen.",
+      "heading": "Praktische SEO-Ratgeber für Unternehmen",
+      "intro": "Verständliche Anleitungen für technische Grundlagen, hilfreiche Inhalte und relevante Kontaktwege."
+    }
+  },
+  "faq": [
+    {
+      "question": "Wo hat Latech seinen Sitz?",
+      "answer": "Latech wurde von Andrés Rubio und Luis Grondona in Puebla de la Calzada, Badajoz, Spanien gegründet. Wir arbeiten remote mit Unternehmen auf internationalen Märkten."
+    },
+    {
+      "question": "Können Webdesign und SEO gemeinsam geplant werden?",
+      "answer": "Ja. Wir können Struktur, Gestaltung, technische Grundlagen und Inhalte als zusammenhängende Aufgabe besprechen. Die Leistungen werden nach Website, Zielen und verfügbaren Ressourcen abgegrenzt."
+    },
+    {
+      "question": "Welche Angaben helfen bei einer Projektanfrage?",
+      "answer": "Nennen Sie Ihr Unternehmen, Ihre Zielgruppe, die aktuelle Website und Ihr wichtigstes Anliegen. Vorhandene Inhalte und relevante Search-Console-Daten können die Einschätzung unterstützen."
+    },
+    {
+      "question": "Wie kann ich Latech kontaktieren?",
+      "answer": "Schreiben Sie auf WhatsApp unter +34684739091. Land, gewünschte Leistung und aktuelle Website geben dem Gespräch einen hilfreichen Ausgangspunkt."
+    }
+  ],
+  "projectCopy": {
+    "colegio-santo-tomas": {
+      "sector": "Bildung von 0 bis 18 Jahren",
+      "summary": "Eine Schulwebsite mit echten Fotografien und Informationen für Familien. Bildungsstufen, Aufnahme, Nachrichten, Kalender und Dokumente werden durch eine private Bildergalerie für Eltern ergänzt."
+    },
+    "granja-orea": {
+      "sector": "Ferienlager, Schulbesuche und Reiten",
+      "summary": "Eine redaktionelle Website für Ferienlager, Schulbesuche und Reitangebote. Das Projekt verbindet WhatsApp-Anfragen, bearbeitbare Nachrichten, eine installierbare Web-App, einen QR-Rundgang und private Werkzeuge zur Teamkoordination."
+    },
+    "f5-arquitectos": {
+      "sector": "Architektur",
+      "summary": "Ein Architekturportfolio mit großformatigen Bildern, Projektkategorien und ausführlichen Projektseiten. Eine eigene Verwaltungsoberfläche ermöglicht die Pflege neuer Arbeiten und weiterer Inhalte des Architekturbüros."
+    },
+    "quality-homes": {
+      "sector": "Wohnimmobilienentwicklung",
+      "summary": "Eine Immobilienwebsite mit Fotografien, Videos, Grundrissen und Verfügbarkeit einzelner Wohnungen. Anfragen werden an ein eigenes CRM angebunden, während die Inhaltsverwaltung Aktualisierungen der Wohnprojekte ermöglicht."
+    },
+    "megias-frutas": {
+      "sector": "Obst- und Gemüsegroßhandel",
+      "summary": "Eine Unternehmenswebsite mit Produktfotografie und Informationen für verschiedene gewerbliche Zielgruppen. Redaktionelle Inhalte, mobile Darstellung und lokale Ausrichtung ergänzen die Präsentation des Großhandels und seines Sortiments."
+    },
+    "zonasport": {
+      "sector": "Sportgeschäft mit mehreren Marken",
+      "summary": "Ein Onlinekatalog mit Kategorien für verschiedene Kundengruppen, Sportarten und Marken. Ratgeber und interne Bestandsverwaltung werden durch WhatsApp-Anfragen und Bestellungen mit Abholung im Geschäft ergänzt."
+    },
+    "panelex": {
+      "sector": "Sandwichpaneele für das Bauwesen",
+      "summary": "Eine technische B2B-Website mit Produktblättern, strukturierten Produktdaten, Ratgebern und Rechner. Inhalte zu Dach-, Fassaden- und Kühlpaneelen unterstützen den Vergleich vor einer konkreten Angebotsanfrage."
+    },
+    "monopatinmonkey": {
+      "sector": "E-Scooter und Reparatur",
+      "summary": "Ein Onlineshop mit ausführlichen Modellbeschreibungen und eigenem Reparaturbereich. Der Serviceablauf wird schrittweise erklärt, damit Besucher Produkte vergleichen und das Angebot der Werkstatt verstehen können."
+    },
+    "toldos-noa": {
+      "sector": "Maßgefertigte Markisen und Montage",
+      "summary": "Eine Leistungswebsite mit getrennten Bereichen für Privathaushalte, Unternehmen, Reparaturen und Maßanfertigungen. Echte Bewertungen und klare Kontaktaufforderungen führen zu Angebotsanfragen über WhatsApp im jeweiligen Zusammenhang."
+    },
+    "autoescuela-agora": {
+      "sector": "Fahrschule und Verkehrsausbildung",
+      "summary": "Eine Fahrschulwebsite mit Video, Führerscheininformationen und Darstellung der beiden Standorte. Anmeldung, WhatsApp, AEOL-Tests und der Bereich Mi Ágora werden durch Nachrichten und Ratgeber ergänzt."
+    },
+    "precios-locos": {
+      "sector": "Haushaltsgeräte und Wohnprodukte",
+      "summary": "Ein Shop mit Produktkatalog, Suche, Favoriten und Warenkorb. Produktinformationen, Ratgeber für den Haushalt und WhatsApp-Kontakt werden mit einem interaktiven Greifautomaten für Überraschungspakete verbunden."
+    },
+    "los-leones-nuptiae": {
+      "sector": "Herrenmode, Festkleidung und Schneiderei",
+      "summary": "Zwei Modeidentitäten hinter einem visuellen Einstieg. Eigene Inhaltswege präsentieren Herrenmode, Festkleidung, Vermietung und Maßanfertigung mit Kollektionen, Fotografien und Verweisen auf die jeweiligen Geschäfte."
+    },
+    "my-special-hair": {
+      "sector": "Haarprothesen und Haarpflege",
+      "summary": "Eine Markenwebsite mit Katalog, Maßanleitung und 3D-Studio zur Auswahl. Kundenkonto, Terminbuchung, Fachbereich, Videos und Ergebnisgalerie werden durch einen direkten Beratungskontakt über WhatsApp ergänzt."
+    }
+  }
 }

@@ -5,9 +5,9 @@ import { readFileSync } from 'node:fs';
 const source = (file: string) => readFileSync(new URL(`../src/components/${file}`, import.meta.url), 'utf8');
 
 describe('Home brand and Studio sizing', () => {
-  it('uses the exact company motto while keeping the service-led page heading', () => {
+  it('uses the requested design and SEO motto while keeping the service-led page heading', () => {
     const hero = source('home/Hero.tsx');
-    assert.match(hero, /Tu imaginación es nuestro límite\./);
+    assert.match(hero, /En diseño y SEO, nadie nos gana\./);
     assert.doesNotMatch(hero, /Tu próxima ventaja empieza aquí/);
     assert.match(hero, /<h1 id="hero-title"/);
     assert.match(hero, /Diseño web\./);

@@ -1,4 +1,4 @@
-import { dictionaries, equivalents, locales, articlePath } from '@/lib/international';
+import { dictionaries, equivalents, languageLinks, seoLanguage, htmlLanguage } from '@/lib/international';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
@@ -141,7 +141,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               ]}
             />
             <Reveal>
-              {dictionaries.es.articles.some(a => a.slug === slug) && <nav aria-label="Idiomas del artículo" className="mb-6 flex flex-wrap gap-x-5 gap-y-2 text-sm">{locales.map(locale => <a key={locale} href={articlePath(locale, dictionaries.es.articles.find(a => a.slug === slug)!.id)} hrefLang={locale} lang={locale} className="text-purple-200 underline underline-offset-4">{dictionaries[locale].name}</a>)}</nav>}
+              {dictionaries.es.articles.some(a => a.slug === slug) && <nav aria-label="Idiomas del artículo" className="mb-6 flex flex-wrap gap-x-5 gap-y-2 text-sm">{languageLinks(`/blog/${slug}`).map(link => <a key={link.locale} href={link.href} hrefLang={seoLanguage(link.locale)} lang={htmlLanguage(link.locale)} className="text-purple-200 underline underline-offset-4">{link.name}</a>)}</nav>}
               <Link href="/blog" className="inline-flex items-center gap-2 text-xs text-white/55 transition-colors hover:text-white">
                 <ArrowLeft size={12} /> Todos los artículos
               </Link>

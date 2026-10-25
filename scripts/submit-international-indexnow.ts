@@ -2,7 +2,7 @@
 import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 import { parseArgs } from 'node:util';
 import { dictionaries, locales, pageKeys, pagePath, articlePath, SITE } from '../src/lib/international';
-const { values } = parseArgs({ options: { submit: { type: 'boolean', default: false }, audit: { type: 'string', default: '.local/international-production-audit.json' }, receipt: { type: 'string', default: '.local/international-indexnow-receipt.json' } }, strict: true });
+const { values } = parseArgs({ options: { submit: { type: 'boolean', default: false }, audit: { type: 'string', default: '.local/international-expansion-production-audit.json' }, receipt: { type: 'string', default: '.local/international-expansion-indexnow-receipt.json' } }, strict: true });
 async function main() {
   const urls = [...new Set(locales.flatMap(locale => [...pageKeys.map(key => `${SITE}${pagePath(locale, key)}`), ...dictionaries[locale].articles.map(a => `${SITE}${articlePath(locale, a.id)}`)]))];
   if (!values.submit) { console.log(JSON.stringify({ status: 'preview', count: urls.length, urls })); return; }

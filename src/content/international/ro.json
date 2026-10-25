@@ -1,0 +1,1371 @@
+{
+  "code": "ro",
+  "name": "Română",
+  "ogLocale": "ro_RO",
+  "ui": {
+    "home": "Acasă",
+    "services": "Servicii",
+    "projects": "Proiecte",
+    "about": "Despre noi",
+    "contact": "Contact",
+    "blog": "Ghiduri",
+    "language": "Limbă",
+    "readMore": "Citește ghidul",
+    "backToBlog": "Înapoi la ghiduri",
+    "related": "Ghiduri similare",
+    "author": "Echipa editorială Latech",
+    "whatsapp": "Discută proiectul pe WhatsApp",
+    "skip": "Mergi la conținut",
+    "legal": "Informații legale",
+    "privacy": "Confidențialitate",
+    "terms": "Condiții de utilizare",
+    "phone": "Telefon",
+    "remote": "Lucrăm din Spania și colaborăm de la distanță cu firme din România.",
+    "contactTitle": "Spune-ne ce are nevoie firma ta",
+    "contactIntro": "Prezintă activitatea, site-ul actual, publicul și obiectivele tale. Scrie pe WhatsApp la +34684739091 pentru a discuta un proiect potrivit.",
+    "whatsappMessage": "Bună, Latech. Firma mea este în: . Serviciul dorit: . Site actual: . Obiectiv: . Disponibilitate pentru coordonare: .",
+    "processTitle": "De la cerințe clare la un site pregătit de lansare",
+    "processSteps": [
+      "Definim publicul, întrebările clienților și livrabilele proiectului.",
+      "Construim și revizuim designul, conținutul și funcțiile convenite.",
+      "Testăm traseele, pregătim lansarea și documentăm administrarea."
+    ],
+    "articlesIntro": "Ghiduri practice despre SEO, site-uri de firmă, magazine online și evaluarea solicitărilor primite.",
+    "serviceIntro": "Web design, SEO și comerț electronic organizate în jurul clienților și activității firmei tale.",
+    "projectsIntro": "Descoperă proiecte reale Latech și funcțiile documentate pentru fiecare dintre ele.",
+    "aboutTitle": "O echipă mică, cu o abordare practică",
+    "aboutIntro": "Andrés Rubio și Luis Grondona au fondat Latech în Puebla de la Calzada, Badajoz, Spania.",
+    "aboutBody": [
+      "Realizăm site-uri de prezentare și magazine online, îmbunătățim bazele SEO și delimităm integrări de IA cu n8n atunci când acestea răspund unei sarcini concrete.",
+      "Colaborăm de la distanță din Spania. Stabilim cine furnizează conținutul, cine aprobă etapele și cum se desfășoară revizuirile fiecărui proiect.",
+      "Preferăm pagini clare, soluții care pot fi întreținute și descrieri verificabile ale proiectelor. Rezultatele depind și de ofertă, concurență și administrarea ulterioară a site-ului."
+    ],
+    "contactDetails": "Date de contact",
+    "moreServices": "Descoperă serviciile",
+    "allArticles": "Toate ghidurile",
+    "serviceCta": "Discută acest serviciu",
+    "projectCountLabel": "proiecte",
+    "seoTitle": "SEO pentru căutări relevante și solicitări utile",
+    "seoIntro": "Leagă întrebările clienților de servicii bine explicate și urmărește ce se întâmplă după vizită.",
+    "seoBullets": [
+      "Asocierea intenției de căutare cu oferta",
+      "Pagini de servicii și categorii clare",
+      "Acces tehnic și utilizare pe mobil",
+      "Evaluarea clicurilor și solicitărilor relevante"
+    ],
+    "faqTitle": "Întrebări despre proiectul tău",
+    "brandClaim": "La design și SEO, nimeni nu ne întrece."
+  },
+  "home": {
+    "title": "Web design și SEO pentru firme | Latech",
+    "description": "Web design, SEO și magazine online pentru firme din România. Latech lucrează din Spania, cu servicii clare, conținut util și trasee practice spre solicitări.",
+    "heading": "Web design, SEO și magazine online pentru firme",
+    "intro": "Ajută clienții să îți înțeleagă oferta, să găsească informații relevante și să trimită o solicitare pe care echipa ta o poate evalua.",
+    "body": [
+      "Construim site-uri de prezentare și magazine online pornind de la întrebările clienților. Structura serviciilor, conținutul și utilizarea pe mobil trebuie să lucreze împreună, astfel încât vizitatorii să poată compara oferta și să contacteze firma în cunoștință de cauză.",
+      "Latech a fost fondată de Andrés Rubio și Luis Grondona în Puebla de la Calzada, Badajoz, Spania. Lucrăm de la distanță cu firme din România și stabilim pentru fiecare proiect livrabilele, responsabilitățile și modul de colaborare."
+    ]
+  },
+  "services": [
+    {
+      "id": "web",
+      "title": "Web design și SEO",
+      "description": "Realizează un site de firmă cu servicii clare, design mobil și baze tehnice SEO. Discută proiectul cu Latech, echipă care lucrează la distanță din Spania.",
+      "intro": "Un site de firmă trebuie să răspundă întrebărilor care preced o solicitare utilă.",
+      "sections": [
+        {
+          "title": "Oferta și structura paginilor",
+          "paragraphs": [
+            "Organizăm serviciile și întrebările clienților înainte de a stabili designul paginilor. Identificăm informațiile de care are nevoie cineva care compară furnizori sau pregătește o solicitare de ofertă.",
+            "Proiectul poate include pagini de servicii, exemple de lucrări, conținut și baze tehnice SEO. Stabilim ce materiale furnizează firma și ce livrabile pregătește Latech."
+          ]
+        },
+        {
+          "title": "Design pentru utilizare reală",
+          "paragraphs": [
+            "Luăm în considerare afișarea pe mobil, textele lizibile și formularele clare. Butoanele de contact trebuie să explice ce poate trimite vizitatorul și care este scopul conversației.",
+            "Verificăm trasee reprezentative, navigarea cu tastatura și mesajele formularelor în limitele convenite. Alegerile vizuale trebuie să susțină înțelegerea ofertei."
+          ]
+        },
+        {
+          "title": "Lansare și administrare",
+          "paragraphs": [
+            "Pregătirea lansării include contactele, eventualele redirecționări și cerințele de măsurare. La refacerea unui site, identificăm paginile și conținutul care merită păstrate.",
+            "Documentăm sarcinile de editare și cine răspunde de informații după publicare. Colaborarea se desfășoară din Spania, cu etape de revizuire și disponibilitate stabilite pentru proiect."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "shop",
+      "title": "Dezvoltare magazine online",
+      "description": "Planifică un magazin online cu produse bine prezentate, categorii clare și procese de comandă definite. Latech dezvoltă soluții ușor de administrat.",
+      "intro": "Un magazin online unește alegerea produsului cu procesarea comenzii.",
+      "sections": [
+        {
+          "title": "Produse ușor de comparat",
+          "paragraphs": [
+            "Organizăm categoriile, variantele și informațiile despre produse în funcție de modul în care cumpără clienții. Catalogul trebuie să corespundă și felului în care echipa gestionează stocurile.",
+            "Firma confirmă acoperirea livrării, disponibilitatea și condițiile de cumpărare. Prezentăm aceste informații clar, fără să inventăm promisiuni operaționale."
+          ]
+        },
+        {
+          "title": "Comandă și operațiuni conectate",
+          "paragraphs": [
+            "Delimităm conexiunile necesare pentru comandă, administrare și inventar. Metodele de plată și regulile de livrare sunt verificate cu furnizorii firmei înainte de implementare.",
+            "Un produs indisponibil, o adresă incompletă sau o tranzacție nereușită au nevoie de mesaje utile. Planificăm aceste situații pentru ca echipa să știe cum să intervină."
+          ]
+        },
+        {
+          "title": "Testare și gestionarea catalogului",
+          "paragraphs": [
+            "Testăm produse, dispozitive și trasee reprezentative în limitele convenite. Echipa trebuie să știe cum actualizează informațiile și cum verifică situațiile obișnuite ale comenzilor.",
+            "Putem discuta conectarea cu instrumentele deja utilizate de firmă. Responsabilitățile, limitele integrărilor și sarcinile de întreținere sunt precizate în proiect."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ai",
+      "title": "Integrări de IA cu n8n",
+      "description": "Conectează instrumentele firmei prin n8n și integrări de IA delimitate. Latech planifică validarea, revizuirea umană și gestionarea erorilor de proces.",
+      "intro": "Pornim de la o sarcină definită, date disponibile și responsabilități clare.",
+      "sections": [
+        {
+          "title": "Înțelegerea procesului actual",
+          "paragraphs": [
+            "Identificăm declanșatorul, datele necesare, regulile și rezultatul așteptat. O sarcină administrativă repetabilă oferă un punct de plecare mai util decât o cerere generală de inteligență artificială.",
+            "Organizarea solicitărilor sau pregătirea unor rezumate interne pot fi cazuri delimitate. Verificăm procesul manual și excepțiile înainte de a decide dacă sunt suficiente reguli simple."
+          ]
+        },
+        {
+          "title": "Validare și permisiuni",
+          "paragraphs": [
+            "Rezultatele IA necesită verificări potrivite sarcinii. Materialele propuse și clasificările pot sprijini echipa, iar acțiunile cu efecte externe au nevoie de revizuirea umană convenită.",
+            "Accesul trebuie limitat la datele necesare și permisiunile disponibile. O integrare nu înlocuiește judecata echipei sau calitatea informațiilor de intrare."
+          ]
+        },
+        {
+          "title": "Erori vizibile și documentație",
+          "paragraphs": [
+            "Erorile trebuie să fie vizibile, cu înregistrări utile și un proces de recuperare. Evenimentele repetate necesită atenție pentru a evita înregistrările duplicate neintenționate.",
+            "Definim teste reprezentative, un responsabil și documentația procesului. Întreținerea și funcționarea ulterioară depind de sistemele firmei și accesul pe care îl poate furniza."
+          ]
+        }
+      ]
+    }
+  ],
+  "articles": [
+    {
+      "id": "website-leads",
+      "title": "Cum planifici un site de firmă pentru solicitări relevante",
+      "slug": "cum-planifici-un-site-de-firma-pentru-solicitari-relevante",
+      "description": "Planifică un site de firmă cu servicii clare, exemple reale, formulare practice și măsurare care separă clicurile de solicitările relevante pentru echipă.",
+      "intro": [
+        "Un site poate primi vizite fără să ajute clienții să decidă dacă merită să contacteze firma. Pentru un instalator, un distribuitor sau un cabinet de consultanță, obiectivul nu este orice mesaj, ci o solicitare care corespunde serviciilor oferite și poate fi evaluată de echipă.",
+        "Începe prin a defini informațiile necesare unei discuții utile: serviciul, localitatea, etapa proiectului și problema principală. Apoi organizează conținutul și designul în jurul acestor întrebări. Astfel, SEO, prezentarea serviciilor și contactul au același scop, iar vizitatorul înțelege oferta înainte să completeze un formular."
+      ],
+      "sections": [
+        {
+          "title": "Definește publicul și solicitarea utilă",
+          "paragraphs": [
+            "Stabilește ce clienți poate deservi firma în mod real și ce tipuri de lucrări acceptă. O companie poate lucra doar cu spații comerciale, iar alta cu locuințe existente. Explică limitele acolo unde se evaluează serviciul. Analizează solicitări anterioare și notează ce informație a lipsit, fără să transformi prima interacțiune într-un chestionar inutil de lung pentru client.",
+            "De exemplu, o firmă ipotetică de amenajări din Brașov poate avea nevoie de localitate, tipul spațiului și natura lucrării. Un consultant poate începe cu obiectivul companiei. Acestea sunt scenarii de planificare, nu rezultate atribuite unor clienți. Folosește cazuri din activitatea ta pentru a decide ce explici pe pagină și ce întrebi în discuția inițială."
+          ]
+        },
+        {
+          "title": "Separă serviciile cu întrebări diferite",
+          "paragraphs": [
+            "O pagină de instalare are alte cerințe decât una de întreținere. Descrie lucrarea, situațiile potrivite și datele pe care le poate pregăti clientul. Nu publica pagini separate pentru fiecare sinonim dacă oferta și răspunsurile ar rămâne identice. Structura trebuie să ajute oamenii să compare opțiuni reale, nu doar să mărească numărul de adrese pe care le are site-ul."
+          ]
+        },
+        {
+          "title": "Alege exemple care susțin oferta",
+          "paragraphs": [
+            "Prezintă lucrări reale, funcții verificabile sau materiale autorizate care răspund îndoielilor despre serviciu. Explică cerința și soluția fără să inventezi creșteri de vânzări ori poziții în căutare. O demonstrație poate ilustra o abordare dacă este identificată clar. O captură de ecran fără context spune mai puțin decât o explicație a traseului sau funcției pe care o arată."
+          ]
+        },
+        {
+          "title": "Construiește un contact previzibil",
+          "paragraphs": [
+            "Cere informații care influențează evaluarea solicitării, precum serviciul și localitatea. Folosește etichete vizibile și mesaje de eroare care păstrează datele introduse. Explică ce fel de discuție urmează după trimitere. Pe mobil, verifică formularul până la confirmare și recepția mesajului, nu doar aspectul câmpurilor. Dacă folosești WhatsApp, spune ce context este util în primul mesaj."
+          ]
+        },
+        {
+          "title": "Măsoară interesul și mesajele separat",
+          "paragraphs": [
+            "Un clic pe contact arată interes, dar nu demonstrează trimiterea unei solicitări sau potrivirea ei cu oferta. Compară evenimentele site-ului cu cererile primite și clasifică mesajele relevante, incomplete ori nepotrivite. Nu trimite conținutul conversațiilor în instrumentele de analiză. Întrebările echipei comerciale pot indica informații lipsă pe care simpla numărare a clicurilor nu le poate explica."
+          ]
+        },
+        {
+          "title": "Stabilește administrarea după lansare",
+          "paragraphs": [
+            "Atribuie responsabilitatea pentru servicii, zone deservite, exemple și contacte. Site-ul trebuie actualizat când activitatea se schimbă. Pentru colaborarea cu Latech, echipa lucrează de la distanță din Spania și stabilește etapele de revizuire și responsabilitățile fiecărui proiect. Un plan de lansare include formulare, rute importante și modul de raportare a problemelor observate ulterior de personal sau de clienți."
+          ]
+        }
+      ],
+      "checklist": [
+        "Definește solicitarea relevantă.",
+        "Precizează acoperirea reală.",
+        "Explică serviciile distincte.",
+        "Testează contactul pe mobil.",
+        "Analizează calitatea mesajelor."
+      ],
+      "conclusion": "Planifică site-ul pornind de la conversația pe care firma vrea să o pregătească. O ofertă clară, dovezi potrivite și un contact funcțional oferă o bază mai utilă decât un obiectiv de trafic izolat de activitatea comercială."
+    },
+    {
+      "id": "website-budget",
+      "title": "Ce trebuie să includă o ofertă pentru realizarea unui site",
+      "slug": "ce-trebuie-sa-includa-o-oferta-pentru-realizarea-unui-site",
+      "description": "Compară ofertele de realizare a unui site prin pagini, conținut, SEO, integrări și responsabilități, înainte de a decide ce proiect poate susține firma ta.",
+      "intro": [
+        "Două oferte de web design pot folosi aceiași termeni și totuși să acopere lucrări foarte diferite. Una include șabloane, alta texte, migrare, introducerea produselor și verificarea integrărilor. Compararea doar a valorii propuse nu explică ce va primi firma și ce trebuie să pregătească intern.",
+        "Redactează o descriere scurtă înainte de a cere propuneri. Prezintă activitatea, publicul, site-ul actual, funcțiile necesare și materialele disponibile. Nu trebuie să alegi toate detaliile tehnice, dar trebuie să poți descrie sarcinile pe care clienții și echipa le vor realiza prin noul site."
+      ],
+      "sections": [
+        {
+          "title": "Numără șabloanele și paginile finalizate",
+          "paragraphs": [
+            "Un șablon de serviciu nu înseamnă automat toate paginile scrise și publicate. Precizează câte servicii, proiecte, categorii și produse intră în proiect. Cere să fie explicat ce conținut existent va fi păstrat și cine îl aprobă. Diferențiază paginile livrate complet de spațiile pregătite pentru materiale pe care firma le va introduce ulterior, după finalizarea dezvoltării.",
+            "Un exemplu ipotetic este un distribuitor care cere magazin online, dar are nevoie doar de catalog și solicitare de ofertă. Altă firmă trebuie să gestioneze variante și comenzi. Denumirea proiectului poate fi aceeași, însă sarcinile diferă. Oferă exemple de produse și operațiuni pentru ca propunerile primite să poată fi comparate pe același fond."
+          ]
+        },
+        {
+          "title": "Descrie funcțiile prin sarcini concrete",
+          "paragraphs": [
+            "În loc să ceri un portal fără explicație, spune dacă utilizatorul trebuie să descarce documente, să trimită fișiere sau să consulte comenzi. Fiecare sarcină implică permisiuni și date diferite. Enumeră instrumentele existente și restricțiile cunoscute. O integrare dependentă de un furnizor extern trebuie prezentată cu ipoteze și limite, nu evaluată ca o promisiune generală fără acces la sistem."
+          ]
+        },
+        {
+          "title": "Atribuie pregătirea și aprobarea materialelor",
+          "paragraphs": [
+            "Stabilește cine furnizează fotografii, descrieri, informații despre produse și condiții comerciale. Editarea unor texte existente diferă de documentare și redactare de la zero. Alege un responsabil care centralizează aprobările. Dacă materialele lipsesc, propunerea trebuie să arate cum afectează ele etapele și ce se întâmplă cu orice conținut provizoriu înainte ca acesta să fie publicat pentru vizitatori."
+          ]
+        },
+        {
+          "title": "Cere activități SEO identificabile",
+          "paragraphs": [
+            "Expresia SEO inclus poate descrie lucruri foarte diferite. Întreabă despre intenție de căutare, structură, titluri, legături interne, verificări de indexare sau redirecționări. Pentru refacerea unui site, conservarea rutelor utile trebuie discutată explicit. O poziție organică nu poate fi un livrabil garantat; oferta trebuie să precizeze acțiuni care pot fi executate și verificate, cu responsabilități și limite clare."
+          ]
+        },
+        {
+          "title": "Definește revizuirile și acceptarea",
+          "paragraphs": [
+            "Stabilește cum se colectează observațiile și cine decide când apar cerințe contradictorii. Acceptarea poate folosi trasee reprezentative și criterii convenite, precum trimiterea unui formular sau verificarea unei comenzi. Separă erorile de funcționare de extinderile proiectului. Termeni precum site complet sau funcții standard nu înlocuiesc o explicație a lucrului care trebuie să fie gata pentru utilizare."
+          ]
+        },
+        {
+          "title": "Clarifică proprietatea și întreținerea",
+          "paragraphs": [
+            "Întreabă cine gestionează domeniul, conturile, găzduirea și drepturile de editare. Identifică instrumentele externe și activitățile ulterioare fără să presupui că sunt incluse în dezvoltare. Latech colaborează din Spania și stabilește organizarea pentru fiecare proiect. Condițiile comerciale se discută în propunere; nu trebuie deduse din localizarea furnizorului sau dintr-o formulare vagă despre suport și administrare permanentă."
+          ]
+        }
+      ],
+      "checklist": [
+        "Numără pagini și șabloane.",
+        "Descrie sarcinile utilizatorilor.",
+        "Atribuie aprobarea conținutului.",
+        "Precizează activitățile SEO.",
+        "Documentează proprietatea și întreținerea."
+      ],
+      "conclusion": "O ofertă utilă transformă așteptările în livrabile verificabile. Compară responsabilități, dependențe și criterii de acceptare împreună cu termenii comerciali, astfel încât firma să aleagă un proiect pe care îl poate aproba și administra."
+    },
+    {
+      "id": "local-seo",
+      "title": "SEO local pentru o firmă cu zonă de servicii clară",
+      "slug": "seo-local-pentru-o-firma-cu-zona-de-servicii-clara",
+      "description": "Organizează SEO local cu informații corecte, servicii explicate, dovezi autentice și contact mobil, potrivit localităților pe care le poți deservi în realitate.",
+      "intro": [
+        "O căutare locală pornește adesea de la o problemă concretă: o reparație, un serviciu profesional sau un produs disponibil în apropiere. Site-ul trebuie să explice oferta și modul de lucru. Repetarea numelui unui oraș nu răspunde acestor întrebări și nu înlocuiește o descriere utilă.",
+        "Definește dacă primești clienți într-o locație, mergi la ei sau livrezi serviciul de la distanță. Fiecare model creează așteptări diferite. Precizează acoperirea reală și nu sugera sedii în localități unde firma nu are o prezență corespunzătoare doar pentru a publica mai multe pagini locale."
+      ],
+      "sections": [
+        {
+          "title": "Verifică datele firmei",
+          "paragraphs": [
+            "Revizuiește numele public, contactul, programul și modul de acces în spațiile pe care le administrezi. Dacă firma este eligibilă pentru un Profil de Companie Google, folosește date și categorii care descriu activitatea reală. Nu transforma denumirea într-o listă de cuvinte cheie. Informațiile trebuie să ajute o persoană să recunoască afacerea și să înțeleagă cum poate solicita serviciul.",
+            "Un atelier ipotetic din Cluj poate avea nevoie de instrucțiuni de acces și servicii clare. O echipă care se deplasează în județ trebuie să explice zona și condițiile evaluării. Niciuna nu are nevoie de sedii inventate. Exemplele arată că structura locală trebuie să urmeze felul în care funcționează afacerea și întrebările clienților, nu o listă de orașe."
+          ]
+        },
+        {
+          "title": "Explică serviciul înaintea localității",
+          "paragraphs": [
+            "Prezintă lucrările acceptate, limitele și informațiile necesare pentru evaluare. Un instalator poate distinge reparația de înlocuire și poate preciza unde se deplasează. Menționează localitățile acolo unde contează pentru client. O listă lungă de zone nu compensează lipsa descrierii activității sau o promisiune de intervenție pe care echipa nu o poate susține în condițiile comunicate."
+          ]
+        },
+        {
+          "title": "Creează pagini locale doar cu motiv",
+          "paragraphs": [
+            "Un sediu cu acces, echipă sau servicii proprii poate justifica o pagină separată. Schimbarea numelui localității în același text aduce puțină informație. Dacă firma deservește mai multe zone prin aceeași operațiune, o secțiune clară poate fi suficientă. Verifică ce află suplimentar clientul la fiecare adresă înainte de a extinde structura în zeci de destinații apropiate."
+          ]
+        },
+        {
+          "title": "Folosește dovezi locale autentice",
+          "paragraphs": [
+            "Prezintă lucrări și experiențe reale cu permisiune și context. Explică activități observabile fără să inventezi rezultate comerciale. Recenziile trebuie să reflecte experiențe autentice, nu texte fabricate pentru campanie. Dacă localitatea ajută la înțelegerea proiectului, o poți menționa fără detalii private inutile. Materialele trebuie să susțină serviciul discutat și să permită vizitatorului să evalueze relevanța lor."
+          ]
+        },
+        {
+          "title": "Fă contactul practic pe telefon",
+          "paragraphs": [
+            "Așază acoperirea și acțiunea de contact lângă explicația relevantă. Un formular poate cere localitate și tipul lucrării, iar un mesaj WhatsApp poate sugera aceste informații. Testează numărul și destinația reală a linkului. Vizitatorul trebuie să știe dacă solicită ofertă, programare sau informații, fără să interpreteze o asistență de urgență pe care firma nu o oferă."
+          ]
+        },
+        {
+          "title": "Compară căutările și solicitările",
+          "paragraphs": [
+            "Revizuiește interogările și paginile relevante în Search Console, apoi compară observațiile cu zonele și serviciile din cererile primite. Lipsa vizibilității și traficul nepotrivit sunt probleme diferite. Folosește perioade comparabile și ține cont de cerere sau sezonalitate. O căutare făcută de proprietar pe propriul dispozitiv nu oferă un raport stabil pentru întreaga audiență a firmei."
+          ]
+        }
+      ],
+      "checklist": [
+        "Confirmă locația și acoperirea.",
+        "Menține date corecte.",
+        "Descrie serviciile principale.",
+        "Folosește dovezi autentice.",
+        "Analizează căutări și solicitări."
+      ],
+      "conclusion": "SEO local este mai util când prezintă exact activitatea și ajută la alegerea unui serviciu. Prioritizează informația verificabilă și contactul funcțional, apoi urmărește ce solicitări relevante apar în zonele pe care firma le deservește cu adevărat."
+    },
+    {
+      "id": "international-seo",
+      "title": "SEO internațional pentru un site în mai multe limbi",
+      "slug": "seo-international-pentru-un-site-in-mai-multe-limbi",
+      "description": "Planifică SEO internațional cu cercetare de piață, pagini adaptate, URL-uri stabile și semnale de limbă coerente, potrivite serviciilor pe care le poți livra.",
+      "intro": [
+        "O versiune într-o altă limbă schimbă mai mult decât cuvintele. Clienții pot compara alți furnizori, pot folosi termeni diferiți și pot avea nevoie de alte detalii înainte de contact. SEO internațional începe cu o piață pe care firma o poate deservi și cu un motiv pentru conținut dedicat.",
+        "Alege un public și un grup restrâns de servicii înainte de traducere. O firmă românească ce urmărește clienți din altă țară are nevoie să verifice oferta, procesul și limbajul comercial. Multiplicarea paginilor nu este utilă dacă nimeni nu poate aproba și menține diferențele dintre versiuni."
+      ],
+      "sections": [
+        {
+          "title": "Cercetează oferta în piața vizată",
+          "paragraphs": [
+            "Compară rezultate și întrebări pentru servicii reprezentative. Notează terminologia, etapele deciziei și informațiile publicate de furnizori relevanți. Folosește constatările ca ipoteze de verificat, nu ca dovadă suficientă de cerere. Confirmă împreună cu firma că serviciul și modul de colaborare pot fi susținute pentru acea audiență înainte să prezinți o experiență comercială specifică pieței.",
+            "Un distribuitor ipotetic poate descoperi că noul public caută după utilizare, în timp ce catalogul inițial este organizat după furnizor. Constatarea poate justifica pagini de categorie explicative. Nu demonstrează că trebuie tradus fiecare articol existent. Alege o structură pe care firma o poate menține și confirmă că produsele și informațiile necesare sunt disponibile pentru publicul respectiv."
+          ]
+        },
+        {
+          "title": "Alege URL-uri distincte și stabile",
+          "paragraphs": [
+            "Folosește adrese accesibile pentru versiunile care trebuie înțelese separat. O structură pe directoare poate fi practică atunci când administrarea rămâne comună, dar trebuie aleasă coerent înainte de publicare. Oferă linkuri vizibile pentru selectarea limbii. Nu depinde exclusiv de redirecționarea pe baza locației, deoarece un client poate călători sau poate folosi un dispozitiv configurat diferit de contextul cumpărării."
+          ]
+        },
+        {
+          "title": "Adaptează informația necesară deciziei",
+          "paragraphs": [
+            "Revizuiește exemplele, descrierile serviciilor, unitățile și așteptările de contact. O traducere literală poate păstra întrebări nepotrivite pieței. Menține reale afirmațiile despre sedii și acoperire. Dacă serviciul este prestat de la distanță, explică acest lucru. Indisponibilitatea unui produs sau a unei activități trebuie rezolvată înainte de a promova o pagină ca ofertă locală completă."
+          ]
+        },
+        {
+          "title": "Verifică hreflang și canonical",
+          "paragraphs": [
+            "Utilizează valori admise pentru limbă și regiune, potrivite versiunilor reale. Paginile echivalente trebuie să descrie consistent relațiile dintre ele. Referințele canonical nu ar trebui să consolideze accidental toate traducerile într-o singură limbă. Eticheta din meniu nu stabilește singură relația tehnică. Aceste semnale ajută interpretarea versiunilor, dar nu garantează indexarea sau o poziție pentru fiecare țară vizată."
+          ]
+        },
+        {
+          "title": "Păstrează controlul utilizatorului",
+          "paragraphs": [
+            "Oferă posibilitatea de a schimba versiunea fără a pierde accesul la informația căutată. O sugestie de limbă poate ajuta, însă o redirecționare forțată poate întrerupe comparația. Verifică formularele și confirmările în fiecare versiune publicată. Alegerea limbii trebuie să rămână utilă și după pagina de intrare, inclusiv atunci când clientul trece la o etapă de contact sau de solicitare."
+          ]
+        },
+        {
+          "title": "Atribuie revizuirea fiecărei piețe",
+          "paragraphs": [
+            "Stabilește cine aprobă termenii și diferențele operaționale. Analizează pagini și țări în rapoarte când este relevant, fără să tratezi locația observată drept explicație completă a intenției. Include cererile primite în evaluare. Latech lucrează din Spania și poate colabora de la distanță, cu scop și coordonare convenite, fără a prezenta sedii locale care nu există în țările vizate."
+          ]
+        }
+      ],
+      "checklist": [
+        "Validează oferta pentru piață.",
+        "Cercetează termenii locali.",
+        "Folosește versiuni accesibile.",
+        "Aliniază semnalele de limbă.",
+        "Atribuie un responsabil editorial."
+      ],
+      "conclusion": "Extinderea internațională are sens când produce o experiență utilă pentru un public concret. Unește cercetarea, adaptarea și verificarea tehnică, păstrând clare condițiile reale de prestare și responsabilitatea pentru conținut după lansare."
+    },
+    {
+      "id": "mobile-performance",
+      "title": "Viteză pe mobil: prioritizează paginile unde apar obstacole",
+      "slug": "viteza-pe-mobil-prioritizeaza-paginile-unde-apar-obstacole",
+      "description": "Îmbunătățește viteza mobilă prin trasee reale, date de teren, teste controlate, imagini potrivite și formulare verificate după fiecare modificare importantă.",
+      "intro": [
+        "Un site poate părea rapid pe conexiunea de la birou și totuși să fie dificil pe telefonul unui client. Dispozitivul, conexiunea și resursele fiecărui șablon influențează experiența. Testarea exclusivă a paginii principale poate ascunde probleme în servicii, produse sau formularul de solicitare.",
+        "Selectează câteva trasee importante comercial și observă unde se blochează utilizarea. Întârzie explicația, se mișcă elementele sau răspunde greu un buton? Măsurarea devine utilă când ajută la diagnosticarea unui obstacol concret, nu când este redusă la urmărirea unei singure note fără legătură cu sarcina clientului."
+      ],
+      "sections": [
+        {
+          "title": "Diferențiază datele reale de testele controlate",
+          "paragraphs": [
+            "Datele din teren descriu vizite reale când există volum suficient, iar testele de laborator reproduc condiții pentru investigație. Sursele răspund unor întrebări apropiate, dar diferite. Folosește testele pentru a căuta o cauză și observațiile reale pentru context. Un rezultat izolat nu dovedește că toate persoanele văd aceeași încărcare ori că pot finaliza solicitarea în aceleași condiții.",
+            "Pentru un site ipotetic de amenajări, compară o pagină de serviciu, un proiect cu multe fotografii și formularul de ofertă. Notează dacă problema apare la afișarea inițială sau după o atingere. Simptomele diferite cer soluții diferite. Un șablon rapid nu trebuie să ascundă o etapă lentă prin care clientul este obligat să treacă înainte de contact."
+          ]
+        },
+        {
+          "title": "Identifică informația din primul ecran",
+          "paragraphs": [
+            "Verifică ce imagine, font sau dependență întârzie conținutul important. O zonă vizuală amplă poate ocupa ecranul fără să explice oferta. Contează ca vizitatorul să înțeleagă serviciul, nu doar să vadă un fundal. Eliminarea unor elemente inutile poate ajuta mai mult decât comprimarea atentă a unei resurse decorative care nu ar trebui să blocheze citirea inițială."
+          ]
+        },
+        {
+          "title": "Livrează imagini potrivite afișării",
+          "paragraphs": [
+            "Folosește dimensiuni și fișiere adecvate, cu variante responsive când este cazul. Nu amâna automat imaginea principală vizibilă imediat. Rezervă spațiu și verifică vizual compresia. Fotografia trebuie să păstreze detaliile necesare comparării produsului sau înțelegerii proiectului. Cel mai mic fișier nu este automat cea mai bună soluție dacă informația importantă devine neclară pe telefon."
+          ]
+        },
+        {
+          "title": "Revizuiește scripturile și interacțiunile",
+          "paragraphs": [
+            "Inventariază etichetele de analiză, elementele încorporate și instrumentele externe. Fiecare trebuie să aibă o utilitate înainte să consume resurse suplimentare. Testează meniuri, filtre și formulare cu informații reprezentative. Pagina poate afișa text repede și totuși să reacționeze târziu la atingere. Când o acțiune necesită procesare, oferă feedback care explică ce se întâmplă și previne repetarea inutilă."
+          ]
+        },
+        {
+          "title": "Previne deplasarea elementelor",
+          "paragraphs": [
+            "Definește spațiul pentru imagini, bannere și conținut care apare ulterior. Verifică schimbările de font și elementele fixe pe ecrane mici. Un buton care se mută sub deget creează o problemă chiar dacă pagina se încarcă rapid. Testează mai multe lățimi și texte mai lungi, deoarece un singur ecran ideal nu arată comportamentul în situațiile întâlnite de utilizatori."
+          ]
+        },
+        {
+          "title": "Retestează întregul contact",
+          "paragraphs": [
+            "După modificare, repetă verificări comparabile și notează resursele schimbate. Trimite formularul, provoacă o eroare de validare și verifică recepția mesajului. Optimizarea nu ajută dacă strică solicitarea. Datele reale pot avea nevoie de timp și de vizite suficiente pentru a reflecta schimbarea. Valori tehnice bune nu garantează poziții sau cereri când oferta și conținutul nu răspund căutării."
+          ]
+        }
+      ],
+      "checklist": [
+        "Testează șabloane importante.",
+        "Compară teren și laborator.",
+        "Verifică afișarea inițială.",
+        "Controlează scripturi și deplasări.",
+        "Retestează solicitarea completă."
+      ],
+      "conclusion": "Folosește măsurarea vitezei pentru a elimina obstacole din citire, comparație și contact. Legătura cu sarcinile clientului produce priorități mai clare decât o notă izolată și permite verificarea practică a schimbărilor implementate pe site."
+    },
+    {
+      "id": "online-store",
+      "title": "Pregătește catalogul înainte de realizarea magazinului online",
+      "slug": "pregateste-catalogul-inainte-de-realizarea-magazinului-online",
+      "description": "Pregătește magazinul online cu date corecte, categorii utile, condiții operaționale confirmate și teste de comandă pentru produsele pe care le comercializezi.",
+      "intro": [
+        "Un magazin online poate fi întârziat de date și procese neclare chiar dacă designul este aprobat. Variantele nu sunt definite, măsurile diferă între fișe sau nimeni nu știe cine actualizează stocul. Aceste decizii influențează cumpărarea și nu pot fi rezolvate doar prin schimbarea aspectului.",
+        "Alege produse reprezentative și urmărește traseul lor de la descoperire la gestionarea comenzii. Include un articol simplu, unul cu variante și un caz care necesită verificare. Exemplele reale ale firmei arată cerințe pe care o listă generală de funcționalități dorite le poate omite la începutul proiectului."
+      ],
+      "sections": [
+        {
+          "title": "Standardizează informațiile produselor",
+          "paragraphs": [
+            "Definește identificatori, denumiri, unități și reguli pentru variante. Separă specificațiile confirmate de descrierea comercială. Pentru piese poate conta compatibilitatea, iar pentru mobilier dimensiunile și materialele. Pregătește fișe de exemplu și verifică dacă echipa le poate întreține. Un text lung nu înlocuiește datele corecte de care are nevoie clientul pentru a înțelege ce produs comandă de fapt.",
+            "Un magazin ipotetic poate pregăti trei înregistrări: un accesoriu simplu, o jachetă cu mărimi și un obiect voluminos care cere evaluarea livrării. Cere personalului să explice administrarea fiecăruia. Aceste exemple scot la iveală diferențe de date și proces, fără să presupui că un singur șablon sau mesaj de livrare este potrivit întregului catalog și tuturor comenzilor."
+          ]
+        },
+        {
+          "title": "Construiește categorii după alegerea clientului",
+          "paragraphs": [
+            "Organizează produsele după modul de cumpărare, nu neapărat după un tabel primit de la furnizor. Verifică utilizarea, dimensiunea sau compatibilitatea și creează filtre susținute de date fiabile. Evită categorii foarte subțiri sau combinații care repetă aceeași selecție fără ajutor suplimentar. O persoană ar trebui să poată găsi produsul fără să cunoască organizarea internă a depozitului ori terminologia personalului."
+          ]
+        },
+        {
+          "title": "Confirmă condițiile de operare",
+          "paragraphs": [
+            "Firma trebuie să aprobe acoperirea livrării, disponibilitatea și informațiile despre cumpărare și retur. Nu deduce reguli universale dintr-un singur produs. Dacă evaluarea depinde de adresă sau dimensiuni, explică datele necesare. Site-ul poate comunica clar o decizie, dar nu poate înlocui un proces operațional care încă nu este stabilit și nu are un responsabil desemnat în echipă."
+          ]
+        },
+        {
+          "title": "Delimitează conexiunile și excepțiile",
+          "paragraphs": [
+            "Descrie cum ajunge comanda la persoana responsabilă și ce instrumente participă. Verifică cerințele furnizorilor înainte de implementarea plății sau a livrării. Planifică produse indisponibile, adrese incomplete și tranzacții nereușite. Sincronizarea inventarului trebuie să aibă limite clare; nu presupune că toate sistemele pot actualiza automat toate datele doar pentru că fiecare permite o formă de integrare tehnică."
+          ]
+        },
+        {
+          "title": "Testează comenzi reprezentative",
+          "paragraphs": [
+            "Folosește proceduri convenite pentru variante, cantități și situații relevante. Verifică pe mobil coșul, erorile, confirmarea și notificările personalului. Compară disponibilitatea afișată cu regula dorită de firmă. O comandă ideală finalizată corect este o dovadă utilă, dar nu confirmă gestionarea situațiilor obișnuite de excepție sau că echipa știe unde să intervină atunci când apar neclarități."
+          ]
+        },
+        {
+          "title": "Stabilește întreținerea catalogului",
+          "paragraphs": [
+            "Atribuie actualizarea produselor, imaginilor, stocului și condițiilor. Documentează gestionarea articolelor retrase și a înlocuitorilor pentru a evita trasee rupte. Dacă proiectul este realizat cu Latech, colaborarea are loc din Spania, cu exemple și revizuiri convenite. Deciziile operaționale rămân confirmate de firmă, iar procedura de editare trebuie să poată fi susținută după lansare de persoanele desemnate."
+          ]
+        }
+      ],
+      "checklist": [
+        "Pregătește fișe reprezentative.",
+        "Validează categorii și variante.",
+        "Confirmă condițiile de operare.",
+        "Testează excepțiile de comandă.",
+        "Atribuie administrarea catalogului."
+      ],
+      "conclusion": "Un magazin administrabil are nevoie de informații corecte și un proces clar după comandă. Pregătește aceste baze înainte de extinderea funcțiilor și verifică rezultatul prin sarcini reprezentative ale clientului și ale echipei care îl deservește."
+    },
+    {
+      "id": "whatsapp-conversion",
+      "title": "WhatsApp pe site: de la clic la o solicitare cu context",
+      "slug": "whatsapp-pe-site-de-la-clic-la-o-solicitare-cu-context",
+      "description": "Folosește WhatsApp pe site cu mesaje clare, date minime și număr verificat, măsurând separat clicurile și conversațiile primite efectiv de echipa firmei.",
+      "intro": [
+        "WhatsApp poate oferi o cale practică de contact când publicul îl folosește deja, însă un buton vizibil nu garantează solicitări utile. Dacă pagina nu explică serviciul, conversația începe fără context. Dacă nimeni nu răspunde de mesaje, un canal suplimentar poate amplifica incertitudinea.",
+        "Stabilește ce tip de cerere poate fi inițiată și ce informații ajută echipa să o orienteze. O reparație, o întrebare despre produs și un proiect complex au cerințe diferite. Așază linkul într-un traseu clar, fără să îi atribui sarcina de a compensa toate explicațiile lipsă de pe site."
+      ],
+      "sections": [
+        {
+          "title": "Confirmă scopul canalului",
+          "paragraphs": [
+            "Revizuiește cum comunică deja clienții și ce conversații sunt utile. Nu presupune că mesageria înlocuiește telefonul sau formularul pentru orice public. Unele solicitări au nevoie de documente sau de o discuție ulterioară. Explică dacă aici se cer informații generale, evaluarea inițială sau detalii despre un produs, astfel încât vizitatorul să aleagă un canal cu așteptări adecvate.",
+            "O firmă ipotetică de instalații poate cere tipul lucrării și localitatea în primul mesaj, lăsând fotografiile pentru discuția ulterioară. Un consultant poate avea nevoie de obiectivul firmei. Exemplele ajută la planificarea contextului, fără să demonstreze că mesageria aduce rezultate mai bune decât alte canale. Compară preferințele publicului cu felul în care echipa poate gestiona efectiv solicitările."
+          ]
+        },
+        {
+          "title": "Oferă context înainte de acțiune",
+          "paragraphs": [
+            "Pe o pagină de serviciu, invită persoana să descrie lucrarea și localitatea după explicarea ofertei. Pe o fișă de produs, poate fi utilă referința articolului. Evită elemente flotante care acoperă navigarea sau câmpurile pe telefon. Acțiunea de contact ar trebui să spună de ce începe conversația, nu doar să ceară un mesaj fără legătură cu ce a citit vizitatorul."
+          ]
+        },
+        {
+          "title": "Scrie un mesaj inițial scurt",
+          "paragraphs": [
+            "Un text precompletat poate sugera câteva informații relevante și trebuie să rămână editabil. Nu cere date sensibile și nu transforma mesajul într-un formular lung. Verifică diacriticele și semnele după codificarea linkului. Textul trebuie să ajute la pornirea dialogului fără să prezinte drept confirmate date care necesită încă o alegere, o verificare sau o aprobare a persoanei care trimite."
+          ]
+        },
+        {
+          "title": "Clarifică gestionarea mesajelor",
+          "paragraphs": [
+            "Stabilește cine primește, clasifică și distribuie cererile. Publică disponibilitate numai dacă firma o poate susține și întreține, fără să implice răspuns instantaneu. Când furnizorul lucrează de la distanță, explică relația dacă este relevantă. Latech are baza în Spania și stabilește coordonarea proiectelor; WhatsApp nu trebuie să sugereze un birou românesc ori un program local de suport care nu există."
+          ]
+        },
+        {
+          "title": "Separă clicul de conversație",
+          "paragraphs": [
+            "Clicul către aplicație arată intenția de contact, nu dovedește trimiterea mesajului. Analizează evenimentele și solicitările efective ca etape diferite. Verifică dacă mesajele corespund serviciului și conțin informația necesară. Nu transmite conversații în instrumente de analiză. Mai multe clicuri fără cereri utile pot indica o problemă de așteptări sau de link, diferită de o lipsă de vizitatori."
+          ]
+        },
+        {
+          "title": "Testează trecerea dintre site și aplicație",
+          "paragraphs": [
+            "Deschide linkul pe telefon și într-un browser de calculator reprezentativ. Confirmă numărul, prefixul internațional, textul și destinația. Verifică dacă utilizatorul poate reveni la informații fără să își piardă locul în pagină. Repetă verificarea când se schimbă datele sau serviciul. O eroare mică poate rupe legătura dintre o ofertă bine explicată și conversația pe care trebuia să o pregătească."
+          ]
+        }
+      ],
+      "checklist": [
+        "Definește scopul conversației.",
+        "Explică serviciul înainte de link.",
+        "Păstrează mesajul scurt.",
+        "Verifică prefixul și destinația.",
+        "Evaluează solicitările separat de clicuri."
+      ],
+      "conclusion": "WhatsApp este util când conectează o ofertă clară cu o echipă pregătită să gestioneze conversația. Păstrează previzibile așteptările, verifică traseul complet și măsoară fiecare etapă fără să transformi un clic într-un rezultat comercial presupus."
+    },
+    {
+      "id": "website-migration",
+      "title": "Cum pregătești migrarea unui site fără trasee rupte",
+      "slug": "cum-pregatesti-migrarea-unui-site-fara-trasee-rupte",
+      "description": "Planifică migrarea site-ului cu inventar de URL-uri, redirecționări relevante, verificări de indexare și teste pentru formulare și traseele de cumpărare.",
+      "intro": [
+        "Schimbarea platformei sau refacerea designului modifică modul în care clienții și motoarele de căutare ajung la informație. Un serviciu util poate dispărea, un link de ofertă se poate rupe sau o restricție de test poate rămâne activă la publicare. Migrarea depinde de conținut, tehnică și operațiuni.",
+        "Pregătește inventarul înainte să modifici adresele. Include servicii, produse, documente și destinații externe care participă la contact sau cumpărare. Planul trebuie să arate ce se păstrează, ce se schimbă și cine confirmă fiecare etapă, folosind criterii care pot fi verificate în noua versiune publică."
+      ],
+      "sections": [
+        {
+          "title": "Identifică paginile care merită păstrate",
+          "paragraphs": [
+            "Combină lista de URL-uri cu date disponibile din Search Console, legături și cunoașterea firmei. O pagină cu trafic modest poate răspunde unei întrebări importante ori primi recomandări valoroase. Notează scopul și acțiunea ei. Nu elimina conținut doar pentru că nu se potrivește primului desen al meniului; decide dacă trebuie conservat, îmbunătățit sau integrat într-o destinație echivalentă pentru client.",
+            "O firmă ipotetică de consultanță își poate schimba platforma păstrând un serviciu extern de programare și câteva documente trimise clienților. Inventarul trebuie să includă acele destinații. O pagină principală funcțională nu dovedește că recomandările existente duc în continuare la informația corectă. Exemplul arată de ce migrarea se verifică prin trasee, nu numai prin aspectul paginilor."
+          ]
+        },
+        {
+          "title": "Mapează destinații relevante",
+          "paragraphs": [
+            "Fiecare adresă modificată are nevoie de o decizie adecvată. Un serviciu înlocuitor ajută de obicei mai mult decât trimiterea tuturor paginilor la începutul site-ului. Include documente și produse importante. Evită lanțuri și reguli contradictorii și testează cazuri reprezentative. Dacă informația dispare cu adevărat, tratează situația corect, fără să prezinți orice pagină nouă ca un înlocuitor potrivit."
+          ]
+        },
+        {
+          "title": "Revizuiește conținutul și semnalele",
+          "paragraphs": [
+            "Verifică titluri, subtitluri, legături interne, canonical și relații de limbă acolo unde există. O altă platformă poate publica un rezultat diferit de cel presupus în editor. Conținutul important trebuie să fie accesibil în pagina publică, nu doar după o interacțiune. Examinează ce primesc vizitatorii și crawlerele, în loc să consideri o setare administrativă drept dovadă suficientă pentru toate șabloanele."
+          ]
+        },
+        {
+          "title": "Controlează restricțiile de producție",
+          "paragraphs": [
+            "Mediul de test poate necesita acces limitat sau instrucțiuni care împiedică indexarea. Planul de lansare trebuie să precizeze ce se schimbă și cine verifică producția. Controlează regulile robots, directivele paginilor și URL-urile preferate. Eliminarea unei singure restricții nu dovedește că tot site-ul funcționează corect; verifică exemple din serviciile și produsele prioritare înainte de a încheia etapa tehnică."
+          ]
+        },
+        {
+          "title": "Testează sarcinile comerciale",
+          "paragraphs": [
+            "Trimite formulare și urmărește notificările și confirmările. Dacă există magazin, verifică trasee convenite de comandă; dacă se folosește o programare externă, confirmă destinația potrivită. Testează pe mobil și cere responsabilului comercial să urmeze procesul real. Migrarea poate păstra URL-uri și totuși poate împiedica acțiunea pentru care clientul a venit, așa că imaginile cu noul design nu sunt suficiente."
+          ]
+        },
+        {
+          "title": "Atribuie urmărirea și corecțiile",
+          "paragraphs": [
+            "Definește cine verifică erorile după publicare și cum sunt raportate. Păstrează acces la materiale și configurații anterioare când este practic. Urmărește redirecționări, dovezi de indexare și cereri primite, fără să aștepți stabilitate imediată în căutare. Înregistrează modificările semnificative pentru a investiga evoluțiile cu fapte și pentru a evita atribuirea automată a oricărei variații noului design."
+          ]
+        }
+      ],
+      "checklist": [
+        "Inventariază URL-uri și trasee.",
+        "Planifică redirecționări potrivite.",
+        "Verifică semnalele publicate.",
+        "Controlează restricțiile de producție.",
+        "Testează contactul și urmărirea lansării."
+      ],
+      "conclusion": "O migrare controlată păstrează scopul conținutului existent în timp ce introduce o versiune mai utilă. Documentarea adreselor, verificărilor și sarcinilor clienților permite evaluarea lansării și oferă echipei o cale clară pentru rezolvarea problemelor neașteptate."
+    },
+    {
+      "id": "seo-audit",
+      "title": "Cum prioritizezi un audit SEO pentru firma ta",
+      "slug": "cum-prioritizezi-un-audit-seo-pentru-firma-ta",
+      "description": "Prioritizează auditul SEO prin acces tehnic, intenție, servicii utile și solicitări reale, separând erorile confirmate de întrebările care cer investigație.",
+      "intro": [
+        "Un audit SEO poate produce un tabel lung fără să arate ce ar trebui să facă firma mai întâi. O pagină de serviciu blocată și un detaliu izolat al unei imagini nu au automat aceeași importanță. Valoarea analizei depinde de legătura dintre constatări, clienți și activitatea comercială.",
+        "Selectează pagini și trasee reprezentative înainte de a rula instrumente. Pentru fiecare problemă notează dovada, efectul posibil, acțiunea și responsabilul. Astfel, auditul devine un document de decizie, iar recomandările automate nu sunt transformate în obligații egale fără verificarea contextului și a consecințelor reale."
+      ],
+      "sections": [
+        {
+          "title": "Formulează întrebările importante pentru afacere",
+          "paragraphs": [
+            "Stabilește ce trebuie înțeles: lipsa solicitărilor pentru un serviciu, mesaje din zone nedeservite sau vizite care ajung la o ofertă veche. Întrebările orientează verificarea. Un magazin și o firmă de consultanță au priorități diferite. Fără scop, o listă tehnică poate consuma atenție pe pagini care nu influențează cele mai importante decizii ale clienților și nici sarcinile echipei.",
+            "O constatare ipotetică poate arăta că adresa unui serviciu duce către o pagină fără legătură și poate desemna corectarea ei. Alta poate cere cercetarea intenției unei căutări înainte de rescriere. Separarea celor două evită certitudini false: prima descrie un comportament observat, iar a doua are încă nevoie de investigație pentru a decide schimbarea potrivită."
+          ]
+        },
+        {
+          "title": "Verifică accesul înaintea detaliilor editoriale",
+          "paragraphs": [
+            "Controlează răspunsul, redirecționările, directivele și conținutul public al paginilor prioritare. O restricție accidentală sau un canonical contradictoriu poate face prematură rescrierea titlurilor. Examinează exemple din fiecare șablon, nu doar rezumatul unui instrument. Verificările identifică bariere, dar eliminarea lor nu dovedește că pagina va obține o poziție anume sau un număr previzibil de solicitări după publicare."
+          ]
+        },
+        {
+          "title": "Compară intenția cu oferta paginii",
+          "paragraphs": [
+            "Analizează ce caută persoana și ce găsește efectiv. Un ghid și o pagină pentru solicitarea unei oferte au roluri diferite. Verifică explicația serviciului, dovezile și pasul următor împreună. Dacă pagina atrage un public nepotrivit, poate fi necesară clarificarea scopului, nu doar adăugarea unor cuvinte. Un scor editorial bun nu confirmă că întrebarea clientului a primit răspuns."
+          ]
+        },
+        {
+          "title": "Inspectează conținutul și legăturile interne",
+          "paragraphs": [
+            "Caută servicii greu de descoperit, informații importante disponibile doar în imagini și articole care repetă aceeași nevoie. Linkurile trebuie să ajute cititorul să continue o sarcină relevantă. Mai multe legături nu înseamnă automat o structură mai bună. Dacă propui integrarea unor pagini, păstrează materialul util și decide ce se întâmplă cu URL-urile și referințele existente după schimbare."
+          ]
+        },
+        {
+          "title": "Ordonează după efect și încredere",
+          "paragraphs": [
+            "Separă cerințele de bază, îmbunătățirile plauzibile și întrebările care au nevoie de dovezi suplimentare. Consideră efortul, dependențele și relevanța comercială. Un defect repetat în catalog poate conta mai mult decât avertismente izolate. Explică ce susține recomandarea și ce rămâne incert, astfel încât responsabilul să nu confunde o prioritate rezonabilă cu o promisiune de rezultat comercial."
+          ]
+        },
+        {
+          "title": "Verifică acțiunile prin aceleași criterii",
+          "paragraphs": [
+            "Păstrează o înregistrare a situației inițiale și a modificării. Recontrolează corecțiile tehnice direct și urmărește tendințele în perioade potrivite. Include observațiile personalului care primește cereri. Cererea și alte acțiuni de marketing pot influența rezultatele, deci nu atribui fiecare variație auditului. Documentul trebuie să lase responsabili și criterii de revizuire, pentru ca lucrul să continue după prezentarea constatărilor."
+          ]
+        }
+      ],
+      "checklist": [
+        "Pornește de la întrebări comerciale.",
+        "Verifică accesul paginilor importante.",
+        "Compară oferta și intenția.",
+        "Prioritizează efectul și dovezile.",
+        "Atribuie responsabili și revizuire."
+      ],
+      "conclusion": "Un audit util face următoarea decizie mai clară. Corectează barierele confirmate, explică raționamentul recomandărilor și verifică lucrul finalizat înainte de a extinde o listă de sarcini pe care firma nu o poate transforma în acțiuni."
+    },
+    {
+      "id": "search-intent",
+      "title": "Asociază intenția de căutare cu paginile site-ului",
+      "slug": "asociaza-intentia-de-cautare-cu-paginile-site-ului",
+      "description": "Organizează intenția de căutare în pagini de informare, comparație și ofertă, folosind întrebări reale și o structură utilă, ușor de întreținut pentru firmă.",
+      "intro": [
+        "Persoane care caută același serviciu pot lua decizii foarte diferite. Una vrea să înțeleagă cum funcționează, alta compară furnizori, iar alta pregătește o solicitare. O pagină generală poate lăsa toate aceste nevoi parțial nerezolvate, chiar dacă repetă expresiile din căutare.",
+        "Asocierea intenției înseamnă conectarea grupurilor de întrebări cu destinații potrivite. Combină interogări observate, rezultate de căutare și conversații comerciale. Obiectivul este o structură administrabilă de răspunsuri, nu o pagină pentru fiecare formulare dintr-o listă de cuvinte sau o presupunere că orice vizită trebuie convertită imediat în contact."
+      ],
+      "sections": [
+        {
+          "title": "Adună limbajul folosit de clienți",
+          "paragraphs": [
+            "Revizuiește întrebările din oferte, discuții și asistență fără să expui date personale în documente de lucru inutile. Adaugă interogări disponibile din Search Console și notează problema, obiectul și decizia sugerată. Denumirile interne ale firmei pot fi diferite de expresiile publicului. Păstrează formulările care explică nevoia, fără să consideri fiecare sinonim o justificare pentru conținut nou și separat.",
+            "O firmă ipotetică de izolații poate avea un ghid de comparație și o pagină de montaj. Primul explică diferențele de materiale, iar a doua prezintă evaluarea și lucrarea. Dacă ambele devin același text comercial, problema este scopul lor. Ajustează conținutul și legăturile, în loc să încerci să le diferențiezi artificial printr-o singură expresie în titlu."
+          ]
+        },
+        {
+          "title": "Grupează după decizia urmărită",
+          "paragraphs": [
+            "Distinge învățarea, comparația, identificarea unui furnizor și tranzacția când aceste diferențe sunt utile. Categoriile ajută planificarea, nu sunt reguli rigide pentru fiecare expresie. Unele căutări au intenție mixtă. Scrie ce informație așteaptă persoana și ce poate oferi firma. Nu cere ofertă imediat unui cititor căruia pagina încă nu i-a explicat problema sau opțiunile de bază."
+          ]
+        },
+        {
+          "title": "Observă contextul rezultatelor",
+          "paragraphs": [
+            "Examinează tipurile de pagini pentru căutări reprezentative în piața vizată. Ghidurile, magazinele, directoarele și furnizorii sugerează așteptări diferite. Rezultatele se pot schimba și nu sunt instrucțiuni pentru copiere. Folosește-le pentru a testa ipotezele și pregătește informație originală bazată pe oferta și cunoștințele firmei, cu detaliile de care are nevoie cineva aflat în acea etapă a deciziei."
+          ]
+        },
+        {
+          "title": "Atribuie o destinație principală fiecărei nevoi",
+          "paragraphs": [
+            "Grupează întrebări apropiate într-o pagină dacă pot primi răspuns coerent. Creează alta când serviciul sau decizia diferă substanțial. Un ghid poate compara materiale, iar pagina comercială poate explica instalarea. Păstrează rolurile distincte pentru ca oamenii să treacă de la înțelegerea opțiunilor la evaluarea furnizorului fără să găsească același discurs repetat în mai multe locuri ale site-ului."
+          ]
+        },
+        {
+          "title": "Scrie subtitluri și linkuri explicite",
+          "paragraphs": [
+            "Titlurile secțiunilor trebuie să arate ce explică pagina. Un link contextual poate duce de la comparație la serviciul discutat atunci când devine relevant. Folosește descrieri naturale și nu repeta mecanic toate variantele unei expresii. Cine scanează conținutul trebuie să înțeleagă scopul și motivul unei legături fără să interpreteze strategia de poziționare sau structura tehnică din spatele ei."
+          ]
+        },
+        {
+          "title": "Revizuiește asocierea după publicare",
+          "paragraphs": [
+            "Verifică interogările, destinațiile și solicitările primite. Dacă mai multe pagini răspund aceleiași nevoi, investighează suprapunerea înainte să adaugi încă un articol. Dacă există o întrebare relevantă fără răspuns, îmbunătățește acel gol. Documentează deciziile pentru ca viitorii autori să păstreze structura și să nu recreeze pagini a căror funcție era deja îndeplinită de un conținut existent."
+          ]
+        }
+      ],
+      "checklist": [
+        "Adună întrebări reale.",
+        "Grupează după decizia clientului.",
+        "Observă rezultate reprezentative.",
+        "Atribuie destinații utile.",
+        "Revizuiește interogări și solicitări."
+      ],
+      "conclusion": "Harta intenției ajută la publicarea unor pagini mai clare, fiecare cu un rol. Folosește-o pentru a conecta întrebările cu serviciile și modific-o atunci când dovezile arată că oamenii au nevoie de informații diferite de cele presupuse inițial."
+    },
+    {
+      "id": "service-pages",
+      "title": "Pagini de servicii care pregătesc o solicitare de ofertă",
+      "slug": "pagini-de-servicii-care-pregatesc-o-solicitare-de-oferta",
+      "description": "Creează pagini de servicii cu scop clar, limite, proces explicat, dovezi relevante și formulare practice pentru solicitări de ofertă mai bine documentate.",
+      "intro": [
+        "O pagină de serviciu ar trebui să ajute un potențial client să decidă dacă are sens să contacteze firma. Afirmațiile generale despre calitate nu explică lucrarea. Cine caută o instalare, o intervenție sau consultanță are nevoie de scop, limite și informațiile necesare pentru primul pas.",
+        "Alege un serviciu distinct și enumeră întrebările de dinaintea solicitării. Abia apoi organizează secțiunile și designul. Prezentarea vizuală și relevanța pentru căutare funcționează împreună când pagina răspunde efectiv nevoii, în loc să ascundă oferta într-un text generic care ar putea aparține oricărei firme din domeniu."
+      ],
+      "sections": [
+        {
+          "title": "Numește serviciul în limbaj obișnuit",
+          "paragraphs": [
+            "Titlul principal și introducerea trebuie să identifice lucrarea și publicul potrivit. Menționează zona când contează, fără să lași localitatea să înlocuiască explicația. Distinge instalarea, întreținerea și evaluarea dacă au cerințe diferite. Vizitatorul venit direct din căutare trebuie să înțeleagă pagina fără să deschidă meniul sau să pornească de la prezentarea generală a firmei pentru a descifra oferta.",
+            "Un birou ipotetic poate separa proiectarea unui spațiu de coordonarea execuției dacă scopul și responsabilitățile se schimbă. Nu are nevoie de o pagină nouă pentru fiecare sinonim al proiectării. Diferența trebuie să vină din întrebările clientului și oferta reală. Acest criteriu ajută atât la structura site-ului, cât și la alegerea câmpurilor din solicitarea inițială."
+          ]
+        },
+        {
+          "title": "Prezintă ce intră și ce nu intră",
+          "paragraphs": [
+            "Descrie sarcinile substanțiale și situațiile care cer o evaluare separată. Curățenia recurentă și o intervenție specializată pot implica lucrări diferite. Limitele reduc solicitările nepotrivite și trebuie să reflecte informații aprobate. Nu prezenta ca universal un scop care depinde de proprietate, acces, documente sau alte condiții ce trebuie verificate înainte de a formula o propunere pentru client."
+          ]
+        },
+        {
+          "title": "Explică procesul fără promisiuni inventate",
+          "paragraphs": [
+            "Spune ce se întâmplă la primul contact și ce materiale poate trimite persoana. Publică intervale doar când firma le confirmă pentru situația respectivă. Fă vizibile responsabilitățile, inclusiv aprobări și acces necesar. Procesul trebuie să reducă neclaritatea, fără să sugereze că toate lucrările au același calendar sau că o solicitare inițială reprezintă deja o comandă acceptată și programată."
+          ]
+        },
+        {
+          "title": "Alege dovezi potrivite serviciului",
+          "paragraphs": [
+            "Folosește proiecte, calificări ori comentarii autentice care răspund îndoielilor despre această ofertă. Descrie muncă observabilă și nu rezultate de vânzări pe care nu le poți susține. O fotografie are nevoie de context pentru a-și arăta relevanța. Dacă nu există cazuri publice, o explicație onestă a metodei este mai utilă decât exemple prezentate ca lucrări proprii fără bază reală."
+          ]
+        },
+        {
+          "title": "Leagă întrebările de informații suplimentare",
+          "paragraphs": [
+            "Răspunde direct la aspectele esențiale și trimite la ghiduri mai ample când ajută. O pagină de instalare poate indica o comparație de materiale în context. Nu obliga cititorul să treacă prin mai multe articole înainte să poată contacta firma. Acțiunea de solicitare trebuie să fie accesibilă după informațiile necesare și să explice ce tip de cerere va primi echipa."
+          ]
+        },
+        {
+          "title": "Testează și analizează solicitările",
+          "paragraphs": [
+            "Folosește câmpuri legate de serviciu și verifică erori, confirmare și recepție pe telefon. După publicare, întreabă echipa ce informație lipsește din mesaje și dacă cererile corespund ofertei. Clicurile sunt o dovadă parțială. Întrebările repetate și solicitările pentru activități neprestate pot arăta unde trebuie clarificat conținutul, fără să implice o promisiune de volum pentru viitoarele contacte."
+          ]
+        }
+      ],
+      "checklist": [
+        "Prezintă un serviciu definit.",
+        "Clarifică scop și limite.",
+        "Explică primul pas.",
+        "Folosește dovezi relevante.",
+        "Testează și revizuiește cererile."
+      ],
+      "conclusion": "Pagina de serviciu pregătește o conversație mai bine informată. Arată când se potrivește oferta, ce are nevoie echipa să afle și cum se începe contactul, apoi actualizează răspunsurile în funcție de întrebările care apar în solicitările reale."
+    },
+    {
+      "id": "seo-titles-clicks",
+      "title": "Cum îmbunătățești titlurile SEO fără promisiuni înșelătoare",
+      "slug": "cum-imbunatatesti-titlurile-seo-fara-promisiuni-inselatoare",
+      "description": "Îmbunătățește titlurile SEO cu subiecte clare, diferențe reale și limbajul clientului, analizând clicurile în context și posibilele modificări făcute de Google.",
+      "intro": [
+        "Titlul ajută o persoană să decidă dacă un rezultat răspunde căutării. El trebuie să distingă pagina și să facă o promisiune pe care conținutul o poate susține. Mai multe cuvinte cheie sau formulări spectaculoase pot crea așteptări greșite chiar când atrag atenția.",
+        "Lucrează mai întâi cu pagini care au un scop clar. Titlul nu rezolvă singur oferta confuză sau intenția nepotrivită. Folosește interogări și destinații ca dovezi, notează motivul schimbării și pregătește o revizuire care să distingă efectul plauzibil al formulării de alte variații ale căutării."
+      ],
+      "sections": [
+        {
+          "title": "Definește promisiunea principală a paginii",
+          "paragraphs": [
+            "Scrie o propoziție simplă despre ce îl ajută conținutul pe client să facă. Un ghid compară opțiuni, iar un serviciu explică o lucrare și contactul. Reflectă diferența în titlu. Nu promite ofertă comercială pentru un articol care doar menționează serviciul, deoarece persoana va descoperi imediat lipsa de corespondență dintre ceea ce a ales și ceea ce găsește pe pagină.",
+            "O pagină ipotetică despre reparația unui produs ar trebui să conducă la explicația acelui serviciu, nu la un catalog general care îl menționează la final. Compară așteptarea creată de titlu cu prima informație vizibilă. Exercițiul ajută la formulări fidele, fără să susțină că un anumit cuvânt va produce un număr previzibil de clicuri sau mesaje noi."
+          ]
+        },
+        {
+          "title": "Folosește termenii recunoscuți de public",
+          "paragraphs": [
+            "Verifică felul în care clienții numesc produsul sau serviciul și consultă interogări relevante. Denumirile interne pot fi nefamiliare. Include zona numai dacă lămurește acoperirea, fără să aglomerezi titlul cu localități. Mai multe variante apropiate nu trebuie repetate în aceeași etichetă. Textul trebuie să poată fi citit ca o descriere firească și distinctă, inclusiv într-o filă de browser sau într-un raport."
+          ]
+        },
+        {
+          "title": "Diferențiază paginile prin scopuri reale",
+          "paragraphs": [
+            "Dacă multe URL-uri au același titlu, verifică rolurile lor. Servicii, categorii și sedii diferite pot justifica formulări proprii. Dacă paginile sunt aproape identice, editarea titlurilor poate ascunde o problemă de structură. Decide dacă este nevoie de delimitare sau integrare înainte să inventezi diferențe care nu ajută clientul să înțeleagă de ce există mai multe destinații."
+          ]
+        },
+        {
+          "title": "Păstrează precizia și lizibilitatea",
+          "paragraphs": [
+            "Nu există un număr de caractere care garantează aceeași prezentare în orice rezultat. Pune devreme subiectul, elimină repetițiile și folosește marca atunci când ajută recunoașterea. Citește titlul ca etichetă pentru o persoană. Evită afirmații precum cel mai bun sau rezultat garantat dacă sugerează o comparație, o dovadă ori o certitudine pe care firma nu le poate susține verificabil."
+          ]
+        },
+        {
+          "title": "Aliniază titlul și conținutul vizibil",
+          "paragraphs": [
+            "Titlul tehnic, subtitlul principal și introducerea trebuie să descrie același scop în mod natural. Motoarele de căutare pot genera un text diferit pentru legătura din rezultat pe baza semnalelor disponibile. Formularea pregătită nu este o garanție de afișare exactă. Coerența rămâne utilă pentru înțelegerea paginii chiar dacă prezentarea observată în căutare nu reproduce cuvintele preferate de firmă."
+          ]
+        },
+        {
+          "title": "Evaluează rata de clic cu context",
+          "paragraphs": [
+            "Compară grupuri relevante de interogări și pagini în Search Console pe perioade potrivite. Impresiile, pozițiile, cererea și amestecul de căutări pot modifica rata de clic. Nu atribui orice mișcare unei editări. Verifică dacă vizitatorii și solicitările corespund serviciului, deoarece mai multe clicuri din căutări nepotrivite nu demonstrează o îmbunătățire comercială sau o informare mai clară pentru client."
+          ]
+        }
+      ],
+      "checklist": [
+        "Clarifică scopul paginii.",
+        "Folosește limbajul clientului.",
+        "Rezolvă rolurile duplicate.",
+        "Scrie titluri fidele și lizibile.",
+        "Analizează clicurile cu context."
+      ],
+      "conclusion": "Un titlu SEO util face o promisiune exactă și lasă pagina să o îndeplinească. Îmbunătățește claritatea unde există dovezi de confuzie și evaluează relevanța împreună cu solicitările, acceptând că prezentarea finală în căutare nu este controlată integral de autor."
+    },
+    {
+      "id": "search-console-leads",
+      "title": "Leagă datele Search Console de solicitările relevante",
+      "slug": "leaga-datele-search-console-de-solicitarile-relevante",
+      "description": "Folosește Search Console pentru interogări și pagini, comparând evenimente de contact și solicitări reale fără să confunzi clicurile cu clienții potențiali.",
+      "intro": [
+        "Search Console arată cum apare și primește clicuri un site în Google. Nu spune direct care vizită a devenit o solicitare utilă pentru firmă. Tratarea fiecărui clic drept client potențial ascunde diferența dintre vizibilitate, interacțiunea pe pagină și o conversație efectiv primită de echipă.",
+        "Definește o măsurare simplă în jurul serviciilor importante. Analizează căutările, destinațiile și acțiunile de contact, apoi compară observațiile cu cererile reale. Nu trebuie să reconstruiești fiecare traseu individual sau să trimiți conversații private în analiză pentru a găsi informații care ajută la îmbunătățirea paginilor comerciale."
+      ],
+      "sections": [
+        {
+          "title": "Grupează după servicii și destinații",
+          "paragraphs": [
+            "Separă paginile cu funcții diferite, precum ghidul de alegere, categoria de produse și instalarea. Ele pot atrage etape diferite ale deciziei. Revizuiește interogări și destinații împreună în loc să raportezi doar totalul site-ului. Unele date despre căutări sunt limitate ori omise, deci raportul descrie activitate observabilă, nu o evidență completă a fiecărei căutări realizate de fiecare persoană.",
+            "Un furnizor ipotetic poate primi multe clicuri către un ghid și cele mai concrete solicitări printr-o categorie. Nu înseamnă că ghidul nu ajută sau că fiecare citire provoacă o vânzare. Revizuiește relația dintre pagini și întrebările menționate de clienți. Această abordare oferă context fără să inventeze o atribuire individuală pe care datele disponibile nu o pot demonstra."
+          ]
+        },
+        {
+          "title": "Interpretează impresiile și clicurile atent",
+          "paragraphs": [
+            "Aceste valori reprezintă etape definite de raport, nu dovada unei citiri complete ori a nevoii comerciale. Compară dispozitive, poziții și amestec de interogări. Un subiect informativ larg poate primi multe vizite și poate avea o altă contribuție decât o pagină de serviciu concentrată. Diferența trebuie înțeleasă înainte să decizi că una merită păstrată și cealaltă trebuie schimbată radical."
+          ]
+        },
+        {
+          "title": "Definește evenimente care pot fi testate",
+          "paragraphs": [
+            "Documentează exact când se înregistrează o acțiune: formular trimis sau clic spre WhatsApp. Un clic pe buton poate fi urmat de o eroare de validare și nu înseamnă transmitere reușită. Verifică duplicatele și testele interne. Nu include nume, texte de mesaje ori alte informații sensibile în parametrii analitici. Măsurarea trebuie să descrie pasul fără să colecteze inutil conversația."
+          ]
+        },
+        {
+          "title": "Clasifică cererile primite de firmă",
+          "paragraphs": [
+            "Folosește o evidență simplă pentru solicitări potrivite, incomplete, duplicate sau fără legătură cu oferta. Poți nota serviciul și sursa generală când este cunoscută, fără să presupui că toate sistemele pot fi unite perfect. Observațiile echipei despre contextul lipsă sunt valoroase chiar dacă nu poți atribui mesajul unei singure vizite ori explica întregul parcurs al persoanei prin website."
+          ]
+        },
+        {
+          "title": "Compară perioade potrivite și incertitudini",
+          "paragraphs": [
+            "Consideră sezonalitatea, modificările de servicii și alte acțiuni comerciale. La volume mici, diferențe reduse pot genera procente spectaculoase care cer prudență. Search Console și analiza site-ului folosesc definiții și procesări diferite, deci totalurile nu trebuie să coincidă. Caută tipare suficient de solide pentru o decizie, fără să forțezi toate cifrele într-o poveste exactă de conversie individuală."
+          ]
+        },
+        {
+          "title": "Transformă analiza într-o schimbare concretă",
+          "paragraphs": [
+            "Dacă pagina atrage căutări potrivite dar mesaje greșite, verifică scopul și calificarea. Dacă serviciile utile au puține impresii, investighează intenția, legăturile și accesul tehnic. Notează dovada și acțiunea propusă. Verifică ulterior traseul și tendințele, fără să promiți un volum de clienți dintr-o modificare de raportare. Scopul este o explicație mai utilă și o solicitare mai bine pregătită."
+          ]
+        }
+      ],
+      "checklist": [
+        "Grupează servicii și pagini.",
+        "Separă clicuri și solicitări.",
+        "Testează evenimentele de contact.",
+        "Clasifică cererile reale.",
+        "Folosește perioade comparabile."
+      ],
+      "conclusion": "Măsurarea este utilă când definițiile sunt clare și sprijină o decizie. Leagă dovezile de căutare de experiența echipei, recunoaște limitele atribuirii și folosește observațiile pentru a îmbunătăți informația și sarcinile de contact ale clienților."
+    },
+    {
+      "id": "technical-indexing",
+      "title": "Verifică accesarea și indexarea paginilor importante",
+      "slug": "verifica-accesarea-si-indexarea-paginilor-importante",
+      "description": "Verifică accesarea și indexarea prin răspunsuri, directive, canonical, legături și sitemap, prioritizând paginile utile pentru serviciile și clienții firmei.",
+      "intro": [
+        "O pagină poate exista în editor și totuși să fie greu de descoperit sau să nu fie aleasă pentru indexare. Cauza poate implica răspunsuri, legături, directive, duplicare ori utilitatea informației. Publicarea unei adrese și includerea ei în sitemap nu garantează apariția în rezultate.",
+        "Începe cu câteva destinații importante comercial și precizează rolul fiecăreia. Verifică adresa publică, nu doar panoul administrativ. Obiectivul este ca paginile utile să fie accesibile și descrise coerent, nu indexarea fiecărei combinații de parametri pe care platforma o poate genera în timpul navigării."
+      ],
+      "sections": [
+        {
+          "title": "Confirmă răspunsul URL-ului public",
+          "paragraphs": [
+            "Deschide adresa și verifică pagina și răspunsul pe care le oferă. Redirecționările neașteptate, erorile de server sau mesaje de eșec livrate cu succes pot complica diagnosticul. Controlează șabloane reprezentative după publicare. O pagină disponibilă într-o sesiune administrativă se poate comporta diferit pentru cineva fără acces, așa că verificarea trebuie să reflecte utilizarea publică și nu doar previzualizarea internă.",
+            "Un catalog ipotetic poate genera variante după culoare și ordine. Unele ajută navigarea fără să necesite un scop organic distinct. Definește diferența înainte să alegi controale tehnice. Configurația trebuie să exprime structura dorită, nu să creeze accidental obligația de a publica mii de pagini aproape identice care nu adaugă informații utile pentru persoana ce compară aceleași produse."
+          ]
+        },
+        {
+          "title": "Separă controlul accesării de noindex",
+          "paragraphs": [
+            "Robots.txt controlează accesarea pentru roboții care îl respectă, iar noindex privește indexarea când instrucțiunea poate fi văzută. Blocarea accesării poate împiedica descoperirea directivei. Folosește fiecare control deliberat și verifică rezultatul în producție. Evită reguli largi preluate din test fără să înțelegi ce servicii, produse sau resurse necesare pot fi afectate și ce consecințe are restricția aleasă."
+          ]
+        },
+        {
+          "title": "Aliniază canonical și variantele de adresă",
+          "paragraphs": [
+            "Canonical sugerează versiunea preferată între adrese duplicate sau similare, dar nu este o comandă care rezolvă orice contradicție. Verifică legături, redirecționări și intrări din sitemap pentru coerență. Filtrele și rutele alternative pot produce multe variante. Decide care au un rol propriu pentru client înainte să încerci indexarea tuturor ca destinații independente, cu informație și scop separat."
+          ]
+        },
+        {
+          "title": "Facilitează descoperirea prin legături",
+          "paragraphs": [
+            "Paginile importante trebuie să fie accesibile prin linkuri normale, cu context relevant. Sitemap poate ajuta descoperirea, dar nu înlocuiește o structură logică. Controlează dacă un serviciu este disponibil numai prin căutare internă sau după un control interactiv. Pagina trebuie să rămână utilă când cineva ajunge direct din căutare, fără să depindă de pașii parcurși anterior de la începutul site-ului."
+          ]
+        },
+        {
+          "title": "Interpretează inspecția la nivel de pagină",
+          "paragraphs": [
+            "Inspecția URL și rapoartele de indexare pot arăta stări și semnale observate. Citește motivul și verifică destinația înainte să presupui o eroare generală. Datele pot întârzia față de schimbări, iar un test în timp real nu promite indexare. Compară rapoartele cu răspunsul actual și adaugă dovezi tehnice disponibile când sunt necesare pentru a înțelege situația concretă."
+          ]
+        },
+        {
+          "title": "Evaluează utilitatea când accesul funcționează",
+          "paragraphs": [
+            "Dacă pagina este accesibilă dar repetă multe altele, verifică dacă merită un loc separat în structură. Adaugă informație reală pentru decizie sau integrează suprapunerile când este potrivit. Nu introduce text de umplutură numai pentru lungime. După schimbare, verifică semnalele și urmărește evoluția cu prudență, acceptând că motoarele de căutare decid ce indexează și ce prezintă utilizatorilor în rezultate."
+          ]
+        }
+      ],
+      "checklist": [
+        "Verifică URL-uri publice importante.",
+        "Diferențiază accesarea și noindex.",
+        "Aliniază semnalele adreselor.",
+        "Leagă serviciile relevante.",
+        "Evaluează duplicarea și utilitatea."
+      ],
+      "conclusion": "Verificarea trebuie să arate dacă paginile utile sunt accesibile și coerente. Rezolvă contradicțiile tehnice și analizează conținutul, fără să confunzi eligibilitatea sau descoperirea cu o garanție de indexare, poziție ori rezultat comercial pentru firmă."
+    },
+    {
+      "id": "content-clusters",
+      "title": "Construiește grupuri de conținut în jurul serviciilor",
+      "slug": "construieste-grupuri-de-continut-in-jurul-serviciilor",
+      "description": "Organizează grupuri de conținut SEO cu întrebări distincte, pagini centrale utile și legături între ghiduri și servicii, evitând articolele repetitive.",
+      "intro": [
+        "O colecție mare de articole nu devine automat o strategie de conținut. Cititorii trebuie să înțeleagă cum se leagă întrebările și unde găsesc o ofertă potrivită când vor să avanseze. Un grup tematic ajută dacă organizează decizii reale, nu doar o listă de expresii apropiate.",
+        "Alege un serviciu cu mai multe întrebări substanțiale. O firmă de climatizare poate explica alegerea echipamentului, pregătirea spațiului și întreținerea. Înainte de redactare, stabilește rolul fiecărei pagini și relația cu serviciul, astfel încât materialele să nu devină același text comercial repetat sub titluri diferite."
+      ],
+      "sections": [
+        {
+          "title": "Pornește de la o ofertă reală",
+          "paragraphs": [
+            "Definește ce furnizează firma și ce public deservește. Pagina comercială explică oferta, iar ghidurile dezvoltă decizii apropiate pe care echipa le poate trata competent. Evită o bibliotecă pe teme străine doar pentru că par populare în căutare. Grupul are nevoie de legătură cu experiența, materialele disponibile și activitățile pe care afacerea poate efectiv să le realizeze pentru clienți.",
+            "Un exemplu ipotetic pentru o firmă de renovări este legarea serviciului, a unui ghid de pregătire și a unei comparații de materiale. Fiecare răspunde unei alte decizii. Publicarea mai multor versiuni aproape identice ale ghidului ar adăuga sarcini de actualizare, fără să demonstreze un ajutor suplimentar pentru persoana care încearcă să își definească lucrarea și să aleagă furnizorul."
+          ]
+        },
+        {
+          "title": "Separă întrebările cu răspunsuri diferite",
+          "paragraphs": [
+            "O explicație amplă și distinctă poate merita propriul articol, în timp ce o întrebare scurtă poate fi rezolvată într-un material existent. Grupează variantele apropiate în loc să publici câte o pagină pentru fiecare formulare. Astfel, întreținerea rămâne realistă și se reduce riscul de a avea mai multe texte care răspund aceleiași nevoi fără o diferență utilă pentru cititor."
+          ]
+        },
+        {
+          "title": "Fă utilă pagina centrală",
+          "paragraphs": [
+            "Destinația centrală poate introduce subiectul și indica ghiduri aprofundate, dar trebuie să răspundă propriei întrebări, nu doar să enumere linkuri. Organizează informația după decizii, etape sau familii de produse recunoscute de clienți. Permite contactul atunci când are sens, fără să impui lectura tuturor articolelor ca o condiție pentru a înțelege serviciul sau a trimite o solicitare inițială."
+          ]
+        },
+        {
+          "title": "Leagă următoarea întrebare în context",
+          "paragraphs": [
+            "Așază linkuri acolo unde devine clară utilitatea lor. Un ghid de pregătire poate trimite către serviciu, iar acesta poate oferi acces la explicație. Folosește descrieri naturale ale destinației. Legarea tuturor articolelor în fiecare secțiune produce zgomot; fiecare relație trebuie să ajute o sarcină și să ducă la o pagină care răspunde întrebării sugerate în acel moment al lecturii."
+          ]
+        },
+        {
+          "title": "Adaugă material propriu și verificabil",
+          "paragraphs": [
+            "Folosește proceduri, imagini autorizate, exemple identificate și funcții ale unor proiecte reale. Nu inventa rezultate comerciale pentru a sugera experiență. Un grup mic de ghiduri revizuite poate fi mai folositor decât zeci de texte abia diferențiate. Detaliul trebuie să vină din explicația necesară și cunoștințele firmei, nu dintr-un volum arbitrar de publicare sau din imitarea structurii altor site-uri."
+          ]
+        },
+        {
+          "title": "Menține relațiile în timp",
+          "paragraphs": [
+            "Verifică linkuri rupte, recomandări depășite, suprapuneri și pagini izolate. Folosește întrebările comerciale și datele de căutare pentru a identifica goluri reale. Dacă integrezi conținut, păstrează informația valoroasă și planifică redirecționări relevante. O structură ordonată nu garantează poziții singură. Documentează scopul fiecărei destinații pentru ca extinderea viitoare să păstreze coerența și să evite recrearea acelorași răspunsuri în locuri diferite."
+          ]
+        }
+      ],
+      "checklist": [
+        "Alege un serviciu cunoscut.",
+        "Distinge întrebări substanțiale.",
+        "Construiește un centru util.",
+        "Adaugă linkuri contextuale.",
+        "Revizuiește suprapuneri și actualitate."
+      ],
+      "conclusion": "Grupurile tematice funcționează ca structură de informație atunci când fiecare pagină are un rol clar. Construiește în jurul deciziilor clientului și întreține relațiile, în loc să consideri numărul de articole o dovadă de calitate sau de eficiență SEO."
+    },
+    {
+      "id": "image-seo",
+      "title": "SEO pentru imagini în site-uri și cataloage de produse",
+      "slug": "seo-pentru-imagini-in-site-uri-si-cataloage-de-produse",
+      "description": "Îmbunătățește SEO pentru imagini prin fotografii utile, context corect, alternative relevante și fișiere adaptate, păstrând detaliile esențiale și ca text.",
+      "intro": [
+        "Imaginile pot explica un produs, arăta o lucrare și ajuta clientul să evalueze oferta. Ele pot și încetini pagina sau ascunde detalii care ar trebui să existe în text. SEO pentru imagini privește utilitatea, accesibilitatea, contextul și livrarea, nu doar denumirea fișierului.",
+        "Începe cu paginile unde informația vizuală influențează decizia. O fișă de piesă, o galerie de arhitectură și o pagină principală au cerințe diferite. Stabilește ce comunică fiecare imagine înainte să alegi optimizarea, astfel încât ajustarea tehnică să păstreze detaliul de care are nevoie clientul pentru comparație."
+      ],
+      "sections": [
+        {
+          "title": "Alege imagini care răspund unei întrebări",
+          "paragraphs": [
+            "Folosește fotografii sau ilustrații care arată scară, material, montaj ori un detaliu relevant al lucrării. Verifică permisiunea și contextul factual. O imagine decorativă poate susține designul, dar nu trebuie prezentată ca proiect realizat de firmă. Evită galerii de cadre aproape identice când nu ajută comparația. Valoarea informativă vine din ce poate observa persoana și din întrebarea la care primește răspuns.",
+            "Un magazin ipotetic de componente poate avea nevoie de o fotografie care arată precis un conector. O imagine decorativă de prezentare nu are aceeași funcție. Înainte să comprimi toate resursele identic, identifică ce trebuie să vadă cumpărătorul. Astfel, reducerea greutății fișierului nu elimină tocmai informația care face fotografia utilă în comparație și în alegerea produsului potrivit."
+          ]
+        },
+        {
+          "title": "Păstrează informația esențială ca text",
+          "paragraphs": [
+            "Dimensiunile, compatibilitatea, condițiile și contactul nu ar trebui să existe numai în grafică. Textul susține citirea, traducerea și accesul prin tehnologii asistive. O diagramă poate completa explicația, dar are nevoie de detalii în apropiere. Pe telefon, verifică dacă vizitatorul trebuie să mărească o imagine foarte mare doar pentru a afla un fapt de bază care putea fi prezentat clar în pagină."
+          ]
+        },
+        {
+          "title": "Scrie alternative potrivite rolului",
+          "paragraphs": [
+            "Textul alternativ trebuie să descrie informația semnificativă în context. Poate conta o variantă sau o trăsătură vizibilă; o listă de localități nu ajută. Imaginile decorative au nevoie de tratare adecvată, de regulă alternativă goală. Dacă imaginea este link, verifică și scopul destinației. Controlează marcajul publicat, deoarece completarea unui câmp în biblioteca media nu dovedește automat folosirea lui corectă."
+          ]
+        },
+        {
+          "title": "Adaugă nume și context descriptive",
+          "paragraphs": [
+            "Un nume potrivit al fișierului nu poate corecta o imagine fără legătură cu subiectul. Folosește explicații când ajută și așază resursa lângă textul relevant. Pentru proiecte, precizează ce se vede fără date private inutile. Nu atribui creșteri de vânzări ori performanță fotografiei atunci când informațiile disponibile permit numai descrierea unor funcții, alegeri de design sau elemente ale unei lucrări reale."
+          ]
+        },
+        {
+          "title": "Adaptează dimensiunile și compresia",
+          "paragraphs": [
+            "Livrează fișiere potrivite afișării și variante responsive când sunt necesare. Inspectează vizual rezultatul compresiei, mai ales la detalii tehnice. Definește dimensiuni pentru stabilitatea aspectului și nu întârzia imaginea principală fără motiv. Cel mai mic fișier nu este întotdeauna cea mai utilă reprezentare: clientul trebuie să poată compara produsul și să înțeleagă informația pentru care fotografia este prezentă în pagină."
+          ]
+        },
+        {
+          "title": "Verifică rezultatul și șabloanele",
+          "paragraphs": [
+            "După publicare, controlează vizibilitatea, încărcarea, alternativele și aspectul pe mobil. Cataloagele pot aplica aceeași configurație multor produse, deci testează exemple diferite. Interpretează prudent datele de căutare și performanță. O implementare mai bună poate susține utilizarea, dar nu garantează expunere în căutarea de imagini, poziții organice sau un volum de cereri; oferta și conținutul complet rămân relevante pentru evaluare."
+          ]
+        }
+      ],
+      "checklist": [
+        "Alege imagini autorizate și utile.",
+        "Păstrează detaliile esențiale în text.",
+        "Adaptează alternativa la scop.",
+        "Livrează fișiere potrivite afișării.",
+        "Inspectează paginile publice pe mobil."
+      ],
+      "conclusion": "Tratează imaginea ca parte a explicației, nu ca un element SEO izolat. Contextul corect, alternativa accesibilă și livrarea adecvată ajută comparația, iar verificarea rezultatului public împiedică pierderea informațiilor necesare printr-o optimizare tehnică aplicată fără atenție la utilizare."
+    },
+    {
+      "id": "conversion-landing",
+      "title": "Planifică o pagină de destinație pentru căutări organice",
+      "slug": "planifica-o-pagina-de-destinatie-pentru-cautari-organice",
+      "description": "Construiește o pagină de destinație organică cu serviciu distinct, informație clară, dovezi relevante și contact practic, conectată cu restul site-ului.",
+      "intro": [
+        "Cine ajunge din căutare poate să nu cunoască marca și să nu fi văzut pagina principală. O pagină de destinație organică trebuie să ofere context suficient pentru evaluarea unei oferte și să rămână conectată cu informația site-ului. Un titlu și un buton pot lăsa întrebări importante fără răspuns.",
+        "Definește serviciul, publicul și acțiunea înainte de șablon. O evaluare comercială și un ghid comparativ au scopuri diferite. Noua pagină are nevoie de un motiv propriu, mai ales când există deja o destinație care răspunde aceleiași nevoi și ar putea fi îmbunătățită fără duplicare."
+      ],
+      "sections": [
+        {
+          "title": "Verifică diferența de scop",
+          "paragraphs": [
+            "Analizează dacă o pagină existentă poate acoperi căutarea. Creează alta când oferta, publicul sau o diferență regională substanțială justifică informații distincte. Evită serii în care se schimbă doar localitatea și toate textele duc la aceeași explicație generică. Diferența trebuie să ajute clientul să aleagă, nu doar să mărească numărul de adrese pentru care se urmărește apariția în căutare.",
+            "O firmă ipotetică poate crea o pagină pentru evaluarea unui tip de instalație dacă scopul diferă de serviciul general. Pagina trebuie să explice diferența și datele necesare discuției. Simpla schimbare a titlului nu creează o ofertă nouă și nu justifică repetarea întregului conținut comercial, mai ales când clientul ar primi același răspuns în ambele locuri."
+          ]
+        },
+        {
+          "title": "Fă primul ecran informativ",
+          "paragraphs": [
+            "Prezintă serviciul, destinatarul și valoarea practică în limbaj direct. O imagine relevantă poate ajuta, dar nu trebuie să ascundă răspunsul într-o introducere decorativă. Oferă o acțiune potrivită fără a cere decizia înainte de înțelegere. Pe mobil, verifică titluri, navigare și elemente fixe care pot acoperi tocmai informația necesară pentru evaluarea ofertei și a următorului pas."
+          ]
+        },
+        {
+          "title": "Răspunde întrebărilor înainte de contact",
+          "paragraphs": [
+            "Explică scopul, procesul, cerințele și limitele. O pagină de evaluare poate preciza ce date sunt necesare fără să promită concluzii înainte de analiză. Folosește secțiuni inspirate din întrebări reale. Conținutul trebuie să permită verificarea potrivirii și pregătirea cererii, lăsând deciziile complexe care depind de situație pentru conversația cu persoanele care pot evalua proiectul și confirma o propunere."
+          ]
+        },
+        {
+          "title": "Selectează dovezi pertinente",
+          "paragraphs": [
+            "Folosește proiecte reale, calificări sau comentarii autentice care se leagă de serviciu. Descrie muncă observabilă, nu cifre de conversie inventate. Dacă lipsesc cazuri publice, explică procesul onest. Cititorul trebuie să poată distinge un scenariu ilustrativ de o lucrare comandată. Un simbol sau o etichetă fără susținere nu înlocuiește informația despre ce poate face efectiv firma pentru client."
+          ]
+        },
+        {
+          "title": "Propune o acțiune specifică",
+          "paragraphs": [
+            "Invită la descrierea proiectului sau la discutarea scopului potrivit ofertei. Cere date utile echipei și explică pasul următor. Verifică erorile, confirmarea și recepția formularului. Dacă există WhatsApp, clicul reprezintă transferul către un canal, nu dovada unui mesaj trimis. Solicitarea trebuie să fie proporțională cu decizia, fără să implice o evaluare completă sau acceptarea unei lucrări încă nediscutate."
+          ]
+        },
+        {
+          "title": "Conectează pagina și verifică relevanța",
+          "paragraphs": [
+            "Adaugă legături din servicii și ghiduri potrivite, astfel încât pagina să facă parte dintr-o structură coerentă. Verifică semnale tehnice și eligibilitatea pentru indexare. După publicare, compară interogări, acțiuni de contact și cereri efective. O rată mare dintr-un public foarte mic poate induce în eroare. Evaluează potrivirea cu activitatea și întrebările încă nerezolvate, nu doar un indicator izolat de interacțiune."
+          ]
+        }
+      ],
+      "checklist": [
+        "Definește o nevoie distinctă.",
+        "Explică oferta de la început.",
+        "Clarifică scop și proces.",
+        "Folosește dovezi verificabile.",
+        "Testează contactul și relevanța cererilor."
+      ],
+      "conclusion": "O pagină organică utilă răspunde singură unei nevoi concrete. Oferă context, relații și un pas următor adecvat, apoi verifică dacă pregătește conversații pe care afacerea le poate gestiona, în loc să urmărești o cifră izolată fără legătură cu oferta."
+    },
+    {
+      "id": "seo-content-maintenance",
+      "title": "Întreține conținutul SEO și rezolvă paginile suprapuse",
+      "slug": "intretine-continutul-seo-si-rezolva-paginile-suprapuse",
+      "description": "Revizuiește conținutul SEO prin informații actuale, intenție, responsabili și linkuri înainte să actualizezi, unești sau retragi pagini cu roluri asemănătoare.",
+      "intro": [
+        "Informația se schimbă după lansare. Serviciile evoluează, produsele dispar și autori diferiți pot publica articole care răspund aproape la aceeași întrebare. Întreținerea conținutului ajută firma să păstreze un site util, în loc să adauge continuu pagini într-o arhivă tot mai contradictorie.",
+        "Organizează revizuirea după servicii importante și întrebări recurente. Datele de căutare pot sugera ce trebuie analizat, însă scăderea clicurilor nu dovedește singură nevoia de rescriere. Investighează ce s-a schimbat înainte să alegi actualizarea, integrarea sau retragerea, păstrând informația care continuă să ajute clienții."
+      ],
+      "sections": [
+        {
+          "title": "Inventariază scopul și responsabilul faptelor",
+          "paragraphs": [
+            "Notează subiectul, publicul, acțiunea și persoana care poate aproba informația pentru fiecare pagină importantă. Verifică serviciile și datele de contact actuale. Nu cere unui autor să ghicească schimbările din activitate. O dată internă de verificare ajută organizarea, dar schimbarea datei publice fără revizuire substanțială nu înlocuiește un conținut mai corect și mai util pentru persoana care îl citește.",
+            "O firmă ipotetică ce modifică întreținerea oferită trebuie să verifice pagina de serviciu, ghidurile și documentele trimise clienților. Corectarea unui singur text poate lăsa instrucțiuni vechi în alte locuri. Un registru simplu al faptelor aprobate și al legăturilor controlate permite următoarei revizuiri să pornească de la o stare cunoscută, nu de la presupuneri despre ce s-a schimbat anterior."
+          ]
+        },
+        {
+          "title": "Distinge datele vechi de intenția nepotrivită",
+          "paragraphs": [
+            "O pagină poate fi corectă factual și totuși să nu răspundă întrebării aduse din căutare. Compară interogări, conținut și observații comerciale. Identifică lipsuri, termeni neclari ori schimbări ale ofertei. Fiecare cauză cere o intervenție diferită. Evită înlocuirea întregului articol înainte să înțelegi ce parte împiedică decizia și ce secțiuni rămân valoroase pentru clienți și pentru explicarea serviciului."
+          ]
+        },
+        {
+          "title": "Investighează suprapunerea înaintea etichetelor",
+          "paragraphs": [
+            "Două pagini care apar pentru expresii apropiate nu reprezintă automat o problemă de canibalizare. Un ghid și un serviciu pot răspunde etapelor diferite și se pot susține. Verifică dacă rolurile rămân clare și dacă există semne de confuzie. Texte aproape identice pot merita integrare când administrarea lor produce recomandări inconsistente sau distribuie legături utile între destinații practic interschimbabile."
+          ]
+        },
+        {
+          "title": "Alege actualizare, integrare sau retragere",
+          "paragraphs": [
+            "Actualizează când scopul rămâne valid și informația poate fi îmbunătățită. Unește materialele dacă un singur răspuns ar ajuta mai mult. Retrage conținutul fără rol real ținând cont de referințe și nevoile publicului. Păstrează secțiuni utile și planifică destinații relevante când schimbi URL-uri. Trimiterea tuturor adreselor retrase către prima pagină nu explică bine ce s-a întâmplat cu informația căutată."
+          ]
+        },
+        {
+          "title": "Repară traseul din jurul modificării",
+          "paragraphs": [
+            "Verifică legături din servicii, navigare și alte articole. Actualizează referințe la oferte redenumite și documente depășite. Controlează imaginile, subtitlurile și contactul din pagina revizuită. Întreținerea trebuie să îmbunătățească experiența completă: un articol corectat pierde utilitate dacă destinația către care trimite sau un fișier descărcabil continuă să ofere instrucțiuni contradictorii despre aceeași activitate și următorii pași pentru client."
+          ]
+        },
+        {
+          "title": "Documentează și revizuiește efectul",
+          "paragraphs": [
+            "Înregistrează faptele aprobate, deciziile de structură și redirecționările pentru ca viitorii editori să înțeleagă rolul paginii. Verifică tehnica imediat și tendințele pe perioade adecvate. Consideră cererea și sezonalitatea. Urmărește și solicitările: o limită mai clară poate reduce mesajele nepotrivite fără să crească vizitele. Interpretarea trebuie să reflecte această diferență, nu să evalueze orice revizuire numai prin creșterea traficului total."
+          ]
+        }
+      ],
+      "checklist": [
+        "Atribuie responsabili pentru informații.",
+        "Revizuiește fapte și intenție.",
+        "Verifică suprapunerea reală.",
+        "Planifică integrări și redirecționări.",
+        "Actualizează legături și decizii."
+      ],
+      "conclusion": "Întreține conținutul pentru răspunsuri utile și structură coerentă. Responsabilii și dovezile clare previn rescrierile inutile și mențin clienții informați despre serviciile pe care firma le poate presta în prezent, cu limite și pași de contact corect explicați."
+    },
+    {
+      "id": "market-entry-seo",
+      "title": "Planifică SEO înainte de intrarea pe o piață nouă",
+      "slug": "planifica-seo-inainte-de-intrarea-pe-o-piata-noua",
+      "description": "Pregătește intrarea SEO pe o piață nouă prin ofertă validată, limbaj local și conținut util, analizând solicitările înainte să extinzi publicarea site-ului.",
+      "intro": [
+        "Intrarea pe o piață nouă cere mai mult decât adăugarea numelui unei țări în pagină. Clienții pot compara alte opțiuni, folosi termeni diferiți și aștepta o altă colaborare. Cercetarea de căutare trebuie să sprijine o decizie comercială despre ce poate oferi firma și cum va livra acel serviciu.",
+        "Alege o piață și puține servicii pentru investigația inițială. O afacere românească ce urmărește clienți externi are nevoie de verificări diferite de un furnizor care intră în România. În ambele cazuri, versiunea site-ului trebuie să explice modelul real, fără să inventeze prezență locală sau condiții încă neconfirmate."
+      ],
+      "sections": [
+        {
+          "title": "Validează capacitatea înaintea volumului de căutare",
+          "paragraphs": [
+            "Enumeră serviciile ce pot fi prestate pentru noul public și limitele operaționale. Revizuiește accesul clienților, personalul și condițiile pe care trebuie să le confirme responsabili ori specialiști potriviți. Interesul din căutare nu transformă o activitate indisponibilă într-o ofertă viabilă. Definește solicitarea potrivită și informația necesară evaluării, astfel încât site-ul să nu atragă constant cereri pe care firma trebuie să le refuze.",
+            "O firmă ipotetică de consultanță poate descoperi că noul public are nevoie de o explicație mai bună a revizuirilor la distanță, nu de o pagină de birou local. Un distribuitor poate avea nevoie de categorii adaptate utilizării produselor. Scenariile arată de ce investigarea operațiunii și a deciziei clientului trebuie să vină înainte de multiplicarea conținutului pentru țări ori orașe."
+          ]
+        },
+        {
+          "title": "Cercetează limbajul și alternativele clienților",
+          "paragraphs": [
+            "Observă interogări reprezentative, furnizori existenți și întrebări din conversații cu potențiali clienți. Distinge interesul general de nevoia comercială și identifică termenii care influențează înțelegerea. Un distribuitor tehnic și o firmă de consultanță au cerințe diferite. Nu deduce viabilitatea pieței dintr-o singură estimare de volum; combină constatările cu experiența comercială și cu validarea reală a ofertei disponibile."
+          ]
+        },
+        {
+          "title": "Alege o structură potrivită diferențelor",
+          "paragraphs": [
+            "Stabilește dacă publicul are nevoie de servicii separate, informație regională substanțială sau de îmbunătățirea unei pagini existente. Fiecare destinație nouă trebuie să ajute prin diferențe reale. Evită colecții de texte aproape identice după localitate. Un serviciu prestat de la distanță poate fi explicat mai bine printr-o versiune clară a ofertei decât prin pagini care sugerează sedii inexistente în multe orașe."
+          ]
+        },
+        {
+          "title": "Explică modelul real de colaborare",
+          "paragraphs": [
+            "Adaptează termenii și exemplele publicului, păstrând adevărul despre livrare. Latech lucrează din Puebla de la Calzada, Badajoz, Spania, iar scopul și coordonarea se stabilesc pentru fiecare proiect. O versiune în română poate fi relevantă fără să implice birou, telefon local ori disponibilitate garantată în România. Informația comercială trebuie să rămână consecventă în serviciu, contact și prezentarea echipei."
+          ]
+        },
+        {
+          "title": "Publică un set inițial util",
+          "paragraphs": [
+            "Pregătește paginile prioritare și răspunsurile necesare evaluării ofertei. Revizuiește titluri, legături, contact mobil și semnale de indexare înainte de extinderea bibliotecii. Atribuie un responsabil pentru detaliile pieței. Un grup restrâns de materiale corecte este mai ușor de analizat decât multe pagini speculative ale căror servicii, exemple și condiții nu au fost confirmate de persoanele care vor gestiona solicitările."
+          ]
+        },
+        {
+          "title": "Evaluează cererile înainte de extindere",
+          "paragraphs": [
+            "Compară căutările și destinațiile cu solicitările primite efectiv. Notează întrebări despre scop, acces și colaborare care trebuie explicate mai bine. Folosește perioade adecvate și recunoaște limitele datelor reduse. Extinde conținutul când dovezile și capacitatea operațională susțin decizia, nu doar pentru că publicarea este posibilă. Numărul paginilor nu demonstrează succesul intrării și nu poate garanta viitoare contracte pentru firmă."
+          ]
+        }
+      ],
+      "checklist": [
+        "Confirmă oferta pentru piață.",
+        "Cercetează termenii clienților.",
+        "Creează diferențe utile.",
+        "Explică prestarea reală.",
+        "Analizează solicitările înainte de extindere."
+      ],
+      "conclusion": "SEO pentru o piață nouă trebuie să testeze o ofertă credibilă cu un public relevant. Păstrează cercetarea, structura și adevărul operațional legate, apoi folosește întrebările și solicitările potrivite pentru a decide unde merită să dezvolți conținut suplimentar."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Unde se află Latech?",
+      "answer": "Latech are baza în Puebla de la Calzada, Badajoz, Spania, și a fost fondată de Andrés Rubio și Luis Grondona. Colaborăm de la distanță cu firme din România și stabilim organizarea fiecărui proiect."
+    },
+    {
+      "question": "Puteți combina web designul cu SEO?",
+      "answer": "Da. Putem defini împreună structura, designul, conținutul și bazele tehnice SEO. Prioritățile depind de site, public și obiective; pozițiile în căutare sau numărul de solicitări nu pot fi garantate."
+    },
+    {
+      "question": "Ce pregătesc pentru a discuta o ofertă?",
+      "answer": "Trimite site-ul actual, serviciile oferite, publicul, zona deservită, funcțiile necesare și materialele disponibile. Menționează dependențele sau condițiile de lansare relevante."
+    },
+    {
+      "question": "Cum contactez echipa?",
+      "answer": "Scrie pe WhatsApp la +34684739091 și precizează țara, serviciul dorit și site-ul actual. Stabilim responsabilitățile, revizuirile și disponibilitatea pentru coordonare în funcție de proiect."
+    }
+  ],
+  "pageSeo": {
+    "home": {
+      "title": "Web design și SEO pentru firme din România | Latech",
+      "description": "Web design, SEO și magazine online pentru firme din România. Latech lucrează din Spania, cu servicii clare, conținut util și trasee practice spre solicitări.",
+      "heading": "Web design și SEO pentru firme din România",
+      "intro": "Planifică un site care explică oferta și leagă căutările clienților de solicitări relevante."
+    },
+    "services": {
+      "title": "Servicii de web design, SEO și comerț electronic | Latech",
+      "description": "Descoperă servicii de web design, SEO, comerț electronic și integrări de IA delimitate. Latech colaborează de la distanță din Spania cu firme din România.",
+      "heading": "Servicii de web design, SEO și comerț electronic",
+      "intro": "Discută web designul, bazele SEO și comerțul electronic cu o echipă care lucrează de la distanță din Spania."
+    },
+    "web": {
+      "title": "Realizare site de prezentare cu SEO | Latech",
+      "description": "Realizează un site de firmă cu servicii clare, design mobil și baze tehnice SEO. Discută proiectul cu Latech, echipă care lucrează la distanță din Spania.",
+      "heading": "Realizare site de prezentare cu SEO",
+      "intro": "Unește paginile de servicii, utilizarea pe mobil, conținutul și bazele tehnice într-un proiect clar."
+    },
+    "shop": {
+      "title": "Dezvoltare magazin online pentru firme | Latech",
+      "description": "Planifică un magazin online cu produse bine prezentate, categorii clare și procese de comandă definite. Latech dezvoltă soluții ușor de administrat.",
+      "heading": "Dezvoltare magazin online pentru firme",
+      "intro": "Definește categoriile, informațiile despre produse, comanda și responsabilitățile operaționale înainte de dezvoltare."
+    },
+    "ai": {
+      "title": "Integrări de IA și procese cu n8n | Latech",
+      "description": "Conectează instrumentele firmei prin n8n și integrări de IA delimitate. Latech planifică validarea, revizuirea umană și gestionarea erorilor de proces.",
+      "heading": "Integrări de IA și procese cu n8n",
+      "intro": "Analizează o sarcină concretă cu validare, erori vizibile și revizuire umană potrivită procesului."
+    },
+    "about": {
+      "title": "Despre Latech, echipă web din Spania | Latech",
+      "description": "Cunoaște-i pe Andrés Rubio și Luis Grondona, fondatorii Latech din Badajoz, Spania. Află cum colaborăm de la distanță pentru web design, SEO și magazine online.",
+      "heading": "Despre Latech, echipă web din Spania",
+      "intro": "Andrés Rubio și Luis Grondona au fondat Latech în Puebla de la Calzada, Badajoz, Spania."
+    },
+    "projects": {
+      "title": "Proiecte de web design și magazine online | Latech",
+      "description": "Explorează proiecte reale Latech cu magazine, servicii, zone de client și administrare de conținut. Citește despre funcțiile documentate pentru fiecare proiect.",
+      "heading": "Proiecte de web design și magazine online",
+      "intro": "Explorează funcții reale de catalog, prezentare a serviciilor, administrare a conținutului și contact."
+    },
+    "contact": {
+      "title": "Contact Latech pentru site și SEO | Latech",
+      "description": "Contactează Latech pe WhatsApp la +34684739091 pentru web design, SEO sau magazin online. Prezintă firma, site-ul și obiectivele pentru a discuta proiectul.",
+      "heading": "Contact Latech pentru site și SEO",
+      "intro": "Scrie pe WhatsApp la +34684739091 despre firmă, site-ul actual și obiectivele proiectului."
+    },
+    "blog": {
+      "title": "Ghiduri SEO pentru site-uri de firmă | Latech",
+      "description": "Citește ghiduri SEO pentru firme despre intenție de căutare, indexare, conținut și utilizare pe mobil, cu măsurarea clicurilor și a solicitărilor relevante.",
+      "heading": "Ghiduri SEO pentru site-uri de firmă",
+      "intro": "Află cum să analizezi intenția de căutare, indexarea, conținutul și solicitările primite prin site."
+    }
+  },
+  "projectCopy": {
+    "colegio-santo-tomas": {
+      "sector": "Educație",
+      "summary": "Site școlar cu etape educaționale, admitere, știri, calendar și documente. Fotografiile reale și galeria privată pentru părinți prezintă viața centrului și facilitează găsirea informațiilor de zi cu zi."
+    },
+    "granja-orea": {
+      "sector": "Tabere și educație în aer liber",
+      "summary": "Site editorial pentru tabere, vizite școlare, echitație și grupuri. Include solicitări pe WhatsApp, știri editabile, aplicație web instalabilă, traseu QR și instrumente private pentru echipa centrului."
+    },
+    "f5-arquitectos": {
+      "sector": "Arhitectură",
+      "summary": "Portofoliu de arhitectură cu fotografii ample, catalog pe categorii și pagini detaliate de proiect. Un panou propriu permite studioului să actualizeze lucrările și informațiile de pe site."
+    },
+    "quality-homes": {
+      "sector": "Dezvoltare imobiliară",
+      "summary": "Site imobiliar cu fotografii, video, planuri și disponibilitate pentru fiecare locuință. Solicitările sunt conectate la un CRM propriu, iar administrarea conținutului permite actualizarea ansamblurilor rezidențiale."
+    },
+    "megias-frutas": {
+      "sector": "Distribuție de fructe și legume",
+      "summary": "Site de prezentare pentru un distribuitor angro de fructe și legume. Fotografiile produselor, informațiile pentru clienți profesionali și conținutul editorial susțin consultarea directă de pe mobil."
+    },
+    "zonasport": {
+      "sector": "Articole sportive",
+      "summary": "Catalog sportiv cu mai multe mărci și categorii de produse. Include articole practice, administrarea inventarului și comenzi pe WhatsApp cu ridicare din magazin, conectând oferta online cu activitatea locală."
+    },
+    "panelex": {
+      "sector": "Materiale de construcții",
+      "summary": "Site pentru materiale de construcții cu fișe tehnice de panouri sandwich, ghiduri, calculator și pagini provinciale. Informațiile ajută profesioniștii să compare specificații și să pregătească solicitări de ofertă."
+    },
+    "monopatinmonkey": {
+      "sector": "Trotinete electrice",
+      "summary": "Magazin de trotinete electrice cu fișe de produs și secțiune de reparații explicată pas cu pas. Navigarea permite compararea modelelor și contactarea atelierului pentru o problemă concretă."
+    },
+    "toldos-noa": {
+      "sector": "Copertine la comandă",
+      "summary": "Site de copertine cu servicii separate pentru locuințe, firme, reparații și execuție la comandă. Recenziile reale și contactul prin WhatsApp însoțesc vizitatorul spre solicitarea unei oferte."
+    },
+    "autoescuela-agora": {
+      "sector": "Școală de șoferi",
+      "summary": "Site pentru o școală de șoferi cu două sedii și trasee pentru permise. Include înscriere, WhatsApp, acces la teste AEOL, zona Mi Ágora, știri și ghiduri pentru cursanți."
+    },
+    "precios-locos": {
+      "sector": "Electrocasnice și casă",
+      "summary": "Magazin de electrocasnice cu produse, căutare, favorite și coș. Experiența include o mașină interactivă cu pachete surpriză, ghiduri pentru casă și contact direct prin WhatsApp."
+    },
+    "los-leones-nuptiae": {
+      "sector": "Modă masculină și croitorie",
+      "summary": "Site care reunește Los Leones și Nuptiae prin alegerea vizuală a mărcii. Prezintă modă masculină, ceremonie, închiriere și croitorie, cu fotografii de colecție și acces la magazine."
+    },
+    "my-special-hair": {
+      "sector": "Sisteme capilare",
+      "summary": "Site de sisteme capilare cu produse, ghid de măsurare și studio 3D. Conturile de client, programările, accesul profesional, videoclipurile și consultanța pe WhatsApp oferă trasee diferite vizitatorilor."
+    }
+  }
+}

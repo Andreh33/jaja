@@ -1,0 +1,1466 @@
+{
+  "code": "pl",
+  "name": "Polski",
+  "ogLocale": "pl_PL",
+  "ui": {
+    "home": "Strona główna",
+    "services": "Usługi",
+    "projects": "Projekty",
+    "about": "O nas",
+    "contact": "Kontakt",
+    "blog": "Poradnik",
+    "language": "Język",
+    "readMore": "Przeczytaj artykuł",
+    "backToBlog": "Wróć do poradnika",
+    "related": "Powiązane artykuły",
+    "author": "Redakcja Latech",
+    "whatsapp": "Porozmawiaj przez WhatsApp",
+    "skip": "Przejdź do treści",
+    "legal": "Informacje prawne",
+    "privacy": "Polityka prywatności",
+    "terms": "Warunki korzystania",
+    "remote": "Działamy z Hiszpanii i pracujemy zdalnie przy projektach międzynarodowych.",
+    "phone": "Telefon",
+    "whatsappMessage": "Dzień dobry Latech, chcę omówić projekt. Mój kraj: . Potrzebna usługa: . Obecna strona: . Cel: .",
+    "processTitle": "Od potrzeb firmy do publikacji",
+    "articlesIntro": "Praktyczne poradniki o SEO, wejściach z wyszukiwarki i pozyskiwaniu zapytań.",
+    "serviceIntro": "Strony, SEO i e-commerce dopasowane do klientów oraz sposobu pracy firmy.",
+    "projectsIntro": "Poznaj rzeczywiste projekty i dostępne materiały o ich wyglądzie oraz funkcjach.",
+    "aboutTitle": "Mały zespół i konkretne podejście",
+    "contactDetails": "Dane kontaktowe",
+    "moreServices": "Poznaj nasze usługi",
+    "allArticles": "Wszystkie artykuły",
+    "serviceCta": "Omów tę usługę",
+    "projectCountLabel": "projektów",
+    "seoTitle": "SEO dla wartościowych odwiedzin",
+    "seoIntro": "Łączymy pytania klientów z czytelną ofertą i działaniami, które można ocenić.",
+    "seoBullets": [
+      "Dopasowanie zapytań do oferty",
+      "Czytelna struktura usług i kategorii",
+      "Kontrola dostępu robotów i wersji mobilnej",
+      "Ocena kliknięć razem z jakością zapytań"
+    ],
+    "faqTitle": "Częste pytania",
+    "brandClaim": "W projektowaniu i SEO nikt nas nie pokona.",
+    "contactTitle": "Opowiedz nam o potrzebach swojej firmy",
+    "contactIntro": "Przedstaw swoją stronę, odbiorców i cele biznesowe. Napisz do Latech przez WhatsApp pod numerem +34684739091 i wskaż usługę, której potrzebujesz.",
+    "processSteps": [
+      "Ustalamy cel biznesowy, odbiorców, treści i zakres projektu.",
+      "Projektujemy oraz wspólnie oceniamy treść, wygląd i funkcje.",
+      "Testujemy ścieżki klientów, przygotowujemy publikację i opisujemy obsługę."
+    ],
+    "aboutIntro": "Latech założyli Andrés Rubio i Luis Grondona w Puebla de la Calzada, Badajoz, w Hiszpanii.",
+    "aboutBody": [
+      "Zajmujemy się stronami firmowymi, sklepami, SEO i precyzyjnie określonymi integracjami AI z n8n. Zaczynamy od pytań klientów i sposobu obsługi ich potrzeb.",
+      "Działamy z Hiszpanii i realizujemy zdalnie projekty międzynarodowe. Przy każdym ustalamy, kto dostarcza materiały, podejmuje decyzje i odpowiada za utrzymanie.",
+      "Wybieramy czytelne informacje, rozwiązania możliwe do utrzymania oraz rzetelne opisy projektów. Efekty zależą także od oferty, konkurencji i dalszej pracy nad stroną."
+    ]
+  },
+  "home": {
+    "title": "Strony internetowe i SEO dla firm | Latech",
+    "description": "Strony internetowe, SEO i sklepy dla firm szukających wartościowych zapytań. Latech działa z Hiszpanii i realizuje zdalnie projekty międzynarodowe.",
+    "heading": "Strony internetowe, SEO i sklepy dla Twojej firmy",
+    "intro": "Pomagamy połączyć ofertę z pytaniami klientów: przez czytelną treść, sprawną stronę i wygodną drogę do wysłania konkretnego zapytania.",
+    "body": [
+      "Dobra strona firmowa wyjaśnia, co oferujesz, komu pomagasz i jak rozpocząć rozmowę o współpracy. Łączymy projektowanie stron, SEO i e-commerce wokół tych decyzji. Zakres pracy wynika z potrzeb odbiorców, stanu obecnej strony i informacji potrzebnych do obsługi zapytania.",
+      "Andrés Rubio i Luis Grondona założyli Latech w Puebla de la Calzada, Badajoz, w Hiszpanii. Pracujemy stamtąd również zdalnie dla firm z innych krajów. Zakres, odpowiedzialność za materiały oraz sposób komunikacji ustalamy osobno dla każdego projektu."
+    ]
+  },
+  "services": [
+    {
+      "id": "web",
+      "title": "Projektowanie stron i SEO",
+      "description": "Zamów stronę firmową z czytelną ofertą, wygodną wersją mobilną i podstawami SEO. Latech łączy projekt, treści i technikę wokół potrzeb Twoich klientów.",
+      "intro": "Strona pomaga zrozumieć ofertę, porównać ją i wysłać trafne zapytanie.",
+      "sections": [
+        {
+          "title": "Oferta i pytania klientów",
+          "paragraphs": [
+            "Układamy strony usług według potrzeb potencjalnych klientów. Ustalamy, jakie informacje powinien znać odbiorca przed rozpoczęciem rozmowy.",
+            "Tytuły, logiczne linkowanie i treści opisujące rzeczywisty zakres oferty pomagają budować użyteczną strukturę dla ludzi oraz wyszukiwarek."
+          ]
+        },
+        {
+          "title": "Projekt do codziennego użytku",
+          "paragraphs": [
+            "Czytelna typografia, dostępna nawigacja i proste formularze należą do projektu. Sprawdzamy, co utrudnia wykonanie zadania na telefonie.",
+            "Uzgodniony zakres może obejmować strony usług, materiały projektowe oraz techniczne podstawy SEO. Priorytety i odpowiedzialność za teksty ustalamy przed wdrożeniem."
+          ]
+        },
+        {
+          "title": "Publikacja i utrzymanie",
+          "paragraphs": [
+            "Przed uruchomieniem sprawdzamy ustalone ścieżki kontaktu, adresy, przekierowania i pomiar. Nowa wersja powinna uwzględniać wartościowe materiały poprzedniej strony.",
+            "Opisujemy zadania związane z obsługą. Po publikacji potrzebna jest osoba odpowiedzialna za aktualność informacji, ocenę treści oraz odbieranie zapytań."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "shop",
+      "title": "Sklepy internetowe",
+      "description": "Sklep internetowy z czytelnymi produktami, logicznymi kategoriami i wygodnym zakupem. Latech pomaga połączyć sprzedaż z praktyczną obsługą zamówień.",
+      "intro": "Zakupy łączą wyszukiwanie produktu, decyzję i sprawną realizację.",
+      "sections": [
+        {
+          "title": "Uporządkowany asortyment",
+          "paragraphs": [
+            "Projektujemy kategorie i dane produktów według sposobu wyboru klientów. Zdjęcia, warianty i parametry powinny odpowiadać na konkretne pytania zakupowe.",
+            "Struktura musi również pasować do aktualizacji stanów i opisów. Najpierw sprawdzamy dostępne dane, a potem dobieramy potrzebne funkcje."
+          ]
+        },
+        {
+          "title": "Zakup i realizacja",
+          "paragraphs": [
+            "Płatność, dostawa i obsługa zamówienia tworzą wspólny proces. Ustalamy potrzebne integracje oraz osobę odpowiedzialną za poszczególne etapy.",
+            "Uwzględniamy też wyjątki: nieudaną płatność, brak wariantu i niepełny adres. Klient potrzebuje zrozumiałego komunikatu oraz jasnej dalszej drogi."
+          ]
+        },
+        {
+          "title": "Testy przed publikacją",
+          "paragraphs": [
+            "Sprawdzamy reprezentatywne produkty i zamówienia w uzgodnionym zakresie. Zespół powinien wiedzieć, jak aktualizować katalog i reagować na typowe problemy.",
+            "SEO kategorii, dane produktów i dotychczasowe adresy uwzględniamy w przygotowaniu. Celem jest sklep, który da się prowadzić po zakończeniu wdrożenia."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ai",
+      "title": "Integracje AI z n8n",
+      "description": "Połącz narzędzia firmy przez n8n i ściśle określone zadania AI. Latech pomaga ustalić kontrolę danych, nadzór człowieka oraz obsługę błędów procesu.",
+      "intro": "Dobra integracja zaczyna się od poznania procesu i jego wyjątków.",
+      "sections": [
+        {
+          "title": "Proces i dane",
+          "paragraphs": [
+            "Ustalamy zdarzenie początkowe, dane wejściowe, reguły i oczekiwany rezultat. Opis ręcznej pracy pokazuje miejsca, gdzie integracja może ograniczyć błędy przekazania.",
+            "Analizujemy wyjątki, dostępne narzędzia i uprawnienia. Pozwala to ocenić, czy wystarczą reguły, czy potrzebna jest ograniczona funkcja AI."
+          ]
+        },
+        {
+          "title": "Kontrola wyników",
+          "paragraphs": [
+            "AI może porządkować informacje lub przygotować wersję roboczą. Wynik wymaga sprawdzenia odpowiedniego do zadania, zwłaszcza przed użyciem zewnętrznym.",
+            "Ograniczamy dostęp do danych niezbędnych do wykonania pracy. Wrażliwe decyzje i działania zewnętrzne mogą wymagać zatwierdzenia przez pracownika."
+          ]
+        },
+        {
+          "title": "Obsługa i odzyskiwanie",
+          "paragraphs": [
+            "Proces potrzebuje właściciela, przydatnych zapisów oraz procedury na wypadek awarii narzędzia. Powtórzone zdarzenie nie powinno bez kontroli tworzyć duplikatów.",
+            "Opisujemy przypadki testowe i odpowiedzialność za utrzymanie. Dzięki temu można oceniać działanie integracji i dostosować ją do zmian w firmie."
+          ]
+        }
+      ]
+    }
+  ],
+  "articles": [
+    {
+      "id": "website-leads",
+      "title": "Jak strona firmowa może wspierać wartościowe zapytania",
+      "slug": "strona-firmowa-wartosciowe-zapytania",
+      "description": "Jak strona firmowa może wspierać wartościowe zapytania. Sprawdź treści, technikę i kontakt, aby łączyć odwiedziny z odpowiednimi pytaniami klientów.",
+      "intro": [
+        "Pracę w zakresie pozyskiwania trafnych zapytań przez stronę warto zacząć od decyzji klienta i informacji, które firma potrafi mu rzetelnie przekazać. Większy ruch jest przydatny, gdy odbiorca rozumie ofertę oraz możliwy następny krok. Ten poradnik pomaga uporządkować działania z wykorzystaniem dostępnych materiałów i danych, bez obietnic pozycji ani automatycznego wzrostu sprzedaży.",
+        "Wyobraź sobie firmę instalacyjną, która chce otrzymywać lepiej opisane zgłoszenia. To sytuacja hipotetyczna ilustrująca sposób pracy, a nie opis uzyskanego wyniku klienta. Wykonaj poniższe kontrole najpierw na jednej ważnej stronie. Dzięki temu łatwiej ocenisz zmianę, ustalisz odpowiedzialność i zdecydujesz, które rozwiązanie warto rozszerzyć na pozostałe podstrony."
+      ],
+      "sections": [
+        {
+          "title": "Określ właściwe zgłoszenie",
+          "paragraphs": [
+            "Zapisz, jakie zlecenia firma rzeczywiście realizuje i jakich informacji potrzebuje do oceny zgłoszenia. Typ instalacji, obszar działania i opis problemu mogą być przydatniejsze niż rozbudowany formularz zbierający dane bez wyraźnego celu.",
+            "Przed zmianą zapisz obserwację w sposób, który inna osoba potrafi sprawdzić. Podaj adres, zadanie odwiedzającego oraz brakującą informację. Poproś współpracownika niezwiązanego z przygotowaniem strony o wykonanie tej samej czynności bez dodatkowych podpowiedzi. Porównaj jego rozumienie oferty z zamierzeniem firmy i nazwij konkretną różnicę, zamiast oceniać stronę wyłącznie według osobistych upodobań."
+          ]
+        },
+        {
+          "title": "Wyjaśnij poszczególne usługi",
+          "paragraphs": [
+            "Każda istotna usługa powinna opisywać problem, zakres pracy i ograniczenia. Odwiedzający musi rozpoznać własną sytuację, zanim poprosisz go o rozmowę. Ogólny opis całej firmy rzadko zastępuje konkretną odpowiedź.",
+            "Przygotuj krótkie zestawienie obecnego stanu, proponowanej poprawki i jej powodu. Osoba dobrze znająca ofertę powinna sprawdzić prawdziwość obietnic oraz ograniczeń. Dzięki temu poprawna technicznie edycja nie stworzy niewłaściwego oczekiwania wobec usługi. Wyjaśnienie musi być czytelne także dla kogoś, kto dopiero poznaje firmę i nie zna używanych wewnętrznie określeń."
+          ]
+        },
+        {
+          "title": "Pokaż odpowiednie przykłady",
+          "paragraphs": [
+            "Wykorzystaj rzeczywiste materiały projektowe, które odpowiadają na wątpliwości klienta. Wyjaśnij powód rozwiązania i jego funkcje. Przykład demonstracyjny oznacz jako demonstrację, bez przypisywania mu nieistniejącego klienta lub wyników sprzedaży.",
+            "Kontrolę wykonaj na opublikowanym adresie oraz na telefonie. Przejdź od pierwszego wejścia do zamierzonego następnego kroku, bez samodzielnego dopowiadania brakującego kontekstu. Zapisz osobno błąd działania i niejasne wyjaśnienie. Mogą wymagać innych rozwiązań oraz udziału różnych osób, dlatego wspólny komunikat o potrzebie poprawy strony często nie wystarcza do rozpoczęcia pracy."
+          ]
+        },
+        {
+          "title": "Ułatw wykonanie kontaktu",
+          "paragraphs": [
+            "Umieść przycisk po informacjach potrzebnych do decyzji. Sprawdź etykiety formularza, komunikaty błędów i potwierdzenie wysłania na telefonie. Napisz, jaki krótki opis sytuacji ułatwi ocenę potrzeb podczas pierwszej rozmowy.",
+            "Pierwszą zmianę wprowadź na reprezentatywnej stronie. Zachowaj punkt wyjścia i poproś o ocenę przed powieleniem rozwiązania w całej witrynie. To, co sprawdza się przy jednej usłudze, nie zawsze pasuje do innej grupy klientów lub produktów. Uwzględnij wyjątki oraz informacje, które pracownicy będą musieli samodzielnie aktualizować po zakończeniu wdrożenia."
+          ]
+        },
+        {
+          "title": "Przydziel obsługę zgłoszeń",
+          "paragraphs": [
+            "Ustal, kto odbiera formularze i wiadomości WhatsApp. Zapisuj temat oraz dostępną informację o stronie źródłowej, unikając podwójnej obsługi tej samej osoby. Kliknięcie przycisku nie potwierdza rozpoczęcia rzeczywistej rozmowy.",
+            "Ustal, jakie zdarzenie można faktycznie zmierzyć i jaki wniosek z niego wynika. Dane wyszukiwarki, statystyki strony oraz rozmowy z klientami opisują różne fragmenty procesu. Porównuj je na właściwym poziomie i uwzględniaj luki informacyjne. Nie zamieniaj niepewnej wskazówki w stanowcze twierdzenie o konkretnej osobie, wysokości przychodu czy skuteczności całej oferty."
+          ]
+        },
+        {
+          "title": "Oceniaj dopasowanie kontaktów",
+          "paragraphs": [
+            "Sprawdzaj, dlaczego zgłoszenia pasują albo nie pasują do oferty. Jeżeli ludzie regularnie pytają o niedostępną usługę, opis może być zbyt szeroki. Najpierw popraw oczekiwania, a dopiero później zwiększaj ruch.",
+            "Wyznacz właściciela kolejnej kontroli oraz odpowiedni moment przeglądu. Sprawdź, co po zmianie działa potwierdzalnie lepiej i czego nadal nie rozumieją odbiorcy. Przy małej ilości danych uzupełnij ocenę praktycznym testem zadania. Prowadź zapis innych zmian w tym samym okresie, aby późniejsza interpretacja uwzględniała również okoliczności niezwiązane bezpośrednio z ocenianą poprawką."
+          ]
+        }
+      ],
+      "checklist": [
+        "Wybierz ważną stronę i zapisz sytuację przed zmianą.",
+        "Sprawdź zgodność treści z rzeczywistym pytaniem klienta.",
+        "Przetestuj pełną drogę odbiorcy na telefonie.",
+        "Zanotuj poprawki, odpowiedzialną osobę i dostępny pomiar.",
+        "Oceniaj kliknięcia razem z dopasowaniem otrzymanych zapytań."
+      ],
+      "conclusion": "Praktyczne podejście do pozyskiwania trafnych zapytań przez stronę wymaga czytelnej informacji i możliwej do sprawdzenia dalszej drogi. Wybierz najważniejszą poprawkę, przetestuj wykonanie i omów wynik z zespołem. Latech może pomóc połączyć projekt strony, strukturę SEO oraz kontakt w jeden spójny zakres pracy."
+    },
+    {
+      "id": "website-budget",
+      "title": "Jak przygotować brief strony internetowej i SEO",
+      "slug": "brief-wycena-strony-internetowej-seo",
+      "description": "Jak przygotować brief strony internetowej i SEO. Poznaj konkretne kontrole pomagające połączyć widoczność, czytelną informację i kontakt z klientem.",
+      "intro": [
+        "Pracę w zakresie przygotowania porównywalnej wyceny strony i SEO warto zacząć od decyzji klienta i informacji, które firma potrafi mu rzetelnie przekazać. Większy ruch jest przydatny, gdy odbiorca rozumie ofertę oraz możliwy następny krok. Ten poradnik pomaga uporządkować działania z wykorzystaniem dostępnych materiałów i danych, bez obietnic pozycji ani automatycznego wzrostu sprzedaży.",
+        "Wyobraź sobie małą firmę doradczą przygotowującą nową stronę usługową. To sytuacja hipotetyczna ilustrująca sposób pracy, a nie opis uzyskanego wyniku klienta. Wykonaj poniższe kontrole najpierw na jednej ważnej stronie. Dzięki temu łatwiej ocenisz zmianę, ustalisz odpowiedzialność i zdecydujesz, które rozwiązanie warto rozszerzyć na pozostałe podstrony."
+      ],
+      "sections": [
+        {
+          "title": "Nazwij cel biznesowy",
+          "paragraphs": [
+            "Opisz rozmowy lub zamówienia, które strona ma wspierać. Życzenie nowoczesnego wyglądu nie określa potrzebnych treści, funkcji ani pomiaru. Dodaj przykłady pytań, które klienci obecnie zadają podczas pierwszego kontaktu.",
+            "Przed zmianą zapisz obserwację w sposób, który inna osoba potrafi sprawdzić. Podaj adres, zadanie odwiedzającego oraz brakującą informację. Poproś współpracownika niezwiązanego z przygotowaniem strony o wykonanie tej samej czynności bez dodatkowych podpowiedzi. Porównaj jego rozumienie oferty z zamierzeniem firmy i nazwij konkretną różnicę, zamiast oceniać stronę wyłącznie według osobistych upodobań."
+          ]
+        },
+        {
+          "title": "Zbierz dostępne materiały",
+          "paragraphs": [
+            "Przygotuj listę stron, dokumentów, zdjęć i opisów usług. Zaznacz, co można zachować oraz kto dostarczy brakującą wiedzę. Wykonawca trafniej oceni zakres, gdy odpowiedzialność za materiały będzie określona od początku.",
+            "Przygotuj krótkie zestawienie obecnego stanu, proponowanej poprawki i jej powodu. Osoba dobrze znająca ofertę powinna sprawdzić prawdziwość obietnic oraz ograniczeń. Dzięki temu poprawna technicznie edycja nie stworzy niewłaściwego oczekiwania wobec usługi. Wyjaśnienie musi być czytelne także dla kogoś, kto dopiero poznaje firmę i nie zna używanych wewnętrznie określeń."
+          ]
+        },
+        {
+          "title": "Opisz typy podstron",
+          "paragraphs": [
+            "Strona główna, opis usługi i karta projektu wymagają innych danych. Podaj typy oraz istotne warianty zamiast samej liczby adresów. Wyjaśnij, czy sklep, wyszukiwarka i dodatkowe wersje językowe są rzeczywiście potrzebne.",
+            "Kontrolę wykonaj na opublikowanym adresie oraz na telefonie. Przejdź od pierwszego wejścia do zamierzonego następnego kroku, bez samodzielnego dopowiadania brakującego kontekstu. Zapisz osobno błąd działania i niejasne wyjaśnienie. Mogą wymagać innych rozwiązań oraz udziału różnych osób, dlatego wspólny komunikat o potrzebie poprawy strony często nie wystarcza do rozpoczęcia pracy."
+          ]
+        },
+        {
+          "title": "Uwzględnij starą stronę",
+          "paragraphs": [
+            "Przekaż istniejące adresy oraz dostępne dane o wyszukiwaniu. Materiały przynoszące trafne odwiedziny potrzebują odpowiednich miejsc w nowej strukturze. Oferta obejmująca wyłącznie wygląd może pomijać migrację treści i przekierowania.",
+            "Pierwszą zmianę wprowadź na reprezentatywnej stronie. Zachowaj punkt wyjścia i poproś o ocenę przed powieleniem rozwiązania w całej witrynie. To, co sprawdza się przy jednej usłudze, nie zawsze pasuje do innej grupy klientów lub produktów. Uwzględnij wyjątki oraz informacje, które pracownicy będą musieli samodzielnie aktualizować po zakończeniu wdrożenia."
+          ]
+        },
+        {
+          "title": "Porównaj odpowiedzialność",
+          "paragraphs": [
+            "Sprawdź, kto pisze teksty, zarządza ustawieniami i zatwierdza zmiany. Zapytaj o testy oraz dokumentację. Porównuj propozycje według tych samych czynności, ponieważ sama kwota bez opisu zakresu utrudnia ocenę.",
+            "Ustal, jakie zdarzenie można faktycznie zmierzyć i jaki wniosek z niego wynika. Dane wyszukiwarki, statystyki strony oraz rozmowy z klientami opisują różne fragmenty procesu. Porównuj je na właściwym poziomie i uwzględniaj luki informacyjne. Nie zamieniaj niepewnej wskazówki w stanowcze twierdzenie o konkretnej osobie, wysokości przychodu czy skuteczności całej oferty."
+          ]
+        },
+        {
+          "title": "Przygotuj dalsze utrzymanie",
+          "paragraphs": [
+            "Określ, kto będzie aktualizować dane firmy i ofertę. Zapytaj o sposób edycji oraz zależności od innych narzędzi. Zaplanuj też ocenę treści po zebraniu rzeczywistych danych o odwiedzinach i zapytaniach.",
+            "Wyznacz właściciela kolejnej kontroli oraz odpowiedni moment przeglądu. Sprawdź, co po zmianie działa potwierdzalnie lepiej i czego nadal nie rozumieją odbiorcy. Przy małej ilości danych uzupełnij ocenę praktycznym testem zadania. Prowadź zapis innych zmian w tym samym okresie, aby późniejsza interpretacja uwzględniała również okoliczności niezwiązane bezpośrednio z ocenianą poprawką."
+          ]
+        }
+      ],
+      "checklist": [
+        "Wybierz ważną stronę i zapisz sytuację przed zmianą.",
+        "Sprawdź zgodność treści z rzeczywistym pytaniem klienta.",
+        "Przetestuj pełną drogę odbiorcy na telefonie.",
+        "Zanotuj poprawki, odpowiedzialną osobę i dostępny pomiar.",
+        "Oceniaj kliknięcia razem z dopasowaniem otrzymanych zapytań."
+      ],
+      "conclusion": "Praktyczne podejście do przygotowania porównywalnej wyceny strony i SEO wymaga czytelnej informacji i możliwej do sprawdzenia dalszej drogi. Wybierz najważniejszą poprawkę, przetestuj wykonanie i omów wynik z zespołem. Latech może pomóc połączyć projekt strony, strukturę SEO oraz kontakt w jeden spójny zakres pracy."
+    },
+    {
+      "id": "local-seo",
+      "title": "Lokalne SEO bez fikcyjnych siedzib",
+      "slug": "lokalne-seo-rzeczywisty-obszar-dzialania",
+      "description": "Lokalne SEO bez fikcyjnych siedzib. Poznaj praktyczne kontrole treści, informacji o firmie oraz kontaktu dla klientów z rzeczywistego obszaru działania.",
+      "intro": [
+        "Pracę w zakresie lokalnego SEO zgodnego z rzeczywistym obszarem działania warto zacząć od decyzji klienta i informacji, które firma potrafi mu rzetelnie przekazać. Większy ruch jest przydatny, gdy odbiorca rozumie ofertę oraz możliwy następny krok. Ten poradnik pomaga uporządkować działania z wykorzystaniem dostępnych materiałów i danych, bez obietnic pozycji ani automatycznego wzrostu sprzedaży.",
+        "Wyobraź sobie firmę serwisową obsługującą kilka sąsiednich miejscowości. To sytuacja hipotetyczna ilustrująca sposób pracy, a nie opis uzyskanego wyniku klienta. Wykonaj poniższe kontrole najpierw na jednej ważnej stronie. Dzięki temu łatwiej ocenisz zmianę, ustalisz odpowiedzialność i zdecydujesz, które rozwiązanie warto rozszerzyć na pozostałe podstrony."
+      ],
+      "sections": [
+        {
+          "title": "Ustal rzeczywisty zasięg",
+          "paragraphs": [
+            "Zapisz, gdzie firma może obsługiwać klientów i gdzie rzeczywiście ma siedzibę. Obszar dojazdu nie oznacza osobnego biura. Publikuj informacje o placówkach wyłącznie dla miejsc, które naprawdę istnieją i są używane.",
+            "Przed zmianą zapisz obserwację w sposób, który inna osoba potrafi sprawdzić. Podaj adres, zadanie odwiedzającego oraz brakującą informację. Poproś współpracownika niezwiązanego z przygotowaniem strony o wykonanie tej samej czynności bez dodatkowych podpowiedzi. Porównaj jego rozumienie oferty z zamierzeniem firmy i nazwij konkretną różnicę, zamiast oceniać stronę wyłącznie według osobistych upodobań."
+          ]
+        },
+        {
+          "title": "Wyjaśnij lokalną przydatność",
+          "paragraphs": [
+            "Strona lokalna powinna zawierać więcej niż nazwę miasta w tytule. Opisz dostępne prace, dojazd i faktyczne ograniczenia. Dziesiątki prawie identycznych tekstów ze zmienioną miejscowością nie tworzą użytecznej informacji dla klienta.",
+            "Przygotuj krótkie zestawienie obecnego stanu, proponowanej poprawki i jej powodu. Osoba dobrze znająca ofertę powinna sprawdzić prawdziwość obietnic oraz ograniczeń. Dzięki temu poprawna technicznie edycja nie stworzy niewłaściwego oczekiwania wobec usługi. Wyjaśnienie musi być czytelne także dla kogoś, kto dopiero poznaje firmę i nie zna używanych wewnętrznie określeń."
+          ]
+        },
+        {
+          "title": "Ujednolić dane firmy",
+          "paragraphs": [
+            "Porównaj nazwę, właściwy adres, telefon i godziny na stronie oraz zarządzanych profilach. Rozbieżności utrudniają kontakt. Aktualizuj sezonowe zmiany tam, gdzie odbiorcy rzeczywiście szukają informacji o dostępności usługi.",
+            "Kontrolę wykonaj na opublikowanym adresie oraz na telefonie. Przejdź od pierwszego wejścia do zamierzonego następnego kroku, bez samodzielnego dopowiadania brakującego kontekstu. Zapisz osobno błąd działania i niejasne wyjaśnienie. Mogą wymagać innych rozwiązań oraz udziału różnych osób, dlatego wspólny komunikat o potrzebie poprawy strony często nie wystarcza do rozpoczęcia pracy."
+          ]
+        },
+        {
+          "title": "Korzystaj z prawdziwych dowodów",
+          "paragraphs": [
+            "Pokaż udostępniane zgodnie z ustaleniami materiały wykonanych prac. Opisz zakres bez wymyślania ocen klientów i rezultatów. Proś o samodzielne, uczciwe opinie w odpowiednim procesie, bez narzucania pożądanej treści recenzji.",
+            "Pierwszą zmianę wprowadź na reprezentatywnej stronie. Zachowaj punkt wyjścia i poproś o ocenę przed powieleniem rozwiązania w całej witrynie. To, co sprawdza się przy jednej usłudze, nie zawsze pasuje do innej grupy klientów lub produktów. Uwzględnij wyjątki oraz informacje, które pracownicy będą musieli samodzielnie aktualizować po zakończeniu wdrożenia."
+          ]
+        },
+        {
+          "title": "Przejrzyj zapytania lokalne",
+          "paragraphs": [
+            "Oddziel pytania z nazwą miejscowości od ogólnych pytań informacyjnych. Sprawdź wyświetlane strony docelowe. Strona główna może dawać zbyt mało szczegółów osobie szukającej konkretnej usługi na określonym obszarze.",
+            "Ustal, jakie zdarzenie można faktycznie zmierzyć i jaki wniosek z niego wynika. Dane wyszukiwarki, statystyki strony oraz rozmowy z klientami opisują różne fragmenty procesu. Porównuj je na właściwym poziomie i uwzględniaj luki informacyjne. Nie zamieniaj niepewnej wskazówki w stanowcze twierdzenie o konkretnej osobie, wysokości przychodu czy skuteczności całej oferty."
+          ]
+        },
+        {
+          "title": "Oceniaj lokalizację zgłoszeń",
+          "paragraphs": [
+            "Przy obsłudze zapytania sprawdzaj zgodność miejsca z obszarem działania. Więcej lokalnych kliknięć ma sens, gdy firma może wykonać usługę. Jeżeli regularnie trafiają zgłoszenia spoza zasięgu, doprecyzuj granice na stronie.",
+            "Wyznacz właściciela kolejnej kontroli oraz odpowiedni moment przeglądu. Sprawdź, co po zmianie działa potwierdzalnie lepiej i czego nadal nie rozumieją odbiorcy. Przy małej ilości danych uzupełnij ocenę praktycznym testem zadania. Prowadź zapis innych zmian w tym samym okresie, aby późniejsza interpretacja uwzględniała również okoliczności niezwiązane bezpośrednio z ocenianą poprawką."
+          ]
+        }
+      ],
+      "checklist": [
+        "Wybierz ważną stronę i zapisz sytuację przed zmianą.",
+        "Sprawdź zgodność treści z rzeczywistym pytaniem klienta.",
+        "Przetestuj pełną drogę odbiorcy na telefonie.",
+        "Zanotuj poprawki, odpowiedzialną osobę i dostępny pomiar.",
+        "Oceniaj kliknięcia razem z dopasowaniem otrzymanych zapytań."
+      ],
+      "conclusion": "Praktyczne podejście do lokalnego SEO zgodnego z rzeczywistym obszarem działania wymaga czytelnej informacji i możliwej do sprawdzenia dalszej drogi. Wybierz najważniejszą poprawkę, przetestuj wykonanie i omów wynik z zespołem. Latech może pomóc połączyć projekt strony, strukturę SEO oraz kontakt w jeden spójny zakres pracy."
+    },
+    {
+      "id": "international-seo",
+      "title": "Międzynarodowe SEO i wersje językowe strony",
+      "slug": "miedzynarodowe-seo-wersje-jezykowe",
+      "description": "Międzynarodowe SEO i wersje językowe strony. Poznaj konkretne kontrole pomagające połączyć widoczność, czytelną informację i kontakt z klientem.",
+      "intro": [
+        "Pracę w zakresie międzynarodowego SEO dla różnych wersji językowych warto zacząć od decyzji klienta i informacji, które firma potrafi mu rzetelnie przekazać. Większy ruch jest przydatny, gdy odbiorca rozumie ofertę oraz możliwy następny krok. Ten poradnik pomaga uporządkować działania z wykorzystaniem dostępnych materiałów i danych, bez obietnic pozycji ani automatycznego wzrostu sprzedaży.",
+        "Wyobraź sobie polskiego dostawcę rozważającego drugi rynek europejski. To sytuacja hipotetyczna ilustrująca sposób pracy, a nie opis uzyskanego wyniku klienta. Wykonaj poniższe kontrole najpierw na jednej ważnej stronie. Dzięki temu łatwiej ocenisz zmianę, ustalisz odpowiedzialność i zdecydujesz, które rozwiązanie warto rozszerzyć na pozostałe podstrony."
+      ],
+      "sections": [
+        {
+          "title": "Wybierz rzeczywisty rynek",
+          "paragraphs": [
+            "Dodanie języka nie zastępuje planu wejścia na rynek. Sprawdź dostępność produktów, dostawy i obsługi kontaktu. Rozpocznij od odbiorców, dla których firma potrafi rzeczywiście zrealizować przedstawianą ofertę.",
+            "Przed zmianą zapisz obserwację w sposób, który inna osoba potrafi sprawdzić. Podaj adres, zadanie odwiedzającego oraz brakującą informację. Poproś współpracownika niezwiązanego z przygotowaniem strony o wykonanie tej samej czynności bez dodatkowych podpowiedzi. Porównaj jego rozumienie oferty z zamierzeniem firmy i nazwij konkretną różnicę, zamiast oceniać stronę wyłącznie według osobistych upodobań."
+          ]
+        },
+        {
+          "title": "Poznaj miejscowe nazewnictwo",
+          "paragraphs": [
+            "Nie tłumacz listy fraz wyłącznie słowo po słowie. Klienci mogą stosować inny termin i porównywać ofertę według innych kryteriów. Znaczenie komercyjnych sformułowań zweryfikuj z osobą znającą rynek oraz usługę.",
+            "Przygotuj krótkie zestawienie obecnego stanu, proponowanej poprawki i jej powodu. Osoba dobrze znająca ofertę powinna sprawdzić prawdziwość obietnic oraz ograniczeń. Dzięki temu poprawna technicznie edycja nie stworzy niewłaściwego oczekiwania wobec usługi. Wyjaśnienie musi być czytelne także dla kogoś, kto dopiero poznaje firmę i nie zna używanych wewnętrznie określeń."
+          ]
+        },
+        {
+          "title": "Nadaj wersjom osobne adresy",
+          "paragraphs": [
+            "Każda publikowana wersja językowa potrzebuje dostępnego adresu. Przełącznik powinien prowadzić do odpowiadającej strony. Nie zamykaj odbiorcy w automatycznym przekierowaniu opartym tylko na przypuszczalnym kraju lub języku urządzenia.",
+            "Kontrolę wykonaj na opublikowanym adresie oraz na telefonie. Przejdź od pierwszego wejścia do zamierzonego następnego kroku, bez samodzielnego dopowiadania brakującego kontekstu. Zapisz osobno błąd działania i niejasne wyjaśnienie. Mogą wymagać innych rozwiązań oraz udziału różnych osób, dlatego wspólny komunikat o potrzebie poprawy strony często nie wystarcza do rozpoczęcia pracy."
+          ]
+        },
+        {
+          "title": "Sprawdź sygnały językowe",
+          "paragraphs": [
+            "Dla równoważnych wersji zastosuj odpowiednie odwołania hreflang, jeśli są potrzebne. Zweryfikuj wzajemność i dostępność adresów. Canonical wskazujący preferowaną wersję podobnej treści nie zastępuje relacji językowych między tłumaczeniami.",
+            "Pierwszą zmianę wprowadź na reprezentatywnej stronie. Zachowaj punkt wyjścia i poproś o ocenę przed powieleniem rozwiązania w całej witrynie. To, co sprawdza się przy jednej usłudze, nie zawsze pasuje do innej grupy klientów lub produktów. Uwzględnij wyjątki oraz informacje, które pracownicy będą musieli samodzielnie aktualizować po zakończeniu wdrożenia."
+          ]
+        },
+        {
+          "title": "Dostosuj informacje decyzyjne",
+          "paragraphs": [
+            "Zmień przykłady, jednostki i informacje dostaw odpowiednio do rzeczywistej oferty. Nie obiecuj lokalnego biura ani obsługi, której firma nie zapewnia. Opisz uczciwie współpracę międzynarodową prowadzoną z faktycznej siedziby.",
+            "Ustal, jakie zdarzenie można faktycznie zmierzyć i jaki wniosek z niego wynika. Dane wyszukiwarki, statystyki strony oraz rozmowy z klientami opisują różne fragmenty procesu. Porównuj je na właściwym poziomie i uwzględniaj luki informacyjne. Nie zamieniaj niepewnej wskazówki w stanowcze twierdzenie o konkretnej osobie, wysokości przychodu czy skuteczności całej oferty."
+          ]
+        },
+        {
+          "title": "Analizuj każdy rynek osobno",
+          "paragraphs": [
+            "Oceniaj dostępne zapytania, strony i zgłoszenia według języka oraz kraju. Tłumaczenie może przyciągać kliknięcia, jednocześnie tworząc niewłaściwe oczekiwania. Popraw te sygnały przed uruchamianiem kolejnych wersji strony.",
+            "Wyznacz właściciela kolejnej kontroli oraz odpowiedni moment przeglądu. Sprawdź, co po zmianie działa potwierdzalnie lepiej i czego nadal nie rozumieją odbiorcy. Przy małej ilości danych uzupełnij ocenę praktycznym testem zadania. Prowadź zapis innych zmian w tym samym okresie, aby późniejsza interpretacja uwzględniała również okoliczności niezwiązane bezpośrednio z ocenianą poprawką."
+          ]
+        }
+      ],
+      "checklist": [
+        "Wybierz ważną stronę i zapisz sytuację przed zmianą.",
+        "Sprawdź zgodność treści z rzeczywistym pytaniem klienta.",
+        "Przetestuj pełną drogę odbiorcy na telefonie.",
+        "Zanotuj poprawki, odpowiedzialną osobę i dostępny pomiar.",
+        "Oceniaj kliknięcia razem z dopasowaniem otrzymanych zapytań."
+      ],
+      "conclusion": "Praktyczne podejście do międzynarodowego SEO dla różnych wersji językowych wymaga czytelnej informacji i możliwej do sprawdzenia dalszej drogi. Wybierz najważniejszą poprawkę, przetestuj wykonanie i omów wynik z zespołem. Latech może pomóc połączyć projekt strony, strukturę SEO oraz kontakt w jeden spójny zakres pracy."
+    },
+    {
+      "id": "mobile-performance",
+      "title": "Szybkość mobilna tam, gdzie klienci potrzebują strony",
+      "slug": "szybkosc-mobilna-strony-seo",
+      "description": "Szybkość mobilna tam, gdzie klienci potrzebują strony. Sprawdź treści, technikę i kontakt, aby łączyć odwiedziny z odpowiednimi pytaniami klientów.",
+      "intro": [
+        "Pracę w zakresie poprawy mobilnych doświadczeń z wyszukiwarki warto zacząć od decyzji klienta i informacji, które firma potrafi mu rzetelnie przekazać. Większy ruch jest przydatny, gdy odbiorca rozumie ofertę oraz możliwy następny krok. Ten poradnik pomaga uporządkować działania z wykorzystaniem dostępnych materiałów i danych, bez obietnic pozycji ani automatycznego wzrostu sprzedaży.",
+        "Wyobraź sobie stronę usługową, której przycisk kontaktowy pojawia się z opóźnieniem. To sytuacja hipotetyczna ilustrująca sposób pracy, a nie opis uzyskanego wyniku klienta. Wykonaj poniższe kontrole najpierw na jednej ważnej stronie. Dzięki temu łatwiej ocenisz zmianę, ustalisz odpowiedzialność i zdecydujesz, które rozwiązanie warto rozszerzyć na pozostałe podstrony."
+      ],
+      "sections": [
+        {
+          "title": "Przetestuj prawdziwe zadanie",
+          "paragraphs": [
+            "Otwórz opis usługi na zwykłym telefonie i spróbuj rozpocząć kontakt. Zwróć uwagę na przesuwające się przyciski, ciężkie zdjęcia i okna zakrywające tekst. Szybka strona główna niewiele mówi o karcie produktu.",
+            "Przed zmianą zapisz obserwację w sposób, który inna osoba potrafi sprawdzić. Podaj adres, zadanie odwiedzającego oraz brakującą informację. Poproś współpracownika niezwiązanego z przygotowaniem strony o wykonanie tej samej czynności bez dodatkowych podpowiedzi. Porównaj jego rozumienie oferty z zamierzeniem firmy i nazwij konkretną różnicę, zamiast oceniać stronę wyłącznie według osobistych upodobań."
+          ]
+        },
+        {
+          "title": "Rozumiej wskaźniki",
+          "paragraphs": [
+            "Core Web Vitals opisują między innymi ładowanie, reakcję i stabilność wizualną. Gdy są dostępne, uwzględnij dane rzeczywistych użytkowników. Testy laboratoryjne pomagają diagnozować przyczynę, ale pojedynczy wynik nie przedstawia wszystkich doświadczeń klientów.",
+            "Przygotuj krótkie zestawienie obecnego stanu, proponowanej poprawki i jej powodu. Osoba dobrze znająca ofertę powinna sprawdzić prawdziwość obietnic oraz ograniczeń. Dzięki temu poprawna technicznie edycja nie stworzy niewłaściwego oczekiwania wobec usługi. Wyjaśnienie musi być czytelne także dla kogoś, kto dopiero poznaje firmę i nie zna używanych wewnętrznie określeń."
+          ]
+        },
+        {
+          "title": "Dopasuj obrazy",
+          "paragraphs": [
+            "Udostępniaj zdjęcia o odpowiednich wymiarach i rezerwuj dla nich miejsce. Obrazy poza pierwszym widokiem można ładować później. Automatyczne opóźnienie kluczowego zdjęcia otwierającego stronę może jednak pogorszyć widoczne ładowanie.",
+            "Kontrolę wykonaj na opublikowanym adresie oraz na telefonie. Przejdź od pierwszego wejścia do zamierzonego następnego kroku, bez samodzielnego dopowiadania brakującego kontekstu. Zapisz osobno błąd działania i niejasne wyjaśnienie. Mogą wymagać innych rozwiązań oraz udziału różnych osób, dlatego wspólny komunikat o potrzebie poprawy strony często nie wystarcza do rozpoczęcia pracy."
+          ]
+        },
+        {
+          "title": "Przejrzyj dodatkowe skrypty",
+          "paragraphs": [
+            "Spisz zewnętrzne widżety, pomiar i funkcje obciążające urządzenie. Ustal, co jest potrzebne od początku. Po zmianach sprawdź formularze, wybory zgody i kontakt zarówno dotykiem, jak też za pomocą klawiatury.",
+            "Pierwszą zmianę wprowadź na reprezentatywnej stronie. Zachowaj punkt wyjścia i poproś o ocenę przed powieleniem rozwiązania w całej witrynie. To, co sprawdza się przy jednej usłudze, nie zawsze pasuje do innej grupy klientów lub produktów. Uwzględnij wyjątki oraz informacje, które pracownicy będą musieli samodzielnie aktualizować po zakończeniu wdrożenia."
+          ]
+        },
+        {
+          "title": "Zachowaj dostęp do informacji",
+          "paragraphs": [
+            "Czytelny tekst i wyraźne działania są praktycznie ważne obok samych wskaźników. Przetestuj powiększenie oraz błędy formularza. Dane kontaktowe nie powinny być dostępne wyłącznie w animacji lub trudnym menu.",
+            "Ustal, jakie zdarzenie można faktycznie zmierzyć i jaki wniosek z niego wynika. Dane wyszukiwarki, statystyki strony oraz rozmowy z klientami opisują różne fragmenty procesu. Porównuj je na właściwym poziomie i uwzględniaj luki informacyjne. Nie zamieniaj niepewnej wskazówki w stanowcze twierdzenie o konkretnej osobie, wysokości przychodu czy skuteczności całej oferty."
+          ]
+        },
+        {
+          "title": "Potwierdź działanie zmiany",
+          "paragraphs": [
+            "Porównaj tę samą stronę w zbliżonych warunkach. Później sprawdź dostępne dane użytkowania z odpowiedniego okresu. Poprawa szybkości wspiera korzystanie, lecz sama nie gwarantuje wyższych pozycji ani większej liczby trafnych zapytań.",
+            "Wyznacz właściciela kolejnej kontroli oraz odpowiedni moment przeglądu. Sprawdź, co po zmianie działa potwierdzalnie lepiej i czego nadal nie rozumieją odbiorcy. Przy małej ilości danych uzupełnij ocenę praktycznym testem zadania. Prowadź zapis innych zmian w tym samym okresie, aby późniejsza interpretacja uwzględniała również okoliczności niezwiązane bezpośrednio z ocenianą poprawką."
+          ]
+        }
+      ],
+      "checklist": [
+        "Wybierz ważną stronę i zapisz sytuację przed zmianą.",
+        "Sprawdź zgodność treści z rzeczywistym pytaniem klienta.",
+        "Przetestuj pełną drogę odbiorcy na telefonie.",
+        "Zanotuj poprawki, odpowiedzialną osobę i dostępny pomiar.",
+        "Oceniaj kliknięcia razem z dopasowaniem otrzymanych zapytań."
+      ],
+      "conclusion": "Praktyczne podejście do poprawy mobilnych doświadczeń z wyszukiwarki wymaga czytelnej informacji i możliwej do sprawdzenia dalszej drogi. Wybierz najważniejszą poprawkę, przetestuj wykonanie i omów wynik z zespołem. Latech może pomóc połączyć projekt strony, strukturę SEO oraz kontakt w jeden spójny zakres pracy."
+    },
+    {
+      "id": "online-store",
+      "title": "Struktura sklepu internetowego a ruch organiczny",
+      "slug": "struktura-sklepu-ruch-organiczny",
+      "description": "Struktura sklepu internetowego a ruch organiczny. Poznaj konkretne kontrole pomagające połączyć widoczność, czytelną informację i kontakt z klientem.",
+      "intro": [
+        "Pracę w zakresie uporządkowania produktów i kategorii pod wyszukiwanie warto zacząć od decyzji klienta i informacji, które firma potrafi mu rzetelnie przekazać. Większy ruch jest przydatny, gdy odbiorca rozumie ofertę oraz możliwy następny krok. Ten poradnik pomaga uporządkować działania z wykorzystaniem dostępnych materiałów i danych, bez obietnic pozycji ani automatycznego wzrostu sprzedaży.",
+        "Wyobraź sobie sklep sprzedający kilka rodzajów lampek biurkowych. To sytuacja hipotetyczna ilustrująca sposób pracy, a nie opis uzyskanego wyniku klienta. Wykonaj poniższe kontrole najpierw na jednej ważnej stronie. Dzięki temu łatwiej ocenisz zmianę, ustalisz odpowiedzialność i zdecydujesz, które rozwiązanie warto rozszerzyć na pozostałe podstrony."
+      ],
+      "sections": [
+        {
+          "title": "Buduj kategorie według wyboru",
+          "paragraphs": [
+            "Grupuj produkty zgodnie z cechami, których szukają kupujący. Kategoria lampek biurkowych może odpowiadać wyraźnej potrzebie. Osobne indeksowane strony każdej kombinacji koloru i rozmiaru mogą przede wszystkim powielać zawartość.",
+            "Przed zmianą zapisz obserwację w sposób, który inna osoba potrafi sprawdzić. Podaj adres, zadanie odwiedzającego oraz brakującą informację. Poproś współpracownika niezwiązanego z przygotowaniem strony o wykonanie tej samej czynności bez dodatkowych podpowiedzi. Porównaj jego rozumienie oferty z zamierzeniem firmy i nazwij konkretną różnicę, zamiast oceniać stronę wyłącznie według osobistych upodobań."
+          ]
+        },
+        {
+          "title": "Dodaj własne dane produktów",
+          "paragraphs": [
+            "Opisz zastosowanie, wymiary, warianty i ograniczenia konkretnego produktu. Skopiowane zdanie producenta niewiele ułatwia w porównaniu. Zdjęcia i wyjaśnienia powinny zmniejszać niepewność dotyczącą użytkowania oraz zawartości zamówienia.",
+            "Przygotuj krótkie zestawienie obecnego stanu, proponowanej poprawki i jej powodu. Osoba dobrze znająca ofertę powinna sprawdzić prawdziwość obietnic oraz ograniczeń. Dzięki temu poprawna technicznie edycja nie stworzy niewłaściwego oczekiwania wobec usługi. Wyjaśnienie musi być czytelne także dla kogoś, kto dopiero poznaje firmę i nie zna używanych wewnętrznie określeń."
+          ]
+        },
+        {
+          "title": "Kontroluj adresy filtrów",
+          "paragraphs": [
+            "Filtry potrafią tworzyć wiele podobnych adresów. Wybierz kombinacje odpowiadające trwałej, samodzielnej potrzebie wyszukiwania. Pozostałe mogą służyć wyłącznie nawigacji. Razem sprawdzaj linki, canonical i możliwość indeksowania.",
+            "Kontrolę wykonaj na opublikowanym adresie oraz na telefonie. Przejdź od pierwszego wejścia do zamierzonego następnego kroku, bez samodzielnego dopowiadania brakującego kontekstu. Zapisz osobno błąd działania i niejasne wyjaśnienie. Mogą wymagać innych rozwiązań oraz udziału różnych osób, dlatego wspólny komunikat o potrzebie poprawy strony często nie wystarcza do rozpoczęcia pracy."
+          ]
+        },
+        {
+          "title": "Wyjaśnij warunki zakupu",
+          "paragraphs": [
+            "Umieść dostępne informacje o dostawie, płatności i procesie zwrotów przy podejmowaniu decyzji. Zaskakujące ograniczenia dopiero w koszyku mogą przerwać wartościową wizytę. Treść musi odpowiadać rzeczywistej obsłudze sklepu.",
+            "Pierwszą zmianę wprowadź na reprezentatywnej stronie. Zachowaj punkt wyjścia i poproś o ocenę przed powieleniem rozwiązania w całej witrynie. To, co sprawdza się przy jednej usłudze, nie zawsze pasuje do innej grupy klientów lub produktów. Uwzględnij wyjątki oraz informacje, które pracownicy będą musieli samodzielnie aktualizować po zakończeniu wdrożenia."
+          ]
+        },
+        {
+          "title": "Obsłuż brak asortymentu",
+          "paragraphs": [
+            "Rozróżnij chwilowy brak towaru i trwałe wycofanie produktu. Użyteczna alternatywa może pomóc zachować sens starej strony. Nie usuwaj wszystkiego automatycznie bez oceny zapytań i możliwości wskazania odpowiedniego zamiennika.",
+            "Ustal, jakie zdarzenie można faktycznie zmierzyć i jaki wniosek z niego wynika. Dane wyszukiwarki, statystyki strony oraz rozmowy z klientami opisują różne fragmenty procesu. Porównuj je na właściwym poziomie i uwzględniaj luki informacyjne. Nie zamieniaj niepewnej wskazówki w stanowcze twierdzenie o konkretnej osobie, wysokości przychodu czy skuteczności całej oferty."
+          ]
+        },
+        {
+          "title": "Analizuj typy stron",
+          "paragraphs": [
+            "Porównaj odwiedziny kategorii, kart produktów oraz kolejne działania. Kategoria może wspierać odkrywanie, a produkt być bliżej zamówienia. Badaj różnice między urządzeniami i dokumentuj zmiany potrzebne do późniejszej interpretacji.",
+            "Wyznacz właściciela kolejnej kontroli oraz odpowiedni moment przeglądu. Sprawdź, co po zmianie działa potwierdzalnie lepiej i czego nadal nie rozumieją odbiorcy. Przy małej ilości danych uzupełnij ocenę praktycznym testem zadania. Prowadź zapis innych zmian w tym samym okresie, aby późniejsza interpretacja uwzględniała również okoliczności niezwiązane bezpośrednio z ocenianą poprawką."
+          ]
+        }
+      ],
+      "checklist": [
+        "Wybierz ważną stronę i zapisz sytuację przed zmianą.",
+        "Sprawdź zgodność treści z rzeczywistym pytaniem klienta.",
+        "Przetestuj pełną drogę odbiorcy na telefonie.",
+        "Zanotuj poprawki, odpowiedzialną osobę i dostępny pomiar.",
+        "Oceniaj kliknięcia razem z dopasowaniem otrzymanych zapytań."
+      ],
+      "conclusion": "Praktyczne podejście do uporządkowania produktów i kategorii pod wyszukiwanie wymaga czytelnej informacji i możliwej do sprawdzenia dalszej drogi. Wybierz najważniejszą poprawkę, przetestuj wykonanie i omów wynik z zespołem. Latech może pomóc połączyć projekt strony, strukturę SEO oraz kontakt w jeden spójny zakres pracy."
+    },
+    {
+      "id": "whatsapp-conversion",
+      "title": "Od wyszukiwarki do rozmowy przez WhatsApp",
+      "slug": "whatsapp-ruch-z-wyszukiwarki-zapytania",
+      "description": "Od wyszukiwarki do rozmowy przez WhatsApp. Poznaj konkretne kontrole pomagające połączyć widoczność, czytelną informację i kontakt z klientem.",
+      "intro": [
+        "Pracę w zakresie użycia WhatsApp do wartościowych zapytań ze strony warto zacząć od decyzji klienta i informacji, które firma potrafi mu rzetelnie przekazać. Większy ruch jest przydatny, gdy odbiorca rozumie ofertę oraz możliwy następny krok. Ten poradnik pomaga uporządkować działania z wykorzystaniem dostępnych materiałów i danych, bez obietnic pozycji ani automatycznego wzrostu sprzedaży.",
+        "Wyobraź sobie doradcę odbierającego krótkie pytania projektowe przez WhatsApp. To sytuacja hipotetyczna ilustrująca sposób pracy, a nie opis uzyskanego wyniku klienta. Wykonaj poniższe kontrole najpierw na jednej ważnej stronie. Dzięki temu łatwiej ocenisz zmianę, ustalisz odpowiedzialność i zdecydujesz, które rozwiązanie warto rozszerzyć na pozostałe podstrony."
+      ],
+      "sections": [
+        {
+          "title": "Najpierw przedstaw ofertę",
+          "paragraphs": [
+            "Przycisk kontaktu pomaga, gdy odwiedzający już wie, czego dotyczy usługa. Wyjaśnij obok działania, jakie potrzeby można omówić. Pływający przycisk nie musi prowadzić z każdej strony do tej samej ogólnej wiadomości.",
+            "Przed zmianą zapisz obserwację w sposób, który inna osoba potrafi sprawdzić. Podaj adres, zadanie odwiedzającego oraz brakującą informację. Poproś współpracownika niezwiązanego z przygotowaniem strony o wykonanie tej samej czynności bez dodatkowych podpowiedzi. Porównaj jego rozumienie oferty z zamierzeniem firmy i nazwij konkretną różnicę, zamiast oceniać stronę wyłącznie według osobistych upodobań."
+          ]
+        },
+        {
+          "title": "Zaproponuj krótki początek",
+          "paragraphs": [
+            "Wstępnie wpisany tekst może pytać o usługę i obecną stronę. Powinien pozostać krótki oraz edytowalny. Nie umieszczaj w nim wrażliwych informacji ani technicznych identyfikatorów, których klient nie rozumie.",
+            "Przygotuj krótkie zestawienie obecnego stanu, proponowanej poprawki i jej powodu. Osoba dobrze znająca ofertę powinna sprawdzić prawdziwość obietnic oraz ograniczeń. Dzięki temu poprawna technicznie edycja nie stworzy niewłaściwego oczekiwania wobec usługi. Wyjaśnienie musi być czytelne także dla kogoś, kto dopiero poznaje firmę i nie zna używanych wewnętrznie określeń."
+          ]
+        },
+        {
+          "title": "Sprawdź właściwy numer",
+          "paragraphs": [
+            "Przetestuj link na komputerze i telefonie, uwzględniając pełny numer międzynarodowy. Sprawdź przejście do dostępnej wersji WhatsApp. Latech korzysta z +34684739091; publikuj wyłącznie numer należący faktycznie do wskazanej organizacji.",
+            "Kontrolę wykonaj na opublikowanym adresie oraz na telefonie. Przejdź od pierwszego wejścia do zamierzonego następnego kroku, bez samodzielnego dopowiadania brakującego kontekstu. Zapisz osobno błąd działania i niejasne wyjaśnienie. Mogą wymagać innych rozwiązań oraz udziału różnych osób, dlatego wspólny komunikat o potrzebie poprawy strony często nie wystarcza do rozpoczęcia pracy."
+          ]
+        },
+        {
+          "title": "Opisz dostępność uczciwie",
+          "paragraphs": [
+            "Wyjaśnij sposób oceny zapytań bez obietnicy natychmiastowej odpowiedzi, jeśli nie można jej zapewnić. Strona powinna pomagać również osobom niegotowym do pisania. Kontakt nie zastępuje brakującego opisu usługi.",
+            "Pierwszą zmianę wprowadź na reprezentatywnej stronie. Zachowaj punkt wyjścia i poproś o ocenę przed powieleniem rozwiązania w całej witrynie. To, co sprawdza się przy jednej usłudze, nie zawsze pasuje do innej grupy klientów lub produktów. Uwzględnij wyjątki oraz informacje, które pracownicy będą musieli samodzielnie aktualizować po zakończeniu wdrożenia."
+          ]
+        },
+        {
+          "title": "Oddziel kliknięcie od wiadomości",
+          "paragraphs": [
+            "Rejestruj kliknięcie linku jako zamiar kontaktu. Wysłanie wiadomości odbywa się poza stroną i nie jest automatycznie widoczne. W raporcie nazwij dokładnie krok, który faktycznie został zmierzony.",
+            "Ustal, jakie zdarzenie można faktycznie zmierzyć i jaki wniosek z niego wynika. Dane wyszukiwarki, statystyki strony oraz rozmowy z klientami opisują różne fragmenty procesu. Porównuj je na właściwym poziomie i uwzględniaj luki informacyjne. Nie zamieniaj niepewnej wskazówki w stanowcze twierdzenie o konkretnej osobie, wysokości przychodu czy skuteczności całej oferty."
+          ]
+        },
+        {
+          "title": "Wykorzystuj powtarzalne pytania",
+          "paragraphs": [
+            "Jeśli znasz kontekst strony źródłowej, zestaw go z tematem rozmowy. Gdy klienci pytają ciągle o podstawową rzecz, dopisz odpowiedź. Liczba kliknięć przycisku nie pokazuje sama, czy zgłoszenia pasują do oferty.",
+            "Wyznacz właściciela kolejnej kontroli oraz odpowiedni moment przeglądu. Sprawdź, co po zmianie działa potwierdzalnie lepiej i czego nadal nie rozumieją odbiorcy. Przy małej ilości danych uzupełnij ocenę praktycznym testem zadania. Prowadź zapis innych zmian w tym samym okresie, aby późniejsza interpretacja uwzględniała również okoliczności niezwiązane bezpośrednio z ocenianą poprawką."
+          ]
+        }
+      ],
+      "checklist": [
+        "Wybierz ważną stronę i zapisz sytuację przed zmianą.",
+        "Sprawdź zgodność treści z rzeczywistym pytaniem klienta.",
+        "Przetestuj pełną drogę odbiorcy na telefonie.",
+        "Zanotuj poprawki, odpowiedzialną osobę i dostępny pomiar.",
+        "Oceniaj kliknięcia razem z dopasowaniem otrzymanych zapytań."
+      ],
+      "conclusion": "Praktyczne podejście do użycia WhatsApp do wartościowych zapytań ze strony wymaga czytelnej informacji i możliwej do sprawdzenia dalszej drogi. Wybierz najważniejszą poprawkę, przetestuj wykonanie i omów wynik z zespołem. Latech może pomóc połączyć projekt strony, strukturę SEO oraz kontakt w jeden spójny zakres pracy."
+    },
+    {
+      "id": "website-migration",
+      "title": "Migracja strony z zachowaniem kontekstu SEO",
+      "slug": "migracja-strony-adresy-seo",
+      "description": "Migracja strony z zachowaniem kontekstu SEO. Poznaj konkretne kontrole pomagające połączyć widoczność, czytelną informację i kontakt z klientem.",
+      "intro": [
+        "Pracę w zakresie przygotowania migracji strony z uwzględnieniem SEO warto zacząć od decyzji klienta i informacji, które firma potrafi mu rzetelnie przekazać. Większy ruch jest przydatny, gdy odbiorca rozumie ofertę oraz możliwy następny krok. Ten poradnik pomaga uporządkować działania z wykorzystaniem dostępnych materiałów i danych, bez obietnic pozycji ani automatycznego wzrostu sprzedaży.",
+        "Wyobraź sobie firmę przenoszącą stare opisy usług do nowej struktury. To sytuacja hipotetyczna ilustrująca sposób pracy, a nie opis uzyskanego wyniku klienta. Wykonaj poniższe kontrole najpierw na jednej ważnej stronie. Dzięki temu łatwiej ocenisz zmianę, ustalisz odpowiedzialność i zdecydujesz, które rozwiązanie warto rozszerzyć na pozostałe podstrony."
+      ],
+      "sections": [
+        {
+          "title": "Zachowaj punkt wyjścia",
+          "paragraphs": [
+            "Wyeksportuj istniejące adresy i dostępne dane kliknięć, linków oraz treści. Uwzględnij używane dokumenty i obrazy. Ocenę migracji ułatwia wiedza o tym, jakie informacje były dostępne przed zmianą.",
+            "Przed zmianą zapisz obserwację w sposób, który inna osoba potrafi sprawdzić. Podaj adres, zadanie odwiedzającego oraz brakującą informację. Poproś współpracownika niezwiązanego z przygotowaniem strony o wykonanie tej samej czynności bez dodatkowych podpowiedzi. Porównaj jego rozumienie oferty z zamierzeniem firmy i nazwij konkretną różnicę, zamiast oceniać stronę wyłącznie według osobistych upodobań."
+          ]
+        },
+        {
+          "title": "Przygotuj mapę adresów",
+          "paragraphs": [
+            "Przypisz ważne stare adresy do najbliższych odpowiedników. Szczegółowa usługa zwykle nie powinna trafiać na ogólną stronę główną, jeżeli istnieje nowy opis. Zaznacz materiały, dla których trzeba dopiero ustalić sensowną przyszłość.",
+            "Przygotuj krótkie zestawienie obecnego stanu, proponowanej poprawki i jej powodu. Osoba dobrze znająca ofertę powinna sprawdzić prawdziwość obietnic oraz ograniczeń. Dzięki temu poprawna technicznie edycja nie stworzy niewłaściwego oczekiwania wobec usługi. Wyjaśnienie musi być czytelne także dla kogoś, kto dopiero poznaje firmę i nie zna używanych wewnętrznie określeń."
+          ]
+        },
+        {
+          "title": "Ustaw celowe przekierowania",
+          "paragraphs": [
+            "Przy trwałej zmianie adresu użyj odpowiedniego stałego przekierowania. Unikaj zbędnych łańcuchów i sprawdź ostateczny cel. Przekierowanie nie wyrównuje różnicy, gdy nowa strona odpowiada na zupełnie inną potrzebę.",
+            "Kontrolę wykonaj na opublikowanym adresie oraz na telefonie. Przejdź od pierwszego wejścia do zamierzonego następnego kroku, bez samodzielnego dopowiadania brakującego kontekstu. Zapisz osobno błąd działania i niejasne wyjaśnienie. Mogą wymagać innych rozwiązań oraz udziału różnych osób, dlatego wspólny komunikat o potrzebie poprawy strony często nie wystarcza do rozpoczęcia pracy."
+          ]
+        },
+        {
+          "title": "Sprawdź środowisko produkcyjne",
+          "paragraphs": [
+            "Zweryfikuj canonical, indeksowanie, linki wewnętrzne i mapę strony na docelowej domenie. Usuń testowe blokady tam, gdzie przewidziano publikację. Zachowaj ochronę obszarów, które rzeczywiście powinny pozostać prywatne.",
+            "Pierwszą zmianę wprowadź na reprezentatywnej stronie. Zachowaj punkt wyjścia i poproś o ocenę przed powieleniem rozwiązania w całej witrynie. To, co sprawdza się przy jednej usłudze, nie zawsze pasuje do innej grupy klientów lub produktów. Uwzględnij wyjątki oraz informacje, które pracownicy będą musieli samodzielnie aktualizować po zakończeniu wdrożenia."
+          ]
+        },
+        {
+          "title": "Zaplanuj kontrolę uruchomienia",
+          "paragraphs": [
+            "Po publikacji przetestuj reprezentatywne stare adresy, główne usługi i kontakt. Sprawdź obrazy oraz formularze. Sam poprawny wygląd nowej strony głównej nie potwierdza, że dawni odwiedzający mają odpowiednie miejsca docelowe.",
+            "Ustal, jakie zdarzenie można faktycznie zmierzyć i jaki wniosek z niego wynika. Dane wyszukiwarki, statystyki strony oraz rozmowy z klientami opisują różne fragmenty procesu. Porównuj je na właściwym poziomie i uwzględniaj luki informacyjne. Nie zamieniaj niepewnej wskazówki w stanowcze twierdzenie o konkretnej osobie, wysokości przychodu czy skuteczności całej oferty."
+          ]
+        },
+        {
+          "title": "Obserwuj i diagnozuj",
+          "paragraphs": [
+            "Analizuj błędy oraz zmiany dostępnych danych wyszukiwania. Po migracji mogą pojawiać się wahania. Najpierw usuń potwierdzone złe przekierowania i braki treści, zamiast natychmiast przebudowywać całą strukturę bez ustalenia przyczyny.",
+            "Wyznacz właściciela kolejnej kontroli oraz odpowiedni moment przeglądu. Sprawdź, co po zmianie działa potwierdzalnie lepiej i czego nadal nie rozumieją odbiorcy. Przy małej ilości danych uzupełnij ocenę praktycznym testem zadania. Prowadź zapis innych zmian w tym samym okresie, aby późniejsza interpretacja uwzględniała również okoliczności niezwiązane bezpośrednio z ocenianą poprawką."
+          ]
+        }
+      ],
+      "checklist": [
+        "Wybierz ważną stronę i zapisz sytuację przed zmianą.",
+        "Sprawdź zgodność treści z rzeczywistym pytaniem klienta.",
+        "Przetestuj pełną drogę odbiorcy na telefonie.",
+        "Zanotuj poprawki, odpowiedzialną osobę i dostępny pomiar.",
+        "Oceniaj kliknięcia razem z dopasowaniem otrzymanych zapytań."
+      ],
+      "conclusion": "Praktyczne podejście do przygotowania migracji strony z uwzględnieniem SEO wymaga czytelnej informacji i możliwej do sprawdzenia dalszej drogi. Wybierz najważniejszą poprawkę, przetestuj wykonanie i omów wynik z zespołem. Latech może pomóc połączyć projekt strony, strukturę SEO oraz kontakt w jeden spójny zakres pracy."
+    },
+    {
+      "id": "seo-audit",
+      "title": "Audyt SEO, który pomaga ustalić priorytety",
+      "slug": "audyt-seo-priorytety-dla-firmy",
+      "description": "Audyt SEO, który pomaga ustalić priorytety. Poznaj konkretne kontrole pomagające połączyć widoczność, czytelną informację i kontakt z klientem.",
+      "intro": [
+        "Audyt SEO pomaga ustalić, dlaczego ważnych stron nie można znaleźć, zrozumieć albo użyć. Sama liczba ostrzeżeń nie odróżnia usługi przypadkowo zablokowanej przed wyszukiwarką od archiwum, które firma celowo wyłączyła z indeksowania. Priorytet wymaga poznania skutku, a nie tylko etykiety narzędzia.",
+        "Wyobraź sobie firmę konserwacyjną ze starymi odnośnikami i powtarzającymi się opisami. To przykład hipotetyczny. Naprawa drogi do usługi i poprawa opisów wymagają różnych dowodów, dlatego nie powinny automatycznie otrzymywać takiej samej kolejności tylko dlatego, że występują w jednym raporcie z audytu."
+      ],
+      "sections": [
+        {
+          "title": "Zacznij od ważnych stron",
+          "paragraphs": [
+            "Wybierz usługi i kategorie wspierające konkretny cel firmy. Sprawdź dostęp użytkowników oraz wyszukiwarek. Zablokowana główna usługa zwykle zasługuje na wcześniejszą uwagę niż kosmetyczny komunikat dotyczący rzadko odwiedzanego archiwum.",
+            "Przejdź od strony głównej do oferty konserwacji i sprawdź końcowy adres. Jeżeli prowadzi do wycofanej usługi, ścieżka wyboru wykonawcy jest przerwana. Podobny błąd w starej aktualności może mieć mniejsze znaczenie, mimo identycznej etykiety w raporcie. Zapisz więc nie tylko kod błędu, lecz także to, jaką decyzję klienta blokuje znaleziony problem."
+          ]
+        },
+        {
+          "title": "Zbieraj potwierdzone dowody",
+          "paragraphs": [
+            "Zapisz adres, obserwację możliwą do odtworzenia i spodziewany wpływ na korzystanie lub odkrywanie. Wynik narzędzia jest wskazówką. Sprawdź problem ręcznie, zanim zlecisz tę samą zmianę na wielu stronach.",
+            "Przy powtarzających się tytułach otwórz dwa wskazane adresy i porównaj ich zawartość. Różne usługi potrzebują rozpoznawalnych nazw; warianty sortowania mogą wymagać spójnej wersji preferowanej. Zgodność tekstu nie wybiera rozwiązania za osobę oceniającą stronę. Najpierw ustal, czy są to odrębne odpowiedzi, czy tylko różne adresy prowadzące do niemal tego samego materiału w katalogu."
+          ]
+        },
+        {
+          "title": "Odróżnij blokadę od ulepszenia",
+          "paragraphs": [
+            "Przypadkowy noindex ważnej strony różni się od tytułu, który można lepiej napisać. Opisz konsekwencję. Przy priorytecie uwzględnij wagę, zasięg, nakład pracy oraz niepewność diagnozy zamiast samej liczby ostrzeżeń.",
+            "Oceń zasięg według szablonu, a nie wyłącznie liczby adresów. Brak kontaktu we wspólnym szablonie usług dotyka wielu ofert, podczas gdy pojedyncza literówka ma ograniczony skutek. Sprawdź kilka różnych przykładów przed uznaniem, że jedna poprawka usuwa całą grupę ostrzeżeń. Wspólna etykieta nie dowodzi jeszcze wspólnej przyczyny technicznej ani identycznego wpływu na wszystkie strony."
+          ]
+        },
+        {
+          "title": "Łącz technikę z treścią",
+          "paragraphs": [
+            "Dostępna strona może odpowiadać na niewłaściwe pytanie. Porównaj tytuł, opis i ofertę z potrzebą wyszukującego. Audyt powinien łączyć ocenę dostępu z oceną przydatności, bez nazywania każdego problemu technicznym.",
+            "Dostępna strona napraw może opisywać wyłącznie wymianę urządzenia. Kontrole techniczne przejdą, ale obietnica pozostanie myląca. Porównaj nazwę, czynności i wyłączenia z rzeczywistą ofertą. Dodatkowe słowa kluczowe albo szybsze zdjęcie nie rozwiążą takiej rozbieżności. Najpierw trzeba wyjaśnić, jaką pracę klient może zlecić i kiedy powinien wybrać inną usługę oferowaną przez firmę."
+          ]
+        },
+        {
+          "title": "Zapisz zadanie do wykonania",
+          "paragraphs": [
+            "Określ właściciela, oczekiwaną zmianę i kontrolę po wdrożeniu. Polecenie poprawy SEO bez adresu i kryterium nie pomaga. Przy zależnościach między systemami wskaż, co trzeba zrobić najpierw i kto to potwierdzi.",
+            "Konkretne zadanie może polegać na zastąpieniu starego linku w stopce aktualnym adresem konserwacji oraz sprawdzeniu końcowej odpowiedzi. Jeżeli nowa strona jeszcze nie istnieje, jej przygotowanie jest warunkiem naprawy. Sama zmiana odnośnika nie zapewnia brakującego wyjaśnienia. Kryterium odbioru powinno obejmować działający adres z właściwą ofertą, a nie tylko zmieniony tekst w panelu."
+          ]
+        },
+        {
+          "title": "Zweryfikuj rezultat",
+          "paragraphs": [
+            "Sprawdź poprawkę na opublikowanej stronie i zanotuj datę. Później oceń odpowiednie dane, ale nie przypisuj całej zmiany jednej czynności. Popyt, konkurencja i równoległe publikacje mogą wpływać na ten sam okres.",
+            "Po poprawce canonical sprawdź opublikowany element i odnośniki, które nadal mogą wspierać porzucony wariant. Raporty indeksowania mogą zmienić się później. Oddziel poprawność wdrożenia od obserwacji adresu wybranego przez wyszukiwarkę. To dwie różne informacje, otrzymywane w innym momencie. Nie zamykaj obu pytań jednym stwierdzeniem, że po zapisaniu ustawienia problem na pewno został całkowicie rozwiązany."
+          ]
+        }
+      ],
+      "checklist": [
+        "Przejdź ważnym linkiem usługi do końcowego adresu.",
+        "Potwierdź zgłoszony błąd na rzeczywiście dotkniętych stronach.",
+        "Oddziel wadę szablonu od pojedynczego problemu.",
+        "Opisz naprawę i konkretne kryterium odbioru.",
+        "Rozróżnij poprawne wdrożenie od późniejszych obserwacji wyszukiwarki."
+      ],
+      "conclusion": "Nadaj pierwszeństwo potwierdzonym przeszkodom dotyczącym użytecznych stron i opisz odpowiednią naprawę. Wartość audytu wynika z lepszego dostępu oraz zrozumienia oferty, a nie wyłącznie ze zmniejszenia liczby komunikatów w narzędziu."
+    },
+    {
+      "id": "search-intent",
+      "title": "Intencja wyszukiwania a wybór strony docelowej",
+      "slug": "intencja-wyszukiwania-mapa-stron",
+      "description": "Intencja wyszukiwania a wybór strony docelowej. Poznaj konkretne kontrole pomagające połączyć widoczność, czytelną informację i kontakt z klientem.",
+      "intro": [
+        "Intencja wyszukiwania to zadanie stojące za pytaniem: zrozumienie zjawiska, porównanie możliwości lub wybór wykonawcy. Wspólne słowa mogą ukrywać różne decyzje, które potrzebują innych wyjaśnień i miejsc docelowych. Rozdzielenie tych potrzeb pomaga dobrać format zamiast tworzyć stronę dla każdego wariantu frazy.",
+        "Przykładowa osoba szuka informacji o hałasie pompy ciepła, konserwacji i instalatorze. To sytuacja hipotetyczna. Produkt pozostaje ten sam, ale kolejne pytania wymagają wyjaśnienia przyczyn, zakresu usługi oraz podstaw oceny dostawcy. Jedna ogólna prezentacja firmy nie musi spełniać wszystkich tych zadań równie dobrze."
+      ],
+      "sections": [
+        {
+          "title": "Czytaj pełne pytanie",
+          "paragraphs": [
+            "Ten sam termin może oznaczać naukę, porównanie lub poszukiwanie wykonawcy. Uwzględnij sformułowanie i kontekst biznesowy. Pytanie o koszty wymaga innego wyjaśnienia niż prośba o wykonanie ściśle określonej usługi.",
+            "Pytanie o nocne buczenie wymaga omówienia możliwych przyczyn, normalnej pracy i sygnałów uzasadniających kontrolę. Sam formularz zamówienia pozostawia wątpliwość bez odpowiedzi. Poradnik może wskazać profesjonalną ocenę po wyjaśnieniu problemu, bez traktowania każdego poszukiwania informacji jako gotowości do kupienia płatnej usługi. Czytelnik musi najpierw rozpoznać, czy opis w ogóle odpowiada jego sytuacji."
+          ]
+        },
+        {
+          "title": "Grupuj podobne potrzeby",
+          "paragraphs": [
+            "Łącz zapytania dotyczące tej samej decyzji. Nie twórz osobnych stron dla każdej odmiany lub kolejności słów. Kompletny tekst może odpowiadać na różne warianty, jeżeli odbiorca i zadanie pozostają wspólne.",
+            "Połącz pytania o częstotliwość konserwacji i termin przeglądu, jeżeli wymagają tych samych interwałów oraz wyjątków. Koszt instalacji wydziel, kiedy zależy od innych czynników i prowadzi do innej oferty. Sprawdź, czy jedna pełna odpowiedź zaspokaja obie potrzeby bez nagłej zmiany tematu. Inny szyk wyrazów sam w sobie nie tworzy nowego zadania dla odbiorcy."
+          ]
+        },
+        {
+          "title": "Dobierz rodzaj treści",
+          "paragraphs": [
+            "Poradnik pomaga zrozumieć problem, strona usługi opisuje współpracę, a kategoria ułatwia wybór produktów. Sprawdź, jakiej formy potrzebuje odbiorca. Sam formularz nad tekstem informacyjnym nie rozwiązuje błędnego dopasowania zawartości.",
+            "Obserwuj rodzaje wyników dla reprezentatywnych pytań, uwzględniając ich zmienność. Gdy dominują porównania, krótki opis handlowy może pomijać oczekiwane kryteria wyboru. Wyjaśnij kryteria dotyczące własnej oferty zamiast przepisywać konkurentów. Aktualny wygląd wyników stanowi wskazówkę o zadaniu odbiorcy, ale nie jest stałym poleceniem, aby powielić każdą sekcję najlepiej widocznej strony."
+          ]
+        },
+        {
+          "title": "Ustal główne miejsce",
+          "paragraphs": [
+            "Przypisz każdej istotnej potrzebie czytelną stronę docelową. Zapisz materiały pomocnicze i ich relację z usługą. Ogranicza to powstawanie wielu podobnych podstron, z których każda zawiera tylko fragment pełnej odpowiedzi.",
+            "Przypisz zamówienie konserwacji do głównej strony usługi, a interwały do poradnika wspierającego. Link do wykonania prac umieść tam, gdzie staje się przydatny. Osobne strony przeglądu rocznego i corocznej konserwacji mogą rozdrabniać tę samą odpowiedź. Jeżeli klient nie potrafi wskazać różnicy w czynnościach, same odmienne nazwy nie uzasadniają dwóch konkurujących ofert w nawigacji."
+          ]
+        },
+        {
+          "title": "Sprawdź rzeczywiste zapytania",
+          "paragraphs": [
+            "Wykorzystaj dostępne pytania i strony docelowe do sprawdzenia początkowej mapy. Przyjrzyj się zaskakującym zestawieniom. Jeżeli strona wyświetla się na szerszą frazę, oceń, czy rzeczywiście pomaga takiemu odwiedzającemu.",
+            "Jeśli strona instalacji pojawia się przy pytaniach o naprawę, poszukaj fragmentu sugerującego taką dostępność. Zdanie o przywracaniu sprawności starych systemów może tworzyć nieporozumienie. Doprecyzuj granicę przed rozbudowaniem treści o nieświadczone prace. Nieoczekiwane wyświetlenie jest tropem do zbadania, a nie automatycznym dowodem, że firmie brakuje nowej usługi w katalogu lub osobnego artykułu na ten temat."
+          ]
+        },
+        {
+          "title": "Porównaj oczekiwania klientów",
+          "paragraphs": [
+            "Zapytaj zespół, z jakimi wyobrażeniami ludzie zaczynają rozmowę. Nietrafne zgłoszenia mogą wskazywać zbyt szeroką obietnicę. Doprecyzuj zakres i drogę kontaktu, a następnie oceń rozmowy przed publikacją kolejnych stron.",
+            "Oddziel pytania przygotowawcze od zgłoszeń spoza zakresu. Osoba pytająca o potrzebne zdjęcia wymaga czytelnego następnego kroku. Osoba oczekująca interwencji awaryjnej mogła błędnie odczytać obietnicę. To inne problemy, mimo wspólnego adresu wejścia i podobnego słownictwa. Pierwszy sugeruje uzupełnienie instrukcji, drugi wyraźniejsze określenie dostępności, zanim rozmówca poświęci czas na szczegółowe opisanie niedopasowanego zlecenia."
+          ]
+        }
+      ],
+      "checklist": [
+        "Nazwij zadanie za reprezentatywnymi pytaniami.",
+        "Połącz warianty potrzebujące tej samej pełnej odpowiedzi.",
+        "Świadomie wybierz poradnik, porównanie lub usługę.",
+        "Przypisz potrzebie handlowej jedno główne miejsce.",
+        "Sprawdź nieoczekiwane zapytania względem granic oferty."
+      ],
+      "conclusion": "Przypisz rozpoznawalnej decyzji kompletną odpowiedź i sprawdzaj ten podział w zapytaniach oraz rozmowach. Nowa strona ma sens wtedy, gdy odrębne zadanie wymaga własnego wyjaśnienia, którego nie zapewniają istniejące materiały."
+    },
+    {
+      "id": "service-pages",
+      "title": "Strony usług łączące SEO z konkretnym zapytaniem",
+      "slug": "strony-uslug-seo-zapytania",
+      "description": "Strony usług łączące SEO z konkretnym zapytaniem. Poznaj konkretne kontrole pomagające połączyć widoczność, czytelną informację i kontakt z klientem.",
+      "intro": [
+        "Strona usługi powinna pomóc rozpoznać, czy praca odpowiada konkretnemu problemowi. Potrzebuje zrozumiałej obietnicy, granic, odpowiednich dowodów oraz kontaktu dopasowanego do możliwej oceny. Czytelnik powinien wiedzieć, co firma może ustalić przed wizytą i jakie pytania pozostaną otwarte do czasu dalszych oględzin.",
+        "Rozważ hipotetycznego wykonawcę konserwacji budynków. Odwiedzający musi odróżnić planowaną inspekcję od pilnej naprawy, zanim wyśle zdjęcia albo poprosi o przyjazd. Wyjaśnienie tej różnicy przygotowuje rozmowę lepiej niż rozbudowana historia przedsiębiorstwa umieszczona przed zakresem prac i podstawowymi warunkami współpracy."
+      ],
+      "sections": [
+        {
+          "title": "Wyznacz granice usługi",
+          "paragraphs": [
+            "Opisz rozwiązywany problem oraz sytuacje, w których usługa jest odpowiednia. Wyjaśnij różnicę między powiązanymi pracami. Odbiorca powinien rozpoznać potrzebę konserwacji, naprawy lub wymiany bez znajomości wewnętrznego żargonu firmy.",
+            "Pokaż praktyczną różnicę: inspekcja rozpoznaje zużycie i przygotowuje konserwację, a naprawa dotyczy znanej usterki. Jeśli nie ma wizyt awaryjnych, zaznacz to przy definicji. Szerokie określenie obsługa budynku nie powinno sugerować natychmiastowej dostępności, którą pracownik później musi odwołać. Granica oferty ma pomóc wybrać właściwą drogę, zanim klient rozpocznie szczegółowe opisywanie pilnego problemu."
+          ]
+        },
+        {
+          "title": "Odpowiedz przed kontaktem",
+          "paragraphs": [
+            "Wyjaśnij możliwy zakres, potrzebne informacje i ograniczenia. Nie podawaj nieuzasadnionych stałych cen lub terminów. Pokaż, które elementy współpracy mogą zostać określone dopiero po poznaniu konkretnej sytuacji klienta.",
+            "Wyjaśnij, co można ocenić ze zdjęcia, a co wymaga dostępu do obiektu. Widoczne uszkodzenie nie zawsze ujawnia ukrytą przyczynę. Lokalizacja, element i objawy pomagają rozpocząć rozmowę, ale nie gwarantują diagnozy ani stałej ceny na odległość. Takie rozróżnienie pozwala poprosić o użyteczne materiały bez nadmiernej obietnicy dotyczącej tego, co da się rozstrzygnąć przed oględzinami."
+          ]
+        },
+        {
+          "title": "Ułóż logiczną strukturę",
+          "paragraphs": [
+            "Zacznij od usługi i odbiorców, następnie opisz podejście, przykłady oraz kontakt. Nagłówki powinny zachować znaczenie przy szybkim przeglądaniu. Nie poprzedzaj właściwej odpowiedzi długim, ogólnym przedstawieniem całej firmy.",
+            "Najpierw odpowiedz, czy to odpowiednia usługa, następnie opisz przebieg. Na telefonie zakres i kontakt powinny być łatwe do odnalezienia po przeczytaniu początku. Schemat pomaga, kiedy nazywa rzeczywiste etapy, takie jak ocena, propozycja prac i uzgodniony termin. Ogólne hasła o jakości i innowacyjności nie zastępują informacji o tym, co dzieje się po wysłaniu pierwszej wiadomości."
+          ]
+        },
+        {
+          "title": "Dobierz odpowiednie dowody",
+          "paragraphs": [
+            "Użyj materiałów odnoszących się do tej usługi. Opisz początkową potrzebę i wybrane rozwiązanie. Sam znak klienta lub fotografia mówi mniej niż wyjaśnienie kwestii, którą rozważa podobna osoba przed współpracą.",
+            "Zdjęcie inspekcji staje się dowodem dzięki podpisowi nazywającemu problem oraz wykonaną czynność. Nie wyprowadzaj z fotografii nieudokumentowanych oszczędności ani parametrów budynku. Wyraźnie oznaczony schemat ilustracyjny może tłumaczyć metodę, gdy brak odpowiedniego materiału z realizacji. Odbiorca powinien odróżnić pokaz działania od dowodu wykonania konkretnego zlecenia bez domyślania się statusu przykładu i pochodzenia materiału."
+          ]
+        },
+        {
+          "title": "Połącz powiązane informacje",
+          "paragraphs": [
+            "Wskaż pogłębiony poradnik albo inną usługę, gdy odpowiadają na dalszą potrzebę. Tekst linku powinien opisywać cel. Dodawaj odnośniki tam, gdzie wspierają rzeczywiste pytanie, zamiast umieszczać je mechanicznie w każdym akapicie.",
+            "Link do przyczyn wilgoci umieść przy związanej z nimi wątpliwości, a do wymiany wtedy, kiedy naprawa może być nieodpowiednia. Powtarzanie wszystkich usług między akapitami rozprasza ocenę wybranej oferty. Nazwij dodatkową odpowiedź dostępną pod linkiem. Podstawowy zakres powinien pozostać zrozumiały bez otwierania kilku następnych kart tylko po to, aby odkryć, co właściwie można zamówić w tym miejscu."
+          ]
+        },
+        {
+          "title": "Oceń drogę kontaktu",
+          "paragraphs": [
+            "W miarę możliwości sprawdzaj, jaką stronę klient widział i czego nie zrozumiał. Powtarzalne wątpliwości uzupełnij w treści. Formularz powinien zbierać dane potrzebne do oceny usługi, a nie zastępować brakujące podstawowe wyjaśnienia.",
+            "Kontakt może prosić o typ budynku, lokalizację i krótki opis usterki. Wyjaśnij, że dane przygotowują ocenę, ale nie potwierdzają terminu ani kosztu. Sprawdź, czy sugerowana wiadomość wskazuje właściwą usługę i pozwala na edycję. Nie każdy klient pasuje do przykładu lub zna techniczną nazwę elementu, więc pytania nie powinny wymagać samodzielnego przeprowadzenia profesjonalnej diagnozy przed pierwszą rozmową."
+          ]
+        }
+      ],
+      "checklist": [
+        "Wyjaśnij różnice między usługą a alternatywami.",
+        "Określ możliwości i ograniczenia oceny ze zdjęć.",
+        "Utrzymuj czytelny zakres, przebieg i kontakt.",
+        "Nazwij dowód wynikający z rzeczywistego przykładu pracy.",
+        "Przetestuj edytowalną wiadomość konkretnej usługi na telefonie."
+      ],
+      "conclusion": "Przed kontaktem wyjaśnij czynności i ograniczenia. Dobierz dowody oraz pytania tak, aby rozmowa dotyczyła realnej sytuacji klienta, a obietnica na stronie odpowiadała pracy, którą zespół rzeczywiście może wykonać."
+    },
+    {
+      "id": "seo-titles-clicks",
+      "title": "Tytuły SEO, które wspierają właściwe kliknięcia",
+      "slug": "tytuly-seo-trafne-klikniecia",
+      "description": "Tytuły SEO, które wspierają właściwe kliknięcia. Poznaj konkretne kontrole pomagające połączyć widoczność, czytelną informację i kontakt z klientem.",
+      "intro": [
+        "Tytuł w wynikach pomaga ocenić, czy strona odpowiada potrzebie. Poprawa wymaga zgodności z treścią i porównywalnych danych, bez zakładania, że mocniejsze sformułowanie automatycznie przyniesie właściwe zapytania lub sprzedaż. Nazwa powinna ułatwiać rozpoznanie oferty, zanim ktoś poświęci czas na odwiedzenie strony.",
+        "Załóżmy hipotetycznie, że współczynnik kliknięć spada, ale liczba wyświetleń rośnie. Szersza widoczność na niższych pozycjach może wyjaśniać taki ruch bez zmiany samego tytułu. Najpierw sprawdź podobne grupy zapytań, aby odróżnić efekt ich składu od możliwego wpływu nowej redakcji wyniku."
+      ],
+      "sections": [
+        {
+          "title": "Nazwij temat na początku",
+          "paragraphs": [
+            "Wskaż usługę, kategorię lub pytanie faktycznie omawiane na stronie. Dodaj wyróżnik tylko wtedy, gdy znajduje potwierdzenie w treści. Ogólny tytuł powitalny niewiele mówi osobie wybierającej wynik wyszukiwania.",
+            "Przy konserwacji kotłów nazwij usługę i rzeczywisty obszar obsługi zamiast używać ogólnej obietnicy komfortu. Dodaj wyróżnik tylko wtedy, gdy treść go potwierdza. Nie zapowiadaj pilnej pomocy przy wyłącznie planowanych wizytach: taki klik zaczyna rozmowę od oczekiwania, którego pracownicy nie mogą spełnić. Większa atrakcyjność nie naprawia niezgodności między zapowiedzią a dostępnym świadczeniem."
+          ]
+        },
+        {
+          "title": "Rozróżnij podobne strony",
+          "paragraphs": [
+            "Porównaj tytuły sąsiednich usług i artykułów. Jeżeli brzmią tak samo, klient nie rozumie różnic. Wyróżniaj rzeczywistym tematem zamiast dodawać do marki wszędzie tę samą listę słów o wysokiej jakości.",
+            "Strony inspekcji i naprawy powinny różnić się także tytułami. Sama nazwa firmy dopisana do ogólnego słowa Usługi nie pokazuje różnicy. Po zmianie szablonu sprawdź kilka ofert, aby standardowa wartość nie nadpisała nazw konkretnych prac. Użytkownik porównujący wyniki potrzebuje rozpoznawalnego przedmiotu strony, a nie serii identycznych etykiet, których znaczenie poznaje dopiero po kolejnych wejściach."
+          ]
+        },
+        {
+          "title": "Obiecuj rzeczowo",
+          "paragraphs": [
+            "Gwarancja wyniku lub najniższej ceny wymaga dowodów, których zwykle nie ma. Wybierz konkretną informację o zakresie. Po kliknięciu odbiorca powinien otrzymać treść odpowiadającą oczekiwaniu zbudowanemu przez tytuł.",
+            "Porównaj opublikowany element title, widoczny nagłówek i wykonywane czynności. Słowa nie muszą być identyczne, ale powinny wskazywać tę samą usługę. Tytuł zapowiadający ceny nie pasuje do samego formularza poznawczego bez informacji kosztowej. Udostępnij zapowiadaną odpowiedź albo zmień obietnicę przed oceną skuteczności. Inaczej dodatkowe kliknięcia mogą wynikać właśnie z informacji, której klient ostatecznie nie znajduje na stronie."
+          ]
+        },
+        {
+          "title": "Napisz pomocny opis",
+          "paragraphs": [
+            "Metaopis może podsumować zawartość i kolejny krok, ale wyszukiwarka nie musi go pokazać. Może wybrać inny fragment. Twórz naturalne zdanie przydatne samo w sobie, bez ciągłego powtarzania tej samej frazy.",
+            "Opis może przedstawiać ocenę, objęte prace i przygotowanie do rozmowy. Nie reklamuj cennika, którego nie ma. Google może wybrać inny fragment, więc przejrzysty tekst strony nadal ma znaczenie. Pisz dla osoby spoza firmy i zastępuj wewnętrzne kody zwykłą nazwą, jeżeli lepiej wyjaśnia ona zawartość. Dobrze przygotowana metainformacja nie zastępuje jasnego opisu dostępnego po przejściu do oferty."
+          ]
+        },
+        {
+          "title": "Porównuj podobne grupy",
+          "paragraphs": [
+            "Oceniaj CTR razem z wyświetleniami, wskazaniem pozycji, urządzeniem i rodzajem zapytania. Zmiana udziału pytań o markę może przesunąć średnią. W miarę możliwości porównuj tę samą stronę i podobne potrzeby.",
+            "Porównuj zapytania markowe z markowymi, a ogólne pytania serwisowe z podobnymi potrzebami. Obok kliknięć i wyświetleń sprawdź pozycję oraz urządzenia. Nowe szerokie frazy mogą obniżyć wynik zbiorczy. Stabilna grupa porównawcza daje więcej podstaw niż jedna średnia do oceny, czy zmiana tytułu współwystępuje z lepiej dopasowanym ruchem, czy zmienił się jedynie zakres widoczności badanej strony."
+          ]
+        },
+        {
+          "title": "Dokumentuj edycje",
+          "paragraphs": [
+            "Zmień ograniczoną grupę tytułów i zapisz datę oraz powód. Sprawdź tytuł techniczny opublikowanej strony. Wnioskuj po zebraniu porównywalnych danych, uwzględniając również działania odbiorców po kliknięciu, a nie tylko sam CTR.",
+            "Zachowaj wcześniejszy tytuł i sprawdź, kiedy publiczny wynik pokazuje nową wersję. Oceń też tematy otrzymanych wiadomości. Dodatkowe wejścia po bezpłatną pomoc awaryjną nie muszą pasować do płatnej konserwacji planowej. Wyższy procent nie dowodzi prawidłowych oczekiwań ani lepszych rozmów. Ograniczony test pozwala zauważyć pomyłkę bez równoczesnego przepisania wszystkich tytułów i utraty możliwości rozpoznania, co zostało rzeczywiście zmienione."
+          ]
+        }
+      ],
+      "checklist": [
+        "Sprawdź, czy tytuł nazywa rzeczywistą usługę.",
+        "Porównaj title, nagłówek i opublikowaną ofertę.",
+        "Nie obiecuj brakującego cennika ani niedostępnych interwencji.",
+        "Porównuj podobne grupy zapytań, pozycje i urządzenia.",
+        "Zachowaj wersję i oceń dopasowanie późniejszych zgłoszeń."
+      ],
+      "conclusion": "Oceniaj tytuły przez podobne grupy zapytań i obietnicę zgodną z treścią. Większa jasność pozostaje wartościowa, nawet kiedy mała próba nie pozwala wykazać przyczynowego wpływu na wynik handlowy lub jakość zgłoszeń."
+    },
+    {
+      "id": "search-console-leads",
+      "title": "Search Console a wartościowe zapytania klientów",
+      "slug": "search-console-klikniecia-zapytania-klientow",
+      "description": "Search Console a wartościowe zapytania klientów. Poznaj konkretne kontrole pomagające połączyć widoczność, czytelną informację i kontakt z klientem.",
+      "intro": [
+        "Search Console opisuje widoczność i kliknięcia, ale nie potwierdza otrzymania zapytania. Aby powiązać dane z kontaktem handlowym, trzeba osobno określić wizytę, uruchomienie kontaktu i rzeczywiście odebraną wiadomość. Bez tych definicji wspólny licznik ukrywa, jaki etap został zaobserwowany, a jaki tylko założony.",
+        "Wyobraź sobie hipotetyczną stronę konserwacji z większą liczbą kliknięć i mniejszą liczbą pasujących wiadomości. Nowe pytania informacyjne, błędny numer lub zbyt szeroka obietnica wymagają innych kontroli. Same dane wyszukiwarki nie rozstrzygają, która z tych przyczyn odpowiada za zmianę i co należy poprawić na stronie."
+      ],
+      "sections": [
+        {
+          "title": "Rozróżnij etapy pomiaru",
+          "paragraphs": [
+            "Oddziel wyświetlenie, kliknięcie wyniku, odsłonę, działanie kontaktowe i otrzymane zgłoszenie. Mierzą je różne systemy. Raport traktujący wszystkie jako to samo może sugerować poprawę handlową, której rzeczywiście nie potwierdzono.",
+            "Otwarcie WhatsApp to działanie kontaktowe; wysłanie wiadomości następuje w innym systemie. Osoba może zamknąć aplikację bez pisania. Otrzymane zgłoszenie wymaga jeszcze oceny zgodności z usługą. Nazywanie każdego naciśnięcia przycisku kwalifikowaną szansą handlową wykracza poza obserwację. Raport powinien pozwolić odróżnić zainteresowanie kontaktem od rozmowy, która rzeczywiście dotarła do zespołu i dotyczy pracy możliwej do wykonania."
+          ]
+        },
+        {
+          "title": "Sprawdź pytanie i adres",
+          "paragraphs": [
+            "Wybierz istotne strony usług i przejrzyj dostępne zapytania. Oddziel markę, pytania informacyjne i potrzebę zakupu. Dane nie zawsze są kompletne; brak szczegółów nie jest dowodem, że nie było odwiedzin lub zainteresowania.",
+            "Wybierz ważną stronę wejścia i odróżnij pytania praktyczne od szukania wykonawcy. Nie wszystkie zapytania są widoczne, a sumy mogą różnić się między widokami ze względu na agregację. Używaj wierszy do rozpoznawania wzorców bez dopasowywania ich na siłę do każdego kliknięcia. Brakujących historii pojedynczych wyszukiwań nie wolno dopowiadać tylko po to, by stworzyć pełny obraz drogi klienta."
+          ]
+        },
+        {
+          "title": "Dobierz okresy porównania",
+          "paragraphs": [
+            "Uwzględnij długość okresu, sezonowość i terminy publikacji. Zestawienie ruchliwego tygodnia ze spokojnym miesiącem daje słabą podstawę. Zanotuj kampanie i zmiany mogące wpłynąć na rodzaj otrzymywanych zgłoszeń.",
+            "Porównaj okresy tej samej długości i podobny układ dni tygodnia. Dla konserwacji sezonowej odpowiedni wcześniejszy sezon może dać dodatkowy kontekst. Zmienione godziny lub zakres wpływają na wiadomości niezależnie od widoczności. Uwzględnij to, zanim całą różnicę przypiszesz nowej treści. Wzrost wizyt i spadek pasujących próśb mogą współistnieć bez sprzeczności, jeżeli zmieniła się dostępność usługi lub rodzaj poszukiwanych informacji."
+          ]
+        },
+        {
+          "title": "Przejdź ścieżkę odbiorcy",
+          "paragraphs": [
+            "Otwórz strony z trafnymi kliknięciami i wykonaj zadanie kontaktowe. Brak wyjaśnienia lub uszkodzony formularz może oddzielać wizytę od rozmowy. Search Console nie pokazuje automatycznie miejsca, w którym odbiorca się zatrzymał.",
+            "Przejdź link kontaktowy na zwykle używanym urządzeniu i sprawdź numer oraz usługę w sugerowanej wiadomości. Błędne miejsce docelowe po kliknięciu nie pojawi się jako problem w raporcie wyświetleń. Przy formularzu sprawdź też potwierdzenie prawidłowej wysyłki. Niepewność po zakończeniu może powodować podwójne wiadomości lub przerwanie kontaktu, mimo że użytkownik bez przeszkód znalazł właściwą stronę w wynikach wyszukiwania."
+          ]
+        },
+        {
+          "title": "Oceniaj zgłoszenia osobno",
+          "paragraphs": [
+            "W ramach istniejącej obsługi zapisuj, czy kontakt pasuje do usługi, obszaru i możliwości firmy. Korzystaj tylko z potrzebnych danych. Nie próbuj przypisywać każdej frazy wyszukiwania konkretnej osobie, aby ocenić jakość.",
+            "Stosuj kategorie takie jak właściwa usługa, nieobsługiwany obszar i inny produkt. Pokazują wzorce bez przypisywania zapytań konkretnym osobom. Powtarzające się prośby z obszaru poza zasięgiem mogą uzasadniać jaśniejsze określenie pokrycia. Dążenie do większego ruchu na wszystkich stronach nie rozwiąże tego szczególnego błędnego oczekiwania i może zwiększyć liczbę rozmów wymagających wyjaśnienia tej samej granicy oferty."
+          ]
+        },
+        {
+          "title": "Wybierz następne działanie",
+          "paragraphs": [
+            "Połącz obserwacje w jedną konkretną zmianę: uzupełnienie usługi, naprawę kontaktu lub odpowiedź na brakujące pytanie. Następnie sprawdź technikę i tematy rozmów. Wzrost kliknięć pozostaje innym wynikiem niż wzrost trafnych zgłoszeń.",
+            "Jeżeli poradnik przyciąga czytelników informacyjnych, a usługa słabo opisuje pracę, popraw odnośnik kontekstowy i stronę docelową. Obserwuj osobno użycie linku oraz tematy rozmów. Search Console nie dowodzi, że jedno konkretne zdanie spowodowało indywidualne zgłoszenie, nawet gdy trend pasuje do takiego wyjaśnienia. Wniosek powinien opisywać zgodne obserwacje bez przypisywania dostępnej informacji dokładności, której dane w rzeczywistości nie zapewniają."
+          ]
+        }
+      ],
+      "checklist": [
+        "Rozróżnij kliknięcie, uruchomienie kontaktu i odebraną wiadomość.",
+        "Wybierz ważne strony i oddziel cele wyszukiwania.",
+        "Porównuj równoważne okresy z kontekstem sezonowym.",
+        "Sprawdź cel kontaktu i potwierdzenie formularza.",
+        "Oceniaj dopasowanie bez odtwarzania osobistych historii wyszukiwania."
+      ],
+      "conclusion": "Pokazuj widoczność, działania kontaktowe i otrzymane pasujące wiadomości oddzielnie. Ich zależności pomagają badać przeszkody, jeżeli raport zachowuje granice każdej obserwacji i nie zamienia przypuszczenia o drodze klienta w potwierdzony fakt."
+    },
+    {
+      "id": "technical-indexing",
+      "title": "Praktyczna kontrola crawlowania i indeksowania",
+      "slug": "techniczne-seo-crawlowanie-indeksowanie",
+      "description": "Praktyczna kontrola crawlowania i indeksowania. Poznaj konkretne kontrole pomagające połączyć widoczność, czytelną informację i kontakt z klientem.",
+      "intro": [
+        "Diagnoza indeksowania wymaga kolejności: odpowiedź publiczna, dostęp robota, instrukcje indeksowania, canonical, odkrywanie i przetworzona treść. Zmienianie kilku ustawień naraz może ukryć przyczynę. Warto osobno potwierdzać każdy warunek, aby nie pomylić rzeczywistej przeszkody z komunikatem będącym tylko skutkiem innego błędu na stronie.",
+        "Załóżmy hipotetycznie, że strona usługi jest widoczna w przeglądarce, ale nie w wyszukiwarce. Dostęp człowieka nie potwierdza, że robot może otrzymać przydatną, indeksowalną wersję preferowaną. Dlatego zaczynamy od końcowego adresu oraz publicznej odpowiedzi, zanim zaczniemy zmieniać słowa kluczowe lub rozbudowywać opis."
+      ],
+      "sections": [
+        {
+          "title": "Sprawdź rzeczywistą odpowiedź",
+          "paragraphs": [
+            "Otwórz docelowy adres i zobacz, czy zwykły odbiorca widzi pełną treść. Skontroluj status HTTP oraz przekierowania. Strona błędu zwracająca sukces może wyglądać na dostępną, chociaż potrzebnego opisu nie ma.",
+            "Pobierz końcowy adres po przekierowaniach i sprawdź rzeczywistą odpowiedź. Brakująca strona nie powinna prezentować komunikatu błędu ze statusem sukcesu. Zobacz również, czy logowanie, warstwa zgody lub reguła serwera zastępuje ofertę dla niezalogowanych osób. Poprawne technicznie pobranie dokumentu nie dowodzi, że znajduje się w nim treść usługi, którą firma zamierza udostępnić klientom i wyszukiwarce."
+          ]
+        },
+        {
+          "title": "Rozróżnij instrukcje",
+          "paragraphs": [
+            "Robots.txt reguluje crawlowanie, natomiast noindex dotyczy indeksowania po odczytaniu instrukcji. To odmienne narzędzia. Nie łącz ich bez namysłu i nie zakładaj, że samo zablokowanie pobierania automatycznie usunie adres z wyników.",
+            "Robot musi przeczytać noindex, aby przetworzyć instrukcję. Blokada robots.txt może uniemożliwić odczyt i sama nie jest niezawodną instrukcją usunięcia. Przy stronie przeznaczonej do publikacji sprawdź metadane HTML oraz nagłówki odpowiedzi pod kątem przypadkowego noindex. Samo zezwolenie na pobieranie nie przywraca indeksowalności, jeśli inny element nadal zabrania umieszczenia adresu w wynikach wyszukiwania."
+          ]
+        },
+        {
+          "title": "Oceń canonical",
+          "paragraphs": [
+            "Canonical wskazuje preferowaną wersję przy podobnych treściach. Sprawdź, czy prowadzi do właściwej dostępnej strony. Przypadkowe wskazanie strony głównej przez wszystkie usługi może utrudniać interpretację ich samodzielnej zawartości.",
+            "Canonical wskazuje preferowany odpowiednik, a nie łączy różnych usług. Sprawdź, czy cel działa i opisuje tę samą ofertę. Gdy linki wewnętrzne wspierają jeden wariant, a sitemap i canonical inny, usuń niespójność. Wskazanie kolejnych adresów jako preferowanych nie wyjaśnia sygnałów. Trzeba ustalić jedną logiczną wersję dla równoważnej zawartości i konsekwentnie prowadzić do niej użytkowników witryny."
+          ]
+        },
+        {
+          "title": "Zapewnij odkrywanie linkami",
+          "paragraphs": [
+            "Ważne podstrony powinny być dostępne przez użyteczne linki wewnętrzne. Mapa witryny pomaga odkrywać adresy, ale nie zastępuje nawigacji. Skontroluj, czy odnośniki prowadzą do końcowych miejsc zamiast łańcuchów przekierowań.",
+            "Otwórz powiązaną kategorię i przejdź zwykłym linkiem do usługi. Adres dostępny tylko po wyszukiwaniu wewnętrznym może być słabo połączony z serwisem. W mapie witryny umieszczaj zamierzone indeksowalne cele zamiast wariantów przekierowanych, brakujących lub świadomie wyłączonych. Sitemap wspiera odkrywanie, lecz nie zastępuje zrozumiałej drogi z sąsiednich treści, które pomagają ustalić rolę danej strony w całym serwisie."
+          ]
+        },
+        {
+          "title": "Sprawdź renderowaną treść",
+          "paragraphs": [
+            "Przy dużym udziale JavaScript upewnij się, że ważne teksty i linki faktycznie się pojawiają. Sam początkowy kod może nie wystarczyć. Wykorzystaj dostępne narzędzia inspekcji do oceny zawartości przetwarzanej przez wyszukiwarkę.",
+            "Porównaj przetworzone teksty i linki z oczekiwaną informacją. Jeżeli opis pobiera nieudane żądanie JavaScript, atrakcyjny wygląd może ukrywać brak zasadniczej zawartości. Skup inspekcję na ofercie, nagłówkach i nawigacji. Samo potwierdzenie animacji albo wykonania skryptu mówi niewiele o dostępności właściwego wyjaśnienia. Ważne jest to, co zostało udostępnione po przetworzeniu strony, a nie tylko obecność kodu uruchamiającego interfejs."
+          ]
+        },
+        {
+          "title": "Potwierdzaj bez gwarancji",
+          "paragraphs": [
+            "Skorzystaj z dostępnej możliwości ponownej oceny i później sprawdź stan. Poprawność techniczna nie oznacza obowiązku zaindeksowania każdej strony. Oceń również przydatność, samodzielność informacji i relację do podobnych istniejących materiałów.",
+            "Po usunięciu przypadkowego noindex ponownie zbadaj odpowiedź publiczną i canonical przed prośbą o inspekcję. Raport może zmienić się później. Przy dalszym wyłączeniu bez barier technicznych sprawdź duplikację i użyteczność. Wielokrotne zgłaszanie niezmienionego adresu nie dodaje brakującej wartości i nie gwarantuje wyboru przez wyszukiwarkę. Potwierdzona naprawa bariery oraz późniejsza decyzja o indeksowaniu pozostają odrębnymi obserwacjami."
+          ]
+        }
+      ],
+      "checklist": [
+        "Sprawdź publiczną odpowiedź końcową po przekierowaniach.",
+        "Osobno zbadaj dostęp robota i instrukcje noindex.",
+        "Zweryfikuj canonical i spójność preferowanych adresów.",
+        "Przejdź zwykłymi linkami i sprawdź sitemap.",
+        "Przed ponowną kontrolą zbadaj przetworzoną treść."
+      ],
+      "conclusion": "Usuwaj potwierdzoną przeszkodę, rozróżniając dostęp, instrukcje indeksowania i wybór wersji. Poprawność techniczna umożliwia ocenę strony, ale nie obiecuje natychmiastowej obecności ani określonej pozycji w wynikach po zapisaniu ustawień."
+    },
+    {
+      "id": "content-clusters",
+      "title": "Klastry treści i linkowanie wokół oferty",
+      "slug": "klastry-tresci-linkowanie-wewnetrzne",
+      "description": "Klastry treści i linkowanie wokół oferty. Poznaj konkretne kontrole pomagające połączyć widoczność, czytelną informację i kontakt z klientem.",
+      "intro": [
+        "Grupa powiązanych treści łączy kompletną stronę usługi z poradnikami rozwiązującymi inne pytania pomocnicze. Wartość wynika z osobnych ról oraz linków w kontekście, nie z ustalonej liczby artykułów. Każdy adres powinien wnosić odpowiedź, którą można odróżnić od zadania pozostałych materiałów.",
+        "Rozważ hipotetyczną firmę instalującą pompy ciepła. Zgodność, przygotowanie i konserwacja są powiązane, lecz porównanie technologii wymaga innej odpowiedzi niż przygotowanie oględzin lub zamówienie montażu. Ten podział wyznacza właściciela poszczególnych pytań w strukturze i pomaga wybrać uzasadnione odnośniki między tekstami."
+      ],
+      "sections": [
+        {
+          "title": "Wybierz centralną potrzebę",
+          "paragraphs": [
+            "Rozpocznij od istotnej usługi lub kategorii i zapisz pytania przed zakupem oraz po nim. Temat powinien odpowiadać rzeczywistej ofercie. Szeroka popularna dziedzina bez związku biznesowego daje słaby kierunek dalszej pracy.",
+            "Zacznij od wyboru instalacji oraz konkretnych wątpliwości dotyczących miejsca czy istniejącego ogrzewania. Ogólny tekst o urządzeniach domowych może dzielić temat energii, ale nie pomagać przy tym zleceniu. Podobieństwo słownictwa nie wystarcza do włączenia. Każdy poradnik powinien usuwać rozpoznawalną przeszkodę w ocenie, przygotowaniu lub użytkowaniu rozwiązania, które firma rzeczywiście oferuje klientowi w opisanym zakresie."
+          ]
+        },
+        {
+          "title": "Rozdziel zadania artykułów",
+          "paragraphs": [
+            "Różne decyzje wymagają odpowiednio odrębnych wyjaśnień. Pytania o podobnej odpowiedzi połącz. Sam wzrost liczby stron nie wzmacnia klastra; każdy element powinien dodawać użyteczną informację, której nie przedstawiono już w innym miejscu.",
+            "Porównanie systemów przypisz jednemu poradnikowi, przygotowanie wizyty drugiemu, a zlecenie stronie usługi. Gdy dwa szkice opisują takie samo przygotowanie, połącz odpowiedzi przed publikacją niemal jednakowych tras. Różnica musi być zrozumiała z perspektywy rozwiązywanego pytania, a nie tylko redakcyjnego kalendarza. Odmienny nagłówek bez odmiennej funkcji nie daje czytelnikowi powodu do wyboru między dwiema stronami."
+          ]
+        },
+        {
+          "title": "Dopracuj główną stronę",
+          "paragraphs": [
+            "Centralny opis usługi musi być samodzielnie zrozumiały. Artykuły mogą pogłębiać szczegóły, lecz podstawy oferty i kontakt nie powinny znikać w rozproszeniu. Klient potrzebuje czytelnego miejsca do podjęcia decyzji o współpracy.",
+            "Zakres, obszar obsługi, proces i kontakt pozostaw na stronie montażu. Poradnik przygotowawczy może rozwinąć potrzebne zdjęcia i wymiary. Osoba przychodząca bezpośrednio musi jednak zrozumieć ofertę bez wcześniejszego czytania całej serii. Materiał pomocniczy pogłębia pełną odpowiedź; nie powinien rozpraszać podstawowych warunków tak, aby do poznania samej usługi konieczne było otwieranie kilku kolejnych adresów w różnej kolejności."
+          ]
+        },
+        {
+          "title": "Linkuj w odpowiednim kontekście",
+          "paragraphs": [
+            "Dodaj odnośnik do rozwinięcia tam, gdzie tekst wywołuje następne pytanie. Nazwij cel zrozumiałymi słowami. Przejście do usługi jest przydatne, gdy czytelnik rozpoznaje potrzebę wykonania zadania lub skorzystania z doradztwa.",
+            "Link przygotowawczy umieść po wyjaśnieniu wymagań oceny. Z poradnika wróć do usługi w chwili, gdy profesjonalna pomoc staje się potrzebna. Tekst przygotowanie do wizyty montażowej zapowiada cel. Powtarzanie czytaj więcej przy różnych odnośnikach ukrywa dodatkowe odpowiedzi. Użyteczny link pokazuje, czego odbiorca dowie się po przejściu i dlaczego ta informacja wiąże się z pytaniem powstałym w aktualnym fragmencie."
+          ]
+        },
+        {
+          "title": "Wykryj nadmierne podobieństwo",
+          "paragraphs": [
+            "Porównaj główne pytania, tytuły i dostępne zapytania powiązanych artykułów. Jeżeli teksty wykonują to samo zadanie, połączenie może dać pełniejszą odpowiedź. Zachowaj szczegóły i starannie obsłuż stare adresy przy scalaniu.",
+            "Porównuj rolę decyzyjną, nie wyłącznie słowa. Czynniki kosztowe i porównanie systemów mogą współistnieć mimo wspominania cen. Dwa poradniki kosztowe z tymi samymi czynnikami być może warto scalić. Zachowaj pełne wyjaśnienie i skieruj istniejące linki do wybranej strony. Struktura ma stać się prostsza bez utraty szczegółów, które wcześniej pomagały konkretnej części odbiorców zrozumieć ofertę lub przygotować ocenę."
+          ]
+        },
+        {
+          "title": "Zarządzaj całą grupą",
+          "paragraphs": [
+            "Wyznacz osobę oceniającą brakujące pytania, nieaktualne wyjaśnienia i zepsute linki. Nowy tekst powinien mieć rozpoznawalną rolę. Oceniaj ruch i jakość kontaktów również na poziomie głównej usługi, nie tylko pojedynczego poradnika.",
+            "Oceń grupę jako trasę: czy od wątpliwości można dojść do usługi bez krążenia między podobnymi wstępami? Po zmianie katalogu aktualizuj również odnośniki i granice. Stary poradnik nie powinien rekomendować wycofanej pracy tylko dlatego, że nadal ma dużo wejść. Dobra ścieżka musi kończyć się pomocą możliwą do zaoferowania, a nie stroną zachowaną wyłącznie dla jej dobrego wyniku ruchowego."
+          ]
+        }
+      ],
+      "checklist": [
+        "Przypisz każdemu poradnikowi odrębną decyzję klienta.",
+        "Pozostaw usługę kompletną bez obowiązkowej lektury dodatkowej.",
+        "Linkuj w miejscu powstania następnego pytania.",
+        "Porównaj nakładające się odpowiedzi przed scaleniem.",
+        "Usuń rekomendacje usług, których firma już nie wykonuje."
+      ],
+      "conclusion": "Buduj uzupełniające odpowiedzi i uzasadnione linki wokół konkretnej potrzeby. Każdy poradnik dostaje własne zadanie, a strona usługi pozostaje wystarczająco kompletna, by samodzielnie wspierać decyzję bez obowiązkowej lektury wszystkich materiałów grupy."
+    },
+    {
+      "id": "image-seo",
+      "title": "SEO obrazów: informacja, dostępność i szybkość",
+      "slug": "seo-obrazow-dostepnosc-szybkosc",
+      "description": "SEO obrazów: informacja, dostępność i szybkość. Poznaj konkretne kontrole pomagające połączyć widoczność, czytelną informację i kontakt z klientem.",
+      "intro": [
+        "SEO obrazów łączy przydatną informację wizualną, dostępne alternatywy i odpowiednią dostawę plików. Nazwa lub lista słów kluczowych nie wynagradza nieczytelnego zdjęcia albo ciężkiego obrazu otwarcia na telefonie. Najpierw trzeba wybrać wizualny szczegół, który pomaga zrozumieć produkt i jego zastosowanie.",
+        "Wyobraź sobie hipotetyczną stronę produktu ze zdjęciem montażu. Klient musi obejrzeć mocowanie, natomiast telefon potrzebuje proporcjonalnego pierwszego pliku zamiast całego oryginału z aparatu. Powiększenie i początkowy widok mają różne potrzeby, które można obsłużyć odpowiednimi wariantami rozmiaru i sposobem prezentacji na stronie."
+      ],
+      "sections": [
+        {
+          "title": "Wybierz informacyjny obraz",
+          "paragraphs": [
+            "Zdjęcie powinno wyjaśniać produkt lub zakres pracy. Pokaż detale omawiane w tekście. Dekoracyjne zdjęcie może budować nastrój, ale nie zastępuje materiału przedstawiającego konkretną ofertę lub rzeczywiście wykonany projekt.",
+            "Wybierz zbliżenie mocowania, jeśli tekst dotyczy wolnej przestrzeni montażowej. Ładny pokój nie pokazuje tego szczegółu automatycznie. Zachowaj szerszy widok, gdy ważna jest skala, i nazwij przedstawioną konfigurację. Dzięki temu nie sugerujesz jednakowych wymiarów czy przyłączy wszystkich odmian. Zdjęcie jednego wariantu powinno pomagać w wyborze, a nie tworzyć fałszywą pewność co do cechy całej rodziny produktów."
+          ]
+        },
+        {
+          "title": "Dopasuj tekst alternatywny",
+          "paragraphs": [
+            "Opisz znaczenie obrazu informacyjnego w kontekście strony. Unikaj długich list fraz. Dekoracyjny element często potrzebuje pustego tekstu alternatywnego, aby technologia asystująca mogła go pominąć; oceń funkcję każdego obrazu.",
+            "Alternatywa uchwyt ścienny z wolną przestrzenią pod urządzeniem przekazuje właściwą cechę, jeśli to funkcja obrazu w tym miejscu. Nie dodawaj automatycznie zdjęcie przedstawia ani szeregu fraz handlowych. Jeśli podlinkowany obraz jest jedynym przyciskiem kontaktowym, alternatywa powinna opisywać działanie lub cel. Ten sam plik może więc wymagać innego tekstu zależnie od roli pełnionej na konkretnej stronie."
+          ]
+        },
+        {
+          "title": "Dodaj wyjaśnienie obok",
+          "paragraphs": [
+            "Umieść obraz przy odpowiednim opisie i w razie potrzeby dodaj podpis. Sama nazwa pliku nie tłumaczy szczegółu technicznego. Otaczająca treść pomaga użytkownikowi i wyszukiwarce zrozumieć, co faktycznie pokazano.",
+            "Podpis może wskazać konfigurację i rozwinąć szczegół zbyt długi dla krótkiej alternatywy. Kluczowe wymiary umieść również w tekście lub dostępnej tabeli. Wartości zapisane wyłącznie w pikselach trudno odczytać na małym ekranie. Decyzja klienta nie powinna zależeć od drobnych etykiet ani możliwości bardzo dużego powiększenia zdjęcia. Informacje niezbędne do porównania muszą pozostać dostępne także bez oglądania grafiki."
+          ]
+        },
+        {
+          "title": "Przygotuj odpowiednie pliki",
+          "paragraphs": [
+            "Dobierz wymiary i kompresję bez utraty istotnych detali. Pozwól przeglądarce wybrać odpowiedni wariant, gdy to możliwe. Powiększane zdjęcie produktu wymaga innej oceny niż mała ilustracja w zestawieniu.",
+            "Przygotuj warianty odpowiadające szerokości wyświetlania i pozwól przeglądarce wybrać odpowiedni. Porównaj WebP, AVIF lub inny format według faktycznego rozmiaru i jakości; nie ma zwycięzcy dla wszystkich obrazów. Po kompresji sprawdź napisy, krawędzie i kolory. To szczegóły istotne, kiedy klient odróżnia wykończenia lub odmiany techniczne i na ich podstawie wybiera produkt, więc oszczędność pliku nie powinna usuwać znaczącej informacji."
+          ]
+        },
+        {
+          "title": "Ogranicz przesuwanie układu",
+          "paragraphs": [
+            "Zarezerwuj miejsce na obraz, aby tekst i kontakt nie przeskakiwały podczas ładowania. Sprawdź telefon. Nie opóźniaj automatycznie najważniejszego obrazu w pierwszym widoku, choć dalsze materiały mogą ładować się później.",
+            "Podaj wymiary albo stałą proporcję, aby zarezerwować miejsce przed pobraniem. Sprawdź, czy kadr mobilny zachowuje najważniejszy element. Nie odkładaj automatycznie obrazu otwarcia, jeżeli opóźnia to główną widoczną zawartość. Niższe zdjęcia mogą poczekać, kiedy odpowiada to rzeczywistej kolejności czytania. Zbadaj również, czy pojawienie się grafiki nie przesuwa kontaktu lub tekstu w chwili, gdy użytkownik próbuje z nich skorzystać."
+          ]
+        },
+        {
+          "title": "Sprawdź dostęp i znaczenie",
+          "paragraphs": [
+            "Po migracji zweryfikuj działanie adresów obrazów. Jeśli to istotne, przejrzyj dostępne dane wyszukiwania grafiki. Kliknięcie obrazu ma znaczenie biznesowe dopiero wtedy, gdy strona docelowa pomaga zrozumieć produkt lub usługę.",
+            "Po zmianie przetwarzania otwórz dostarczony plik i potwierdź obraz zamiast błędu czy logowania. Sprawdź też miejsce docelowe wejścia z wyszukiwania obrazów. Powinno identyfikować produkt i dostarczać kontekst, granice dostępności oraz użyteczny następny krok. Osoba przychodząca przez fotografię nie zna wcześniejszej nawigacji, dlatego sama galeria bez nazwy oferty może pozostawić ją bez odpowiedzi, jakiego produktu dotyczy oglądany detal."
+          ]
+        }
+      ],
+      "checklist": [
+        "Wybierz obraz wyjaśniający sąsiednie pytanie.",
+        "Dostosuj alternatywę do funkcji konkretnej grafiki.",
+        "Podaj ważne wymiary także w dostępnym tekście.",
+        "Porównaj rozmiary responsywne, kompresję i przydatne szczegóły.",
+        "Zarezerwuj miejsce i sprawdź obraz otwarcia na telefonie."
+      ],
+      "conclusion": "Dobieraj obrazy do ich funkcji informacyjnej i sprawdzaj łącznie alternatywy, wymiary oraz widok mobilny. Podstawowe dane muszą pozostać dostępne również osobom, które nie widzą fotografii lub korzystają z innego sposobu odczytu."
+    },
+    {
+      "id": "conversion-landing",
+      "title": "Organiczna strona docelowa z czytelnym kontaktem",
+      "slug": "organiczna-strona-docelowa-whatsapp",
+      "description": "Organiczna strona docelowa z czytelnym kontaktem. Poznaj konkretne kontrole pomagające połączyć widoczność, czytelną informację i kontakt z klientem.",
+      "intro": [
+        "Organiczna strona wejścia łączy pytanie wyszukującego z jasną ofertą, odpowiednim dowodem i praktycznym następnym krokiem. Widoczny przycisk nie usuwa sam niepewności, czy praca pasuje do sytuacji odbiorcy. To treść musi najpierw zbudować zrozumiałe powiązanie między problemem a dostępną pomocą.",
+        "Weźmy hipotetycznego odbiorcę szukającego planowej konserwacji budynku. Chce rozpoznać usługę, zrozumieć zakres inspekcji i dowiedzieć się, jak poprosić o ocenę. Zaproszenie do rozmowy staje się użyteczne dopiero po tych wyjaśnieniach, gdy wiadomo już, czego dotyczy kontakt i jakie informacje warto przygotować."
+      ],
+      "sections": [
+        {
+          "title": "Potwierdź potrzebę odbiorcy",
+          "paragraphs": [
+            "Pierwszy nagłówek powinien nazwać usługę lub decyzję związaną z wejściem. Sam ogólny slogan pozostawia zbyt wiele domysłów. Potwierdź odbiorców i problem, zanim poprosisz o wysłanie wiadomości lub umówienie rozmowy.",
+            "W otwarciu nazwij planową konserwację zamiast ogólnej obietnicy ulepszania budynków. Jeżeli obsługiwane są określone typy obiektów, umieść tę granicę przy ofercie. Użytkownik nie powinien odkrywać wyłączenia po wysłaniu długiej wiadomości o nieruchomości, której firma nie może zbadać. Wcześniejsze doprecyzowanie pozwala podjąć świadomą decyzję i ogranicza rozmowy o pracy niedostępnej w prezentowanym zakresie obsługi."
+          ]
+        },
+        {
+          "title": "Zapewnij pełne wyjaśnienie",
+          "paragraphs": [
+            "Organiczna strona docelowa potrzebuje samodzielnej treści o ofercie, podejściu i granicach. Reklamowy ekran z jednym przyciskiem może nie odpowiadać na ważne pytania. Pisz dla osoby, która porównuje dostawców i jeszcze nie zna firmy.",
+            "Wyjaśnij, co obejmuje ocena, co następuje później i kiedy potrzebna jest inna usługa. Rozwijany fragment może pogłębić poboczną kwestię, lecz nie powinien ukrywać wszystkich warunków. Osoba porównująca wykonawców musi zrozumieć zlecenie bez wcześniejszego przekazywania danych albo obowiązkowego rozpoczynania rozmowy. Podstawowy opis pracy jest odpowiedzią strony, a nie nagrodą dostępną dopiero po wypełnieniu formularza przez potencjalnego klienta."
+          ]
+        },
+        {
+          "title": "Umieść dowód przy pytaniu",
+          "paragraphs": [
+            "Powiąż rzeczywiste materiały projektowe z konkretną wątpliwością. Opisz funkcje oraz wykonany zakres. Nie dodawaj niepotwierdzonych wskaźników sukcesu; dobrze wyjaśniony przykład pozwala ocenić podejście bez obiecywania rezultatu.",
+            "Umieść przykład inspekcji obok wyjaśnienia i wskaż, co sprawdzono oraz dlaczego. Jeśli jest wymyślony, nazwij go hipotetycznym. Obraz bez kontekstu nie dowodzi metody, a rekomendacja dotycząca innej pracy nie musi odpowiadać na wątpliwość tego odbiorcy. Dobierz materiał do konkretnego pytania w danym miejscu, zamiast traktować dowolne logo lub fotografię jako uniwersalne potwierdzenie wszystkich elementów oferty."
+          ]
+        },
+        {
+          "title": "Wyjaśnij kontakt WhatsApp",
+          "paragraphs": [
+            "Napisz, jakie informacje warto przesłać i czego dotyczy rozmowa. Proponowana wiadomość powinna być krótka oraz edytowalna. Przycisk musi pozostać dostępny na telefonie bez zakrywania istotnego wyjaśnienia oferty.",
+            "Wiadomość WhatsApp może sugerować lokalizację, rodzaj budynku i główny problem konserwacyjny. Wyjaśnij, że wysłanie rozpoczyna rozmowę, nie potwierdza wizyty. Przetestuj otwarcie na telefonie i sprawdź, czy stały przycisk nie zakrywa warunków lub wysyłki formularza. Kontakt powinien wspierać informacje potrzebne do wyboru, a nie zasłaniać je podczas czytania i porównywania możliwości, zwłaszcza na małym ekranie z ograniczonym miejscem."
+          ]
+        },
+        {
+          "title": "Mierz osobne etapy",
+          "paragraphs": [
+            "Rejestruj kliknięcie kontaktu oddzielnie od otrzymanej wiadomości. Sprawdź temat rzeczywistego zgłoszenia. Strona z mniejszą liczbą kliknięć może być przydatniejsza, jeżeli wcześniej ogranicza nieporozumienia dotyczące zakresu lub sposobu współpracy.",
+            "Rozdziel wejście, uruchomienie kontaktu, wiadomość i ocenę dopasowania. Mniej naciśnięć po jaśniejszych wyłączeniach może oznaczać mniej błędnych oczekiwań. Sprawdź tematy rozmów przed uznaniem, że wyjaśnienie szkodzi stronie. Bardziej natarczywy przycisk nie naprawia nieporozumienia i nie jest oczywistą odpowiedzią, gdy liczba działań spada, ale rodzaj otrzymywanych zleceń lepiej odpowiada pracy, którą firma chce oraz potrafi rzeczywiście wykonać."
+          ]
+        },
+        {
+          "title": "Ucz się z rozmów",
+          "paragraphs": [
+            "Omów powtarzające się wątpliwości z osobami obsługującymi klientów. Dodaj odpowiedź tam, gdzie powstaje pytanie. Po zmianie skontroluj całą ścieżkę i dopasowanie kolejnych zgłoszeń, zamiast oceniać wyłącznie wygląd przycisku kontaktowego.",
+            "Jeśli często pada pytanie o pilny przyjazd, pokaż planowy charakter przy otwarciu i kontakcie. Gdy wątpliwości dotyczą czynności inspekcji, rozwiń zakres. To różne niewiadome. Więcej zachęt bez odpowiedzi nie usuwa żadnej przyczyny, nawet jeśli przyciski pojawią się w dodatkowych miejscach. Wybór następnej poprawki powinien wynikać z brakującej informacji, a nie tylko łatwości dodania kolejnego odnośnika do rozmowy na stronie."
+          ]
+        }
+      ],
+      "checklist": [
+        "Dopasuj otwarcie do pytania i dostępnej usługi.",
+        "Wyjaśnij zakres przed prośbą o dane lub rozmowę.",
+        "Umieść właściwy, rzetelnie opisany dowód przy wątpliwości.",
+        "Sprawdź WhatsApp bez zasłaniania kluczowych informacji.",
+        "Oceń tematy zgłoszeń obok pośrednich działań kontaktowych."
+      ],
+      "conclusion": "Zachowaj zgodność pytania, oferty, dowodu i działania. Popraw wyjaśnienie blokujące świadomą prośbę, następnie zbadaj zarówno drogę kontaktu, jak i tematy rzeczywiście otrzymanych zgłoszeń dotyczących dostępnej usługi, zamiast oceniać wszystko liczbą przycisków."
+    },
+    {
+      "id": "seo-content-maintenance",
+      "title": "Aktualizacja treści SEO i porządkowanie podobnych stron",
+      "slug": "aktualizacja-tresci-seo-nakladanie-tematow",
+      "description": "Aktualizacja treści SEO i porządkowanie podobnych stron. Sprawdź treści, technikę i kontakt, aby łączyć odwiedziny z odpowiednimi pytaniami klientów.",
+      "intro": [
+        "Utrzymanie treści SEO oznacza wybór odpowiedzi nadal potrzebnych, wymagających korekty lub możliwych do scalenia. Sama zmiana daty nie aktualizuje nieaktualnych instrukcji. Materiał musi odpowiadać temu, co czytelnik powinien teraz wiedzieć, porównać albo przygotować przed podjęciem decyzji i wysłaniem zapytania.",
+        "Wyobraź sobie hipotetyczną firmę z dwoma poradnikami konserwacji i dawną ofertą napraw. Ruch nie rozstrzyga, czy poprawić, połączyć lub usunąć stronę. Trzeba zbadać zadanie każdego adresu i powiązanie z obecną usługą, aby przy porządkowaniu nie stracić szczegółów nadal przydatnych dla części odbiorców."
+      ],
+      "sections": [
+        {
+          "title": "Zrób spis zawartości",
+          "paragraphs": [
+            "Zbierz adresy, główne pytania, aktualność i dostępne dane wyszukiwania. Zaznacz role handlowe oraz edukacyjne. Inwentaryzacja pokazuje rozproszenie informacji, zanim firma poświęci czas na kolejne teksty powtarzające istniejące odpowiedzi.",
+            "Zapisz dla URL główne pytanie, ważne linki i związek z dostępną usługą. Rzadko odwiedzany tekst może odpowiadać na konieczne pytanie przygotowawcze. Popularny materiał może tworzyć zapytania o wycofane prace. Sam ruch nie wystarcza do ustalenia dalszej wartości dla klientów i firmy. Znaczenie ma odpowiedź oraz jej aktualność, a nie wyłącznie liczba wizyt widoczna obok adresu w zestawieniu."
+          ]
+        },
+        {
+          "title": "Sprawdź zgodność z ofertą",
+          "paragraphs": [
+            "Zweryfikuj usługi, cechy produktów i drogę kontaktu. Sama zmiana daty bez przeglądu wyjaśnień nie odświeża treści. Uzupełnij konkretne braki oraz stare przykłady tam, gdzie rzeczywiście utrudniają decyzję odwiedzającemu.",
+            "Porównaj produkty, ograniczenia, przygotowanie i cele linków z dzisiejszą pracą. Gdy instrukcja prosi o zdjęcie nieużywanego elementu, zastąp ją i wyjaśnij aktualny wymóg. Zachowaj poprawne akapity zamiast przepisywać wszystko dla pozornej świeżości. Aktualizacja ma zmienić to, co odbiorca wie lub robi, a nie tylko datę nad tekstem. Dzięki temu redakcja skupia się na realnej różnicy w przygotowaniu lub wyborze usługi."
+          ]
+        },
+        {
+          "title": "Zbadaj możliwą konkurencję stron",
+          "paragraphs": [
+            "Porównaj adresy widoczne dla tej samej potrzeby. Kilka wyników nie oznacza automatycznie problemu. Sprawdź, czy wykonują tę samą pracę i czy utrudniają odnalezienie właściwej usługi albo kompletnej odpowiedzi.",
+            "Dwie strony o częstotliwości konserwacji mogą dotyczyć innych urządzeń i obie być przydatne. Jeżeli opisują ten sam sprzęt, interwał i wyjątki, sprawdź możliwość jednej pełnej odpowiedzi. Różne warunki użytkowania uzasadniają osobne wyjaśnienia; inny szyk pytania nie. Najpierw zbadaj rzeczywiste zadania, zamiast każde wspólne wyświetlenie uznawać za szkodliwą konkurencję i powód do usunięcia jednej strony z istniejącej struktury."
+          ]
+        },
+        {
+          "title": "Wybierz zachowanie lub scalenie",
+          "paragraphs": [
+            "Pozostaw samodzielne strony, jeśli dobrze obsługują różne zadania. Połącz mocne fragmenty tekstów odpowiadających niemal identycznie. Przy usunięciu zaplanuj właściwy cel i popraw linki, aby istotne informacje pozostały dostępne.",
+            "Aktualizuj, gdy funkcja pozostaje odrębna, lecz dane są stare. Scalaj, gdy szczegóły należą do jednej odpowiedzi. Wycofany adres kieruj tylko do odpowiedniego zastępstwa i popraw odnośniki wewnętrzne. Bez odpowiednika prawidłowa informacja o usunięciu bywa uczciwsza niż strona główna, która nie odpowiada na konkretne pytanie. Nie każde wycofanie wymaga przekierowania do dowolnego działającego miejsca wyłącznie po to, aby uniknąć komunikatu braku strony."
+          ]
+        },
+        {
+          "title": "Prowadź historię zmian",
+          "paragraphs": [
+            "Zapisz zakres, powód i datę aktualizacji. Zachowaj ważne poprzednie sformułowania w wewnętrznym procesie edycji. Uzgodnij właściciela, aby różni pracownicy nie publikowali sprzecznych informacji dotyczących tej samej usługi.",
+            "Przed scaleniem zachowaj użyteczne szczegóły obu wersji i rozpisz stare oraz nowe cele do kontroli nawigacji. Samo przekierowanie słabszego adresu bez przeniesienia odpowiedzi może wyglądać porządnie, lecz usuwać właśnie informację poszukiwaną przez dawnych czytelników. Sprawdź więc przeniesienie znaczenia treści obok technicznej obsługi adresu. Poprawna odpowiedź serwera nie dowodzi, że po połączeniu nadal można znaleźć potrzebny wyjątek lub wskazówkę przygotowawczą."
+          ]
+        },
+        {
+          "title": "Zaplanuj kontrolę po publikacji",
+          "paragraphs": [
+            "Sprawdź linki, kontakt i dostępne dane wyszukiwania. Oceniaj nie tylko liczbę odwiedzin, lecz także pytania klientów. Następną poprawkę skieruj na potwierdzony problem zamiast przepisywać całą zawartość przy każdym wahaniu ruchu.",
+            "Po publikacji sprawdź zgodność linków, canonical i odwołań do usługi. Oceń późniejsze zapytania z czasem na ponowne pobranie. Krótka zmiana ruchu nie uzasadnia odwrócenia scalenia. Utracona informacja lub nietrafne przekierowanie daje bardziej bezpośredni dowód potrzeby poprawki niż chwilowe wahanie odwiedzin. Na wynik tego samego okresu mogą wpływać również inne zmiany strony oraz zapotrzebowanie niezależne od wykonanej interwencji redakcyjnej w wybranym materiale."
+          ]
+        }
+      ],
+      "checklist": [
+        "Zapisz pytanie i rolę handlową każdego adresu.",
+        "Popraw stare instrukcje zamiast samych dat.",
+        "Odróżnij powielone odpowiedzi od różnych zadań.",
+        "Zachowaj przydatne szczegóły przed scalaniem i przekierowaniem.",
+        "Sprawdź odnośniki wewnętrzne i canonical po publikacji."
+      ],
+      "conclusion": "Wybieraj odświeżenie, połączenie, zachowanie lub wycofanie według odpowiedzi każdego adresu. Chroń przydatne szczegóły i ścieżki, aby konserwacja zwiększała jasność oraz aktualność informacji, zamiast tylko zmieniać daty nad niezmienionymi instrukcjami i opisami."
+    },
+    {
+      "id": "market-entry-seo",
+      "title": "Plan wejścia na zagraniczny rynek z pomocą SEO",
+      "slug": "wejscie-rynek-zagraniczny-plan-seo",
+      "description": "Plan wejścia na zagraniczny rynek z pomocą SEO. Poznaj konkretne kontrole pomagające połączyć widoczność, czytelną informację i kontakt z klientem.",
+      "intro": [
+        "SEO przy wejściu na nowy rynek zaczyna się od wykonalności: jakie pytania i zamówienia z danego kraju firma może obsłużyć? Zainteresowanie w wyszukiwarce pomaga badaniu, ale nie zastępuje dostępnej dostawy i wsparcia. Droga klienta musi pozostać wiarygodna również poza dotychczasowym obszarem działania.",
+        "Rozważ hipotetycznego polskojęzycznego dostawcę planującego instalacje w drugim kraju. Tłumaczenie opisu produktu nie wyjaśnia, kto montuje, jak przebiega rozmowa i jakie lokalizacje są wyłączone. Te granice wyznaczają pierwsze strony lokalne i pomagają przygotować pełną trasę dla klienta, któremu rzeczywiście można dostarczyć opisaną usługę."
+      ],
+      "sections": [
+        {
+          "title": "Najpierw sprawdź realizację",
+          "paragraphs": [
+            "Określ produkty i usługi, które można rzeczywiście dostarczyć na nowym rynku. Zapisz ograniczenia operacyjne oraz sposoby kontaktu. Zainteresowanie w wyszukiwarce nie dowodzi, że firma potrafi sprawnie obsłużyć zagraniczne zamówienie.",
+            "Wyjaśnij, czy firma dostarcza tylko produkt, czy także montaż. Jeżeli instalacja w nowej okolicy jest niedostępna, strona nie powinna obiecywać jej pośrednio. Rozróżnij poradę internetową od obecności na miejscu. Przetłumaczona nazwa usługi nie może sugerować możliwości, które istnieją tylko na poprzednim obszarze. Klient potrzebuje tej granicy przed kontaktem, a nie dopiero po szczegółowym opisie swojej nieruchomości i oczekiwanego terminu wizyty."
+          ]
+        },
+        {
+          "title": "Poznaj pytania i oferty",
+          "paragraphs": [
+            "Zbierz lokalne określenia i sprawdź typ informacji przedstawianych przez dostawców oraz wyniki. Traktuj to jako rozpoznanie, bez wymyślania wolumenów lub szans sprzedażowych. Zanotuj założenia wymagające rozmowy z klientami lub znawcami rynku.",
+            "Sprawdź lokalne nazwy produktu i prac. Znane polskie określenie techniczne może w innym kraju sugerować odmienną konfigurację lub odpowiedzialność wykonawcy. Obejrzyj wyniki i omów przykłady z osobą znającą rynek. Zapisuj rzeczywiste warianty słownictwa i otwarte pytania bez wymyślania wolumenów wyszukiwania. Obecność konkurentów sama nie dowodzi atrakcyjnej szansy handlowej, dopóki oferta oraz możliwości obsługi nie zostaną osobno sprawdzone przez firmę."
+          ]
+        },
+        {
+          "title": "Ogranicz pierwszy zakres",
+          "paragraphs": [
+            "Zacznij od spójnej grupy usług i pytań potrzebnych do decyzji. Tłumaczenie każdego starego artykułu nie musi być dobrym początkiem. Wybierz strony, dla których istnieją oferta, materiały i zdolność obsługi zgłoszeń.",
+            "Zacznij od oferty z gotową dostawą, wyjaśnieniem i obsługą zgłoszeń. Strona dostępnych produktów z przygotowaniem i kontaktem może dawać więcej niż dziesiątki tłumaczeń o niedostępnych usługach. Nie chowaj odpowiedzi o pokryciu w ogólnych tekstach. Początkowy zakres ma zapewniać pełną ścieżkę klientowi, któremu można pomóc przy użyciu obecnej pracy i asortymentu, zamiast budować szeroką obietnicę przyszłej ekspansji jako już działającej oferty."
+          ]
+        },
+        {
+          "title": "Zaplanuj język oraz adresy",
+          "paragraphs": [
+            "Ustal konsekwentną strukturę i zrozumiały przełącznik języków. Powiąż odpowiedniki tam, gdzie to właściwe. Poproś osobę znającą dziedzinę o ocenę terminów: dosłownie poprawny przekład może nadal sugerować inną usługę.",
+            "Utrzymuj spójne adresy językowe i łącz odpowiedniki, kiedy istnieją. Sprawdź wzajemne wskazania wersji oraz canonical odpowiedni dla każdej z nich, zamiast kierować wszystkie tłumaczenia do polskiego tekstu. Nie wymuszaj automatycznego przełączenia uniemożliwiającego wybór innego języka albo otwarcie udostępnionego linku. Użytkownik przebywający za granicą nadal może potrzebować polskiej wersji i powinien móc świadomie zdecydować, z której informacji chce skorzystać."
+          ]
+        },
+        {
+          "title": "Przygotuj kontakt i wykonanie",
+          "paragraphs": [
+            "Uczciwie przedstaw bazę działania oraz możliwą współpracę zdalną. Nie twórz fikcyjnego biura dla lokalnego wyniku. Ustal wewnętrznie odbiorcę zgłoszeń i sposób wyjaśniania pytań o realizację oraz dostępność.",
+            "Podaj uczciwie bazę firmy i dostępny tryb współpracy zdalnej. Fikcyjne miejscowe biuro nie rozwiązuje pytania o osiągalność. Wyjaśnij język odpowiedzi i informacje potrzebne do oceny dostawy. Dzięki temu klient wie, czego może dotyczyć pierwsza reakcja, zanim poprosi o lokalną wizytę niedostępną w ofercie. Kontakt musi reprezentować rzeczywisty sposób obsługi, a nie jedynie wrażenie lokalnej obecności stworzone dla zapytania w wyszukiwarce."
+          ]
+        },
+        {
+          "title": "Ustal moment oceny",
+          "paragraphs": [
+            "Wybierz obserwowane sygnały: trafne wyświetlenia, kliknięcia właściwych stron i treść rozmów. Zestaw je z wykonalnością dostawy. Rozszerzaj zakres dopiero po zrozumieniu brakujących informacji oraz potrzeb, które firma potrafi rzeczywiście obsłużyć.",
+            "Porównuj odpowiednie wyświetlenia i strony z tematami otrzymywanych wiadomości. Zainteresowanie montażem poza zasięgiem wymaga czegoś innego niż pasujące pytania produktowe bez jasnej odpowiedzi o dostawie. Rozszerzaj ofertę po przygotowaniu wykonania i informacji. Kolejne tłumaczenia nie usuną granicy operacyjnej, której firma jeszcze nie potrafi przekroczyć dla nowych klientów. Sygnały wyszukiwania mają pomóc wybrać pytanie do rozwiązania, a nie zastępować decyzję o dostępnej obsłudze."
+          ]
+        }
+      ],
+      "checklist": [
+        "Potwierdź lokalnie dostarczane produkty oraz wykonywane prace.",
+        "Sprawdź terminy względem konkretnych oczekiwań klientów.",
+        "Zacznij od pełnej ścieżki dla dostępnej oferty.",
+        "Zweryfikuj wersje językowe, canonical i swobodę wyboru.",
+        "Podaj rzeczywistą bazę firmy i oceniaj właściwe zgłoszenia."
+      ],
+      "conclusion": "Wybierz pierwszy rynek możliwy do obsłużenia i przetłumacz także informacje potrzebne do decyzji. Rozwijaj zakres na podstawie zrozumianych pytań, uczciwego pokrycia oraz działającej drogi do dostępnego produktu albo rzeczywiście wykonywanej usługi."
+    }
+  ],
+  "pageSeo": {
+    "home": {
+      "title": "Strony internetowe i SEO dla firm | Latech",
+      "description": "Strony internetowe, SEO i sklepy dla firm szukających wartościowych zapytań. Latech działa z Hiszpanii i realizuje zdalnie projekty międzynarodowe.",
+      "heading": "Strony internetowe i SEO dla firm",
+      "intro": "Pomagamy połączyć ofertę z pytaniami klientów: przez czytelną treść, sprawną stronę i wygodną drogę do wysłania konkretnego zapytania."
+    },
+    "services": {
+      "title": "Usługi projektowania stron, SEO i sklepów | Latech",
+      "description": "Poznaj projektowanie stron, SEO, sklepy i integracje n8n w Latech. Ustalamy treści, technikę i kontakt odpowiednio do potrzeb klientów oraz celów Twojej firmy.",
+      "heading": "Usługi projektowania stron, SEO i sklepów",
+      "intro": "Pomagamy połączyć ofertę z pytaniami klientów: przez czytelną treść, sprawną stronę i wygodną drogę do wysłania konkretnego zapytania."
+    },
+    "web": {
+      "title": "Tworzenie stron firmowych z podstawami SEO | Latech",
+      "description": "Zamów stronę firmową z czytelną ofertą, wygodną wersją mobilną i podstawami SEO. Latech łączy projekt, treści i technikę wokół potrzeb Twoich klientów.",
+      "heading": "Tworzenie stron firmowych z podstawami SEO",
+      "intro": "Strona pomaga zrozumieć ofertę, porównać ją i wysłać trafne zapytanie."
+    },
+    "shop": {
+      "title": "Tworzenie sklepów internetowych | Latech",
+      "description": "Sklep internetowy z czytelnymi produktami, logicznymi kategoriami i wygodnym zakupem. Latech pomaga połączyć sprzedaż z praktyczną obsługą zamówień.",
+      "heading": "Tworzenie sklepów internetowych",
+      "intro": "Zakupy łączą wyszukiwanie produktu, decyzję i sprawną realizację."
+    },
+    "ai": {
+      "title": "Integracje n8n i AI dla firm | Latech",
+      "description": "Połącz narzędzia firmy przez n8n i ściśle określone zadania AI. Latech pomaga ustalić kontrolę danych, nadzór człowieka oraz obsługę błędów procesu.",
+      "heading": "Integracje n8n i AI dla firm",
+      "intro": "Dobra integracja zaczyna się od poznania procesu i jego wyjątków."
+    },
+    "about": {
+      "title": "O Latech: strony i SEO z Hiszpanii | Latech",
+      "description": "Poznaj Andrésa Rubio i Luisa Grondonę, założycieli Latech w Hiszpanii. Zobacz nasze podejście do stron, SEO i zdalnej pracy przy projektach międzynarodowych.",
+      "heading": "O Latech: strony i SEO z Hiszpanii",
+      "intro": "Pomagamy połączyć ofertę z pytaniami klientów: przez czytelną treść, sprawną stronę i wygodną drogę do wysłania konkretnego zapytania."
+    },
+    "projects": {
+      "title": "Projekty stron i sklepów internetowych | Latech",
+      "description": "Zobacz rzeczywiste projekty Latech dla szkół, sklepów i firm usługowych. Poznaj treści, układ oraz funkcje przedstawionych stron i rozwiązań internetowych.",
+      "heading": "Projekty stron i sklepów internetowych",
+      "intro": "Pomagamy połączyć ofertę z pytaniami klientów: przez czytelną treść, sprawną stronę i wygodną drogę do wysłania konkretnego zapytania."
+    },
+    "contact": {
+      "title": "Kontakt w sprawie strony, sklepu lub SEO | Latech",
+      "description": "Omów stronę internetową, SEO lub sklep z Latech przez WhatsApp. Opisz odbiorców, obecną sytuację i cel, aby porozmawiać o odpowiednim zakresie projektu.",
+      "heading": "Kontakt w sprawie strony, sklepu lub SEO",
+      "intro": "Pomagamy połączyć ofertę z pytaniami klientów: przez czytelną treść, sprawną stronę i wygodną drogę do wysłania konkretnego zapytania."
+    },
+    "blog": {
+      "title": "Poradnik SEO i stron internetowych dla firm | Latech",
+      "description": "Przeczytaj praktyczne poradniki SEO o pytaniach klientów, technice i stronach usług. Naucz się oceniać kliknięcia razem z jakością otrzymywanych zapytań.",
+      "heading": "Poradnik SEO i stron internetowych dla firm",
+      "intro": "Pomagamy połączyć ofertę z pytaniami klientów: przez czytelną treść, sprawną stronę i wygodną drogę do wysłania konkretnego zapytania."
+    }
+  },
+  "faq": [
+    {
+      "question": "Gdzie działa Latech?",
+      "answer": "Andrés Rubio i Luis Grondona założyli Latech w Puebla de la Calzada, Badajoz, w Hiszpanii. Realizujemy również zdalnie projekty dla firm z innych krajów."
+    },
+    {
+      "question": "Czy można poprawić istniejącą stronę?",
+      "answer": "Możemy ocenić jej treści, technikę i drogę do kontaktu. Na tej podstawie ustalamy zakres zmian odpowiedni do celów oraz dostępnych materiałów."
+    },
+    {
+      "question": "Co przygotować do wyceny?",
+      "answer": "Podaj adres obecnej strony, odbiorców, główne usługi i pożądane działania klientów. Opisz także używane systemy i możliwości przygotowania treści."
+    },
+    {
+      "question": "Czy gwarantujecie pozycje w Google?",
+      "answer": "Nie. Pracujemy nad treścią, techniką i wygodą korzystania, które wspierają widoczność. Pozycje oraz ruch zależą również od czynników poza zakresem projektu."
+    }
+  ],
+  "projectCopy": {
+    "colegio-santo-tomas": {
+      "sector": "Edukacja",
+      "summary": "Strona szkoły z rzeczywistymi zdjęciami i informacjami według etapów nauki. Rekrutacja, wiadomości, kalendarz i dokumenty są uzupełnione prywatną galerią dla rodziców, tworząc wspólne miejsce dostępu do informacji placówki."
+    },
+    "granja-orea": {
+      "sector": "Gospodarstwo edukacyjne i obozy",
+      "summary": "Strona prezentująca obozy, wycieczki szkolne oraz jeździectwo przez zdjęcia i wideo. Zawiera kontakt WhatsApp, edytowalne wiadomości, instalowaną aplikację webową, mobilną trasę QR i prywatne narzędzia wspierające pracę zespołu."
+    },
+    "f5-arquitectos": {
+      "sector": "Architektura",
+      "summary": "Portfolio architektoniczne z dużymi zdjęciami, kategoriami i szczegółowymi opisami realizacji. Własny panel administracyjny umożliwia aktualizację projektów oraz treści, a oszczędna nawigacja kieruje uwagę na prezentowane prace biura."
+    },
+    "quality-homes": {
+      "sector": "Inwestycje mieszkaniowe",
+      "summary": "Strona nieruchomości ze zdjęciami, wideo, planami i dostępnością poszczególnych mieszkań. Zapytania trafiają do własnego CRM, a panel zarządzania treścią pozwala aktualizować informacje o prezentowanych inwestycjach mieszkaniowych i ich ofercie."
+    },
+    "megias-frutas": {
+      "sector": "Hurtowa dystrybucja owoców i warzyw",
+      "summary": "Strona firmowa z fotografią produktów oraz informacjami dla różnych grup odbiorców profesjonalnych. Mobilny układ, treści redakcyjne i bezpośredni kontakt przedstawiają działalność hurtowni oraz jej asortyment dla lokalnego rynku."
+    },
+    "zonasport": {
+      "sector": "Artykuły sportowe",
+      "summary": "Katalog internetowy z kategoriami sportowymi, markami, poradnikiem i wewnętrznym zarządzaniem zapasami. Kontakt oraz zamówienia przez WhatsApp są połączone z możliwością odbioru w sklepie, zgodnie z opisanym sposobem obsługi klientów."
+    },
+    "panelex": {
+      "sector": "Materiały budowlane",
+      "summary": "Techniczna strona B2B producenta płyt warstwowych z kartami produktów, poradnikami oraz kalkulatorem. Materiały pomagają firmom budowlanym i instalatorom porównywać rozwiązania oraz przygotować informacje potrzebne do zapytania o ofertę."
+    },
+    "monopatinmonkey": {
+      "sector": "Mobilność elektryczna",
+      "summary": "Sklep internetowy z hulajnogami elektrycznymi, szczegółowymi opisami modeli i osobną częścią napraw. Strona wyjaśnia etapy obsługi serwisowej oraz umożliwia porównywanie modeli i rozpoczęcie kontaktu dotyczącego wizyty w warsztacie."
+    },
+    "toldos-noa": {
+      "sector": "Markizy i montaż",
+      "summary": "Strona usługowa z osobnymi częściami dotyczącymi domów, firm, napraw i wykonania na wymiar. Opinie oraz czytelne działania kontaktowe prowadzą do WhatsApp, gdzie odwiedzający może opisać potrzebę i poprosić o wycenę."
+    },
+    "autoescuela-agora": {
+      "sector": "Szkoła jazdy",
+      "summary": "Strona szkoły jazdy z wideo, opisami kategorii prawa jazdy i informacjami o dwóch placówkach. Zapisy, WhatsApp, testy AEOL oraz strefa Mi Ágora łączą prezentację oferty z dostępem do materiałów ucznia."
+    },
+    "precios-locos": {
+      "sector": "Sprzęt i produkty domowe",
+      "summary": "Strona sklepu z katalogiem, wyszukiwarką, ulubionymi i koszykiem. Opisy produktów, poradniki domowe oraz kontakt WhatsApp uzupełniają wyrazisty projekt wizualny i interaktywną maszynę chwytakową z paczkami niespodziankami w doświadczeniu zakupowym."
+    },
+    "los-leones-nuptiae": {
+      "sector": "Moda męska i krawiectwo",
+      "summary": "Dwie marki odzieżowe w jednej witrynie z wizualnym wyborem oraz odrębnymi ścieżkami dla mody męskiej, ceremonii, wynajmu i szycia na miarę. Fotografie oraz kolekcje prowadzą do informacji o sklepach."
+    },
+    "my-special-hair": {
+      "sector": "Systemy włosów i pielęgnacja",
+      "summary": "Strona marki z katalogiem, przewodnikiem pomiarów oraz studium 3D systemów włosów. Konto klienta, wizyty i dostęp profesjonalny tworzą osobne ścieżki, a wideo, galeria i WhatsApp wspierają kontakt doradczy."
+    }
+  }
+}

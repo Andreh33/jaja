@@ -1,0 +1,1352 @@
+{
+  "code": "sv",
+  "name": "Svenska",
+  "ogLocale": "sv_SE",
+  "ui": {
+    "home": "Hem",
+    "services": "Tjänster",
+    "projects": "Projekt",
+    "about": "Om oss",
+    "contact": "Kontakt",
+    "blog": "SEO-guider",
+    "language": "Språk",
+    "readMore": "Läs artikeln",
+    "backToBlog": "Tillbaka till guiderna",
+    "related": "Relaterade artiklar",
+    "author": "Latechs redaktion",
+    "whatsapp": "Kontakta oss på WhatsApp",
+    "skip": "Hoppa till innehållet",
+    "legal": "Juridisk information",
+    "privacy": "Integritetspolicy",
+    "terms": "Användarvillkor",
+    "remote": "Vi finns i Spanien och arbetar på distans med företag på internationella marknader.",
+    "phone": "Telefon",
+    "contactTitle": "Berätta om din webbplats och dina affärsmål",
+    "contactIntro": "Beskriv din verksamhet, din nuvarande webbplats och vad du vill förbättra. Kontakta Latech på WhatsApp +34684739091 för att diskutera webbdesign, SEO eller e-handel.",
+    "whatsappMessage": "Hej Latech! Jag vill diskutera ett projekt. Land: . Önskad tjänst: . Nuvarande webbplats: . Viktigaste mål: .",
+    "processTitle": "Från affärsbehov till genomtänkt lansering",
+    "processSteps": [
+      "Vi går igenom målgrupp, sökbehov, befintligt innehåll och projektets omfattning.",
+      "Vi utformar webbplatsen och granskar innehåll, funktioner och kontaktvägar tillsammans.",
+      "Vi testar överenskomna användarflöden, förbereder lanseringen och dokumenterar fortsatt ansvar."
+    ],
+    "articlesIntro": "Praktiska SEO-guider om söktrafik, relevanta klick och hur webbplatsen kan hjälpa besökare att ta kontakt.",
+    "serviceIntro": "Webbdesign, SEO och e-handel med tydliga prioriteringar för företaget och kunderna.",
+    "projectsIntro": "Se verkliga Latech-projekt och läs om deras utformning och funktioner utifrån tillgängligt projektmaterial.",
+    "aboutTitle": "Ett personligt team med bas i Spanien",
+    "aboutIntro": "Latech grundades av Andrés Rubio och Luis Grondona i Puebla de la Calzada, Badajoz, Spanien.",
+    "aboutBody": [
+      "Vi arbetar med webbdesign, SEO, e-handel och avgränsad AI-automation med n8n. Utgångspunkten är alltid vilket problem företaget behöver lösa och vad besökaren behöver förstå.",
+      "Vi samarbetar på distans med företag på internationella marknader. Omfattning, kommunikation och ansvar bestäms för varje uppdrag så att arbetet får tydliga förutsättningar.",
+      "Vi prioriterar begripligt innehåll, fungerande kontaktvägar och lösningar som går att förvalta. Våra projektsidor beskriver verkligt arbete utan påhittade resultat."
+    ],
+    "contactDetails": "Kontaktuppgifter",
+    "moreServices": "Se våra tjänster",
+    "allArticles": "Alla SEO-guider",
+    "brandClaim": "Inom design och SEO slår ingen oss.",
+    "serviceCta": "Diskutera ditt projekt",
+    "projectCountLabel": "Utvalda projekt",
+    "seoTitle": "SEO som börjar med dina kunders frågor",
+    "seoIntro": "Vi förenar teknisk tillgänglighet, tydliga tjänstesidor och innehåll som hjälper besökaren vidare till en relevant förfrågan.",
+    "seoBullets": [
+      "Sökintention och sidstruktur",
+      "Teknisk SEO och indexering",
+      "Innehåll för tjänster och e-handel",
+      "Mätning av klick och kontaktvägar"
+    ],
+    "faqTitle": "Vanliga frågor om Latech"
+  },
+  "home": {
+    "title": "Webbdesign och SEO för företag | Latech",
+    "description": "Webbdesign, SEO och e-handel för företag som vill förklara sitt erbjudande och få relevanta förfrågningar. Latech arbetar på distans från Spanien.",
+    "heading": "Webbdesign och SEO för företag som vill få fler relevanta förfrågningar",
+    "intro": "En tydlig webbplats gör det lättare att hitta ditt företag, förstå dina tjänster och kontakta rätt person.",
+    "body": [
+      "Latech bygger företagswebbplatser och webbutiker med sökbarhet, användbarhet och kontaktvägar som en gemensam uppgift. Vi granskar vilka frågor kunden har före en förfrågan och använder dem för att strukturera innehåll, navigation och funktioner.",
+      "Andrés Rubio och Luis Grondona grundade Latech i Puebla de la Calzada, Badajoz, Spanien. Vi arbetar på distans med internationella företag. Berätta om din marknad, nuvarande webbplats och viktigaste prioriteringar så kan vi diskutera ett lämpligt upplägg."
+    ]
+  },
+  "services": [
+    {
+      "id": "web",
+      "title": "Webbdesign och SEO för företag",
+      "description": "Planera en företagswebbplats med tydliga tjänster, användbar struktur och teknisk SEO. Latech hjälper dig att skapa genomtänkta vägar till kontakt.",
+      "intro": "En webbplats ska hjälpa rätt kund att förstå erbjudandet och avgöra nästa steg.",
+      "sections": [
+        {
+          "title": "Struktur efter kundens beslut",
+          "paragraphs": [
+            "Vi kartlägger tjänster, målgrupper och de frågor som föregår en relevant förfrågan. Det blir grunden för sidor, navigation och innehåll med tydliga syften.",
+            "Vi diskuterar sökintention och befintligt material innan designen låses. Därmed kan viktiga tjänster få det utrymme och den förklaring de behöver."
+          ]
+        },
+        {
+          "title": "Design som fungerar i vardagen",
+          "paragraphs": [
+            "Mobilanpassning, läsbar text, tillgängliga kontroller och begripliga formulär ingår i våra designbeslut. Besökaren ska kunna förstå sidan och använda den på olika skärmar.",
+            "Teknisk SEO kan omfatta sidtitlar, interna länkar, indexeringssignaler och planering av omdirigeringar. Leveranserna avgränsas efter webbplatsens behov och överenskommen omfattning."
+          ]
+        },
+        {
+          "title": "Lansering och fortsatt förvaltning",
+          "paragraphs": [
+            "Vi testar överenskomna kontaktflöden och kontrollerar centralt innehåll före lansering. Befintliga adresser och mätbehov tas med i planeringen.",
+            "Vi dokumenterar relevant redigering och ansvar för uppdateringar. Innehåll och företagsuppgifter behöver en utsedd ägare även efter att webbplatsen har publicerats."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "shop",
+      "title": "Webbutiker och SEO för e-handel",
+      "description": "Bygg en webbutik med begripliga kategorier, tydlig produktinformation och genomtänkt köpresa. Diskutera e-handel och organisk synlighet med Latech.",
+      "intro": "En fungerande webbutik förenar produktval, sökbarhet och praktisk orderhantering.",
+      "sections": [
+        {
+          "title": "Gör sortimentet begripligt",
+          "paragraphs": [
+            "Vi organiserar kategorier och produktsidor efter hur kunder letar och jämför. Storlekar, material, varianter och bilder ska hjälpa besökaren att välja rätt.",
+            "Strukturen måste också fungera för dem som uppdaterar produktdata. Vi går igenom katalog, lagerinformation och innehållsansvar före tekniska beslut."
+          ]
+        },
+        {
+          "title": "Förbered köpet och ordern",
+          "paragraphs": [
+            "Betalning, leverans och orderhantering behöver hänga ihop. Vi kartlägger nödvändiga kopplingar och vem som tar hand om varje steg.",
+            "Produkter som tar slut, betalningar som avbryts och ofullständiga adresser behöver begripliga meddelanden. Sådana undantag diskuteras som en del av användarflödet."
+          ]
+        },
+        {
+          "title": "Skapa en förvaltningsbar butik",
+          "paragraphs": [
+            "Vi testar representativa produkter och köpflöden inom projektets omfattning. Kategorilänkar och viktig produktinformation granskas även ur sökperspektiv.",
+            "Ditt team behöver veta hur sortimentet uppdateras och hur vanliga ordersituationer hanteras. Vi tydliggör ansvar och dokumenterar överenskomna funktioner."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ai",
+      "title": "AI-automation med n8n",
+      "description": "Koppla verksamhetens verktyg med n8n och avgränsade AI-funktioner. Latech planerar kontroller, mänsklig granskning och tydlig hantering av undantag.",
+      "intro": "Automation behöver tydliga regler, relevanta data och ansvariga personer.",
+      "sections": [
+        {
+          "title": "Kartlägg ett avgränsat arbetsflöde",
+          "paragraphs": [
+            "Vi identifierar utlösande händelse, indata och önskat resultat. Att sortera inkommande förfrågningar eller flytta godkända uppgifter mellan verktyg kan vara möjliga användningsområden.",
+            "Vi granskar den manuella processen och dess undantag. Ibland är enkla regler lämpligare än en AI-funktion."
+          ]
+        },
+        {
+          "title": "Bestäm vad som måste granskas",
+          "paragraphs": [
+            "AI kan hjälpa till med klassificering och utkast, men resultat behöver kontroller som passar uppgiften. Externa åtgärder kan kräva mänskligt godkännande.",
+            "Tillgång till data och verktyg begränsas efter behov. Vi diskuterar vilka uppgifter som behövs och vilka behörigheter verksamheten kan tillhandahålla."
+          ]
+        },
+        {
+          "title": "Gör fel synliga",
+          "paragraphs": [
+            "Ett arbetsflöde behöver ansvarig ägare, begripliga loggar och en väg tillbaka om en integration slutar fungera. Upprepade händelser ska hanteras genomtänkt.",
+            "Vi dokumenterar den överenskomna lösningen och provar relevanta undantag. Fortsatt uppföljning hjälper verksamheten att avgöra när regler eller kopplingar behöver ändras."
+          ]
+        }
+      ]
+    }
+  ],
+  "articles": [
+    {
+      "id": "website-leads",
+      "title": "Så gör du företagswebbplatsen bättre på relevanta förfrågningar",
+      "slug": "foretagswebbplats-relevanta-forfragningar",
+      "description": "Förbättra vägen från sökning till kontakt med tydliga tjänstesidor, relevanta exempel och begripliga formulär. Granska vilka förfrågningar sidan stöder.",
+      "intro": [
+        "En besökare kan förstå vad företaget heter och ändå lämna webbplatsen utan att veta om tjänsten passar. När söktrafik inte leder till användbara samtal behöver du därför undersöka stegen mellan landningssidan och kontakten. Börja med vad kunden försöker avgöra, inte med en större knapp.",
+        "För ett företag som säljer ventilationsservice kan en relevant förfrågan innehålla fastighetstyp, ort och problem. För en rådgivare kan uppdragets inriktning vara viktigare. Webbplatsen behöver förklara just dessa förutsättningar utan att kräva en lång redogörelse från någon som fortfarande jämför alternativ."
+      ],
+      "sections": [
+        {
+          "title": "Beskriv en användbar förfrågan",
+          "paragraphs": [
+            "Gå igenom ett urval verkliga kundfrågor och notera vilken information som gör dem möjliga att bedöma. Skilj mellan relevant kund, allmän informationsfråga och fel tjänst. Om många frågar om sådant ni inte erbjuder behöver erbjudandet avgränsas tydligare. Anteckna också vilka uppgifter som kan vänta till ett senare samtal. Den första kontakten ska ge tillräckligt sammanhang för att fortsätta, men behöver sällan innehålla allt underlag som krävs för att planera hela uppdraget."
+          ]
+        },
+        {
+          "title": "Ge varje huvudtjänst en tydlig sida",
+          "paragraphs": [
+            "En sida om ventilationsservice bör förklara vilka anläggningar och situationer arbetet omfattar. Beskriv vanliga problem, hur bedömningen går till och vilket underlag kunden kan förbereda. Länka från relevanta artiklar till den tjänsten i stället för att alltid skicka läsaren till startsidan. Då slipper besökaren börja om sin orientering. Om två tjänster skiljer sig väsentligt åt i målgrupp eller arbetsprocess kan egna sidor ge mer precisa svar, förutsatt att varje sida har självständigt innehåll."
+          ]
+        },
+        {
+          "title": "Använd belägg med begripligt sammanhang",
+          "paragraphs": [
+            "Välj verkligt projektmaterial som besvarar en konkret tvekan. Ett exempel kan visa hur ett bokningsflöde fungerar eller hur ett tjänsteutbud organiserats. Berätta vilket behov lösningen svarade mot, vilka delar som ingick och vad besökaren faktiskt ser. Undvik att tolka en snygg skärmbild som bevis för försäljningsökning. Om verksamheten saknar ett offentligt kundexempel kan den egna arbetsmetoden förklaras tydligt, men en demonstration måste framgå som demonstration och får inte presenteras som ett beställt kundprojekt."
+          ]
+        },
+        {
+          "title": "Gör kontaktens innehåll förutsägbart",
+          "paragraphs": [
+            "Skriv en uppmaning som hjälper kunden att veta vad nästa steg handlar om. Be exempelvis om fastighetstyp och en kort beskrivning av problemet. Ett formulär behöver synliga fältetiketter, begripliga felmeddelanden och en tydlig bekräftelse. Erbjuder ni WhatsApp bör länken öppna rätt nummer och en neutral inledande text. Lägg inte känsliga eller personliga uppgifter i en förifylld adress. Prova hela flödet på mobil med tangentbordet öppet, eftersom formulärets praktiska användning kan skilja sig från designskissen."
+          ]
+        },
+        {
+          "title": "Följ både beteende och kvalitet",
+          "paragraphs": [
+            "Skilj på klick på kontaktknappen och en faktiskt mottagen förfrågan. Ett WhatsApp-klick visar att länken användes, men inte om någon skickade ett meddelande. Bedöm därför webbplatsens beteendedata tillsammans med det underlag som verksamheten faktiskt får in. Sammanställ återkommande luckor utan att lägga personuppgifter i analysverktyget. Om kontakterna ofta gäller fel område kan tjänstesidans geografiska beskrivning behöva ändras. Om besökare frågar efter information som redan finns kan placering eller formulering vara problemet."
+          ]
+        },
+        {
+          "title": "Prioritera en förändring som går att bedöma",
+          "paragraphs": [
+            "Välj först den sida som har ett tydligt kommersiellt syfte och ett synligt hinder. Dokumentera hur innehållet såg ut, vad ni ändrar och varför ändringen borde hjälpa. Förbättra exempelvis beskrivningen av tjänstens omfattning innan ni samtidigt ändrar navigation, formulär och alla knappar. Jämför sedan relevanta perioder med hänsyn till säsong och andra marknadsaktiviteter. Litet underlag ger osäkra slutsatser, så komplettera siffrorna med konkreta frågor från nya kunder och praktiska observationer av användarflödet."
+          ]
+        }
+      ],
+      "checklist": [
+        "Definiera vilken förfrågan som är relevant.",
+        "Länka direkt till rätt tjänstesida.",
+        "Visa verkliga exempel med sammanhang.",
+        "Testa formulär och WhatsApp på mobil.",
+        "Skilj kontaktklick från mottagna meddelanden."
+      ],
+      "conclusion": "En bättre kontaktresa börjar med tydliga förväntningar. När tjänsten, exemplen och nästa steg svarar på samma kundbehov blir det lättare att granska vad webbplatsen faktiskt hjälper verksamheten med."
+    },
+    {
+      "id": "website-budget",
+      "title": "Så planerar du budgeten för en webbplats med SEO",
+      "slug": "budget-webbplats-seo",
+      "description": "Planera en webbplatsbudget utifrån innehåll, struktur, teknisk SEO och kontaktflöden. Jämför offerters omfattning och ta hänsyn till fortsatt förvaltning.",
+      "intro": [
+        "En budget för en ny företagswebbplats blir mer användbar när den beskriver vilket arbete som ingår. Antalet sidor säger lite om skillnaden mellan att publicera färdigt material och att undersöka sökbehov, skriva tjänsteinnehåll och flytta en etablerad webbplats.",
+        "Börja med vilka kundbeslut webbplatsen ska stödja. Ett mindre konsultföretag kan behöva några väl genomarbetade tjänstesidor, medan en verksamhet med många orter eller produktgrupper behöver en mer omfattande struktur. Underlaget ska göra det möjligt att jämföra innehåll och ansvar, även när två förslag använder samma rubrik."
+      ],
+      "sections": [
+        {
+          "title": "Inventera det som redan finns",
+          "paragraphs": [
+            "Lista webbplatsens nuvarande adresser, centrala innehåll och kända kontaktvägar. Markera vilket material som är korrekt, vad som behöver skrivas om och vilka sidor som fått organiska klick. En äldre artikel kan fortfarande bidra till upptäckten av en viktig tjänst. Att radera den utan bedömning kan skapa ett onödigt problem. Kontrollera också vem som äger bilder och texter samt vilka system som behöver kopplas in. Inventeringen visar vilket återanvändbart underlag projektet faktiskt kan börja med."
+          ]
+        },
+        {
+          "title": "Dela upp leveransen efter beslut",
+          "paragraphs": [
+            "Beskriv informationsstruktur, innehåll, design, implementation och lansering som skilda arbetsdelar. Skriv vad som förväntas i varje del: exempelvis en lista över sidtyper, färdiga texter eller en granskningsomgång. För ett installationsföretag kan tjänstesidor för olika anläggningar kräva intervjuer med någon som kan arbetet. Det bör framgå vem som ordnar underlaget. Om innehåll saknas när designen byggs riskerar projektet att baseras på exempeltext som inte motsvarar kundens frågor eller den verkliga omfattningen."
+          ]
+        },
+        {
+          "title": "Definiera vad SEO betyder i uppdraget",
+          "paragraphs": [
+            "SEO är ingen enhetlig leverans. Ange om arbetet omfattar sökintention, sidstruktur, titlar, intern länkning, indexeringskontroller eller omdirigeringar. En teknisk grund kan vara viktig utan att inkludera löpande innehållsarbete. Be om konkreta exempel på vad som granskas och vad som dokumenteras. Skilj även mellan att lägga in tillgängliga mätverktyg och att fortlöpande analysera resultaten. Tydliga gränser gör budgeten begriplig och minskar risken att två parter räknar med helt olika arbetsinsatser efter publicering."
+          ]
+        },
+        {
+          "title": "Budgetera kontaktflödet som en funktion",
+          "paragraphs": [
+            "Ett kontaktformulär kan vara enkelt, men dess fält, validering, mottagning och bekräftelse behöver fungera tillsammans. Om webbplatsen ska föra besökaren till WhatsApp behöver länkarna kontrolleras på olika enheter. En bokningsfunktion kan kräva externa verktyg och tydliga rutiner för ändringar. Förklara därför vilket kundflöde som ska testas, inte bara att en kontaktknapp ska finnas. Identifiera eventuella löpande kostnader i anslutna system och låt verksamheten kontrollera sina egna förutsättningar innan omfattningen fastställs."
+          ]
+        },
+        {
+          "title": "Jämför offerter på samma underlag",
+          "paragraphs": [
+            "Skapa en enkel jämförelse med leveranser, antaganden, innehållsansvar och sådant som faller utanför uppdraget. Kontrollera om offerterna utgår från samma antal sidtyper och samma tillgång till färdigt material. Notera också hur ändringar hanteras om nya behov upptäcks. Ett mer avgränsat första steg kan vara lämpligt när underlaget är osäkert. Det viktiga är att omfattningen förklarar skillnaden mellan alternativen så att beslutet bygger på det arbete företaget faktiskt behöver och kan bidra till."
+          ]
+        },
+        {
+          "title": "Ta med arbetet efter lanseringen",
+          "paragraphs": [
+            "Utse ansvarig för tjänsteuppgifter, brutna länkar och uppföljning av kontaktvägar. En webbplats behöver kunna ändras när erbjudandet förändras. Ta reda på hur redigering går till och vilka beroenden som finns till leverantörer eller tillägg. Skilj nödvändig drift från planerad utveckling och innehållsförbättring. När dessa delar syns redan i budgetunderlaget går det lättare att prioritera. Företaget kan då välja att börja med de sidor som är mest affärskritiska och planera resterande förbättringar separat."
+          ]
+        }
+      ],
+      "checklist": [
+        "Inventera befintliga adresser och innehåll.",
+        "Beskriv leveranser och ansvar per arbetsdel.",
+        "Avgränsa teknisk SEO och innehållsarbete.",
+        "Specificera kontaktflöden som ska testas.",
+        "Planera redigering och förvaltning efter lansering."
+      ],
+      "conclusion": "En genomarbetad webbplatsbudget gör omfattningen begriplig. När samma underlag används för innehåll, teknik och kontaktflöden blir det lättare att välja ett rimligt projekt och bedöma vad som faktiskt har levererats."
+    },
+    {
+      "id": "local-seo",
+      "title": "Lokal SEO för företag med verkliga serviceområden",
+      "slug": "lokal-seo-verkliga-serviceomraden",
+      "description": "Granska lokal SEO med korrekta företagsuppgifter, användbara ortssidor och tydliga serviceområden. Hjälp besökare förstå var och hur ditt företag arbetar.",
+      "intro": [
+        "Lokal SEO handlar om att hjälpa människor bedöma om ett företag kan lösa deras behov där de befinner sig. Den uppgiften kräver korrekta uppgifter, relevanta tjänstesidor och en trovärdig beskrivning av verksamhetens geografiska räckvidd.",
+        "Ett företag som utför golvvård kan arbeta i flera kommuner utan att ha kontor i varje kommun. Webbplatsen ska förklara detta tydligt. Att skapa många nästan identiska ortssidor gör sällan det praktiska valet enklare för kunden och kan ge ett missvisande intryck av hur verksamheten är organiserad."
+      ],
+      "sections": [
+        {
+          "title": "Skilj besöksadress från arbetsområde",
+          "paragraphs": [
+            "Skriv ned var företaget faktiskt finns, om kunder kan besöka platsen och vilka områden tjänsten erbjuds i. Uppgifterna behöver spegla verklig verksamhet. En lokal landningssida får inte antyda ett kontor som saknas. För tjänster hos kunden kan det vara mer användbart att förklara hur resor och planering hanteras. Stäm av kontaktuppgifterna på webbplatsen med de företagsprofiler ni själva kontrollerar. Rätta motsägelser innan ni utökar innehållet med ytterligare ortsnamn eller nya geografiska rubriker."
+          ]
+        },
+        {
+          "title": "Pröva om en ort behöver egen sida",
+          "paragraphs": [
+            "En ortssida bör ha ett självständigt syfte. Fundera på om ni kan ge relevant information om tjänstens tillgänglighet, praktiskt genomförande eller ett verkligt lokalt uppdrag. Om enda skillnaden är kommunnamnet kan en samlad sida om serviceområdet vara tydligare. Ett golvvårdsföretag kan exempelvis förklara vilka typer av lokaler det arbetar med och hur en platsbedömning ordnas. Den informationen hjälper kunden mer än upprepade påståenden om att företaget är bäst på varje närliggande ort."
+          ]
+        },
+        {
+          "title": "Koppla orten till rätt tjänst",
+          "paragraphs": [
+            "Den som söker efter en konkret tjänst behöver mer än en geografisk presentation. Visa vilka problem ni hanterar, vad kunden kan förbereda och vilka begränsningar som finns. Länka mellan relevant tjänstesida och serviceområdets information så att båda går att hitta. Undvik att stapla alla tjänster och orter i varje stycke. Låt rubrikerna beskriva sidans innehåll naturligt och placera geografiska detaljer där de besvarar en faktisk fråga om leverans eller möjlighet att anlita företaget."
+          ]
+        },
+        {
+          "title": "Använd verkliga lokala belägg",
+          "paragraphs": [
+            "Ett publicerbart projekt från området kan visa hur arbetet genomförs. Beskriv uppdragets typ och praktiska förutsättningar med uppgifter som företaget kan styrka. Kundcitat ska vara autentiska och använda material som får publiceras. Om det saknas lokala exempel behöver ni inte hitta på dem. Beskriv i stället processen och vilka frågor som behöver besvaras före en bedömning. Bilder bör få informativa bildtexter när de bidrar med sammanhang, snarare än ett upprepat ortsnamn utan förklaring."
+          ]
+        },
+        {
+          "title": "Underhåll profiler och kontaktuppgifter",
+          "paragraphs": [
+            "Om verksamheten är berättigad till en Google-företagsprofil bör profilens uppgifter stämma med den faktiska verksamheten och Googles aktuella regler. Gissa inte att varje serviceområde kräver en separat profil. Kontrollera namn, kategori, telefon, öppettider och eventuell webbadress när något förändras. Samma sak gäller uppgifter i relevanta branschregister som företaget ansvarar för. En profil är inte en ersättning för en användbar webbplats, men motsägelsefulla uppgifter kan göra besökarens bedömning svårare och skapa onödiga frågor vid kontakt."
+          ]
+        },
+        {
+          "title": "Bedöm efterfrågan på ett nyanserat sätt",
+          "paragraphs": [
+            "Granska vilka lokalt präglade sökfrågor som ger visningar och klick i Search Console, men tänk på att alla frågor inte visas. Dela upp data efter relevant sida och period. Komplettera med de orter som nämns i mottagna förfrågningar. En besökare kan använda en generell tjänstefråga utan att skriva orten, så bara ortsnamn ger inte hela bilden. Uppföljningen ska hjälpa er rätta innehåll och prioriteringar, inte användas för att dra säkra slutsatser från ett fåtal klick."
+          ]
+        }
+      ],
+      "checklist": [
+        "Skilj faktisk adress från serviceområde.",
+        "Skapa ortssidor med självständigt innehåll.",
+        "Förklara tjänstens praktiska tillgänglighet.",
+        "Använd autentiska lokala exempel.",
+        "Följ lokala frågor tillsammans med förfrågningar."
+      ],
+      "conclusion": "Lokal synlighet bygger på en korrekt bild av verksamheten. Prioritera information som hjälper kunden att avgöra om tjänsten går att beställa på den aktuella platsen och hur ett första samtal kan förberedas."
+    },
+    {
+      "id": "international-seo",
+      "title": "Internationell SEO med tydliga språkversioner",
+      "slug": "internationell-seo-sprakversioner",
+      "description": "Planera internationell SEO med användbara språkversioner, tydliga adresser och konsekventa signaler. Granska innehåll, hreflang och kontaktvägar per marknad.",
+      "intro": [
+        "En översatt meny gör inte automatiskt en webbplats användbar på en ny marknad. Besökaren behöver förstå tjänsten, vilka praktiska villkor som gäller och hur kontakten fungerar. Internationell SEO börjar därför med ett erbjudande som faktiskt går att leverera.",
+        "För ett svenskt industriföretag som vill nå danska inköpare kan ordval, produktkategorier och beslutsunderlag skilja sig mellan länderna. Planera först vilka sidor som behövs och vem som kan kvalitetssäkra dem. Tekniska språksignaler fungerar bäst när innehållets uppgift redan är tydlig."
+      ],
+      "sections": [
+        {
+          "title": "Välj språk och marknad med ett konkret syfte",
+          "paragraphs": [
+            "Skriv ned vilken målgrupp varje version ska hjälpa och vad företaget kan erbjuda där. Ett engelskt innehåll kan fungera för internationell orientering medan en särskild dansk sida svarar på andra köpfrågor. Separera sådana behov från antagandet att alla sidor måste översättas direkt. Börja med huvudtjänster, relevant projektmaterial och fungerande kontaktinformation. Kontrollera att företaget kan hantera de förfrågningar som sidan uppmuntrar och beskriv kommunikationens förutsättningar utan att lova lokal närvaro eller stöd som inte finns."
+          ]
+        },
+        {
+          "title": "Undersök hur kunderna beskriver problemet",
+          "paragraphs": [
+            "Jämför verkliga sökresultat, kundfrågor och tillgänglig sökdata på respektive språk. Den närmaste ordagranna översättningen är inte alltid det uttryck som används i en köpundersökning. Ett produktnamn kan också betyda olika saker för olika branscher. Gör en liten ordlista med huvudtermer, alternativ och avgränsningar. Använd den som stöd för rubriker och kategorier, men låt en språkkunnig granskare bedöma om texten är naturlig och begriplig. Upprepning av främmande nyckelord ersätter inte lokalt relevant förklaring."
+          ]
+        },
+        {
+          "title": "Ge varje version en stabil adress",
+          "paragraphs": [
+            "Språkversioner behöver egna adresser som går att besöka och länka till direkt. En undermapp kan göra strukturen lätt att förvalta, men valet bör bedömas utifrån hela webbplatsen. Undvik att bara byta innehåll på samma adress genom en dold språkparameter. Se till att viktiga versioner kan nås via vanliga länkar. En språkväxlare bör föra besökaren till motsvarande innehåll när det finns, i stället för att alltid återställa resan till startsidan och låta användaren leta igen."
+          ]
+        },
+        {
+          "title": "Samordna hreflang och kanoniska adresser",
+          "paragraphs": [
+            "Hreflang kan hjälpa Google förstå relationen mellan motsvarande språk- eller regionversioner. Hänvisningarna behöver peka på rätt tillgängliga adresser och vara ömsesidiga. Kontrollera självreferenser och använd språk- och regionkoder på ett genomtänkt sätt. En översatt sida som ska kunna indexeras bör normalt inte ange en annan språkversion som sin kanoniska adress. Granska också att de sidor ni länkar till faktiskt motsvarar varandra. Hreflang reparerar inte en sida som saknar användbart innehåll eller blockerats från indexering."
+          ]
+        },
+        {
+          "title": "Anpassa belägg och nästa steg",
+          "paragraphs": [
+            "Granska exempel, måttenheter, kontaktuppgifter och tjänsteavgränsningar för den aktuella läsaren. En internationell webbplats bör tydligt säga var teamet finns och hur arbetet genomförs. Bevara de verkliga projektens fakta även när förklaringen lokaliseras. Kontrollera att formulärens etiketter och felmeddelanden finns på rätt språk. Om WhatsApp används kan en inledande text hjälpa till att ange marknad och önskad tjänst. Lova inte ett visst kommunikationsspråk eller en viss svarstid om det inte är en faktisk överenskommen del av erbjudandet."
+          ]
+        },
+        {
+          "title": "Följ varje version som en egen uppgift",
+          "paragraphs": [
+            "Använd Search Console för att granska sidor, länder och frågor med relevanta filter. En språkversion kan börja få visningar innan den har tillräckligt underlag för säkra slutsatser. Kontrollera först att rätt sida visas för de frågor ni vill besvara. Undersök sedan vad besökarna behöver för att gå vidare. Om en version får fel sorts förfrågningar kan erbjudandet eller ordvalet behöva justeras. Dokumentera ändringar per språk så att förbättringar och fel inte försvinner i webbplatsens samlade siffror."
+          ]
+        }
+      ],
+      "checklist": [
+        "Definiera erbjudandet för varje marknad.",
+        "Granska lokala termer och köpfrågor.",
+        "Använd stabila adresser för språkversioner.",
+        "Kontrollera hreflang och kanoniska signaler.",
+        "Testa kontaktflöden på varje språk."
+      ],
+      "conclusion": "Internationell SEO blir mer hanterbar när innehåll, adresser och leveransförutsättningar följer samma plan. En avgränsad och väl granskad språkversion ger ett bättre arbetsunderlag än en stor mängd otydligt lokaliserade sidor."
+    },
+    {
+      "id": "mobile-performance",
+      "title": "Mobil prestanda som stödjer SEO och kontakt",
+      "slug": "mobil-prestanda-seo-kontakt",
+      "description": "Granska mobil prestanda med verkliga användardata, stabil layout och fungerande kontaktknappar. Prioritera hinder som påverkar läsning och kundens nästa steg.",
+      "intro": [
+        "En mobil besökare kan läsa en tjänstesida på en långsam uppkoppling, växla mellan leverantörer och öppna kontakten med en hand. Prestanda handlar därför om mer än ett enskilt testvärde. Sidan behöver visa rätt innehåll och reagera begripligt när den används.",
+        "Core Web Vitals ger användbara perspektiv på laddning, interaktion och visuell stabilitet. Mätvärdena ska kombineras med praktiska prov av den faktiska kundresan. En snabb startsida hjälper inte särskilt mycket om tjänstesidan hoppar eller formuläret blir svårt att fylla i."
+      ],
+      "sections": [
+        {
+          "title": "Välj representativa sidor att granska",
+          "paragraphs": [
+            "Börja med startsidan, en viktig tjänstesida, en artikel och kontaktflödet. För en webbutik bör en kategori och en produktsida också ingå. Sidtyper kan ladda olika bilder, komponenter och externa verktyg. Använd tillgängliga fältdata för att se hur verkliga besökare upplever webbplatsen och laboratorietester för att undersöka möjliga orsaker. Lågt besöksunderlag kan innebära att data saknas för en enskild adress. Frånvaron av mätvärden är inte bevis för att sidan saknar prestandaproblem."
+          ]
+        },
+        {
+          "title": "Identifiera innehållet som laddar sent",
+          "paragraphs": [
+            "Largest Contentful Paint handlar om när det största synliga innehållselementet visas. På en tjänstesida kan det vara huvudbilden eller ett större textblock. Undersök vad som fördröjer just detta element innan ni ändrar hela sidan. En alltför stor bild, långsam serverrespons eller resurs som upptäcks sent kräver olika lösningar. Undvik att skjuta upp laddningen av den centrala bilden bara för att alla bilder fått samma regel. Prioritera den resurs som användaren faktiskt väntar på i första vyn."
+          ]
+        },
+        {
+          "title": "Minska onödig belastning vid interaktion",
+          "paragraphs": [
+            "Interaction to Next Paint hjälper till att belysa hur snabbt sidan reagerar på användarens handlingar. Menyer, filter och kontaktknappar behöver därför provas efter att sidan har öppnats. Leta efter långa arbetsuppgifter i JavaScript och tunga externa funktioner som gör gränssnittet segt. En enkel företagswebbplats behöver sällan samma mängd kod som en komplex applikation. Bedöm varje extra verktyg efter dess nytta för verksamheten och besökaren. Att ta bort en oanvänd komponent kan vara mer ändamålsenligt än att försöka optimera den."
+          ]
+        },
+        {
+          "title": "Reservera plats för bilder och komponenter",
+          "paragraphs": [
+            "Cumulative Layout Shift beskriver oväntade förskjutningar i layouten. Ange bildmått eller motsvarande proportioner så att sidan vet vilket utrymme som behövs. Granska också typsnitt, banners och inbäddat innehåll som kan flytta en knapp just när besökaren ska trycka. En tjänstesida med stabil text och förutsägbara kontroller är lättare att använda även när uppkopplingen är ojämn. Prova både första laddningen och återbesök, eftersom cachade resurser kan dölja problem som en ny besökare fortfarande möter."
+          ]
+        },
+        {
+          "title": "Testa läsning och kontakt i samma flöde",
+          "paragraphs": [
+            "Öppna sidan på en verklig mobil och följ en uppgift: hitta tjänstens omfattning, förstå ett exempel och skicka en testförfrågan. Kontrollera textstorlek, fokushantering och att kontroller går att nå. Se om ett fast kontaktfält täcker information eller kolliderar med tangentbordet. Ett WhatsApp-alternativ ska öppna rätt nummer och inte ta över sidan utan ett aktivt val. Dokumentera konkreta hinder med sidtyp och situation så att förbättringarna kan prioriteras efter den kundresa som företaget faktiskt vill stödja."
+          ]
+        },
+        {
+          "title": "Följ upp efter varje betydande ändring",
+          "paragraphs": [
+            "Notera vilka resurser eller komponenter som ändrades och kör samma relevanta prov igen. Fältdata kan behöva tid och tillräckligt användningsunderlag innan ändringen syns i sammanställningen. Undvik därför att jämställa ett omedelbart laboratorieresultat med verkligt kundbeteende. Granska även kontaktflödet så att optimeringen inte har brutit funktioner. Prestanda är en del av en användbar webbplats och en aspekt av sökupplevelsen, men goda mätvärden garanterar inte positioner eller förfrågningar om innehållet saknar relevans."
+          ]
+        }
+      ],
+      "checklist": [
+        "Granska flera kommersiellt viktiga sidtyper.",
+        "Skilj fältdata från laboratorietester.",
+        "Prioritera innehållet i första vyn.",
+        "Kontrollera stabilitet och mobil interaktion.",
+        "Prova kontaktflödet efter ändringar."
+      ],
+      "conclusion": "Använd prestandamätning för att hitta verkliga hinder och kontrollera lösningen i samma användarflöde. Då blir arbetet knutet till läsning och kontakt, samtidigt som webbplatsens tekniska kvalitet kan följas på ett tydligare sätt."
+    },
+    {
+      "id": "online-store",
+      "title": "SEO för webbutiker: från kategorier till köpbeslut",
+      "slug": "seo-webbutik-kategorier-kopbeslut",
+      "description": "Planera SEO för en webbutik med tydliga kategorier, användbara produkttexter och genomtänkta filter. Hjälp sökbesökare att jämföra och välja rätt produkt.",
+      "intro": [
+        "En webbutik kan ha ett stort sortiment utan att ge kunderna en tydlig väg till rätt produkt. Organisk söktrafik behöver landningssidor som motsvarar olika behov: att förstå en produktgrupp, jämföra alternativ eller kontrollera en viss modell före köp.",
+        "För en butik som säljer arbetsbelysning kan kunder söka efter användning, ljusegenskaper eller en bestämd produkt. Börja med dessa skillnader när kategorier och produktinformation planeras. Då kan sökbarhet och kundens val byggas kring samma användbara struktur i stället för kring enbart interna artikelnummer."
+      ],
+      "sections": [
+        {
+          "title": "Ordna kategorier efter verkliga val",
+          "paragraphs": [
+            "Samla produkter utifrån egenskaper som faktiskt hjälper kunden att avgränsa sitt behov. För arbetsbelysning kan användningsmiljö och montering vara viktigare än leverantörens kataloggrupper. Undvik samtidigt att skapa en kategori för varje tänkbar kombination. En egen kategorisida behöver ett tydligt syfte, ett relevant sortiment och innehåll som förklarar valet. Kontrollera att kategorierna går att hitta via vanliga länkar från navigationen. En sida som bara visas efter en intern sökning kan bli svårare för både kunden och sökmotorn att upptäcka."
+          ]
+        },
+        {
+          "title": "Skriv kategoriinnehåll som underlättar jämförelsen",
+          "paragraphs": [
+            "En kategoritext bör besvara frågor som gäller hela produktgruppen. Förklara exempelvis skillnaden mellan fast och flyttbar belysning eller vilka mått kunden behöver känna till. Placera förklaringen där den hjälper utan att trycka undan produktöversikten. Låt rubriken beskriva vad kategorin innehåller och länka till fördjupningar när de behövs. Att lägga en lång generisk text längst ned enbart för att nämna sökord ger sällan ett bättre beslutsunderlag. Utgå i stället från återkommande frågor före köpet."
+          ]
+        },
+        {
+          "title": "Gör produktsidan självständigt användbar",
+          "paragraphs": [
+            "Komplettera grundläggande specifikationer med information som hjälper kunden förstå produktens lämplighet. Ange innehåll i förpackningen, viktiga mått, kompatibilitet och skillnader mellan varianter när uppgifterna är relevanta och korrekta. Bilder kan visa skala, anslutningar och användningssituation. Kopiera inte samma allmänna fördelar till alla produkter och låt dem ersätta faktiska skillnader. Kontrollera också hur vald variant påverkar bild, lageruppgift och adress. En besökare som kommer från Google behöver kunna förstå exakt vilket alternativ sidan presenterar."
+          ]
+        },
+        {
+          "title": "Bestäm hur filteradresser ska hanteras",
+          "paragraphs": [
+            "Filter kan skapa många kombinationer som inte alla behöver vara indexerbara landningssidor. Kartlägg vilka adresser som uppstår när kunden väljer exempelvis effekt, färg och montering. Välj vilka kombinationer som har ett eget användbart syfte och hur övriga ska hanteras tekniskt. Kanoniska signaler, crawlning och interna länkar måste följa samma plan. En blockering i robots.txt ersätter inte automatiskt ett beslut om indexering. Kontrollera lösningen mot butikens faktiska implementation i stället för att använda en generell regel för alla parametrar."
+          ]
+        },
+        {
+          "title": "Hantera förändrat sortiment genomtänkt",
+          "paragraphs": [
+            "En tillfälligt slutsåld produkt kan fortfarande ha användbar information och väntas återkomma. En permanent borttagen produkt behöver en annan bedömning. Om det finns en verkligt motsvarande ersättare kan en relevant omdirigering vara rimlig; annars behöver status och kundens väg vidare planeras. Skicka inte automatiskt alla gamla adresser till startsidan. Granska länkar, sitemap och intern navigation när sortimentet ändras. Bevara korrekt information om produkten så att kunder och sökmotorer inte möter motstridiga uppgifter om tillgänglighet."
+          ]
+        },
+        {
+          "title": "Mät var kunden kommer in och fastnar",
+          "paragraphs": [
+            "Skilj trafik till kategorier från trafik till enskilda produkter. Search Console kan visa vilka frågor och sidor som ger klick, medan butikens egna flöden hjälper er undersöka produktval och köp. En kategorisida med många visningar men få klick kan behöva tydligare titel eller bättre matchning mot frågan. En välbesökt produktsida utan vidare handling kräver granskning av innehåll, prisinformation och funktion. Dra inte slutsatser om lönsamhet från söktrafik ensam; bedöm relevans och faktiska affärshändelser med lämpligt underlag."
+          ]
+        }
+      ],
+      "checklist": [
+        "Kartlägg kundernas viktigaste produktval.",
+        "Ge kategorier egna tydliga syften.",
+        "Visa verkliga skillnader mellan produkter.",
+        "Granska filter och variantadresser.",
+        "Planera slutsålda och borttagna produkter."
+      ],
+      "conclusion": "En sökbar webbutik behöver mer än produktnamn. När kategorier, produktdata och tekniska signaler stödjer samma val blir det lättare att hitta förbättringar som både hjälper sökbesökaren och går att underhålla i butikens vardag."
+    },
+    {
+      "id": "whatsapp-conversion",
+      "title": "WhatsApp på webbplatsen: en tydlig väg från SEO till kontakt",
+      "slug": "whatsapp-webbplats-seo-kontakt",
+      "description": "Gör WhatsApp till en begriplig kontaktväg på webbplatsen. Anpassa placering, inledande text och mätning efter tjänsten och skilj klick från riktiga meddelanden.",
+      "intro": [
+        "En WhatsApp-knapp kan göra kontakten enklare för en besökare som redan har förstått erbjudandet. Den löser däremot inte en otydlig tjänstesida. Besökaren behöver veta vad samtalet gäller, vilka uppgifter som är användbara och vem som finns bakom webbplatsen.",
+        "För ett företag med internationella kunder är det särskilt viktigt att kontaktuppgifterna är korrekta och att förväntningarna är realistiska. En fungerande länk, ett relevant sammanhang och en ärlig beskrivning av nästa steg är mer användbart än löften om omedelbara svar som verksamheten inte kan hålla."
+      ],
+      "sections": [
+        {
+          "title": "Placera knappen efter ett begripligt erbjudande",
+          "paragraphs": [
+            "Gå igenom de sidor där kunder brukar börja sin resa från Google. En tjänstesida kan behöva förklara uppdragets omfattning och visa ett exempel innan kontakten känns relevant. Placera en uppmaning i anslutning till den förklaringen. En fast knapp kan komplettera detta, men ska inte täcka text eller formulär. På en artikel kan ett stycke om nästa steg länka till tjänsten eller erbjuda kontakt när det passar ämnet. Alla läsare är inte redo att starta ett kommersiellt samtal."
+          ]
+        },
+        {
+          "title": "Skriv vad besökaren kan fråga om",
+          "paragraphs": [
+            "En knapp med texten att diskutera ett webbprojekt ger mer sammanhang än ett ensamt chattmärke. Lägg gärna till vilka uppgifter som hjälper: nuvarande webbplats, önskad tjänst och verksamhetens marknad. För en reparatör kan modell och kort problembeskrivning vara mer relevant. Håll instruktionen kort och låt kunden själv avgöra vad som ska skickas. Publicera inte krav på omfattande personuppgifter i en första chatt. Beskriv processen utifrån vad företaget faktiskt kan hantera, inklusive eventuella begränsningar i vilken rådgivning som ges där."
+          ]
+        },
+        {
+          "title": "Kontrollera länken på olika enheter",
+          "paragraphs": [
+            "Använd rätt telefonnummer i internationellt format och kontrollera att länken öppnar avsedd konversation. Prova både en mobil med appen och en dator där webbläsarflödet kan se annorlunda ut. En förifylld text måste kodas korrekt så att å, ä och ö visas rätt. Gör texten enkel att ändra och skicka inte med dold information som kunden inte känner till. Prova också tangentbordsnavigering och länkens tillgängliga namn. Ett synligt märke behöver en begriplig etikett för den som använder hjälpmedel."
+          ]
+        },
+        {
+          "title": "Skilj öppning från skickat meddelande",
+          "paragraphs": [
+            "Ett registrerat klick betyder att någon använde länken, inte att personen faktiskt skickade något i WhatsApp. Namnge därför händelsen så att den beskriver klicket. Om verksamheten vill bedöma mottagna förfrågningar behövs en separat och lämplig arbetsrutin. Sammanställ exempelvis vilken tjänst samtalet gällde och om det var relevant, utan att kopiera privata meddelanden till ett analysverktyg. När dessa definitioner är tydliga blir det lättare att undvika missvisande rapporter där varje öppnad chatt framställs som en ny kund."
+          ]
+        },
+        {
+          "title": "Följ sidans sammanhang med varsamhet",
+          "paragraphs": [
+            "Det kan vara användbart att veta vilken tjänstesida som föregick kontaktklicket. Använd en tydlig intern mätmodell med sidtyp och knappens placering, och undvik känsliga uppgifter i adressparametrar. En neutral inledande text kan ange tjänsten, men bör inte bära besökarens historik eller formulärinnehåll. Tolka uppgifterna tillsammans med trafikkälla och innehåll. Om en guide får många klick men huvudsakligen allmänna frågor kan uppmaningen behöva avgränsas snarare än göras mer framträdande. Målet är ett användbart samtal, inte en större räknare."
+          ]
+        },
+        {
+          "title": "Gör kontaktvägen till en del av förvaltningen",
+          "paragraphs": [
+            "Utse vem som kontrollerar att numret fortfarande används och att länkarna fungerar efter ändringar. När tjänster eller ansvar förändras behöver också den inledande texten uppdateras. Sätt en rutin för hur relevanta förfrågningar dokumenteras och förs vidare inom verksamheten. Webbplatsen ska inte lova en svarstid som saknar operativ förankring. Kontrollera dessutom att ett fast chattfält inte återkommer ovanpå viktiga meddelanden efter en designändring. Kontakten är en funktion som behöver underhåll, även om den tekniska lösningen ser enkel ut."
+          ]
+        }
+      ],
+      "checklist": [
+        "Förklara tjänsten före kontaktuppmaningen.",
+        "Visa vad kunden kan förbereda.",
+        "Testa internationellt nummer på mobil och dator.",
+        "Mät klick utan att kalla dem skickade meddelanden.",
+        "Utse ansvarig för kontaktvägens underhåll."
+      ],
+      "conclusion": "WhatsApp fungerar bäst när kontaktens sammanhang är tydligt. En korrekt länk och rimliga förväntningar kan stödja vägen från söktrafik till dialog, men kvaliteten behöver bedömas utifrån de samtal som faktiskt kommer in."
+    },
+    {
+      "id": "website-migration",
+      "title": "Byta webbplats utan att tappa bort viktiga SEO-adresser",
+      "slug": "byta-webbplats-seo-adresser",
+      "description": "Förbered ett webbplatsbyte med adressinventering, relevanta omdirigeringar och kontroll av indexering. Följ viktiga sidor, interna länkar och kontaktflöden.",
+      "intro": [
+        "Ett webbplatsbyte förändrar ofta flera saker samtidigt: sidstruktur, innehåll, teknik och adresser. För att kunna bedöma vad som händer behöver övergången planeras innan den gamla webbplatsen ersätts. Börja med vilka sidor och kundresor som redan fyller en funktion.",
+        "En konsultbyrå kan exempelvis ha en äldre artikel som ger relevanta besök till en tjänst trots att artikeln inte syns i huvudmenyn. Om bara de synliga menysidorna tas med kan både innehåll och interna samband försvinna. En adressinventering gör sådana beroenden lättare att upptäcka."
+      ],
+      "sections": [
+        {
+          "title": "Samla adresser från flera håll",
+          "paragraphs": [
+            "Använd befintlig sitemap, webbplatsens interna länkar och tillgängliga rapporter från Search Console som underlag. Komplettera med kända kampanjadresser och viktiga externa hänvisningar. Ingen enskild källa behöver innehålla allt. Markera vilka sidor som får klick, vilka som stödjer en huvudtjänst och vilka som saknar fortsatt värde. Spara innehållets syfte och relevanta uppgifter innan den gamla miljön stängs. Inventeringen ska göra det möjligt att fatta beslut per adress, inte bara ge ett totalt antal sidor att flytta."
+          ]
+        },
+        {
+          "title": "Bestäm en relevant destination för varje ändring",
+          "paragraphs": [
+            "Mappa gamla adresser mot de nya sidor som bäst motsvarar innehållet. När flera äldre sidor slås ihop behöver den nya sidan täcka deras relevanta ämnen på ett naturligt sätt. Omdirigera inte allt till startsidan enbart för att undvika felmeddelanden. Om något verkligen försvinner utan ersättare kan en korrekt felsvarskod vara mer ärlig än en irrelevant destination. Dokumentera också adresser som ska behållas oförändrade. En genomtänkt karta gör det enklare att granska resultatet och rätta fel efter lanseringen."
+          ]
+        },
+        {
+          "title": "Kontrollera miljöernas indexeringssignaler",
+          "paragraphs": [
+            "En testmiljö behöver hanteras så att den inte oavsiktligt blir en konkurrerande publik kopia. Inför lanseringen måste eventuella noindex-instruktioner och åtkomstbegränsningar bedömas för den riktiga miljön. Kontrollera robots.txt, kanoniska adresser och sitemap så att de hänvisar till rätt domän och protokoll. En snyggt publicerad sida kan fortfarande vara svår att indexera om tekniska signaler pekar tillbaka mot testmiljön. Gör en uttrycklig kontroll av de viktigaste sidtyperna i stället för att anta att alla inställningar följer med korrekt."
+          ]
+        },
+        {
+          "title": "Behåll innehållets funktion när designen ändras",
+          "paragraphs": [
+            "En ny layout kan råka ta bort beskrivningar, projektförklaringar eller länkar som hjälpte besökaren att förstå tjänsten. Granska därför innehåll och sökintention tillsammans med den visuella förändringen. Om tjänsteutbudet ändras är det rimligt att skriva om, men dokumentera vad som ersätts och varför. Kontrollera titlar, huvudrubriker och länkar på de viktigaste landningssidorna. Se också till att avgörande text faktiskt finns i den publicerade sidan och inte bara i en designfil eller ett tillfälligt administrativt fält."
+          ]
+        },
+        {
+          "title": "Testa en fullständig resa före publicering",
+          "paragraphs": [
+            "Prova gamla länkar, nya adresser och interna navigationsvägar på representativa enheter. En omdirigering bör helst gå direkt till slutdestinationen i stället för genom flera led. Kontrollera att formulär, WhatsApp-länkar och eventuella bokningsfunktioner fortfarande fungerar. Se till att kundens centrala uppgift går att slutföra efter en omdirigering. En teknisk kontroll av statuskoder upptäcker inte alla användningsproblem. Någon behöver också läsa den nya sidan och avgöra om den faktiskt svarar på det som den gamla länken lovade."
+          ]
+        },
+        {
+          "title": "Följ upp förändringen med ett sparat utgångsläge",
+          "paragraphs": [
+            "Spara relevanta rapporter före bytet och följ viktiga sidor och frågor efter publiceringen. Förändringar i söktrafik kan bero på ombearbetning av adresser och innehåll, men även på säsong eller andra aktiviteter. Kontrollera först tillgänglighet, omdirigeringar och indexeringsstatus innan ni drar breda slutsatser. Använd URL-inspektion för konkreta problem och prioritera fel som påverkar affärskritiska sidor. Håll adresskartan uppdaterad när korrigeringar görs så att teamet vet vilken version av planen som faktiskt gäller."
+          ]
+        }
+      ],
+      "checklist": [
+        "Inventera adresser före designbytet.",
+        "Mappa gamla sidor till relevanta mål.",
+        "Kontrollera noindex och kanoniska adresser.",
+        "Testa interna länkar och kontaktflöden.",
+        "Följ viktiga sidor med sparat utgångsläge."
+      ],
+      "conclusion": "En planerad migrering gör förändringarna möjliga att förstå och kontrollera. Genom att bevara relevanta adresser eller ersätta dem med genomtänkta destinationer får både besökare och sökmotorer tydligare vägar genom den nya webbplatsen."
+    },
+    {
+      "id": "seo-audit",
+      "title": "SEO-analys: prioritera rätt fel på företagets webbplats",
+      "slug": "seo-analys-prioritera-ratt-fel",
+      "description": "Gör en SEO-analys som kopplar tekniska fynd till viktiga sidor, sökintention och kontaktvägar. Prioritera genomförbara åtgärder och dokumentera nästa kontroll.",
+      "intro": [
+        "En SEO-analys är användbar först när den hjälper företaget att välja vad som ska göras. En lång lista med varningar säger inte automatiskt vilka problem som hindrar rätt sida från att synas eller gör tjänsten svår att förstå.",
+        "Tänk på en verksamhet som erbjuder både serviceavtal och enstaka reparationer. Om samma sida försöker svara på alla behov kan problemet ligga i erbjudandets struktur, även om ett granskningsverktyg främst visar bildstorlekar. Koppla därför varje fynd till en konkret sida, sökuppgift och affärsmässig betydelse."
+      ],
+      "sections": [
+        {
+          "title": "Definiera vilka sidor analysen ska stödja",
+          "paragraphs": [
+            "Välj webbplatsens viktigaste tjänster och de kontaktflöden som hör till dem. Skriv vilka kunder sidorna är avsedda för och vad en relevant förfrågan ska innehålla. Ta sedan med ett representativt urval av artiklar, kategorier och andra sidtyper. På en liten webbplats kan alla adresser granskas, men prioritering behövs ändå. En bortglömd informationssida och en blockerad huvudtjänst kräver olika uppmärksamhet. Syftet är att veta vilka konsekvenser ett fel kan få för verksamhetens faktiska användning av webbplatsen."
+          ]
+        },
+        {
+          "title": "Kontrollera om viktiga adresser kan användas",
+          "paragraphs": [
+            "Börja med tillgänglighet, svarskoder, indexeringsinstruktioner och kanoniska signaler. Kontrollera om Google verkar känna till den avsedda sidan genom tillgängliga verktyg i Search Console. En URL som omdirigeras eller är markerad noindex behöver bedömas utifrån avsikten, inte automatiskt klassas som fel. Granska sedan om interna länkar leder direkt till rätt version. Dokumentera konkreta adresser och observationer. Det gör fynden möjliga att kontrollera igen och förhindrar att en generell varning behandlas som ett bevis utan praktiskt sammanhang."
+          ]
+        },
+        {
+          "title": "Jämför innehåll med frågans uppgift",
+          "paragraphs": [
+            "Läs sidan med den tänkta sökfrågan i åtanke. Får besökaren ett tydligt svar på vad tjänsten omfattar, vem den passar och hur nästa steg går till? Kontrollera om rubriker och exempel beskriver samma erbjudande som sidtiteln. För en sida om serviceavtal behövs kanske löpande ansvar och upplägg, medan akut reparation kräver en annan förklaring. Att lägga till fler ord löser inte en sådan skillnad. Anteckna vilken information som saknas och hur den hjälper kundens beslut."
+          ]
+        },
+        {
+          "title": "Granska länkar och innehållskonkurrens",
+          "paragraphs": [
+            "Undersök vilka sidor som länkar till den granskade tjänsten och med vilka beskrivningar. En central sida kan vara svår att hitta om relevanta artiklar bara länkar till startsidan. Leta också efter flera sidor som försöker besvara samma fråga utan tydligt olika syften. Det betyder inte att alla liknande sidor ska slås ihop, men relationen behöver förklaras. Jämför innehåll, sökfrågor och faktisk funktion innan ni väljer att uppdatera, sammanföra eller behålla sidorna som separata delar av strukturen."
+          ]
+        },
+        {
+          "title": "Skriv åtgärder som någon kan utföra",
+          "paragraphs": [
+            "Varje prioriterat fynd bör innehålla berörd adress, observerat problem, föreslagen ändring och sätt att kontrollera resultatet. Ange också ansvarig person och eventuella beroenden. Att förbättra SEO är för vagt; att återställa en borttagen länk från en relevant guide till serviceavtalssidan går att genomföra. Bedöm arbetsinsatsen tillsammans med möjlig betydelse och säkerheten i underlaget. Ett snabbt kosmetiskt ingrepp ska inte automatiskt hamna före ett större problem som blockerar en affärskritisk sida från att användas."
+          ]
+        },
+        {
+          "title": "Skilj genomförande från effektmätning",
+          "paragraphs": [
+            "Kontrollera först att ändringen blev korrekt publicerad. Det kan göras genom att läsa sidan, följa länkar eller inspektera tekniska svar. Följ därefter relevanta sökfrågor, klick och kontaktvägar över en rimlig period med hänsyn till underlag och säsong. En teknisk rättning behöver inte ge ett omedelbart mätbart lyft. Dokumentera vad som fortfarande är osäkert och vilka nya observationer som motiverar nästa beslut. På så sätt blir analysen ett arbetsunderlag som kan förbättras i stället för en engångsrapport med tvärsäkra prognoser."
+          ]
+        }
+      ],
+      "checklist": [
+        "Välj viktiga sidor och sökuppgifter.",
+        "Kontrollera tillgänglighet och indexeringssignaler.",
+        "Läs innehållet mot kundens behov.",
+        "Beskriv åtgärd, ägare och kontroll.",
+        "Följ publicering före kommersiell effekt."
+      ],
+      "conclusion": "En bra SEO-analys gör ett begränsat antal beslut tydliga. När tekniska fynd och innehållsfrågor kopplas till verkliga kundresor kan företaget prioritera arbetet och kontrollera vad varje åtgärd faktiskt förändrade."
+    },
+    {
+      "id": "search-intent",
+      "title": "Sökintention: välj rätt sida för kundens fråga",
+      "slug": "sokintention-ratt-sida-kundfraga",
+      "description": "Kartlägg sökintention och välj rätt innehåll för jämförelse, information och kontakt. Granska sökresultat och koppla frågor till tydliga tjänstesidor.",
+      "intro": [
+        "Två sökfrågor med samma huvudord kan uttrycka helt olika behov. Den som söker hur en energikartläggning går till vill kanske förstå processen, medan den som jämför leverantörer behöver bedöma ett konkret erbjudande. Samma innehåll behöver inte passa båda lika bra.",
+        "Sökintention är ett sätt att beskriva vilken uppgift användaren försöker lösa. Bedömningen ska bygga på frågor, sökresultat och kundkunskap. Den är ingen fast etikett som kan bestämmas en gång och sedan ersätta granskning av vad webbplatsens besökare faktiskt behöver."
+      ],
+      "sections": [
+        {
+          "title": "Samla frågor från flera delar av kundresan",
+          "paragraphs": [
+            "Utgå från verkliga samtal, formulärfrågor och relevanta data i Search Console. Skriv frågorna som människor ställer dem, innan de förenklas till en lista med sökord. För energikartläggning kan frågorna gälla vad som ingår, hur underlaget förbereds eller vem som kan utföra arbetet. Markera också vilka frågor som ligger utanför erbjudandet. Ett företag behöver inte besvara allt som associeras med ämnet. Urvalet ska spegla områden där verksamheten har relevant kunskap och en trovärdig koppling till kundens behov."
+          ]
+        },
+        {
+          "title": "Läs sökresultaten som ett urval av svar",
+          "paragraphs": [
+            "Granska vilka sidtyper som visas för den tänkta frågan: guider, kategorier, tjänstesidor eller jämförelser. Läs flera resultat och notera vilken information de lyfter. Resultaten kan ge ledtrådar om användarnas förväntningar, men de är inte en instruktion att kopiera konkurrenter. En fråga kan ha blandad intention och förändras över tid. Dokumentera vad du observerade och när. Då kan ni senare bedöma om en svag sida beror på innehållets kvalitet eller på att dess format inte passar den aktuella uppgiften."
+          ]
+        },
+        {
+          "title": "Beskriv behovet innan du väljer format",
+          "paragraphs": [
+            "Skriv en kort mening om vad besökaren ska kunna avgöra efter läsningen. En informationsguide kan hjälpa läsaren förstå processen och förbereda frågor. En tjänstesida ska dessutom tydliggöra företagets omfattning, lämplighet och kontaktväg. En jämförelse behöver redovisa relevanta skillnader med rimliga avgränsningar. Välj format efter denna uppgift. Att kalla en säljande tjänstesida för en komplett guide utan att besvara grundfrågorna skapar en glipa mellan sökresultatets löfte och det innehåll som besökaren sedan möter."
+          ]
+        },
+        {
+          "title": "Koppla frågegrupper till befintliga adresser",
+          "paragraphs": [
+            "Skapa en enkel karta där varje tydlig uppgift har en avsedd huvudsida. Flera närliggande formuleringar kan ofta besvaras på samma sida när de gäller samma behov. Undvik att automatiskt skapa en ny artikel för varje ordvariant. Om en befintlig tjänstesida redan svarar väl kan den förbättras med ett relevant avsnitt. Om frågan kräver en längre förklaring kan en egen guide länka vidare till tjänsten. Kartan ska göra innehållets roller tydliga och minska risken för oavsiktlig upprepning."
+          ]
+        },
+        {
+          "title": "Skriv övergångar som följer läsarens beredskap",
+          "paragraphs": [
+            "En läsare som försöker förstå arbetsprocessen kan behöva en checklista innan en kontaktuppmaning blir relevant. Placera därför nästa steg efter den förklaring som motiverar det. En guide om förberedelser kan länka till tjänstesidans beskrivning av vilket underlag som behövs. En sida för leverantörsjämförelse kan i stället visa verkliga projekt och föreslå ett samtal om omfattning. Låt länktexten beskriva destinationen. Undvik att skicka alla läsare till samma generiska startsida oavsett vilken fråga de just har fått besvarad."
+          ]
+        },
+        {
+          "title": "Validera avsikten med verkligt underlag",
+          "paragraphs": [
+            "Efter publicering kan Search Console visa vilka frågor sidan faktiskt förknippas med och vilka klick den får. Jämför dem med den planerade uppgiften och följ samtidigt vilka frågor som kommer in till verksamheten. Om en tjänstesida huvudsakligen syns för rena definitionsfrågor kan innehållets tyngdpunkt behöva justeras. Underlaget kan också visa ett legitimt informationsbehov som förtjänar en separat guide. Dra inga säkra slutsatser av enstaka visningar. Låt observationerna förbättra innehållskartan stegvis och dokumentera varför sidans roll ändras."
+          ]
+        }
+      ],
+      "checklist": [
+        "Samla verkliga frågor före sökordslistan.",
+        "Granska vilka sidtyper sökresultaten visar.",
+        "Skriv vilken uppgift varje sida löser.",
+        "Ge närliggande frågor tydliga huvudadresser.",
+        "Följ faktiska frågor efter publicering."
+      ],
+      "conclusion": "Sökintention hjälper dig välja rätt uppgift för varje sida. När innehållets format, löfte och nästa steg passar samma behov blir det lättare att skapa användbara svar och granska vilka besök som kan bli relevanta kontakter."
+    },
+    {
+      "id": "service-pages",
+      "title": "Tjänstesidor som hjälper kunden från sökning till förfrågan",
+      "slug": "tjanstesidor-sokning-forfragan",
+      "description": "Skriv tjänstesidor som förklarar omfattning, kundbehov och nästa steg. Granska struktur, projektbevis och interna länkar för relevanta organiska förfrågningar.",
+      "intro": [
+        "En tjänstesida behöver svara på frågorna som föregår ett köpbeslut. Företagets egna benämningar är inte alltid tillräckliga för att kunden ska förstå vad som ingår. Besökaren behöver kunna bedöma om tjänsten passar den aktuella situationen och vilket underlag som behövs för att börja.",
+        "Ett företag som erbjuder teknisk dokumentation kan hjälpa både produktutvecklare och underhållsansvariga, men grupperna har olika frågor. En genomtänkt sida avgränsar erbjudandet och visar konkreta exempel. Målet är inte att nämna flest sökord utan att ge rätt läsare ett användbart beslutsunderlag."
+      ],
+      "sections": [
+        {
+          "title": "Formulera sidans huvuduppgift",
+          "paragraphs": [
+            "Beskriv i en mening vilken kund och vilket problem tjänsten gäller. Använd ett namn som går att förstå utan kunskap om företagets interna organisation. En sida om teknisk dokumentation kan exempelvis handla om att strukturera användarunderlag för en viss typ av produkt. Om erbjudandet består av tydligt olika tjänster behöver ni bedöma om separata sidor är motiverade. Skillnaden ska bygga på kundbehov och innehåll, inte bara på att flera sökordsvarianter råkar finnas i en lista."
+          ]
+        },
+        {
+          "title": "Förklara omfattningen med praktiska detaljer",
+          "paragraphs": [
+            "Beskriv vilka moment som kan ingå och vad som kräver en särskild överenskommelse. Ange vilket material kunden behöver bidra med och vilka beslut som tas tillsammans. För teknisk dokumentation kan produktunderlag, målgrupp och språkbehov behöva klarläggas tidigt. Skriv sådant som företaget faktiskt kan stå för och undvik universella löften. En tydlig avgränsning kan minska fel sorts förfrågningar samtidigt som en passande kund får bättre förutsättningar att beskriva sitt behov när kontakten väl tas."
+          ]
+        },
+        {
+          "title": "Visa hur arbetet går till",
+          "paragraphs": [
+            "En kort processbeskrivning hjälper kunden förstå relationen mellan första samtal, underlag och leverans. Använd steg som speglar det verkliga arbetet och förklara vad kunden behöver göra vid varje del. Processen ska inte antyda en garanterad tidsplan om den varierar med uppdraget. Lyft hellre vilka förutsättningar som påverkar planeringen. Om projekt kan behöva flera granskningsomgångar är det mer användbart att säga hur återkoppling hanteras än att lova ett friktionsfritt genomförande oavsett innehållets kvalitet och omfattning."
+          ]
+        },
+        {
+          "title": "Välj belägg som passar tjänsten",
+          "paragraphs": [
+            "Länka till ett verkligt projekt med en kort förklaring av varför det är relevant. Visa exempelvis hur en komplex instruktion strukturerades eller hur olika användargrupper fick egna vägar genom informationen. Skilj på observerbara funktioner och kommersiella effekter som inte har mätts. Ett allmänt kundomdöme kan komplettera men ersätter inte en beskrivning av arbetets innehåll. Om projektet omfattade flera tjänster ska länken hjälpa läsaren hitta rätt del, så att beviset verkligen svarar på den tvekan som tjänstesidan försöker minska."
+          ]
+        },
+        {
+          "title": "Bygg interna vägar till och från sidan",
+          "paragraphs": [
+            "Länka till tjänsten från relevanta guider, projekt och övergripande sidor. Länktexterna ska beskriva destinationen naturligt, exempelvis vad en dokumentationsgenomgång omfattar. Från tjänsten kan läsaren behöva nå en fördjupning utan att förlora den kommersiella orienteringen. Använd bara länkar som hjälper uppgiften och kontrollera att de går till den aktuella adressen. En sida kan vara indexerbar men ändå svår att upptäcka om den saknar tydliga interna hänvisningar. Navigationen ska spegla tjänstens betydelse i erbjudandet."
+          ]
+        },
+        {
+          "title": "Avsluta med ett avgränsat nästa steg",
+          "paragraphs": [
+            "Förklara vad besökaren kan skicka inför ett första samtal: typ av produkt, befintligt underlag och huvudsakligt behov. Placera kontaktuppmaningen där den följer av informationen. Testa formuläret och eventuell WhatsApp-länk på mobil. Följ därefter vilka frågor sidan syns för och vad inkommande förfrågningar faktiskt gäller. Om många kunder missförstår omfattningen behöver texten granskas, även om knappen får klick. En tjänstesida är en löpande beskrivning av ett verkligt erbjudande och måste uppdateras när verksamheten förändras."
+          ]
+        }
+      ],
+      "checklist": [
+        "Definiera kund och problem per sida.",
+        "Beskriv omfattning och kundens underlag.",
+        "Använd verkliga projekt som relevanta belägg.",
+        "Länka från närliggande guider.",
+        "Förklara informationen som behövs vid kontakt."
+      ],
+      "conclusion": "En användbar tjänstesida gör erbjudandet lättare att bedöma. När innehåll, interna länkar och kontaktuppmaning stödjer samma uppgift blir det också tydligare vad som bör granskas när söktrafiken eller förfrågningarna ändras."
+    },
+    {
+      "id": "seo-titles-clicks",
+      "title": "SEO-titlar och klick: skriv ett löfte som sidan håller",
+      "slug": "seo-titlar-relevanta-klick",
+      "description": "Förbättra SEO-titlar med tydlig sökintention, relevanta skillnader och innehåll som håller löftet. Analysera klickfrekvens med rätt sidor och jämförelser.",
+      "intro": [
+        "Sidtiteln kan påverka hur en besökare bedömer ett sökresultat. Den behöver förklara sidans ämne och varför resultatet är relevant. En titel som lockar till fel sorts klick hjälper varken kunden eller verksamheten, även om klickfrekvensen ser högre ut.",
+        "Google kan skapa en annan titellänk än den titel som anges på sidan. Därför ska arbetet också omfatta sidans huvudrubrik och innehåll. Utgå från ett tydligt och korrekt löfte, exempelvis vilken tjänst eller vilken praktisk fråga sidan faktiskt behandlar."
+      ],
+      "sections": [
+        {
+          "title": "Granska titel och sidinnehåll tillsammans",
+          "paragraphs": [
+            "Öppna den aktuella sidan och jämför title-elementet med huvudrubrik och första stycken. Beskriver de samma uppgift? En titel om komplett energirådgivning passar dåligt om sidan främst förklarar en första genomgång. Rätta glappet innan ni provar mer säljande formuleringar. Kontrollera också om flera sidor använder samma generiska titel trots olika innehåll. Varje viktig sida behöver ett självständigt namn som gör den möjlig att skilja från andra resultat och från andra delar av den egna webbplatsen."
+          ]
+        },
+        {
+          "title": "Matcha frågans avsikt med sidans format",
+          "paragraphs": [
+            "En guide om att välja lagerbelysning behöver signalera rådgivning eller jämförelse, medan en tjänstesida bör ange erbjudandet. Låt det viktigaste ämnet komma fram utan att stapla närliggande sökord. Om orten eller en särskild produktgrupp verkligen avgränsar tjänsten kan den vara relevant i titeln. Lägg inte till geografiska namn för att antyda verksamhet som inte finns. Bedöm formuleringen som en besökare skulle göra: vad förväntar man sig att kunna förstå eller göra efter att ha klickat på resultatet?"
+          ]
+        },
+        {
+          "title": "Använd sakliga skillnader",
+          "paragraphs": [
+            "Beskriv en verklig egenskap som hjälper valet, exempelvis att sidan innehåller en checklista eller förklarar skillnader mellan två lösningar. Undvik påståenden om att vara störst, billigast eller garanterat bäst om sådana fakta inte finns. Ett varumärkesnamn kan ge igenkänning men ska inte tränga undan ämnets begriplighet. Titlar kan visas olika beroende på situation och enhet, så räkna inte med att en bestämd teckengräns ger samma presentation överallt. Tydlighet i början gör titeln mer robust när utrymmet varierar."
+          ]
+        },
+        {
+          "title": "Skriv en beskrivning med samma riktning",
+          "paragraphs": [
+            "Metabeskrivningen kan sammanfatta innehållet och hjälpa läsaren avgöra relevansen, men Google kan visa en annan text utifrån frågan. Använd beskrivningen till att konkretisera sidans innehåll snarare än att upprepa titeln ord för ord. För en tjänst kan det vara omfattning och nästa steg; för en guide kan det vara vilka beslut den hjälper till med. Håll informationen korrekt och undvik löften om svar, priser eller leveranstider som sidan inte kan styrka. Samstämmighet gör upplevelsen mer förutsägbar."
+          ]
+        },
+        {
+          "title": "Jämför klickfrekvens med rätt underlag",
+          "paragraphs": [
+            "Search Console visar klick, visningar och genomsnittliga mått som behöver tolkas i sitt sammanhang. Filtrera på relevant sida och jämför frågor med liknande avsikt. En förändrad position eller en ny blandning av frågor kan ändra klickfrekvensen utan att titeln blivit bättre eller sämre. Varumärkesfrågor kan också bete sig annorlunda än generella tjänstefrågor. Dokumentera sådana skillnader och undvik att jämföra hela webbplatsens klickfrekvens före och efter en enda titeländring som om övriga förutsättningar vore identiska."
+          ]
+        },
+        {
+          "title": "Dokumentera ändringar och läs nästa observation",
+          "paragraphs": [
+            "Spara tidigare titel, ny formulering, datum och motiv. Ändra ett avgränsat urval sidor så att uppföljningen går att förstå. Kontrollera att den nya titeln verkligen publicerats och att sidan fortfarande beskriver samma erbjudande. Följ sedan relevanta frågor över en period med tillräckligt underlag. Ett högre antal klick är bara användbart om besökaren möter rätt innehåll och har en rimlig väg vidare. Komplettera därför sökrapporten med kvalitativa observationer om de frågor och förfrågningar som sidan hjälper till att skapa."
+          ]
+        }
+      ],
+      "checklist": [
+        "Jämför titel med huvudrubrik och innehåll.",
+        "Anpassa titeln till frågans avsikt.",
+        "Lyft endast verkliga skillnader.",
+        "Filtrera klickfrekvens per sida och fråga.",
+        "Spara formulering, datum och skäl."
+      ],
+      "conclusion": "Bra SEO-titlar gör relevansen tydlig utan att överdriva. När resultatets löfte och sidans innehåll stämmer överens går det lättare att bedöma om en ändring hjälpte rätt besökare att välja rätt sida."
+    },
+    {
+      "id": "search-console-leads",
+      "title": "Search Console: hitta sökfrågor som kan leda till kontakt",
+      "slug": "search-console-sokfragor-kontakt",
+      "description": "Använd Search Console för att koppla sökfrågor till tjänstesidor och relevanta förfrågningar. Granska klick, sidval och innehållsluckor utan att övertolka data.",
+      "intro": [
+        "Search Console visar hur en webbplats förekommer i Googles sökresultat. Verktyget kan hjälpa dig undersöka vilka frågor som leder till tjänstesidor och var en tänkt kundresa börjar. Det visar däremot inte automatiskt vilka sökningar som blev verkliga kundförfrågningar.",
+        "För ett företag som erbjuder lagerinredning kan frågor om mått, planering och installation vara intressanta av olika skäl. Använd rapporten för att förstå dessa behov och kontrollera om rätt sida svarar. Kombinera sedan observationerna med verksamhetens egen bedömning av mottagna kontakter."
+      ],
+      "sections": [
+        {
+          "title": "Börja med ett avgränsat affärsområde",
+          "paragraphs": [
+            "Välj en viktig tjänst eller produktgrupp i stället för att analysera alla frågor samtidigt. Filtrera på relevanta sidor och en period som passar verksamhetens säsong och mängden data. Notera om varumärkesfrågor ingår, eftersom de kan ge en annan bild än frågor från nya kunder. Om en tjänst har bytt adress behöver ni förstå hur rapportens uppgifter förhåller sig till ändringen. Skriv också ned vilka frågor ni förväntar er att sidan ska besvara innan ni tolkar det faktiska utfallet."
+          ]
+        },
+        {
+          "title": "Gruppera frågor efter användarens uppgift",
+          "paragraphs": [
+            "Samla synliga frågor i begripliga grupper som planering, jämförelse och leverantörsval. För lagerinredning kan en fråga om gångbredd ha ett annat syfte än en fråga om att beställa en genomgång. Alla frågor i en grupp behöver inte finnas som exakt formulering i texten. Använd grupperna för att förstå innehållsbehovet, inte för att kopiera en ordlista till sidan. Kom ihåg att rapporten inte visar alla enskilda sökfrågor. Summor och synliga rader behöver därför inte ge en fullständig bild av varje besök."
+          ]
+        },
+        {
+          "title": "Kontrollera vilken sida som visas",
+          "paragraphs": [
+            "Öppna en viktig frågegrupp och granska vilka adresser som får visningar och klick. Om en gammal artikel visas där en aktuell tjänstesida vore mer hjälpsam behöver relationen undersökas. Artikeln kan fortfarande vara rätt svar för en informationsfråga, så flytta inte innehåll enbart för att en kommersiell sida finns. Jämför sökintention, sidornas fokus och interna länkar. Ibland räcker en tydligare hänvisning till tjänsten; i andra fall behöver tjänstesidans eget innehåll utvecklas för att faktiskt svara på behovet."
+          ]
+        },
+        {
+          "title": "Läs förändringar med flera mått",
+          "paragraphs": [
+            "Klick och visningar berättar olika saker. Fler visningar kan bero på bredare exponering utan motsvarande ökning av relevanta besök. Klickfrekvens påverkas av position, fråga och sökresultatets utformning. Genomsnittlig position är ett sammanfattat mått, inte en fast placering som alla ser. Jämför därför liknande sidor, enheter och frågetyper när det går. Skriv vilka alternativa förklaringar som finns innan ni beslutar om en åtgärd. Ett litet antal visningar ger sällan ett tillräckligt underlag för stora slutsatser om en tjänsts efterfrågan."
+          ]
+        },
+        {
+          "title": "Översätt observationen till ett innehållsbeslut",
+          "paragraphs": [
+            "Om flera frågor visar att kunden behöver förstå hur en platsbedömning går till kan sidan få ett konkret avsnitt om förberedelser. Om en jämförelsefråga kräver mer utrymme kan en separat guide vara rimlig. Beslutet ska beskriva vilken information som saknas, var den hör hemma och hur den kopplas till tjänsten. Undvik att publicera en ny artikel för varje synlig fråga. Det kan skapa överlappande innehåll utan att ge läsaren bättre svar. Börja där en tydlig lucka går att förklara och åtgärda."
+          ]
+        },
+        {
+          "title": "Koppla sökinsikter till verkliga kontakter",
+          "paragraphs": [
+            "Gå igenom vilka ämnen som återkommer i mottagna förfrågningar utan att försöka identifiera enskilda sökande i rapporten. Search Console är inte ett register över kundernas meddelanden. En enkel intern sammanställning av tjänst, behov och relevans kan visa om webbplatsens innehåll verkar skapa rätt förväntningar. Om söktrafiken ökar men frågorna huvudsakligen ligger utanför erbjudandet kan avgränsningen behöva bli tydligare. Följ de publicerade ändringarna över tid och behåll osäkerheterna synliga i stället för att tillskriva varje ny kontakt en viss sökfråga."
+          ]
+        }
+      ],
+      "checklist": [
+        "Välj en tjänst och ett relevant tidsfönster.",
+        "Gruppera frågor efter kundens uppgift.",
+        "Kontrollera vilka adresser som visas.",
+        "Skilj klick, visningar och genomsnittsmått.",
+        "Jämför insikterna med verkliga förfrågningar."
+      ],
+      "conclusion": "Search Console ger ett konkret underlag för bättre frågor om webbplatsen. När rapporten används tillsammans med innehållsgranskning och verksamhetens kundkunskap blir det lättare att prioritera ändringar utan att lova mer än datan visar."
+    },
+    {
+      "id": "technical-indexing",
+      "title": "Crawlning och indexering: felsök viktiga SEO-sidor",
+      "slug": "crawlning-indexering-seo-felsokning",
+      "description": "Felsök crawlning och indexering med statuskoder, robotsregler, noindex och kanoniska adresser. Prioritera viktiga tjänstesidor och kontrollera interna länkar.",
+      "intro": [
+        "En publicerad sida är inte automatiskt indexerad och en indexerad sida är inte garanterad synlighet för en viss fråga. Teknisk felsökning behöver därför börja med vilken adress du granskar och vad du förväntar dig att den ska göra.",
+        "En tjänstesida som saknas i sökresultaten kan vara blockerad, omdirigerad, svår att upptäcka eller bedömd som en annan sidas variant. Dessa situationer kräver olika åtgärder. Gå stegvis från tillgänglighet till upptäckt och indexeringssignaler innan du drar slutsatser om innehållets position."
+      ],
+      "sections": [
+        {
+          "title": "Kontrollera den exakta adressen och svaret",
+          "paragraphs": [
+            "Öppna rätt URL och kontrollera serverns statuskod. En sida kan visa ett begripligt innehåll men ändå returnera en olämplig kod. Granska även om adressen omdirigeras och vilken slutdestination den får. Skillnader mellan protokoll, värdnamn och avslutande snedstreck kan vara relevanta om signalerna pekar åt olika håll. Dokumentera vilken version som är avsedd huvudadress. För en affärskritisk tjänst behöver både besökare och sökmotorer kunna nå den rätta sidan direkt och utan onödiga led av äldre adresser."
+          ]
+        },
+        {
+          "title": "Skilj robotsregler från noindex",
+          "paragraphs": [
+            "Robots.txt används för att styra åtkomst för crawlning, medan noindex anger att en sida inte ska ingå i index när instruktionen kan läsas. De är olika verktyg. Om en sida blockeras från crawlning kan sökmotorn inte nödvändigtvis läsa dess noindex-instruktion. Använd därför inte en blockering som en universell metod att ta bort redan kända adresser. Granska vad ni faktiskt försöker uppnå och hur den aktuella webbplatsen levererar instruktionerna. Tekniska regler behöver bedömas tillsammans i stället för att läggas till ovanpå varandra på försök."
+          ]
+        },
+        {
+          "title": "Granska kanoniska hänvisningar",
+          "paragraphs": [
+            "En kanonisk adress signalerar vilken version som föredras bland liknande sidor. Kontrollera att sidans signal inte pekar mot en gammal domän, en testmiljö eller en annan språkversion utan avsikt. Google kan välja en annan kanonisk sida än den angivna, så jämför tillgänglig information i URL-inspektion med webbplatsens egna signaler. Interna länkar och sitemap bör stödja samma adress. En motsägelse löses sällan bara genom att sätta ett extra element; sidornas innehåll och relation behöver också vara begripliga."
+          ]
+        },
+        {
+          "title": "Se hur sidan upptäcks inom webbplatsen",
+          "paragraphs": [
+            "Följ länkarna från startsida och relevanta överordnade sidor till den granskade adressen. En viktig tjänstesida bör inte vara beroende av att någon känner till adressen i förväg. Använd vanliga läsbara länkar och tydliga länktexter. En sitemap kan underlätta upptäckt men garanterar inte indexering och ersätter inte en genomtänkt intern struktur. Undersök också om innehållet bara blir tillgängligt efter en interaktion som inte ingår i en normal länkväg. Testa sidans faktiska publicerade innehåll, inte bara administrationsgränssnittets förhandsvisning."
+          ]
+        },
+        {
+          "title": "Tolkar rapporter som ledtrådar till orsaken",
+          "paragraphs": [
+            "Rapporter om indexering visar kategorier som behöver förstås i sitt sammanhang. Att en omdirigerad adress inte indexeras kan vara helt avsiktligt. En sida som crawlas men inte indexeras behöver bedömas med hänsyn till innehåll, dubbletter och struktur, inte bara skickas in upprepade gånger. Använd URL-inspektion för den konkreta adressen och dokumentera skillnaden mellan aktuell publicering och senast observerade uppgifter. Välj en begränsad uppsättning viktiga sidor först. Alla genererade filteradresser behöver inte behandlas som om de vore självständiga tjänstesidor."
+          ]
+        },
+        {
+          "title": "Rätta orsaken och kontrollera nästa steg",
+          "paragraphs": [
+            "När ett fel är åtgärdat ska du först verifiera serverrespons, instruktioner och länkar. Uppdatera sitemap om adressbeståndet ändrats och använd tillgängliga verktyg för att begära ny granskning när det är lämpligt. En begäran är ingen garanti för indexering eller tidpunkt. Följ utvecklingen utan att ändra flera tekniska regler på måfå. Om sidan fortfarande inte hanteras som väntat behöver ni återvända till hypotesen och läsa innehållets relation till andra sidor. Behåll en logg över ändringar så att tidigare beslut går att förstå."
+          ]
+        }
+      ],
+      "checklist": [
+        "Kontrollera exakt URL och statuskod.",
+        "Skilj crawlblockering från noindex.",
+        "Samordna kanoniska adresser och länkar.",
+        "Granska sidans interna upptäckbarhet.",
+        "Verifiera orsaken före ny granskningsbegäran."
+      ],
+      "conclusion": "Teknisk SEO blir tydligare när varje kontroll har en avsikt. Genom att skilja åtkomst, upptäckt och indexering kan du välja rimliga åtgärder och undvika att skapa nya motsägelser på webbplatsens viktigaste sidor."
+    },
+    {
+      "id": "content-clusters",
+      "title": "Ämneskluster och interna länkar som gör tjänster lättare att hitta",
+      "slug": "amneskluster-interna-lankar-tjanster",
+      "description": "Bygg ämneskluster med tydliga roller för guider och tjänstesidor. Planera interna länkar efter kundfrågor och undvik överlappande artiklar utan eget syfte.",
+      "intro": [
+        "Ett ämneskluster är användbart när flera sidor tillsammans hjälper läsaren att förstå ett område. Det handlar inte om att producera ett bestämt antal artiklar runt ett sökord. Varje sida behöver en egen uppgift och relevanta vägar vidare.",
+        "En leverantör av industrigolv kan exempelvis ha en tjänstesida och guider om underlag, användningsmiljö och skötsel. Guiderna ska besvara självständiga frågor och samtidigt göra det lätt att hitta företagets erbjudande när läsaren behöver en bedömning. Den interna strukturen kan då följa verkliga beslut i stället för en publiceringsmall."
+      ],
+      "sections": [
+        {
+          "title": "Utgå från erbjudandet och kundernas kunskapsbehov",
+          "paragraphs": [
+            "Välj ett område där företaget har en verklig tjänst och relevant erfarenhet. Samla frågor från kunder, befintligt innehåll och synliga sökfrågor. För industrigolv kan behovet gälla val av yta, förberedelser och hur ett befintligt golv bedöms. Markera vilka frågor tjänstesidan själv bör besvara och vilka som kräver en fördjupning. Ett kluster behöver inte täcka allt inom ett stort ämne. Det ska ge en begriplig och underhållbar struktur för de frågor verksamheten faktiskt kan hjälpa läsaren med."
+          ]
+        },
+        {
+          "title": "Ge huvud- och fördjupningssidor olika roller",
+          "paragraphs": [
+            "Låt tjänstesidan beskriva erbjudandet, omfattningen och kontakten. En guide kan gå djupare in i ett avgränsat beslut utan att bli en förlängd kopia av tjänstesidan. Skriv en uppgiftsbeskrivning för varje planerad adress. Om två beskrivningar blir nästan identiska bör ni pröva om en gemensam sida är tydligare. En övergripande guide kan också fungera som nav när ämnet kräver det, men en sådan sida behöver innehåll som hjälper läsaren att välja rätt fördjupning i stället för en tom länksamling."
+          ]
+        },
+        {
+          "title": "Länka när sammanhanget motiverar nästa steg",
+          "paragraphs": [
+            "Placera länkar i avsnitt där de besvarar en naturlig följdfråga. En text om golvunderlag kan exempelvis hänvisa till tjänstens platsbedömning när läsaren behöver veta hur den egna ytan ska undersökas. Använd länktexter som beskriver destinationens innehåll. Alla sidor behöver inte länka till alla andra i klustret. Överdrivet många hänvisningar kan göra resonemanget svårare att följa. Prioritera relationer som faktiskt förklarar ett beslut och kontrollera att länken går direkt till den aktuella sidan."
+          ]
+        },
+        {
+          "title": "Inventera befintligt material innan du utökar",
+          "paragraphs": [
+            "Läs äldre guider och jämför deras syfte, innehåll och synliga sökfrågor. En etablerad text kan behöva ett nytt avsnitt snarare än en konkurrerande ny artikel. Notera luckor som inte kan fyllas rimligt inom den befintliga sidans uppgift. När sidor behöver slås ihop ska innehåll och adresshantering planeras tillsammans. Behåll relevanta förklaringar och uppdatera interna hänvisningar. Att publicera nytt material utan inventering kan göra ett tidigare begripligt ämne mer splittrat och skapa fler sidor som ingen vet vem som ansvarar för."
+          ]
+        },
+        {
+          "title": "Gör klustret möjligt att förvalta",
+          "paragraphs": [
+            "Utse en ansvarig för varje ämnesområde och dokumentera fakta som behöver återkommande kontroll. En guide om materialegenskaper kan bli inaktuell när sortimentet ändras. Projektlänkar kan också behöva granskas när referenser inte längre får visas. Planera uppdateringar efter innehållets risk och förändringstakt, inte enbart efter publiceringsdatum. En karta med huvudsida, fördjupningar och respektive uppgift räcker ofta som början. Den hjälper redaktionen att förstå var en ny kundfråga hör hemma och vilka befintliga sidor som kan påverkas."
+          ]
+        },
+        {
+          "title": "Följ om rätt sidor fyller rätt funktion",
+          "paragraphs": [
+            "Granska frågor och klick per sida i Search Console och jämför med den planerade rollen. En guide kan vara framgångsrik som informationskälla utan att skapa direkt kontakt vid varje besök. Tjänstesidan behöver däremot ge ett tydligt nästa steg. Om flera sidor växlar för samma fråga behöver ni undersöka om det är ett problem eller en rimlig blandning av behov. Följ också interna vägar och verkliga kundfrågor. Klustrets värde ligger i användbara samband, inte i antalet publicerade sidor."
+          ]
+        }
+      ],
+      "checklist": [
+        "Välj ett område med verkligt erbjudande.",
+        "Definiera en uppgift per adress.",
+        "Länka vid naturliga följdfrågor.",
+        "Förbättra befintliga guider före utökning.",
+        "Utse ansvarig för faktagranskning."
+      ],
+      "conclusion": "Ett genomtänkt ämneskluster gör företagets kunskap lättare att använda. När sidorna har tydliga roller och interna länkar följer läsarens frågor kan innehållet utvecklas utan att förlora struktur eller kommersiell riktning."
+    },
+    {
+      "id": "image-seo",
+      "title": "Bild-SEO för tjänstesidor, projekt och webbutiker",
+      "slug": "bild-seo-tjanstesidor-webbutiker",
+      "description": "Förbättra bild-SEO med relevanta motiv, beskrivande alternativtexter och rätt bildstorlekar. Granska produktbilder, projektmaterial och laddning på mobilen.",
+      "intro": [
+        "Bilder kan hjälpa kunder förstå en produkt, bedöma ett projekt eller känna igen ett arbetsmoment. Bild-SEO börjar därför med vad bilden tillför i sitt sammanhang. Ett dekorativt motiv och en teknisk produktbild behöver inte behandlas på samma sätt.",
+        "För en leverantör av specialinredning kan en bild visa proportioner och anslutningar som är svåra att förstå i text. Bildens nytta beror då på motiv, förklaring och hur snabbt den visas. Filnamn och alternativtext är delar av arbetet, men ersätter inte en genomtänkt presentation."
+      ],
+      "sections": [
+        {
+          "title": "Välj bilder som besvarar en fråga",
+          "paragraphs": [
+            "Skriv vilken information varje central bild ska ge. En projektbild kan visa hur en möbel passar i ett rum, medan en detaljbild visar konstruktion eller material. Använd bilder som speglar den verkliga produkten eller det verkliga uppdraget. Om en illustration är konceptuell behöver det framgå när läsaren annars kan missförstå den som genomfört arbete. Placera bilden nära relevant förklaring. Ett stort galleri utan sammanhang gör det svårare att veta vilka egenskaper besökaren förväntas bedöma."
+          ]
+        },
+        {
+          "title": "Skriv alternativtext efter bildens funktion",
+          "paragraphs": [
+            "Alternativtext ska hjälpa den som inte ser bilden att förstå dess relevanta innehåll eller funktion. Beskriv därför det som är betydelsefullt i sidans sammanhang, inte varje synlig detalj. En produktbild kan behöva ange modell och relevant vy. En rent dekorativ bild kan ha tom alternativtext. Om bilden fungerar som länk måste länkens syfte vara begripligt. Undvik att fylla fältet med orter och upprepade sökord. Det gör varken bilden tydligare eller användningen bättre för den som får texten uppläst."
+          ]
+        },
+        {
+          "title": "Ge tekniska bilder rätt sammanhang",
+          "paragraphs": [
+            "Måttskisser, diagram och jämförelser kan bära viktig information som inte ryms i en kort alternativtext. Förklara då centrala uppgifter i sidans vanliga text eller en lämplig tabell. En bildtext kan knyta motivet till projektets syfte och visa vad läsaren ska uppmärksamma. Kontrollera att text inuti bilden är läsbar på mobil och inte är det enda sättet att ta del av avgörande information. Bilder ska komplettera den grundläggande produkt- eller tjänstebeskrivningen, inte gömma den i ett svårtolkat format."
+          ]
+        },
+        {
+          "title": "Leverera lämpliga storlekar och format",
+          "paragraphs": [
+            "Anpassa bildens dimensioner efter den yta där den ska användas och erbjud relevanta storlekar för olika skärmar. Moderna komprimerade format kan minska överföringen, men bildkvaliteten behöver fortfarande räcka för uppgiften. En materialdetalj kräver annan bedömning än en liten kortbild. Kontrollera den faktiska levererade filen i stället för att bara lita på en inställning i publiceringssystemet. Onödigt stora original kan göra en projektsida tung trots att bilderna visas små. Ange också proportioner så att layouten kan reservera plats."
+          ]
+        },
+        {
+          "title": "Ladda viktigaste bilden med rätt prioritet",
+          "paragraphs": [
+            "Bilden i första vyn kan vara central för när sidan upplevs som färdig. Undvik att rutinmässigt skjuta upp den på samma sätt som bilder långt ned i ett galleri. Granska vilket element som påverkar Largest Contentful Paint och vilka resurser som fördröjer det. Senare bilder kan ofta laddas när de närmar sig visning. Testa på mobil och kontrollera att motivet inte beskärs så att viktig produktinformation försvinner. Prestanda och begriplighet behöver bedömas samtidigt, eftersom en snabb men missvisande bild inte hjälper kundens beslut."
+          ]
+        },
+        {
+          "title": "Följ bildinnehållet när webbplatsen ändras",
+          "paragraphs": [
+            "Vid en redesign eller kataloguppdatering kan bildadresser, alternativtexter och sammanhang förändras. Bevara relevant information och kontrollera brutna bilder på viktiga sidor. Search Console kan ge underlag om synlighet i bildsök när tillräckliga uppgifter finns, men klick därifrån behöver tolkas efter sidans uppgift. Dokumentera vem som ansvarar för nya produktbilder och metadata. En enkel redaktionell rutin med motiv, rättigheter, beskrivning och storlek gör bildarbetet mer hållbart än att försöka rätta alla filer först när en teknisk granskning varnar."
+          ]
+        }
+      ],
+      "checklist": [
+        "Bestäm vilken fråga bilden besvarar.",
+        "Skriv alternativtext efter sammanhanget.",
+        "Förklara viktig diagraminformation i text.",
+        "Kontrollera levererad storlek och proportion.",
+        "Prioritera bilden i första vyn."
+      ],
+      "conclusion": "Bild-SEO förenar förståelse, tillgänglighet och teknisk leverans. När motiven är relevanta och förklaringarna tydliga kan bilderna stödja kundens bedömning utan att göra webbplatsen onödigt tung eller svår att använda."
+    },
+    {
+      "id": "conversion-landing",
+      "title": "Landningssidor för organiska förfrågningar: bygg en tydlig kundresa",
+      "slug": "landningssidor-organiska-forfragningar",
+      "description": "Planera landningssidor för organisk söktrafik med tydligt erbjudande, relevanta belägg och användbara kontaktsteg. Granska innehållet mot kundens sökfråga.",
+      "intro": [
+        "En landningssida för organisk trafik ska fungera för någon som kommer in mitt på webbplatsen. Besökaren har inte nödvändigtvis sett startsidan eller känner till företaget. Sidan behöver därför ge tillräcklig orientering för att läsaren ska kunna bedöma erbjudandet.",
+        "En leverantör av kontorsanpassning kan behöva en sida för företag som planerar att ändra befintliga lokaler. Då är arbetsplatsens behov, projektets omfattning och ett första underlag mer relevant än en generell presentation av alla byggtjänster. Låt sidans innehåll följa just det beslutet."
+      ],
+      "sections": [
+        {
+          "title": "Välj ett verkligt kommersiellt behov",
+          "paragraphs": [
+            "Definiera vilken situation sidan ska hjälpa kunden med och hur den skiljer sig från befintliga tjänstesidor. En separat landningssida behöver självständigt värde; den ska inte vara en nästan identisk kopia med ett nytt sökord. Granska om frågan snarare passar som ett avsnitt i en befintlig sida. Om en ny adress är motiverad behöver den ingå i webbplatsens vanliga struktur. En organisk landningssida ska gå att hitta och förstå även utan en särskild kampanjlänk eller en säljande annons."
+          ]
+        },
+        {
+          "title": "Gör första vyn konkret och läsbar",
+          "paragraphs": [
+            "Huvudrubriken ska beskriva tjänsten eller problemet, medan introduktionen hjälper läsaren avgöra om sidan passar. Nämn målgrupp och centrala avgränsningar naturligt. För kontorsanpassning kan det exempelvis gälla om arbetet omfattar planering, utförande eller vissa delar av lokalen. Lägg inte avgörande information bakom ett abstrakt reklambudskap. En relevant bild kan stödja orienteringen, men texten behöver bära grundförklaringen själv. På mobil ska rubrik, introduktion och nästa möjliga steg bilda en begriplig helhet utan påträngande överlägg."
+          ]
+        },
+        {
+          "title": "Besvara de frågor som bromsar beslutet",
+          "paragraphs": [
+            "Ordna avsnitten efter det kunden behöver förstå: lämplighet, arbetsmoment, nödvändigt underlag och praktiska begränsningar. Använd information från verkliga kundsamtal för att välja innehåll. En person som planerar om lokaler behöver kanske veta hur befintlig verksamhet påverkar bedömningen, snarare än läsa allmänna formuleringar om kvalitet. Beskriv bara sådant som stämmer med erbjudandet. Om en fråga kräver individuell bedömning ska texten säga vilket underlag som behövs, i stället för att ge ett säkert svar som inte kan gälla varje projekt."
+          ]
+        },
+        {
+          "title": "Visa belägg nära det de förklarar",
+          "paragraphs": [
+            "Placera ett verkligt projekt eller en relevant bild i anslutning till det påstående som materialet stödjer. Förklara projektets behov och vad som genomfördes utan att lägga till omätta resultat. Ett citat kan visa hur samarbetet upplevdes, men ska vara autentiskt och ha rätt sammanhang. Om sidan saknar publicerbara kundexempel kan processen förklaras med tydligt märkta illustrationer. Besökaren behöver kunna skilja mellan en demonstration av metoden och belägg för ett faktiskt genomfört uppdrag, eftersom dessa hjälper beslutet på olika sätt."
+          ]
+        },
+        {
+          "title": "Anpassa kontaktsteget till tjänsten",
+          "paragraphs": [
+            "Be om den information som gör en första bedömning möjlig. För kontorsanpassning kan lokaltyp, huvudbehov och befintligt underlag vara en rimlig början. Förklara vad som kan tas senare och gör eventuella bilagor valfria när de inte behövs direkt. WhatsApp kan vara ett alternativ om verksamheten använder kanalen, men länken ska ha rätt nummer och ett begripligt syfte. Prova både formulär och kontaktknapp på mobil. En tydlig bekräftelse hjälper kunden förstå att formulärsteget fungerade och vad som händer därefter."
+          ]
+        },
+        {
+          "title": "Följ både sidans sökroll och kontaktens kvalitet",
+          "paragraphs": [
+            "Granska vilka frågor sidan får visningar och klick för, och jämför med dess tänkta uppgift. Analysera kontaktklick som en egen händelse utan att kalla dem mottagna förfrågningar. Bedöm sedan återkommande ämnen i de kontakter verksamheten får. Om besökarna konsekvent förväntar sig en annan tjänst kan rubrik, omfattning eller sökinriktning behöva ändras. Dokumentera varje större förbättring. En landningssidas värde kan inte bedömas enbart genom ett högt klicktal om innehållet skapar fel förväntningar eller nästa steg fungerar dåligt."
+          ]
+        }
+      ],
+      "checklist": [
+        "Välj en avgränsad kommersiell uppgift.",
+        "Förklara tjänsten i första vyn.",
+        "Besvara frågor från verkliga kundsamtal.",
+        "Placera belägg nära relevanta påståenden.",
+        "Bedöm kontaktkvalitet utöver klick."
+      ],
+      "conclusion": "En organisk landningssida behöver förena upptäckt och beslut. När innehållet svarar på rätt fråga och kontakten följer av förklaringen får företaget ett tydligare underlag för att förbättra både sidan och kundresan."
+    },
+    {
+      "id": "seo-content-maintenance",
+      "title": "Uppdatera SEO-innehåll och hantera överlappande sidor",
+      "slug": "uppdatera-seo-innehall-overlappande-sidor",
+      "description": "Planera innehållsuppdatering med faktagranskning, sökdata och tydliga sidroller. Bedöm överlappning och sammanslagning utan att radera användbart material.",
+      "intro": [
+        "Innehåll behöver underhåll när erbjudandet, kundfrågorna eller faktaunderlaget förändras. En gammal publiceringsdag betyder inte att en sida är dålig, och ett nytt datum gör inte en oförändrad text mer användbar. Börja med vad som faktiskt behöver förbättras.",
+        "På en växande företagswebbplats kan flera artiklar till slut behandla samma frågor utan tydliga roller. Det som ofta kallas kannibalisering behöver då undersökas konkret. Att två sidor får visningar för samma ord är inte i sig ett bevis för att någon av dem ska tas bort."
+      ],
+      "sections": [
+        {
+          "title": "Inventera innehåll efter syfte och ansvar",
+          "paragraphs": [
+            "Lista viktiga tjänstesidor och guider med deras huvudsakliga uppgift, senaste faktagranskning och innehållsansvarig. Notera vilket erbjudande varje text stödjer och vilka andra sidor den länkar till. Prioritera sådant där felaktiga uppgifter kan leda kunden fel eller där en central tjänst har förändrats. En mindre läst sida kan fortfarande vara viktig för ett specifikt köpbeslut. Inventeringen ska därför inte reduceras till en sortering efter trafik. Den behöver även spegla affärsnytta, aktualitet och möjligheten att hålla informationen korrekt."
+          ]
+        },
+        {
+          "title": "Undersök förändringen innan du skriver om",
+          "paragraphs": [
+            "Jämför relevanta perioder och frågor i Search Console, med hänsyn till säsong och ändrade adresser. Läs sidan och kontrollera om erbjudandet fortfarande beskrivs rätt. En minskning av klick kan bero på andra sökresultat, ändrad efterfrågan eller att sidan inte längre besvarar frågan tillräckligt väl. Skriv ned hypotesen innan redigeringen börjar. Om problemet egentligen är en trasig intern länk eller en indexeringsinstruktion hjälper en längre text inte nödvändigtvis. Teknisk tillgänglighet och innehållets funktion behöver bedömas tillsammans."
+          ]
+        },
+        {
+          "title": "Granska överlappning på sidnivå",
+          "paragraphs": [
+            "Jämför två liknande sidor genom att läsa deras rubriker, förklaringar och tänkta nästa steg. Undersök vilka frågor de faktiskt visas för och om de svarar på olika behov. En guide om förberedelser och en tjänstesida kan legitimt dela begrepp. Två guider med samma råd och nästan samma struktur kan däremot skapa onödig splittring. Bestäm vilken sida som ska ha vilken roll. Målet är tydligare information och länkar, inte att mekaniskt tilldela varje enskilt ord en exklusiv adress på hela webbplatsen."
+          ]
+        },
+        {
+          "title": "Välj mellan förbättring, sammanslagning och borttagning",
+          "paragraphs": [
+            "En fungerande sida kan behålla sin adress och få korrigerade fakta, tydligare exempel eller nya svar. Om två sidor verkligen bör förenas behöver det användbara innehållet tas till vara i en genomarbetad destination. Planera då relevanta omdirigeringar och uppdatera interna länkar. Innehåll utan fortsatt värde kan ibland tas bort, men beslutet bör omfatta länkar och besökarens förväntan. Omdirigera inte automatiskt alla borttagna artiklar till en generell startsida. Det behöver finnas en meningsfull relation mellan gammalt innehåll och nytt mål."
+          ]
+        },
+        {
+          "title": "Gör uppdateringen synlig i innehållets kvalitet",
+          "paragraphs": [
+            "Rätta inaktuella detaljer och stärk den del som inte besvarar läsarens fråga. Lägg till ett verkligt exempel om det hjälper förklaringen, och ta bort upprepningar som döljer svaret. Granska titel, huvudrubrik och kontaktuppmaning när sidans tyngdpunkt ändras. Datum ska spegla verkliga redaktionella förändringar på ett begripligt sätt. Att bara byta årtal och några ord skapar inget självständigt värde. Dokumentera vilka fakta som kontrollerats och vad som fortfarande kräver individuell bedömning, så att nästa ansvariga kan förstå uppdateringens omfattning."
+          ]
+        },
+        {
+          "title": "Kontrollera publiceringen och följ relevant underlag",
+          "paragraphs": [
+            "Efter redigering ska sidan läsas i sin publicerade form och länkarna testas. Vid sammanslagning behöver gamla adresser gå till rätt mål och sitemap spegla den nya strukturen. Följ därefter frågor och klick för den berörda sidgruppen, inte bara för en adress som just slutat finnas. Komplettera siffror med återkommande kundfrågor. En uppdatering kan göra erbjudandet tydligare utan ett omedelbart trafiklyft. Spara ändringsdatum och motiv så att nästa granskning kan skilja mellan planerad förändring och ett nytt problem."
+          ]
+        }
+      ],
+      "checklist": [
+        "Inventera syfte och ansvar per sida.",
+        "Skriv en hypotes före omskrivning.",
+        "Bedöm överlappning utifrån innehåll och frågor.",
+        "Planera adresshantering vid sammanslagning.",
+        "Följ hela sidgruppen efter publicering."
+      ],
+      "conclusion": "Underhåll gör SEO-innehållet mer tillförlitligt och strukturen lättare att förstå. Genom att förbättra rätt sida och bevara användbart material kan företaget utveckla sin webbplats utan att varje ny fråga leder till ännu en överlappande artikel."
+    },
+    {
+      "id": "market-entry-seo",
+      "title": "SEO vid marknadsinträde för nordiska företag",
+      "slug": "seo-marknadsintrade-nordiska-foretag",
+      "description": "Planera SEO när ett nordiskt företag går in på en ny marknad. Avgränsa erbjudandet, granska lokala sökbehov och testa innehåll och kontaktvägar stegvis.",
+      "intro": [
+        "När ett nordiskt företag börjar bearbeta en ny marknad behöver webbplatsen förklara mer än att tjänsten finns. Kunden ska kunna förstå företagets bas, leveranssätt och relevans för den egna situationen. SEO-arbetet behöver följa samma verkliga förutsättningar.",
+        "En svensk leverantör av arbetsplatsutrustning som vill nå danska företag kan börja med en avgränsad produktgrupp. Det gör det möjligt att undersöka ordval, frågor och kontaktflöden innan hela katalogen lokaliseras. Planera arbetet som en lärande process med tydliga antaganden, inte som ett löfte om snabb etablering."
+      ],
+      "sections": [
+        {
+          "title": "Avgränsa vad företaget faktiskt kan erbjuda",
+          "paragraphs": [
+            "Beskriv målgrupp, produktgrupp eller tjänst och vilka delar av leveransen som kan hanteras på den nya marknaden. Bekräfta interna rutiner för frågor, beställning och uppföljning innan sidan publiceras. Skriv var verksamheten finns och hur samarbetet genomförs. En nordisk kund ska inte behöva gissa om företaget har ett lokalt kontor eller arbetar på distans. Undvik att låna trovärdighet från påhittad närvaro. Tydliga förutsättningar hjälper också företaget att bedöma om de inkommande förfrågningarna gäller det erbjudande som faktiskt har planerats."
+          ]
+        },
+        {
+          "title": "Undersök lokala begrepp och beslutsfrågor",
+          "paragraphs": [
+            "Samla uttryck från kundsamtal, relevanta sökresultat och branschens egna beskrivningar på marknaden. Närliggande nordiska språk kan ha olika vanliga termer även när orden ser bekanta ut. Granska därför både benämningar och vilket beslutsunderlag kunder förväntar sig. Ett produktbegrepp kan behöva kompletteras med användningsmiljö eller mått för att bli begripligt. Låt en språkkunnig person läsa den färdiga texten i sitt sammanhang. Automatisk översättning kan vara ett arbetssteg, men en publicerad kommersiell sida behöver en medveten kvalitetsbedömning."
+          ]
+        },
+        {
+          "title": "Välj ett litet men sammanhängande innehåll",
+          "paragraphs": [
+            "Börja med en tydlig erbjudandesida, relevant produkt- eller tjänsteinformation och en fungerande kontaktväg. Lägg till en fördjupning när den svarar på en viktig lokal fråga. Ett litet urval ska fortfarande kännas komplett för sin uppgift. Besökaren bör inte möta en lokaliserad introduktion och sedan lämnas med avgörande information på ett oväntat språk. Om vissa delar bara finns i en annan version behöver det framgå i navigeringen. Prioritera användbara samband framför att översätta många sidor utan ansvar för fortsatt underhåll."
+          ]
+        },
+        {
+          "title": "Bygg tekniken för versionshantering",
+          "paragraphs": [
+            "Ge språkversionerna stabila adresser och gör dem tillgängliga via vanliga länkar. Planera kanoniska signaler, sitemap och eventuellt hreflang så att de motsvarar innehållets verkliga relationer. Om en sida riktas till ett språk snarare än ett visst land behöver kodningen spegla det beslutet. En språkväxlare bör leda till motsvarande innehåll när det finns. Kontrollera också att kontaktformulär och bekräftelser följer rätt version. Tekniska signaler kan hjälpa sökmotorn förstå strukturen, men de ersätter inte ett relevant erbjudande för den nya marknaden."
+          ]
+        },
+        {
+          "title": "Använd verkliga referenser med lokalt begriplig förklaring",
+          "paragraphs": [
+            "Ett projekt från hemmamarknaden kan vara relevant om dess behov och lösning förklaras tydligt. Beskriv vad som faktiskt genomfördes och varför det kan hjälpa kunden att bedöma kompetensen. Flytta inte projektet till ett annat land i texten och hitta inte på lokala kunder. Anpassa i stället terminologi, måttenheter och bakgrund så att exemplet blir begripligt. Om en referens inte säger något om den nya marknadens praktiska förutsättningar bör den kompletteras med en ärlig beskrivning av hur det aktuella erbjudandet avgränsas."
+          ]
+        },
+        {
+          "title": "Bestäm vad ni vill lära er av första steget",
+          "paragraphs": [
+            "Följ vilka frågor och sidor som får visningar och klick på den nya marknaden. Jämför dem med planerad målgrupp och med vad mottagna förfrågningar gäller. Begränsat underlag kräver försiktiga slutsatser; använd också samtal med verkliga kunder för att förstå oklarheter. Dokumentera vilka innehållsändringar som görs och vad de ska lösa. Utöka först när företaget har bättre förståelse för ordval, kundbehov och operativ förmåga. På så sätt kan SEO-arbetet stödja ett genomtänkt marknadsinträde utan att framställas som en garanti för kommersiellt utfall."
+          ]
+        }
+      ],
+      "checklist": [
+        "Bekräfta erbjudandets verkliga räckvidd.",
+        "Granska lokala termer och kundfrågor.",
+        "Publicera ett sammanhängande första urval.",
+        "Testa språkversioner och kontaktflöden.",
+        "Följ förfrågningarnas relevans före utökning."
+      ],
+      "conclusion": "Ett nordiskt marknadsinträde blir lättare att granska när erbjudandet är avgränsat och antagandena dokumenterade. Låt SEO, innehåll och praktisk leverans utvecklas tillsammans utifrån verkliga observationer från den nya marknaden."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Var finns Latech?",
+      "answer": "Latech finns i Puebla de la Calzada, Badajoz, Spanien, och grundades av Andrés Rubio och Luis Grondona. Vi arbetar på distans med företag på internationella marknader."
+    },
+    {
+      "question": "Kan ni hjälpa till med både webbdesign och SEO?",
+      "answer": "Ja. Vi kan diskutera webbplatsens struktur, design, tekniska förutsättningar och innehåll som ett sammanhängande uppdrag. Omfattning och prioriteringar bestäms utifrån den befintliga webbplatsen och affärsmålen."
+    },
+    {
+      "question": "Vad behöver ni för att diskutera ett projekt?",
+      "answer": "Beskriv verksamheten, målgruppen, nuvarande webbplats och det du vill förbättra. Befintligt innehåll och relevanta uppgifter från Search Console kan hjälpa till att avgränsa arbetet."
+    },
+    {
+      "question": "Hur kontaktar jag Latech?",
+      "answer": "Du kan skriva på WhatsApp till +34684739091. Ange gärna ditt land, önskad tjänst och nuvarande webbplats så får samtalet ett tydligt sammanhang."
+    }
+  ],
+  "pageSeo": {
+    "home": {
+      "title": "Webbdesign och SEO för företag | Latech",
+      "description": "Webbdesign och SEO för företag med fokus på tydligt innehåll, sökbarhet och relevanta förfrågningar. Diskutera din webbplats med Latech från Spanien.",
+      "heading": "Webbdesign och SEO som gör ditt erbjudande tydligt",
+      "intro": "Diskutera en företagswebbplats som kopplar söktrafik till begripliga tjänster och relevanta kontaktvägar."
+    },
+    "services": {
+      "title": "Webbdesign, SEO och e-handel | Latech",
+      "description": "Utforska Latechs tjänster inom webbdesign, SEO och e-handel. Planera tydligare kundresor, användbart innehåll och genomtänkta kontaktvägar för ditt företag.",
+      "heading": "Tjänster för företagswebbplatser och organisk synlighet",
+      "intro": "Välj ett avgränsat uppdrag eller diskutera webbdesign, teknisk SEO och e-handel som en sammanhängande helhet."
+    },
+    "web": {
+      "title": "Webbdesign med SEO och tydliga tjänstesidor | Latech",
+      "description": "Planera webbdesign med tydliga tjänstesidor, mobilanpassning och teknisk SEO. Latech hjälper företag att skapa en begriplig väg från sökning till kontakt.",
+      "heading": "Webbdesign med sökbarhet och kundförfrågningar i fokus",
+      "intro": "Vi planerar innehåll, struktur och kontaktvägar efter vad dina kunder behöver veta innan de tar kontakt."
+    },
+    "shop": {
+      "title": "Webbutik och SEO för e-handel | Latech",
+      "description": "Diskutera en webbutik med tydliga kategorier, relevant produktinnehåll och fungerande köpflöden. Latech planerar e-handel med organisk synlighet i fokus.",
+      "heading": "Webbutiker med tydliga kategorier och produktinformation",
+      "intro": "Ge kunderna bättre förutsättningar att hitta rätt produkt och förstå köpets praktiska steg."
+    },
+    "ai": {
+      "title": "AI-automation och n8n för företag | Latech",
+      "description": "Utforska AI-automation med n8n för avgränsade arbetsuppgifter. Latech planerar integrationer, validering och mänsklig granskning utifrån företagets behov.",
+      "heading": "Avgränsad AI-automation för återkommande arbetsuppgifter",
+      "intro": "Vi granskar processer, data och undantag innan vi diskuterar en lämplig integration med n8n."
+    },
+    "about": {
+      "title": "Om Latech: webbdesign och SEO från Spanien",
+      "description": "Lär känna Latech, grundat av Andrés Rubio och Luis Grondona i Badajoz, Spanien. Vi arbetar på distans med webbdesign, SEO och e-handel för företag.",
+      "heading": "Lär känna teamet bakom Latech",
+      "intro": "Andrés Rubio och Luis Grondona grundade Latech i Puebla de la Calzada, Badajoz, Spanien."
+    },
+    "projects": {
+      "title": "Projekt inom webbdesign och e-handel | Latech",
+      "description": "Se verkliga Latech-projekt inom webbdesign och e-handel. Läs om struktur, designbeslut och funktioner genom tillgängligt material från genomförda uppdrag.",
+      "heading": "Verkliga webbprojekt och deras funktioner",
+      "intro": "Utforska tillgängligt material från Latechs projekt för att förstå hur design och funktioner har utformats."
+    },
+    "contact": {
+      "title": "Kontakta Latech om webbdesign och SEO",
+      "description": "Kontakta Latech på WhatsApp om webbdesign, SEO eller e-handel. Berätta om ditt företag, din nuvarande webbplats och vilka förfrågningar du vill nå.",
+      "heading": "Diskutera din webbplats, SEO eller webbutik",
+      "intro": "Beskriv ditt företag och dina mål på WhatsApp +34684739091 så kan vi diskutera projektets förutsättningar."
+    },
+    "blog": {
+      "title": "SEO-guider om söktrafik och kundförfrågningar | Latech",
+      "description": "Läs praktiska SEO-guider om sökintention, indexering, innehåll och klick. Lär dig granska din webbplats och skapa tydligare vägar till kundförfrågningar.",
+      "heading": "Praktiska SEO-guider för företag",
+      "intro": "Lär dig granska sökintention, teknisk SEO, innehåll och vägen från klick till en relevant förfrågan."
+    }
+  },
+  "projectCopy": {
+    "colegio-santo-tomas": {
+      "sector": "Utbildning från 0 till 18 år",
+      "summary": "En skolwebbplats med verkliga fotografier och innehåll för familjer. Utbildningsstadier, antagning, nyheter, kalender och dokument kompletteras av ett privat bildgalleri för föräldrar."
+    },
+    "granja-orea": {
+      "sector": "Läger, skolbesök och ridning",
+      "summary": "En innehållsrik webbplats för läger, skolbesök och ridverksamhet. Projektet omfattar WhatsApp-kontakt, redigerbara nyheter, en installerbar webbapp, en QR-baserad rundtur och privata verktyg för teamet."
+    },
+    "f5-arquitectos": {
+      "sector": "Arkitektur",
+      "summary": "En arkitekturportfolio med stora bilder, kategoriserade projekt och detaljerade projektpresentationer. Ett eget administrationsgränssnitt gör det möjligt att hålla arbeten och övrigt innehåll uppdaterade."
+    },
+    "quality-homes": {
+      "sector": "Bostadsutveckling",
+      "summary": "En bostadswebbplats där fotografier, video, planritningar och tillgänglighet presenterar varje projekt. Förfrågningar kopplas till ett eget CRM och innehållshanteringen används för att uppdatera bostadsutbudet."
+    },
+    "megias-frutas": {
+      "sector": "Grossist för frukt och grönsaker",
+      "summary": "En företagswebbplats med produktfotografier och information för olika professionella kundgrupper. Redaktionellt innehåll, mobilanpassning och lokal inriktning kompletterar presentationen av grossistens verksamhet och produkter."
+    },
+    "zonasport": {
+      "sector": "Sportbutik med flera varumärken",
+      "summary": "En produktkatalog med kategorier för olika kundgrupper, sporter och varumärken. Guider och intern lagerhantering kompletteras med förfrågningar och beställningar via WhatsApp samt upphämtning i butik."
+    },
+    "panelex": {
+      "sector": "Sandwichpaneler för byggbranschen",
+      "summary": "En teknisk B2B-webbplats med produktblad, strukturerade produktdata, guider och kalkylator. Innehållet presenterar tak-, fasad- och kylpaneler och hjälper besökare att jämföra alternativ inför en offertförfrågan."
+    },
+    "monopatinmonkey": {
+      "sector": "Elsparkcyklar och reparation",
+      "summary": "En webbutik med detaljerade modellpresentationer och en särskild del för reparationer. Serviceprocessen förklaras steg för steg så att besökaren kan jämföra produkter och förstå verkstadens erbjudande."
+    },
+    "toldos-noa": {
+      "sector": "Måttanpassade markiser och installation",
+      "summary": "En tjänstewebbplats med separata områden för hem, företag, reparationer och måttanpassning. Verkliga omdömen och tydliga kontaktuppmaningar leder vidare till offertförfrågningar via WhatsApp."
+    },
+    "autoescuela-agora": {
+      "sector": "Trafikskola och körkortsutbildning",
+      "summary": "En trafikskolewebbplats med video, information om körkort och skolans två platser. Anmälan, WhatsApp, AEOL-tester och elevområdet Mi Ágora kompletteras med nyheter och guider."
+    },
+    "precios-locos": {
+      "sector": "Vitvaror och hemprodukter",
+      "summary": "En butik med produktkatalog, sökfunktion, favoriter och varukorg. Produktblad, guider för hemmet och WhatsApp-kontakt kombineras med en interaktiv gripklomaskin för överraskningspaket."
+    },
+    "los-leones-nuptiae": {
+      "sector": "Herrmode, högtidskläder och skrädderi",
+      "summary": "Två modeidentiteter samlas bakom en visuell ingång. Egna innehållsvägar visar herrmode, högtidskläder, uthyrning och måttanpassning, med kollektioner, fotografier och länkar vidare till respektive butik."
+    },
+    "my-special-hair": {
+      "sector": "Hårproteser och hårvård",
+      "summary": "En varumärkeswebbplats med katalog, måttguide och en 3D-studio för att utforska alternativ. Kundkonto, tidsbokning, professionell ingång, video och resultatgalleri kompletteras med rådgivningskontakt via WhatsApp."
+    }
+  }
+}

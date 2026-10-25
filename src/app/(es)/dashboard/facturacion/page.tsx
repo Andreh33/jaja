@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import {
   CreditCard,
-  ExternalLink,
   MessageCircle,
   FileText,
   AlertTriangle,
@@ -329,12 +328,6 @@ export default async function FacturacionPage() {
             className="inline-flex items-center gap-2 rounded-full glass px-4 py-2 text-sm"
           >
             <MessageCircle size={14} style={{ color: '#25D366' }} /> WhatsApp
-          </a>
-          <a
-            href="mailto:info@latech.es"
-            className="inline-flex items-center gap-2 rounded-full glass px-4 py-2 text-sm"
-          >
-            <ExternalLink size={14} /> info@latech.es
           </a>
         </div>
       </div>

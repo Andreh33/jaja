@@ -1,4 +1,4 @@
-import { equivalents } from '@/lib/international';
+import { equivalents, internationalMetadata } from '@/lib/international';
 import type { Metadata } from 'next';
 import { Heart, Shield, Award, Code2, Sparkles } from 'lucide-react';
 import AuroraBackground from '@/components/effects/AuroraBackground';
@@ -19,6 +19,7 @@ export const metadata: Metadata = {
   description:
     'Conoce al equipo de Latech: Andrés Rubio y Luis Grondona, fundadores, y el equipo técnico que diseña webs, tiendas online y agentes de IA para toda España.',
   alternates: { canonical: '/sobre-nosotros', languages: equivalents('about'), },
+  ...internationalMetadata('es', { key: 'about' }),
 };
 
 const VALORES = [

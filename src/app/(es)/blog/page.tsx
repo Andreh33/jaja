@@ -1,4 +1,4 @@
-import { equivalents } from '@/lib/international';
+import { equivalents, internationalMetadata } from '@/lib/international';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
@@ -19,6 +19,7 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
     title: `${query ? `Buscar «${query}» en el blog` : 'Blog de diseño web, tiendas online y agentes de IA'}${page > 1 ? ` · Página ${page}` : ''}`,
     description: 'Guías prácticas sobre diseño web, e-commerce, SEO y agentes de IA para pymes. Encuentra respuestas por tema y por lo que necesita tu negocio.',
     alternates: { canonical: blogHref('/blog', query, page), ...(!query && page === 1 ? { languages: equivalents('blog') } : {}) },
+    ...(!query && page === 1 ? internationalMetadata('es', { key: 'blog' }) : {}),
     ...(query ? { robots: { index: false, follow: true } } : {}),
   };
 }

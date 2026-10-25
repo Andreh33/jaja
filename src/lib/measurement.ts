@@ -1,7 +1,9 @@
 import { knownInternationalPath, isLocale, pagePath } from './international-routes';
 /** Public article slugs and coarse routes; never private values or query strings. */
 export function measurementPath(pathname: string): string | null {
-  if (/^\/(en|fr|de|pt|it)\/(admin|dashboard|api|login|checkout)(\/|$)/.test(pathname)) return null;
+  const parts = pathname.split('/').filter(Boolean);
+  const publicParts = isLocale(parts[0] ?? '') ? parts.slice(1) : parts;
+  if (['admin', 'dashboard', 'api', 'login', 'checkout', 'registro', 'recuperar', 'reset-password', 'cuenta', 'mando', 'pago'].includes(publicParts[0])) return null;
   if (knownInternationalPath(pathname)) return pathname;
   if (/^\/(admin|dashboard|cursos?|login|registro|recuperar|reset-password|checkout|pago|cuenta|mando)(\/|$)/.test(pathname)) return null;
   const fixed = ['/', '/blog', '/lab', '/briefing', '/contacto', '/proyectos', '/sobre-nosotros', '/tienda', '/tienda/web', '/tienda/online', '/tienda/agente-ia', '/tienda/calculadora', '/cobertura'];

@@ -1,8 +1,8 @@
 /** HTTP verification of the complete localized release; never submits URLs. */
 import { writeFileSync, mkdirSync } from 'node:fs';
 import { parseArgs } from 'node:util';
-import { dictionaries, locales, pageKeys, pagePath, articlePath, equivalents, SITE } from '../src/lib/international';
-const { values } = parseArgs({ options: { origin: { type: 'string', default: 'http://localhost:3012' }, output: { type: 'string', default: '.local/international-audit.json' } }, strict: true });
+import { dictionaries, locales, pageKeys, pagePath, articlePath, equivalents, SITE, htmlLanguage } from '../src/lib/international';
+const { values } = parseArgs({ options: { origin: { type: 'string', default: 'http://localhost:3012' }, output: { type: 'string', default: '.local/international-expansion-audit.json' } }, strict: true });
 function attrs(tag: string): Record<string, string> {
   return Object.fromEntries([...tag.matchAll(/([\w-]+)="([^"]*)"/g)].map(m => [m[1].toLowerCase(), m[2].replace(/&amp;/g, '&')]));
 }
@@ -21,12 +21,14 @@ async function main() {
     const failures: string[] = [];
     if (response.status !== 200) failures.push(`HTTP ${response.status}`);
     if (canonical?.replace(/\/$/, '') !== `${SITE}${target.path}`.replace(/\/$/, '')) failures.push(`canonical ${canonical}`);
-    if (lang !== target.locale) failures.push(`lang ${lang}`);
+    if (lang !== htmlLanguage(target.locale)) failures.push(`lang ${lang}`);
     const hreflang = Object.fromEntries(links.filter(l => l.rel === 'alternate' && l.hreflang).map(l => [l.hreflang, l.href]));
     for (const [locale, url] of Object.entries(target.languages)) {
       // Next serializes a bare site origin with a slash.
       if (hreflang[locale]?.replace(/\/$/, '') !== url.replace(/\/$/, '')) failures.push(`hreflang ${locale}`);
     }
+    if (/info\.?@latech\.es/i.test(html)) failures.push('obsolete contact email');
+    if (Object.keys(hreflang).length !== Object.keys(target.languages).length) failures.push('hreflang count');
     if (/<meta[^>]*name="robots"[^>]*content="[^"]*noindex/i.test(html)) failures.push('noindex');
     if (!/https:\/\/wa\.me\/34684739091\?text=/.test(html)) failures.push('missing contextual WhatsApp');
     if ((html.match(/<h1\b/g) ?? []).length !== 1) failures.push('h1 count');
@@ -34,10 +36,13 @@ async function main() {
   }));
   const sitemapResponse = await fetch(new URL('/sitemap.xml', values.origin));
   const sitemap = await sitemapResponse.text();
+  const packResponse = await fetch(new URL('/sitemap-international.xml', values.origin));
+  const packSitemap = await packResponse.text();
   const failures = rows.flatMap(r => r.failures.map(failure => ({ path: r.path, failure })));
+  if (packResponse.status !== 200 || (packSitemap.match(/<loc>/g) ?? []).length !== targets.length) failures.push({ path: '/sitemap-international.xml', failure: 'release sitemap count/status' });
   const sitemapUrls = new Set([...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m => new URL(m[1]).href));
   for (const target of targets) if (!sitemapUrls.has(new URL(`${SITE}${target.path}`).href)) failures.push({ path: target.path, failure: 'missing sitemap URL' });
-  for (const path of ['/xx', '/fr/blog/not-a-real-article', '/en/admin', '/fr/contact/unexpected']) {
+  for (const path of ['/xx', '/fr/blog/not-a-real-article', '/en/admin', '/fr/contact/unexpected', '/us/blog/not-a-real-article', '/latam/dashboard', '/nl/contact/unexpected']) {
     const response = await fetch(new URL(path, values.origin), { redirect: 'manual' });
     if (response.status !== 404) failures.push({ path, failure: `expected 404, got ${response.status}` });
   }

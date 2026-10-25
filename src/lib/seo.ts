@@ -80,7 +80,6 @@ const ORGANIZATION_NODE = {
   image: LOGO_URL,
   description:
     'Diseño web, tiendas online y agentes de IA con n8n para empresas de toda España. Entrega en 24-48h, sin permanencia.',
-  email: 'info@latech.es',
   telephone: '+34684739091',
   priceRange: '€€',
   founder: [{ '@id': FOUNDER_ANDRES_ID }, { '@id': FOUNDER_LUIS_ID }],
@@ -97,7 +96,6 @@ const ORGANIZATION_NODE = {
   contactPoint: {
     '@type': 'ContactPoint',
     telephone: '+34684739091',
-    email: 'info@latech.es',
     contactType: 'customer service',
     areaServed: 'ES',
     availableLanguage: 'Spanish',

@@ -1,4 +1,4 @@
-import { equivalents } from '@/lib/international';
+import { equivalents, internationalMetadata } from '@/lib/international';
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import { ArrowUpRight, MapPin, Briefcase } from 'lucide-react';
@@ -19,6 +19,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/proyectos', languages: equivalents('projects'),
   },
+  ...internationalMetadata('es', { key: 'projects' }),
 };
 
 import { projects as PROJECTS } from '@/lib/projects';

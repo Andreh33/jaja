@@ -1,4 +1,4 @@
-import { internationalSitemap, equivalents, dictionaries, type PageKey } from '@/lib/international';
+import { internationalSitemap, INTERNATIONAL_UPDATE_DATE, equivalents, dictionaries, type PageKey } from '@/lib/international';
 import type { MetadataRoute } from 'next';
 import { MYSTERIES } from '@/lib/lab-mysteries';
 import { experiments } from './(es)/lab/_lib/experiments';
@@ -104,11 +104,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const spanishKeys: Record<string, PageKey> = { '': 'home', '/tienda': 'services', '/tienda/web': 'web', '/tienda/online': 'shop', '/tienda/agente-ia': 'ai', '/sobre-nosotros': 'about', '/proyectos': 'projects', '/contacto': 'contact', '/blog': 'blog' };
   for (const entry of fixedEntries) {
     const key = spanishKeys[entry.url.slice(base.length)];
-    if (key) { entry.alternates = { languages: equivalents(key) }; entry.lastModified = '2026-10-25T12:00:00Z'; }
+    if (key) { entry.alternates = { languages: equivalents(key) }; entry.lastModified = INTERNATIONAL_UPDATE_DATE; }
   }
   for (const entry of postEntries) {
     const article = dictionaries.es.articles.find(a => entry.url.endsWith('/blog/' + a.slug));
-    if (article) entry.alternates = { languages: equivalents('article', article.id) };
+    if (article) { entry.alternates = { languages: equivalents('article', article.id) }; entry.lastModified = INTERNATIONAL_UPDATE_DATE; }
   }
   return [...internationalSitemap(), ...fixedEntries, ...landingEntries, ...categoryEntries, ...postEntries, ...offerEntries, ...labEntries];
 }

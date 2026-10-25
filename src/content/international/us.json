@@ -1,0 +1,1371 @@
+{
+  "code": "us",
+  "name": "English · USA",
+  "ogLocale": "en_US",
+  "ui": {
+    "home": "Home",
+    "services": "Services",
+    "projects": "Projects",
+    "about": "About us",
+    "contact": "Contact",
+    "blog": "Insights",
+    "language": "Language",
+    "readMore": "Read the guide",
+    "backToBlog": "Back to insights",
+    "related": "Related guides",
+    "author": "Latech editorial team",
+    "whatsapp": "Discuss your website on WhatsApp",
+    "skip": "Skip to content",
+    "legal": "Legal notice",
+    "privacy": "Privacy policy",
+    "terms": "Terms of use",
+    "phone": "Phone",
+    "remote": "Based in Spain, collaborating remotely with businesses in the United States.",
+    "contactTitle": "Let’s discuss your website and customer inquiries",
+    "contactIntro": "Tell us about your business, service area, existing website, and goals. Contact Latech on WhatsApp at +34684739091 to discuss a suitable project scope.",
+    "whatsappMessage": "Hello Latech, I run a business in the United States. Service needed: . Website: . Main goal: . Preferred times for coordination: .",
+    "processTitle": "A practical path from project brief to launch",
+    "processSteps": [
+      "Define your audience, service areas, search questions, and deliverables.",
+      "Build and review the design, content, and agreed customer journeys.",
+      "Test the website, prepare launch, and document editing responsibilities."
+    ],
+    "articlesIntro": "Practical guides for US small businesses on SEO, service pages, mobile websites, and measuring customer inquiries.",
+    "serviceIntro": "Web design, SEO, and ecommerce planned around your customers and the work behind each inquiry or order.",
+    "projectsIntro": "Explore real Latech work and the features documented in each project.",
+    "aboutTitle": "Meet the people building your website",
+    "aboutIntro": "Andrés Rubio and Luis Grondona founded Latech in Puebla de la Calzada, Badajoz, Spain.",
+    "aboutBody": [
+      "We design business websites and online stores, improve SEO foundations, and scope AI integrations with n8n when they fit a defined task.",
+      "We work remotely from Spain. For US projects, we agree on review methods, meeting availability, content ownership, and the handoff process for each engagement.",
+      "Our project descriptions explain real features and design decisions. We assess opportunities using your business context and available evidence, without promising search positions or sales."
+    ],
+    "contactDetails": "Contact details",
+    "moreServices": "Explore our services",
+    "allArticles": "All guides",
+    "serviceCta": "Discuss this service",
+    "projectCountLabel": "projects",
+    "seoTitle": "SEO that connects searches with your services",
+    "seoIntro": "Build useful pages around the questions US customers ask before requesting an estimate or comparing suppliers.",
+    "seoBullets": [
+      "Map search intent to your actual services",
+      "Organize service and product pages clearly",
+      "Review mobile usability and technical access",
+      "Compare search clicks with qualified inquiries"
+    ],
+    "faqTitle": "Your project questions, answered",
+    "brandClaim": "In design and SEO, nobody beats us."
+  },
+  "home": {
+    "title": "Web Design and SEO for US Businesses | Latech",
+    "description": "Web design, SEO, and ecommerce for US businesses, delivered remotely from Spain. Plan clear services, useful content, and practical paths to customer inquiries.",
+    "heading": "Web design, SEO, and ecommerce for US businesses",
+    "intro": "Help customers understand your services, find the right information, and send an inquiry your team can evaluate.",
+    "body": [
+      "We plan business websites around the decisions customers make before they call, request an estimate, or place an order. Clear service pages, thoughtful mobile design, and useful search content connect your offer with the questions people actually ask.",
+      "Latech was founded by Andrés Rubio and Luis Grondona in Puebla de la Calzada, Badajoz, Spain. We collaborate remotely with US businesses, agreeing on project scope, communication, and responsibilities before the work begins."
+    ]
+  },
+  "services": [
+    {
+      "id": "web",
+      "title": "Web design and SEO",
+      "description": "Plan a business website with clear service pages, mobile usability, and technical SEO. Latech works remotely from Spain with businesses in the United States.",
+      "intro": "Give customers the information they need before requesting an estimate.",
+      "sections": [
+        {
+          "title": "Structure your offer",
+          "paragraphs": [
+            "We map services, service areas, and common customer questions before drawing page layouts. A contractor, specialty retailer, and professional service firm need different information and contact paths.",
+            "The agreed scope can include service pages, project examples, content planning, and technical SEO. We clarify which material your team supplies and which deliverables Latech prepares."
+          ]
+        },
+        {
+          "title": "Design useful customer journeys",
+          "paragraphs": [
+            "Readable mobile layouts, clear navigation, and practical forms support customers comparing options. Calls to action explain what visitors can submit and what information helps your team assess a request.",
+            "We review keyboard access, form feedback, and representative page types within the agreed scope. Design decisions should make the offer easier to understand and the next step easier to complete."
+          ]
+        },
+        {
+          "title": "Prepare launch and ownership",
+          "paragraphs": [
+            "Launch planning includes the agreed contact journeys, URL changes, and measurement requirements. Existing search visibility and useful content need attention during a redesign.",
+            "We document relevant editing tasks and responsibilities. Remote collaboration from Spain is coordinated through agreed review steps and availability, with follow-up work scoped explicitly."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "shop",
+      "title": "Ecommerce website development",
+      "description": "Build an ecommerce website around product information, checkout, inventory, and fulfillment. Discuss your US online store with Latech, based in Spain.",
+      "intro": "Connect product discovery with the operational work behind each order.",
+      "sections": [
+        {
+          "title": "Organize products and categories",
+          "paragraphs": [
+            "We organize categories, product variants, images, and product detail around how customers compare your range. The structure must also fit the way your staff maintains inventory.",
+            "Delivery coverage, returns information, availability, and product limitations should be defined by your business. We help present confirmed information clearly without inventing operational promises."
+          ]
+        },
+        {
+          "title": "Connect checkout and fulfillment",
+          "paragraphs": [
+            "We scope the connections needed for checkout, order administration, and inventory. Your business confirms supported payment arrangements, shipping rules, and responsibilities before implementation.",
+            "An incomplete address, unavailable item, or failed transaction needs a useful message and a practical recovery path. We account for these situations when mapping the store journey."
+          ]
+        },
+        {
+          "title": "Test store operations",
+          "paragraphs": [
+            "Testing uses representative products, mobile devices, and order scenarios. We verify the agreed interactions and document who handles updates and common customer questions.",
+            "A manageable catalog matters after launch. We can discuss appropriate connections to existing tools, with the limits of each integration recorded in the project scope."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ai",
+      "title": "AI integrations with n8n",
+      "description": "Scope n8n workflows and AI integrations around real business tasks. Plan validation, human review, error handling, and maintainable connections with Latech.",
+      "intro": "Start with a defined process, reliable inputs, and clear human ownership.",
+      "sections": [
+        {
+          "title": "Map the current process",
+          "paragraphs": [
+            "We identify the trigger, required inputs, rules, and expected output before proposing an integration. A repeatable administrative task is easier to assess than a vague request to add AI.",
+            "Possible scoped tasks include organizing incoming inquiries or preparing internal drafts. We examine the current manual workflow and exceptions to decide whether simple rules are sufficient."
+          ]
+        },
+        {
+          "title": "Define review and permissions",
+          "paragraphs": [
+            "AI output needs validation appropriate to its use. Drafts and classifications can assist staff while decisions with external consequences remain subject to agreed human review.",
+            "Access should match the minimum data needed. We document tool permissions and avoid treating an integration as a substitute for business judgment or data quality."
+          ]
+        },
+        {
+          "title": "Handle exceptions and handoff",
+          "paragraphs": [
+            "Workflows need visible errors, useful logs, and a recovery procedure. Repeated events should be handled carefully so they do not create unintended duplicate records.",
+            "We define representative tests, assign an owner, and document the workflow. The scope and maintenance arrangements depend on your systems and the access your team can provide."
+          ]
+        }
+      ]
+    }
+  ],
+  "articles": [
+    {
+      "id": "website-leads",
+      "title": "Plan a small business website that supports qualified leads",
+      "slug": "plan-a-small-business-website-that-supports-qualified-leads",
+      "description": "Plan a US small business website around clear services, credible project examples, practical estimate requests, and measurement that follows inquiry quality.",
+      "intro": [
+        "A busy website is not necessarily a useful sales tool. An HVAC contractor, remodeling firm, or specialist consultant needs visitors to understand what the company actually handles before they request an estimate. The first planning question is what a qualified inquiry looks like for that business.",
+        "Write down the service, location, project stage, and basic constraints that help staff assess a request. Then use those requirements to shape the website. Design and SEO become more useful when they support a specific customer decision rather than a broad promise to generate more traffic."
+      ],
+      "sections": [
+        {
+          "title": "Define the customer and service area",
+          "paragraphs": [
+            "Choose the customers your team can realistically serve. A residential contractor may handle existing homes within a defined area but decline commercial jobs. Explain that boundary where visitors evaluate the service. Use customer language rather than internal department names, and distinguish an estimate request from emergency assistance if the business does not actually provide the latter.",
+            "For example, a remodeling company can review five recent requests and note what was missing from each: property location, room type, current condition, or intended work. Those are hypothetical planning examples, not reported client results. Use that exercise to decide which details belong on the service page and which questions should wait until the initial conversation."
+          ]
+        },
+        {
+          "title": "Give important services their own pages",
+          "paragraphs": [
+            "Separate services when the buying questions differ. A page about furnace replacement needs different detail from a seasonal maintenance page. Describe what is included, how the initial assessment works, and what information customers should prepare. Avoid creating a separate page for every small wording variation when the offer and supporting information would be identical."
+          ]
+        },
+        {
+          "title": "Choose evidence customers can inspect",
+          "paragraphs": [
+            "Show real work with enough context to explain it. Identify the requirement and visible features without inventing revenue or ranking improvements. A home renovation gallery can explain the rooms involved and the constraints the team addressed. Obtain permission for identifiable customer material, and keep any demonstration clearly labeled so visitors understand what they are viewing."
+          ]
+        },
+        {
+          "title": "Design the estimate request",
+          "paragraphs": [
+            "Ask for information that changes how staff assess the job. Service type, ZIP code, and a short description may be sufficient at first contact. Make optional details genuinely optional. Explain what happens after submission, use visible field labels, and show useful validation messages that preserve entered content when someone makes a mistake on a phone."
+          ]
+        },
+        {
+          "title": "Connect visits with real inquiries",
+          "paragraphs": [
+            "Track relevant contact actions within the agreed measurement setup, then compare them with actual requests received. A button click is an expression of intent, not proof that someone sent a message or became a customer. Keep a simple classification of relevant, unsuitable, and incomplete inquiries so content improvements can address the right problem."
+          ]
+        },
+        {
+          "title": "Agree on ownership after launch",
+          "paragraphs": [
+            "Assign someone to update coverage areas, service descriptions, project examples, and contact details. For remote collaboration with a Spain-based team such as Latech, document review responsibilities and suitable coordination arrangements. A launch checklist should include form delivery, mobile journeys, important existing URLs, and a practical procedure for reporting issues after publication."
+          ]
+        }
+      ],
+      "checklist": [
+        "Define a qualified inquiry.",
+        "State your real service area.",
+        "Give distinct services clear pages.",
+        "Test the mobile estimate form.",
+        "Review inquiries alongside contact clicks."
+      ],
+      "conclusion": "Start with the conversation your business wants to have, then build the pages and contact journey that prepare it. A clear offer and a working review process provide a stronger planning basis than a traffic target alone."
+    },
+    {
+      "id": "website-budget",
+      "title": "What to include in a business website estimate",
+      "slug": "what-to-include-in-a-business-website-estimate",
+      "description": "Compare business website estimates with clear deliverables, content responsibilities, SEO requirements, integrations, and ongoing ownership for a US company.",
+      "intro": [
+        "Two website estimates can look similar while covering very different work. One may include only page templates; another may include writing, URL migration, product setup, and integration testing. Comparing the totals without comparing those deliverables makes the decision harder than it needs to be.",
+        "Prepare a scope document before asking suppliers for a proposal. It does not need technical specifications for every detail. It should explain the business, customers, current website, required journeys, and the responsibilities you expect each party to handle. These choices determine a useful estimate."
+      ],
+      "sections": [
+        {
+          "title": "List page types and content volume",
+          "paragraphs": [
+            "Distinguish a reusable page template from the number of finished pages. A professional service firm may need one service template populated with several genuinely different offers. State whether project pages, staff profiles, articles, or location information are included. Ask how existing material will be assessed and who approves any rewriting before the new site is published.",
+            "Consider a fictional landscaping website brief. A photo gallery, a booking request, and a customer account area may all sound like standard features, but each requires different content and testing. Ask suppliers to price the same agreed tasks, and identify which requirements remain provisional. That makes a proposal review about comparable work rather than labels."
+          ]
+        },
+        {
+          "title": "Describe functions through customer tasks",
+          "paragraphs": [
+            "Instead of requesting a portal without explanation, describe what a customer must do inside it. Uploading documents, reviewing estimates, and checking an order involve different permissions and systems. Include representative examples, existing software, and known restrictions. The proposal should identify assumptions and dependencies so an integration is not priced as an undefined promise."
+          ]
+        },
+        {
+          "title": "Define the content responsibility",
+          "paragraphs": [
+            "Confirm who supplies photography, service details, product specifications, and approved business information. Editing existing copy differs from interviewing staff and writing new pages. Set an approval route and identify content that cannot be published yet. Missing material can affect the project sequence, so the scope should describe how provisional content is handled and reviewed."
+          ]
+        },
+        {
+          "title": "Specify useful SEO work",
+          "paragraphs": [
+            "Ask which SEO deliverables are included: search intent mapping, page titles, internal links, indexing checks, or redirect planning. A phrase such as SEO included is too broad for comparison. For an existing site, clarify whether reviewing valuable URLs and preparing migration mappings are separate tasks. No supplier can responsibly sell a guaranteed organic position as a deliverable."
+          ]
+        },
+        {
+          "title": "Clarify revisions and acceptance",
+          "paragraphs": [
+            "Agree on who collects feedback and how design or content revisions are evaluated. A clear acceptance process uses representative journeys and agreed requirements rather than an unlimited stream of preferences. Include checks for mobile contact, form errors, and any purchase flow. Document what counts as a defect and what would require an extension to the original scope."
+          ]
+        },
+        {
+          "title": "Separate build and ongoing responsibilities",
+          "paragraphs": [
+            "Ask who owns accounts, domain access, source material, and editing permissions. Identify hosting, third-party tools, maintenance, and future content work without assuming they are part of the initial build. When working remotely with Latech from Spain, agree on communication and review availability explicitly. Commercial terms belong in the proposal rather than in assumptions about the supplier’s location."
+          ]
+        }
+      ],
+      "checklist": [
+        "Count templates and completed pages.",
+        "Describe required customer tasks.",
+        "Assign content approval.",
+        "Name specific SEO deliverables.",
+        "Document ownership and maintenance."
+      ],
+      "conclusion": "A useful estimate makes the work understandable before it begins. Compare responsibilities, exclusions, and acceptance criteria alongside the commercial proposal so your business can choose an approach it has the capacity to support."
+    },
+    {
+      "id": "local-seo",
+      "title": "Local SEO for a US service business",
+      "slug": "local-seo-for-a-us-service-business",
+      "description": "Plan local SEO for a US service business with accurate location details, useful service pages, genuine reviews, and measurement of relevant customer inquiries.",
+      "intro": [
+        "Local search can introduce a business to people who need a nearby service, but proximity alone does not explain whether the offer fits. A plumbing company, neighborhood retailer, or accounting practice needs accurate information and pages that answer the next questions customers ask.",
+        "Begin with the area and services the company actually covers. Local SEO should reflect real operations. A company working from one location should not imply it has staffed offices in every nearby city, and a remote supplier should explain its actual base and delivery model."
+      ],
+      "sections": [
+        {
+          "title": "Keep business information accurate",
+          "paragraphs": [
+            "Review the business name, public contact details, website, hours, and customer access arrangements wherever the company controls them. If a Google Business Profile is eligible, use the information and category that genuinely describe the business. Do not treat an address or keyword-stuffed name as a shortcut. Customers must be able to understand how and where the business operates.",
+            "For a hypothetical repair business serving several adjacent ZIP codes, one clear coverage section may be more useful than ten cloned city pages. Explain any genuine limitations and the types of work handled. If the company later establishes another staffed location with different access information, review whether customers then need a separate, substantive location destination."
+          ]
+        },
+        {
+          "title": "Explain the service before the city",
+          "paragraphs": [
+            "A service page should answer scope, suitability, process, and contact questions before repeating a location name. For example, a garage door business can explain repair versus replacement and the details needed to assess a request. Mention coverage naturally where it affects the customer. Lists of towns cannot replace information about the actual work being offered."
+          ]
+        },
+        {
+          "title": "Create location pages only when useful",
+          "paragraphs": [
+            "Separate location pages need a real reason to exist. Different access instructions, teams, projects, or services may justify them; swapping a city name usually does not. A business covering several suburbs can often explain coverage on a strong service page. Avoid pages that funnel visitors through near-identical text without giving them location-specific help or a meaningful choice."
+          ]
+        },
+        {
+          "title": "Use genuine local evidence",
+          "paragraphs": [
+            "Show relevant work and accurate customer experiences with permission. Describe what was done and where a location is useful to the story, without revealing private details unnecessarily. Ask customers for honest feedback through an appropriate process; do not fabricate reviews or promise a search position in exchange for them. Keep case descriptions tied to features you can substantiate."
+          ]
+        },
+        {
+          "title": "Make contact practical on mobile",
+          "paragraphs": [
+            "A customer searching from a phone may need to confirm coverage before describing a problem. Place service area and contact options near the relevant information. Test tap targets, click-to-call links if used, and form delivery. Explain whether the next step is an estimate request, appointment inquiry, or general question so visitors do not infer an unavailable emergency service."
+          ]
+        },
+        {
+          "title": "Review search and inquiry patterns together",
+          "paragraphs": [
+            "Use Search Console to inspect relevant queries and pages, then compare those patterns with the locations and services mentioned in actual inquiries. Low demand and unsuitable traffic require different responses. Review changes over comparable periods and consider seasonality. Rankings vary by context, so a single search from the owner’s device is not a dependable performance report."
+          ]
+        }
+      ],
+      "checklist": [
+        "Confirm real location and coverage.",
+        "Keep business details consistent.",
+        "Explain each main service.",
+        "Use authentic local evidence.",
+        "Compare queries with actual inquiries."
+      ],
+      "conclusion": "Local SEO works best as accurate business communication supported by useful pages and maintainable information. Prioritize the questions that prevent customers from choosing a suitable service, and evaluate the resulting inquiries without promising a particular ranking."
+    },
+    {
+      "id": "international-seo",
+      "title": "International SEO when a US business expands abroad",
+      "slug": "international-seo-when-a-us-business-expands-abroad",
+      "description": "Plan international SEO for a US business with market research, useful localization, separate URLs, accurate language signals, and honest service information.",
+      "intro": [
+        "Expanding a US website into another market changes more than spelling. Customers may compare different alternatives, use unfamiliar product terms, or need different information before contacting a supplier. International SEO begins with a market your company can actually serve and a reason to create content for it.",
+        "Choose one target audience and map the practical differences first. A product manufacturer entering Canada faces different questions from a software consultant reaching Spanish-speaking businesses. The website structure should support those differences instead of multiplying translated pages that have no clear purpose."
+      ],
+      "sections": [
+        {
+          "title": "Research the offer in the target market",
+          "paragraphs": [
+            "Compare search results and customer questions for a small set of priority services. Note terminology, buying stages, and the information shown by established providers. Treat search findings as evidence to investigate, not proof of demand by themselves. Confirm with the business that the service, delivery arrangements, and customer support process are available for that audience.",
+            "A US equipment supplier might discover that its international customers search by application while its domestic catalog is organized by internal product family. That finding can justify revised navigation and explanatory category content. It does not automatically justify translating every existing page. Confirm which products and supporting materials the business can maintain for the intended audience."
+          ]
+        },
+        {
+          "title": "Choose stable URLs for each version",
+          "paragraphs": [
+            "Use distinct, crawlable URLs for content versions you intend search engines to understand separately. A language folder can be practical when ownership and maintenance stay in one website. Define a consistent structure before publishing and preserve useful existing URLs where possible. Do not rely solely on automatic IP-based switching, which can hide content from visitors and crawlers."
+          ]
+        },
+        {
+          "title": "Localize the decision-making information",
+          "paragraphs": [
+            "Adapt service examples, terminology, product detail, and contact expectations. US English copied into another English-language market may still miss important customer questions. Keep claims about offices and coverage factual. If delivery is remote, explain that plainly; if some products are unavailable in the target market, resolve that limitation before promoting a local buying journey."
+          ]
+        },
+        {
+          "title": "Map language and regional signals carefully",
+          "paragraphs": [
+            "Use valid hreflang values for supported language and region combinations, and keep annotations aligned with the actual versions. Equivalent pages should reference the appropriate set consistently. Canonical signals should support the intended indexable pages rather than accidentally consolidating every translation into English. A region label on a menu alone does not establish the technical relationship between versions."
+          ]
+        },
+        {
+          "title": "Give visitors control over language",
+          "paragraphs": [
+            "Provide visible links that let people choose the version they need. Remember that travelers and multilingual customers may use devices configured differently from their buying context. A suggestion can help; forced redirection may interrupt a useful journey. Check the contact form and confirmation steps in each supported version so the language choice remains meaningful beyond the landing page."
+          ]
+        },
+        {
+          "title": "Assign review and measurement by market",
+          "paragraphs": [
+            "Someone must approve terminology and maintain market-specific details after launch. Segment Search Console and inquiry analysis by relevant pages and countries while recognizing that observed country is not a perfect measure of customer intent. A Spain-based partner such as Latech can collaborate remotely, with scope and coordination defined honestly for each market rather than implied local offices."
+          ]
+        }
+      ],
+      "checklist": [
+        "Confirm the market is serviceable.",
+        "Research local search language.",
+        "Use stable version URLs.",
+        "Check hreflang and canonical alignment.",
+        "Assign a content owner per market."
+      ],
+      "conclusion": "Expand when your company can support a useful local experience, not simply when translation is available. Market research, technical consistency, and truthful service information give international pages a purpose that can be reviewed after publication."
+    },
+    {
+      "id": "mobile-performance",
+      "title": "Improve mobile website performance where customers get stuck",
+      "slug": "improve-mobile-website-performance-where-customers-get-stuck",
+      "description": "Prioritize mobile website performance using real customer journeys, field and lab evidence, image delivery, layout stability, and responsive contact forms.",
+      "intro": [
+        "A mobile website can look polished on an office connection while feeling slow to a customer comparing services between appointments. Performance problems often concentrate in a few templates or interactions. Testing only the homepage misses product pages, location pages, and estimate forms where useful visits turn into requests.",
+        "Start with a short list of commercially important journeys. Open the same pages on representative phones and connection conditions, then combine what you observe with measurement tools. The objective is to remove specific barriers to reading, comparing, and contacting the business."
+      ],
+      "sections": [
+        {
+          "title": "Distinguish field data from lab tests",
+          "paragraphs": [
+            "Field measurements describe real visits when enough data is available; lab tests reproduce a controlled scenario. They answer related but different questions. Use lab results to investigate a suspected cause, and field data to understand broader experience. A single score should not be treated as proof that every visitor sees the same loading behavior or can complete a request.",
+            "For a hypothetical home services site, compare a service page, a photo-heavy project page, and the estimate form under similar test conditions. Record whether the delay affects the first explanation, image display, or response to a tap. Different symptoms require different fixes, and one fast template should not conceal a slow customer journey elsewhere."
+          ]
+        },
+        {
+          "title": "Find the content that matters first",
+          "paragraphs": [
+            "Identify the largest visible content element and the resources required to display it. A large hero image, delayed font, or client-side rendering dependency can hold back useful information. Check whether the first view actually explains the service. Removing unnecessary decoration can be more useful than compressing an asset that should never have been blocking the page."
+          ]
+        },
+        {
+          "title": "Deliver appropriate images",
+          "paragraphs": [
+            "Provide image dimensions and files suited to the display size. Responsive image delivery can reduce unnecessary downloads on small screens. Avoid applying lazy loading indiscriminately to the main image visible immediately on arrival. For lower content, loading behavior should still let visitors reach images predictably. Compare quality and file weight rather than choosing the smallest file without inspecting it."
+          ]
+        },
+        {
+          "title": "Reduce competing scripts and interactions",
+          "paragraphs": [
+            "Inventory analytics tools, embeds, chat widgets, and other third-party scripts. Ask which customer or business task each one supports before adding another. Long tasks can delay taps even after text appears. Test navigation, filters, and forms with representative content, and identify whether the interface gives immediate feedback while a request is being processed."
+          ]
+        },
+        {
+          "title": "Prevent layout movement",
+          "paragraphs": [
+            "Reserve space for images, embeds, and dynamic banners so content does not shift under someone’s finger. Check font changes and sticky elements on small screens. A moving estimate button can create a usability problem even when the page loads quickly. Examine layouts at several viewport sizes and with longer text rather than relying on one ideal screenshot."
+          ]
+        },
+        {
+          "title": "Verify the complete contact journey",
+          "paragraphs": [
+            "Repeat the same relevant tests after making changes and record which resources were modified. Then submit the contact form, test error handling, and inspect the confirmation step. Faster loading is not useful if an optimization breaks the request flow. Field trends may need time and adequate visits before changes are visible, and good metrics do not guarantee organic rankings."
+          ]
+        }
+      ],
+      "checklist": [
+        "Test important templates.",
+        "Compare field and lab evidence.",
+        "Inspect the initial content load.",
+        "Check scripts and layout movement.",
+        "Retest the complete contact journey."
+      ],
+      "conclusion": "Use performance measurements to diagnose a customer problem and verify the resulting change. Connecting technical work with reading, comparison, and inquiry tasks produces a clearer priority list than pursuing a score without examining the website experience."
+    },
+    {
+      "id": "online-store",
+      "title": "Prepare your product catalog before building an online store",
+      "slug": "prepare-your-product-catalog-before-building-an-online-store",
+      "description": "Prepare a US online store with clean product data, useful categories, clear fulfillment information, tested order journeys, and realistic content ownership.",
+      "intro": [
+        "An online store project can stall because the catalog and operating process are unclear, even when the visual design is ready. A specialty parts supplier may have hundreds of items but inconsistent dimensions, variants, and availability information. A better shopping experience starts with that underlying material.",
+        "Before selecting features, choose representative products and follow them from discovery to fulfillment. Include a simple item, a variant-heavy product, and an exception such as an unavailable option. Those examples reveal requirements that a list of desired website components can easily miss."
+      ],
+      "sections": [
+        {
+          "title": "Standardize product information",
+          "paragraphs": [
+            "Choose the fields customers need to compare products and the fields staff need to manage them. Use consistent units, names, identifiers, and variant rules. Separate verified specifications from marketing descriptions. For a parts supplier, compatibility may matter more than a long introduction; for home goods, dimensions and materials can prevent uncertainty that images alone cannot resolve.",
+            "A fictional outdoor equipment store can prepare three sample records: a single-size accessory, a jacket with size variants, and an item requiring a specific shipping assessment. Ask staff to explain how each is updated and handled. These examples reveal catalog and workflow differences early, without assuming that one product template or delivery message suits every order."
+          ]
+        },
+        {
+          "title": "Build categories around buying decisions",
+          "paragraphs": [
+            "Group products using the way customers shop rather than the structure of a supplier spreadsheet. Test whether the navigation supports important questions such as intended use, size, or compatibility. Filters should work with reliable product data. Avoid creating large numbers of thin category pages that contain nearly the same items and provide no distinct help to visitors."
+          ]
+        },
+        {
+          "title": "Document fulfillment realities",
+          "paragraphs": [
+            "Confirm which destinations the business serves, who manages shipping information, and how stock availability is maintained. State customer-facing policies using approved business material. A website cannot compensate for undefined operational decisions. If delivery depends on product size or location, explain the information needed for an accurate assessment instead of implying a universal arrangement that has not been confirmed."
+          ]
+        },
+        {
+          "title": "Scope checkout and tool connections",
+          "paragraphs": [
+            "Describe how orders reach the people responsible for handling them. Confirm supported providers and any account requirements with the business before implementing payment or shipping connections. Map what happens when a transaction fails or an address needs clarification. The scope should include the limits of synchronization with inventory or accounting tools, not assume every system updates automatically."
+          ]
+        },
+        {
+          "title": "Test representative order scenarios",
+          "paragraphs": [
+            "Use agreed test methods for available products, variants, and relevant checkout exceptions. Check the mobile cart, error messages, confirmation information, and staff notification path. Verify that displayed availability matches the intended business rule. A successful order in one ideal scenario is useful evidence, but it does not replace tests of the situations customers and staff are likely to encounter."
+          ]
+        },
+        {
+          "title": "Plan catalog maintenance",
+          "paragraphs": [
+            "Assign responsibility for changes to products, stock, images, and purchase information. Explain how discontinued items and replacement products are handled without leaving broken journeys. Decide which staff need editing access and document recurring tasks. For remote development with Latech from Spain, use shared examples and an agreed review process so operational decisions are confirmed by the business."
+          ]
+        }
+      ],
+      "checklist": [
+        "Prepare representative product records.",
+        "Validate categories and filters.",
+        "Confirm fulfillment information.",
+        "Test order exceptions.",
+        "Assign catalog ownership."
+      ],
+      "conclusion": "A manageable online store depends on accurate product information and a clear operating model. Prepare those foundations before adding features, then verify the store through representative customer and staff journeys rather than its visual presentation alone."
+    },
+    {
+      "id": "whatsapp-conversion",
+      "title": "Use WhatsApp to support useful website inquiries",
+      "slug": "use-whatsapp-to-support-useful-website-inquiries",
+      "description": "Use WhatsApp on a US business website with clear context, minimal data requests, tested links, and measurement that separates clicks from received inquiries.",
+      "intro": [
+        "WhatsApp can offer a practical contact route for customers who already use it, including multilingual audiences and businesses working across countries. Its value depends on the audience and the team behind the number. Adding a floating button does not establish that visitors will prefer messaging or receive a useful response.",
+        "Decide what kind of inquiry the channel should handle before placing it throughout the website. A product compatibility question, project brief, and appointment inquiry require different information. Keep other suitable contact routes available when they better match customer habits."
+      ],
+      "sections": [
+        {
+          "title": "Match the channel to customer behavior",
+          "paragraphs": [
+            "Ask how customers currently contact the business and which conversations are useful. For a US company, do not assume WhatsApp replaces phone or a form for every audience. Identify the customer groups who already use it and the tasks they can complete there. Explain the purpose clearly so visitors can choose a contact method with suitable expectations.",
+            "A bilingual contractor might invite visitors to share the service needed and general job location before sending photos later in the conversation. That keeps the first message manageable and lets staff confirm suitability. The example is a planning scenario, not evidence that messaging outperforms other channels. The company should compare actual audience preferences and staff capacity."
+          ]
+        },
+        {
+          "title": "Provide context near the action",
+          "paragraphs": [
+            "Place the messaging link after information that helps someone describe the request. A service page can invite a brief explanation of the job and location; a product page can refer to the model being considered. A generic button is less informative. Avoid covering navigation or form controls with a persistent element, particularly on smaller mobile screens."
+          ]
+        },
+        {
+          "title": "Write a useful starter message",
+          "paragraphs": [
+            "A prefilled draft can suggest a few relevant details without forcing a long questionnaire into a chat. Let visitors review and change the text. Use only information that belongs in a contact request, and do not prefill sensitive personal or financial details. Keep the message readable after URL encoding and verify that punctuation and accents survive correctly."
+          ]
+        },
+        {
+          "title": "Set operational expectations honestly",
+          "paragraphs": [
+            "Identify who checks incoming messages and how inquiries are assigned internally. Publish availability only when the business can maintain it; do not imply instant assistance because the channel is conversational. If the team is based abroad, explain that relationship when relevant. Latech works from Spain and agrees on project coordination rather than presenting a US office or local support guarantee."
+          ]
+        },
+        {
+          "title": "Separate clicks from conversations",
+          "paragraphs": [
+            "An outbound click can show interest in messaging but cannot prove that a person sent the draft. Review actual incoming requests alongside website events, and avoid recording conversation contents in analytics. Ask whether the message contained enough context for staff to help. A growth in clicks with no usable requests suggests a different problem from a shortage of visits."
+          ]
+        },
+        {
+          "title": "Test desktop and mobile handoffs",
+          "paragraphs": [
+            "Open the link on a phone with the app available and in a representative desktop browser. Confirm the number, country code, message text, and destination. Check whether visitors can return to the site without losing their place. Review the workflow after number or page changes, since a small link error can disconnect an otherwise clear service page from its intended conversation."
+          ]
+        }
+      ],
+      "checklist": [
+        "Confirm audience preference.",
+        "Explain the messaging purpose.",
+        "Keep the starter message brief.",
+        "Verify the international number.",
+        "Review real requests separately from clicks."
+      ],
+      "conclusion": "Use WhatsApp as a clearly described route to a relevant conversation. The surrounding page, team responsibilities, and working link matter more than the visibility of the button, and measurement should acknowledge the difference between interest and a received message."
+    },
+    {
+      "id": "website-migration",
+      "title": "Plan a website migration without losing useful customer journeys",
+      "slug": "plan-a-website-migration-without-losing-useful-customer-journeys",
+      "description": "Plan a website migration with a URL inventory, relevant redirects, indexing checks, preserved content, and customer journeys tested before and after launch.",
+      "intro": [
+        "A website migration changes how customers and search engines reach existing information. A redesign that looks simpler can still remove a productive service page, break an estimate link, or leave production pages blocked from indexing. Planning must cover content and operations as well as the new design.",
+        "Create an inventory before changing URLs. Include important pages, product routes, documents, contact destinations, and external tools involved in the journey. The migration plan should explain what stays, what changes, and how the team verifies each decision during launch."
+      ],
+      "sections": [
+        {
+          "title": "Find the pages worth preserving",
+          "paragraphs": [
+            "Combine existing URL lists with available Search Console evidence, internal links, and business knowledge. A page with modest visits may still answer an important customer question or support valuable referrals. Record the intended action and useful content for each priority URL. Do not remove material solely because it has an older design or falls outside the new navigation draft.",
+            "For a fictional accounting firm changing its website platform, the migration list might include service pages, a downloadable preparation checklist, and an external appointment link. Test those destinations independently. A working homepage does not establish that existing referral links still lead to useful information or that the appointment handoff reaches the correct service."
+          ]
+        },
+        {
+          "title": "Map old URLs to suitable destinations",
+          "paragraphs": [
+            "Assign relevant new destinations for changed URLs. A replacement service page is usually more helpful than redirecting everything to the homepage. Where content genuinely disappears, decide how to communicate that accurately. Avoid chains and conflicting rules, and test a representative set directly. Include PDF resources and product links when they are part of existing customer journeys."
+          ]
+        },
+        {
+          "title": "Check content and technical signals",
+          "paragraphs": [
+            "Review page titles, headings, internal links, canonical references, and language relationships in the new version. Confirm that important content remains accessible without depending on an interaction crawlers cannot use. A platform change can alter output even when the page editor looks familiar. Verify what the published page actually exposes rather than assuming settings transferred correctly."
+          ]
+        },
+        {
+          "title": "Separate staging controls from production",
+          "paragraphs": [
+            "A staging site may need access restrictions or indexing controls during development. The launch plan must identify what changes on production and who confirms it. Inspect robots directives, page-level indexing settings, and the intended canonical URLs. Removing one restriction does not prove that every important page is crawlable or eligible for indexing, so check representative templates."
+          ]
+        },
+        {
+          "title": "Test the business journey before launch",
+          "paragraphs": [
+            "Submit estimate forms, inspect notifications, follow booking links, and test representative purchase paths where applicable. Check confirmation messages and any required third-party handoff. Compare mobile behavior with the agreed requirements. A migration can preserve search URLs while breaking the reason customers visit, so the business owner should review the actual request process, not just screenshots."
+          ]
+        },
+        {
+          "title": "Monitor changes and prepare recovery",
+          "paragraphs": [
+            "Assign launch checks, issue reporting, and responsibility for corrective changes. Keep access to the relevant previous configuration or materials where practical. Review redirects, indexing evidence, and customer requests after publication without expecting immediate search stability. Log significant changes so unexpected patterns can be investigated against actual events rather than attributed to the redesign without evidence."
+          ]
+        }
+      ],
+      "checklist": [
+        "Inventory useful URLs and journeys.",
+        "Map relevant redirects.",
+        "Review published technical signals.",
+        "Remove unintended production restrictions.",
+        "Test forms and assign launch monitoring."
+      ],
+      "conclusion": "A controlled migration preserves the purpose of existing content while introducing a better website. Documenting URL decisions, production checks, and customer journeys makes launch review more useful and gives the team a clearer route to resolve unexpected problems."
+    },
+    {
+      "id": "seo-audit",
+      "title": "Prioritize an SEO audit around business problems",
+      "slug": "prioritize-an-seo-audit-around-business-problems",
+      "description": "Prioritize a business SEO audit with technical access, search intent, useful service content, internal links, and evidence connecting clicks with inquiries.",
+      "intro": [
+        "An SEO audit can produce a long spreadsheet without helping a business choose its next action. Not every warning has the same consequence. A blocked service page, confusing offer, and missing decorative image description should not automatically receive equal attention because a tool lists them together.",
+        "Start with the business goal and a representative set of pages. Record the evidence, likely effect, proposed action, and owner for each finding. This turns an audit into a decision document and helps distinguish a measured problem from an assumption that still needs investigation."
+      ],
+      "sections": [
+        {
+          "title": "Define the questions the audit must answer",
+          "paragraphs": [
+            "Choose the services and customer journeys that matter to the business. An HVAC company may need to know why replacement requests reach an outdated page; a consultant may need to understand unsuitable inquiries. Write those questions before running tools. They provide a basis for deciding whether a technical finding or content change deserves attention first.",
+            "A practical audit entry might say that a priority service page redirects to an unrelated destination, show the observed URL behavior, and assign a correction owner. Another entry may note uncertain intent fit and require query review first. Keeping confirmed faults separate from investigation tasks helps the business choose work without pretending every recommendation has equal certainty."
+          ]
+        },
+        {
+          "title": "Check access before polishing metadata",
+          "paragraphs": [
+            "Confirm that priority pages return the intended response, can be crawled, and expose useful content. Inspect accidental noindex settings, redirect problems, and canonical conflicts. These checks do not establish that a page will rank, but they can identify barriers that make title editing premature. Use representative pages and verify the actual output rather than relying only on dashboard summaries."
+          ]
+        },
+        {
+          "title": "Compare pages with search intent",
+          "paragraphs": [
+            "Inspect what a customer expects from the query and whether the current page provides it. A guide may attract researchers while an estimate request page needs service detail and qualification. Avoid treating all visits as equivalent. Review the offer, supporting information, and next step together, then decide whether the page needs clarification, restructuring, or a separate destination."
+          ]
+        },
+        {
+          "title": "Inspect content and internal connections",
+          "paragraphs": [
+            "Look for service pages hidden behind weak navigation, overlapping articles, and important information available only in images. Check whether links help readers move to a relevant next question. More links are not automatically better; the destination and context should make sense. Preserve useful content when consolidating pages, and plan redirects if an existing URL is being retired."
+          ]
+        },
+        {
+          "title": "Rank work by effect and confidence",
+          "paragraphs": [
+            "Group findings into prerequisites, likely improvements, and items requiring more evidence. Consider effort, dependencies, and the commercial importance of affected pages. A repeated problem across a product template may outweigh several isolated warnings. State what supports the recommendation and what remains uncertain so the team does not confuse an audit priority with a guaranteed business result."
+          ]
+        },
+        {
+          "title": "Verify fixes through the same evidence",
+          "paragraphs": [
+            "Keep a short record of the initial condition and the exact change. Recheck technical fixes directly, then monitor appropriate search and inquiry indicators over a suitable period. Search outcomes have other influences, so avoid assigning every movement to one edit. The audit should leave owners and review criteria, allowing work to continue after the report is delivered."
+          ]
+        }
+      ],
+      "checklist": [
+        "Start with business questions.",
+        "Verify priority-page access.",
+        "Compare content with intent.",
+        "Rank impact and confidence.",
+        "Assign owners and review evidence."
+      ],
+      "conclusion": "A useful audit makes the next decision clearer. Prioritize barriers and relevant customer information, explain the evidence behind each recommendation, and verify completed work before expanding the list of tasks."
+    },
+    {
+      "id": "search-intent",
+      "title": "Map search intent to your business website pages",
+      "slug": "map-search-intent-to-your-business-website-pages",
+      "description": "Map search intent for a US website by separating research, comparison, and estimate requests, then assigning useful pages without repetitive keyword content.",
+      "intro": [
+        "People searching for the same service may be making very different decisions. Someone asking how heat pumps work needs explanation; someone comparing installation providers needs scope, evidence, and contact information. Sending both visitors to one broad page can leave each without the information they need.",
+        "Intent mapping connects groups of customer questions with appropriate pages. It is a planning exercise supported by search results, existing query evidence, and actual conversations. The result should be a manageable set of useful destinations rather than a page for every phrase in a keyword list."
+      ],
+      "sections": [
+        {
+          "title": "Collect language from actual customers",
+          "paragraphs": [
+            "Review the questions asked during estimates, sales calls, and support conversations. Add relevant Search Console queries when available, keeping customer data private. Capture the problem, object, location, and decision implied by each phrase. Internal product names may differ from how people search, so do not limit the list to the labels already used in your navigation.",
+            "For a fictional insulation business, a comparison guide can explain material differences while a service page explains assessment and installation scope. The guide can link to the service where the discussion becomes relevant. If both pages become interchangeable sales pitches, the map needs revision; the problem is their purpose, not simply the presence of related keywords."
+          ]
+        },
+        {
+          "title": "Group by the decision behind the query",
+          "paragraphs": [
+            "Separate learning, comparing, finding a provider, and carrying out a transaction where those distinctions are useful. The categories are a planning aid rather than a rigid rule. A query can have mixed intent. Note what the person likely needs next and what your business can honestly provide, instead of forcing every phrase into an immediate quote request."
+          ]
+        },
+        {
+          "title": "Inspect the current search context",
+          "paragraphs": [
+            "Review the kinds of pages visible for representative queries in the intended market. Guides, local providers, product listings, and directories suggest different expectations. Search results can change and are not instructions to copy competitors. Use them to test your assumptions, then build a page that offers original, relevant information grounded in your own services and expertise."
+          ]
+        },
+        {
+          "title": "Assign one main destination per need",
+          "paragraphs": [
+            "Map closely related questions to an existing page when it can answer them coherently. Create a new destination when the offer or decision is genuinely different. A service page may cover process and suitability while a separate guide explains a technical comparison. Keep the relationship clear so visitors can move between learning and evaluating a provider without repeating the same material."
+          ]
+        },
+        {
+          "title": "Write headings and links from the map",
+          "paragraphs": [
+            "Use descriptive headings that reveal what the page explains. Internal links should name a relevant next step in context, such as the installation service discussed in a comparison guide. Do not stuff every keyword variant into titles or anchors. A person scanning the page should understand the scope and the reason to follow a link without interpreting SEO terminology."
+          ]
+        },
+        {
+          "title": "Review the map after publication",
+          "paragraphs": [
+            "Check which queries reach each page and whether the resulting inquiries match the intended audience. If two pages repeatedly address the same need, investigate overlap before creating more content. If visitors need information the page lacks, improve that gap. Record decisions in the map so later writers and developers preserve a consistent structure as the website grows."
+          ]
+        }
+      ],
+      "checklist": [
+        "Collect real customer questions.",
+        "Group by buying decision.",
+        "Inspect representative search results.",
+        "Assign useful destinations.",
+        "Review queries and inquiry fit."
+      ],
+      "conclusion": "Intent mapping helps a business publish fewer, clearer pages with defined purposes. Use it to align customer questions, service information, and contact journeys, then revise the structure when evidence shows that the original assumptions need adjustment."
+    },
+    {
+      "id": "service-pages",
+      "title": "Write service pages that help customers request an estimate",
+      "slug": "write-service-pages-that-help-customers-request-an-estimate",
+      "description": "Write useful service pages for a US business with a clear scope, relevant examples, practical process details, internal links, and a focused estimate request.",
+      "intro": [
+        "A service page should help a prospective customer decide whether to contact the business. Broad claims about quality or innovation rarely answer that question. A homeowner looking for insulation, for example, needs to understand the work covered, relevant limitations, and the information required for an initial discussion.",
+        "Choose one distinct service and outline the decisions a visitor must make. Build the page around those decisions before polishing its visual presentation. Search relevance and conversion both depend on whether the page actually explains the offer and makes the next step understandable."
+      ],
+      "sections": [
+        {
+          "title": "State the service in ordinary language",
+          "paragraphs": [
+            "Use a direct heading and opening paragraph that identify the work and intended customer. Explain coverage where location matters, but keep the service itself prominent. Avoid replacing a specific offer with a slogan. Someone arriving from search should be able to tell whether the page concerns installation, inspection, maintenance, or a different task without opening the main menu.",
+            "A hypothetical bookkeeping service can explain whether the offer concerns recurring record maintenance, cleanup, or management reporting. Each need changes the questions customers should answer. Use that distinction to choose page structure and request fields. Publishing one vague page with several unrelated calls to action makes it harder for staff and visitors to establish the right starting point."
+          ]
+        },
+        {
+          "title": "Explain inclusions and important boundaries",
+          "paragraphs": [
+            "List the substantive work involved and the situations that require a separate assessment. A commercial cleaning company might distinguish recurring office cleaning from specialist restoration. Boundaries improve inquiry quality because they help customers rule out unsuitable work early. Use approved information, and avoid presenting an exact scope or estimate as universal when it depends on a property assessment."
+          ]
+        },
+        {
+          "title": "Describe the process without invented promises",
+          "paragraphs": [
+            "Explain what happens during the initial inquiry, what material customers can send, and how the business evaluates the request. Publish timing only when the business has confirmed it for the relevant situation. A useful process description makes responsibilities visible, including approvals or access needed from the customer, rather than promising that every job follows an identical schedule."
+          ]
+        },
+        {
+          "title": "Add evidence that fits this service",
+          "paragraphs": [
+            "Select relevant projects, qualifications, or genuine customer comments that answer the page’s doubts. Explain what readers can observe in a project rather than attaching unsupported commercial results. If a photograph shows completed work, add enough context to connect it to the service. Avoid padding a specialized page with unrelated examples simply because they are visually attractive."
+          ]
+        },
+        {
+          "title": "Connect related questions with useful pages",
+          "paragraphs": [
+            "Answer essential questions directly and link to deeper guidance where appropriate. A service page about window replacement might connect to a comparison guide about materials. The link should help visitors understand a decision, not force them through a chain of articles before they can contact the company. Keep the estimate action visible after the information required to take it."
+          ]
+        },
+        {
+          "title": "Test the request and review its quality",
+          "paragraphs": [
+            "Use a concise form or suitable contact option tied to the service. Test labels, required fields, errors, and notifications on a phone. After publication, review whether inquiries mention the right work and include enough context. Search clicks and contact events are helpful indicators, but staff feedback about received requests often reveals missing information that analytics cannot explain."
+          ]
+        }
+      ],
+      "checklist": [
+        "Name one clear service.",
+        "Describe scope and boundaries.",
+        "Explain the initial process.",
+        "Use relevant real evidence.",
+        "Test and review estimate requests."
+      ],
+      "conclusion": "A strong service page prepares a useful conversation. Give customers enough detail to assess fit, make the contact action predictable, and improve the page using the questions your team continues to receive."
+    },
+    {
+      "id": "seo-titles-clicks",
+      "title": "Improve SEO titles without misleading searchers",
+      "slug": "improve-seo-titles-without-misleading-searchers",
+      "description": "Improve SEO titles with accurate topics, useful distinctions, and query evidence. Review clicks in context and understand why search engines may change titles.",
+      "intro": [
+        "A title helps customers decide whether a search result matches their question. It should distinguish the page from alternatives without making claims the content cannot support. Adding more keywords or a dramatic promise can make a result less trustworthy even when it attracts attention.",
+        "Work on pages with a clear purpose first. A strong title cannot resolve an unclear offer or a mismatch between the query and the landing page. Use query and page evidence to choose changes, and keep a record so later reviews compare meaningful conditions."
+      ],
+      "sections": [
+        {
+          "title": "Identify the page’s main promise",
+          "paragraphs": [
+            "Write a plain sentence describing what the page helps a customer do. A service page may explain furnace installation; a guide may compare repair and replacement. Use that distinction in the title. Do not borrow transactional wording for an informational article simply to attract clicks from customers who will arrive expecting an estimate or product catalog.",
+            "For example, a title describing commercial roof inspection should lead to a page about that actual service, not a general article that briefly mentions it. Review the visible search result when practical, but remember that presentation can vary. The purpose of the edit is a clearer match between expectation and content, not a guaranteed increase in clicks."
+          ]
+        },
+        {
+          "title": "Use terms the intended audience recognizes",
+          "paragraphs": [
+            "Choose natural US terminology when targeting US customers, including appropriate product and service names. Research relevant query patterns instead of assuming the business’s internal wording is familiar. Keep regional references only where they clarify coverage. A list of nearby cities can obscure the actual topic and make multiple titles difficult to tell apart in a report or browser tab."
+          ]
+        },
+        {
+          "title": "Differentiate similar pages honestly",
+          "paragraphs": [
+            "If several pages use the same title, inspect whether they have distinct purposes. Different services, product categories, or real locations can justify different wording. If the content itself is nearly identical, title changes may conceal a structural problem. Decide whether the pages need clearer scopes or consolidation before manufacturing distinctions that do not help customers choose."
+          ]
+        },
+        {
+          "title": "Balance detail and readable length",
+          "paragraphs": [
+            "There is no single character count that guarantees how a title appears in every result. Put the key topic early, remove repetition, and add the brand where it helps recognition. Review the text as a human-readable label. Avoid unsupported terms such as best, number one, or guaranteed when they imply evidence or outcomes the page cannot substantiate."
+          ]
+        },
+        {
+          "title": "Align the visible page with the title",
+          "paragraphs": [
+            "Review the main heading, introduction, and substantive content alongside the title element. They should describe the same page purpose in natural language. Search engines can generate different title links based on available signals, so your written title is not a display guarantee. Consistency makes the page easier to understand even when the search presentation differs from your preferred wording."
+          ]
+        },
+        {
+          "title": "Evaluate clicks in context",
+          "paragraphs": [
+            "Use Search Console to compare relevant query and page groups over comparable periods. Changes in impressions, position, query mix, seasonality, or search appearance can affect click-through rate. Do not credit a title edit with every movement. Check whether visitors and actual inquiries still match the intended service, because more clicks from unsuitable searches do not establish a successful improvement."
+          ]
+        }
+      ],
+      "checklist": [
+        "Clarify the page purpose.",
+        "Use customer terminology.",
+        "Resolve duplicate page scopes.",
+        "Keep titles accurate and readable.",
+        "Review CTR with query context."
+      ],
+      "conclusion": "A useful title makes an accurate promise and lets the landing page fulfill it. Improve wording where evidence suggests confusion, then evaluate relevance and inquiry quality alongside the search metrics rather than treating click-through rate as a standalone business result."
+    },
+    {
+      "id": "search-console-leads",
+      "title": "Connect Search Console clicks with qualified inquiries",
+      "slug": "connect-search-console-clicks-with-qualified-inquiries",
+      "description": "Use Search Console to review queries and pages, then compare search patterns with contact events and qualified inquiries without confusing clicks with leads.",
+      "intro": [
+        "Search Console shows how a website appears and receives clicks in Google Search. It does not directly tell a small business which clicks became useful estimate requests. Treating every search click as a lead hides the difference between visibility, website interaction, and an actual customer conversation.",
+        "Build a simple measurement chain around those stages. Start with priority services and the pages that explain them. Then review available search data, relevant website events, and the requests your team receives without collecting unnecessary personal information in reporting tools."
+      ],
+      "sections": [
+        {
+          "title": "Choose useful query and page groups",
+          "paragraphs": [
+            "Group pages by service or customer need rather than reporting only a website-wide total. Separate a repair guide from a commercial installation page when they serve different purposes. Review relevant query patterns and landing pages together. Some query data is limited or omitted, so the report is evidence about observed activity rather than a complete record of every individual search.",
+            "A fictional supplier may see many clicks to a product-selection guide but receive most suitable requests through a category page. That does not make the guide useless; it may answer an earlier question. Review the relationship between those pages and the information customers mention, while avoiding unsupported claims that every guide visit eventually caused a sale."
+          ]
+        },
+        {
+          "title": "Interpret impressions and clicks carefully",
+          "paragraphs": [
+            "An impression indicates a search appearance under the report’s definitions, while a click records movement from the result. Neither proves that a visitor read the page or needed the service. Review position and click-through rate in context, including query mix and device. A broad informational topic can attract many clicks while contributing differently from a focused service page."
+          ]
+        },
+        {
+          "title": "Define meaningful website events",
+          "paragraphs": [
+            "Choose actions that relate to the customer journey, such as a submitted form or a click to a contact channel. Document exactly when each event fires and test it. A submit-button click is not necessarily a successful submission. Keep duplicate triggers and test traffic in mind when comparing trends, and avoid including message text or other sensitive details in analytics events."
+          ]
+        },
+        {
+          "title": "Classify actual incoming requests",
+          "paragraphs": [
+            "Use a lightweight business process to distinguish suitable, unsuitable, incomplete, and duplicate inquiries. An internal record can capture the requested service and general source information where available. Do not assume all systems can be joined perfectly at the individual level. Staff observations about missing scope or location information can still guide page improvements without reconstructing a customer’s entire browsing history."
+          ]
+        },
+        {
+          "title": "Compare periods and acknowledge uncertainty",
+          "paragraphs": [
+            "Review similar time windows and consider seasonality, changes to services, and other marketing activity. A small number of requests can produce large percentage changes that deserve cautious interpretation. Search Console and analytics use different definitions and processing, so totals need not match. Look for patterns strong enough to inform a decision rather than forcing every number into a single conversion story."
+          ]
+        },
+        {
+          "title": "Turn evidence into a specific action",
+          "paragraphs": [
+            "If a page attracts relevant searches but unsuitable requests, inspect its scope and qualification information. If useful service pages receive few impressions, investigate intent, internal discovery, and technical access. Record the proposed change and the evidence it addresses. Recheck the affected journey after implementation, then review trends without promising a fixed number of leads from a reporting adjustment."
+          ]
+        }
+      ],
+      "checklist": [
+        "Group by service and landing page.",
+        "Separate clicks from conversions.",
+        "Test contact event definitions.",
+        "Classify actual inquiries.",
+        "Use comparable review periods."
+      ],
+      "conclusion": "Search reporting becomes more useful when it connects to how the business evaluates requests. Keep each stage clearly defined, accept the limits of attribution, and use the evidence to improve a specific page or customer task."
+    },
+    {
+      "id": "technical-indexing",
+      "title": "Check crawling and indexing for important business pages",
+      "slug": "check-crawling-and-indexing-for-important-business-pages",
+      "description": "Check crawling and indexing for business pages using response status, internal links, robots directives, canonical signals, sitemaps, and page-level inspection.",
+      "intro": [
+        "A page can exist in the website editor and still be difficult for search engines to discover or choose for indexing. The cause may involve links, response behavior, directives, duplication, or insufficiently useful content. Publishing a URL or adding it to a sitemap does not guarantee inclusion in search.",
+        "Begin with a few commercially important pages rather than every URL a crawler can find. Confirm their intended role and inspect the actual published response. This keeps technical work tied to the services and information customers need instead of a goal of indexing every generated address."
+      ],
+      "sections": [
+        {
+          "title": "Confirm the URL returns the intended page",
+          "paragraphs": [
+            "Check the public URL and its response rather than relying on a preview. Unexpected redirects, server errors, or a successful status serving an error message can obscure the real issue. Test representative templates after deployment. A page that works while signed into the administration area may behave differently for a visitor or crawler without that session.",
+            "A filtered product URL offers a useful test case: decide whether the filtered selection is a meaningful destination or merely another view of existing items. Then align its links and signals with that decision. Technical settings should express the chosen structure, rather than create an accidental requirement to index thousands of near-identical combinations."
+          ]
+        },
+        {
+          "title": "Separate crawling controls from indexing rules",
+          "paragraphs": [
+            "Robots.txt controls crawling behavior for compliant crawlers; a noindex directive addresses indexing when it can be seen. Blocking a page from crawling can prevent discovery of its noindex instruction. Use controls deliberately and verify them on production. Avoid broad rules copied from staging without understanding which important pages or resources they affect."
+          ]
+        },
+        {
+          "title": "Review canonical signals and duplication",
+          "paragraphs": [
+            "Canonical references suggest the preferred version among duplicate or similar URLs, but they are not a command that resolves every conflict. Check that links, redirects, and sitemap entries support the same intended URLs. Filter parameters and alternate routes can generate redundant pages. Decide which versions serve a real purpose before trying to make all of them independently indexable."
+          ]
+        },
+        {
+          "title": "Make discovery possible through links",
+          "paragraphs": [
+            "Important pages should be reachable through normal, crawlable internal links with meaningful context. A sitemap can help discovery but does not replace a logical site structure. Check whether a service is accessible only through a search box or interactive control. Ensure the destination remains useful when reached directly from search rather than only after navigating from the homepage."
+          ]
+        },
+        {
+          "title": "Use inspection evidence without overreading it",
+          "paragraphs": [
+            "Page inspection and indexing reports can help reveal observed status and technical signals. Review the specific reason and the page involved before assuming a site-wide problem. Data may lag changes, and a live test does not promise indexing or ranking. Compare the report with the current output and relevant logs or crawl evidence when those are available."
+          ]
+        },
+        {
+          "title": "Improve usefulness where access is sound",
+          "paragraphs": [
+            "If a page is accessible but duplicates many others, investigate whether it deserves a separate search destination. Expand genuine decision-making information or consolidate overlap as appropriate. Do not add filler solely to reach a word count. After changing a priority page, verify the technical condition and monitor evidence over time while accepting that search engines make their own indexing choices."
+          ]
+        }
+      ],
+      "checklist": [
+        "Inspect important public URLs.",
+        "Check crawling and noindex separately.",
+        "Align canonical and URL signals.",
+        "Provide useful internal links.",
+        "Evaluate page value and duplication."
+      ],
+      "conclusion": "Indexing checks should establish whether useful pages are accessible and consistently described. Resolve technical contradictions first, then assess the content itself, recognizing that eligibility and discovery do not guarantee a particular search outcome."
+    },
+    {
+      "id": "content-clusters",
+      "title": "Build content clusters that connect guides with services",
+      "slug": "build-content-clusters-that-connect-guides-with-services",
+      "description": "Build useful SEO content clusters for a business website by grouping customer questions, linking relevant guides and services, and avoiding repetitive articles.",
+      "intro": [
+        "A collection of articles does not automatically become a useful content strategy. Readers need to understand how questions relate and where to go when they are ready to evaluate a service. A content cluster is helpful when it organizes a real subject rather than wrapping an arbitrary keyword list in a new label.",
+        "Choose a service with several substantive customer questions. For a home energy contractor, those might involve assessment, insulation choices, installation preparation, and maintenance. Plan the relationship between those questions and the service page before commissioning more writing."
+      ],
+      "sections": [
+        {
+          "title": "Start from the commercial subject",
+          "paragraphs": [
+            "Define what the business actually provides and which customers it serves. The service page should explain that offer; supporting guides should help people understand meaningful decisions around it. Avoid building a large information library on topics the company cannot address credibly. The cluster needs a clear relationship with expertise, customer needs, and the work the business can accept.",
+            "For a fictional commercial cleaning company, a service page, an office-preparation guide, and an explanation of cleaning frequency could form a small, useful group. Each should answer a different question and link where appropriate. Publishing ten similar frequency articles would create more review work without necessarily helping a customer make a better decision."
+          ]
+        },
+        {
+          "title": "Separate questions with distinct answers",
+          "paragraphs": [
+            "Create separate guides when the reader needs substantially different information. A comparison of materials may deserve its own page, while a short preparation question may fit within an existing guide. Group close variations instead of publishing a new article for each wording. This keeps maintenance manageable and reduces the likelihood that several pages compete to answer the same need."
+          ]
+        },
+        {
+          "title": "Design a useful central page",
+          "paragraphs": [
+            "A central guide or service page can introduce the subject and direct readers to deeper explanations. It should still answer its own main question rather than serve only as a list of links. Organize related material around decisions, stages, or product types that make sense to customers. Avoid forcing every reader to follow an identical sequence before finding contact information."
+          ]
+        },
+        {
+          "title": "Link where the next question arises",
+          "paragraphs": [
+            "Place links in the context that makes their relevance clear. A guide discussing inspection may point to the corresponding service, while a service page can reference preparation guidance. Use descriptive anchors without repeating an exact phrase mechanically. Link choices should help a reader continue a task; adding every cluster page to every paragraph creates noise rather than stronger navigation."
+          ]
+        },
+        {
+          "title": "Use original evidence and appropriate detail",
+          "paragraphs": [
+            "Support explanations with real procedures, approved examples, diagrams, or project features when available. Distinguish facts from hypothetical scenarios. A smaller set of useful guides is easier to review than dozens of lightly varied articles. Do not invent customer outcomes to make informational content appear authoritative, and do not expand a topic beyond what the business can substantiate."
+          ]
+        },
+        {
+          "title": "Maintain the relationships as content changes",
+          "paragraphs": [
+            "Review broken links, outdated recommendations, overlapping topics, and orphaned pages during content maintenance. Use search and inquiry evidence to identify gaps, but do not assume a cluster will earn rankings simply because its structure is tidy. If pages are merged, preserve useful information and plan relevant redirects. Record the purpose of each destination so future additions strengthen the same customer journey."
+          ]
+        }
+      ],
+      "checklist": [
+        "Choose a real service subject.",
+        "Group questions by distinct need.",
+        "Build a useful central destination.",
+        "Add contextual internal links.",
+        "Review overlap and outdated guidance."
+      ],
+      "conclusion": "Content clusters work as an information structure when each page has a clear role and each link helps the reader. Build around genuine customer decisions, then maintain the relationships instead of measuring success by the number of articles published."
+    },
+    {
+      "id": "image-seo",
+      "title": "Image SEO for business websites and product catalogs",
+      "slug": "image-seo-for-business-websites-and-product-catalogs",
+      "description": "Improve image SEO with useful photography, relevant alt text, page context, responsive delivery, and stable layouts for business websites and product catalogs.",
+      "intro": [
+        "Images can explain a product, show completed work, and help a visitor assess whether a service fits. They can also slow the page or hide information that should exist as text. Image SEO involves usefulness, accessibility, context, and delivery rather than a filename change alone.",
+        "Begin with the pages where images affect a buying decision. A remodeler’s gallery, a product category, and a technical service page have different requirements. Select representative examples and review what each picture communicates before deciding how to optimize its implementation."
+      ],
+      "sections": [
+        {
+          "title": "Choose images that answer a customer question",
+          "paragraphs": [
+            "Use photographs or illustrations that reveal something important: product scale, material, installation detail, or the appearance of completed work. Keep permission and factual context clear. A decorative stock image may support the visual design but should not be presented as evidence of a client project. Avoid adding multiple near-identical photographs when they do not help comparison.",
+            "A product photo showing a connector or mounting point may need more detail than a decorative banner. Review the intended display and the decision the customer is making before choosing compression and dimensions. This keeps optimization practical: preserve information that supports comparison, remove unnecessary weight, and verify that the delivered image still serves its purpose."
+          ]
+        },
+        {
+          "title": "Keep essential information in text",
+          "paragraphs": [
+            "Dimensions, compatibility, service limitations, and contact details should not be available only inside an image. Search engines and assistive technology need accessible page content, and customers may zoom or translate text. A diagram can complement an explanation, but provide the necessary detail nearby. Check that product labels remain readable on small screens without forcing users to inspect a large embedded graphic."
+          ]
+        },
+        {
+          "title": "Write alt text for the image’s role",
+          "paragraphs": [
+            "Describe meaningful information conveyed by the image in its context. Product variation or a visible feature may matter; a long string of location keywords does not. Decorative images generally need appropriate empty alternative text rather than a description that interrupts reading. Linked images require consideration of the link’s purpose. Review actual rendered markup instead of assuming a media-library field is used correctly."
+          ]
+        },
+        {
+          "title": "Use sensible filenames and nearby context",
+          "paragraphs": [
+            "A descriptive filename can be useful, but it cannot compensate for an irrelevant page or misleading image. Add captions where they explain something readers need, and keep images close to the related content. For a project gallery, identify what is shown without exposing private details. Do not claim performance or commercial results that cannot be established from the image and project information."
+          ]
+        },
+        {
+          "title": "Optimize size without losing needed detail",
+          "paragraphs": [
+            "Deliver files appropriate to the display dimensions and provide responsive alternatives where applicable. Inspect compression visually, especially when customers need to read product detail. Set dimensions to reserve layout space. Avoid delaying the main visible image unnecessarily, and assess lower-page loading in the complete journey. The smallest possible file is not always the most useful representation of the product."
+          ]
+        },
+        {
+          "title": "Verify the page after changes",
+          "paragraphs": [
+            "Review mobile layout, alternative text, image visibility, and loading behavior after publishing. Check the pages where catalogs or content systems generate images automatically, since one configuration can affect many products. Use available search and performance evidence carefully. Better images and delivery can improve usability, but they do not guarantee image search exposure, organic positions, or a particular number of inquiries."
+          ]
+        }
+      ],
+      "checklist": [
+        "Choose informative authorized images.",
+        "Keep essential details as text.",
+        "Match alt text to purpose.",
+        "Provide appropriate image sizes.",
+        "Inspect the published mobile page."
+      ],
+      "conclusion": "Treat image SEO as part of the page’s explanation and usability. Relevant visuals, accurate context, accessible alternatives, and efficient delivery give customers better information while keeping the technical implementation easier to review."
+    },
+    {
+      "id": "conversion-landing",
+      "title": "Build an organic landing page around a specific service",
+      "slug": "build-an-organic-landing-page-around-a-specific-service",
+      "description": "Plan an organic landing page with a distinct purpose, clear service detail, relevant proof, useful contact actions, and links that support customer decisions.",
+      "intro": [
+        "A landing page reached from organic search must work for someone arriving without context. That visitor may not know the brand or have seen the homepage. A page built around a specific service should explain enough to support a decision while remaining connected to the rest of the website.",
+        "Choose the intended search need before choosing a template. A page about commercial roof inspection differs from a general roofing overview or a guide to roof materials. The offer, customer, and next action should be clear enough to describe in one brief sentence."
+      ],
+      "sections": [
+        {
+          "title": "Give the page a distinct purpose",
+          "paragraphs": [
+            "Check whether an existing service page can satisfy the same need before creating another URL. A new landing page is more useful when it explains a separate offer, audience, or genuine regional difference. Avoid pages that change only a city name and funnel visitors to the same generic content. The distinction must be meaningful to someone deciding whether to contact the business.",
+            "For a hypothetical inspection service, the page could ask customers to describe the property and the concern they want assessed. It should not promise a technical conclusion before that assessment. This boundary makes the request more useful and helps distinguish an initial inquiry from a completed evaluation, especially when the visitor arrives directly from search."
+          ]
+        },
+        {
+          "title": "Make the first view informative",
+          "paragraphs": [
+            "State the service, intended customer, and practical value in straightforward language. A relevant image can help, but do not let a large decorative introduction hide the answer. Show a suitable next action without demanding an immediate decision. On mobile, verify that headings and navigation remain readable and that sticky elements do not obstruct the information needed to evaluate the offer."
+          ]
+        },
+        {
+          "title": "Answer the questions before the request",
+          "paragraphs": [
+            "Explain scope, process, prerequisites, and important limitations. A commercial inspection page might ask about the building type and the concern being assessed without implying a universal outcome. Use sections that match real customer questions. Include enough detail to qualify the request while leaving complex, case-dependent decisions for the actual conversation with the business."
+          ]
+        },
+        {
+          "title": "Choose relevant and verifiable proof",
+          "paragraphs": [
+            "Use project material, real qualifications, or genuine testimonials that fit the service. Explain observable work and context rather than inventing conversion or revenue figures. If evidence is limited, an honest process description is more useful than an unsupported badge. Visitors should be able to distinguish an example scenario from a commissioned project and know what the business actually provides."
+          ]
+        },
+        {
+          "title": "Provide a focused contact route",
+          "paragraphs": [
+            "Use a call to action tied to the page, such as discussing the inspection requirement or requesting an assessment of the project scope. Ask for information staff can use and explain the next step. Test form errors, message delivery, and confirmations. If WhatsApp is offered, treat a click as a channel handoff rather than proof that a completed inquiry was received."
+          ]
+        },
+        {
+          "title": "Connect the page and measure relevance",
+          "paragraphs": [
+            "Link from appropriate services, guides, or navigation so the landing page is part of a coherent website. Check indexing eligibility and technical signals. After publication, compare relevant queries, contact events, and actual inquiry quality. A high conversion rate on a very small or unsuitable audience can mislead, so interpret the page within the business context rather than as an isolated campaign chart."
+          ]
+        }
+      ],
+      "checklist": [
+        "Define a distinct search need.",
+        "Explain the offer immediately.",
+        "Answer scope and process questions.",
+        "Use relevant real evidence.",
+        "Test contact and review inquiry fit."
+      ],
+      "conclusion": "An organic landing page should be a useful destination in its own right. Build a clear explanation around a specific customer need, connect it to supporting information, and assess whether it prepares the conversations your business can actually handle."
+    },
+    {
+      "id": "seo-content-maintenance",
+      "title": "Maintain SEO content and resolve overlapping pages",
+      "slug": "maintain-seo-content-and-resolve-overlapping-pages",
+      "description": "Maintain SEO content by checking accuracy, intent, overlapping URLs, internal links, and customer questions before updating, merging, or retiring website pages.",
+      "intro": [
+        "Business information changes after a website launches. Services evolve, products disappear, and several writers may publish articles that answer almost the same question. Content maintenance helps a company keep its website useful rather than continually adding new pages to an increasingly confusing archive.",
+        "Set a review process around important services and recurring customer questions. Search data can help identify candidates, but a decline in clicks does not by itself prove that a page needs rewriting. Investigate what changed before choosing an update, consolidation, or removal."
+      ],
+      "sections": [
+        {
+          "title": "Inventory purpose and factual ownership",
+          "paragraphs": [
+            "Record the main subject, intended audience, responsible person, and useful action for each priority page. Check whether the business still offers the described service and whether contact details or product information remain accurate. Assign someone able to verify facts rather than asking a writer to guess. A review date is useful internally, but changing it without substantive revision does not improve the content.",
+            "A company that changes its maintenance offer should inspect service pages, related guides, and old downloadable checklists together. Updating only the main page can leave customers with contradictory instructions. Keep a short change record showing which facts were approved and which related destinations were checked, so the next review begins from a known state."
+          ]
+        },
+        {
+          "title": "Separate outdated facts from weak intent fit",
+          "paragraphs": [
+            "A page can be factually correct yet fail to answer the question people bring to it. Compare relevant queries, page content, and staff feedback about inquiries. Identify whether the problem concerns missing information, obsolete details, or a different expectation in search. Each cause suggests a different edit, so avoid replacing the entire article before understanding which part is failing."
+          ]
+        },
+        {
+          "title": "Investigate overlap before naming cannibalization",
+          "paragraphs": [
+            "Two pages appearing for related queries are not automatically a problem. Check whether they serve distinct decisions and whether their search patterns suggest confusion. A guide and a service page can support each other. Near-identical articles with the same purpose may deserve consolidation, especially when maintaining both creates inconsistent advice or divides useful internal links between interchangeable destinations."
+          ]
+        },
+        {
+          "title": "Choose update, merge, or retirement deliberately",
+          "paragraphs": [
+            "Update a useful page when its purpose remains clear. Merge overlapping material into the most suitable destination when that produces a better answer. Retire pages that no longer have a valid role, considering existing links and customer needs. Preserve valuable sections and plan relevant redirects when URLs change; sending every removed page to the homepage rarely explains the change well."
+          ]
+        },
+        {
+          "title": "Repair the surrounding customer journey",
+          "paragraphs": [
+            "Review links from service pages, navigation, and other articles after a change. Update references to renamed services and remove paths to obsolete documents. Check headings, images, and contact actions in the revised page. Maintenance should improve the reader’s journey as a whole rather than leave a freshly edited article surrounded by contradictory descriptions elsewhere on the website."
+          ]
+        },
+        {
+          "title": "Document changes and review outcomes",
+          "paragraphs": [
+            "Record the factual changes, structural decisions, and URL mappings so future editors understand why a page exists. Compare technical behavior immediately after publication and search patterns over an appropriate period. Seasonality and query demand can influence results independently. Review actual inquiries too, since a clearer boundary may reduce unsuitable requests even when the overall visit count does not increase."
+          ]
+        }
+      ],
+      "checklist": [
+        "Assign factual owners.",
+        "Review intent and current information.",
+        "Investigate genuine topic overlap.",
+        "Plan merges and redirects carefully.",
+        "Update links and document decisions."
+      ],
+      "conclusion": "Maintain content to preserve useful answers and a coherent website structure. Clear ownership and evidence-based decisions help the business avoid unnecessary rewrites while keeping customers informed about the services it currently offers."
+    },
+    {
+      "id": "market-entry-seo",
+      "title": "SEO planning before entering a new US market",
+      "slug": "seo-planning-before-entering-a-new-us-market",
+      "description": "Plan SEO for a new US market with validated service coverage, regional research, useful pages, and a review of qualified inquiries before expanding content.",
+      "intro": [
+        "A business entering a new US region needs more than city names added to existing pages. Customers may use different terminology, face different conditions, or expect a different delivery model. Search research should support a real commercial decision about what the company can offer and how it will fulfill that offer.",
+        "Choose a focused test market and a small set of services before publishing at scale. A company expanding from one state to another may need different evidence from a Spain-based supplier offering remote professional services to US businesses. The website must explain the actual operating model."
+      ],
+      "sections": [
+        {
+          "title": "Confirm operational fit before keyword volume",
+          "paragraphs": [
+            "List the services the business can deliver in the intended market and the practical limits. Consider customer access, staffing, fulfillment, and requirements the company needs to verify with qualified local advisers when relevant. Search demand cannot make an unavailable service deliverable. Define what a suitable inquiry looks like so the website does not attract requests the business must routinely decline.",
+            "For a fictional industrial consultant entering a second US region, initial research may reveal that customers need a clearer explanation of remote collaboration rather than a city-specific office page. Build around that real concern. A new geographic label adds little if the service, evidence, and delivery process remain unexplained to the people being invited to inquire."
+          ]
+        },
+        {
+          "title": "Research customer language and alternatives",
+          "paragraphs": [
+            "Review representative searches, established providers, and questions from prospective customers. Distinguish broad national interest from a local need and note regional terminology that affects understanding. An industrial supplier and a home service contractor will need different evidence. Do not infer a viable market solely from a keyword tool estimate; combine search observations with the business’s knowledge and actual customer conversations."
+          ]
+        },
+        {
+          "title": "Choose the right page structure",
+          "paragraphs": [
+            "Decide whether the new audience needs a distinct service page, a genuine location page, or revised information on an existing destination. Separate pages should provide substantive differences that help customers. Avoid doorway-like collections of nearly identical city pages. A remote service offered across the US may be better explained through one clear regional version than through invented local office pages."
+          ]
+        },
+        {
+          "title": "Localize evidence and expectations",
+          "paragraphs": [
+            "Use familiar US terminology and examples relevant to the intended business audience. Explain remote delivery honestly, including the supplier’s real base where appropriate. Latech works from Puebla de la Calzada, Badajoz, Spain; project scope and coordination are agreed with the customer. Do not imply local staffing, a US phone number, or support arrangements that have not actually been established."
+          ]
+        },
+        {
+          "title": "Define a small, useful publishing scope",
+          "paragraphs": [
+            "Prepare the priority commercial pages and supporting answers needed for the initial offer. Review headings, internal links, mobile contact, and indexing signals before expanding the content library. Assign owners for market-specific information. A limited launch with accurate content is easier to assess than dozens of speculative pages whose services, examples, and contact routes have not been verified."
+          ]
+        },
+        {
+          "title": "Evaluate inquiries before expanding",
+          "paragraphs": [
+            "Review the queries and pages attracting attention alongside the suitability of actual requests. Note recurring questions about scope, availability, or delivery that the pages should explain better. Use comparable periods and acknowledge limited data when inquiry numbers are small. Expand the website when evidence and operational capacity support it, rather than treating publication volume as proof that the market entry is working."
+          ]
+        }
+      ],
+      "checklist": [
+        "Confirm real service coverage.",
+        "Research regional customer language.",
+        "Avoid repetitive location pages.",
+        "Explain the actual delivery model.",
+        "Assess inquiry quality before scaling."
+      ],
+      "conclusion": "Market-entry SEO should help a business test a credible offer with relevant customers. Keep research, page structure, and operational truth connected, then use observed questions and suitable inquiries to decide where further content investment makes sense."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Where is Latech based?",
+      "answer": "Latech is based in Puebla de la Calzada, Badajoz, Spain. Andrés Rubio and Luis Grondona founded the company. We collaborate remotely on US projects and agree on communication arrangements for each engagement."
+    },
+    {
+      "question": "Can you handle website design and SEO together?",
+      "answer": "Yes. We can scope information architecture, design, content, and technical SEO together. Priorities depend on your current website, service areas, and business goals; search positions and lead volumes cannot be guaranteed."
+    },
+    {
+      "question": "What should I prepare before requesting an estimate?",
+      "answer": "Share your existing website, services, intended customers, service area, required features, and available content. Note any planned launch constraints so we can discuss deliverables and dependencies."
+    },
+    {
+      "question": "How do we coordinate a project from the United States?",
+      "answer": "Contact us on WhatsApp at +34684739091. We agree on review steps, responsibilities, and suitable coordination times around the project. Our team works from Spain."
+    }
+  ],
+  "pageSeo": {
+    "home": {
+      "title": "Web Design and SEO for US Businesses | Latech",
+      "description": "Web design, SEO, and ecommerce for US businesses, delivered remotely from Spain. Plan clear services, useful content, and practical paths to customer inquiries.",
+      "heading": "Web Design and SEO for US Businesses",
+      "intro": "Plan a website that explains your offer and gives US customers a clear path to an inquiry."
+    },
+    "services": {
+      "title": "Web Design, SEO, and Ecommerce Services | Latech",
+      "description": "Explore website design, SEO, ecommerce, and scoped AI integrations for US businesses. Discuss deliverables and remote collaboration with Latech from Spain.",
+      "heading": "Web Design, SEO, and Ecommerce Services",
+      "intro": "Discuss website design, organic search foundations, and ecommerce with a team collaborating remotely from Spain."
+    },
+    "web": {
+      "title": "Business Website Design and SEO | Latech",
+      "description": "Plan a business website with clear service pages, mobile usability, and technical SEO. Latech works remotely from Spain with businesses in the United States.",
+      "heading": "Business Website Design and SEO",
+      "intro": "Bring service pages, mobile design, technical SEO, and contact journeys into one defined website project."
+    },
+    "shop": {
+      "title": "Ecommerce Website Development | Latech",
+      "description": "Build an ecommerce website around product information, checkout, inventory, and fulfillment. Discuss your US online store with Latech, based in Spain.",
+      "heading": "Ecommerce Website Development",
+      "intro": "Plan product categories, useful product detail, checkout, and the work required to fulfill customer orders."
+    },
+    "ai": {
+      "title": "AI Integrations and n8n Workflows | Latech",
+      "description": "Scope n8n workflows and AI integrations around real business tasks. Plan validation, human review, error handling, and maintainable connections with Latech.",
+      "heading": "AI Integrations and n8n Workflows",
+      "intro": "Discuss a bounded integration with validation, error visibility, and appropriate human review."
+    },
+    "about": {
+      "title": "About Latech, a Spain-Based Web Team | Latech",
+      "description": "Meet Andrés Rubio and Luis Grondona, founders of Latech in Badajoz, Spain. Learn how our web design and SEO team collaborates remotely with US businesses.",
+      "heading": "About Latech, a Spain-Based Web Team",
+      "intro": "Andrés Rubio and Luis Grondona founded Latech in Puebla de la Calzada, Badajoz, Spain."
+    },
+    "projects": {
+      "title": "Web Design and Ecommerce Projects | Latech",
+      "description": "Explore real Latech web design and ecommerce projects with catalogs, customer areas, service pages, and content tools described through documented features.",
+      "heading": "Web Design and Ecommerce Projects",
+      "intro": "See real project features, including catalogs, service journeys, content management, and customer contact tools."
+    },
+    "contact": {
+      "title": "Contact Latech About Your Website | Latech",
+      "description": "Contact Latech on WhatsApp at +34684739091 about web design, SEO, or ecommerce. Share your US business, current website, and goals to discuss the project scope.",
+      "heading": "Contact Latech About Your Website",
+      "intro": "Share your business type, service area, current website, and project goals on WhatsApp at +34684739091."
+    },
+    "blog": {
+      "title": "SEO Guides for US Small Businesses | Latech",
+      "description": "Read SEO guides for US small businesses on search intent, indexing, mobile performance, service pages, and connecting search clicks with qualified inquiries.",
+      "heading": "SEO Guides for US Small Businesses",
+      "intro": "Use practical guidance on search intent, indexing, content, and measurement to prioritize your business website."
+    }
+  },
+  "projectCopy": {
+    "colegio-santo-tomas": {
+      "sector": "Education",
+      "summary": "School website with educational stages, admissions information, news, an events calendar, documents, and a private parent gallery. Real photography and clear navigation introduce daily life at the school."
+    },
+    "granja-orea": {
+      "sector": "Camps and outdoor learning",
+      "summary": "Editorial website combining camps, school visits, riding, and group stays. Features include WhatsApp inquiries, editable news, an installable web app, a QR visitor route, and private team tools."
+    },
+    "f5-arquitectos": {
+      "sector": "Architecture",
+      "summary": "Architecture portfolio with large project photographs, a category catalog, and detailed project pages. A dedicated administration area lets the studio maintain its portfolio and other website content."
+    },
+    "quality-homes": {
+      "sector": "Residential real estate",
+      "summary": "Residential development website presenting photographs, video, floor plans, and availability by home. Inquiry handling connects to a dedicated CRM, while content tools support updates to development listings."
+    },
+    "megias-frutas": {
+      "sector": "Wholesale produce",
+      "summary": "Business website for a fruit and vegetable wholesaler. Product photography, professional customer information, editorial content, mobile layouts, and direct inquiry options present the company and its range."
+    },
+    "zonasport": {
+      "sector": "Sporting goods",
+      "summary": "Multibrand sports catalog organized by customer and product categories. Advice articles, an internal inventory panel, WhatsApp ordering, and in-store pickup connect online browsing with the local shop."
+    },
+    "panelex": {
+      "sector": "Construction materials",
+      "summary": "Construction materials website with technical sandwich panel information, product pages, guides, a calculator, and province pages. The content helps building professionals compare specifications and request a quote."
+    },
+    "monopatinmonkey": {
+      "sector": "Electric scooters",
+      "summary": "Electric scooter store with product details, a repair service section, and a step-by-step workshop journey. The site supports model comparison and direct inquiries about repairs and products."
+    },
+    "toldos-noa": {
+      "sector": "Custom awnings",
+      "summary": "Awning services website separating home, business, repair, and custom installation needs. Genuine reviews and clear WhatsApp calls to action help visitors describe their project and request a quote."
+    },
+    "autoescuela-agora": {
+      "sector": "Driver education",
+      "summary": "Driving school website presenting license routes and two locations. Enrollment, WhatsApp contact, AEOL test access, the Mi Ágora student area, news, and guides support the student journey."
+    },
+    "precios-locos": {
+      "sector": "Home appliances",
+      "summary": "Home appliance store with a product catalog, search, favorites, and cart. A surprise-package claw machine interaction, household guides, and WhatsApp contact form part of its distinctive shopping experience."
+    },
+    "los-leones-nuptiae": {
+      "sector": "Menswear and tailoring",
+      "summary": "Fashion website bringing Los Leones and Nuptiae together through a visual brand choice. Separate journeys introduce menswear, ceremony, rental, and tailoring, with collection photography and store access."
+    },
+    "my-special-hair": {
+      "sector": "Hair systems and care",
+      "summary": "Hair systems website combining a catalog, measurement guide, and 3D studio. Customer accounts, appointments, professional access, video, and WhatsApp advice provide different routes for visitors."
+    }
+  }
+}

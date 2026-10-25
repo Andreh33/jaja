@@ -1,4 +1,4 @@
-import { equivalents } from '@/lib/international';
+import { equivalents, internationalMetadata } from '@/lib/international';
 import type { Metadata } from 'next';
 import {
   Bot, Phone, PhoneCall, Globe, Brain, FileText, CreditCard,
@@ -33,6 +33,7 @@ export const metadata: Metadata = {
     locale: 'es_ES',
     type: 'website',
   },
+  ...internationalMetadata('es', { key: 'ai' }),
 };
 
 const GUIDES = [

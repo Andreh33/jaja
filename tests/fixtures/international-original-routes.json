@@ -1,0 +1,101 @@
+[
+  {
+    "id": "website-leads",
+    "slugs": {
+      "es": "guia-internacional-web-servicios-consultas",
+      "en": "business-website-better-enquiries",
+      "fr": "site-web-demandes-clients-pertinentes",
+      "de": "website-passende-kundenanfragen",
+      "pt": "transformar-visitas-site-contactos",
+      "it": "sito-aziendale-richieste-commerciali"
+    }
+  },
+  {
+    "id": "website-budget",
+    "slugs": {
+      "es": "guia-internacional-presupuesto-web",
+      "en": "website-quote-project-brief",
+      "fr": "preparer-devis-site-cahier-des-charges",
+      "de": "website-angebot-vorbereiten-vergleichen",
+      "pt": "preparar-orcamento-site",
+      "it": "preventivo-sito-web-aziendale"
+    }
+  },
+  {
+    "id": "local-seo",
+    "slugs": {
+      "es": "guia-internacional-seo-local-negocios",
+      "en": "local-seo-real-service-area",
+      "fr": "referencement-local-zone-intervention",
+      "de": "lokale-sichtbarkeit-unternehmensangaben",
+      "pt": "seo-local-empresas-presenca-real",
+      "it": "seo-locale-copertura-territoriale"
+    }
+  },
+  {
+    "id": "international-seo",
+    "slugs": {
+      "es": "guia-internacional-seo-internacional-empresas",
+      "en": "multilingual-website-international-seo",
+      "fr": "site-multilingue-referencement-international",
+      "de": "mehrsprachige-websites-internationale-kunden",
+      "pt": "planear-site-varios-idiomas-mercados",
+      "it": "seo-internazionale-aziende"
+    }
+  },
+  {
+    "id": "mobile-performance",
+    "slugs": {
+      "es": "guia-internacional-rendimiento-movil-web",
+      "en": "mobile-website-performance-priorities",
+      "fr": "performance-mobile-priorites-site-web",
+      "de": "unternehmenswebsite-smartphone-schneller-machen",
+      "pt": "melhorar-desempenho-site-telemovel",
+      "it": "prestazioni-mobile-sito-aziendale"
+    }
+  },
+  {
+    "id": "online-store",
+    "slugs": {
+      "es": "guia-internacional-planificar-tienda-online",
+      "en": "prepare-online-shop-catalogue-checkout",
+      "fr": "preparer-boutique-en-ligne-catalogue-commandes",
+      "de": "onlineshop-vorbereitung-sortiment-ablaeufe",
+      "pt": "preparar-criacao-loja-online",
+      "it": "pianificare-ecommerce-catalogo-ordini"
+    }
+  },
+  {
+    "id": "whatsapp-conversion",
+    "slugs": {
+      "es": "guia-internacional-whatsapp-consultas-web",
+      "en": "website-whatsapp-enquiry-context",
+      "fr": "whatsapp-site-demandes-clients-contexte",
+      "de": "whatsapp-website-bessere-erstgespraeche",
+      "pt": "whatsapp-pedidos-mais-claros",
+      "it": "whatsapp-sito-richieste-clienti"
+    }
+  },
+  {
+    "id": "ai-automation",
+    "slugs": {
+      "es": "guia-internacional-primera-automatizacion-n8n-ia",
+      "en": "first-n8n-ai-automation-workflow",
+      "fr": "premiere-automatisation-ia-n8n",
+      "de": "ablaeufe-n8n-ki-automatisieren",
+      "pt": "escolher-processos-automatizar-n8n-ia",
+      "it": "prima-automazione-n8n-intelligenza-artificiale"
+    }
+  },
+  {
+    "id": "website-migration",
+    "slugs": {
+      "es": "guia-internacional-migracion-web-seo",
+      "en": "website-migration-content-redirect-plan",
+      "fr": "migration-site-contenus-redirections",
+      "de": "website-wechsel-inhaltsinventar-pruefplan",
+      "pt": "mudar-site-preservar-informacao",
+      "it": "migrazione-sito-url-contenuti-seo"
+    }
+  }
+]

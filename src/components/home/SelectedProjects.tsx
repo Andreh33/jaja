@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { motion, useScroll, useTransform, useMotionValueEvent } from 'framer-motion';
 import { ArrowDown, ArrowUpRight } from 'lucide-react';
+import { projects as allProjects } from '@/lib/projects';
 import styles from './SelectedProjects.module.css';
 import { featuredProjects as projects } from './featured-projects';
 
@@ -40,7 +41,7 @@ export default function SelectedProjects() {
     window.scrollTo({ top: start + Math.max(0, element.offsetHeight - window.innerHeight) * [.22, .57, .94][index], behavior: keyboard ? 'instant' : 'smooth' });
   }
 
-  return <section ref={ref} id="proyectos" className={styles.section} data-enhanced={enhanced} aria-labelledby="work-heading">
+  return <><section ref={ref} id="proyectos" className={styles.section} data-enhanced={enhanced} aria-labelledby="work-heading">
     <div className={styles.sticky}>
       <div className={styles.topline} inert={enhanced && intro}><div><p className="eyebrow">01 / TRABAJO SELECCIONADO</p><h2 id="work-heading">No lo imagines. <span>Míralo.</span></h2></div><Link href="/proyectos" className="text-button">Todos los proyectos <ArrowUpRight size={17} /></Link></div>
       <motion.div className={styles.viewport} inert={enhanced && intro} style={{ transform: enhanced ? reveal : 'none' }}>
@@ -62,5 +63,5 @@ export default function SelectedProjects() {
         {intro && <button className={styles.skip} type="button" onClick={event => { const keyboard = event.detail === 0; selectProject(0, keyboard); if (keyboard) { setIntro(false); requestAnimationFrame(() => firstProject.current?.focus({ preventScroll: true })); } }}>Ver los proyectos <ArrowUpRight size={15} /></button>}
       </>}
     </div>
-  </section>;
+  </section><section className={styles.archive} aria-labelledby="all-projects-heading"><div className={styles.archiveHeading}><h2 id="all-projects-heading">Cada negocio, <span>su propio mundo.</span></h2><p>Explora todos nuestros proyectos. Diseño, desarrollo y una identidad que se reconoce.</p></div><div className={styles.archiveGrid}>{allProjects.map(project => <article key={project.id}><a href={project.url} target="_blank" rel="noopener noreferrer"><div className={styles.archiveImage}><Image src={project.image} alt={`Web de ${project.name}`} width={720} height={480} sizes="(max-width: 600px) 90vw, (max-width: 1000px) 45vw, 30vw" /></div><h3>{project.name}<ArrowUpRight size={18} aria-hidden="true" /></h3><p>{project.sector}</p></a></article>)}</div><Link href="/proyectos" className="text-button">Conoce cada proyecto <ArrowUpRight size={17} /></Link></section></>;
 }
