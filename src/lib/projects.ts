@@ -163,4 +163,16 @@ export const projects: Project[] = [
     image: '/proyectos/my-special-hair.webp',
     services: ['Diseño y desarrollo', 'Catálogo y área de clientes', 'Guía de medidas y estudio 3D'],
   },
+  {
+    id: 'gigantes-street-food',
+    name: 'GIGANTES Street Food',
+    url: 'https://gigantesstreetfood.com/',
+    domain: 'gigantesstreetfood.com',
+    sector: 'Restaurante de comida urbana',
+    location: 'Ciudad Real',
+    description:
+      'Una web de restaurante con una identidad negra y crema y fotografía de platos que abre el apetito. El Martillo Thor, las hamburguesas y el kebab protagonizan una carta que se explora por categorías y buscador. Los enlaces llevan a Qamarero para realizar el pedido, mientras el blog, el teléfono y el mapa ayudan a conocer la propuesta y encontrar el local de Ciudad Real. Una experiencia visual con el carácter de GIGANTES y recorridos claros para consultar la carta y pedir.',
+    image: '/proyectos/gigantes-street-food.webp',
+    services: ['Diseño y desarrollo', 'Carta con categorías y buscador', 'Enlaces de pedido a Qamarero'],
+  },
 ];

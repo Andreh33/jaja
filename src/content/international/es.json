@@ -1461,6 +1461,10 @@
     "my-special-hair": {
       "sector": "Prótesis capilares y cuidado",
       "summary": "Web de marca con catálogo, guía de medidas y estudio 3D. Cuenta de cliente, citas y acceso profesional ofrecen recorridos diferenciados, mientras vídeo, galería y WhatsApp acompañan la orientación personal."
+    },
+    "gigantes-street-food": {
+      "sector": "Restaurante de comida urbana",
+      "summary": "Web de GIGANTES Street Food en Ciudad Real con fotografía de platos, carta por categorías y buscador. Los pedidos se realizan mediante enlaces externos a Qamarero; el blog, el teléfono y el mapa completan la información del restaurante."
     }
   }
 }

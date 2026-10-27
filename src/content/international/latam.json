@@ -1366,6 +1366,10 @@
     "my-special-hair": {
       "sector": "Sistemas capilares",
       "summary": "Sitio de sistemas capilares con catálogo, guía de medidas y estudio 3D. Las cuentas de cliente, citas, acceso profesional, videos y orientación por WhatsApp crean recorridos según cada visitante."
+    },
+    "gigantes-street-food": {
+      "sector": "Restaurante de comida urbana",
+      "summary": "Sitio de GIGANTES Street Food en Ciudad Real con fotografías de los platos, menú por categorías y buscador. Los pedidos se realizan mediante enlaces externos a Qamarero; el blog, el teléfono y el mapa completan la información del restaurante."
     }
   }
 }

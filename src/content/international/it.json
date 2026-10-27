@@ -1399,6 +1399,10 @@
     "my-special-hair": {
       "sector": "Protesi capillari e cura dei capelli",
       "summary": "Un sito di marca con catalogo, guida alle misure e studio 3D per esplorare alternative. Account cliente, appuntamenti, accesso professionale, video e galleria accompagnano la consulenza tramite WhatsApp."
+    },
+    "gigantes-street-food": {
+      "sector": "Ristorante di street food",
+      "summary": "Sito di GIGANTES Street Food a Ciudad Real con fotografie dei piatti, menu per categorie e ricerca. I link esterni portano a Qamarero per ordinare; blog, telefono e mappa completano le informazioni sul ristorante."
     }
   }
 }

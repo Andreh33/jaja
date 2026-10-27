@@ -1366,6 +1366,10 @@
     "my-special-hair": {
       "sector": "Hair systems and care",
       "summary": "Hair systems website combining a catalog, measurement guide, and 3D studio. Customer accounts, appointments, professional access, video, and WhatsApp advice provide different routes for visitors."
+    },
+    "gigantes-street-food": {
+      "sector": "Street food restaurant",
+      "summary": "Website for GIGANTES Street Food in Ciudad Real with food photography, menu categories, and search. External links send customers to Qamarero to place orders; a blog, phone number, and map provide additional restaurant information."
     }
   }
 }

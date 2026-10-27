@@ -1347,6 +1347,10 @@
     "my-special-hair": {
       "sector": "Hårproteser och hårvård",
       "summary": "En varumärkeswebbplats med katalog, måttguide och en 3D-studio för att utforska alternativ. Kundkonto, tidsbokning, professionell ingång, video och resultatgalleri kompletteras med rådgivningskontakt via WhatsApp."
+    },
+    "gigantes-street-food": {
+      "sector": "Streetfoodrestaurang",
+      "summary": "Webbplats för GIGANTES Street Food i Ciudad Real med matfotografier, meny med kategorier och sökfunktion. Externa länkar leder till Qamarero för beställning; blogg, telefonnummer och karta kompletterar informationen om restaurangen."
     }
   }
 }

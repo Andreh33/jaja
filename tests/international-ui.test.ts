@@ -19,14 +19,14 @@ function anchors(html: string) {
   }));
 }
 
-test('every localized home and portfolio renders all thirteen real projects as image and text links', () => {
-  assert.equal(projects.length, 13);
+test('every localized home and portfolio renders all fourteen real projects as image and text links', () => {
+  assert.equal(projects.length, 14);
   for (const locale of locales) {
     for (const key of ['home', 'projects'] as const) {
       const html = render(locale, { key });
       const links = anchors(html);
       const portfolio = links.filter(link => projects.some(project => project.url === link.href));
-      assert.equal(new Set(portfolio.map(link => link.href)).size, 13, `${locale}/${key}: incomplete portfolio`);
+      assert.equal(new Set(portfolio.map(link => link.href)).size, projects.length, `${locale}/${key}: incomplete portfolio`);
       for (const project of projects) {
         const link = portfolio.find(link => link.href === project.url && link.content.includes('<h3>'));
         assert.ok(link, `${locale}/${key}: missing text link for ${project.name}`);
@@ -36,6 +36,19 @@ test('every localized home and portfolio renders all thirteen real projects as i
       assert.ok(links.some(link => link.href?.startsWith('https://wa.me/34684739091')), `${locale}/${key}: missing WhatsApp`);
       assert.ok(links.some(link => link.href === 'tel:+34684739091'), `${locale}/${key}: missing telephone`);
     }
+  }
+});
+
+test('every version supplies localized GIGANTES copy and renders its real image and external ordering context', () => {
+  for (const locale of locales) {
+    const copy = dictionaries[locale].projectCopy?.['gigantes-street-food'];
+    assert.ok(copy?.sector && copy.summary, `${locale}: missing GIGANTES project copy`);
+    assert.ok(copy.summary.includes('Qamarero'), `${locale}: missing external ordering context`);
+    assert.ok(copy.summary.includes('Ciudad Real'), `${locale}: missing verified location`);
+    const html = render(locale, { key: 'projects' });
+    assert.ok(html.includes('https://gigantesstreetfood.com/'));
+    assert.ok(html.includes('gigantes-street-food.webp'));
+    assert.ok(html.includes(copy.summary));
   }
 });
 

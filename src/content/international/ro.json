@@ -1366,6 +1366,10 @@
     "my-special-hair": {
       "sector": "Sisteme capilare",
       "summary": "Site de sisteme capilare cu produse, ghid de măsurare și studio 3D. Conturile de client, programările, accesul profesional, videoclipurile și consultanța pe WhatsApp oferă trasee diferite vizitatorilor."
+    },
+    "gigantes-street-food": {
+      "sector": "Restaurant de street food",
+      "summary": "Site pentru GIGANTES Street Food din Ciudad Real, cu fotografii ale preparatelor, meniu pe categorii și căutare. Linkurile externe duc la Qamarero pentru comenzi; blogul, telefonul și harta completează informațiile despre restaurant."
     }
   }
 }
