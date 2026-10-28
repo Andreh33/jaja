@@ -15,6 +15,7 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      { source: '/diseno-web-restaurantes', destination: '/blog/pagina-web-restaurantes', permanent: true },
       { source: '/tienda/calculadora', destination: '/contacto#proyecto', permanent: true },
       { source: '/prepara-tu-proyecto', destination: '/briefing', permanent: true },
       { source: '/blog/crear-web-nueva-empresa-espana', destination: '/blog/crear-una-web-para-una-nueva-empresa-en-espana', permanent: true },
