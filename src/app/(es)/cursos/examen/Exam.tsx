@@ -137,7 +137,7 @@ export default function Exam({ questions }: { questions: ExamQuestion[] }) {
             onClick={submit}
             disabled={submitting}
             className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-white transition-transform active:scale-[0.98] disabled:opacity-60 glow-purple"
-            style={{ background: 'var(--grad-signature)' }}
+            style={{ background: 'var(--grad-signature)', color: 'var(--on-action)' }}
           >
             {submitting ? 'Enviando…' : `Enviar examen (${answeredCount}/${total})`}
           </button>
@@ -145,7 +145,7 @@ export default function Exam({ questions }: { questions: ExamQuestion[] }) {
           <button
             onClick={() => setI((v) => Math.min(total - 1, v + 1))}
             className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-white transition-transform active:scale-[0.98] glow-purple"
-            style={{ background: 'var(--grad-signature)' }}
+            style={{ background: 'var(--grad-signature)', color: 'var(--on-action)' }}
           >
             Siguiente <ArrowRight size={15} />
           </button>
@@ -196,7 +196,7 @@ function ResultView({ result, onRetry }: { result: Result; onRetry: () => void }
           <Link
             href="/cursos"
             className="inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-white glow-purple"
-            style={{ background: 'var(--grad-signature)' }}
+            style={{ background: 'var(--grad-signature)', color: 'var(--on-action)' }}
           >
             Volver al curso
           </Link>

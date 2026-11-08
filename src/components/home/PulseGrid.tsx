@@ -19,7 +19,7 @@ export default function PulseGrid({ paused }: { paused: boolean }) {
   useEffect(() => { const update = () => setTabVisible(!document.hidden); update(); document.addEventListener('visibilitychange', update); return () => document.removeEventListener('visibilitychange', update); }, []);
   return <div ref={ref} className={styles.field} data-running={visible && tabVisible && !paused} aria-hidden="true">
     <svg width="2016" height="1176" className={styles.grid}>
-      <defs><pattern id={id} width="84" height="84" patternUnits="userSpaceOnUse"><path d="M84 0H0V84" fill="none" stroke="#7ebafa" strokeOpacity=".13" strokeWidth="1" /></pattern></defs>
+      <defs><pattern id={id} width="84" height="84" patternUnits="userSpaceOnUse"><path d="M84 0H0V84" fill="none" stroke="var(--palette-soft-blue)" strokeOpacity=".13" strokeWidth="1" /></pattern></defs>
       <rect width="2016" height="1176" fill={`url(#${id})`} />
       {paths.map((d, i) => <g key={d}>
         <path d={d} className={styles.track} />

@@ -117,7 +117,7 @@ export default async function AdminHome() {
               {lastFive.map((c) => (
                 <li key={c.id} className="flex items-center justify-between gap-3 py-3 first:pt-0 last:pb-0">
                   <div className="flex items-center gap-3 min-w-0">
-                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-xs font-semibold text-white" style={{ background: 'var(--grad-signature)' }}>
+                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-xs font-semibold text-white" style={{ background: 'var(--grad-signature)', color: 'var(--on-action)' }}>
                       {(c.name?.[0] || c.email[0]).toUpperCase()}
                     </div>
                     <div className="min-w-0">
@@ -164,7 +164,7 @@ export default async function AdminHome() {
               <h3 className="font-display text-lg text-white">Tienes {unreadMessages.length} mensaje(s) sin leer</h3>
               <p className="mt-1 text-xs text-white/60">Responde rápido para mantener nuestra promesa de menos de 24h.</p>
             </div>
-            <Link href="/admin/mensajes" className="rounded-full px-4 py-2 text-xs font-semibold text-white" style={{ background: 'var(--grad-signature)' }}>
+            <Link href="/admin/mensajes" className="rounded-full px-4 py-2 text-xs font-semibold text-white" style={{ background: 'var(--grad-signature)', color: 'var(--on-action)' }}>
               Ver mensajes
             </Link>
           </div>

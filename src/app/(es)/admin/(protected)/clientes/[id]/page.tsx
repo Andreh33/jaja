@@ -129,7 +129,7 @@ export default async function AdminClienteDetail({ params }: { params: Promise<{
           <div className="rounded-2xl glass p-6 text-center">
             <div
               className="mx-auto flex h-20 w-20 items-center justify-center rounded-full text-2xl font-bold text-white"
-              style={{ background: 'var(--grad-signature)' }}
+              style={{ background: 'var(--grad-signature)', color: 'var(--on-action)' }}
             >
               {(u.name?.[0] || u.email[0]).toUpperCase()}
             </div>

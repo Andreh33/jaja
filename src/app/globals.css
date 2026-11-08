@@ -2,49 +2,53 @@
 
 /* === LATECH DESIGN SYSTEM === */
 :root {
-  /* Core */
-  --bg-base: #06101f;
-  --bg-elevated: #0b1a30;
-  --bg-glass: rgba(10,25,45, 0.55);
-  --bg-glass-strong: rgba(10,29,52, 0.75);
+  /* Approved palette: primitives stay exact; semantic roles carry context. */
+  --palette-soft-blue: #b6dfed;
+  --palette-midnight-navy: #002941;
+  --palette-coral-orange: #fd6e6e;
+  --ink: var(--palette-midnight-navy);
+  --ice: var(--palette-soft-blue);
+  --signal: var(--palette-coral-orange);
+  --action: var(--signal);
+  --on-action: var(--ink);
+  --action-hover: #fd8585;
+  --bg-base: var(--ink);
+  --bg-elevated: #0d354c;
+  --bg-glass: rgba(0,41,65,0.55);
+  --bg-glass-strong: rgba(0,41,65,0.85);
 
-  /* Azul Latech */
-  --brand-50: #eff6ff;
-  --brand-100: #dbeafe;
-  --brand-200: #bfdbfe;
-  --brand-300: #93c5fd;
-  --brand-400: #5599ff;
-  --brand-500: #3478ed;
-  --brand-600: #1d4ed8;
-  --brand-700: #1e40af;
-  --brand-glow: rgba(59,130,246, 0.45);
+  /* Legacy brand/purple aliases remain compatible with the public pages. */
+  --brand-50: #edf7fa;
+  --brand-100: #d9edf4;
+  --brand-200: #c6e6ef;
+  --brand-300: var(--ice);
+  --brand-400: var(--signal);
+  --brand-500: var(--signal);
+  --brand-600: var(--action-hover);
+  --brand-700: #eea1a1;
+  --brand-glow: rgba(253,110,110,0.35);
 
-  /* Gradiente firma */
-  --grad-signature: linear-gradient(135deg, #3b82f6 0%, #93c5fd 25%, #67c4ff 65%, #c5eaff 100%);
-  --grad-signature-soft: linear-gradient(135deg, rgba(59,130,246,0.4) 0%, rgba(103,196,255,0.4) 65%, rgba(197,234,255,0.4) 100%);
-  --grad-radial: radial-gradient(ellipse at top, rgba(59,130,246,0.25), transparent 60%);
-  --grad-conic: conic-gradient(from 180deg at 50% 50%, #3b82f6, #67c4ff, #c5eaff, #3b82f6);
+  --grad-signature: linear-gradient(135deg, var(--ice), #d9edf4);
+  --grad-signature-soft: linear-gradient(135deg, rgba(182,223,237,0.4), rgba(182,223,237,0.15));
+  --grad-radial: radial-gradient(ellipse at top, rgba(182,223,237,0.15), transparent 60%);
+  --grad-conic: conic-gradient(from 180deg at 50% 50%, var(--ice), #d9edf4, var(--ice));
 
-  /* Acentos por sección */
-  --accent-web: #3B82F6;
-  --accent-web-glow: rgba(59,130,246,0.4);
-  --accent-shop: #67c4ff;
-  --accent-shop-glow: rgba(103,196,255,0.4);
-  --accent-ia: #10B981;
-  --accent-ia-glow: rgba(16,185,129,0.4);
-  --accent-calc: #c5eaff;
-  --accent-calc-glow: rgba(197,234,255,0.4);
+  --accent-web: var(--ice);
+  --accent-web-glow: rgba(182,223,237,0.3);
+  --accent-shop: var(--signal);
+  --accent-shop-glow: rgba(253,110,110,0.3);
+  --accent-ia: var(--ice);
+  --accent-ia-glow: rgba(182,223,237,0.3);
+  --accent-calc: var(--ice);
+  --accent-calc-glow: rgba(182,223,237,0.3);
 
-  /* Texto */
-  --text-primary: #F8F7FB;
-  --text-secondary: #a4b5cb;
-  --text-muted: #7e93ad;
-  --text-faded: #536985;
-
-  /* Bordes */
-  --border-subtle: rgba(255,255,255,0.06);
-  --border-glow: rgba(59,130,246,0.2);
-  --border-strong: rgba(255,255,255,0.12);
+  --text-primary: var(--ice);
+  --text-secondary: #a8cbd8;
+  --text-muted: #96bdcd;
+  --text-faded: #8db3c3;
+  --border-subtle: rgba(182,223,237,0.12);
+  --border-glow: rgba(182,223,237,0.25);
+  --border-strong: rgba(182,223,237,0.24);
 
   /* Estados */
   --success: #22C55E;
@@ -57,6 +61,8 @@
 }
 
 @theme inline {
+  --color-action: var(--action);
+  --color-on-action: var(--on-action);
   --color-bg-base: var(--bg-base);
   --color-bg-elevated: var(--bg-elevated);
   --color-bg-glass: var(--bg-glass);
@@ -109,7 +115,7 @@ body {
 /* Selection */
 ::selection {
   background: var(--brand-400);
-  color: #fff;
+  color: var(--on-action);
 }
 
 /* Scrollbar premium */
@@ -172,23 +178,23 @@ body {
 }
 
 .glow-purple {
-  box-shadow: 0 0 60px rgba(59,130,246,0.35), 0 0 120px rgba(103,196,255,0.15);
+  box-shadow: 0 0 60px rgba(182,223,237,0.35), 0 0 120px rgba(182,223,237,0.15);
 }
 
 .glow-blue {
-  box-shadow: 0 0 60px rgba(59,130,246,0.4), 0 0 120px rgba(59,130,246,0.15);
+  box-shadow: 0 0 60px rgba(182,223,237,0.4), 0 0 120px rgba(182,223,237,0.15);
 }
 
 .glow-orange {
-  box-shadow: 0 0 60px rgba(103,196,255,0.4), 0 0 120px rgba(103,196,255,0.15);
+  box-shadow: 0 0 60px rgba(182,223,237,0.4), 0 0 120px rgba(182,223,237,0.15);
 }
 
 .glow-green {
-  box-shadow: 0 0 60px rgba(16,185,129,0.4), 0 0 120px rgba(16,185,129,0.15);
+  box-shadow: 0 0 60px rgba(182,223,237,0.4), 0 0 120px rgba(182,223,237,0.15);
 }
 
 .glow-yellow {
-  box-shadow: 0 0 60px rgba(197,234,255,0.4), 0 0 120px rgba(197,234,255,0.15);
+  box-shadow: 0 0 60px rgba(182,223,237,0.4), 0 0 120px rgba(182,223,237,0.15);
 }
 
 .bg-grid {
@@ -201,11 +207,11 @@ body {
 }
 
 .spotlight {
-  background: radial-gradient(600px circle at var(--mx) var(--my), rgba(59,130,246,0.15), transparent 40%);
+  background: radial-gradient(600px circle at var(--mx) var(--my), rgba(182,223,237,0.15), transparent 40%);
 }
 
 .spotlight-strong {
-  background: radial-gradient(800px circle at var(--mx) var(--my), rgba(59,130,246,0.25), transparent 45%);
+  background: radial-gradient(800px circle at var(--mx) var(--my), rgba(182,223,237,0.25), transparent 45%);
 }
 
 /* Beam border animado — el gradiente recorre el contorno, NO la card rota */
@@ -296,7 +302,7 @@ body {
 .holographic {
   position: relative;
   background:
-    linear-gradient(135deg, rgba(59,130,246,0.10) 0%, rgba(103,196,255,0.06) 50%, rgba(197,234,255,0.08) 100%),
+    linear-gradient(135deg, rgba(182,223,237,0.10) 0%, rgba(182,223,237,0.06) 50%, rgba(182,223,237,0.08) 100%),
     var(--bg-glass-strong);
   backdrop-filter: blur(24px) saturate(180%);
   -webkit-backdrop-filter: blur(24px) saturate(180%);
@@ -381,7 +387,7 @@ body {
   100% { background-position: 200% 0; }
 }
 .skeleton {
-  background: linear-gradient(90deg, var(--bg-elevated) 0%, rgba(59,130,246,0.1) 50%, var(--bg-elevated) 100%);
+  background: linear-gradient(90deg, var(--bg-elevated) 0%, rgba(182,223,237,0.1) 50%, var(--bg-elevated) 100%);
   background-size: 200% 100%;
   animation: shimmer 2s infinite;
 }
@@ -525,7 +531,7 @@ body {
   background-color: transparent !important;
   background-image:
     /* 1. Tinte amarillo sutil (visible solo en padding-box). */
-    linear-gradient(rgba(197,234,255, 0.06), rgba(197,234,255, 0.06)),
+    linear-gradient(rgba(182,223,237, 0.06), rgba(182,223,237, 0.06)),
     /* 2. Capa OPACA con el color base del fondo (padding-box) — bloquea el conic. */
     linear-gradient(var(--bg-base), var(--bg-base)),
     /* 3. Capa de borde: conic-gradient con segmento negro rotando (border-box). */
@@ -600,4 +606,9 @@ body {
 
 @media (max-width: 767px) {
   .hero-enter, .hero-enter-lcp { animation: none; opacity: 1; transform: none; }
+}
+
+/* Opaque legacy brand fills use the same accessible action foreground. */
+:is(.bg-purple-400, .bg-purple-500, .bg-purple-600, .bg-purple-700) {
+  color: var(--on-action);
 }

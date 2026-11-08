@@ -29,7 +29,7 @@ export default function PerfilForm({ user }: { user: { name: string; email: stri
   return (
     <form onSubmit={submit} className="rounded-2xl glass p-6 md:p-8">
       <div className="mb-6 flex items-center gap-4">
-        <div className="flex h-16 w-16 items-center justify-center rounded-2xl text-xl font-bold text-white" style={{ background: 'var(--grad-signature)' }}>
+        <div className="flex h-16 w-16 items-center justify-center rounded-2xl text-xl font-bold text-white" style={{ background: 'var(--grad-signature)', color: 'var(--on-action)' }}>
           {(form.name?.[0] || 'U').toUpperCase()}
         </div>
         <div>
@@ -48,7 +48,7 @@ export default function PerfilForm({ user }: { user: { name: string; email: stri
         type="submit"
         disabled={loading}
         className="mt-7 inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold text-white disabled:opacity-60 glow-purple"
-        style={{ background: 'var(--grad-signature)' }}
+        style={{ background: 'var(--grad-signature)', color: 'var(--on-action)' }}
       >
         <Save size={14} /> {loading ? 'Guardando…' : 'Guardar cambios'}
       </button>

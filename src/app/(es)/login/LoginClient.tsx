@@ -189,7 +189,7 @@ export default function LoginClient() {
                   type="submit"
                   disabled={loading}
                   className="group relative inline-flex w-full items-center justify-center gap-2 rounded-full px-6 py-3.5 text-sm font-semibold text-white transition-transform active:scale-[0.98] disabled:opacity-60 glow-purple"
-                  style={{ background: 'var(--grad-signature)' }}
+                  style={{ background: 'var(--grad-signature)', color: 'var(--on-action)' }}
                 >
                   {loading ? 'Entrando…' : 'Entrar'} <ArrowRight size={16} />
                 </button>

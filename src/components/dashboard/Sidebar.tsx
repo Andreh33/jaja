@@ -46,7 +46,7 @@ export default function Sidebar({ admin = false, userName = '' }: { admin?: bool
       <div className="flex items-center gap-3 border-y px-6 py-4" style={{ borderColor: 'var(--border-subtle)' }}>
         <div
           className="flex h-9 w-9 items-center justify-center rounded-full text-xs font-semibold text-white"
-          style={{ background: 'var(--grad-signature)' }}
+          style={{ background: 'var(--grad-signature)', color: 'var(--on-action)' }}
         >
           {(userName?.[0] || 'U').toUpperCase()}
         </div>

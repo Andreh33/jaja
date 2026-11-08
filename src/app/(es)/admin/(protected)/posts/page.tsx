@@ -18,7 +18,7 @@ export default async function AdminPostsPage() {
           </h1>
           <p className="mt-2 text-sm text-white/55">Gestiona los artículos del blog.</p>
         </div>
-        <Link href="/admin/posts/nuevo" className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold text-white" style={{ background: 'var(--grad-signature)' }}>
+        <Link href="/admin/posts/nuevo" className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold text-white" style={{ background: 'var(--grad-signature)', color: 'var(--on-action)' }}>
           <Plus size={14} /> Nuevo post
         </Link>
       </div>

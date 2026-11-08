@@ -80,6 +80,7 @@ function ModuleCard({ m }: { m: ModuleWithState }) {
             : m.unlocked
               ? 'var(--grad-signature)'
               : 'rgba(255,255,255,0.06)',
+          color: !m.completed && m.unlocked ? 'var(--on-action)' : undefined,
         }}
       >
         {m.completed ? <CheckCircle2 size={20} /> : m.unlocked ? <PlayCircle size={20} /> : <Lock size={18} className="text-white/55" />}

@@ -17,7 +17,7 @@ function Avatar({ name }: { name: string }) {
   const initials = name.split(' ').map((n) => n[0]).join('').slice(0, 2);
   return (
     <div
-      className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-sm font-semibold text-white"
+      className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-sm font-semibold text-[var(--palette-midnight-navy)]"
       style={{ background: 'var(--grad-signature)', boxShadow: '0 0 0 2px rgba(255,255,255,0.05)' }}
     >
       {initials}
@@ -44,10 +44,10 @@ export default function TestimonialsCarousel() {
       </div>
 
       <div className="mx-auto mb-5 flex max-w-7xl justify-end gap-3 px-6">
-        <button type="button" onClick={() => scroll(-1)} aria-label="Testimonios anteriores" aria-controls="testimonials-list" className="flex h-11 w-11 items-center justify-center rounded-full border border-white/20 text-white focus-visible:outline-2 focus-visible:outline-purple-300"><ArrowLeft size={18} /></button>
-        <button type="button" onClick={() => scroll(1)} aria-label="Más testimonios" aria-controls="testimonials-list" className="flex h-11 w-11 items-center justify-center rounded-full border border-white/20 text-white focus-visible:outline-2 focus-visible:outline-purple-300"><ArrowRight size={18} /></button>
+        <button type="button" onClick={() => scroll(-1)} aria-label="Testimonios anteriores" aria-controls="testimonials-list" className="flex h-11 w-11 items-center justify-center rounded-full border border-white/20 text-white focus-visible:outline-2 focus-visible:outline-[var(--palette-coral-orange)]"><ArrowLeft size={18} /></button>
+        <button type="button" onClick={() => scroll(1)} aria-label="Más testimonios" aria-controls="testimonials-list" className="flex h-11 w-11 items-center justify-center rounded-full border border-white/20 text-white focus-visible:outline-2 focus-visible:outline-[var(--palette-coral-orange)]"><ArrowRight size={18} /></button>
       </div>
-      <div ref={list} id="testimonials-list" role="region" aria-label="Testimonios de clientes" tabIndex={0} className="flex snap-x snap-proximity gap-5 overflow-x-auto overscroll-x-contain px-6 pb-4 focus-visible:outline-2 focus-visible:outline-purple-300 md:px-12">
+      <div ref={list} id="testimonials-list" role="region" aria-label="Testimonios de clientes" tabIndex={0} className="flex snap-x snap-proximity gap-5 overflow-x-auto overscroll-x-contain px-6 pb-4 focus-visible:outline-2 focus-visible:outline-[var(--palette-coral-orange)] md:px-12">
         {TESTIMONIALS.map((t, i) => (
           <article
             key={i}

@@ -188,7 +188,7 @@ export default function ModulePlayer({
           <Link
             href={isLast ? '/cursos' : `/cursos/${nextModuleId}`}
             className="inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-white transition-transform active:scale-[0.98] glow-purple"
-            style={{ background: 'var(--grad-signature)' }}
+            style={{ background: 'var(--grad-signature)', color: 'var(--on-action)' }}
           >
             {isLast ? 'Ya puedes hacer el examen' : 'Siguiente módulo'} <ArrowRight size={16} />
           </Link>

@@ -1,13 +1,13 @@
-.section { overflow: clip; border-block: 1px solid #99c8f52b; background: #081829; }
-.viewport { overflow: hidden; padding-block: 31px 28px; border-bottom: 1px solid #99c8f514; }
-.track { display: flex; align-items: baseline; gap: 36px; width: max-content; padding-inline: 28px; color: #b6d6f2; font: 600 clamp(62px, 6.4vw, 110px)/1.06 var(--font-display); letter-spacing: -.055em; }
-.track i { color: #ffab6c; font-family: Georgia, 'Times New Roman', serif; font-weight: 400; }
-.track b { align-self: center; padding-inline: 18px; color: #ff9853; font: 400 .68em/1 var(--font-display); }
-.track > span:nth-of-type(2), .track > span:last-child { color: transparent; -webkit-text-stroke: 1px #9bc5eaaa; }
+.section { overflow: clip; border-block: 1px solid #b6dfed2b; background: var(--palette-midnight-navy); }
+.viewport { overflow: hidden; padding-block: 31px 28px; border-bottom: 1px solid #b6dfed14; }
+.track { display: flex; align-items: baseline; gap: 36px; width: max-content; padding-inline: 28px; color: var(--palette-soft-blue); font: 600 clamp(62px, 6.4vw, 110px)/1.06 var(--font-display); letter-spacing: -.055em; }
+.track i { color: var(--palette-coral-orange); font-family: Georgia, 'Times New Roman', serif; font-weight: 400; }
+.track b { align-self: center; padding-inline: 18px; color: var(--palette-coral-orange); font: 400 .68em/1 var(--font-display); }
+.track > span:nth-of-type(2), .track > span:last-child { color: transparent; -webkit-text-stroke: 1px #b6dfedaa; }
 .foundation { display: flex; align-items: center; justify-content: space-between; gap: 30px; min-height: 76px; padding-block: 18px; }
-.foundation h2 { color: #8caac7; font: 500 9px/1.6 var(--font-mono); letter-spacing: .14em; }
+.foundation h2 { color: var(--palette-soft-blue); font: 500 9px/1.6 var(--font-mono); letter-spacing: .14em; }
 .foundation ul { display: flex; align-items: center; justify-content: flex-end; flex-wrap: wrap; gap: 20px 42px; margin: 0; padding: 0; list-style: none; }
-.foundation li { color: #c3d8eb; font: 500 12px/1.5 var(--font-mono); }
+.foundation li { color: var(--palette-soft-blue); font: 500 12px/1.5 var(--font-mono); }
 
 @media (max-width: 1023px) {
   .viewport { padding-block: 25px; }

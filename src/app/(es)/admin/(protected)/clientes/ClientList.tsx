@@ -120,7 +120,7 @@ export default function ClientList(props: Props) {
                   <div className="flex items-center gap-3">
                     <div
                       className="flex h-9 w-9 items-center justify-center rounded-full text-xs font-semibold text-white"
-                      style={{ background: 'var(--grad-signature)' }}
+                      style={{ background: 'var(--grad-signature)', color: 'var(--on-action)' }}
                     >
                       {(c.name?.[0] || c.email[0]).toUpperCase()}
                     </div>

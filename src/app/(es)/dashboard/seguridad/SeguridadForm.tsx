@@ -58,7 +58,7 @@ export default function SeguridadForm() {
           type="submit"
           disabled={loading}
           className="mt-7 inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold text-white disabled:opacity-60 glow-purple"
-          style={{ background: 'var(--grad-signature)' }}
+          style={{ background: 'var(--grad-signature)', color: 'var(--on-action)' }}
         >
           <Lock size={14} /> {loading ? 'Guardando…' : 'Cambiar contraseña'}
         </button>
