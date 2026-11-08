@@ -1,15 +1,15 @@
 .row { position: relative; isolation: isolate; }
-.row::before { content: ''; position: absolute; z-index: -1; inset: 0; pointer-events: none; background: linear-gradient(100deg, #fd6e6e0d, #b6dfed0b 45%, transparent 80%); opacity: 0; transform: translateX(-8px); transition: opacity 200ms var(--ease-out), transform 200ms var(--ease-out); }
-.row::after { content: ''; position: absolute; left: -14px; top: 26%; bottom: 26%; width: 2px; background: var(--palette-coral-orange); opacity: 0; transform: scaleY(.7); transition: opacity 160ms var(--ease-out), transform 160ms var(--ease-out); }
+.row::before { content: ''; position: absolute; z-index: -1; inset: 0; pointer-events: none; background: linear-gradient(100deg, #52d9f50d, #f3f6fa0b 45%, transparent 80%); opacity: 0; transform: translateX(-8px); transition: opacity 200ms var(--ease-out), transform 200ms var(--ease-out); }
+.row::after { content: ''; position: absolute; left: -14px; top: 26%; bottom: 26%; width: 2px; background: var(--palette-cyan); opacity: 0; transform: scaleY(.7); transition: opacity 160ms var(--ease-out), transform 160ms var(--ease-out); }
 .row > .number { transition: color 160ms ease; }
 .row > .arrow { transition: transform 160ms var(--ease-out), color 160ms ease; }
-.row:focus-visible { outline: 2px solid var(--palette-coral-orange); outline-offset: 6px; }
+.row:focus-visible { outline: 2px solid var(--palette-cyan); outline-offset: 6px; }
 .row:focus-visible::before, .row:focus-visible::after { opacity: 1; transform: none; transition: none; }
-.row:focus-visible > .number, .row:focus-visible > .arrow { color: var(--palette-coral-orange); transition: none; }
-.row:active > .arrow { color: var(--palette-coral-orange); }
+.row:focus-visible > .number, .row:focus-visible > .arrow { color: var(--palette-cyan); transition: none; }
+.row:active > .arrow { color: var(--palette-cyan); }
 @media (hover: hover) and (pointer: fine) {
   .row:hover::before, .row:hover::after { opacity: 1; transform: none; }
-  .row:hover > .number { color: var(--palette-coral-orange); }
-  .row:hover > .arrow { color: var(--palette-coral-orange); transform: translate(4px, -4px); }
+  .row:hover > .number { color: var(--palette-cyan); }
+  .row:hover > .arrow { color: var(--palette-cyan); transform: translate(4px, -4px); }
 }
 @media (max-width: 767px) { .row::after { left: -9px; } }

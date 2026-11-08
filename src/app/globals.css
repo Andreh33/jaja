@@ -2,53 +2,54 @@
 
 /* === LATECH DESIGN SYSTEM === */
 :root {
-  /* Approved palette: primitives stay exact; semantic roles carry context. */
-  --palette-soft-blue: #b6dfed;
-  --palette-midnight-navy: #002941;
-  --palette-coral-orange: #fd6e6e;
-  --ink: var(--palette-midnight-navy);
-  --ice: var(--palette-soft-blue);
-  --signal: var(--palette-coral-orange);
+  /* Approved charcoal, graphite, ice and electric-cyan palette. */
+  --palette-ice: #f3f6fa;
+  --palette-charcoal: #080c12;
+  --palette-graphite: #141c27;
+  --palette-cyan: #52d9f5;
+  --ink: var(--palette-charcoal);
+  --ice: var(--palette-ice);
+  --signal: var(--palette-cyan);
   --action: var(--signal);
   --on-action: var(--ink);
-  --action-hover: #fd8585;
+  --action-hover: #75e1f7;
   --bg-base: var(--ink);
-  --bg-elevated: #0d354c;
-  --bg-glass: rgba(0,41,65,0.55);
-  --bg-glass-strong: rgba(0,41,65,0.85);
+  --bg-elevated: var(--palette-graphite);
+  --bg-glass: rgba(8,12,18,0.55);
+  --bg-glass-strong: rgba(8,12,18,0.85);
 
   /* Legacy brand/purple aliases remain compatible with the public pages. */
-  --brand-50: #edf7fa;
-  --brand-100: #d9edf4;
-  --brand-200: #c6e6ef;
+  --brand-50: #f3f6fa;
+  --brand-100: #dce5ef;
+  --brand-200: #c5d4e3;
   --brand-300: var(--ice);
   --brand-400: var(--signal);
   --brand-500: var(--signal);
   --brand-600: var(--action-hover);
-  --brand-700: #eea1a1;
-  --brand-glow: rgba(253,110,110,0.35);
+  --brand-700: #a2eafa;
+  --brand-glow: rgba(82,217,245,0.35);
 
-  --grad-signature: linear-gradient(135deg, var(--ice), #d9edf4);
-  --grad-signature-soft: linear-gradient(135deg, rgba(182,223,237,0.4), rgba(182,223,237,0.15));
-  --grad-radial: radial-gradient(ellipse at top, rgba(182,223,237,0.15), transparent 60%);
-  --grad-conic: conic-gradient(from 180deg at 50% 50%, var(--ice), #d9edf4, var(--ice));
+  --grad-signature: linear-gradient(135deg, var(--ice), #dce5ef);
+  --grad-signature-soft: linear-gradient(135deg, rgba(82,217,245,0.4), rgba(82,217,245,0.15));
+  --grad-radial: radial-gradient(ellipse at top, rgba(82,217,245,0.15), transparent 60%);
+  --grad-conic: conic-gradient(from 180deg at 50% 50%, var(--ice), #dce5ef, var(--ice));
 
-  --accent-web: var(--ice);
-  --accent-web-glow: rgba(182,223,237,0.3);
+  --accent-web: var(--signal);
+  --accent-web-glow: rgba(82,217,245,0.3);
   --accent-shop: var(--signal);
-  --accent-shop-glow: rgba(253,110,110,0.3);
-  --accent-ia: var(--ice);
-  --accent-ia-glow: rgba(182,223,237,0.3);
-  --accent-calc: var(--ice);
-  --accent-calc-glow: rgba(182,223,237,0.3);
+  --accent-shop-glow: rgba(82,217,245,0.3);
+  --accent-ia: var(--signal);
+  --accent-ia-glow: rgba(82,217,245,0.3);
+  --accent-calc: var(--signal);
+  --accent-calc-glow: rgba(82,217,245,0.3);
 
   --text-primary: var(--ice);
-  --text-secondary: #a8cbd8;
-  --text-muted: #96bdcd;
-  --text-faded: #8db3c3;
-  --border-subtle: rgba(182,223,237,0.12);
-  --border-glow: rgba(182,223,237,0.25);
-  --border-strong: rgba(182,223,237,0.24);
+  --text-secondary: #a6b2c2;
+  --text-muted: #97a6ba;
+  --text-faded: #92a0b4;
+  --border-subtle: rgba(82,217,245,0.12);
+  --border-glow: rgba(82,217,245,0.25);
+  --border-strong: rgba(82,217,245,0.24);
 
   /* Estados */
   --success: #22C55E;
@@ -178,23 +179,23 @@ body {
 }
 
 .glow-purple {
-  box-shadow: 0 0 60px rgba(182,223,237,0.35), 0 0 120px rgba(182,223,237,0.15);
+  box-shadow: 0 0 60px rgba(82,217,245,0.35), 0 0 120px rgba(82,217,245,0.15);
 }
 
 .glow-blue {
-  box-shadow: 0 0 60px rgba(182,223,237,0.4), 0 0 120px rgba(182,223,237,0.15);
+  box-shadow: 0 0 60px rgba(82,217,245,0.4), 0 0 120px rgba(82,217,245,0.15);
 }
 
 .glow-orange {
-  box-shadow: 0 0 60px rgba(182,223,237,0.4), 0 0 120px rgba(182,223,237,0.15);
+  box-shadow: 0 0 60px rgba(82,217,245,0.4), 0 0 120px rgba(82,217,245,0.15);
 }
 
 .glow-green {
-  box-shadow: 0 0 60px rgba(182,223,237,0.4), 0 0 120px rgba(182,223,237,0.15);
+  box-shadow: 0 0 60px rgba(82,217,245,0.4), 0 0 120px rgba(82,217,245,0.15);
 }
 
 .glow-yellow {
-  box-shadow: 0 0 60px rgba(182,223,237,0.4), 0 0 120px rgba(182,223,237,0.15);
+  box-shadow: 0 0 60px rgba(82,217,245,0.4), 0 0 120px rgba(82,217,245,0.15);
 }
 
 .bg-grid {
@@ -207,11 +208,11 @@ body {
 }
 
 .spotlight {
-  background: radial-gradient(600px circle at var(--mx) var(--my), rgba(182,223,237,0.15), transparent 40%);
+  background: radial-gradient(600px circle at var(--mx) var(--my), rgba(82,217,245,0.15), transparent 40%);
 }
 
 .spotlight-strong {
-  background: radial-gradient(800px circle at var(--mx) var(--my), rgba(182,223,237,0.25), transparent 45%);
+  background: radial-gradient(800px circle at var(--mx) var(--my), rgba(82,217,245,0.25), transparent 45%);
 }
 
 /* Beam border animado — el gradiente recorre el contorno, NO la card rota */
@@ -302,7 +303,7 @@ body {
 .holographic {
   position: relative;
   background:
-    linear-gradient(135deg, rgba(182,223,237,0.10) 0%, rgba(182,223,237,0.06) 50%, rgba(182,223,237,0.08) 100%),
+    linear-gradient(135deg, rgba(82,217,245,0.10) 0%, rgba(82,217,245,0.06) 50%, rgba(82,217,245,0.08) 100%),
     var(--bg-glass-strong);
   backdrop-filter: blur(24px) saturate(180%);
   -webkit-backdrop-filter: blur(24px) saturate(180%);
@@ -387,7 +388,7 @@ body {
   100% { background-position: 200% 0; }
 }
 .skeleton {
-  background: linear-gradient(90deg, var(--bg-elevated) 0%, rgba(182,223,237,0.1) 50%, var(--bg-elevated) 100%);
+  background: linear-gradient(90deg, var(--bg-elevated) 0%, rgba(82,217,245,0.1) 50%, var(--bg-elevated) 100%);
   background-size: 200% 100%;
   animation: shimmer 2s infinite;
 }
@@ -531,7 +532,7 @@ body {
   background-color: transparent !important;
   background-image:
     /* 1. Tinte amarillo sutil (visible solo en padding-box). */
-    linear-gradient(rgba(182,223,237, 0.06), rgba(182,223,237, 0.06)),
+    linear-gradient(rgba(82,217,245, 0.06), rgba(82,217,245, 0.06)),
     /* 2. Capa OPACA con el color base del fondo (padding-box) — bloquea el conic. */
     linear-gradient(var(--bg-base), var(--bg-base)),
     /* 3. Capa de borde: conic-gradient con segmento negro rotando (border-box). */

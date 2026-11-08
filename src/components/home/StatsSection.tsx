@@ -37,7 +37,7 @@ export default function StatsSection() {
                     <div
                       key={s.label}
                       className="rounded-2xl p-6 transition-transform hover:-translate-y-1"
-                      style={{ background: 'rgb(0 41 65 / .4)', border: '1px solid var(--border-subtle)' }}
+                      style={{ background: 'rgb(8 12 18 / .4)', border: '1px solid var(--border-subtle)' }}
                     >
                       <div className="font-display text-5xl tabular-nums leading-none text-white">
                         {s.value}{s.suffix}

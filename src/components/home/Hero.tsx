@@ -33,7 +33,7 @@ export default function Hero() {
   const objectTransform = useTransform(() => `perspective(1200px) rotateX(${y.get() * -.009}deg) rotateY(${x.get() * .009 - 22}deg) rotateZ(-5deg)`);
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] });
   const backgroundTransform = useTransform(scrollYProgress, [0, 1], ['translateY(0px)', 'translateY(110px)']);
-  const warmColor = useTransform(scrollYProgress, [0, .45, 1], ['#fd6e6e', '#fd6e6e', '#b6dfed']);
+  const warmColor = useTransform(scrollYProgress, [0, .45, 1], ['#52d9f5', '#52d9f5', '#f3f6fa']);
   function onPointerMove(event: PointerEvent<HTMLElement>) {
     if (event.pointerType !== 'mouse' || !window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
     if ((event.target as HTMLElement).closest('[data-live-preview], [data-crt-controls]')) { pointerX.set(0); pointerY.set(0); return; }

@@ -52,16 +52,16 @@ const cols = [
 
 export default function Footer() {
   return (
-    <footer id="remote-contact" className="relative z-10 border-t" style={{ borderColor: 'var(--border-subtle)', background: 'var(--palette-midnight-navy)' }}>
+    <footer id="remote-contact" className="relative z-10 border-t" style={{ borderColor: 'var(--border-subtle)', background: 'var(--palette-charcoal)' }}>
       <div className="mx-auto max-w-7xl px-6 py-16">
         <div className="grid gap-12 md:grid-cols-12">
           <div className="md:col-span-4">
             <Logo size="lg" />
-            <p className="mt-4 max-w-sm text-sm leading-relaxed text-[var(--palette-soft-blue)]/80">
+            <p className="mt-4 max-w-sm text-sm leading-relaxed text-[var(--palette-ice)]/80">
               Webs que representan tu marca, tiendas que invitan a comprar y asistentes que te devuelven tiempo.
               Diseño con carácter. Un equipo a tu lado. Sin permanencia.
             </p>
-            <div className="mt-6 flex items-start gap-3 text-sm text-[var(--palette-soft-blue)]/80">
+            <div className="mt-6 flex items-start gap-3 text-sm text-[var(--palette-ice)]/80">
               <MapPin size={16} className="mt-0.5 shrink-0" style={{ color: 'var(--brand-300)' }} />
               <span>Calle Puente 3<br />06490 Puebla de la Calzada · Badajoz</span>
             </div>
@@ -69,11 +69,11 @@ export default function Footer() {
 
           {cols.map((c) => (
             <div key={c.title} className="md:col-span-2">
-              <h2 className="mb-4 text-xs font-semibold uppercase tracking-widest text-[var(--palette-soft-blue)]/75">{c.title}</h2>
+              <h2 className="mb-4 text-xs font-semibold uppercase tracking-widest text-[var(--palette-ice)]/75">{c.title}</h2>
               <ul className="space-y-3">
                 {c.links.map((l) => (
                   <li key={l.href}>
-                    <Link prefetch={false} href={l.href} className="link-underline text-sm text-[var(--palette-soft-blue)]/85 transition-colors hover:text-[var(--palette-soft-blue)]">
+                    <Link prefetch={false} href={l.href} className="link-underline text-sm text-[var(--palette-ice)]/85 transition-colors hover:text-[var(--palette-ice)]">
                       {l.label}
                     </Link>
                   </li>
@@ -83,15 +83,15 @@ export default function Footer() {
           ))}
 
           <div className="md:col-span-2">
-            <h2 className="mb-4 text-xs font-semibold uppercase tracking-widest text-[var(--palette-soft-blue)]/75">Contacto</h2>
-            <ul className="space-y-3 text-sm text-[var(--palette-soft-blue)]/85">
+            <h2 className="mb-4 text-xs font-semibold uppercase tracking-widest text-[var(--palette-ice)]/75">Contacto</h2>
+            <ul className="space-y-3 text-sm text-[var(--palette-ice)]/85">
               <li>
-                <a className="inline-flex items-center gap-2 hover:text-[var(--palette-soft-blue)]" href={whatsappLink('Hola, quiero saber más sobre Latech')} target="_blank" rel="noreferrer">
+                <a className="inline-flex items-center gap-2 hover:text-[var(--palette-ice)]" href={whatsappLink('Hola, quiero saber más sobre Latech')} target="_blank" rel="noreferrer">
                   <MessageCircle size={14} style={{ color: 'var(--success)' }} /> WhatsApp
                 </a>
               </li>
               <li>
-                <a className="inline-flex items-center gap-2 hover:text-[var(--palette-soft-blue)]" href="tel:+34684739091">
+                <a className="inline-flex items-center gap-2 hover:text-[var(--palette-ice)]" href="tel:+34684739091">
                   <Phone size={14} style={{ color: 'var(--brand-300)' }} /> +34 684 73 90 91
                 </a>
               </li>
@@ -103,27 +103,27 @@ export default function Footer() {
         </div>
 
         <div className="mt-12 border-t pt-6" style={{ borderColor: 'var(--border-subtle)' }}>
-          <p className="text-xs font-semibold uppercase tracking-widest text-[var(--palette-soft-blue)]/80">
+          <p className="text-xs font-semibold uppercase tracking-widest text-[var(--palette-ice)]/80">
             Diseño web en tu ciudad
           </p>
-          <p className="mt-3 text-xs leading-relaxed text-[var(--palette-soft-blue)]/80">
+          <p className="mt-3 text-xs leading-relaxed text-[var(--palette-ice)]/80">
             {CIUDADES.map((c, i) => (
               <span key={c.slug}>
                 {i > 0 && ' · '}
-                <Link href={`/diseno-web/${c.slug}`} className="transition-colors hover:text-[var(--palette-soft-blue)]">
+                <Link href={`/diseno-web/${c.slug}`} className="transition-colors hover:text-[var(--palette-ice)]">
                   Diseño web en {c.name}
                 </Link>
               </span>
             ))}
             {' · '}
-            <Link href="/cobertura" className="underline transition-colors hover:text-[var(--palette-soft-blue)]">
+            <Link href="/cobertura" className="underline transition-colors hover:text-[var(--palette-ice)]">
               ver las 45 zonas
             </Link>
           </p>
         </div>
 
         <div className="mt-8 border-t pt-6"><LanguageSwitcher /></div>
-        <div className="mt-8 flex flex-col items-start justify-between gap-3 border-t pt-6 text-xs text-[var(--palette-soft-blue)]/80 md:flex-row md:items-center" style={{ borderColor: 'var(--border-subtle)' }}>
+        <div className="mt-8 flex flex-col items-start justify-between gap-3 border-t pt-6 text-xs text-[var(--palette-ice)]/80 md:flex-row md:items-center" style={{ borderColor: 'var(--border-subtle)' }}>
           <p>© {new Date().getFullYear()} Latech · Hecho en Badajoz con cariño.</p>
           <p className="font-mono">Menos plantillas. Más Latech.</p>
         </div>
